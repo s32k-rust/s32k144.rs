@@ -1,0 +1,8 @@
+[package]
+authors = ["Kjetil Kjeka <kjetilkjeka@gmail.com>"]
+name = "s32k144"
+version = "0.1.0"
+
+[dependencies]
+cortex-m = "0.2.7"
+vcell = "0.1.0"
