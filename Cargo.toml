@@ -4,5 +4,5 @@ name = "s32k144"
 version = "0.1.0"
 
 [dependencies]
-cortex-m = "0.2.7"
+cortex-m = "0.2.6"
 vcell = "0.1.0"
