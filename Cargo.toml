@@ -3,6 +3,14 @@ authors = ["Kjetil Kjeka <kjetilkjeka@gmail.com>"]
 name = "s32k144"
 version = "0.1.0"
 
+description = "Peripheral access API for NXP S32K144 microcontrollers (generated using svd2rust)"
+repository = "https://github.com/kjetilkjeka/s32k144.rs"
+
+keywords = ["arm", "embedded", "svd2rust", "cortex-m4", "NXP"]
+cateogries = ["embedded"]
+
+license = "Apache-2.0/MIT"
+
 [dependencies]
 cortex-m = "0.2.6"
 vcell = "0.1.0"
