@@ -1,4 +1,4 @@
-# s32k144.rs
+# s32k144.rs [![Build Status](https://travis-ci.org/kjetilkjeka/s32k144.rs.svg?branch=master)](https://travis-ci.org/kjetilkjeka/s32k144.rs) [![Crates.io](https://img.shields.io/crates/v/s32k144.svg)](https://crates.io/crates/s32k144)
 
 > Peripheral access API for S32K144 microcontrollers
 
