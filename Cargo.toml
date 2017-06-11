@@ -12,5 +12,5 @@ cateogries = ["embedded"]
 license = "Apache-2.0/MIT"
 
 [dependencies]
-cortex-m = "0.2.6"
+cortex-m = "0.2.10"
 vcell = "0.1.0"
