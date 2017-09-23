@@ -22,7 +22,9 @@ impl super::CTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CTRL {
 #[doc = "Possible values of the field `PT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PTR {
-    #[doc = "Even parity."]
-    _0,
-    #[doc = "Odd parity."]
-    _1,
+    #[doc = "Even parity."] _0,
+    #[doc = "Odd parity."] _1,
 }
 impl PTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl PTR {
 #[doc = "Possible values of the field `PE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PER {
-    #[doc = "No hardware parity generation or checking."]
-    _0,
-    #[doc = "Parity enabled."]
-    _1,
+    #[doc = "No hardware parity generation or checking."] _0,
+    #[doc = "Parity enabled."] _1,
 }
 impl PER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl PER {
 #[doc = "Possible values of the field `ILT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ILTR {
-    #[doc = "Idle character bit count starts after start bit."]
-    _0,
-    #[doc = "Idle character bit count starts after stop bit."]
-    _1,
+    #[doc = "Idle character bit count starts after start bit."] _0,
+    #[doc = "Idle character bit count starts after stop bit."] _1,
 }
 impl ILTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl ILTR {
 #[doc = "Possible values of the field `WAKE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKER {
-    #[doc = "Configures RWU for idle-line wakeup."]
-    _0,
-    #[doc = "Configures RWU with address-mark wakeup."]
-    _1,
+    #[doc = "Configures RWU for idle-line wakeup."] _0,
+    #[doc = "Configures RWU with address-mark wakeup."] _1,
 }
 impl WAKER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl WAKER {
 #[doc = "Possible values of the field `M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MR {
-    #[doc = "Receiver and transmitter use 8-bit data characters."]
-    _0,
-    #[doc = "Receiver and transmitter use 9-bit data characters."]
-    _1,
+    #[doc = "Receiver and transmitter use 8-bit data characters."] _0,
+    #[doc = "Receiver and transmitter use 9-bit data characters."] _1,
 }
 impl MR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +317,8 @@ impl RSRCR {
 #[doc = "Possible values of the field `DOZEEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOZEENR {
-    #[doc = "LPUART is enabled in Doze mode."]
-    _0,
-    #[doc = "LPUART is disabled in Doze mode."]
-    _1,
+    #[doc = "LPUART is enabled in Doze mode."] _0,
+    #[doc = "LPUART is disabled in Doze mode."] _1,
 }
 impl DOZEENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,8 +362,7 @@ impl DOZEENR {
 #[doc = "Possible values of the field `LOOPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOPSR {
-    #[doc = "Normal operation - RXD and TXD use separate pins."]
-    _0,
+    #[doc = "Normal operation - RXD and TXD use separate pins."] _0,
     #[doc = "Loop mode or single-wire mode where transmitter outputs are internally connected to receiver input (see RSRC bit)."]
     _1,
 }
@@ -419,22 +408,14 @@ impl LOOPSR {
 #[doc = "Possible values of the field `IDLECFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECFGR {
-    #[doc = "1 idle character"]
-    _000,
-    #[doc = "2 idle characters"]
-    _001,
-    #[doc = "4 idle characters"]
-    _010,
-    #[doc = "8 idle characters"]
-    _011,
-    #[doc = "16 idle characters"]
-    _100,
-    #[doc = "32 idle characters"]
-    _101,
-    #[doc = "64 idle characters"]
-    _110,
-    #[doc = "128 idle characters"]
-    _111,
+    #[doc = "1 idle character"] _000,
+    #[doc = "2 idle characters"] _001,
+    #[doc = "4 idle characters"] _010,
+    #[doc = "8 idle characters"] _011,
+    #[doc = "16 idle characters"] _100,
+    #[doc = "32 idle characters"] _101,
+    #[doc = "64 idle characters"] _110,
+    #[doc = "128 idle characters"] _111,
 }
 impl IDLECFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -511,10 +492,8 @@ impl IDLECFGR {
 #[doc = "Possible values of the field `M7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum M7R {
-    #[doc = "Receiver and transmitter use 8-bit to 10-bit data characters."]
-    _0,
-    #[doc = "Receiver and transmitter use 7-bit data characters."]
-    _1,
+    #[doc = "Receiver and transmitter use 8-bit to 10-bit data characters."] _0,
+    #[doc = "Receiver and transmitter use 7-bit data characters."] _1,
 }
 impl M7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -558,10 +537,8 @@ impl M7R {
 #[doc = "Possible values of the field `MA2IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MA2IER {
-    #[doc = "MA2F interrupt disabled"]
-    _0,
-    #[doc = "MA2F interrupt enabled"]
-    _1,
+    #[doc = "MA2F interrupt disabled"] _0,
+    #[doc = "MA2F interrupt enabled"] _1,
 }
 impl MA2IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -605,10 +582,8 @@ impl MA2IER {
 #[doc = "Possible values of the field `MA1IE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MA1IER {
-    #[doc = "MA1F interrupt disabled"]
-    _0,
-    #[doc = "MA1F interrupt enabled"]
-    _1,
+    #[doc = "MA1F interrupt disabled"] _0,
+    #[doc = "MA1F interrupt enabled"] _1,
 }
 impl MA1IER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -652,10 +627,8 @@ impl MA1IER {
 #[doc = "Possible values of the field `SBK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBKR {
-    #[doc = "Normal transmitter operation."]
-    _0,
-    #[doc = "Queue break character(s) to be sent."]
-    _1,
+    #[doc = "Normal transmitter operation."] _0,
+    #[doc = "Queue break character(s) to be sent."] _1,
 }
 impl SBKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -699,10 +672,8 @@ impl SBKR {
 #[doc = "Possible values of the field `RWU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RWUR {
-    #[doc = "Normal receiver operation."]
-    _0,
-    #[doc = "LPUART receiver in standby waiting for wakeup condition."]
-    _1,
+    #[doc = "Normal receiver operation."] _0,
+    #[doc = "LPUART receiver in standby waiting for wakeup condition."] _1,
 }
 impl RWUR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -746,10 +717,8 @@ impl RWUR {
 #[doc = "Possible values of the field `RE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RER {
-    #[doc = "Receiver disabled."]
-    _0,
-    #[doc = "Receiver enabled."]
-    _1,
+    #[doc = "Receiver disabled."] _0,
+    #[doc = "Receiver enabled."] _1,
 }
 impl RER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -793,10 +762,8 @@ impl RER {
 #[doc = "Possible values of the field `TE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TER {
-    #[doc = "Transmitter disabled."]
-    _0,
-    #[doc = "Transmitter enabled."]
-    _1,
+    #[doc = "Transmitter disabled."] _0,
+    #[doc = "Transmitter enabled."] _1,
 }
 impl TER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -840,10 +807,8 @@ impl TER {
 #[doc = "Possible values of the field `ILIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ILIER {
-    #[doc = "Hardware interrupts from IDLE disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when IDLE flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from IDLE disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when IDLE flag is 1."] _1,
 }
 impl ILIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -887,10 +852,8 @@ impl ILIER {
 #[doc = "Possible values of the field `RIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RIER {
-    #[doc = "Hardware interrupts from RDRF disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when RDRF flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from RDRF disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when RDRF flag is 1."] _1,
 }
 impl RIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -934,10 +897,8 @@ impl RIER {
 #[doc = "Possible values of the field `TCIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCIER {
-    #[doc = "Hardware interrupts from TC disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when TC flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from TC disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when TC flag is 1."] _1,
 }
 impl TCIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -981,10 +942,8 @@ impl TCIER {
 #[doc = "Possible values of the field `TIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIER {
-    #[doc = "Hardware interrupts from TDRE disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when TDRE flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from TDRE disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when TDRE flag is 1."] _1,
 }
 impl TIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1028,10 +987,8 @@ impl TIER {
 #[doc = "Possible values of the field `PEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEIER {
-    #[doc = "PF interrupts disabled; use polling)."]
-    _0,
-    #[doc = "Hardware interrupt requested when PF is set."]
-    _1,
+    #[doc = "PF interrupts disabled; use polling)."] _0,
+    #[doc = "Hardware interrupt requested when PF is set."] _1,
 }
 impl PEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1075,10 +1032,8 @@ impl PEIER {
 #[doc = "Possible values of the field `FEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEIER {
-    #[doc = "FE interrupts disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when FE is set."]
-    _1,
+    #[doc = "FE interrupts disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when FE is set."] _1,
 }
 impl FEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1122,10 +1077,8 @@ impl FEIER {
 #[doc = "Possible values of the field `NEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NEIER {
-    #[doc = "NF interrupts disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when NF is set."]
-    _1,
+    #[doc = "NF interrupts disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when NF is set."] _1,
 }
 impl NEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1169,10 +1122,8 @@ impl NEIER {
 #[doc = "Possible values of the field `ORIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ORIER {
-    #[doc = "OR interrupts disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when OR is set."]
-    _1,
+    #[doc = "OR interrupts disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when OR is set."] _1,
 }
 impl ORIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1216,10 +1167,8 @@ impl ORIER {
 #[doc = "Possible values of the field `TXINV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXINVR {
-    #[doc = "Transmit data not inverted."]
-    _0,
-    #[doc = "Transmit data inverted."]
-    _1,
+    #[doc = "Transmit data not inverted."] _0,
+    #[doc = "Transmit data inverted."] _1,
 }
 impl TXINVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1263,10 +1212,8 @@ impl TXINVR {
 #[doc = "Possible values of the field `TXDIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDIRR {
-    #[doc = "TXD pin is an input in single-wire mode."]
-    _0,
-    #[doc = "TXD pin is an output in single-wire mode."]
-    _1,
+    #[doc = "TXD pin is an input in single-wire mode."] _0,
+    #[doc = "TXD pin is an output in single-wire mode."] _1,
 }
 impl TXDIRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1351,10 +1298,8 @@ impl R8T9R {
 }
 #[doc = "Values that can be written to the field `PT`"]
 pub enum PTW {
-    #[doc = "Even parity."]
-    _0,
-    #[doc = "Odd parity."]
-    _1,
+    #[doc = "Even parity."] _0,
+    #[doc = "Odd parity."] _1,
 }
 impl PTW {
     #[allow(missing_docs)]
@@ -1409,10 +1354,8 @@ impl<'a> _PTW<'a> {
 }
 #[doc = "Values that can be written to the field `PE`"]
 pub enum PEW {
-    #[doc = "No hardware parity generation or checking."]
-    _0,
-    #[doc = "Parity enabled."]
-    _1,
+    #[doc = "No hardware parity generation or checking."] _0,
+    #[doc = "Parity enabled."] _1,
 }
 impl PEW {
     #[allow(missing_docs)]
@@ -1467,10 +1410,8 @@ impl<'a> _PEW<'a> {
 }
 #[doc = "Values that can be written to the field `ILT`"]
 pub enum ILTW {
-    #[doc = "Idle character bit count starts after start bit."]
-    _0,
-    #[doc = "Idle character bit count starts after stop bit."]
-    _1,
+    #[doc = "Idle character bit count starts after start bit."] _0,
+    #[doc = "Idle character bit count starts after stop bit."] _1,
 }
 impl ILTW {
     #[allow(missing_docs)]
@@ -1525,10 +1466,8 @@ impl<'a> _ILTW<'a> {
 }
 #[doc = "Values that can be written to the field `WAKE`"]
 pub enum WAKEW {
-    #[doc = "Configures RWU for idle-line wakeup."]
-    _0,
-    #[doc = "Configures RWU with address-mark wakeup."]
-    _1,
+    #[doc = "Configures RWU for idle-line wakeup."] _0,
+    #[doc = "Configures RWU with address-mark wakeup."] _1,
 }
 impl WAKEW {
     #[allow(missing_docs)]
@@ -1583,10 +1522,8 @@ impl<'a> _WAKEW<'a> {
 }
 #[doc = "Values that can be written to the field `M`"]
 pub enum MW {
-    #[doc = "Receiver and transmitter use 8-bit data characters."]
-    _0,
-    #[doc = "Receiver and transmitter use 9-bit data characters."]
-    _1,
+    #[doc = "Receiver and transmitter use 8-bit data characters."] _0,
+    #[doc = "Receiver and transmitter use 9-bit data characters."] _1,
 }
 impl MW {
     #[allow(missing_docs)]
@@ -1699,10 +1636,8 @@ impl<'a> _RSRCW<'a> {
 }
 #[doc = "Values that can be written to the field `DOZEEN`"]
 pub enum DOZEENW {
-    #[doc = "LPUART is enabled in Doze mode."]
-    _0,
-    #[doc = "LPUART is disabled in Doze mode."]
-    _1,
+    #[doc = "LPUART is enabled in Doze mode."] _0,
+    #[doc = "LPUART is disabled in Doze mode."] _1,
 }
 impl DOZEENW {
     #[allow(missing_docs)]
@@ -1757,8 +1692,7 @@ impl<'a> _DOZEENW<'a> {
 }
 #[doc = "Values that can be written to the field `LOOPS`"]
 pub enum LOOPSW {
-    #[doc = "Normal operation - RXD and TXD use separate pins."]
-    _0,
+    #[doc = "Normal operation - RXD and TXD use separate pins."] _0,
     #[doc = "Loop mode or single-wire mode where transmitter outputs are internally connected to receiver input (see RSRC bit)."]
     _1,
 }
@@ -1815,22 +1749,14 @@ impl<'a> _LOOPSW<'a> {
 }
 #[doc = "Values that can be written to the field `IDLECFG`"]
 pub enum IDLECFGW {
-    #[doc = "1 idle character"]
-    _000,
-    #[doc = "2 idle characters"]
-    _001,
-    #[doc = "4 idle characters"]
-    _010,
-    #[doc = "8 idle characters"]
-    _011,
-    #[doc = "16 idle characters"]
-    _100,
-    #[doc = "32 idle characters"]
-    _101,
-    #[doc = "64 idle characters"]
-    _110,
-    #[doc = "128 idle characters"]
-    _111,
+    #[doc = "1 idle character"] _000,
+    #[doc = "2 idle characters"] _001,
+    #[doc = "4 idle characters"] _010,
+    #[doc = "8 idle characters"] _011,
+    #[doc = "16 idle characters"] _100,
+    #[doc = "32 idle characters"] _101,
+    #[doc = "64 idle characters"] _110,
+    #[doc = "128 idle characters"] _111,
 }
 impl IDLECFGW {
     #[allow(missing_docs)]
@@ -1913,10 +1839,8 @@ impl<'a> _IDLECFGW<'a> {
 }
 #[doc = "Values that can be written to the field `M7`"]
 pub enum M7W {
-    #[doc = "Receiver and transmitter use 8-bit to 10-bit data characters."]
-    _0,
-    #[doc = "Receiver and transmitter use 7-bit data characters."]
-    _1,
+    #[doc = "Receiver and transmitter use 8-bit to 10-bit data characters."] _0,
+    #[doc = "Receiver and transmitter use 7-bit data characters."] _1,
 }
 impl M7W {
     #[allow(missing_docs)]
@@ -1971,10 +1895,8 @@ impl<'a> _M7W<'a> {
 }
 #[doc = "Values that can be written to the field `MA2IE`"]
 pub enum MA2IEW {
-    #[doc = "MA2F interrupt disabled"]
-    _0,
-    #[doc = "MA2F interrupt enabled"]
-    _1,
+    #[doc = "MA2F interrupt disabled"] _0,
+    #[doc = "MA2F interrupt enabled"] _1,
 }
 impl MA2IEW {
     #[allow(missing_docs)]
@@ -2029,10 +1951,8 @@ impl<'a> _MA2IEW<'a> {
 }
 #[doc = "Values that can be written to the field `MA1IE`"]
 pub enum MA1IEW {
-    #[doc = "MA1F interrupt disabled"]
-    _0,
-    #[doc = "MA1F interrupt enabled"]
-    _1,
+    #[doc = "MA1F interrupt disabled"] _0,
+    #[doc = "MA1F interrupt enabled"] _1,
 }
 impl MA1IEW {
     #[allow(missing_docs)]
@@ -2087,10 +2007,8 @@ impl<'a> _MA1IEW<'a> {
 }
 #[doc = "Values that can be written to the field `SBK`"]
 pub enum SBKW {
-    #[doc = "Normal transmitter operation."]
-    _0,
-    #[doc = "Queue break character(s) to be sent."]
-    _1,
+    #[doc = "Normal transmitter operation."] _0,
+    #[doc = "Queue break character(s) to be sent."] _1,
 }
 impl SBKW {
     #[allow(missing_docs)]
@@ -2145,10 +2063,8 @@ impl<'a> _SBKW<'a> {
 }
 #[doc = "Values that can be written to the field `RWU`"]
 pub enum RWUW {
-    #[doc = "Normal receiver operation."]
-    _0,
-    #[doc = "LPUART receiver in standby waiting for wakeup condition."]
-    _1,
+    #[doc = "Normal receiver operation."] _0,
+    #[doc = "LPUART receiver in standby waiting for wakeup condition."] _1,
 }
 impl RWUW {
     #[allow(missing_docs)]
@@ -2203,10 +2119,8 @@ impl<'a> _RWUW<'a> {
 }
 #[doc = "Values that can be written to the field `RE`"]
 pub enum REW {
-    #[doc = "Receiver disabled."]
-    _0,
-    #[doc = "Receiver enabled."]
-    _1,
+    #[doc = "Receiver disabled."] _0,
+    #[doc = "Receiver enabled."] _1,
 }
 impl REW {
     #[allow(missing_docs)]
@@ -2261,10 +2175,8 @@ impl<'a> _REW<'a> {
 }
 #[doc = "Values that can be written to the field `TE`"]
 pub enum TEW {
-    #[doc = "Transmitter disabled."]
-    _0,
-    #[doc = "Transmitter enabled."]
-    _1,
+    #[doc = "Transmitter disabled."] _0,
+    #[doc = "Transmitter enabled."] _1,
 }
 impl TEW {
     #[allow(missing_docs)]
@@ -2319,10 +2231,8 @@ impl<'a> _TEW<'a> {
 }
 #[doc = "Values that can be written to the field `ILIE`"]
 pub enum ILIEW {
-    #[doc = "Hardware interrupts from IDLE disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when IDLE flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from IDLE disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when IDLE flag is 1."] _1,
 }
 impl ILIEW {
     #[allow(missing_docs)]
@@ -2377,10 +2287,8 @@ impl<'a> _ILIEW<'a> {
 }
 #[doc = "Values that can be written to the field `RIE`"]
 pub enum RIEW {
-    #[doc = "Hardware interrupts from RDRF disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when RDRF flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from RDRF disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when RDRF flag is 1."] _1,
 }
 impl RIEW {
     #[allow(missing_docs)]
@@ -2435,10 +2343,8 @@ impl<'a> _RIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TCIE`"]
 pub enum TCIEW {
-    #[doc = "Hardware interrupts from TC disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when TC flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from TC disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when TC flag is 1."] _1,
 }
 impl TCIEW {
     #[allow(missing_docs)]
@@ -2493,10 +2399,8 @@ impl<'a> _TCIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TIE`"]
 pub enum TIEW {
-    #[doc = "Hardware interrupts from TDRE disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when TDRE flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from TDRE disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when TDRE flag is 1."] _1,
 }
 impl TIEW {
     #[allow(missing_docs)]
@@ -2551,10 +2455,8 @@ impl<'a> _TIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PEIE`"]
 pub enum PEIEW {
-    #[doc = "PF interrupts disabled; use polling)."]
-    _0,
-    #[doc = "Hardware interrupt requested when PF is set."]
-    _1,
+    #[doc = "PF interrupts disabled; use polling)."] _0,
+    #[doc = "Hardware interrupt requested when PF is set."] _1,
 }
 impl PEIEW {
     #[allow(missing_docs)]
@@ -2609,10 +2511,8 @@ impl<'a> _PEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `FEIE`"]
 pub enum FEIEW {
-    #[doc = "FE interrupts disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when FE is set."]
-    _1,
+    #[doc = "FE interrupts disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when FE is set."] _1,
 }
 impl FEIEW {
     #[allow(missing_docs)]
@@ -2667,10 +2567,8 @@ impl<'a> _FEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `NEIE`"]
 pub enum NEIEW {
-    #[doc = "NF interrupts disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when NF is set."]
-    _1,
+    #[doc = "NF interrupts disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when NF is set."] _1,
 }
 impl NEIEW {
     #[allow(missing_docs)]
@@ -2725,10 +2623,8 @@ impl<'a> _NEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `ORIE`"]
 pub enum ORIEW {
-    #[doc = "OR interrupts disabled; use polling."]
-    _0,
-    #[doc = "Hardware interrupt requested when OR is set."]
-    _1,
+    #[doc = "OR interrupts disabled; use polling."] _0,
+    #[doc = "Hardware interrupt requested when OR is set."] _1,
 }
 impl ORIEW {
     #[allow(missing_docs)]
@@ -2783,10 +2679,8 @@ impl<'a> _ORIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXINV`"]
 pub enum TXINVW {
-    #[doc = "Transmit data not inverted."]
-    _0,
-    #[doc = "Transmit data inverted."]
-    _1,
+    #[doc = "Transmit data not inverted."] _0,
+    #[doc = "Transmit data inverted."] _1,
 }
 impl TXINVW {
     #[allow(missing_docs)]
@@ -2841,10 +2735,8 @@ impl<'a> _TXINVW<'a> {
 }
 #[doc = "Values that can be written to the field `TXDIR`"]
 pub enum TXDIRW {
-    #[doc = "TXD pin is an input in single-wire mode."]
-    _0,
-    #[doc = "TXD pin is an output in single-wire mode."]
-    _1,
+    #[doc = "TXD pin is an input in single-wire mode."] _0,
+    #[doc = "TXD pin is an output in single-wire mode."] _1,
 }
 impl TXDIRW {
     #[allow(missing_docs)]

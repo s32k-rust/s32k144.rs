@@ -2,58 +2,32 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - TRGMUX DMAMUX0 Register"]
-    pub trgmux_dmamux0: TRGMUX_DMAMUX0,
-    #[doc = "0x04 - TRGMUX EXTOUT0 Register"]
-    pub trgmux_extout0: TRGMUX_EXTOUT0,
-    #[doc = "0x08 - TRGMUX EXTOUT1 Register"]
-    pub trgmux_extout1: TRGMUX_EXTOUT1,
-    #[doc = "0x0c - TRGMUX ADC0 Register"]
-    pub trgmux_adc0: TRGMUX_ADC0,
-    #[doc = "0x10 - TRGMUX ADC1 Register"]
-    pub trgmux_adc1: TRGMUX_ADC1,
-    #[doc = "0x14 - TRGMUX Reserved Register 5"]
-    pub trgmuxdummy5: TRGMUXDUMMY5,
-    #[doc = "0x18 - TRGMUX Reserved Register 6"]
-    pub trgmuxdummy6: TRGMUXDUMMY6,
-    #[doc = "0x1c - TRGMUX CMP0 Register"]
-    pub trgmux_cmp0: TRGMUX_CMP0,
-    #[doc = "0x20 - TRGMUX Reserved Register 8"]
-    pub trgmuxdummy8: TRGMUXDUMMY8,
-    #[doc = "0x24 - TRGMUX Reserved Register 9"]
-    pub trgmuxdummy9: TRGMUXDUMMY9,
-    #[doc = "0x28 - TRGMUX FTM0 Register"]
-    pub trgmux_ftm0: TRGMUX_FTM0,
-    #[doc = "0x2c - TRGMUX FTM1 Register"]
-    pub trgmux_ftm1: TRGMUX_FTM1,
-    #[doc = "0x30 - TRGMUX FTM2 Register"]
-    pub trgmux_ftm2: TRGMUX_FTM2,
-    #[doc = "0x34 - TRGMUX FTM3 Register"]
-    pub trgmux_ftm3: TRGMUX_FTM3,
-    #[doc = "0x38 - TRGMUX PDB0 Register"]
-    pub trgmux_pdb0: TRGMUX_PDB0,
-    #[doc = "0x3c - TRGMUX PDB1 Register"]
-    pub trgmux_pdb1: TRGMUX_PDB1,
-    #[doc = "0x40 - TRGMUX Reserved Register 16"]
-    pub trgmuxdummy16: TRGMUXDUMMY16,
-    #[doc = "0x44 - TRGMUX FLEXIO Register"]
-    pub trgmux_flexio: TRGMUX_FLEXIO,
-    #[doc = "0x48 - TRGMUX LPIT0 Register"]
-    pub trgmux_lpit0: TRGMUX_LPIT0,
-    #[doc = "0x4c - TRGMUX LPUART0 Register"]
-    pub trgmux_lpuart0: TRGMUX_LPUART0,
-    #[doc = "0x50 - TRGMUX LPUART1 Register"]
-    pub trgmux_lpuart1: TRGMUX_LPUART1,
-    #[doc = "0x54 - TRGMUX LPI2C0 Register"]
-    pub trgmux_lpi2c0: TRGMUX_LPI2C0,
-    #[doc = "0x58 - TRGMUX Reserved Register 22"]
-    pub trgmuxdummy22: TRGMUXDUMMY22,
-    #[doc = "0x5c - TRGMUX LPSPI0 Register"]
-    pub trgmux_lpspi0: TRGMUX_LPSPI0,
-    #[doc = "0x60 - TRGMUX LPSPI1 Register"]
-    pub trgmux_lpspi1: TRGMUX_LPSPI1,
-    #[doc = "0x64 - TRGMUX LPTMR0 Register"]
-    pub trgmux_lptmr0: TRGMUX_LPTMR0,
+    #[doc = "0x00 - TRGMUX DMAMUX0 Register"] pub trgmux_dmamux0: TRGMUX_DMAMUX0,
+    #[doc = "0x04 - TRGMUX EXTOUT0 Register"] pub trgmux_extout0: TRGMUX_EXTOUT0,
+    #[doc = "0x08 - TRGMUX EXTOUT1 Register"] pub trgmux_extout1: TRGMUX_EXTOUT1,
+    #[doc = "0x0c - TRGMUX ADC0 Register"] pub trgmux_adc0: TRGMUX_ADC0,
+    #[doc = "0x10 - TRGMUX ADC1 Register"] pub trgmux_adc1: TRGMUX_ADC1,
+    #[doc = "0x14 - TRGMUX Reserved Register 5"] pub trgmuxdummy5: TRGMUXDUMMY5,
+    #[doc = "0x18 - TRGMUX Reserved Register 6"] pub trgmuxdummy6: TRGMUXDUMMY6,
+    #[doc = "0x1c - TRGMUX CMP0 Register"] pub trgmux_cmp0: TRGMUX_CMP0,
+    #[doc = "0x20 - TRGMUX Reserved Register 8"] pub trgmuxdummy8: TRGMUXDUMMY8,
+    #[doc = "0x24 - TRGMUX Reserved Register 9"] pub trgmuxdummy9: TRGMUXDUMMY9,
+    #[doc = "0x28 - TRGMUX FTM0 Register"] pub trgmux_ftm0: TRGMUX_FTM0,
+    #[doc = "0x2c - TRGMUX FTM1 Register"] pub trgmux_ftm1: TRGMUX_FTM1,
+    #[doc = "0x30 - TRGMUX FTM2 Register"] pub trgmux_ftm2: TRGMUX_FTM2,
+    #[doc = "0x34 - TRGMUX FTM3 Register"] pub trgmux_ftm3: TRGMUX_FTM3,
+    #[doc = "0x38 - TRGMUX PDB0 Register"] pub trgmux_pdb0: TRGMUX_PDB0,
+    #[doc = "0x3c - TRGMUX PDB1 Register"] pub trgmux_pdb1: TRGMUX_PDB1,
+    #[doc = "0x40 - TRGMUX Reserved Register 16"] pub trgmuxdummy16: TRGMUXDUMMY16,
+    #[doc = "0x44 - TRGMUX FLEXIO Register"] pub trgmux_flexio: TRGMUX_FLEXIO,
+    #[doc = "0x48 - TRGMUX LPIT0 Register"] pub trgmux_lpit0: TRGMUX_LPIT0,
+    #[doc = "0x4c - TRGMUX LPUART0 Register"] pub trgmux_lpuart0: TRGMUX_LPUART0,
+    #[doc = "0x50 - TRGMUX LPUART1 Register"] pub trgmux_lpuart1: TRGMUX_LPUART1,
+    #[doc = "0x54 - TRGMUX LPI2C0 Register"] pub trgmux_lpi2c0: TRGMUX_LPI2C0,
+    #[doc = "0x58 - TRGMUX Reserved Register 22"] pub trgmuxdummy22: TRGMUXDUMMY22,
+    #[doc = "0x5c - TRGMUX LPSPI0 Register"] pub trgmux_lpspi0: TRGMUX_LPSPI0,
+    #[doc = "0x60 - TRGMUX LPSPI1 Register"] pub trgmux_lpspi1: TRGMUX_LPSPI1,
+    #[doc = "0x64 - TRGMUX LPTMR0 Register"] pub trgmux_lptmr0: TRGMUX_LPTMR0,
 }
 #[doc = "TRGMUX DMAMUX0 Register"]
 pub struct TRGMUX_DMAMUX0 {

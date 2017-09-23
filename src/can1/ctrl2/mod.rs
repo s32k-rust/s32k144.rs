@@ -22,7 +22,9 @@ impl super::CTRL2 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CTRL2 {
 #[doc = "Possible values of the field `EDFLTDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDFLTDISR {
-    #[doc = "Edge Filter is enabled."]
-    _0,
-    #[doc = "Edge Filter is disabled."]
-    _1,
+    #[doc = "Edge Filter is enabled."] _0,
+    #[doc = "Edge Filter is disabled."] _1,
 }
 impl EDFLTDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl EDFLTDISR {
 #[doc = "Possible values of the field `ISOCANFDEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISOCANFDENR {
-    #[doc = "FlexCAN operates using the non-ISO CAN FD protocol."]
-    _0,
-    #[doc = "FlexCAN operates using the ISO CAN FD protocol (ISO 11898-1)."]
-    _1,
+    #[doc = "FlexCAN operates using the non-ISO CAN FD protocol."] _0,
+    #[doc = "FlexCAN operates using the ISO CAN FD protocol (ISO 11898-1)."] _1,
 }
 impl ISOCANFDENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl ISOCANFDENR {
 #[doc = "Possible values of the field `PREXCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREXCENR {
-    #[doc = "Protocol Exception is disabled."]
-    _0,
-    #[doc = "Protocol Exception is enabled."]
-    _1,
+    #[doc = "Protocol Exception is disabled."] _0,
+    #[doc = "Protocol Exception is enabled."] _1,
 }
 impl PREXCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +274,8 @@ impl EACENR {
 #[doc = "Possible values of the field `RRS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RRSR {
-    #[doc = "Remote Response Frame is generated."]
-    _0,
-    #[doc = "Remote Request Frame is stored."]
-    _1,
+    #[doc = "Remote Response Frame is generated."] _0,
+    #[doc = "Remote Request Frame is stored."] _1,
 }
 impl RRSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +319,8 @@ impl RRSR {
 #[doc = "Possible values of the field `MRP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MRPR {
-    #[doc = "Matching starts from Rx FIFO and continues on Mailboxes."]
-    _0,
-    #[doc = "Matching starts from Mailboxes and continues on Rx FIFO."]
-    _1,
+    #[doc = "Matching starts from Rx FIFO and continues on Mailboxes."] _0,
+    #[doc = "Matching starts from Mailboxes and continues on Rx FIFO."] _1,
 }
 impl MRPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -394,10 +386,8 @@ impl RFFNR {
 #[doc = "Possible values of the field `BOFFDONEMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFFDONEMSKR {
-    #[doc = "Bus Off Done interrupt disabled."]
-    _0,
-    #[doc = "Bus Off Done interrupt enabled."]
-    _1,
+    #[doc = "Bus Off Done interrupt disabled."] _0,
+    #[doc = "Bus Off Done interrupt enabled."] _1,
 }
 impl BOFFDONEMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -441,10 +431,8 @@ impl BOFFDONEMSKR {
 #[doc = "Possible values of the field `ERRMSK_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRMSK_FASTR {
-    #[doc = "ERRINT_FAST Error interrupt disabled."]
-    _0,
-    #[doc = "ERRINT_FAST Error interrupt enabled."]
-    _1,
+    #[doc = "ERRINT_FAST Error interrupt disabled."] _0,
+    #[doc = "ERRINT_FAST Error interrupt enabled."] _1,
 }
 impl ERRMSK_FASTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -487,10 +475,8 @@ impl ERRMSK_FASTR {
 }
 #[doc = "Values that can be written to the field `EDFLTDIS`"]
 pub enum EDFLTDISW {
-    #[doc = "Edge Filter is enabled."]
-    _0,
-    #[doc = "Edge Filter is disabled."]
-    _1,
+    #[doc = "Edge Filter is enabled."] _0,
+    #[doc = "Edge Filter is disabled."] _1,
 }
 impl EDFLTDISW {
     #[allow(missing_docs)]
@@ -545,10 +531,8 @@ impl<'a> _EDFLTDISW<'a> {
 }
 #[doc = "Values that can be written to the field `ISOCANFDEN`"]
 pub enum ISOCANFDENW {
-    #[doc = "FlexCAN operates using the non-ISO CAN FD protocol."]
-    _0,
-    #[doc = "FlexCAN operates using the ISO CAN FD protocol (ISO 11898-1)."]
-    _1,
+    #[doc = "FlexCAN operates using the non-ISO CAN FD protocol."] _0,
+    #[doc = "FlexCAN operates using the ISO CAN FD protocol (ISO 11898-1)."] _1,
 }
 impl ISOCANFDENW {
     #[allow(missing_docs)]
@@ -603,10 +587,8 @@ impl<'a> _ISOCANFDENW<'a> {
 }
 #[doc = "Values that can be written to the field `PREXCEN`"]
 pub enum PREXCENW {
-    #[doc = "Protocol Exception is disabled."]
-    _0,
-    #[doc = "Protocol Exception is enabled."]
-    _1,
+    #[doc = "Protocol Exception is disabled."] _0,
+    #[doc = "Protocol Exception is enabled."] _1,
 }
 impl PREXCENW {
     #[allow(missing_docs)]
@@ -777,10 +759,8 @@ impl<'a> _EACENW<'a> {
 }
 #[doc = "Values that can be written to the field `RRS`"]
 pub enum RRSW {
-    #[doc = "Remote Response Frame is generated."]
-    _0,
-    #[doc = "Remote Request Frame is stored."]
-    _1,
+    #[doc = "Remote Response Frame is generated."] _0,
+    #[doc = "Remote Request Frame is stored."] _1,
 }
 impl RRSW {
     #[allow(missing_docs)]
@@ -835,10 +815,8 @@ impl<'a> _RRSW<'a> {
 }
 #[doc = "Values that can be written to the field `MRP`"]
 pub enum MRPW {
-    #[doc = "Matching starts from Rx FIFO and continues on Mailboxes."]
-    _0,
-    #[doc = "Matching starts from Mailboxes and continues on Rx FIFO."]
-    _1,
+    #[doc = "Matching starts from Rx FIFO and continues on Mailboxes."] _0,
+    #[doc = "Matching starts from Mailboxes and continues on Rx FIFO."] _1,
 }
 impl MRPW {
     #[allow(missing_docs)]
@@ -923,10 +901,8 @@ impl<'a> _RFFNW<'a> {
 }
 #[doc = "Values that can be written to the field `BOFFDONEMSK`"]
 pub enum BOFFDONEMSKW {
-    #[doc = "Bus Off Done interrupt disabled."]
-    _0,
-    #[doc = "Bus Off Done interrupt enabled."]
-    _1,
+    #[doc = "Bus Off Done interrupt disabled."] _0,
+    #[doc = "Bus Off Done interrupt enabled."] _1,
 }
 impl BOFFDONEMSKW {
     #[allow(missing_docs)]
@@ -981,10 +957,8 @@ impl<'a> _BOFFDONEMSKW<'a> {
 }
 #[doc = "Values that can be written to the field `ERRMSK_FAST`"]
 pub enum ERRMSK_FASTW {
-    #[doc = "ERRINT_FAST Error interrupt disabled."]
-    _0,
-    #[doc = "ERRINT_FAST Error interrupt enabled."]
-    _1,
+    #[doc = "ERRINT_FAST Error interrupt disabled."] _0,
+    #[doc = "ERRINT_FAST Error interrupt enabled."] _1,
 }
 impl ERRMSK_FASTW {
     #[allow(missing_docs)]

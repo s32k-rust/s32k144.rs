@@ -22,7 +22,9 @@ impl super::FLT_ID2_IDMASK {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl FLT_ID2_IDMASKR {
 #[doc = "Possible values of the field `RTR_MSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTR_MSKR {
-    #[doc = "The corresponding bit in the filter is \"don't care\""]
-    _0,
-    #[doc = "The corresponding bit in the filter is checked"]
-    _1,
+    #[doc = "The corresponding bit in the filter is \"don't care\""] _0,
+    #[doc = "The corresponding bit in the filter is checked"] _1,
 }
 impl RTR_MSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,10 +101,8 @@ impl RTR_MSKR {
 #[doc = "Possible values of the field `IDE_MSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDE_MSKR {
-    #[doc = "The corresponding bit in the filter is \"don't care\""]
-    _0,
-    #[doc = "The corresponding bit in the filter is checked"]
-    _1,
+    #[doc = "The corresponding bit in the filter is \"don't care\""] _0,
+    #[doc = "The corresponding bit in the filter is checked"] _1,
 }
 impl IDE_MSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -162,10 +160,8 @@ impl<'a> _FLT_ID2_IDMASKW<'a> {
 }
 #[doc = "Values that can be written to the field `RTR_MSK`"]
 pub enum RTR_MSKW {
-    #[doc = "The corresponding bit in the filter is \"don't care\""]
-    _0,
-    #[doc = "The corresponding bit in the filter is checked"]
-    _1,
+    #[doc = "The corresponding bit in the filter is \"don't care\""] _0,
+    #[doc = "The corresponding bit in the filter is checked"] _1,
 }
 impl RTR_MSKW {
     #[allow(missing_docs)]
@@ -220,10 +216,8 @@ impl<'a> _RTR_MSKW<'a> {
 }
 #[doc = "Values that can be written to the field `IDE_MSK`"]
 pub enum IDE_MSKW {
-    #[doc = "The corresponding bit in the filter is \"don't care\""]
-    _0,
-    #[doc = "The corresponding bit in the filter is checked"]
-    _1,
+    #[doc = "The corresponding bit in the filter is \"don't care\""] _0,
+    #[doc = "The corresponding bit in the filter is checked"] _1,
 }
 impl IDE_MSKW {
     #[allow(missing_docs)]

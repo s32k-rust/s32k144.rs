@@ -22,7 +22,9 @@ impl super::CTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CTRL {
 #[doc = "Possible values of the field `FLEXEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLEXENR {
-    #[doc = "FlexIO module is disabled."]
-    _0,
-    #[doc = "FlexIO module is enabled."]
-    _1,
+    #[doc = "FlexIO module is disabled."] _0,
+    #[doc = "FlexIO module is enabled."] _1,
 }
 impl FLEXENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +90,7 @@ impl FLEXENR {
 #[doc = "Possible values of the field `SWRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWRSTR {
-    #[doc = "Software reset is disabled"]
-    _0,
+    #[doc = "Software reset is disabled"] _0,
     #[doc = "Software reset is enabled, all FlexIO registers except the Control Register are reset."]
     _1,
 }
@@ -137,10 +136,8 @@ impl SWRSTR {
 #[doc = "Possible values of the field `FASTACC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FASTACCR {
-    #[doc = "Configures for normal register accesses to FlexIO"]
-    _0,
-    #[doc = "Configures for fast register accesses to FlexIO"]
-    _1,
+    #[doc = "Configures for normal register accesses to FlexIO"] _0,
+    #[doc = "Configures for fast register accesses to FlexIO"] _1,
 }
 impl FASTACCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +181,8 @@ impl FASTACCR {
 #[doc = "Possible values of the field `DBGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBGER {
-    #[doc = "FlexIO is disabled in debug modes."]
-    _0,
-    #[doc = "FlexIO is enabled in debug modes"]
-    _1,
+    #[doc = "FlexIO is disabled in debug modes."] _0,
+    #[doc = "FlexIO is enabled in debug modes"] _1,
 }
 impl DBGER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +226,8 @@ impl DBGER {
 #[doc = "Possible values of the field `DOZEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOZENR {
-    #[doc = "FlexIO enabled in Doze modes."]
-    _0,
-    #[doc = "FlexIO disabled in Doze modes."]
-    _1,
+    #[doc = "FlexIO enabled in Doze modes."] _0,
+    #[doc = "FlexIO disabled in Doze modes."] _1,
 }
 impl DOZENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -277,10 +270,8 @@ impl DOZENR {
 }
 #[doc = "Values that can be written to the field `FLEXEN`"]
 pub enum FLEXENW {
-    #[doc = "FlexIO module is disabled."]
-    _0,
-    #[doc = "FlexIO module is enabled."]
-    _1,
+    #[doc = "FlexIO module is disabled."] _0,
+    #[doc = "FlexIO module is enabled."] _1,
 }
 impl FLEXENW {
     #[allow(missing_docs)]
@@ -335,8 +326,7 @@ impl<'a> _FLEXENW<'a> {
 }
 #[doc = "Values that can be written to the field `SWRST`"]
 pub enum SWRSTW {
-    #[doc = "Software reset is disabled"]
-    _0,
+    #[doc = "Software reset is disabled"] _0,
     #[doc = "Software reset is enabled, all FlexIO registers except the Control Register are reset."]
     _1,
 }
@@ -393,10 +383,8 @@ impl<'a> _SWRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `FASTACC`"]
 pub enum FASTACCW {
-    #[doc = "Configures for normal register accesses to FlexIO"]
-    _0,
-    #[doc = "Configures for fast register accesses to FlexIO"]
-    _1,
+    #[doc = "Configures for normal register accesses to FlexIO"] _0,
+    #[doc = "Configures for fast register accesses to FlexIO"] _1,
 }
 impl FASTACCW {
     #[allow(missing_docs)]
@@ -451,10 +439,8 @@ impl<'a> _FASTACCW<'a> {
 }
 #[doc = "Values that can be written to the field `DBGE`"]
 pub enum DBGEW {
-    #[doc = "FlexIO is disabled in debug modes."]
-    _0,
-    #[doc = "FlexIO is enabled in debug modes"]
-    _1,
+    #[doc = "FlexIO is disabled in debug modes."] _0,
+    #[doc = "FlexIO is enabled in debug modes"] _1,
 }
 impl DBGEW {
     #[allow(missing_docs)]
@@ -509,10 +495,8 @@ impl<'a> _DBGEW<'a> {
 }
 #[doc = "Values that can be written to the field `DOZEN`"]
 pub enum DOZENW {
-    #[doc = "FlexIO enabled in Doze modes."]
-    _0,
-    #[doc = "FlexIO disabled in Doze modes."]
-    _1,
+    #[doc = "FlexIO enabled in Doze modes."] _0,
+    #[doc = "FlexIO disabled in Doze modes."] _1,
 }
 impl DOZENW {
     #[allow(missing_docs)]

@@ -2,22 +2,14 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - RTC Time Seconds Register"]
-    pub tsr: TSR,
-    #[doc = "0x04 - RTC Time Prescaler Register"]
-    pub tpr: TPR,
-    #[doc = "0x08 - RTC Time Alarm Register"]
-    pub tar: TAR,
-    #[doc = "0x0c - RTC Time Compensation Register"]
-    pub tcr: TCR,
-    #[doc = "0x10 - RTC Control Register"]
-    pub cr: CR,
-    #[doc = "0x14 - RTC Status Register"]
-    pub sr: SR,
-    #[doc = "0x18 - RTC Lock Register"]
-    pub lr: LR,
-    #[doc = "0x1c - RTC Interrupt Enable Register"]
-    pub ier: IER,
+    #[doc = "0x00 - RTC Time Seconds Register"] pub tsr: TSR,
+    #[doc = "0x04 - RTC Time Prescaler Register"] pub tpr: TPR,
+    #[doc = "0x08 - RTC Time Alarm Register"] pub tar: TAR,
+    #[doc = "0x0c - RTC Time Compensation Register"] pub tcr: TCR,
+    #[doc = "0x10 - RTC Control Register"] pub cr: CR,
+    #[doc = "0x14 - RTC Status Register"] pub sr: SR,
+    #[doc = "0x18 - RTC Lock Register"] pub lr: LR,
+    #[doc = "0x1c - RTC Interrupt Enable Register"] pub ier: IER,
 }
 #[doc = "RTC Time Seconds Register"]
 pub struct TSR {

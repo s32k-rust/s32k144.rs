@@ -22,7 +22,9 @@ impl super::FLTCTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::FLTCTRL {
 #[doc = "Possible values of the field `FAULT0EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULT0ENR {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT0ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl FAULT0ENR {
 #[doc = "Possible values of the field `FAULT1EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULT1ENR {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT1ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl FAULT1ENR {
 #[doc = "Possible values of the field `FAULT2EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULT2ENR {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT2ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl FAULT2ENR {
 #[doc = "Possible values of the field `FAULT3EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULT3ENR {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT3ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl FAULT3ENR {
 #[doc = "Possible values of the field `FFLTR0EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFLTR0ENR {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR0ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl FFLTR0ENR {
 #[doc = "Possible values of the field `FFLTR1EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFLTR1ENR {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR1ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl FFLTR1ENR {
 #[doc = "Possible values of the field `FFLTR2EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFLTR2ENR {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR2ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl FFLTR2ENR {
 #[doc = "Possible values of the field `FFLTR3EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFLTR3ENR {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR3ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -432,8 +418,7 @@ impl FFVALR {
 pub enum FSTATER {
     #[doc = "FTM outputs will be placed into safe values when fault events in ongoing (defined by POL bits)."]
     _0,
-    #[doc = "FTM outputs will be tri-stated when fault event is ongoing"]
-    _1,
+    #[doc = "FTM outputs will be tri-stated when fault event is ongoing"] _1,
 }
 impl FSTATER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -476,10 +461,8 @@ impl FSTATER {
 }
 #[doc = "Values that can be written to the field `FAULT0EN`"]
 pub enum FAULT0ENW {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT0ENW {
     #[allow(missing_docs)]
@@ -534,10 +517,8 @@ impl<'a> _FAULT0ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FAULT1EN`"]
 pub enum FAULT1ENW {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT1ENW {
     #[allow(missing_docs)]
@@ -592,10 +573,8 @@ impl<'a> _FAULT1ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FAULT2EN`"]
 pub enum FAULT2ENW {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT2ENW {
     #[allow(missing_docs)]
@@ -650,10 +629,8 @@ impl<'a> _FAULT2ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FAULT3EN`"]
 pub enum FAULT3ENW {
-    #[doc = "Fault input is disabled."]
-    _0,
-    #[doc = "Fault input is enabled."]
-    _1,
+    #[doc = "Fault input is disabled."] _0,
+    #[doc = "Fault input is enabled."] _1,
 }
 impl FAULT3ENW {
     #[allow(missing_docs)]
@@ -708,10 +685,8 @@ impl<'a> _FAULT3ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FFLTR0EN`"]
 pub enum FFLTR0ENW {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR0ENW {
     #[allow(missing_docs)]
@@ -766,10 +741,8 @@ impl<'a> _FFLTR0ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FFLTR1EN`"]
 pub enum FFLTR1ENW {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR1ENW {
     #[allow(missing_docs)]
@@ -824,10 +797,8 @@ impl<'a> _FFLTR1ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FFLTR2EN`"]
 pub enum FFLTR2ENW {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR2ENW {
     #[allow(missing_docs)]
@@ -882,10 +853,8 @@ impl<'a> _FFLTR2ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FFLTR3EN`"]
 pub enum FFLTR3ENW {
-    #[doc = "Fault input filter is disabled."]
-    _0,
-    #[doc = "Fault input filter is enabled."]
-    _1,
+    #[doc = "Fault input filter is disabled."] _0,
+    #[doc = "Fault input filter is enabled."] _1,
 }
 impl FFLTR3ENW {
     #[allow(missing_docs)]
@@ -957,8 +926,7 @@ impl<'a> _FFVALW<'a> {
 pub enum FSTATEW {
     #[doc = "FTM outputs will be placed into safe values when fault events in ongoing (defined by POL bits)."]
     _0,
-    #[doc = "FTM outputs will be tri-stated when fault event is ongoing"]
-    _1,
+    #[doc = "FTM outputs will be tri-stated when fault event is ongoing"] _1,
 }
 impl FSTATEW {
     #[allow(missing_docs)]

@@ -22,7 +22,9 @@ impl super::C1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,22 +56,14 @@ impl VOSELR {
 #[doc = "Possible values of the field `MSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSELR {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
+    #[doc = "IN0"] _000,
+    #[doc = "IN1"] _001,
+    #[doc = "IN2"] _010,
+    #[doc = "IN3"] _011,
+    #[doc = "IN4"] _100,
+    #[doc = "IN5"] _101,
+    #[doc = "IN6"] _110,
+    #[doc = "IN7"] _111,
 }
 impl MSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -146,22 +140,14 @@ impl MSELR {
 #[doc = "Possible values of the field `PSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSELR {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
+    #[doc = "IN0"] _000,
+    #[doc = "IN1"] _001,
+    #[doc = "IN2"] _010,
+    #[doc = "IN3"] _011,
+    #[doc = "IN4"] _100,
+    #[doc = "IN5"] _101,
+    #[doc = "IN6"] _110,
+    #[doc = "IN7"] _111,
 }
 impl PSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -238,10 +224,8 @@ impl PSELR {
 #[doc = "Possible values of the field `VRSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VRSELR {
-    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."]
-    _0,
-    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."]
-    _1,
+    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."] _0,
+    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."] _1,
 }
 impl VRSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -285,10 +269,8 @@ impl VRSELR {
 #[doc = "Possible values of the field `DACEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACENR {
-    #[doc = "DAC is disabled."]
-    _0,
-    #[doc = "DAC is enabled."]
-    _1,
+    #[doc = "DAC is disabled."] _0,
+    #[doc = "DAC is enabled."] _1,
 }
 impl DACENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -500,12 +482,9 @@ impl CHN7R {
 #[doc = "Possible values of the field `INNSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INNSELR {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "IN0, from the 8-bit DAC output"] _00,
+    #[doc = "IN1, from the analog 8-1 mux"] _01,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl INNSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -541,12 +520,9 @@ impl INNSELR {
 #[doc = "Possible values of the field `INPSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPSELR {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "IN0, from the 8-bit DAC output"] _00,
+    #[doc = "IN1, from the analog 8-1 mux"] _01,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl INPSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -596,22 +572,14 @@ impl<'a> _VOSELW<'a> {
 }
 #[doc = "Values that can be written to the field `MSEL`"]
 pub enum MSELW {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
+    #[doc = "IN0"] _000,
+    #[doc = "IN1"] _001,
+    #[doc = "IN2"] _010,
+    #[doc = "IN3"] _011,
+    #[doc = "IN4"] _100,
+    #[doc = "IN5"] _101,
+    #[doc = "IN6"] _110,
+    #[doc = "IN7"] _111,
 }
 impl MSELW {
     #[allow(missing_docs)]
@@ -694,22 +662,14 @@ impl<'a> _MSELW<'a> {
 }
 #[doc = "Values that can be written to the field `PSEL`"]
 pub enum PSELW {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
+    #[doc = "IN0"] _000,
+    #[doc = "IN1"] _001,
+    #[doc = "IN2"] _010,
+    #[doc = "IN3"] _011,
+    #[doc = "IN4"] _100,
+    #[doc = "IN5"] _101,
+    #[doc = "IN6"] _110,
+    #[doc = "IN7"] _111,
 }
 impl PSELW {
     #[allow(missing_docs)]
@@ -792,10 +752,8 @@ impl<'a> _PSELW<'a> {
 }
 #[doc = "Values that can be written to the field `VRSEL`"]
 pub enum VRSELW {
-    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."]
-    _0,
-    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."]
-    _1,
+    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."] _0,
+    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."] _1,
 }
 impl VRSELW {
     #[allow(missing_docs)]
@@ -850,10 +808,8 @@ impl<'a> _VRSELW<'a> {
 }
 #[doc = "Values that can be written to the field `DACEN`"]
 pub enum DACENW {
-    #[doc = "DAC is disabled."]
-    _0,
-    #[doc = "DAC is enabled."]
-    _1,
+    #[doc = "DAC is disabled."] _0,
+    #[doc = "DAC is enabled."] _1,
 }
 impl DACENW {
     #[allow(missing_docs)]
@@ -1092,10 +1048,8 @@ impl<'a> _CHN7W<'a> {
 }
 #[doc = "Values that can be written to the field `INNSEL`"]
 pub enum INNSELW {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
+    #[doc = "IN0, from the 8-bit DAC output"] _00,
+    #[doc = "IN1, from the analog 8-1 mux"] _01,
 }
 impl INNSELW {
     #[allow(missing_docs)]
@@ -1140,10 +1094,8 @@ impl<'a> _INNSELW<'a> {
 }
 #[doc = "Values that can be written to the field `INPSEL`"]
 pub enum INPSELW {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
+    #[doc = "IN0, from the 8-bit DAC output"] _00,
+    #[doc = "IN1, from the analog 8-1 mux"] _01,
 }
 impl INPSELW {
     #[allow(missing_docs)]

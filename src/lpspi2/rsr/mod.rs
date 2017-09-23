@@ -6,16 +6,16 @@ impl super::RSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `SOF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOFR {
-    #[doc = "Subsequent data word received after LPSPI_PCS assertion."]
-    _0,
-    #[doc = "First data word received after LPSPI_PCS assertion."]
-    _1,
+    #[doc = "Subsequent data word received after LPSPI_PCS assertion."] _0,
+    #[doc = "First data word received after LPSPI_PCS assertion."] _1,
 }
 impl SOFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,10 +59,8 @@ impl SOFR {
 #[doc = "Possible values of the field `RXEMPTY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEMPTYR {
-    #[doc = "RX FIFO is not empty."]
-    _0,
-    #[doc = "RX FIFO is empty."]
-    _1,
+    #[doc = "RX FIFO is not empty."] _0,
+    #[doc = "RX FIFO is empty."] _1,
 }
 impl RXEMPTYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

@@ -22,7 +22,9 @@ impl super::SHIFTCFG2 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -99,10 +101,8 @@ impl SSTARTR {
 #[doc = "Possible values of the field `SSTOP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSTOPR {
-    #[doc = "Stop bit disabled for transmitter/receiver/match store"]
-    _0,
-    #[doc = "Reserved for transmitter/receiver/match store"]
-    _1,
+    #[doc = "Stop bit disabled for transmitter/receiver/match store"] _0,
+    #[doc = "Reserved for transmitter/receiver/match store"] _1,
     #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
     _10,
     #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
@@ -155,10 +155,8 @@ impl SSTOPR {
 #[doc = "Possible values of the field `INSRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INSRCR {
-    #[doc = "Pin"]
-    _0,
-    #[doc = "Shifter N+1 Output"]
-    _1,
+    #[doc = "Pin"] _0,
+    #[doc = "Shifter N+1 Output"] _1,
 }
 impl INSRCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -267,10 +265,8 @@ impl<'a> _SSTARTW<'a> {
 }
 #[doc = "Values that can be written to the field `SSTOP`"]
 pub enum SSTOPW {
-    #[doc = "Stop bit disabled for transmitter/receiver/match store"]
-    _0,
-    #[doc = "Reserved for transmitter/receiver/match store"]
-    _1,
+    #[doc = "Stop bit disabled for transmitter/receiver/match store"] _0,
+    #[doc = "Reserved for transmitter/receiver/match store"] _1,
     #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
     _10,
     #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
@@ -333,10 +329,8 @@ impl<'a> _SSTOPW<'a> {
 }
 #[doc = "Values that can be written to the field `INSRC`"]
 pub enum INSRCW {
-    #[doc = "Pin"]
-    _0,
-    #[doc = "Shifter N+1 Output"]
-    _1,
+    #[doc = "Pin"] _0,
+    #[doc = "Shifter N+1 Output"] _1,
 }
 impl INSRCW {
     #[allow(missing_docs)]

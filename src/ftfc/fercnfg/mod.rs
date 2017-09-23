@@ -22,7 +22,9 @@ impl super::FERCNFG {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,8 +45,7 @@ impl super::FERCNFG {
 #[doc = "Possible values of the field `DFDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DFDIER {
-    #[doc = "Double bit fault detect interrupt disabled"]
-    _0,
+    #[doc = "Double bit fault detect interrupt disabled"] _0,
     #[doc = "Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT[DFDIF] flag is set."]
     _1,
 }
@@ -136,8 +137,7 @@ impl FDFDR {
 }
 #[doc = "Values that can be written to the field `DFDIE`"]
 pub enum DFDIEW {
-    #[doc = "Double bit fault detect interrupt disabled"]
-    _0,
+    #[doc = "Double bit fault detect interrupt disabled"] _0,
     #[doc = "Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT[DFDIF] flag is set."]
     _1,
 }

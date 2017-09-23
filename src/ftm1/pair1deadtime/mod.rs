@@ -22,7 +22,9 @@ impl super::PAIR1DEADTIME {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,14 +56,10 @@ impl DTVALR {
 #[doc = "Possible values of the field `DTPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTPSR {
-    #[doc = "Divide the FTM input clock by 1."]
-    _0X,
-    #[doc = "Divide the FTM input clock by 4."]
-    _10,
-    #[doc = "Divide the FTM input clock by 16."]
-    _11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Divide the FTM input clock by 1."] _0X,
+    #[doc = "Divide the FTM input clock by 4."] _10,
+    #[doc = "Divide the FTM input clock by 16."] _11,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl DTPSR {
     #[doc = r" Value of the field as raw bits"]
@@ -129,12 +127,9 @@ impl<'a> _DTVALW<'a> {
 }
 #[doc = "Values that can be written to the field `DTPS`"]
 pub enum DTPSW {
-    #[doc = "Divide the FTM input clock by 1."]
-    _0X,
-    #[doc = "Divide the FTM input clock by 4."]
-    _10,
-    #[doc = "Divide the FTM input clock by 16."]
-    _11,
+    #[doc = "Divide the FTM input clock by 1."] _0X,
+    #[doc = "Divide the FTM input clock by 4."] _10,
+    #[doc = "Divide the FTM input clock by 16."] _11,
 }
 impl DTPSW {
     #[allow(missing_docs)]

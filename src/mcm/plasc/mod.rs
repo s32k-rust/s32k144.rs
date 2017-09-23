@@ -6,18 +6,17 @@ impl super::PLASC {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `ASC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASCR {
-    #[doc = "A bus slave connection to AXBS input port n is absent"]
-    _0,
-    #[doc = "A bus slave connection to AXBS input port n is present"]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "A bus slave connection to AXBS input port n is absent"] _0,
+    #[doc = "A bus slave connection to AXBS input port n is present"] _1,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl ASCR {
     #[doc = r" Value of the field as raw bits"]

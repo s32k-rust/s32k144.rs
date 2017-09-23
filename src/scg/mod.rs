@@ -2,49 +2,30 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Version ID Register"]
-    pub verid: VERID,
-    #[doc = "0x04 - Parameter Register"]
-    pub param: PARAM,
+    #[doc = "0x00 - Version ID Register"] pub verid: VERID,
+    #[doc = "0x04 - Parameter Register"] pub param: PARAM,
     _reserved0: [u8; 8usize],
-    #[doc = "0x10 - Clock Status Register"]
-    pub csr: CSR,
-    #[doc = "0x14 - Run Clock Control Register"]
-    pub rccr: RCCR,
-    #[doc = "0x18 - VLPR Clock Control Register"]
-    pub vccr: VCCR,
-    #[doc = "0x1c - HSRUN Clock Control Register"]
-    pub hccr: HCCR,
-    #[doc = "0x20 - SCG CLKOUT Configuration Register"]
-    pub clkoutcnfg: CLKOUTCNFG,
+    #[doc = "0x10 - Clock Status Register"] pub csr: CSR,
+    #[doc = "0x14 - Run Clock Control Register"] pub rccr: RCCR,
+    #[doc = "0x18 - VLPR Clock Control Register"] pub vccr: VCCR,
+    #[doc = "0x1c - HSRUN Clock Control Register"] pub hccr: HCCR,
+    #[doc = "0x20 - SCG CLKOUT Configuration Register"] pub clkoutcnfg: CLKOUTCNFG,
     _reserved1: [u8; 220usize],
-    #[doc = "0x100 - System OSC Control Status Register"]
-    pub sosccsr: SOSCCSR,
-    #[doc = "0x104 - System OSC Divide Register"]
-    pub soscdiv: SOSCDIV,
-    #[doc = "0x108 - System Oscillator Configuration Register"]
-    pub sosccfg: SOSCCFG,
+    #[doc = "0x100 - System OSC Control Status Register"] pub sosccsr: SOSCCSR,
+    #[doc = "0x104 - System OSC Divide Register"] pub soscdiv: SOSCDIV,
+    #[doc = "0x108 - System Oscillator Configuration Register"] pub sosccfg: SOSCCFG,
     _reserved2: [u8; 244usize],
-    #[doc = "0x200 - Slow IRC Control Status Register"]
-    pub sirccsr: SIRCCSR,
-    #[doc = "0x204 - Slow IRC Divide Register"]
-    pub sircdiv: SIRCDIV,
-    #[doc = "0x208 - Slow IRC Configuration Register"]
-    pub sirccfg: SIRCCFG,
+    #[doc = "0x200 - Slow IRC Control Status Register"] pub sirccsr: SIRCCSR,
+    #[doc = "0x204 - Slow IRC Divide Register"] pub sircdiv: SIRCDIV,
+    #[doc = "0x208 - Slow IRC Configuration Register"] pub sirccfg: SIRCCFG,
     _reserved3: [u8; 244usize],
-    #[doc = "0x300 - Fast IRC Control Status Register"]
-    pub firccsr: FIRCCSR,
-    #[doc = "0x304 - Fast IRC Divide Register"]
-    pub fircdiv: FIRCDIV,
-    #[doc = "0x308 - Fast IRC Configuration Register"]
-    pub firccfg: FIRCCFG,
+    #[doc = "0x300 - Fast IRC Control Status Register"] pub firccsr: FIRCCSR,
+    #[doc = "0x304 - Fast IRC Divide Register"] pub fircdiv: FIRCDIV,
+    #[doc = "0x308 - Fast IRC Configuration Register"] pub firccfg: FIRCCFG,
     _reserved4: [u8; 756usize],
-    #[doc = "0x600 - System PLL Control Status Register"]
-    pub spllcsr: SPLLCSR,
-    #[doc = "0x604 - System PLL Divide Register"]
-    pub splldiv: SPLLDIV,
-    #[doc = "0x608 - System PLL Configuration Register"]
-    pub spllcfg: SPLLCFG,
+    #[doc = "0x600 - System PLL Control Status Register"] pub spllcsr: SPLLCSR,
+    #[doc = "0x604 - System PLL Divide Register"] pub splldiv: SPLLDIV,
+    #[doc = "0x608 - System PLL Configuration Register"] pub spllcfg: SPLLCFG,
 }
 #[doc = "Version ID Register"]
 pub struct VERID {

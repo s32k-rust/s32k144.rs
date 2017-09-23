@@ -22,7 +22,9 @@ impl super::SOSCCSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SOSCCSR {
 #[doc = "Possible values of the field `SOSCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCENR {
-    #[doc = "System OSC is disabled"]
-    _0,
-    #[doc = "System OSC is enabled"]
-    _1,
+    #[doc = "System OSC is disabled"] _0,
+    #[doc = "System OSC is enabled"] _1,
 }
 impl SOSCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl SOSCENR {
 #[doc = "Possible values of the field `SOSCCM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCCMR {
-    #[doc = "System OSC Clock Monitor is disabled"]
-    _0,
-    #[doc = "System OSC Clock Monitor is enabled"]
-    _1,
+    #[doc = "System OSC Clock Monitor is disabled"] _0,
+    #[doc = "System OSC Clock Monitor is enabled"] _1,
 }
 impl SOSCCMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl SOSCCMR {
 #[doc = "Possible values of the field `SOSCCMRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCCMRER {
-    #[doc = "Clock Monitor generates interrupt when error detected"]
-    _0,
-    #[doc = "Clock Monitor generates reset when error detected"]
-    _1,
+    #[doc = "Clock Monitor generates interrupt when error detected"] _0,
+    #[doc = "Clock Monitor generates reset when error detected"] _1,
 }
 impl SOSCCMRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl SOSCCMRER {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "This Control Status Register can be written."]
-    _0,
-    #[doc = "This Control Status Register cannot be written."]
-    _1,
+    #[doc = "This Control Status Register can be written."] _0,
+    #[doc = "This Control Status Register cannot be written."] _1,
 }
 impl LKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl LKR {
 #[doc = "Possible values of the field `SOSCVLD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCVLDR {
-    #[doc = "System OSC is not enabled or clock is not valid"]
-    _0,
-    #[doc = "System OSC is enabled and output clock is valid"]
-    _1,
+    #[doc = "System OSC is not enabled or clock is not valid"] _0,
+    #[doc = "System OSC is enabled and output clock is valid"] _1,
 }
 impl SOSCVLDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl SOSCVLDR {
 #[doc = "Possible values of the field `SOSCSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCSELR {
-    #[doc = "System OSC is not the system clock source"]
-    _0,
-    #[doc = "System OSC is the system clock source"]
-    _1,
+    #[doc = "System OSC is not the system clock source"] _0,
+    #[doc = "System OSC is the system clock source"] _1,
 }
 impl SOSCSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl SOSCSELR {
 #[doc = "Possible values of the field `SOSCERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCERRR {
-    #[doc = "System OSC Clock Monitor is disabled or has not detected an error"]
-    _0,
-    #[doc = "System OSC Clock Monitor is enabled and detected an error"]
-    _1,
+    #[doc = "System OSC Clock Monitor is disabled or has not detected an error"] _0,
+    #[doc = "System OSC Clock Monitor is enabled and detected an error"] _1,
 }
 impl SOSCERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -371,10 +359,8 @@ impl SOSCERRR {
 }
 #[doc = "Values that can be written to the field `SOSCEN`"]
 pub enum SOSCENW {
-    #[doc = "System OSC is disabled"]
-    _0,
-    #[doc = "System OSC is enabled"]
-    _1,
+    #[doc = "System OSC is disabled"] _0,
+    #[doc = "System OSC is enabled"] _1,
 }
 impl SOSCENW {
     #[allow(missing_docs)]
@@ -429,10 +415,8 @@ impl<'a> _SOSCENW<'a> {
 }
 #[doc = "Values that can be written to the field `SOSCCM`"]
 pub enum SOSCCMW {
-    #[doc = "System OSC Clock Monitor is disabled"]
-    _0,
-    #[doc = "System OSC Clock Monitor is enabled"]
-    _1,
+    #[doc = "System OSC Clock Monitor is disabled"] _0,
+    #[doc = "System OSC Clock Monitor is enabled"] _1,
 }
 impl SOSCCMW {
     #[allow(missing_docs)]
@@ -487,10 +471,8 @@ impl<'a> _SOSCCMW<'a> {
 }
 #[doc = "Values that can be written to the field `SOSCCMRE`"]
 pub enum SOSCCMREW {
-    #[doc = "Clock Monitor generates interrupt when error detected"]
-    _0,
-    #[doc = "Clock Monitor generates reset when error detected"]
-    _1,
+    #[doc = "Clock Monitor generates interrupt when error detected"] _0,
+    #[doc = "Clock Monitor generates reset when error detected"] _1,
 }
 impl SOSCCMREW {
     #[allow(missing_docs)]
@@ -545,10 +527,8 @@ impl<'a> _SOSCCMREW<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "This Control Status Register can be written."]
-    _0,
-    #[doc = "This Control Status Register cannot be written."]
-    _1,
+    #[doc = "This Control Status Register can be written."] _0,
+    #[doc = "This Control Status Register cannot be written."] _1,
 }
 impl LKW {
     #[allow(missing_docs)]
@@ -603,10 +583,8 @@ impl<'a> _LKW<'a> {
 }
 #[doc = "Values that can be written to the field `SOSCERR`"]
 pub enum SOSCERRW {
-    #[doc = "System OSC Clock Monitor is disabled or has not detected an error"]
-    _0,
-    #[doc = "System OSC Clock Monitor is enabled and detected an error"]
-    _1,
+    #[doc = "System OSC Clock Monitor is disabled or has not detected an error"] _0,
+    #[doc = "System OSC Clock Monitor is enabled and detected an error"] _1,
 }
 impl SOSCERRW {
     #[allow(missing_docs)]

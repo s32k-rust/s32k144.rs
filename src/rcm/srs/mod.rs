@@ -6,16 +6,16 @@ impl super::SRS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `LVD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LVDR {
-    #[doc = "Reset not caused by LVD trip, HVD trip or POR"]
-    _0,
-    #[doc = "Reset caused by LVD trip, HVD trip or POR"]
-    _1,
+    #[doc = "Reset not caused by LVD trip, HVD trip or POR"] _0,
+    #[doc = "Reset caused by LVD trip, HVD trip or POR"] _1,
 }
 impl LVDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,10 +59,8 @@ impl LVDR {
 #[doc = "Possible values of the field `LOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCR {
-    #[doc = "Reset not caused by a loss of external clock."]
-    _0,
-    #[doc = "Reset caused by a loss of external clock."]
-    _1,
+    #[doc = "Reset not caused by a loss of external clock."] _0,
+    #[doc = "Reset caused by a loss of external clock."] _1,
 }
 impl LOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -106,10 +104,8 @@ impl LOCR {
 #[doc = "Possible values of the field `LOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOLR {
-    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    _0,
-    #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    _1,
+    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"] _0,
+    #[doc = "Reset caused by a loss of lock in the PLL/FLL"] _1,
 }
 impl LOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -153,10 +149,8 @@ impl LOLR {
 #[doc = "Possible values of the field `WDOG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDOGR {
-    #[doc = "Reset not caused by watchdog timeout"]
-    _0,
-    #[doc = "Reset caused by watchdog timeout"]
-    _1,
+    #[doc = "Reset not caused by watchdog timeout"] _0,
+    #[doc = "Reset caused by watchdog timeout"] _1,
 }
 impl WDOGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -200,10 +194,8 @@ impl WDOGR {
 #[doc = "Possible values of the field `PIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINR {
-    #[doc = "Reset not caused by external reset pin"]
-    _0,
-    #[doc = "Reset caused by external reset pin"]
-    _1,
+    #[doc = "Reset not caused by external reset pin"] _0,
+    #[doc = "Reset caused by external reset pin"] _1,
 }
 impl PINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -247,10 +239,8 @@ impl PINR {
 #[doc = "Possible values of the field `POR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PORR {
-    #[doc = "Reset not caused by POR"]
-    _0,
-    #[doc = "Reset caused by POR"]
-    _1,
+    #[doc = "Reset not caused by POR"] _0,
+    #[doc = "Reset caused by POR"] _1,
 }
 impl PORR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -294,10 +284,8 @@ impl PORR {
 #[doc = "Possible values of the field `JTAG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum JTAGR {
-    #[doc = "Reset not caused by JTAG"]
-    _0,
-    #[doc = "Reset caused by JTAG"]
-    _1,
+    #[doc = "Reset not caused by JTAG"] _0,
+    #[doc = "Reset caused by JTAG"] _1,
 }
 impl JTAGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -341,10 +329,8 @@ impl JTAGR {
 #[doc = "Possible values of the field `LOCKUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKUPR {
-    #[doc = "Reset not caused by core LOCKUP event"]
-    _0,
-    #[doc = "Reset caused by core LOCKUP event"]
-    _1,
+    #[doc = "Reset not caused by core LOCKUP event"] _0,
+    #[doc = "Reset caused by core LOCKUP event"] _1,
 }
 impl LOCKUPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -388,10 +374,8 @@ impl LOCKUPR {
 #[doc = "Possible values of the field `SW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWR {
-    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    _0,
-    #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    _1,
+    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"] _0,
+    #[doc = "Reset caused by software setting of SYSRESETREQ bit"] _1,
 }
 impl SWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -437,8 +421,7 @@ impl SWR {
 pub enum MDM_APR {
     #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
     _0,
-    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    _1,
+    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"] _1,
 }
 impl MDM_APR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -482,10 +465,8 @@ impl MDM_APR {
 #[doc = "Possible values of the field `SACKERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SACKERRR {
-    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _0,
-    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _1,
+    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"] _0,
+    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"] _1,
 }
 impl SACKERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

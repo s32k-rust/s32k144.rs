@@ -22,7 +22,9 @@ impl super::MPRA {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::MPRA {
 #[doc = "Possible values of the field `MPL2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPL2R {
-    #[doc = "Accesses from this master are forced to user-mode."]
-    _0,
-    #[doc = "Accesses from this master are not forced to user-mode."]
-    _1,
+    #[doc = "Accesses from this master are forced to user-mode."] _0,
+    #[doc = "Accesses from this master are not forced to user-mode."] _1,
 }
 impl MPL2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl MPL2R {
 #[doc = "Possible values of the field `MTW2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTW2R {
-    #[doc = "This master is not trusted for write accesses."]
-    _0,
-    #[doc = "This master is trusted for write accesses."]
-    _1,
+    #[doc = "This master is not trusted for write accesses."] _0,
+    #[doc = "This master is trusted for write accesses."] _1,
 }
 impl MTW2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl MTW2R {
 #[doc = "Possible values of the field `MTR2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTR2R {
-    #[doc = "This master is not trusted for read accesses."]
-    _0,
-    #[doc = "This master is trusted for read accesses."]
-    _1,
+    #[doc = "This master is not trusted for read accesses."] _0,
+    #[doc = "This master is trusted for read accesses."] _1,
 }
 impl MTR2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl MTR2R {
 #[doc = "Possible values of the field `MPL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPL1R {
-    #[doc = "Accesses from this master are forced to user-mode."]
-    _0,
-    #[doc = "Accesses from this master are not forced to user-mode."]
-    _1,
+    #[doc = "Accesses from this master are forced to user-mode."] _0,
+    #[doc = "Accesses from this master are not forced to user-mode."] _1,
 }
 impl MPL1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl MPL1R {
 #[doc = "Possible values of the field `MTW1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTW1R {
-    #[doc = "This master is not trusted for write accesses."]
-    _0,
-    #[doc = "This master is trusted for write accesses."]
-    _1,
+    #[doc = "This master is not trusted for write accesses."] _0,
+    #[doc = "This master is trusted for write accesses."] _1,
 }
 impl MTW1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl MTW1R {
 #[doc = "Possible values of the field `MTR1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTR1R {
-    #[doc = "This master is not trusted for read accesses."]
-    _0,
-    #[doc = "This master is trusted for read accesses."]
-    _1,
+    #[doc = "This master is not trusted for read accesses."] _0,
+    #[doc = "This master is trusted for read accesses."] _1,
 }
 impl MTR1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl MTR1R {
 #[doc = "Possible values of the field `MPL0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPL0R {
-    #[doc = "Accesses from this master are forced to user-mode."]
-    _0,
-    #[doc = "Accesses from this master are not forced to user-mode."]
-    _1,
+    #[doc = "Accesses from this master are forced to user-mode."] _0,
+    #[doc = "Accesses from this master are not forced to user-mode."] _1,
 }
 impl MPL0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl MPL0R {
 #[doc = "Possible values of the field `MTW0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTW0R {
-    #[doc = "This master is not trusted for write accesses."]
-    _0,
-    #[doc = "This master is trusted for write accesses."]
-    _1,
+    #[doc = "This master is not trusted for write accesses."] _0,
+    #[doc = "This master is trusted for write accesses."] _1,
 }
 impl MTW0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl MTW0R {
 #[doc = "Possible values of the field `MTR0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTR0R {
-    #[doc = "This master is not trusted for read accesses."]
-    _0,
-    #[doc = "This master is trusted for read accesses."]
-    _1,
+    #[doc = "This master is not trusted for read accesses."] _0,
+    #[doc = "This master is trusted for read accesses."] _1,
 }
 impl MTR0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -465,10 +449,8 @@ impl MTR0R {
 }
 #[doc = "Values that can be written to the field `MPL2`"]
 pub enum MPL2W {
-    #[doc = "Accesses from this master are forced to user-mode."]
-    _0,
-    #[doc = "Accesses from this master are not forced to user-mode."]
-    _1,
+    #[doc = "Accesses from this master are forced to user-mode."] _0,
+    #[doc = "Accesses from this master are not forced to user-mode."] _1,
 }
 impl MPL2W {
     #[allow(missing_docs)]
@@ -523,10 +505,8 @@ impl<'a> _MPL2W<'a> {
 }
 #[doc = "Values that can be written to the field `MTW2`"]
 pub enum MTW2W {
-    #[doc = "This master is not trusted for write accesses."]
-    _0,
-    #[doc = "This master is trusted for write accesses."]
-    _1,
+    #[doc = "This master is not trusted for write accesses."] _0,
+    #[doc = "This master is trusted for write accesses."] _1,
 }
 impl MTW2W {
     #[allow(missing_docs)]
@@ -581,10 +561,8 @@ impl<'a> _MTW2W<'a> {
 }
 #[doc = "Values that can be written to the field `MTR2`"]
 pub enum MTR2W {
-    #[doc = "This master is not trusted for read accesses."]
-    _0,
-    #[doc = "This master is trusted for read accesses."]
-    _1,
+    #[doc = "This master is not trusted for read accesses."] _0,
+    #[doc = "This master is trusted for read accesses."] _1,
 }
 impl MTR2W {
     #[allow(missing_docs)]
@@ -639,10 +617,8 @@ impl<'a> _MTR2W<'a> {
 }
 #[doc = "Values that can be written to the field `MPL1`"]
 pub enum MPL1W {
-    #[doc = "Accesses from this master are forced to user-mode."]
-    _0,
-    #[doc = "Accesses from this master are not forced to user-mode."]
-    _1,
+    #[doc = "Accesses from this master are forced to user-mode."] _0,
+    #[doc = "Accesses from this master are not forced to user-mode."] _1,
 }
 impl MPL1W {
     #[allow(missing_docs)]
@@ -697,10 +673,8 @@ impl<'a> _MPL1W<'a> {
 }
 #[doc = "Values that can be written to the field `MTW1`"]
 pub enum MTW1W {
-    #[doc = "This master is not trusted for write accesses."]
-    _0,
-    #[doc = "This master is trusted for write accesses."]
-    _1,
+    #[doc = "This master is not trusted for write accesses."] _0,
+    #[doc = "This master is trusted for write accesses."] _1,
 }
 impl MTW1W {
     #[allow(missing_docs)]
@@ -755,10 +729,8 @@ impl<'a> _MTW1W<'a> {
 }
 #[doc = "Values that can be written to the field `MTR1`"]
 pub enum MTR1W {
-    #[doc = "This master is not trusted for read accesses."]
-    _0,
-    #[doc = "This master is trusted for read accesses."]
-    _1,
+    #[doc = "This master is not trusted for read accesses."] _0,
+    #[doc = "This master is trusted for read accesses."] _1,
 }
 impl MTR1W {
     #[allow(missing_docs)]
@@ -813,10 +785,8 @@ impl<'a> _MTR1W<'a> {
 }
 #[doc = "Values that can be written to the field `MPL0`"]
 pub enum MPL0W {
-    #[doc = "Accesses from this master are forced to user-mode."]
-    _0,
-    #[doc = "Accesses from this master are not forced to user-mode."]
-    _1,
+    #[doc = "Accesses from this master are forced to user-mode."] _0,
+    #[doc = "Accesses from this master are not forced to user-mode."] _1,
 }
 impl MPL0W {
     #[allow(missing_docs)]
@@ -871,10 +841,8 @@ impl<'a> _MPL0W<'a> {
 }
 #[doc = "Values that can be written to the field `MTW0`"]
 pub enum MTW0W {
-    #[doc = "This master is not trusted for write accesses."]
-    _0,
-    #[doc = "This master is trusted for write accesses."]
-    _1,
+    #[doc = "This master is not trusted for write accesses."] _0,
+    #[doc = "This master is trusted for write accesses."] _1,
 }
 impl MTW0W {
     #[allow(missing_docs)]
@@ -929,10 +897,8 @@ impl<'a> _MTW0W<'a> {
 }
 #[doc = "Values that can be written to the field `MTR0`"]
 pub enum MTR0W {
-    #[doc = "This master is not trusted for read accesses."]
-    _0,
-    #[doc = "This master is trusted for read accesses."]
-    _1,
+    #[doc = "This master is not trusted for read accesses."] _0,
+    #[doc = "This master is trusted for read accesses."] _1,
 }
 impl MTR0W {
     #[allow(missing_docs)]

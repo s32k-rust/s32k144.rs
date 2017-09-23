@@ -22,7 +22,9 @@ impl super::CR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CR {
 #[doc = "Possible values of the field `MEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MENR {
-    #[doc = "Module is disabled."]
-    _0,
-    #[doc = "Module is enabled."]
-    _1,
+    #[doc = "Module is disabled."] _0,
+    #[doc = "Module is enabled."] _1,
 }
 impl MENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl MENR {
 #[doc = "Possible values of the field `RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTR {
-    #[doc = "Master logic is not reset."]
-    _0,
-    #[doc = "Master logic is reset."]
-    _1,
+    #[doc = "Master logic is not reset."] _0,
+    #[doc = "Master logic is reset."] _1,
 }
 impl RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl RSTR {
 #[doc = "Possible values of the field `DOZEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOZENR {
-    #[doc = "Module is enabled in Doze mode."]
-    _0,
-    #[doc = "Module is disabled in Doze mode."]
-    _1,
+    #[doc = "Module is enabled in Doze mode."] _0,
+    #[doc = "Module is disabled in Doze mode."] _1,
 }
 impl DOZENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl DOZENR {
 #[doc = "Possible values of the field `DBGEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBGENR {
-    #[doc = "Module is disabled in debug mode."]
-    _0,
-    #[doc = "Module is enabled in debug mode."]
-    _1,
+    #[doc = "Module is disabled in debug mode."] _0,
+    #[doc = "Module is enabled in debug mode."] _1,
 }
 impl DBGENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -230,10 +224,8 @@ impl DBGENR {
 }
 #[doc = "Values that can be written to the field `MEN`"]
 pub enum MENW {
-    #[doc = "Module is disabled."]
-    _0,
-    #[doc = "Module is enabled."]
-    _1,
+    #[doc = "Module is disabled."] _0,
+    #[doc = "Module is enabled."] _1,
 }
 impl MENW {
     #[allow(missing_docs)]
@@ -288,10 +280,8 @@ impl<'a> _MENW<'a> {
 }
 #[doc = "Values that can be written to the field `RST`"]
 pub enum RSTW {
-    #[doc = "Master logic is not reset."]
-    _0,
-    #[doc = "Master logic is reset."]
-    _1,
+    #[doc = "Master logic is not reset."] _0,
+    #[doc = "Master logic is reset."] _1,
 }
 impl RSTW {
     #[allow(missing_docs)]
@@ -346,10 +336,8 @@ impl<'a> _RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `DOZEN`"]
 pub enum DOZENW {
-    #[doc = "Module is enabled in Doze mode."]
-    _0,
-    #[doc = "Module is disabled in Doze mode."]
-    _1,
+    #[doc = "Module is enabled in Doze mode."] _0,
+    #[doc = "Module is disabled in Doze mode."] _1,
 }
 impl DOZENW {
     #[allow(missing_docs)]
@@ -404,10 +392,8 @@ impl<'a> _DOZENW<'a> {
 }
 #[doc = "Values that can be written to the field `DBGEN`"]
 pub enum DBGENW {
-    #[doc = "Module is disabled in debug mode."]
-    _0,
-    #[doc = "Module is enabled in debug mode."]
-    _1,
+    #[doc = "Module is disabled in debug mode."] _0,
+    #[doc = "Module is enabled in debug mode."] _1,
 }
 impl DBGENW {
     #[allow(missing_docs)]
@@ -462,10 +448,8 @@ impl<'a> _DBGENW<'a> {
 }
 #[doc = "Values that can be written to the field `RTF`"]
 pub enum RTFW {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "Transmit FIFO is reset."]
-    _1,
+    #[doc = "No effect."] _0,
+    #[doc = "Transmit FIFO is reset."] _1,
 }
 impl RTFW {
     #[allow(missing_docs)]
@@ -520,10 +504,8 @@ impl<'a> _RTFW<'a> {
 }
 #[doc = "Values that can be written to the field `RRF`"]
 pub enum RRFW {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "Receive FIFO is reset."]
-    _1,
+    #[doc = "No effect."] _0,
+    #[doc = "Receive FIFO is reset."] _1,
 }
 impl RRFW {
     #[allow(missing_docs)]

@@ -6,16 +6,16 @@ impl super::PARAM {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `EHSRUN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHSRUNR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+    #[doc = "The feature is not available."] _0,
+    #[doc = "The feature is available."] _1,
 }
 impl EHSRUNR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,10 +59,8 @@ impl EHSRUNR {
 #[doc = "Possible values of the field `ELLS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELLSR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+    #[doc = "The feature is not available."] _0,
+    #[doc = "The feature is available."] _1,
 }
 impl ELLSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -106,10 +104,8 @@ impl ELLSR {
 #[doc = "Possible values of the field `ELLS2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELLS2R {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+    #[doc = "The feature is not available."] _0,
+    #[doc = "The feature is available."] _1,
 }
 impl ELLS2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -153,10 +149,8 @@ impl ELLS2R {
 #[doc = "Possible values of the field `EVLLS0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVLLS0R {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+    #[doc = "The feature is not available."] _0,
+    #[doc = "The feature is available."] _1,
 }
 impl EVLLS0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]

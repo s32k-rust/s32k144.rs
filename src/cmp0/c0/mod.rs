@@ -22,7 +22,9 @@ impl super::C0 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,14 +45,10 @@ impl super::C0 {
 #[doc = "Possible values of the field `HYSTCTR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HYSTCTRR {
-    #[doc = "The hard block output has level 0 hysteresis internally."]
-    _00,
-    #[doc = "The hard block output has level 1 hysteresis internally."]
-    _01,
-    #[doc = "The hard block output has level 2 hysteresis internally."]
-    _10,
-    #[doc = "The hard block output has level 3 hysteresis internally."]
-    _11,
+    #[doc = "The hard block output has level 0 hysteresis internally."] _00,
+    #[doc = "The hard block output has level 1 hysteresis internally."] _01,
+    #[doc = "The hard block output has level 2 hysteresis internally."] _10,
+    #[doc = "The hard block output has level 3 hysteresis internally."] _11,
 }
 impl HYSTCTRR {
     #[doc = r" Value of the field as raw bits"]
@@ -99,10 +97,8 @@ impl HYSTCTRR {
 #[doc = "Possible values of the field `OFFSET`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFFSETR {
-    #[doc = "The comparator hard block output has level 0 offset internally."]
-    _0,
-    #[doc = "The comparator hard block output has level 1 offset internally."]
-    _1,
+    #[doc = "The comparator hard block output has level 0 offset internally."] _0,
+    #[doc = "The comparator hard block output has level 1 offset internally."] _1,
 }
 impl OFFSETR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -148,20 +144,13 @@ impl OFFSETR {
 pub enum FILTER_CNTR {
     #[doc = "Filter is disabled. If SE = 1, then COUT is a logic zero (this is not a legal state, and is not recommended). If SE = 0, COUT = COUTA."]
     _000,
-    #[doc = "1 consecutive sample must agree (comparator output is simply sampled)."]
-    _001,
-    #[doc = "2 consecutive samples must agree."]
-    _010,
-    #[doc = "3 consecutive samples must agree."]
-    _011,
-    #[doc = "4 consecutive samples must agree."]
-    _100,
-    #[doc = "5 consecutive samples must agree."]
-    _101,
-    #[doc = "6 consecutive samples must agree."]
-    _110,
-    #[doc = "7 consecutive samples must agree."]
-    _111,
+    #[doc = "1 consecutive sample must agree (comparator output is simply sampled)."] _001,
+    #[doc = "2 consecutive samples must agree."] _010,
+    #[doc = "3 consecutive samples must agree."] _011,
+    #[doc = "4 consecutive samples must agree."] _100,
+    #[doc = "5 consecutive samples must agree."] _101,
+    #[doc = "6 consecutive samples must agree."] _110,
+    #[doc = "7 consecutive samples must agree."] _111,
 }
 impl FILTER_CNTR {
     #[doc = r" Value of the field as raw bits"]
@@ -238,10 +227,8 @@ impl FILTER_CNTR {
 #[doc = "Possible values of the field `EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENR {
-    #[doc = "Analog Comparator is disabled."]
-    _0,
-    #[doc = "Analog Comparator is enabled."]
-    _1,
+    #[doc = "Analog Comparator is disabled."] _0,
+    #[doc = "Analog Comparator is enabled."] _1,
 }
 impl ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -332,10 +319,8 @@ impl OPER {
 #[doc = "Possible values of the field `COS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COSR {
-    #[doc = "Set CMPO to equal COUT (filtered comparator output)."]
-    _0,
-    #[doc = "Set CMPO to equal COUTA (unfiltered comparator output)."]
-    _1,
+    #[doc = "Set CMPO to equal COUT (filtered comparator output)."] _0,
+    #[doc = "Set CMPO to equal COUTA (unfiltered comparator output)."] _1,
 }
 impl COSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -379,10 +364,8 @@ impl COSR {
 #[doc = "Possible values of the field `INVT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVTR {
-    #[doc = "Does not invert the comparator output."]
-    _0,
-    #[doc = "Inverts the comparator output."]
-    _1,
+    #[doc = "Does not invert the comparator output."] _0,
+    #[doc = "Inverts the comparator output."] _1,
 }
 impl INVTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -426,8 +409,7 @@ impl INVTR {
 #[doc = "Possible values of the field `PMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PMODER {
-    #[doc = "Low Speed (LS) comparison mode is selected."]
-    _0,
+    #[doc = "Low Speed (LS) comparison mode is selected."] _0,
     #[doc = "High Speed (HS) comparison mode is selected, in VLPx mode, or Stop mode switched to Low Speed (LS) mode."]
     _1,
 }
@@ -473,10 +455,8 @@ impl PMODER {
 #[doc = "Possible values of the field `WE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WER {
-    #[doc = "Windowing mode is not selected."]
-    _0,
-    #[doc = "Windowing mode is selected."]
-    _1,
+    #[doc = "Windowing mode is not selected."] _0,
+    #[doc = "Windowing mode is selected."] _1,
 }
 impl WER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -520,10 +500,8 @@ impl WER {
 #[doc = "Possible values of the field `SE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SER {
-    #[doc = "Sampling mode is not selected."]
-    _0,
-    #[doc = "Sampling mode is selected."]
-    _1,
+    #[doc = "Sampling mode is not selected."] _0,
+    #[doc = "Sampling mode is selected."] _1,
 }
 impl SER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -599,10 +577,8 @@ impl COUTR {
 #[doc = "Possible values of the field `CFF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CFFR {
-    #[doc = "A falling edge has not been detected on COUT."]
-    _0,
-    #[doc = "A falling edge on COUT has occurred."]
-    _1,
+    #[doc = "A falling edge has not been detected on COUT."] _0,
+    #[doc = "A falling edge on COUT has occurred."] _1,
 }
 impl CFFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -646,10 +622,8 @@ impl CFFR {
 #[doc = "Possible values of the field `CFR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CFRR {
-    #[doc = "A rising edge has not been detected on COUT."]
-    _0,
-    #[doc = "A rising edge on COUT has occurred."]
-    _1,
+    #[doc = "A rising edge has not been detected on COUT."] _0,
+    #[doc = "A rising edge on COUT has occurred."] _1,
 }
 impl CFRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -693,10 +667,8 @@ impl CFRR {
 #[doc = "Possible values of the field `IEF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IEFR {
-    #[doc = "Interrupt is disabled."]
-    _0,
-    #[doc = "Interrupt is enabled."]
-    _1,
+    #[doc = "Interrupt is disabled."] _0,
+    #[doc = "Interrupt is enabled."] _1,
 }
 impl IEFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -740,10 +712,8 @@ impl IEFR {
 #[doc = "Possible values of the field `IER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IERR {
-    #[doc = "Interrupt is disabled."]
-    _0,
-    #[doc = "Interrupt is enabled."]
-    _1,
+    #[doc = "Interrupt is disabled."] _0,
+    #[doc = "Interrupt is enabled."] _1,
 }
 impl IERR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -787,10 +757,8 @@ impl IERR {
 #[doc = "Possible values of the field `DMAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAENR {
-    #[doc = "DMA is disabled."]
-    _0,
-    #[doc = "DMA is enabled."]
-    _1,
+    #[doc = "DMA is disabled."] _0,
+    #[doc = "DMA is enabled."] _1,
 }
 impl DMAENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -833,14 +801,10 @@ impl DMAENR {
 }
 #[doc = "Values that can be written to the field `HYSTCTR`"]
 pub enum HYSTCTRW {
-    #[doc = "The hard block output has level 0 hysteresis internally."]
-    _00,
-    #[doc = "The hard block output has level 1 hysteresis internally."]
-    _01,
-    #[doc = "The hard block output has level 2 hysteresis internally."]
-    _10,
-    #[doc = "The hard block output has level 3 hysteresis internally."]
-    _11,
+    #[doc = "The hard block output has level 0 hysteresis internally."] _00,
+    #[doc = "The hard block output has level 1 hysteresis internally."] _01,
+    #[doc = "The hard block output has level 2 hysteresis internally."] _10,
+    #[doc = "The hard block output has level 3 hysteresis internally."] _11,
 }
 impl HYSTCTRW {
     #[allow(missing_docs)]
@@ -899,10 +863,8 @@ impl<'a> _HYSTCTRW<'a> {
 }
 #[doc = "Values that can be written to the field `OFFSET`"]
 pub enum OFFSETW {
-    #[doc = "The comparator hard block output has level 0 offset internally."]
-    _0,
-    #[doc = "The comparator hard block output has level 1 offset internally."]
-    _1,
+    #[doc = "The comparator hard block output has level 0 offset internally."] _0,
+    #[doc = "The comparator hard block output has level 1 offset internally."] _1,
 }
 impl OFFSETW {
     #[allow(missing_docs)]
@@ -959,20 +921,13 @@ impl<'a> _OFFSETW<'a> {
 pub enum FILTER_CNTW {
     #[doc = "Filter is disabled. If SE = 1, then COUT is a logic zero (this is not a legal state, and is not recommended). If SE = 0, COUT = COUTA."]
     _000,
-    #[doc = "1 consecutive sample must agree (comparator output is simply sampled)."]
-    _001,
-    #[doc = "2 consecutive samples must agree."]
-    _010,
-    #[doc = "3 consecutive samples must agree."]
-    _011,
-    #[doc = "4 consecutive samples must agree."]
-    _100,
-    #[doc = "5 consecutive samples must agree."]
-    _101,
-    #[doc = "6 consecutive samples must agree."]
-    _110,
-    #[doc = "7 consecutive samples must agree."]
-    _111,
+    #[doc = "1 consecutive sample must agree (comparator output is simply sampled)."] _001,
+    #[doc = "2 consecutive samples must agree."] _010,
+    #[doc = "3 consecutive samples must agree."] _011,
+    #[doc = "4 consecutive samples must agree."] _100,
+    #[doc = "5 consecutive samples must agree."] _101,
+    #[doc = "6 consecutive samples must agree."] _110,
+    #[doc = "7 consecutive samples must agree."] _111,
 }
 impl FILTER_CNTW {
     #[allow(missing_docs)]
@@ -1055,10 +1010,8 @@ impl<'a> _FILTER_CNTW<'a> {
 }
 #[doc = "Values that can be written to the field `EN`"]
 pub enum ENW {
-    #[doc = "Analog Comparator is disabled."]
-    _0,
-    #[doc = "Analog Comparator is enabled."]
-    _1,
+    #[doc = "Analog Comparator is disabled."] _0,
+    #[doc = "Analog Comparator is enabled."] _1,
 }
 impl ENW {
     #[allow(missing_docs)]
@@ -1171,10 +1124,8 @@ impl<'a> _OPEW<'a> {
 }
 #[doc = "Values that can be written to the field `COS`"]
 pub enum COSW {
-    #[doc = "Set CMPO to equal COUT (filtered comparator output)."]
-    _0,
-    #[doc = "Set CMPO to equal COUTA (unfiltered comparator output)."]
-    _1,
+    #[doc = "Set CMPO to equal COUT (filtered comparator output)."] _0,
+    #[doc = "Set CMPO to equal COUTA (unfiltered comparator output)."] _1,
 }
 impl COSW {
     #[allow(missing_docs)]
@@ -1229,10 +1180,8 @@ impl<'a> _COSW<'a> {
 }
 #[doc = "Values that can be written to the field `INVT`"]
 pub enum INVTW {
-    #[doc = "Does not invert the comparator output."]
-    _0,
-    #[doc = "Inverts the comparator output."]
-    _1,
+    #[doc = "Does not invert the comparator output."] _0,
+    #[doc = "Inverts the comparator output."] _1,
 }
 impl INVTW {
     #[allow(missing_docs)]
@@ -1287,8 +1236,7 @@ impl<'a> _INVTW<'a> {
 }
 #[doc = "Values that can be written to the field `PMODE`"]
 pub enum PMODEW {
-    #[doc = "Low Speed (LS) comparison mode is selected."]
-    _0,
+    #[doc = "Low Speed (LS) comparison mode is selected."] _0,
     #[doc = "High Speed (HS) comparison mode is selected, in VLPx mode, or Stop mode switched to Low Speed (LS) mode."]
     _1,
 }
@@ -1345,10 +1293,8 @@ impl<'a> _PMODEW<'a> {
 }
 #[doc = "Values that can be written to the field `WE`"]
 pub enum WEW {
-    #[doc = "Windowing mode is not selected."]
-    _0,
-    #[doc = "Windowing mode is selected."]
-    _1,
+    #[doc = "Windowing mode is not selected."] _0,
+    #[doc = "Windowing mode is selected."] _1,
 }
 impl WEW {
     #[allow(missing_docs)]
@@ -1403,10 +1349,8 @@ impl<'a> _WEW<'a> {
 }
 #[doc = "Values that can be written to the field `SE`"]
 pub enum SEW {
-    #[doc = "Sampling mode is not selected."]
-    _0,
-    #[doc = "Sampling mode is selected."]
-    _1,
+    #[doc = "Sampling mode is not selected."] _0,
+    #[doc = "Sampling mode is selected."] _1,
 }
 impl SEW {
     #[allow(missing_docs)]
@@ -1476,10 +1420,8 @@ impl<'a> _FPRW<'a> {
 }
 #[doc = "Values that can be written to the field `CFF`"]
 pub enum CFFW {
-    #[doc = "A falling edge has not been detected on COUT."]
-    _0,
-    #[doc = "A falling edge on COUT has occurred."]
-    _1,
+    #[doc = "A falling edge has not been detected on COUT."] _0,
+    #[doc = "A falling edge on COUT has occurred."] _1,
 }
 impl CFFW {
     #[allow(missing_docs)]
@@ -1534,10 +1476,8 @@ impl<'a> _CFFW<'a> {
 }
 #[doc = "Values that can be written to the field `CFR`"]
 pub enum CFRW {
-    #[doc = "A rising edge has not been detected on COUT."]
-    _0,
-    #[doc = "A rising edge on COUT has occurred."]
-    _1,
+    #[doc = "A rising edge has not been detected on COUT."] _0,
+    #[doc = "A rising edge on COUT has occurred."] _1,
 }
 impl CFRW {
     #[allow(missing_docs)]
@@ -1592,10 +1532,8 @@ impl<'a> _CFRW<'a> {
 }
 #[doc = "Values that can be written to the field `IEF`"]
 pub enum IEFW {
-    #[doc = "Interrupt is disabled."]
-    _0,
-    #[doc = "Interrupt is enabled."]
-    _1,
+    #[doc = "Interrupt is disabled."] _0,
+    #[doc = "Interrupt is enabled."] _1,
 }
 impl IEFW {
     #[allow(missing_docs)]
@@ -1650,10 +1588,8 @@ impl<'a> _IEFW<'a> {
 }
 #[doc = "Values that can be written to the field `IER`"]
 pub enum IERW {
-    #[doc = "Interrupt is disabled."]
-    _0,
-    #[doc = "Interrupt is enabled."]
-    _1,
+    #[doc = "Interrupt is disabled."] _0,
+    #[doc = "Interrupt is enabled."] _1,
 }
 impl IERW {
     #[allow(missing_docs)]
@@ -1708,10 +1644,8 @@ impl<'a> _IERW<'a> {
 }
 #[doc = "Values that can be written to the field `DMAEN`"]
 pub enum DMAENW {
-    #[doc = "DMA is disabled."]
-    _0,
-    #[doc = "DMA is enabled."]
-    _1,
+    #[doc = "DMA is disabled."] _0,
+    #[doc = "DMA is enabled."] _1,
 }
 impl DMAENW {
     #[allow(missing_docs)]

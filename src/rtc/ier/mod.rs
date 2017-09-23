@@ -22,7 +22,9 @@ impl super::IER {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::IER {
 #[doc = "Possible values of the field `TIIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIIER {
-    #[doc = "Time invalid flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time invalid flag does generate an interrupt."]
-    _1,
+    #[doc = "Time invalid flag does not generate an interrupt."] _0,
+    #[doc = "Time invalid flag does generate an interrupt."] _1,
 }
 impl TIIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TIIER {
 #[doc = "Possible values of the field `TOIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TOIER {
-    #[doc = "Time overflow flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time overflow flag does generate an interrupt."]
-    _1,
+    #[doc = "Time overflow flag does not generate an interrupt."] _0,
+    #[doc = "Time overflow flag does generate an interrupt."] _1,
 }
 impl TOIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl TOIER {
 #[doc = "Possible values of the field `TAIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAIER {
-    #[doc = "Time alarm flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time alarm flag does generate an interrupt."]
-    _1,
+    #[doc = "Time alarm flag does not generate an interrupt."] _0,
+    #[doc = "Time alarm flag does generate an interrupt."] _1,
 }
 impl TAIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl TAIER {
 #[doc = "Possible values of the field `TSIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSIER {
-    #[doc = "Seconds interrupt is disabled."]
-    _0,
-    #[doc = "Seconds interrupt is enabled."]
-    _1,
+    #[doc = "Seconds interrupt is disabled."] _0,
+    #[doc = "Seconds interrupt is enabled."] _1,
 }
 impl TSIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,22 +225,14 @@ impl TSIER {
 #[doc = "Possible values of the field `TSIC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSICR {
-    #[doc = "1 Hz."]
-    _000,
-    #[doc = "2 Hz."]
-    _001,
-    #[doc = "4 Hz."]
-    _010,
-    #[doc = "8 Hz."]
-    _011,
-    #[doc = "16 Hz."]
-    _100,
-    #[doc = "32 Hz."]
-    _101,
-    #[doc = "64 Hz."]
-    _110,
-    #[doc = "128 Hz."]
-    _111,
+    #[doc = "1 Hz."] _000,
+    #[doc = "2 Hz."] _001,
+    #[doc = "4 Hz."] _010,
+    #[doc = "8 Hz."] _011,
+    #[doc = "16 Hz."] _100,
+    #[doc = "32 Hz."] _101,
+    #[doc = "64 Hz."] _110,
+    #[doc = "128 Hz."] _111,
 }
 impl TSICR {
     #[doc = r" Value of the field as raw bits"]
@@ -322,10 +308,8 @@ impl TSICR {
 }
 #[doc = "Values that can be written to the field `TIIE`"]
 pub enum TIIEW {
-    #[doc = "Time invalid flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time invalid flag does generate an interrupt."]
-    _1,
+    #[doc = "Time invalid flag does not generate an interrupt."] _0,
+    #[doc = "Time invalid flag does generate an interrupt."] _1,
 }
 impl TIIEW {
     #[allow(missing_docs)]
@@ -380,10 +364,8 @@ impl<'a> _TIIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TOIE`"]
 pub enum TOIEW {
-    #[doc = "Time overflow flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time overflow flag does generate an interrupt."]
-    _1,
+    #[doc = "Time overflow flag does not generate an interrupt."] _0,
+    #[doc = "Time overflow flag does generate an interrupt."] _1,
 }
 impl TOIEW {
     #[allow(missing_docs)]
@@ -438,10 +420,8 @@ impl<'a> _TOIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TAIE`"]
 pub enum TAIEW {
-    #[doc = "Time alarm flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time alarm flag does generate an interrupt."]
-    _1,
+    #[doc = "Time alarm flag does not generate an interrupt."] _0,
+    #[doc = "Time alarm flag does generate an interrupt."] _1,
 }
 impl TAIEW {
     #[allow(missing_docs)]
@@ -496,10 +476,8 @@ impl<'a> _TAIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TSIE`"]
 pub enum TSIEW {
-    #[doc = "Seconds interrupt is disabled."]
-    _0,
-    #[doc = "Seconds interrupt is enabled."]
-    _1,
+    #[doc = "Seconds interrupt is disabled."] _0,
+    #[doc = "Seconds interrupt is enabled."] _1,
 }
 impl TSIEW {
     #[allow(missing_docs)]
@@ -554,22 +532,14 @@ impl<'a> _TSIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TSIC`"]
 pub enum TSICW {
-    #[doc = "1 Hz."]
-    _000,
-    #[doc = "2 Hz."]
-    _001,
-    #[doc = "4 Hz."]
-    _010,
-    #[doc = "8 Hz."]
-    _011,
-    #[doc = "16 Hz."]
-    _100,
-    #[doc = "32 Hz."]
-    _101,
-    #[doc = "64 Hz."]
-    _110,
-    #[doc = "128 Hz."]
-    _111,
+    #[doc = "1 Hz."] _000,
+    #[doc = "2 Hz."] _001,
+    #[doc = "4 Hz."] _010,
+    #[doc = "8 Hz."] _011,
+    #[doc = "16 Hz."] _100,
+    #[doc = "32 Hz."] _101,
+    #[doc = "64 Hz."] _110,
+    #[doc = "128 Hz."] _111,
 }
 impl TSICW {
     #[allow(missing_docs)]

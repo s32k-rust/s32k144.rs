@@ -22,7 +22,9 @@ impl super::DCHPRI7 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl CHPRIR {
 #[doc = "Possible values of the field `DPA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPAR {
-    #[doc = "Channel n can suspend a lower priority channel."]
-    _0,
-    #[doc = "Channel n cannot suspend any channel, regardless of channel priority."]
-    _1,
+    #[doc = "Channel n can suspend a lower priority channel."] _0,
+    #[doc = "Channel n cannot suspend any channel, regardless of channel priority."] _1,
 }
 impl DPAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,8 +101,7 @@ impl DPAR {
 #[doc = "Possible values of the field `ECP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECPR {
-    #[doc = "Channel n cannot be suspended by a higher priority channel's service request."]
-    _0,
+    #[doc = "Channel n cannot be suspended by a higher priority channel's service request."] _0,
     #[doc = "Channel n can be temporarily suspended by the service request of a higher priority channel."]
     _1,
 }
@@ -162,10 +161,8 @@ impl<'a> _CHPRIW<'a> {
 }
 #[doc = "Values that can be written to the field `DPA`"]
 pub enum DPAW {
-    #[doc = "Channel n can suspend a lower priority channel."]
-    _0,
-    #[doc = "Channel n cannot suspend any channel, regardless of channel priority."]
-    _1,
+    #[doc = "Channel n can suspend a lower priority channel."] _0,
+    #[doc = "Channel n cannot suspend any channel, regardless of channel priority."] _1,
 }
 impl DPAW {
     #[allow(missing_docs)]
@@ -220,8 +217,7 @@ impl<'a> _DPAW<'a> {
 }
 #[doc = "Values that can be written to the field `ECP`"]
 pub enum ECPW {
-    #[doc = "Channel n cannot be suspended by a higher priority channel's service request."]
-    _0,
+    #[doc = "Channel n cannot be suspended by a higher priority channel's service request."] _0,
     #[doc = "Channel n can be temporarily suspended by the service request of a higher priority channel."]
     _1,
 }

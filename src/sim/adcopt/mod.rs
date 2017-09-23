@@ -22,7 +22,9 @@ impl super::ADCOPT {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::ADCOPT {
 #[doc = "Possible values of the field `ADC0TRGSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC0TRGSELR {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
+    #[doc = "PDB output"] _0,
+    #[doc = "TRGMUX output"] _1,
 }
 impl ADC0TRGSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,22 +90,14 @@ impl ADC0TRGSELR {
 #[doc = "Possible values of the field `ADC0SWPRETRG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC0SWPRETRGR {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
+    #[doc = "Software pretrigger disabled"] _000,
+    #[doc = "Reserved (do not use)"] _001,
+    #[doc = "Reserved (do not use)"] _010,
+    #[doc = "Reserved (do not use)"] _011,
+    #[doc = "Software pretrigger 0"] _100,
+    #[doc = "Software pretrigger 1"] _101,
+    #[doc = "Software pretrigger 2"] _110,
+    #[doc = "Software pretrigger 3"] _111,
 }
 impl ADC0SWPRETRGR {
     #[doc = r" Value of the field as raw bits"]
@@ -182,14 +174,10 @@ impl ADC0SWPRETRGR {
 #[doc = "Possible values of the field `ADC0PRETRGSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC0PRETRGSELR {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "PDB pretrigger (default)"] _00,
+    #[doc = "TRGMUX pretrigger"] _01,
+    #[doc = "Software pretrigger"] _10,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl ADC0PRETRGSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -232,10 +220,8 @@ impl ADC0PRETRGSELR {
 #[doc = "Possible values of the field `ADC1TRGSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC1TRGSELR {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
+    #[doc = "PDB output"] _0,
+    #[doc = "TRGMUX output"] _1,
 }
 impl ADC1TRGSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -279,22 +265,14 @@ impl ADC1TRGSELR {
 #[doc = "Possible values of the field `ADC1SWPRETRG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC1SWPRETRGR {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
+    #[doc = "Software pretrigger disabled"] _000,
+    #[doc = "Reserved (do not use)"] _001,
+    #[doc = "Reserved (do not use)"] _010,
+    #[doc = "Reserved (do not use)"] _011,
+    #[doc = "Software pretrigger 0"] _100,
+    #[doc = "Software pretrigger 1"] _101,
+    #[doc = "Software pretrigger 2"] _110,
+    #[doc = "Software pretrigger 3"] _111,
 }
 impl ADC1SWPRETRGR {
     #[doc = r" Value of the field as raw bits"]
@@ -371,14 +349,10 @@ impl ADC1SWPRETRGR {
 #[doc = "Possible values of the field `ADC1PRETRGSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC1PRETRGSELR {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "PDB pretrigger (default)"] _00,
+    #[doc = "TRGMUX pretrigger"] _01,
+    #[doc = "Software pretrigger"] _10,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl ADC1PRETRGSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -420,10 +394,8 @@ impl ADC1PRETRGSELR {
 }
 #[doc = "Values that can be written to the field `ADC0TRGSEL`"]
 pub enum ADC0TRGSELW {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
+    #[doc = "PDB output"] _0,
+    #[doc = "TRGMUX output"] _1,
 }
 impl ADC0TRGSELW {
     #[allow(missing_docs)]
@@ -478,22 +450,14 @@ impl<'a> _ADC0TRGSELW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC0SWPRETRG`"]
 pub enum ADC0SWPRETRGW {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
+    #[doc = "Software pretrigger disabled"] _000,
+    #[doc = "Reserved (do not use)"] _001,
+    #[doc = "Reserved (do not use)"] _010,
+    #[doc = "Reserved (do not use)"] _011,
+    #[doc = "Software pretrigger 0"] _100,
+    #[doc = "Software pretrigger 1"] _101,
+    #[doc = "Software pretrigger 2"] _110,
+    #[doc = "Software pretrigger 3"] _111,
 }
 impl ADC0SWPRETRGW {
     #[allow(missing_docs)]
@@ -576,12 +540,9 @@ impl<'a> _ADC0SWPRETRGW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC0PRETRGSEL`"]
 pub enum ADC0PRETRGSELW {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
+    #[doc = "PDB pretrigger (default)"] _00,
+    #[doc = "TRGMUX pretrigger"] _01,
+    #[doc = "Software pretrigger"] _10,
 }
 impl ADC0PRETRGSELW {
     #[allow(missing_docs)]
@@ -632,10 +593,8 @@ impl<'a> _ADC0PRETRGSELW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC1TRGSEL`"]
 pub enum ADC1TRGSELW {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
+    #[doc = "PDB output"] _0,
+    #[doc = "TRGMUX output"] _1,
 }
 impl ADC1TRGSELW {
     #[allow(missing_docs)]
@@ -690,22 +649,14 @@ impl<'a> _ADC1TRGSELW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC1SWPRETRG`"]
 pub enum ADC1SWPRETRGW {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
+    #[doc = "Software pretrigger disabled"] _000,
+    #[doc = "Reserved (do not use)"] _001,
+    #[doc = "Reserved (do not use)"] _010,
+    #[doc = "Reserved (do not use)"] _011,
+    #[doc = "Software pretrigger 0"] _100,
+    #[doc = "Software pretrigger 1"] _101,
+    #[doc = "Software pretrigger 2"] _110,
+    #[doc = "Software pretrigger 3"] _111,
 }
 impl ADC1SWPRETRGW {
     #[allow(missing_docs)]
@@ -788,12 +739,9 @@ impl<'a> _ADC1SWPRETRGW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC1PRETRGSEL`"]
 pub enum ADC1PRETRGSELW {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
+    #[doc = "PDB pretrigger (default)"] _00,
+    #[doc = "TRGMUX pretrigger"] _01,
+    #[doc = "Software pretrigger"] _10,
 }
 impl ADC1PRETRGSELW {
     #[allow(missing_docs)]

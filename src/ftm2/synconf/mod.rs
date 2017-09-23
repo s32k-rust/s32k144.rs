@@ -22,7 +22,9 @@ impl super::SYNCONF {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -92,8 +94,7 @@ impl HWTRIGMODER {
 pub enum CNTINCR {
     #[doc = "CNTIN register is updated with its buffer value at all rising edges of FTM input clock."]
     _0,
-    #[doc = "CNTIN register is updated with its buffer value by the PWM synchronization."]
-    _1,
+    #[doc = "CNTIN register is updated with its buffer value by the PWM synchronization."] _1,
 }
 impl CNTINCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -139,8 +140,7 @@ impl CNTINCR {
 pub enum INVCR {
     #[doc = "INVCTRL register is updated with its buffer value at all rising edges of FTM input clock."]
     _0,
-    #[doc = "INVCTRL register is updated with its buffer value by the PWM synchronization."]
-    _1,
+    #[doc = "INVCTRL register is updated with its buffer value by the PWM synchronization."] _1,
 }
 impl INVCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -186,8 +186,7 @@ impl INVCR {
 pub enum SWOCR {
     #[doc = "SWOCTRL register is updated with its buffer value at all rising edges of FTM input clock."]
     _0,
-    #[doc = "SWOCTRL register is updated with its buffer value by the PWM synchronization."]
-    _1,
+    #[doc = "SWOCTRL register is updated with its buffer value by the PWM synchronization."] _1,
 }
 impl SWOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +230,8 @@ impl SWOCR {
 #[doc = "Possible values of the field `SYNCMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCMODER {
-    #[doc = "Legacy PWM synchronization is selected."]
-    _0,
-    #[doc = "Enhanced PWM synchronization is selected."]
-    _1,
+    #[doc = "Legacy PWM synchronization is selected."] _0,
+    #[doc = "Enhanced PWM synchronization is selected."] _1,
 }
 impl SYNCMODER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +275,8 @@ impl SYNCMODER {
 #[doc = "Possible values of the field `SWRSTCNT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWRSTCNTR {
-    #[doc = "The software trigger does not activate the FTM counter synchronization."]
-    _0,
-    #[doc = "The software trigger activates the FTM counter synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the FTM counter synchronization."] _0,
+    #[doc = "The software trigger activates the FTM counter synchronization."] _1,
 }
 impl SWRSTCNTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -327,8 +322,7 @@ impl SWRSTCNTR {
 pub enum SWWRBUFR {
     #[doc = "The software trigger does not activate MOD, HCR, CNTIN, and CV registers synchronization."]
     _0,
-    #[doc = "The software trigger activates MOD, HCR, CNTIN, and CV registers synchronization."]
-    _1,
+    #[doc = "The software trigger activates MOD, HCR, CNTIN, and CV registers synchronization."] _1,
 }
 impl SWWRBUFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +366,8 @@ impl SWWRBUFR {
 #[doc = "Possible values of the field `SWOM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWOMR {
-    #[doc = "The software trigger does not activate the OUTMASK register synchronization."]
-    _0,
-    #[doc = "The software trigger activates the OUTMASK register synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the OUTMASK register synchronization."] _0,
+    #[doc = "The software trigger activates the OUTMASK register synchronization."] _1,
 }
 impl SWOMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +411,8 @@ impl SWOMR {
 #[doc = "Possible values of the field `SWINVC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWINVCR {
-    #[doc = "The software trigger does not activate the INVCTRL register synchronization."]
-    _0,
-    #[doc = "The software trigger activates the INVCTRL register synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the INVCTRL register synchronization."] _0,
+    #[doc = "The software trigger activates the INVCTRL register synchronization."] _1,
 }
 impl SWINVCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +456,8 @@ impl SWINVCR {
 #[doc = "Possible values of the field `SWSOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWSOCR {
-    #[doc = "The software trigger does not activate the SWOCTRL register synchronization."]
-    _0,
-    #[doc = "The software trigger activates the SWOCTRL register synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the SWOCTRL register synchronization."] _0,
+    #[doc = "The software trigger activates the SWOCTRL register synchronization."] _1,
 }
 impl SWSOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +501,8 @@ impl SWSOCR {
 #[doc = "Possible values of the field `HWRSTCNT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWRSTCNTR {
-    #[doc = "A hardware trigger does not activate the FTM counter synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the FTM counter synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the FTM counter synchronization."] _0,
+    #[doc = "A hardware trigger activates the FTM counter synchronization."] _1,
 }
 impl HWRSTCNTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -562,8 +548,7 @@ impl HWRSTCNTR {
 pub enum HWWRBUFR {
     #[doc = "A hardware trigger does not activate MOD, HCR, CNTIN, and CV registers synchronization."]
     _0,
-    #[doc = "A hardware trigger activates MOD, HCR, CNTIN, and CV registers synchronization."]
-    _1,
+    #[doc = "A hardware trigger activates MOD, HCR, CNTIN, and CV registers synchronization."] _1,
 }
 impl HWWRBUFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -607,10 +592,8 @@ impl HWWRBUFR {
 #[doc = "Possible values of the field `HWOM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWOMR {
-    #[doc = "A hardware trigger does not activate the OUTMASK register synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the OUTMASK register synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the OUTMASK register synchronization."] _0,
+    #[doc = "A hardware trigger activates the OUTMASK register synchronization."] _1,
 }
 impl HWOMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -654,10 +637,8 @@ impl HWOMR {
 #[doc = "Possible values of the field `HWINVC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWINVCR {
-    #[doc = "A hardware trigger does not activate the INVCTRL register synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the INVCTRL register synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the INVCTRL register synchronization."] _0,
+    #[doc = "A hardware trigger activates the INVCTRL register synchronization."] _1,
 }
 impl HWINVCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -701,10 +682,8 @@ impl HWINVCR {
 #[doc = "Possible values of the field `HWSOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWSOCR {
-    #[doc = "A hardware trigger does not activate the SWOCTRL register synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the SWOCTRL register synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the SWOCTRL register synchronization."] _0,
+    #[doc = "A hardware trigger activates the SWOCTRL register synchronization."] _1,
 }
 impl HWSOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -807,8 +786,7 @@ impl<'a> _HWTRIGMODEW<'a> {
 pub enum CNTINCW {
     #[doc = "CNTIN register is updated with its buffer value at all rising edges of FTM input clock."]
     _0,
-    #[doc = "CNTIN register is updated with its buffer value by the PWM synchronization."]
-    _1,
+    #[doc = "CNTIN register is updated with its buffer value by the PWM synchronization."] _1,
 }
 impl CNTINCW {
     #[allow(missing_docs)]
@@ -865,8 +843,7 @@ impl<'a> _CNTINCW<'a> {
 pub enum INVCW {
     #[doc = "INVCTRL register is updated with its buffer value at all rising edges of FTM input clock."]
     _0,
-    #[doc = "INVCTRL register is updated with its buffer value by the PWM synchronization."]
-    _1,
+    #[doc = "INVCTRL register is updated with its buffer value by the PWM synchronization."] _1,
 }
 impl INVCW {
     #[allow(missing_docs)]
@@ -923,8 +900,7 @@ impl<'a> _INVCW<'a> {
 pub enum SWOCW {
     #[doc = "SWOCTRL register is updated with its buffer value at all rising edges of FTM input clock."]
     _0,
-    #[doc = "SWOCTRL register is updated with its buffer value by the PWM synchronization."]
-    _1,
+    #[doc = "SWOCTRL register is updated with its buffer value by the PWM synchronization."] _1,
 }
 impl SWOCW {
     #[allow(missing_docs)]
@@ -979,10 +955,8 @@ impl<'a> _SWOCW<'a> {
 }
 #[doc = "Values that can be written to the field `SYNCMODE`"]
 pub enum SYNCMODEW {
-    #[doc = "Legacy PWM synchronization is selected."]
-    _0,
-    #[doc = "Enhanced PWM synchronization is selected."]
-    _1,
+    #[doc = "Legacy PWM synchronization is selected."] _0,
+    #[doc = "Enhanced PWM synchronization is selected."] _1,
 }
 impl SYNCMODEW {
     #[allow(missing_docs)]
@@ -1037,10 +1011,8 @@ impl<'a> _SYNCMODEW<'a> {
 }
 #[doc = "Values that can be written to the field `SWRSTCNT`"]
 pub enum SWRSTCNTW {
-    #[doc = "The software trigger does not activate the FTM counter synchronization."]
-    _0,
-    #[doc = "The software trigger activates the FTM counter synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the FTM counter synchronization."] _0,
+    #[doc = "The software trigger activates the FTM counter synchronization."] _1,
 }
 impl SWRSTCNTW {
     #[allow(missing_docs)]
@@ -1097,8 +1069,7 @@ impl<'a> _SWRSTCNTW<'a> {
 pub enum SWWRBUFW {
     #[doc = "The software trigger does not activate MOD, HCR, CNTIN, and CV registers synchronization."]
     _0,
-    #[doc = "The software trigger activates MOD, HCR, CNTIN, and CV registers synchronization."]
-    _1,
+    #[doc = "The software trigger activates MOD, HCR, CNTIN, and CV registers synchronization."] _1,
 }
 impl SWWRBUFW {
     #[allow(missing_docs)]
@@ -1153,10 +1124,8 @@ impl<'a> _SWWRBUFW<'a> {
 }
 #[doc = "Values that can be written to the field `SWOM`"]
 pub enum SWOMW {
-    #[doc = "The software trigger does not activate the OUTMASK register synchronization."]
-    _0,
-    #[doc = "The software trigger activates the OUTMASK register synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the OUTMASK register synchronization."] _0,
+    #[doc = "The software trigger activates the OUTMASK register synchronization."] _1,
 }
 impl SWOMW {
     #[allow(missing_docs)]
@@ -1211,10 +1180,8 @@ impl<'a> _SWOMW<'a> {
 }
 #[doc = "Values that can be written to the field `SWINVC`"]
 pub enum SWINVCW {
-    #[doc = "The software trigger does not activate the INVCTRL register synchronization."]
-    _0,
-    #[doc = "The software trigger activates the INVCTRL register synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the INVCTRL register synchronization."] _0,
+    #[doc = "The software trigger activates the INVCTRL register synchronization."] _1,
 }
 impl SWINVCW {
     #[allow(missing_docs)]
@@ -1269,10 +1236,8 @@ impl<'a> _SWINVCW<'a> {
 }
 #[doc = "Values that can be written to the field `SWSOC`"]
 pub enum SWSOCW {
-    #[doc = "The software trigger does not activate the SWOCTRL register synchronization."]
-    _0,
-    #[doc = "The software trigger activates the SWOCTRL register synchronization."]
-    _1,
+    #[doc = "The software trigger does not activate the SWOCTRL register synchronization."] _0,
+    #[doc = "The software trigger activates the SWOCTRL register synchronization."] _1,
 }
 impl SWSOCW {
     #[allow(missing_docs)]
@@ -1327,10 +1292,8 @@ impl<'a> _SWSOCW<'a> {
 }
 #[doc = "Values that can be written to the field `HWRSTCNT`"]
 pub enum HWRSTCNTW {
-    #[doc = "A hardware trigger does not activate the FTM counter synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the FTM counter synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the FTM counter synchronization."] _0,
+    #[doc = "A hardware trigger activates the FTM counter synchronization."] _1,
 }
 impl HWRSTCNTW {
     #[allow(missing_docs)]
@@ -1387,8 +1350,7 @@ impl<'a> _HWRSTCNTW<'a> {
 pub enum HWWRBUFW {
     #[doc = "A hardware trigger does not activate MOD, HCR, CNTIN, and CV registers synchronization."]
     _0,
-    #[doc = "A hardware trigger activates MOD, HCR, CNTIN, and CV registers synchronization."]
-    _1,
+    #[doc = "A hardware trigger activates MOD, HCR, CNTIN, and CV registers synchronization."] _1,
 }
 impl HWWRBUFW {
     #[allow(missing_docs)]
@@ -1443,10 +1405,8 @@ impl<'a> _HWWRBUFW<'a> {
 }
 #[doc = "Values that can be written to the field `HWOM`"]
 pub enum HWOMW {
-    #[doc = "A hardware trigger does not activate the OUTMASK register synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the OUTMASK register synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the OUTMASK register synchronization."] _0,
+    #[doc = "A hardware trigger activates the OUTMASK register synchronization."] _1,
 }
 impl HWOMW {
     #[allow(missing_docs)]
@@ -1501,10 +1461,8 @@ impl<'a> _HWOMW<'a> {
 }
 #[doc = "Values that can be written to the field `HWINVC`"]
 pub enum HWINVCW {
-    #[doc = "A hardware trigger does not activate the INVCTRL register synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the INVCTRL register synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the INVCTRL register synchronization."] _0,
+    #[doc = "A hardware trigger activates the INVCTRL register synchronization."] _1,
 }
 impl HWINVCW {
     #[allow(missing_docs)]
@@ -1559,10 +1517,8 @@ impl<'a> _HWINVCW<'a> {
 }
 #[doc = "Values that can be written to the field `HWSOC`"]
 pub enum HWSOCW {
-    #[doc = "A hardware trigger does not activate the SWOCTRL register synchronization."]
-    _0,
-    #[doc = "A hardware trigger activates the SWOCTRL register synchronization."]
-    _1,
+    #[doc = "A hardware trigger does not activate the SWOCTRL register synchronization."] _0,
+    #[doc = "A hardware trigger activates the SWOCTRL register synchronization."] _1,
 }
 impl HWSOCW {
     #[allow(missing_docs)]

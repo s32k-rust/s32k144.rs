@@ -22,7 +22,9 @@ impl super::SWOCTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SWOCTRL {
 #[doc = "Possible values of the field `CH0OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH0OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl CH0OCR {
 #[doc = "Possible values of the field `CH1OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH1OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl CH1OCR {
 #[doc = "Possible values of the field `CH2OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH2OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl CH2OCR {
 #[doc = "Possible values of the field `CH3OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH3OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl CH3OCR {
 #[doc = "Possible values of the field `CH4OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH4OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl CH4OCR {
 #[doc = "Possible values of the field `CH5OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH5OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl CH5OCR {
 #[doc = "Possible values of the field `CH6OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH6OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl CH6OCR {
 #[doc = "Possible values of the field `CH7OC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7OCR {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH7OCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl CH7OCR {
 #[doc = "Possible values of the field `CH0OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH0OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl CH0OCVR {
 #[doc = "Possible values of the field `CH1OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH1OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl CH1OCVR {
 #[doc = "Possible values of the field `CH2OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH2OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -560,10 +540,8 @@ impl CH2OCVR {
 #[doc = "Possible values of the field `CH3OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH3OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -607,10 +585,8 @@ impl CH3OCVR {
 #[doc = "Possible values of the field `CH4OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH4OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -654,10 +630,8 @@ impl CH4OCVR {
 #[doc = "Possible values of the field `CH5OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH5OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -701,10 +675,8 @@ impl CH5OCVR {
 #[doc = "Possible values of the field `CH6OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH6OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -748,10 +720,8 @@ impl CH6OCVR {
 #[doc = "Possible values of the field `CH7OCV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7OCVR {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH7OCVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -794,10 +764,8 @@ impl CH7OCVR {
 }
 #[doc = "Values that can be written to the field `CH0OC`"]
 pub enum CH0OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH0OCW {
     #[allow(missing_docs)]
@@ -852,10 +820,8 @@ impl<'a> _CH0OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH1OC`"]
 pub enum CH1OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH1OCW {
     #[allow(missing_docs)]
@@ -910,10 +876,8 @@ impl<'a> _CH1OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH2OC`"]
 pub enum CH2OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH2OCW {
     #[allow(missing_docs)]
@@ -968,10 +932,8 @@ impl<'a> _CH2OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH3OC`"]
 pub enum CH3OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH3OCW {
     #[allow(missing_docs)]
@@ -1026,10 +988,8 @@ impl<'a> _CH3OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH4OC`"]
 pub enum CH4OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH4OCW {
     #[allow(missing_docs)]
@@ -1084,10 +1044,8 @@ impl<'a> _CH4OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH5OC`"]
 pub enum CH5OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH5OCW {
     #[allow(missing_docs)]
@@ -1142,10 +1100,8 @@ impl<'a> _CH5OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH6OC`"]
 pub enum CH6OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH6OCW {
     #[allow(missing_docs)]
@@ -1200,10 +1156,8 @@ impl<'a> _CH6OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH7OC`"]
 pub enum CH7OCW {
-    #[doc = "The channel output is not affected by software output control."]
-    _0,
-    #[doc = "The channel output is affected by software output control."]
-    _1,
+    #[doc = "The channel output is not affected by software output control."] _0,
+    #[doc = "The channel output is affected by software output control."] _1,
 }
 impl CH7OCW {
     #[allow(missing_docs)]
@@ -1258,10 +1212,8 @@ impl<'a> _CH7OCW<'a> {
 }
 #[doc = "Values that can be written to the field `CH0OCV`"]
 pub enum CH0OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH0OCVW {
     #[allow(missing_docs)]
@@ -1316,10 +1268,8 @@ impl<'a> _CH0OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH1OCV`"]
 pub enum CH1OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH1OCVW {
     #[allow(missing_docs)]
@@ -1374,10 +1324,8 @@ impl<'a> _CH1OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH2OCV`"]
 pub enum CH2OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH2OCVW {
     #[allow(missing_docs)]
@@ -1432,10 +1380,8 @@ impl<'a> _CH2OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH3OCV`"]
 pub enum CH3OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH3OCVW {
     #[allow(missing_docs)]
@@ -1490,10 +1436,8 @@ impl<'a> _CH3OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH4OCV`"]
 pub enum CH4OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH4OCVW {
     #[allow(missing_docs)]
@@ -1548,10 +1492,8 @@ impl<'a> _CH4OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH5OCV`"]
 pub enum CH5OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH5OCVW {
     #[allow(missing_docs)]
@@ -1606,10 +1548,8 @@ impl<'a> _CH5OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH6OCV`"]
 pub enum CH6OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH6OCVW {
     #[allow(missing_docs)]
@@ -1664,10 +1604,8 @@ impl<'a> _CH6OCVW<'a> {
 }
 #[doc = "Values that can be written to the field `CH7OCV`"]
 pub enum CH7OCVW {
-    #[doc = "The software output control forces 0 to the channel output."]
-    _0,
-    #[doc = "The software output control forces 1 to the channel output."]
-    _1,
+    #[doc = "The software output control forces 0 to the channel output."] _0,
+    #[doc = "The software output control forces 1 to the channel output."] _1,
 }
 impl CH7OCVW {
     #[allow(missing_docs)]

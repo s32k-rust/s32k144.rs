@@ -22,7 +22,9 @@ impl super::QDCTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::QDCTRL {
 #[doc = "Possible values of the field `QUADEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum QUADENR {
-    #[doc = "Quadrature Decoder mode is disabled."]
-    _0,
-    #[doc = "Quadrature Decoder mode is enabled."]
-    _1,
+    #[doc = "Quadrature Decoder mode is disabled."] _0,
+    #[doc = "Quadrature Decoder mode is enabled."] _1,
 }
 impl QUADENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +137,8 @@ impl TOFDIRR {
 #[doc = "Possible values of the field `QUADIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum QUADIRR {
-    #[doc = "Counting direction is decreasing (FTM counter decrement)."]
-    _0,
-    #[doc = "Counting direction is increasing (FTM counter increment)."]
-    _1,
+    #[doc = "Counting direction is decreasing (FTM counter decrement)."] _0,
+    #[doc = "Counting direction is increasing (FTM counter increment)."] _1,
 }
 impl QUADIRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +182,8 @@ impl QUADIRR {
 #[doc = "Possible values of the field `QUADMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum QUADMODER {
-    #[doc = "Phase A and phase B encoding mode."]
-    _0,
-    #[doc = "Count and direction encoding mode."]
-    _1,
+    #[doc = "Phase A and phase B encoding mode."] _0,
+    #[doc = "Count and direction encoding mode."] _1,
 }
 impl QUADMODER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +321,8 @@ impl PHAPOLR {
 #[doc = "Possible values of the field `PHBFLTREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PHBFLTRENR {
-    #[doc = "Phase B input filter is disabled."]
-    _0,
-    #[doc = "Phase B input filter is enabled."]
-    _1,
+    #[doc = "Phase B input filter is disabled."] _0,
+    #[doc = "Phase B input filter is enabled."] _1,
 }
 impl PHBFLTRENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +366,8 @@ impl PHBFLTRENR {
 #[doc = "Possible values of the field `PHAFLTREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PHAFLTRENR {
-    #[doc = "Phase A input filter is disabled."]
-    _0,
-    #[doc = "Phase A input filter is enabled."]
-    _1,
+    #[doc = "Phase A input filter is disabled."] _0,
+    #[doc = "Phase A input filter is enabled."] _1,
 }
 impl PHAFLTRENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -418,10 +410,8 @@ impl PHAFLTRENR {
 }
 #[doc = "Values that can be written to the field `QUADEN`"]
 pub enum QUADENW {
-    #[doc = "Quadrature Decoder mode is disabled."]
-    _0,
-    #[doc = "Quadrature Decoder mode is enabled."]
-    _1,
+    #[doc = "Quadrature Decoder mode is disabled."] _0,
+    #[doc = "Quadrature Decoder mode is enabled."] _1,
 }
 impl QUADENW {
     #[allow(missing_docs)]
@@ -476,10 +466,8 @@ impl<'a> _QUADENW<'a> {
 }
 #[doc = "Values that can be written to the field `QUADMODE`"]
 pub enum QUADMODEW {
-    #[doc = "Phase A and phase B encoding mode."]
-    _0,
-    #[doc = "Count and direction encoding mode."]
-    _1,
+    #[doc = "Phase A and phase B encoding mode."] _0,
+    #[doc = "Count and direction encoding mode."] _1,
 }
 impl QUADMODEW {
     #[allow(missing_docs)]
@@ -650,10 +638,8 @@ impl<'a> _PHAPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `PHBFLTREN`"]
 pub enum PHBFLTRENW {
-    #[doc = "Phase B input filter is disabled."]
-    _0,
-    #[doc = "Phase B input filter is enabled."]
-    _1,
+    #[doc = "Phase B input filter is disabled."] _0,
+    #[doc = "Phase B input filter is enabled."] _1,
 }
 impl PHBFLTRENW {
     #[allow(missing_docs)]
@@ -708,10 +694,8 @@ impl<'a> _PHBFLTRENW<'a> {
 }
 #[doc = "Values that can be written to the field `PHAFLTREN`"]
 pub enum PHAFLTRENW {
-    #[doc = "Phase A input filter is disabled."]
-    _0,
-    #[doc = "Phase A input filter is enabled."]
-    _1,
+    #[doc = "Phase A input filter is disabled."] _0,
+    #[doc = "Phase A input filter is enabled."] _1,
 }
 impl PHAFLTRENW {
     #[allow(missing_docs)]

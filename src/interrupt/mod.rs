@@ -236,182 +236,94 @@ pub static INTERRUPTS: [Option<unsafe extern "C" fn()>; 123] = [
 ];
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
-    #[doc = "0 - DMA0"]
-    DMA0,
-    #[doc = "1 - DMA1"]
-    DMA1,
-    #[doc = "2 - DMA2"]
-    DMA2,
-    #[doc = "3 - DMA3"]
-    DMA3,
-    #[doc = "4 - DMA4"]
-    DMA4,
-    #[doc = "5 - DMA5"]
-    DMA5,
-    #[doc = "6 - DMA6"]
-    DMA6,
-    #[doc = "7 - DMA7"]
-    DMA7,
-    #[doc = "8 - DMA8"]
-    DMA8,
-    #[doc = "9 - DMA9"]
-    DMA9,
-    #[doc = "10 - DMA10"]
-    DMA10,
-    #[doc = "11 - DMA11"]
-    DMA11,
-    #[doc = "12 - DMA12"]
-    DMA12,
-    #[doc = "13 - DMA13"]
-    DMA13,
-    #[doc = "14 - DMA14"]
-    DMA14,
-    #[doc = "15 - DMA15"]
-    DMA15,
-    #[doc = "16 - DMA_Error"]
-    DMA_ERROR,
-    #[doc = "17 - MCM"]
-    MCM,
-    #[doc = "18 - FTFC"]
-    FTFC,
-    #[doc = "19 - Read_Collision"]
-    READ_COLLISION,
-    #[doc = "20 - LVD_LVW"]
-    LVD_LVW,
-    #[doc = "21 - FTFC_Fault"]
-    FTFC_FAULT,
-    #[doc = "22 - WDOG_EWM"]
-    WDOG_EWM,
-    #[doc = "23 - RCM"]
-    RCM,
-    #[doc = "24 - LPI2C0_Master"]
-    LPI2C0_MASTER,
-    #[doc = "25 - LPI2C0_Slave"]
-    LPI2C0_SLAVE,
-    #[doc = "26 - LPSPI0"]
-    LPSPI0,
-    #[doc = "27 - LPSPI1"]
-    LPSPI1,
-    #[doc = "28 - LPSPI2"]
-    LPSPI2,
-    #[doc = "31 - LPUART0_RxTx"]
-    LPUART0_RXTX,
-    #[doc = "33 - LPUART1_RxTx"]
-    LPUART1_RXTX,
-    #[doc = "35 - LPUART2_RxTx"]
-    LPUART2_RXTX,
-    #[doc = "39 - ADC0"]
-    ADC0,
-    #[doc = "40 - ADC1"]
-    ADC1,
-    #[doc = "41 - CMP0"]
-    CMP0,
-    #[doc = "44 - ERM_single_fault"]
-    ERM_SINGLE_FAULT,
-    #[doc = "45 - ERM_double_fault"]
-    ERM_DOUBLE_FAULT,
-    #[doc = "46 - RTC"]
-    RTC,
-    #[doc = "47 - RTC_Seconds"]
-    RTC_SECONDS,
-    #[doc = "48 - LPIT0_Ch0"]
-    LPIT0_CH0,
-    #[doc = "49 - LPIT0_Ch1"]
-    LPIT0_CH1,
-    #[doc = "50 - LPIT0_Ch2"]
-    LPIT0_CH2,
-    #[doc = "51 - LPIT0_Ch3"]
-    LPIT0_CH3,
-    #[doc = "52 - PDB0"]
-    PDB0,
-    #[doc = "57 - SCG"]
-    SCG,
-    #[doc = "58 - LPTMR0"]
-    LPTMR0,
-    #[doc = "59 - PORTA"]
-    PORTA,
-    #[doc = "60 - PORTB"]
-    PORTB,
-    #[doc = "61 - PORTC"]
-    PORTC,
-    #[doc = "62 - PORTD"]
-    PORTD,
-    #[doc = "63 - PORTE"]
-    PORTE,
-    #[doc = "68 - PDB1"]
-    PDB1,
-    #[doc = "69 - FLEXIO"]
-    FLEXIO,
-    #[doc = "78 - CAN0_ORed"]
-    CAN0_ORED,
-    #[doc = "79 - CAN0_Error"]
-    CAN0_ERROR,
-    #[doc = "80 - CAN0_Wake_Up"]
-    CAN0_WAKE_UP,
-    #[doc = "81 - CAN0_ORed_0_15_MB"]
-    CAN0_ORED_0_15_MB,
-    #[doc = "82 - CAN0_ORed_16_31_MB"]
-    CAN0_ORED_16_31_MB,
-    #[doc = "85 - CAN1_ORed"]
-    CAN1_ORED,
-    #[doc = "86 - CAN1_Error"]
-    CAN1_ERROR,
-    #[doc = "88 - CAN1_ORed_0_15_MB"]
-    CAN1_ORED_0_15_MB,
-    #[doc = "92 - CAN2_ORed"]
-    CAN2_ORED,
-    #[doc = "93 - CAN2_Error"]
-    CAN2_ERROR,
-    #[doc = "95 - CAN2_ORed_0_15_MB"]
-    CAN2_ORED_0_15_MB,
-    #[doc = "99 - FTM0_Ch0_Ch1"]
-    FTM0_CH0_CH1,
-    #[doc = "100 - FTM0_Ch2_Ch3"]
-    FTM0_CH2_CH3,
-    #[doc = "101 - FTM0_Ch4_Ch5"]
-    FTM0_CH4_CH5,
-    #[doc = "102 - FTM0_Ch6_Ch7"]
-    FTM0_CH6_CH7,
-    #[doc = "103 - FTM0_Fault"]
-    FTM0_FAULT,
-    #[doc = "104 - FTM0_Ovf_Reload"]
-    FTM0_OVF_RELOAD,
-    #[doc = "105 - FTM1_Ch0_Ch1"]
-    FTM1_CH0_CH1,
-    #[doc = "106 - FTM1_Ch2_Ch3"]
-    FTM1_CH2_CH3,
-    #[doc = "107 - FTM1_Ch4_Ch5"]
-    FTM1_CH4_CH5,
-    #[doc = "108 - FTM1_Ch6_Ch7"]
-    FTM1_CH6_CH7,
-    #[doc = "109 - FTM1_Fault"]
-    FTM1_FAULT,
-    #[doc = "110 - FTM1_Ovf_Reload"]
-    FTM1_OVF_RELOAD,
-    #[doc = "111 - FTM2_Ch0_Ch1"]
-    FTM2_CH0_CH1,
-    #[doc = "112 - FTM2_Ch2_Ch3"]
-    FTM2_CH2_CH3,
-    #[doc = "113 - FTM2_Ch4_Ch5"]
-    FTM2_CH4_CH5,
-    #[doc = "114 - FTM2_Ch6_Ch7"]
-    FTM2_CH6_CH7,
-    #[doc = "115 - FTM2_Fault"]
-    FTM2_FAULT,
-    #[doc = "116 - FTM2_Ovf_Reload"]
-    FTM2_OVF_RELOAD,
-    #[doc = "117 - FTM3_Ch0_Ch1"]
-    FTM3_CH0_CH1,
-    #[doc = "118 - FTM3_Ch2_Ch3"]
-    FTM3_CH2_CH3,
-    #[doc = "119 - FTM3_Ch4_Ch5"]
-    FTM3_CH4_CH5,
-    #[doc = "120 - FTM3_Ch6_Ch7"]
-    FTM3_CH6_CH7,
-    #[doc = "121 - FTM3_Fault"]
-    FTM3_FAULT,
-    #[doc = "122 - FTM3_Ovf_Reload"]
-    FTM3_OVF_RELOAD,
+    #[doc = "0 - DMA0"] DMA0,
+    #[doc = "1 - DMA1"] DMA1,
+    #[doc = "2 - DMA2"] DMA2,
+    #[doc = "3 - DMA3"] DMA3,
+    #[doc = "4 - DMA4"] DMA4,
+    #[doc = "5 - DMA5"] DMA5,
+    #[doc = "6 - DMA6"] DMA6,
+    #[doc = "7 - DMA7"] DMA7,
+    #[doc = "8 - DMA8"] DMA8,
+    #[doc = "9 - DMA9"] DMA9,
+    #[doc = "10 - DMA10"] DMA10,
+    #[doc = "11 - DMA11"] DMA11,
+    #[doc = "12 - DMA12"] DMA12,
+    #[doc = "13 - DMA13"] DMA13,
+    #[doc = "14 - DMA14"] DMA14,
+    #[doc = "15 - DMA15"] DMA15,
+    #[doc = "16 - DMA_Error"] DMA_ERROR,
+    #[doc = "17 - MCM"] MCM,
+    #[doc = "18 - FTFC"] FTFC,
+    #[doc = "19 - Read_Collision"] READ_COLLISION,
+    #[doc = "20 - LVD_LVW"] LVD_LVW,
+    #[doc = "21 - FTFC_Fault"] FTFC_FAULT,
+    #[doc = "22 - WDOG_EWM"] WDOG_EWM,
+    #[doc = "23 - RCM"] RCM,
+    #[doc = "24 - LPI2C0_Master"] LPI2C0_MASTER,
+    #[doc = "25 - LPI2C0_Slave"] LPI2C0_SLAVE,
+    #[doc = "26 - LPSPI0"] LPSPI0,
+    #[doc = "27 - LPSPI1"] LPSPI1,
+    #[doc = "28 - LPSPI2"] LPSPI2,
+    #[doc = "31 - LPUART0_RxTx"] LPUART0_RXTX,
+    #[doc = "33 - LPUART1_RxTx"] LPUART1_RXTX,
+    #[doc = "35 - LPUART2_RxTx"] LPUART2_RXTX,
+    #[doc = "39 - ADC0"] ADC0,
+    #[doc = "40 - ADC1"] ADC1,
+    #[doc = "41 - CMP0"] CMP0,
+    #[doc = "44 - ERM_single_fault"] ERM_SINGLE_FAULT,
+    #[doc = "45 - ERM_double_fault"] ERM_DOUBLE_FAULT,
+    #[doc = "46 - RTC"] RTC,
+    #[doc = "47 - RTC_Seconds"] RTC_SECONDS,
+    #[doc = "48 - LPIT0_Ch0"] LPIT0_CH0,
+    #[doc = "49 - LPIT0_Ch1"] LPIT0_CH1,
+    #[doc = "50 - LPIT0_Ch2"] LPIT0_CH2,
+    #[doc = "51 - LPIT0_Ch3"] LPIT0_CH3,
+    #[doc = "52 - PDB0"] PDB0,
+    #[doc = "57 - SCG"] SCG,
+    #[doc = "58 - LPTMR0"] LPTMR0,
+    #[doc = "59 - PORTA"] PORTA,
+    #[doc = "60 - PORTB"] PORTB,
+    #[doc = "61 - PORTC"] PORTC,
+    #[doc = "62 - PORTD"] PORTD,
+    #[doc = "63 - PORTE"] PORTE,
+    #[doc = "68 - PDB1"] PDB1,
+    #[doc = "69 - FLEXIO"] FLEXIO,
+    #[doc = "78 - CAN0_ORed"] CAN0_ORED,
+    #[doc = "79 - CAN0_Error"] CAN0_ERROR,
+    #[doc = "80 - CAN0_Wake_Up"] CAN0_WAKE_UP,
+    #[doc = "81 - CAN0_ORed_0_15_MB"] CAN0_ORED_0_15_MB,
+    #[doc = "82 - CAN0_ORed_16_31_MB"] CAN0_ORED_16_31_MB,
+    #[doc = "85 - CAN1_ORed"] CAN1_ORED,
+    #[doc = "86 - CAN1_Error"] CAN1_ERROR,
+    #[doc = "88 - CAN1_ORed_0_15_MB"] CAN1_ORED_0_15_MB,
+    #[doc = "92 - CAN2_ORed"] CAN2_ORED,
+    #[doc = "93 - CAN2_Error"] CAN2_ERROR,
+    #[doc = "95 - CAN2_ORed_0_15_MB"] CAN2_ORED_0_15_MB,
+    #[doc = "99 - FTM0_Ch0_Ch1"] FTM0_CH0_CH1,
+    #[doc = "100 - FTM0_Ch2_Ch3"] FTM0_CH2_CH3,
+    #[doc = "101 - FTM0_Ch4_Ch5"] FTM0_CH4_CH5,
+    #[doc = "102 - FTM0_Ch6_Ch7"] FTM0_CH6_CH7,
+    #[doc = "103 - FTM0_Fault"] FTM0_FAULT,
+    #[doc = "104 - FTM0_Ovf_Reload"] FTM0_OVF_RELOAD,
+    #[doc = "105 - FTM1_Ch0_Ch1"] FTM1_CH0_CH1,
+    #[doc = "106 - FTM1_Ch2_Ch3"] FTM1_CH2_CH3,
+    #[doc = "107 - FTM1_Ch4_Ch5"] FTM1_CH4_CH5,
+    #[doc = "108 - FTM1_Ch6_Ch7"] FTM1_CH6_CH7,
+    #[doc = "109 - FTM1_Fault"] FTM1_FAULT,
+    #[doc = "110 - FTM1_Ovf_Reload"] FTM1_OVF_RELOAD,
+    #[doc = "111 - FTM2_Ch0_Ch1"] FTM2_CH0_CH1,
+    #[doc = "112 - FTM2_Ch2_Ch3"] FTM2_CH2_CH3,
+    #[doc = "113 - FTM2_Ch4_Ch5"] FTM2_CH4_CH5,
+    #[doc = "114 - FTM2_Ch6_Ch7"] FTM2_CH6_CH7,
+    #[doc = "115 - FTM2_Fault"] FTM2_FAULT,
+    #[doc = "116 - FTM2_Ovf_Reload"] FTM2_OVF_RELOAD,
+    #[doc = "117 - FTM3_Ch0_Ch1"] FTM3_CH0_CH1,
+    #[doc = "118 - FTM3_Ch2_Ch3"] FTM3_CH2_CH3,
+    #[doc = "119 - FTM3_Ch4_Ch5"] FTM3_CH4_CH5,
+    #[doc = "120 - FTM3_Ch6_Ch7"] FTM3_CH6_CH7,
+    #[doc = "121 - FTM3_Fault"] FTM3_FAULT,
+    #[doc = "122 - FTM3_Ovf_Reload"] FTM3_OVF_RELOAD,
 }
 unsafe impl Nr for Interrupt {
     #[inline]

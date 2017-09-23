@@ -22,7 +22,9 @@ impl super::TCR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,22 +45,14 @@ impl super::TCR {
 #[doc = "Possible values of the field `TCR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCRR {
-    #[doc = "Time Prescaler Register overflows every 32896 clock cycles."]
-    _10000000,
-    #[doc = "Time Prescaler Register overflows every 32895 clock cycles."]
-    _10000001,
-    #[doc = "Time Prescaler Register overflows every 32769 clock cycles."]
-    _11111111,
-    #[doc = "Time Prescaler Register overflows every 32768 clock cycles."]
-    _00000000,
-    #[doc = "Time Prescaler Register overflows every 32767 clock cycles."]
-    _00000001,
-    #[doc = "Time Prescaler Register overflows every 32642 clock cycles."]
-    _01111110,
-    #[doc = "Time Prescaler Register overflows every 32641 clock cycles."]
-    _01111111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Time Prescaler Register overflows every 32896 clock cycles."] _10000000,
+    #[doc = "Time Prescaler Register overflows every 32895 clock cycles."] _10000001,
+    #[doc = "Time Prescaler Register overflows every 32769 clock cycles."] _11111111,
+    #[doc = "Time Prescaler Register overflows every 32768 clock cycles."] _00000000,
+    #[doc = "Time Prescaler Register overflows every 32767 clock cycles."] _00000001,
+    #[doc = "Time Prescaler Register overflows every 32642 clock cycles."] _01111110,
+    #[doc = "Time Prescaler Register overflows every 32641 clock cycles."] _01111111,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl TCRR {
     #[doc = r" Value of the field as raw bits"]
@@ -161,20 +155,13 @@ impl CICR {
 }
 #[doc = "Values that can be written to the field `TCR`"]
 pub enum TCRW {
-    #[doc = "Time Prescaler Register overflows every 32896 clock cycles."]
-    _10000000,
-    #[doc = "Time Prescaler Register overflows every 32895 clock cycles."]
-    _10000001,
-    #[doc = "Time Prescaler Register overflows every 32769 clock cycles."]
-    _11111111,
-    #[doc = "Time Prescaler Register overflows every 32768 clock cycles."]
-    _00000000,
-    #[doc = "Time Prescaler Register overflows every 32767 clock cycles."]
-    _00000001,
-    #[doc = "Time Prescaler Register overflows every 32642 clock cycles."]
-    _01111110,
-    #[doc = "Time Prescaler Register overflows every 32641 clock cycles."]
-    _01111111,
+    #[doc = "Time Prescaler Register overflows every 32896 clock cycles."] _10000000,
+    #[doc = "Time Prescaler Register overflows every 32895 clock cycles."] _10000001,
+    #[doc = "Time Prescaler Register overflows every 32769 clock cycles."] _11111111,
+    #[doc = "Time Prescaler Register overflows every 32768 clock cycles."] _00000000,
+    #[doc = "Time Prescaler Register overflows every 32767 clock cycles."] _00000001,
+    #[doc = "Time Prescaler Register overflows every 32642 clock cycles."] _01111110,
+    #[doc = "Time Prescaler Register overflows every 32641 clock cycles."] _01111111,
 }
 impl TCRW {
     #[allow(missing_docs)]

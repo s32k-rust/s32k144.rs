@@ -22,7 +22,9 @@ impl super::ERR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::ERR {
 #[doc = "Possible values of the field `ERR0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR0R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl ERR0R {
 #[doc = "Possible values of the field `ERR1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR1R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl ERR1R {
 #[doc = "Possible values of the field `ERR2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR2R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl ERR2R {
 #[doc = "Possible values of the field `ERR3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR3R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl ERR3R {
 #[doc = "Possible values of the field `ERR4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR4R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl ERR4R {
 #[doc = "Possible values of the field `ERR5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR5R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl ERR5R {
 #[doc = "Possible values of the field `ERR6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR6R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl ERR6R {
 #[doc = "Possible values of the field `ERR7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR7R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl ERR7R {
 #[doc = "Possible values of the field `ERR8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR8R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR8R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl ERR8R {
 #[doc = "Possible values of the field `ERR9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR9R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR9R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl ERR9R {
 #[doc = "Possible values of the field `ERR10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR10R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR10R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -560,10 +540,8 @@ impl ERR10R {
 #[doc = "Possible values of the field `ERR11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR11R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR11R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -607,10 +585,8 @@ impl ERR11R {
 #[doc = "Possible values of the field `ERR12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR12R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR12R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -654,10 +630,8 @@ impl ERR12R {
 #[doc = "Possible values of the field `ERR13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR13R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR13R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -701,10 +675,8 @@ impl ERR13R {
 #[doc = "Possible values of the field `ERR14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR14R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR14R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -748,10 +720,8 @@ impl ERR14R {
 #[doc = "Possible values of the field `ERR15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR15R {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -794,10 +764,8 @@ impl ERR15R {
 }
 #[doc = "Values that can be written to the field `ERR0`"]
 pub enum ERR0W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR0W {
     #[allow(missing_docs)]
@@ -852,10 +820,8 @@ impl<'a> _ERR0W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR1`"]
 pub enum ERR1W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR1W {
     #[allow(missing_docs)]
@@ -910,10 +876,8 @@ impl<'a> _ERR1W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR2`"]
 pub enum ERR2W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR2W {
     #[allow(missing_docs)]
@@ -968,10 +932,8 @@ impl<'a> _ERR2W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR3`"]
 pub enum ERR3W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR3W {
     #[allow(missing_docs)]
@@ -1026,10 +988,8 @@ impl<'a> _ERR3W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR4`"]
 pub enum ERR4W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR4W {
     #[allow(missing_docs)]
@@ -1084,10 +1044,8 @@ impl<'a> _ERR4W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR5`"]
 pub enum ERR5W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR5W {
     #[allow(missing_docs)]
@@ -1142,10 +1100,8 @@ impl<'a> _ERR5W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR6`"]
 pub enum ERR6W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR6W {
     #[allow(missing_docs)]
@@ -1200,10 +1156,8 @@ impl<'a> _ERR6W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR7`"]
 pub enum ERR7W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR7W {
     #[allow(missing_docs)]
@@ -1258,10 +1212,8 @@ impl<'a> _ERR7W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR8`"]
 pub enum ERR8W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR8W {
     #[allow(missing_docs)]
@@ -1316,10 +1268,8 @@ impl<'a> _ERR8W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR9`"]
 pub enum ERR9W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR9W {
     #[allow(missing_docs)]
@@ -1374,10 +1324,8 @@ impl<'a> _ERR9W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR10`"]
 pub enum ERR10W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR10W {
     #[allow(missing_docs)]
@@ -1432,10 +1380,8 @@ impl<'a> _ERR10W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR11`"]
 pub enum ERR11W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR11W {
     #[allow(missing_docs)]
@@ -1490,10 +1436,8 @@ impl<'a> _ERR11W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR12`"]
 pub enum ERR12W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR12W {
     #[allow(missing_docs)]
@@ -1548,10 +1492,8 @@ impl<'a> _ERR12W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR13`"]
 pub enum ERR13W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR13W {
     #[allow(missing_docs)]
@@ -1606,10 +1548,8 @@ impl<'a> _ERR13W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR14`"]
 pub enum ERR14W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR14W {
     #[allow(missing_docs)]
@@ -1664,10 +1604,8 @@ impl<'a> _ERR14W<'a> {
 }
 #[doc = "Values that can be written to the field `ERR15`"]
 pub enum ERR15W {
-    #[doc = "An error in this channel has not occurred"]
-    _0,
-    #[doc = "An error in this channel has occurred"]
-    _1,
+    #[doc = "An error in this channel has not occurred"] _0,
+    #[doc = "An error in this channel has occurred"] _1,
 }
 impl ERR15W {
     #[allow(missing_docs)]

@@ -22,7 +22,9 @@ impl super::TCR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,14 +56,10 @@ impl FRAMESZR {
 #[doc = "Possible values of the field `WIDTH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WIDTHR {
-    #[doc = "Single bit transfer."]
-    _00,
-    #[doc = "Two bit transfer."]
-    _01,
-    #[doc = "Four bit transfer."]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Single bit transfer."] _00,
+    #[doc = "Two bit transfer."] _01,
+    #[doc = "Four bit transfer."] _10,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl WIDTHR {
     #[doc = r" Value of the field as raw bits"]
@@ -104,10 +102,8 @@ impl WIDTHR {
 #[doc = "Possible values of the field `TXMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXMSKR {
-    #[doc = "Normal transfer."]
-    _0,
-    #[doc = "Mask transmit data."]
-    _1,
+    #[doc = "Normal transfer."] _0,
+    #[doc = "Mask transmit data."] _1,
 }
 impl TXMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -151,10 +147,8 @@ impl TXMSKR {
 #[doc = "Possible values of the field `RXMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXMSKR {
-    #[doc = "Normal transfer."]
-    _0,
-    #[doc = "Receive data is masked."]
-    _1,
+    #[doc = "Normal transfer."] _0,
+    #[doc = "Receive data is masked."] _1,
 }
 impl RXMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -198,10 +192,8 @@ impl RXMSKR {
 #[doc = "Possible values of the field `CONTC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONTCR {
-    #[doc = "Command word for start of new transfer."]
-    _0,
-    #[doc = "Command word for continuing transfer."]
-    _1,
+    #[doc = "Command word for start of new transfer."] _0,
+    #[doc = "Command word for continuing transfer."] _1,
 }
 impl CONTCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -245,10 +237,8 @@ impl CONTCR {
 #[doc = "Possible values of the field `CONT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONTR {
-    #[doc = "Continuous transfer disabled."]
-    _0,
-    #[doc = "Continuous transfer enabled."]
-    _1,
+    #[doc = "Continuous transfer disabled."] _0,
+    #[doc = "Continuous transfer enabled."] _1,
 }
 impl CONTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -292,10 +282,8 @@ impl CONTR {
 #[doc = "Possible values of the field `BYSW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYSWR {
-    #[doc = "Byte swap disabled."]
-    _0,
-    #[doc = "Byte swap enabled."]
-    _1,
+    #[doc = "Byte swap disabled."] _0,
+    #[doc = "Byte swap enabled."] _1,
 }
 impl BYSWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -339,10 +327,8 @@ impl BYSWR {
 #[doc = "Possible values of the field `LSBF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSBFR {
-    #[doc = "Data is transferred MSB first."]
-    _0,
-    #[doc = "Data is transferred LSB first."]
-    _1,
+    #[doc = "Data is transferred MSB first."] _0,
+    #[doc = "Data is transferred LSB first."] _1,
 }
 impl LSBFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -386,14 +372,10 @@ impl LSBFR {
 #[doc = "Possible values of the field `PCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCSR {
-    #[doc = "Transfer using LPSPI_PCS[0]"]
-    _00,
-    #[doc = "Transfer using LPSPI_PCS[1]"]
-    _01,
-    #[doc = "Transfer using LPSPI_PCS[2]"]
-    _10,
-    #[doc = "Transfer using LPSPI_PCS[3]"]
-    _11,
+    #[doc = "Transfer using LPSPI_PCS[0]"] _00,
+    #[doc = "Transfer using LPSPI_PCS[1]"] _01,
+    #[doc = "Transfer using LPSPI_PCS[2]"] _10,
+    #[doc = "Transfer using LPSPI_PCS[3]"] _11,
 }
 impl PCSR {
     #[doc = r" Value of the field as raw bits"]
@@ -442,22 +424,14 @@ impl PCSR {
 #[doc = "Possible values of the field `PRESCALE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESCALER {
-    #[doc = "Divide by 1."]
-    _000,
-    #[doc = "Divide by 2."]
-    _001,
-    #[doc = "Divide by 4."]
-    _010,
-    #[doc = "Divide by 8."]
-    _011,
-    #[doc = "Divide by 16."]
-    _100,
-    #[doc = "Divide by 32."]
-    _101,
-    #[doc = "Divide by 64."]
-    _110,
-    #[doc = "Divide by 128."]
-    _111,
+    #[doc = "Divide by 1."] _000,
+    #[doc = "Divide by 2."] _001,
+    #[doc = "Divide by 4."] _010,
+    #[doc = "Divide by 8."] _011,
+    #[doc = "Divide by 16."] _100,
+    #[doc = "Divide by 32."] _101,
+    #[doc = "Divide by 64."] _110,
+    #[doc = "Divide by 128."] _111,
 }
 impl PRESCALER {
     #[doc = r" Value of the field as raw bits"]
@@ -534,10 +508,8 @@ impl PRESCALER {
 #[doc = "Possible values of the field `CPHA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPHAR {
-    #[doc = "Data is captured on the leading edge of SCK and changed on the following edge."]
-    _0,
-    #[doc = "Data is changed on the leading edge of SCK and captured on the following edge."]
-    _1,
+    #[doc = "Data is captured on the leading edge of SCK and changed on the following edge."] _0,
+    #[doc = "Data is changed on the leading edge of SCK and captured on the following edge."] _1,
 }
 impl CPHAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -581,10 +553,8 @@ impl CPHAR {
 #[doc = "Possible values of the field `CPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOLR {
-    #[doc = "The inactive state value of SCK is low."]
-    _0,
-    #[doc = "The inactive state value of SCK is high."]
-    _1,
+    #[doc = "The inactive state value of SCK is low."] _0,
+    #[doc = "The inactive state value of SCK is high."] _1,
 }
 impl CPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -642,12 +612,9 @@ impl<'a> _FRAMESZW<'a> {
 }
 #[doc = "Values that can be written to the field `WIDTH`"]
 pub enum WIDTHW {
-    #[doc = "Single bit transfer."]
-    _00,
-    #[doc = "Two bit transfer."]
-    _01,
-    #[doc = "Four bit transfer."]
-    _10,
+    #[doc = "Single bit transfer."] _00,
+    #[doc = "Two bit transfer."] _01,
+    #[doc = "Four bit transfer."] _10,
 }
 impl WIDTHW {
     #[allow(missing_docs)]
@@ -698,10 +665,8 @@ impl<'a> _WIDTHW<'a> {
 }
 #[doc = "Values that can be written to the field `TXMSK`"]
 pub enum TXMSKW {
-    #[doc = "Normal transfer."]
-    _0,
-    #[doc = "Mask transmit data."]
-    _1,
+    #[doc = "Normal transfer."] _0,
+    #[doc = "Mask transmit data."] _1,
 }
 impl TXMSKW {
     #[allow(missing_docs)]
@@ -756,10 +721,8 @@ impl<'a> _TXMSKW<'a> {
 }
 #[doc = "Values that can be written to the field `RXMSK`"]
 pub enum RXMSKW {
-    #[doc = "Normal transfer."]
-    _0,
-    #[doc = "Receive data is masked."]
-    _1,
+    #[doc = "Normal transfer."] _0,
+    #[doc = "Receive data is masked."] _1,
 }
 impl RXMSKW {
     #[allow(missing_docs)]
@@ -814,10 +777,8 @@ impl<'a> _RXMSKW<'a> {
 }
 #[doc = "Values that can be written to the field `CONTC`"]
 pub enum CONTCW {
-    #[doc = "Command word for start of new transfer."]
-    _0,
-    #[doc = "Command word for continuing transfer."]
-    _1,
+    #[doc = "Command word for start of new transfer."] _0,
+    #[doc = "Command word for continuing transfer."] _1,
 }
 impl CONTCW {
     #[allow(missing_docs)]
@@ -872,10 +833,8 @@ impl<'a> _CONTCW<'a> {
 }
 #[doc = "Values that can be written to the field `CONT`"]
 pub enum CONTW {
-    #[doc = "Continuous transfer disabled."]
-    _0,
-    #[doc = "Continuous transfer enabled."]
-    _1,
+    #[doc = "Continuous transfer disabled."] _0,
+    #[doc = "Continuous transfer enabled."] _1,
 }
 impl CONTW {
     #[allow(missing_docs)]
@@ -930,10 +889,8 @@ impl<'a> _CONTW<'a> {
 }
 #[doc = "Values that can be written to the field `BYSW`"]
 pub enum BYSWW {
-    #[doc = "Byte swap disabled."]
-    _0,
-    #[doc = "Byte swap enabled."]
-    _1,
+    #[doc = "Byte swap disabled."] _0,
+    #[doc = "Byte swap enabled."] _1,
 }
 impl BYSWW {
     #[allow(missing_docs)]
@@ -988,10 +945,8 @@ impl<'a> _BYSWW<'a> {
 }
 #[doc = "Values that can be written to the field `LSBF`"]
 pub enum LSBFW {
-    #[doc = "Data is transferred MSB first."]
-    _0,
-    #[doc = "Data is transferred LSB first."]
-    _1,
+    #[doc = "Data is transferred MSB first."] _0,
+    #[doc = "Data is transferred LSB first."] _1,
 }
 impl LSBFW {
     #[allow(missing_docs)]
@@ -1046,14 +1001,10 @@ impl<'a> _LSBFW<'a> {
 }
 #[doc = "Values that can be written to the field `PCS`"]
 pub enum PCSW {
-    #[doc = "Transfer using LPSPI_PCS[0]"]
-    _00,
-    #[doc = "Transfer using LPSPI_PCS[1]"]
-    _01,
-    #[doc = "Transfer using LPSPI_PCS[2]"]
-    _10,
-    #[doc = "Transfer using LPSPI_PCS[3]"]
-    _11,
+    #[doc = "Transfer using LPSPI_PCS[0]"] _00,
+    #[doc = "Transfer using LPSPI_PCS[1]"] _01,
+    #[doc = "Transfer using LPSPI_PCS[2]"] _10,
+    #[doc = "Transfer using LPSPI_PCS[3]"] _11,
 }
 impl PCSW {
     #[allow(missing_docs)]
@@ -1112,22 +1063,14 @@ impl<'a> _PCSW<'a> {
 }
 #[doc = "Values that can be written to the field `PRESCALE`"]
 pub enum PRESCALEW {
-    #[doc = "Divide by 1."]
-    _000,
-    #[doc = "Divide by 2."]
-    _001,
-    #[doc = "Divide by 4."]
-    _010,
-    #[doc = "Divide by 8."]
-    _011,
-    #[doc = "Divide by 16."]
-    _100,
-    #[doc = "Divide by 32."]
-    _101,
-    #[doc = "Divide by 64."]
-    _110,
-    #[doc = "Divide by 128."]
-    _111,
+    #[doc = "Divide by 1."] _000,
+    #[doc = "Divide by 2."] _001,
+    #[doc = "Divide by 4."] _010,
+    #[doc = "Divide by 8."] _011,
+    #[doc = "Divide by 16."] _100,
+    #[doc = "Divide by 32."] _101,
+    #[doc = "Divide by 64."] _110,
+    #[doc = "Divide by 128."] _111,
 }
 impl PRESCALEW {
     #[allow(missing_docs)]
@@ -1210,10 +1153,8 @@ impl<'a> _PRESCALEW<'a> {
 }
 #[doc = "Values that can be written to the field `CPHA`"]
 pub enum CPHAW {
-    #[doc = "Data is captured on the leading edge of SCK and changed on the following edge."]
-    _0,
-    #[doc = "Data is changed on the leading edge of SCK and captured on the following edge."]
-    _1,
+    #[doc = "Data is captured on the leading edge of SCK and changed on the following edge."] _0,
+    #[doc = "Data is changed on the leading edge of SCK and captured on the following edge."] _1,
 }
 impl CPHAW {
     #[allow(missing_docs)]
@@ -1268,10 +1209,8 @@ impl<'a> _CPHAW<'a> {
 }
 #[doc = "Values that can be written to the field `CPOL`"]
 pub enum CPOLW {
-    #[doc = "The inactive state value of SCK is low."]
-    _0,
-    #[doc = "The inactive state value of SCK is high."]
-    _1,
+    #[doc = "The inactive state value of SCK is low."] _0,
+    #[doc = "The inactive state value of SCK is high."] _1,
 }
 impl CPOLW {
     #[allow(missing_docs)]

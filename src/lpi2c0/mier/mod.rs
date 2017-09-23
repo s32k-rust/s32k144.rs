@@ -22,7 +22,9 @@ impl super::MIER {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::MIER {
 #[doc = "Possible values of the field `TDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled"]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled"] _1,
 }
 impl TDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TDIER {
 #[doc = "Possible values of the field `RDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl RDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl RDIER {
 #[doc = "Possible values of the field `EPIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl EPIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl EPIER {
 #[doc = "Possible values of the field `SDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl SDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl SDIER {
 #[doc = "Possible values of the field `NDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NDIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl NDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl NDIER {
 #[doc = "Possible values of the field `ALIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl ALIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl ALIER {
 #[doc = "Possible values of the field `FEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEIER {
-    #[doc = "Interrupt enabled."]
-    _0,
-    #[doc = "Interrupt disabled."]
-    _1,
+    #[doc = "Interrupt enabled."] _0,
+    #[doc = "Interrupt disabled."] _1,
 }
 impl FEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl FEIER {
 #[doc = "Possible values of the field `PLTIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLTIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl PLTIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl PLTIER {
 #[doc = "Possible values of the field `DMIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMIER {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl DMIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -465,10 +449,8 @@ impl DMIER {
 }
 #[doc = "Values that can be written to the field `TDIE`"]
 pub enum TDIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled"]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled"] _1,
 }
 impl TDIEW {
     #[allow(missing_docs)]
@@ -523,10 +505,8 @@ impl<'a> _TDIEW<'a> {
 }
 #[doc = "Values that can be written to the field `RDIE`"]
 pub enum RDIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl RDIEW {
     #[allow(missing_docs)]
@@ -581,10 +561,8 @@ impl<'a> _RDIEW<'a> {
 }
 #[doc = "Values that can be written to the field `EPIE`"]
 pub enum EPIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl EPIEW {
     #[allow(missing_docs)]
@@ -639,10 +617,8 @@ impl<'a> _EPIEW<'a> {
 }
 #[doc = "Values that can be written to the field `SDIE`"]
 pub enum SDIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl SDIEW {
     #[allow(missing_docs)]
@@ -697,10 +673,8 @@ impl<'a> _SDIEW<'a> {
 }
 #[doc = "Values that can be written to the field `NDIE`"]
 pub enum NDIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl NDIEW {
     #[allow(missing_docs)]
@@ -755,10 +729,8 @@ impl<'a> _NDIEW<'a> {
 }
 #[doc = "Values that can be written to the field `ALIE`"]
 pub enum ALIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl ALIEW {
     #[allow(missing_docs)]
@@ -813,10 +785,8 @@ impl<'a> _ALIEW<'a> {
 }
 #[doc = "Values that can be written to the field `FEIE`"]
 pub enum FEIEW {
-    #[doc = "Interrupt enabled."]
-    _0,
-    #[doc = "Interrupt disabled."]
-    _1,
+    #[doc = "Interrupt enabled."] _0,
+    #[doc = "Interrupt disabled."] _1,
 }
 impl FEIEW {
     #[allow(missing_docs)]
@@ -871,10 +841,8 @@ impl<'a> _FEIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PLTIE`"]
 pub enum PLTIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl PLTIEW {
     #[allow(missing_docs)]
@@ -929,10 +897,8 @@ impl<'a> _PLTIEW<'a> {
 }
 #[doc = "Values that can be written to the field `DMIE`"]
 pub enum DMIEW {
-    #[doc = "Interrupt disabled."]
-    _0,
-    #[doc = "Interrupt enabled."]
-    _1,
+    #[doc = "Interrupt disabled."] _0,
+    #[doc = "Interrupt enabled."] _1,
 }
 impl DMIEW {
     #[allow(missing_docs)]

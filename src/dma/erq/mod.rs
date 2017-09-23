@@ -22,7 +22,9 @@ impl super::ERQ {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::ERQ {
 #[doc = "Possible values of the field `ERQ0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ0R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl ERQ0R {
 #[doc = "Possible values of the field `ERQ1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ1R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl ERQ1R {
 #[doc = "Possible values of the field `ERQ2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ2R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl ERQ2R {
 #[doc = "Possible values of the field `ERQ3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ3R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl ERQ3R {
 #[doc = "Possible values of the field `ERQ4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ4R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl ERQ4R {
 #[doc = "Possible values of the field `ERQ5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ5R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl ERQ5R {
 #[doc = "Possible values of the field `ERQ6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ6R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl ERQ6R {
 #[doc = "Possible values of the field `ERQ7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ7R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl ERQ7R {
 #[doc = "Possible values of the field `ERQ8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ8R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ8R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl ERQ8R {
 #[doc = "Possible values of the field `ERQ9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ9R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ9R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl ERQ9R {
 #[doc = "Possible values of the field `ERQ10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ10R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ10R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -560,10 +540,8 @@ impl ERQ10R {
 #[doc = "Possible values of the field `ERQ11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ11R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ11R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -607,10 +585,8 @@ impl ERQ11R {
 #[doc = "Possible values of the field `ERQ12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ12R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ12R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -654,10 +630,8 @@ impl ERQ12R {
 #[doc = "Possible values of the field `ERQ13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ13R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ13R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -701,10 +675,8 @@ impl ERQ13R {
 #[doc = "Possible values of the field `ERQ14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ14R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ14R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -748,10 +720,8 @@ impl ERQ14R {
 #[doc = "Possible values of the field `ERQ15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERQ15R {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -794,10 +764,8 @@ impl ERQ15R {
 }
 #[doc = "Values that can be written to the field `ERQ0`"]
 pub enum ERQ0W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ0W {
     #[allow(missing_docs)]
@@ -852,10 +820,8 @@ impl<'a> _ERQ0W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ1`"]
 pub enum ERQ1W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ1W {
     #[allow(missing_docs)]
@@ -910,10 +876,8 @@ impl<'a> _ERQ1W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ2`"]
 pub enum ERQ2W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ2W {
     #[allow(missing_docs)]
@@ -968,10 +932,8 @@ impl<'a> _ERQ2W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ3`"]
 pub enum ERQ3W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ3W {
     #[allow(missing_docs)]
@@ -1026,10 +988,8 @@ impl<'a> _ERQ3W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ4`"]
 pub enum ERQ4W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ4W {
     #[allow(missing_docs)]
@@ -1084,10 +1044,8 @@ impl<'a> _ERQ4W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ5`"]
 pub enum ERQ5W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ5W {
     #[allow(missing_docs)]
@@ -1142,10 +1100,8 @@ impl<'a> _ERQ5W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ6`"]
 pub enum ERQ6W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ6W {
     #[allow(missing_docs)]
@@ -1200,10 +1156,8 @@ impl<'a> _ERQ6W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ7`"]
 pub enum ERQ7W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ7W {
     #[allow(missing_docs)]
@@ -1258,10 +1212,8 @@ impl<'a> _ERQ7W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ8`"]
 pub enum ERQ8W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ8W {
     #[allow(missing_docs)]
@@ -1316,10 +1268,8 @@ impl<'a> _ERQ8W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ9`"]
 pub enum ERQ9W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ9W {
     #[allow(missing_docs)]
@@ -1374,10 +1324,8 @@ impl<'a> _ERQ9W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ10`"]
 pub enum ERQ10W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ10W {
     #[allow(missing_docs)]
@@ -1432,10 +1380,8 @@ impl<'a> _ERQ10W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ11`"]
 pub enum ERQ11W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ11W {
     #[allow(missing_docs)]
@@ -1490,10 +1436,8 @@ impl<'a> _ERQ11W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ12`"]
 pub enum ERQ12W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ12W {
     #[allow(missing_docs)]
@@ -1548,10 +1492,8 @@ impl<'a> _ERQ12W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ13`"]
 pub enum ERQ13W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ13W {
     #[allow(missing_docs)]
@@ -1606,10 +1548,8 @@ impl<'a> _ERQ13W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ14`"]
 pub enum ERQ14W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ14W {
     #[allow(missing_docs)]
@@ -1664,10 +1604,8 @@ impl<'a> _ERQ14W<'a> {
 }
 #[doc = "Values that can be written to the field `ERQ15`"]
 pub enum ERQ15W {
-    #[doc = "The DMA request signal for the corresponding channel is disabled"]
-    _0,
-    #[doc = "The DMA request signal for the corresponding channel is enabled"]
-    _1,
+    #[doc = "The DMA request signal for the corresponding channel is disabled"] _0,
+    #[doc = "The DMA request signal for the corresponding channel is enabled"] _1,
 }
 impl ERQ15W {
     #[allow(missing_docs)]

@@ -22,7 +22,9 @@ impl super::SSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SSR {
 #[doc = "Possible values of the field `TDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDFR {
-    #[doc = "Transmit data not requested."]
-    _0,
-    #[doc = "Transmit data is requested."]
-    _1,
+    #[doc = "Transmit data not requested."] _0,
+    #[doc = "Transmit data is requested."] _1,
 }
 impl TDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TDFR {
 #[doc = "Possible values of the field `RDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDFR {
-    #[doc = "Receive Data is not ready."]
-    _0,
-    #[doc = "Receive data is ready."]
-    _1,
+    #[doc = "Receive Data is not ready."] _0,
+    #[doc = "Receive data is ready."] _1,
 }
 impl RDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl RDFR {
 #[doc = "Possible values of the field `AVF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVFR {
-    #[doc = "Address Status Register is not valid."]
-    _0,
-    #[doc = "Address Status Register is valid."]
-    _1,
+    #[doc = "Address Status Register is not valid."] _0,
+    #[doc = "Address Status Register is valid."] _1,
 }
 impl AVFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl AVFR {
 #[doc = "Possible values of the field `TAF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAFR {
-    #[doc = "Transmit ACK/NACK is not required."]
-    _0,
-    #[doc = "Transmit ACK/NACK is required."]
-    _1,
+    #[doc = "Transmit ACK/NACK is not required."] _0,
+    #[doc = "Transmit ACK/NACK is required."] _1,
 }
 impl TAFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl TAFR {
 #[doc = "Possible values of the field `RSF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSFR {
-    #[doc = "Slave has not detected a Repeated START condition."]
-    _0,
-    #[doc = "Slave has detected a Repeated START condition."]
-    _1,
+    #[doc = "Slave has not detected a Repeated START condition."] _0,
+    #[doc = "Slave has detected a Repeated START condition."] _1,
 }
 impl RSFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl RSFR {
 #[doc = "Possible values of the field `SDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDFR {
-    #[doc = "Slave has not detected a STOP condition."]
-    _0,
-    #[doc = "Slave has detected a STOP condition."]
-    _1,
+    #[doc = "Slave has not detected a STOP condition."] _0,
+    #[doc = "Slave has detected a STOP condition."] _1,
 }
 impl SDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl SDFR {
 #[doc = "Possible values of the field `BEF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BEFR {
-    #[doc = "Slave has not detected a bit error."]
-    _0,
-    #[doc = "Slave has detected a bit error."]
-    _1,
+    #[doc = "Slave has not detected a bit error."] _0,
+    #[doc = "Slave has detected a bit error."] _1,
 }
 impl BEFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl BEFR {
 #[doc = "Possible values of the field `FEF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEFR {
-    #[doc = "FIFO underflow or overflow not detected."]
-    _0,
-    #[doc = "FIFO underflow or overflow detected."]
-    _1,
+    #[doc = "FIFO underflow or overflow not detected."] _0,
+    #[doc = "FIFO underflow or overflow detected."] _1,
 }
 impl FEFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl FEFR {
 #[doc = "Possible values of the field `AM0F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AM0FR {
-    #[doc = "Have not received ADDR0 matching address."]
-    _0,
-    #[doc = "Have received ADDR0 matching address."]
-    _1,
+    #[doc = "Have not received ADDR0 matching address."] _0,
+    #[doc = "Have received ADDR0 matching address."] _1,
 }
 impl AM0FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl AM0FR {
 #[doc = "Possible values of the field `AM1F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AM1FR {
-    #[doc = "Have not received ADDR1 or ADDR0/ADDR1 range matching address."]
-    _0,
-    #[doc = "Have received ADDR1 or ADDR0/ADDR1 range matching address."]
-    _1,
+    #[doc = "Have not received ADDR1 or ADDR0/ADDR1 range matching address."] _0,
+    #[doc = "Have received ADDR1 or ADDR0/ADDR1 range matching address."] _1,
 }
 impl AM1FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl AM1FR {
 #[doc = "Possible values of the field `GCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GCFR {
-    #[doc = "Slave has not detected the General Call Address or General Call Address disabled."]
-    _0,
-    #[doc = "Slave has detected the General Call Address."]
-    _1,
+    #[doc = "Slave has not detected the General Call Address or General Call Address disabled."] _0,
+    #[doc = "Slave has detected the General Call Address."] _1,
 }
 impl GCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -560,10 +540,8 @@ impl GCFR {
 #[doc = "Possible values of the field `SARF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SARFR {
-    #[doc = "SMBus Alert Response disabled or not detected."]
-    _0,
-    #[doc = "SMBus Alert Response enabled and detected."]
-    _1,
+    #[doc = "SMBus Alert Response disabled or not detected."] _0,
+    #[doc = "SMBus Alert Response enabled and detected."] _1,
 }
 impl SARFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -607,10 +585,8 @@ impl SARFR {
 #[doc = "Possible values of the field `SBF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBFR {
-    #[doc = "I2C Slave is idle."]
-    _0,
-    #[doc = "I2C Slave is busy."]
-    _1,
+    #[doc = "I2C Slave is idle."] _0,
+    #[doc = "I2C Slave is busy."] _1,
 }
 impl SBFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -654,10 +630,8 @@ impl SBFR {
 #[doc = "Possible values of the field `BBF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BBFR {
-    #[doc = "I2C Bus is idle."]
-    _0,
-    #[doc = "I2C Bus is busy."]
-    _1,
+    #[doc = "I2C Bus is idle."] _0,
+    #[doc = "I2C Bus is busy."] _1,
 }
 impl BBFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -700,10 +674,8 @@ impl BBFR {
 }
 #[doc = "Values that can be written to the field `RSF`"]
 pub enum RSFW {
-    #[doc = "Slave has not detected a Repeated START condition."]
-    _0,
-    #[doc = "Slave has detected a Repeated START condition."]
-    _1,
+    #[doc = "Slave has not detected a Repeated START condition."] _0,
+    #[doc = "Slave has detected a Repeated START condition."] _1,
 }
 impl RSFW {
     #[allow(missing_docs)]
@@ -758,10 +730,8 @@ impl<'a> _RSFW<'a> {
 }
 #[doc = "Values that can be written to the field `SDF`"]
 pub enum SDFW {
-    #[doc = "Slave has not detected a STOP condition."]
-    _0,
-    #[doc = "Slave has detected a STOP condition."]
-    _1,
+    #[doc = "Slave has not detected a STOP condition."] _0,
+    #[doc = "Slave has detected a STOP condition."] _1,
 }
 impl SDFW {
     #[allow(missing_docs)]
@@ -816,10 +786,8 @@ impl<'a> _SDFW<'a> {
 }
 #[doc = "Values that can be written to the field `BEF`"]
 pub enum BEFW {
-    #[doc = "Slave has not detected a bit error."]
-    _0,
-    #[doc = "Slave has detected a bit error."]
-    _1,
+    #[doc = "Slave has not detected a bit error."] _0,
+    #[doc = "Slave has detected a bit error."] _1,
 }
 impl BEFW {
     #[allow(missing_docs)]
@@ -874,10 +842,8 @@ impl<'a> _BEFW<'a> {
 }
 #[doc = "Values that can be written to the field `FEF`"]
 pub enum FEFW {
-    #[doc = "FIFO underflow or overflow not detected."]
-    _0,
-    #[doc = "FIFO underflow or overflow detected."]
-    _1,
+    #[doc = "FIFO underflow or overflow not detected."] _0,
+    #[doc = "FIFO underflow or overflow detected."] _1,
 }
 impl FEFW {
     #[allow(missing_docs)]

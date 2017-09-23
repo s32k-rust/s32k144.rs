@@ -22,7 +22,9 @@ impl super::DFER {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -47,8 +49,7 @@ pub enum DFER {
     _0,
     #[doc = "Digital filter is enabled on the corresponding pin, if the pin is configured as a digital input."]
     _1,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
+    #[doc = r" Reserved"] _Reserved(u32),
 }
 impl DFER {
     #[doc = r" Value of the field as raw bits"]

@@ -2,20 +2,13 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Port Data Output Register"]
-    pub pdor: PDOR,
-    #[doc = "0x04 - Port Set Output Register"]
-    pub psor: PSOR,
-    #[doc = "0x08 - Port Clear Output Register"]
-    pub pcor: PCOR,
-    #[doc = "0x0c - Port Toggle Output Register"]
-    pub ptor: PTOR,
-    #[doc = "0x10 - Port Data Input Register"]
-    pub pdir: PDIR,
-    #[doc = "0x14 - Port Data Direction Register"]
-    pub pddr: PDDR,
-    #[doc = "0x18 - Port Input Disable Register"]
-    pub pidr: PIDR,
+    #[doc = "0x00 - Port Data Output Register"] pub pdor: PDOR,
+    #[doc = "0x04 - Port Set Output Register"] pub psor: PSOR,
+    #[doc = "0x08 - Port Clear Output Register"] pub pcor: PCOR,
+    #[doc = "0x0c - Port Toggle Output Register"] pub ptor: PTOR,
+    #[doc = "0x10 - Port Data Input Register"] pub pdir: PDIR,
+    #[doc = "0x14 - Port Data Direction Register"] pub pddr: PDDR,
+    #[doc = "0x18 - Port Input Disable Register"] pub pidr: PIDR,
 }
 #[doc = "Port Data Output Register"]
 pub struct PDOR {

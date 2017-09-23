@@ -22,7 +22,9 @@ impl super::LMEM_PCCCR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::LMEM_PCCCR {
 #[doc = "Possible values of the field `ENCACHE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENCACHER {
-    #[doc = "Cache disabled"]
-    _0,
-    #[doc = "Cache enabled"]
-    _1,
+    #[doc = "Cache disabled"] _0,
+    #[doc = "Cache enabled"] _1,
 }
 impl ENCACHER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -132,10 +132,8 @@ impl PCCR3R {
 #[doc = "Possible values of the field `INVW0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVW0R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, invalidate all lines in way 0."]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, invalidate all lines in way 0."] _1,
 }
 impl INVW0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -179,10 +177,8 @@ impl INVW0R {
 #[doc = "Possible values of the field `PUSHW0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PUSHW0R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 0"]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, push all modified lines in way 0"] _1,
 }
 impl PUSHW0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -226,10 +222,8 @@ impl PUSHW0R {
 #[doc = "Possible values of the field `INVW1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVW1R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, invalidate all lines in way 1"]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, invalidate all lines in way 1"] _1,
 }
 impl INVW1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -273,10 +267,8 @@ impl INVW1R {
 #[doc = "Possible values of the field `PUSHW1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PUSHW1R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 1"]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, push all modified lines in way 1"] _1,
 }
 impl PUSHW1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -320,10 +312,8 @@ impl PUSHW1R {
 #[doc = "Possible values of the field `GO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GOR {
-    #[doc = "Write: no effect. Read: no cache command active."]
-    _0,
-    #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."]
-    _1,
+    #[doc = "Write: no effect. Read: no cache command active."] _0,
+    #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."] _1,
 }
 impl GOR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -366,10 +356,8 @@ impl GOR {
 }
 #[doc = "Values that can be written to the field `ENCACHE`"]
 pub enum ENCACHEW {
-    #[doc = "Cache disabled"]
-    _0,
-    #[doc = "Cache enabled"]
-    _1,
+    #[doc = "Cache disabled"] _0,
+    #[doc = "Cache enabled"] _1,
 }
 impl ENCACHEW {
     #[allow(missing_docs)]
@@ -470,10 +458,8 @@ impl<'a> _PCCR3W<'a> {
 }
 #[doc = "Values that can be written to the field `INVW0`"]
 pub enum INVW0W {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, invalidate all lines in way 0."]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, invalidate all lines in way 0."] _1,
 }
 impl INVW0W {
     #[allow(missing_docs)]
@@ -528,10 +514,8 @@ impl<'a> _INVW0W<'a> {
 }
 #[doc = "Values that can be written to the field `PUSHW0`"]
 pub enum PUSHW0W {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 0"]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, push all modified lines in way 0"] _1,
 }
 impl PUSHW0W {
     #[allow(missing_docs)]
@@ -586,10 +570,8 @@ impl<'a> _PUSHW0W<'a> {
 }
 #[doc = "Values that can be written to the field `INVW1`"]
 pub enum INVW1W {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, invalidate all lines in way 1"]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, invalidate all lines in way 1"] _1,
 }
 impl INVW1W {
     #[allow(missing_docs)]
@@ -644,10 +626,8 @@ impl<'a> _INVW1W<'a> {
 }
 #[doc = "Values that can be written to the field `PUSHW1`"]
 pub enum PUSHW1W {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 1"]
-    _1,
+    #[doc = "No operation"] _0,
+    #[doc = "When setting the GO bit, push all modified lines in way 1"] _1,
 }
 impl PUSHW1W {
     #[allow(missing_docs)]
@@ -702,10 +682,8 @@ impl<'a> _PUSHW1W<'a> {
 }
 #[doc = "Values that can be written to the field `GO`"]
 pub enum GOW {
-    #[doc = "Write: no effect. Read: no cache command active."]
-    _0,
-    #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."]
-    _1,
+    #[doc = "Write: no effect. Read: no cache command active."] _0,
+    #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."] _1,
 }
 impl GOW {
     #[allow(missing_docs)]

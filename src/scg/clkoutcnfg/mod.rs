@@ -22,7 +22,9 @@ impl super::CLKOUTCNFG {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,18 +45,12 @@ impl super::CLKOUTCNFG {
 #[doc = "Possible values of the field `CLKOUTSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTSELR {
-    #[doc = "SCG SLOW Clock"]
-    _0000,
-    #[doc = "System OSC (SOSC_CLK)"]
-    _0001,
-    #[doc = "Slow IRC (SIRC_CLK)"]
-    _0010,
-    #[doc = "Fast IRC (FIRC_CLK)"]
-    _0011,
-    #[doc = "System PLL (SPLL_CLK)"]
-    _0110,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "SCG SLOW Clock"] _0000,
+    #[doc = "System OSC (SOSC_CLK)"] _0001,
+    #[doc = "Slow IRC (SIRC_CLK)"] _0010,
+    #[doc = "Fast IRC (FIRC_CLK)"] _0011,
+    #[doc = "System PLL (SPLL_CLK)"] _0110,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl CLKOUTSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -110,16 +106,11 @@ impl CLKOUTSELR {
 }
 #[doc = "Values that can be written to the field `CLKOUTSEL`"]
 pub enum CLKOUTSELW {
-    #[doc = "SCG SLOW Clock"]
-    _0000,
-    #[doc = "System OSC (SOSC_CLK)"]
-    _0001,
-    #[doc = "Slow IRC (SIRC_CLK)"]
-    _0010,
-    #[doc = "Fast IRC (FIRC_CLK)"]
-    _0011,
-    #[doc = "System PLL (SPLL_CLK)"]
-    _0110,
+    #[doc = "SCG SLOW Clock"] _0000,
+    #[doc = "System OSC (SOSC_CLK)"] _0001,
+    #[doc = "Slow IRC (SIRC_CLK)"] _0010,
+    #[doc = "Fast IRC (FIRC_CLK)"] _0011,
+    #[doc = "System PLL (SPLL_CLK)"] _0110,
 }
 impl CLKOUTSELW {
     #[allow(missing_docs)]

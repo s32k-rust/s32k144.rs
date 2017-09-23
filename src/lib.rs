@@ -1,9 +1,18 @@
-# ! [ cfg_attr ( feature = "rt" , feature ( global_asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for S32K144 microcontrollers (generated using svd2rust v0.11.4)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.4/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
+#![cfg_attr(feature = "rt", feature(global_asm))]
+#![cfg_attr(feature = "rt", feature(macro_reexport))]
+#![cfg_attr(feature = "rt", feature(used))]
+#![doc = "Peripheral access API for S32K144 microcontrollers (generated using svd2rust v0.11.4)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.4/svd2rust/#peripheral-api"]
+#![deny(missing_docs)]
+#![deny(warnings)]
+#![allow(non_camel_case_types)]
+#![feature(const_fn)]
+#![no_std]
+extern crate bare_metal;
+extern crate cortex_m;
 #[macro_reexport(default_handler, exception)]
 #[cfg(feature = "rt")]
-extern crate cortex_m_rt ;
-extern crate bare_metal ;
-extern crate vcell ;
+extern crate cortex_m_rt;
+extern crate vcell;
 use core::ops::Deref;
 use bare_metal::Peripheral;
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -767,134 +776,70 @@ impl Deref for LMEM {
 #[doc = r" All the peripherals"]
 #[allow(non_snake_case)]
 pub struct Peripherals<'a> {
-    #[doc = "CPUID"]
-    pub CPUID: &'a CPUID,
-    #[doc = "DCB"]
-    pub DCB: &'a DCB,
-    #[doc = "DWT"]
-    pub DWT: &'a DWT,
-    #[doc = "FPB"]
-    pub FPB: &'a FPB,
-    #[doc = "FPU"]
-    pub FPU: &'a FPU,
-    #[doc = "ITM"]
-    pub ITM: &'a ITM,
-    #[doc = "MPU"]
-    pub MPU: &'a MPU,
-    #[doc = "NVIC"]
-    pub NVIC: &'a NVIC,
-    #[doc = "SCB"]
-    pub SCB: &'a SCB,
-    #[doc = "SYST"]
-    pub SYST: &'a SYST,
-    #[doc = "TPIU"]
-    pub TPIU: &'a TPIU,
-    #[doc = "CSE_PRAM"]
-    pub CSE_PRAM: &'a CSE_PRAM,
-    #[doc = "AIPS"]
-    pub AIPS: &'a AIPS,
-    #[doc = "MSCM"]
-    pub MSCM: &'a MSCM,
-    #[doc = "DMA"]
-    pub DMA: &'a DMA,
-    #[doc = "ERM"]
-    pub ERM: &'a ERM,
-    #[doc = "EIM"]
-    pub EIM: &'a EIM,
-    #[doc = "FTFC"]
-    pub FTFC: &'a FTFC,
-    #[doc = "DMAMUX"]
-    pub DMAMUX: &'a DMAMUX,
-    #[doc = "CAN0"]
-    pub CAN0: &'a CAN0,
-    #[doc = "CAN1"]
-    pub CAN1: &'a CAN1,
-    #[doc = "CAN2"]
-    pub CAN2: &'a CAN2,
-    #[doc = "FTM0"]
-    pub FTM0: &'a FTM0,
-    #[doc = "FTM1"]
-    pub FTM1: &'a FTM1,
-    #[doc = "FTM2"]
-    pub FTM2: &'a FTM2,
-    #[doc = "FTM3"]
-    pub FTM3: &'a FTM3,
-    #[doc = "ADC0"]
-    pub ADC0: &'a ADC0,
-    #[doc = "ADC1"]
-    pub ADC1: &'a ADC1,
-    #[doc = "LPSPI0"]
-    pub LPSPI0: &'a LPSPI0,
-    #[doc = "LPSPI1"]
-    pub LPSPI1: &'a LPSPI1,
-    #[doc = "LPSPI2"]
-    pub LPSPI2: &'a LPSPI2,
-    #[doc = "PDB0"]
-    pub PDB0: &'a PDB0,
-    #[doc = "PDB1"]
-    pub PDB1: &'a PDB1,
-    #[doc = "CRC"]
-    pub CRC: &'a CRC,
-    #[doc = "LPIT0"]
-    pub LPIT0: &'a LPIT0,
-    #[doc = "RTC"]
-    pub RTC: &'a RTC,
-    #[doc = "LPTMR0"]
-    pub LPTMR0: &'a LPTMR0,
-    #[doc = "SIM"]
-    pub SIM: &'a SIM,
-    #[doc = "PORTA"]
-    pub PORTA: &'a PORTA,
-    #[doc = "PORTB"]
-    pub PORTB: &'a PORTB,
-    #[doc = "PORTC"]
-    pub PORTC: &'a PORTC,
-    #[doc = "PORTD"]
-    pub PORTD: &'a PORTD,
-    #[doc = "PORTE"]
-    pub PORTE: &'a PORTE,
-    #[doc = "WDOG"]
-    pub WDOG: &'a WDOG,
-    #[doc = "FLEXIO"]
-    pub FLEXIO: &'a FLEXIO,
-    #[doc = "EWM"]
-    pub EWM: &'a EWM,
-    #[doc = "TRGMUX"]
-    pub TRGMUX: &'a TRGMUX,
-    #[doc = "SCG"]
-    pub SCG: &'a SCG,
-    #[doc = "PCC"]
-    pub PCC: &'a PCC,
-    #[doc = "LPI2C0"]
-    pub LPI2C0: &'a LPI2C0,
-    #[doc = "LPUART0"]
-    pub LPUART0: &'a LPUART0,
-    #[doc = "LPUART1"]
-    pub LPUART1: &'a LPUART1,
-    #[doc = "LPUART2"]
-    pub LPUART2: &'a LPUART2,
-    #[doc = "CMP0"]
-    pub CMP0: &'a CMP0,
-    #[doc = "PMC"]
-    pub PMC: &'a PMC,
-    #[doc = "SMC"]
-    pub SMC: &'a SMC,
-    #[doc = "RCM"]
-    pub RCM: &'a RCM,
-    #[doc = "PTA"]
-    pub PTA: &'a PTA,
-    #[doc = "PTB"]
-    pub PTB: &'a PTB,
-    #[doc = "PTC"]
-    pub PTC: &'a PTC,
-    #[doc = "PTD"]
-    pub PTD: &'a PTD,
-    #[doc = "PTE"]
-    pub PTE: &'a PTE,
-    #[doc = "MCM"]
-    pub MCM: &'a MCM,
-    #[doc = "LMEM"]
-    pub LMEM: &'a LMEM,
+    #[doc = "CPUID"] pub CPUID: &'a CPUID,
+    #[doc = "DCB"] pub DCB: &'a DCB,
+    #[doc = "DWT"] pub DWT: &'a DWT,
+    #[doc = "FPB"] pub FPB: &'a FPB,
+    #[doc = "FPU"] pub FPU: &'a FPU,
+    #[doc = "ITM"] pub ITM: &'a ITM,
+    #[doc = "MPU"] pub MPU: &'a MPU,
+    #[doc = "NVIC"] pub NVIC: &'a NVIC,
+    #[doc = "SCB"] pub SCB: &'a SCB,
+    #[doc = "SYST"] pub SYST: &'a SYST,
+    #[doc = "TPIU"] pub TPIU: &'a TPIU,
+    #[doc = "CSE_PRAM"] pub CSE_PRAM: &'a CSE_PRAM,
+    #[doc = "AIPS"] pub AIPS: &'a AIPS,
+    #[doc = "MSCM"] pub MSCM: &'a MSCM,
+    #[doc = "DMA"] pub DMA: &'a DMA,
+    #[doc = "ERM"] pub ERM: &'a ERM,
+    #[doc = "EIM"] pub EIM: &'a EIM,
+    #[doc = "FTFC"] pub FTFC: &'a FTFC,
+    #[doc = "DMAMUX"] pub DMAMUX: &'a DMAMUX,
+    #[doc = "CAN0"] pub CAN0: &'a CAN0,
+    #[doc = "CAN1"] pub CAN1: &'a CAN1,
+    #[doc = "CAN2"] pub CAN2: &'a CAN2,
+    #[doc = "FTM0"] pub FTM0: &'a FTM0,
+    #[doc = "FTM1"] pub FTM1: &'a FTM1,
+    #[doc = "FTM2"] pub FTM2: &'a FTM2,
+    #[doc = "FTM3"] pub FTM3: &'a FTM3,
+    #[doc = "ADC0"] pub ADC0: &'a ADC0,
+    #[doc = "ADC1"] pub ADC1: &'a ADC1,
+    #[doc = "LPSPI0"] pub LPSPI0: &'a LPSPI0,
+    #[doc = "LPSPI1"] pub LPSPI1: &'a LPSPI1,
+    #[doc = "LPSPI2"] pub LPSPI2: &'a LPSPI2,
+    #[doc = "PDB0"] pub PDB0: &'a PDB0,
+    #[doc = "PDB1"] pub PDB1: &'a PDB1,
+    #[doc = "CRC"] pub CRC: &'a CRC,
+    #[doc = "LPIT0"] pub LPIT0: &'a LPIT0,
+    #[doc = "RTC"] pub RTC: &'a RTC,
+    #[doc = "LPTMR0"] pub LPTMR0: &'a LPTMR0,
+    #[doc = "SIM"] pub SIM: &'a SIM,
+    #[doc = "PORTA"] pub PORTA: &'a PORTA,
+    #[doc = "PORTB"] pub PORTB: &'a PORTB,
+    #[doc = "PORTC"] pub PORTC: &'a PORTC,
+    #[doc = "PORTD"] pub PORTD: &'a PORTD,
+    #[doc = "PORTE"] pub PORTE: &'a PORTE,
+    #[doc = "WDOG"] pub WDOG: &'a WDOG,
+    #[doc = "FLEXIO"] pub FLEXIO: &'a FLEXIO,
+    #[doc = "EWM"] pub EWM: &'a EWM,
+    #[doc = "TRGMUX"] pub TRGMUX: &'a TRGMUX,
+    #[doc = "SCG"] pub SCG: &'a SCG,
+    #[doc = "PCC"] pub PCC: &'a PCC,
+    #[doc = "LPI2C0"] pub LPI2C0: &'a LPI2C0,
+    #[doc = "LPUART0"] pub LPUART0: &'a LPUART0,
+    #[doc = "LPUART1"] pub LPUART1: &'a LPUART1,
+    #[doc = "LPUART2"] pub LPUART2: &'a LPUART2,
+    #[doc = "CMP0"] pub CMP0: &'a CMP0,
+    #[doc = "PMC"] pub PMC: &'a PMC,
+    #[doc = "SMC"] pub SMC: &'a SMC,
+    #[doc = "RCM"] pub RCM: &'a RCM,
+    #[doc = "PTA"] pub PTA: &'a PTA,
+    #[doc = "PTB"] pub PTB: &'a PTB,
+    #[doc = "PTC"] pub PTC: &'a PTC,
+    #[doc = "PTD"] pub PTD: &'a PTD,
+    #[doc = "PTE"] pub PTE: &'a PTE,
+    #[doc = "MCM"] pub MCM: &'a MCM,
+    #[doc = "LMEM"] pub LMEM: &'a LMEM,
 }
 impl<'a> Peripherals<'a> {
     #[doc = r" Grants access to all the peripherals"]

@@ -2,15 +2,11 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Low Voltage Detect Status and Control 1 Register"]
-    pub lvdsc1: LVDSC1,
-    #[doc = "0x01 - Low Voltage Detect Status and Control 2 Register"]
-    pub lvdsc2: LVDSC2,
-    #[doc = "0x02 - Regulator Status and Control Register"]
-    pub regsc: REGSC,
+    #[doc = "0x00 - Low Voltage Detect Status and Control 1 Register"] pub lvdsc1: LVDSC1,
+    #[doc = "0x01 - Low Voltage Detect Status and Control 2 Register"] pub lvdsc2: LVDSC2,
+    #[doc = "0x02 - Regulator Status and Control Register"] pub regsc: REGSC,
     _reserved0: [u8; 1usize],
-    #[doc = "0x04 - Low Power Oscillator Trim Register"]
-    pub lpotrim: LPOTRIM,
+    #[doc = "0x04 - Low Power Oscillator Trim Register"] pub lpotrim: LPOTRIM,
 }
 #[doc = "Low Voltage Detect Status and Control 1 Register"]
 pub struct LVDSC1 {

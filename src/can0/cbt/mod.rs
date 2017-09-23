@@ -22,7 +22,9 @@ impl super::CBT {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -98,10 +100,8 @@ impl EPRESDIVR {
 #[doc = "Possible values of the field `BTF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BTFR {
-    #[doc = "Extended bit time definitions disabled."]
-    _0,
-    #[doc = "Extended bit time definitions enabled."]
-    _1,
+    #[doc = "Extended bit time definitions disabled."] _0,
+    #[doc = "Extended bit time definitions enabled."] _1,
 }
 impl BTFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -219,10 +219,8 @@ impl<'a> _EPRESDIVW<'a> {
 }
 #[doc = "Values that can be written to the field `BTF`"]
 pub enum BTFW {
-    #[doc = "Extended bit time definitions disabled."]
-    _0,
-    #[doc = "Extended bit time definitions enabled."]
-    _1,
+    #[doc = "Extended bit time definitions disabled."] _0,
+    #[doc = "Extended bit time definitions enabled."] _1,
 }
 impl BTFW {
     #[allow(missing_docs)]

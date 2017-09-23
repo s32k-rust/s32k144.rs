@@ -22,7 +22,9 @@ impl super::STAT {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::STAT {
 #[doc = "Possible values of the field `MA2F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MA2FR {
-    #[doc = "Received data is not equal to MA2"]
-    _0,
-    #[doc = "Received data is equal to MA2"]
-    _1,
+    #[doc = "Received data is not equal to MA2"] _0,
+    #[doc = "Received data is equal to MA2"] _1,
 }
 impl MA2FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl MA2FR {
 #[doc = "Possible values of the field `MA1F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MA1FR {
-    #[doc = "Received data is not equal to MA1"]
-    _0,
-    #[doc = "Received data is equal to MA1"]
-    _1,
+    #[doc = "Received data is not equal to MA1"] _0,
+    #[doc = "Received data is equal to MA1"] _1,
 }
 impl MA1FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl MA1FR {
 #[doc = "Possible values of the field `PF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFR {
-    #[doc = "No parity error."]
-    _0,
-    #[doc = "Parity error."]
-    _1,
+    #[doc = "No parity error."] _0,
+    #[doc = "Parity error."] _1,
 }
 impl PFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl PFR {
 #[doc = "Possible values of the field `FE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FER {
-    #[doc = "No framing error detected. This does not guarantee the framing is correct."]
-    _0,
-    #[doc = "Framing error."]
-    _1,
+    #[doc = "No framing error detected. This does not guarantee the framing is correct."] _0,
+    #[doc = "Framing error."] _1,
 }
 impl FER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl FER {
 #[doc = "Possible values of the field `NF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NFR {
-    #[doc = "No noise detected."]
-    _0,
-    #[doc = "Noise detected in the received character in LPUART_DATA."]
-    _1,
+    #[doc = "No noise detected."] _0,
+    #[doc = "Noise detected in the received character in LPUART_DATA."] _1,
 }
 impl NFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl NFR {
 #[doc = "Possible values of the field `OR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ORR {
-    #[doc = "No overrun."]
-    _0,
-    #[doc = "Receive overrun (new LPUART data lost)."]
-    _1,
+    #[doc = "No overrun."] _0,
+    #[doc = "Receive overrun (new LPUART data lost)."] _1,
 }
 impl ORR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl ORR {
 #[doc = "Possible values of the field `IDLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLER {
-    #[doc = "No idle line detected."]
-    _0,
-    #[doc = "Idle line was detected."]
-    _1,
+    #[doc = "No idle line detected."] _0,
+    #[doc = "Idle line was detected."] _1,
 }
 impl IDLER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl IDLER {
 #[doc = "Possible values of the field `RDRF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDRFR {
-    #[doc = "Receive data buffer empty."]
-    _0,
-    #[doc = "Receive data buffer full."]
-    _1,
+    #[doc = "Receive data buffer empty."] _0,
+    #[doc = "Receive data buffer full."] _1,
 }
 impl RDRFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl RDRFR {
 #[doc = "Possible values of the field `TC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCR {
-    #[doc = "Transmitter active (sending data, a preamble, or a break)."]
-    _0,
-    #[doc = "Transmitter idle (transmission activity complete)."]
-    _1,
+    #[doc = "Transmitter active (sending data, a preamble, or a break)."] _0,
+    #[doc = "Transmitter idle (transmission activity complete)."] _1,
 }
 impl TCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl TCR {
 #[doc = "Possible values of the field `TDRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDRER {
-    #[doc = "Transmit data buffer full."]
-    _0,
-    #[doc = "Transmit data buffer empty."]
-    _1,
+    #[doc = "Transmit data buffer full."] _0,
+    #[doc = "Transmit data buffer empty."] _1,
 }
 impl TDRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl TDRER {
 #[doc = "Possible values of the field `RAF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAFR {
-    #[doc = "LPUART receiver idle waiting for a start bit."]
-    _0,
-    #[doc = "LPUART receiver active (RXD input not idle)."]
-    _1,
+    #[doc = "LPUART receiver idle waiting for a start bit."] _0,
+    #[doc = "LPUART receiver active (RXD input not idle)."] _1,
 }
 impl RAFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -560,8 +540,7 @@ impl RAFR {
 #[doc = "Possible values of the field `LBKDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBKDER {
-    #[doc = "LIN break detect is disabled, normal break character can be detected."]
-    _0,
+    #[doc = "LIN break detect is disabled, normal break character can be detected."] _0,
     #[doc = "LIN break detect is enabled. LIN break character is detected at length of 11 bit times (if M = 0) or 12 (if M = 1) or 13 (M10 = 1)."]
     _1,
 }
@@ -607,10 +586,8 @@ impl LBKDER {
 #[doc = "Possible values of the field `BRK13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRK13R {
-    #[doc = "Break character is transmitted with length of 9 to 13 bit times."]
-    _0,
-    #[doc = "Break character is transmitted with length of 12 to 15 bit times."]
-    _1,
+    #[doc = "Break character is transmitted with length of 9 to 13 bit times."] _0,
+    #[doc = "Break character is transmitted with length of 12 to 15 bit times."] _1,
 }
 impl BRK13R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -701,10 +678,8 @@ impl RWUIDR {
 #[doc = "Possible values of the field `RXINV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXINVR {
-    #[doc = "Receive data not inverted."]
-    _0,
-    #[doc = "Receive data inverted."]
-    _1,
+    #[doc = "Receive data not inverted."] _0,
+    #[doc = "Receive data inverted."] _1,
 }
 impl RXINVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -795,10 +770,8 @@ impl MSBFR {
 #[doc = "Possible values of the field `RXEDGIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEDGIFR {
-    #[doc = "No active edge on the receive pin has occurred."]
-    _0,
-    #[doc = "An active edge on the receive pin has occurred."]
-    _1,
+    #[doc = "No active edge on the receive pin has occurred."] _0,
+    #[doc = "An active edge on the receive pin has occurred."] _1,
 }
 impl RXEDGIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -842,10 +815,8 @@ impl RXEDGIFR {
 #[doc = "Possible values of the field `LBKDIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBKDIFR {
-    #[doc = "No LIN break character has been detected."]
-    _0,
-    #[doc = "LIN break character has been detected."]
-    _1,
+    #[doc = "No LIN break character has been detected."] _0,
+    #[doc = "LIN break character has been detected."] _1,
 }
 impl LBKDIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -888,10 +859,8 @@ impl LBKDIFR {
 }
 #[doc = "Values that can be written to the field `MA2F`"]
 pub enum MA2FW {
-    #[doc = "Received data is not equal to MA2"]
-    _0,
-    #[doc = "Received data is equal to MA2"]
-    _1,
+    #[doc = "Received data is not equal to MA2"] _0,
+    #[doc = "Received data is equal to MA2"] _1,
 }
 impl MA2FW {
     #[allow(missing_docs)]
@@ -946,10 +915,8 @@ impl<'a> _MA2FW<'a> {
 }
 #[doc = "Values that can be written to the field `MA1F`"]
 pub enum MA1FW {
-    #[doc = "Received data is not equal to MA1"]
-    _0,
-    #[doc = "Received data is equal to MA1"]
-    _1,
+    #[doc = "Received data is not equal to MA1"] _0,
+    #[doc = "Received data is equal to MA1"] _1,
 }
 impl MA1FW {
     #[allow(missing_docs)]
@@ -1004,10 +971,8 @@ impl<'a> _MA1FW<'a> {
 }
 #[doc = "Values that can be written to the field `PF`"]
 pub enum PFW {
-    #[doc = "No parity error."]
-    _0,
-    #[doc = "Parity error."]
-    _1,
+    #[doc = "No parity error."] _0,
+    #[doc = "Parity error."] _1,
 }
 impl PFW {
     #[allow(missing_docs)]
@@ -1062,10 +1027,8 @@ impl<'a> _PFW<'a> {
 }
 #[doc = "Values that can be written to the field `FE`"]
 pub enum FEW {
-    #[doc = "No framing error detected. This does not guarantee the framing is correct."]
-    _0,
-    #[doc = "Framing error."]
-    _1,
+    #[doc = "No framing error detected. This does not guarantee the framing is correct."] _0,
+    #[doc = "Framing error."] _1,
 }
 impl FEW {
     #[allow(missing_docs)]
@@ -1120,10 +1083,8 @@ impl<'a> _FEW<'a> {
 }
 #[doc = "Values that can be written to the field `NF`"]
 pub enum NFW {
-    #[doc = "No noise detected."]
-    _0,
-    #[doc = "Noise detected in the received character in LPUART_DATA."]
-    _1,
+    #[doc = "No noise detected."] _0,
+    #[doc = "Noise detected in the received character in LPUART_DATA."] _1,
 }
 impl NFW {
     #[allow(missing_docs)]
@@ -1178,10 +1139,8 @@ impl<'a> _NFW<'a> {
 }
 #[doc = "Values that can be written to the field `OR`"]
 pub enum ORW {
-    #[doc = "No overrun."]
-    _0,
-    #[doc = "Receive overrun (new LPUART data lost)."]
-    _1,
+    #[doc = "No overrun."] _0,
+    #[doc = "Receive overrun (new LPUART data lost)."] _1,
 }
 impl ORW {
     #[allow(missing_docs)]
@@ -1236,10 +1195,8 @@ impl<'a> _ORW<'a> {
 }
 #[doc = "Values that can be written to the field `IDLE`"]
 pub enum IDLEW {
-    #[doc = "No idle line detected."]
-    _0,
-    #[doc = "Idle line was detected."]
-    _1,
+    #[doc = "No idle line detected."] _0,
+    #[doc = "Idle line was detected."] _1,
 }
 impl IDLEW {
     #[allow(missing_docs)]
@@ -1294,8 +1251,7 @@ impl<'a> _IDLEW<'a> {
 }
 #[doc = "Values that can be written to the field `LBKDE`"]
 pub enum LBKDEW {
-    #[doc = "LIN break detect is disabled, normal break character can be detected."]
-    _0,
+    #[doc = "LIN break detect is disabled, normal break character can be detected."] _0,
     #[doc = "LIN break detect is enabled. LIN break character is detected at length of 11 bit times (if M = 0) or 12 (if M = 1) or 13 (M10 = 1)."]
     _1,
 }
@@ -1352,10 +1308,8 @@ impl<'a> _LBKDEW<'a> {
 }
 #[doc = "Values that can be written to the field `BRK13`"]
 pub enum BRK13W {
-    #[doc = "Break character is transmitted with length of 9 to 13 bit times."]
-    _0,
-    #[doc = "Break character is transmitted with length of 12 to 15 bit times."]
-    _1,
+    #[doc = "Break character is transmitted with length of 9 to 13 bit times."] _0,
+    #[doc = "Break character is transmitted with length of 12 to 15 bit times."] _1,
 }
 impl BRK13W {
     #[allow(missing_docs)]
@@ -1468,10 +1422,8 @@ impl<'a> _RWUIDW<'a> {
 }
 #[doc = "Values that can be written to the field `RXINV`"]
 pub enum RXINVW {
-    #[doc = "Receive data not inverted."]
-    _0,
-    #[doc = "Receive data inverted."]
-    _1,
+    #[doc = "Receive data not inverted."] _0,
+    #[doc = "Receive data inverted."] _1,
 }
 impl RXINVW {
     #[allow(missing_docs)]
@@ -1584,10 +1536,8 @@ impl<'a> _MSBFW<'a> {
 }
 #[doc = "Values that can be written to the field `RXEDGIF`"]
 pub enum RXEDGIFW {
-    #[doc = "No active edge on the receive pin has occurred."]
-    _0,
-    #[doc = "An active edge on the receive pin has occurred."]
-    _1,
+    #[doc = "No active edge on the receive pin has occurred."] _0,
+    #[doc = "An active edge on the receive pin has occurred."] _1,
 }
 impl RXEDGIFW {
     #[allow(missing_docs)]
@@ -1642,10 +1592,8 @@ impl<'a> _RXEDGIFW<'a> {
 }
 #[doc = "Values that can be written to the field `LBKDIF`"]
 pub enum LBKDIFW {
-    #[doc = "No LIN break character has been detected."]
-    _0,
-    #[doc = "LIN break character has been detected."]
-    _1,
+    #[doc = "No LIN break character has been detected."] _0,
+    #[doc = "LIN break character has been detected."] _1,
 }
 impl LBKDIFW {
     #[allow(missing_docs)]

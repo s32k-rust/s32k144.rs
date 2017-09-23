@@ -22,7 +22,9 @@ impl super::CS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CS {
 #[doc = "Possible values of the field `STOP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPR {
-    #[doc = "Watchdog disabled in chip stop mode."]
-    _0,
-    #[doc = "Watchdog enabled in chip stop mode."]
-    _1,
+    #[doc = "Watchdog disabled in chip stop mode."] _0,
+    #[doc = "Watchdog enabled in chip stop mode."] _1,
 }
 impl STOPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl STOPR {
 #[doc = "Possible values of the field `WAIT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAITR {
-    #[doc = "Watchdog disabled in chip wait mode."]
-    _0,
-    #[doc = "Watchdog enabled in chip wait mode."]
-    _1,
+    #[doc = "Watchdog disabled in chip wait mode."] _0,
+    #[doc = "Watchdog enabled in chip wait mode."] _1,
 }
 impl WAITR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl WAITR {
 #[doc = "Possible values of the field `DBG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBGR {
-    #[doc = "Watchdog disabled in chip debug mode."]
-    _0,
-    #[doc = "Watchdog enabled in chip debug mode."]
-    _1,
+    #[doc = "Watchdog disabled in chip debug mode."] _0,
+    #[doc = "Watchdog enabled in chip debug mode."] _1,
 }
 impl DBGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,8 +180,7 @@ impl DBGR {
 #[doc = "Possible values of the field `TST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSTR {
-    #[doc = "Watchdog test mode disabled."]
-    _00,
+    #[doc = "Watchdog test mode disabled."] _00,
     #[doc = "Watchdog user mode enabled. (Watchdog test mode disabled.) After testing the watchdog, software should use this setting to indicate that the watchdog is functioning normally in user mode."]
     _01,
     #[doc = "Watchdog test mode enabled, only the low byte is used. CNT[CNTLOW] is compared with TOVAL[TOVALLOW]."]
@@ -287,8 +282,7 @@ impl UPDATER {
 #[doc = "Possible values of the field `INT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTR {
-    #[doc = "Watchdog interrupts are disabled. Watchdog resets are not delayed."]
-    _0,
+    #[doc = "Watchdog interrupts are disabled. Watchdog resets are not delayed."] _0,
     #[doc = "Watchdog interrupts are enabled. Watchdog resets are delayed by 8'd128 bus clocks from the interrupt vector fetch."]
     _1,
 }
@@ -334,10 +328,8 @@ impl INTR {
 #[doc = "Possible values of the field `EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENR {
-    #[doc = "Watchdog disabled."]
-    _0,
-    #[doc = "Watchdog enabled."]
-    _1,
+    #[doc = "Watchdog disabled."] _0,
+    #[doc = "Watchdog enabled."] _1,
 }
 impl ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -381,14 +373,10 @@ impl ENR {
 #[doc = "Possible values of the field `CLK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKR {
-    #[doc = "Bus clock"]
-    _00,
-    #[doc = "LPO clock"]
-    _01,
-    #[doc = "INTCLK (internal clock)"]
-    _10,
-    #[doc = "ERCLK (external reference clock)"]
-    _11,
+    #[doc = "Bus clock"] _00,
+    #[doc = "LPO clock"] _01,
+    #[doc = "INTCLK (internal clock)"] _10,
+    #[doc = "ERCLK (external reference clock)"] _11,
 }
 impl CLKR {
     #[doc = r" Value of the field as raw bits"]
@@ -437,10 +425,8 @@ impl CLKR {
 #[doc = "Possible values of the field `RCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RCSR {
-    #[doc = "Reconfiguring WDOG."]
-    _0,
-    #[doc = "Reconfiguration is successful."]
-    _1,
+    #[doc = "Reconfiguring WDOG."] _0,
+    #[doc = "Reconfiguration is successful."] _1,
 }
 impl RCSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -484,10 +470,8 @@ impl RCSR {
 #[doc = "Possible values of the field `ULK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ULKR {
-    #[doc = "WDOG is locked."]
-    _0,
-    #[doc = "WDOG is unlocked."]
-    _1,
+    #[doc = "WDOG is locked."] _0,
+    #[doc = "WDOG is unlocked."] _1,
 }
 impl ULKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -531,10 +515,8 @@ impl ULKR {
 #[doc = "Possible values of the field `PRES`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESR {
-    #[doc = "256 prescaler disabled."]
-    _0,
-    #[doc = "256 prescaler enabled."]
-    _1,
+    #[doc = "256 prescaler disabled."] _0,
+    #[doc = "256 prescaler enabled."] _1,
 }
 impl PRESR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -625,10 +607,8 @@ impl CMD32ENR {
 #[doc = "Possible values of the field `FLG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLGR {
-    #[doc = "No interrupt occurred."]
-    _0,
-    #[doc = "An interrupt occurred."]
-    _1,
+    #[doc = "No interrupt occurred."] _0,
+    #[doc = "An interrupt occurred."] _1,
 }
 impl FLGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -672,10 +652,8 @@ impl FLGR {
 #[doc = "Possible values of the field `WIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WINR {
-    #[doc = "Window mode disabled."]
-    _0,
-    #[doc = "Window mode enabled."]
-    _1,
+    #[doc = "Window mode disabled."] _0,
+    #[doc = "Window mode enabled."] _1,
 }
 impl WINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -718,10 +696,8 @@ impl WINR {
 }
 #[doc = "Values that can be written to the field `STOP`"]
 pub enum STOPW {
-    #[doc = "Watchdog disabled in chip stop mode."]
-    _0,
-    #[doc = "Watchdog enabled in chip stop mode."]
-    _1,
+    #[doc = "Watchdog disabled in chip stop mode."] _0,
+    #[doc = "Watchdog enabled in chip stop mode."] _1,
 }
 impl STOPW {
     #[allow(missing_docs)]
@@ -776,10 +752,8 @@ impl<'a> _STOPW<'a> {
 }
 #[doc = "Values that can be written to the field `WAIT`"]
 pub enum WAITW {
-    #[doc = "Watchdog disabled in chip wait mode."]
-    _0,
-    #[doc = "Watchdog enabled in chip wait mode."]
-    _1,
+    #[doc = "Watchdog disabled in chip wait mode."] _0,
+    #[doc = "Watchdog enabled in chip wait mode."] _1,
 }
 impl WAITW {
     #[allow(missing_docs)]
@@ -834,10 +808,8 @@ impl<'a> _WAITW<'a> {
 }
 #[doc = "Values that can be written to the field `DBG`"]
 pub enum DBGW {
-    #[doc = "Watchdog disabled in chip debug mode."]
-    _0,
-    #[doc = "Watchdog enabled in chip debug mode."]
-    _1,
+    #[doc = "Watchdog disabled in chip debug mode."] _0,
+    #[doc = "Watchdog enabled in chip debug mode."] _1,
 }
 impl DBGW {
     #[allow(missing_docs)]
@@ -892,8 +864,7 @@ impl<'a> _DBGW<'a> {
 }
 #[doc = "Values that can be written to the field `TST`"]
 pub enum TSTW {
-    #[doc = "Watchdog test mode disabled."]
-    _00,
+    #[doc = "Watchdog test mode disabled."] _00,
     #[doc = "Watchdog user mode enabled. (Watchdog test mode disabled.) After testing the watchdog, software should use this setting to indicate that the watchdog is functioning normally in user mode."]
     _01,
     #[doc = "Watchdog test mode enabled, only the low byte is used. CNT[CNTLOW] is compared with TOVAL[TOVALLOW]."]
@@ -1016,8 +987,7 @@ impl<'a> _UPDATEW<'a> {
 }
 #[doc = "Values that can be written to the field `INT`"]
 pub enum INTW {
-    #[doc = "Watchdog interrupts are disabled. Watchdog resets are not delayed."]
-    _0,
+    #[doc = "Watchdog interrupts are disabled. Watchdog resets are not delayed."] _0,
     #[doc = "Watchdog interrupts are enabled. Watchdog resets are delayed by 8'd128 bus clocks from the interrupt vector fetch."]
     _1,
 }
@@ -1074,10 +1044,8 @@ impl<'a> _INTW<'a> {
 }
 #[doc = "Values that can be written to the field `EN`"]
 pub enum ENW {
-    #[doc = "Watchdog disabled."]
-    _0,
-    #[doc = "Watchdog enabled."]
-    _1,
+    #[doc = "Watchdog disabled."] _0,
+    #[doc = "Watchdog enabled."] _1,
 }
 impl ENW {
     #[allow(missing_docs)]
@@ -1132,14 +1100,10 @@ impl<'a> _ENW<'a> {
 }
 #[doc = "Values that can be written to the field `CLK`"]
 pub enum CLKW {
-    #[doc = "Bus clock"]
-    _00,
-    #[doc = "LPO clock"]
-    _01,
-    #[doc = "INTCLK (internal clock)"]
-    _10,
-    #[doc = "ERCLK (external reference clock)"]
-    _11,
+    #[doc = "Bus clock"] _00,
+    #[doc = "LPO clock"] _01,
+    #[doc = "INTCLK (internal clock)"] _10,
+    #[doc = "ERCLK (external reference clock)"] _11,
 }
 impl CLKW {
     #[allow(missing_docs)]
@@ -1198,10 +1162,8 @@ impl<'a> _CLKW<'a> {
 }
 #[doc = "Values that can be written to the field `PRES`"]
 pub enum PRESW {
-    #[doc = "256 prescaler disabled."]
-    _0,
-    #[doc = "256 prescaler enabled."]
-    _1,
+    #[doc = "256 prescaler disabled."] _0,
+    #[doc = "256 prescaler enabled."] _1,
 }
 impl PRESW {
     #[allow(missing_docs)]
@@ -1314,10 +1276,8 @@ impl<'a> _CMD32ENW<'a> {
 }
 #[doc = "Values that can be written to the field `FLG`"]
 pub enum FLGW {
-    #[doc = "No interrupt occurred."]
-    _0,
-    #[doc = "An interrupt occurred."]
-    _1,
+    #[doc = "No interrupt occurred."] _0,
+    #[doc = "An interrupt occurred."] _1,
 }
 impl FLGW {
     #[allow(missing_docs)]
@@ -1372,10 +1332,8 @@ impl<'a> _FLGW<'a> {
 }
 #[doc = "Values that can be written to the field `WIN`"]
 pub enum WINW {
-    #[doc = "Window mode disabled."]
-    _0,
-    #[doc = "Window mode enabled."]
-    _1,
+    #[doc = "Window mode disabled."] _0,
+    #[doc = "Window mode enabled."] _1,
 }
 impl WINW {
     #[allow(missing_docs)]

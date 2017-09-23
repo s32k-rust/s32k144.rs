@@ -22,7 +22,9 @@ impl super::SC1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,62 +45,36 @@ impl super::SC1 {
 #[doc = "Possible values of the field `ADCH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCHR {
-    #[doc = "Exernal channel 0 is selected as input."]
-    _00000,
-    #[doc = "Exernal channel 1 is selected as input."]
-    _00001,
-    #[doc = "Exernal channel 2 is selected as input."]
-    _00010,
-    #[doc = "Exernal channel 3 is selected as input."]
-    _00011,
-    #[doc = "Exernal channel 4 is selected as input."]
-    _00100,
-    #[doc = "Exernal channel 5 is selected as input."]
-    _00101,
-    #[doc = "Exernal channel 6 is selected as input."]
-    _00110,
-    #[doc = "Exernal channel 7 is selected as input."]
-    _00111,
-    #[doc = "Exernal channel 8 is selected as input."]
-    _01000,
-    #[doc = "Exernal channel 9 is selected as input."]
-    _01001,
-    #[doc = "Exernal channel 10 is selected as input."]
-    _01010,
-    #[doc = "Exernal channel 11 is selected as input."]
-    _01011,
-    #[doc = "Exernal channel 12 is selected as input."]
-    _01100,
-    #[doc = "Exernal channel 13 is selected as input."]
-    _01101,
-    #[doc = "Exernal channel 14 is selected as input."]
-    _01110,
-    #[doc = "Exernal channel 15 is selected as input."]
-    _01111,
-    #[doc = "Exernal channel 18 is selected as input."]
-    _10010,
-    #[doc = "Exernal channel 19 is selected as input."]
-    _10011,
-    #[doc = "Internal channel 0 is selected as input."]
-    _10101,
-    #[doc = "Internal channel 1 is selected as input."]
-    _10110,
-    #[doc = "Internal channel 2 is selected as input."]
-    _10111,
-    #[doc = "Temp Sensor"]
-    _11010,
-    #[doc = "Band Gap"]
-    _11011,
-    #[doc = "Internal channel 3 is selected as input."]
-    _11100,
+    #[doc = "Exernal channel 0 is selected as input."] _00000,
+    #[doc = "Exernal channel 1 is selected as input."] _00001,
+    #[doc = "Exernal channel 2 is selected as input."] _00010,
+    #[doc = "Exernal channel 3 is selected as input."] _00011,
+    #[doc = "Exernal channel 4 is selected as input."] _00100,
+    #[doc = "Exernal channel 5 is selected as input."] _00101,
+    #[doc = "Exernal channel 6 is selected as input."] _00110,
+    #[doc = "Exernal channel 7 is selected as input."] _00111,
+    #[doc = "Exernal channel 8 is selected as input."] _01000,
+    #[doc = "Exernal channel 9 is selected as input."] _01001,
+    #[doc = "Exernal channel 10 is selected as input."] _01010,
+    #[doc = "Exernal channel 11 is selected as input."] _01011,
+    #[doc = "Exernal channel 12 is selected as input."] _01100,
+    #[doc = "Exernal channel 13 is selected as input."] _01101,
+    #[doc = "Exernal channel 14 is selected as input."] _01110,
+    #[doc = "Exernal channel 15 is selected as input."] _01111,
+    #[doc = "Exernal channel 18 is selected as input."] _10010,
+    #[doc = "Exernal channel 19 is selected as input."] _10011,
+    #[doc = "Internal channel 0 is selected as input."] _10101,
+    #[doc = "Internal channel 1 is selected as input."] _10110,
+    #[doc = "Internal channel 2 is selected as input."] _10111,
+    #[doc = "Temp Sensor"] _11010,
+    #[doc = "Band Gap"] _11011,
+    #[doc = "Internal channel 3 is selected as input."] _11100,
     #[doc = "VREFSH is selected as input. Voltage reference selected is determined by SC2[REFSEL]."]
     _11101,
     #[doc = "VREFSL is selected as input. Voltage reference selected is determined by SC2[REFSEL]."]
     _11110,
-    #[doc = "Module is disabled"]
-    _11111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Module is disabled"] _11111,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl ADCHR {
     #[doc = r" Value of the field as raw bits"]
@@ -309,10 +285,8 @@ impl ADCHR {
 #[doc = "Possible values of the field `AIEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AIENR {
-    #[doc = "Conversion complete interrupt is disabled."]
-    _0,
-    #[doc = "Conversion complete interrupt is enabled."]
-    _1,
+    #[doc = "Conversion complete interrupt is disabled."] _0,
+    #[doc = "Conversion complete interrupt is enabled."] _1,
 }
 impl AIENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -356,10 +330,8 @@ impl AIENR {
 #[doc = "Possible values of the field `COCO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COCOR {
-    #[doc = "Conversion is not completed."]
-    _0,
-    #[doc = "Conversion is completed."]
-    _1,
+    #[doc = "Conversion is not completed."] _0,
+    #[doc = "Conversion is completed."] _1,
 }
 impl COCOR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -402,60 +374,35 @@ impl COCOR {
 }
 #[doc = "Values that can be written to the field `ADCH`"]
 pub enum ADCHW {
-    #[doc = "Exernal channel 0 is selected as input."]
-    _00000,
-    #[doc = "Exernal channel 1 is selected as input."]
-    _00001,
-    #[doc = "Exernal channel 2 is selected as input."]
-    _00010,
-    #[doc = "Exernal channel 3 is selected as input."]
-    _00011,
-    #[doc = "Exernal channel 4 is selected as input."]
-    _00100,
-    #[doc = "Exernal channel 5 is selected as input."]
-    _00101,
-    #[doc = "Exernal channel 6 is selected as input."]
-    _00110,
-    #[doc = "Exernal channel 7 is selected as input."]
-    _00111,
-    #[doc = "Exernal channel 8 is selected as input."]
-    _01000,
-    #[doc = "Exernal channel 9 is selected as input."]
-    _01001,
-    #[doc = "Exernal channel 10 is selected as input."]
-    _01010,
-    #[doc = "Exernal channel 11 is selected as input."]
-    _01011,
-    #[doc = "Exernal channel 12 is selected as input."]
-    _01100,
-    #[doc = "Exernal channel 13 is selected as input."]
-    _01101,
-    #[doc = "Exernal channel 14 is selected as input."]
-    _01110,
-    #[doc = "Exernal channel 15 is selected as input."]
-    _01111,
-    #[doc = "Exernal channel 18 is selected as input."]
-    _10010,
-    #[doc = "Exernal channel 19 is selected as input."]
-    _10011,
-    #[doc = "Internal channel 0 is selected as input."]
-    _10101,
-    #[doc = "Internal channel 1 is selected as input."]
-    _10110,
-    #[doc = "Internal channel 2 is selected as input."]
-    _10111,
-    #[doc = "Temp Sensor"]
-    _11010,
-    #[doc = "Band Gap"]
-    _11011,
-    #[doc = "Internal channel 3 is selected as input."]
-    _11100,
+    #[doc = "Exernal channel 0 is selected as input."] _00000,
+    #[doc = "Exernal channel 1 is selected as input."] _00001,
+    #[doc = "Exernal channel 2 is selected as input."] _00010,
+    #[doc = "Exernal channel 3 is selected as input."] _00011,
+    #[doc = "Exernal channel 4 is selected as input."] _00100,
+    #[doc = "Exernal channel 5 is selected as input."] _00101,
+    #[doc = "Exernal channel 6 is selected as input."] _00110,
+    #[doc = "Exernal channel 7 is selected as input."] _00111,
+    #[doc = "Exernal channel 8 is selected as input."] _01000,
+    #[doc = "Exernal channel 9 is selected as input."] _01001,
+    #[doc = "Exernal channel 10 is selected as input."] _01010,
+    #[doc = "Exernal channel 11 is selected as input."] _01011,
+    #[doc = "Exernal channel 12 is selected as input."] _01100,
+    #[doc = "Exernal channel 13 is selected as input."] _01101,
+    #[doc = "Exernal channel 14 is selected as input."] _01110,
+    #[doc = "Exernal channel 15 is selected as input."] _01111,
+    #[doc = "Exernal channel 18 is selected as input."] _10010,
+    #[doc = "Exernal channel 19 is selected as input."] _10011,
+    #[doc = "Internal channel 0 is selected as input."] _10101,
+    #[doc = "Internal channel 1 is selected as input."] _10110,
+    #[doc = "Internal channel 2 is selected as input."] _10111,
+    #[doc = "Temp Sensor"] _11010,
+    #[doc = "Band Gap"] _11011,
+    #[doc = "Internal channel 3 is selected as input."] _11100,
     #[doc = "VREFSH is selected as input. Voltage reference selected is determined by SC2[REFSEL]."]
     _11101,
     #[doc = "VREFSL is selected as input. Voltage reference selected is determined by SC2[REFSEL]."]
     _11110,
-    #[doc = "Module is disabled"]
-    _11111,
+    #[doc = "Module is disabled"] _11111,
 }
 impl ADCHW {
     #[allow(missing_docs)]
@@ -650,10 +597,8 @@ impl<'a> _ADCHW<'a> {
 }
 #[doc = "Values that can be written to the field `AIEN`"]
 pub enum AIENW {
-    #[doc = "Conversion complete interrupt is disabled."]
-    _0,
-    #[doc = "Conversion complete interrupt is enabled."]
-    _1,
+    #[doc = "Conversion complete interrupt is disabled."] _0,
+    #[doc = "Conversion complete interrupt is enabled."] _1,
 }
 impl AIENW {
     #[allow(missing_docs)]

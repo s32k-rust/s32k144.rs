@@ -22,7 +22,9 @@ impl super::EICHEN {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::EICHEN {
 #[doc = "Possible values of the field `EICH1EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EICH1ENR {
-    #[doc = "Error injection is disabled on Error Injection Channel 1"]
-    _0,
-    #[doc = "Error injection is enabled on Error Injection Channel 1"]
-    _1,
+    #[doc = "Error injection is disabled on Error Injection Channel 1"] _0,
+    #[doc = "Error injection is enabled on Error Injection Channel 1"] _1,
 }
 impl EICH1ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl EICH1ENR {
 #[doc = "Possible values of the field `EICH0EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EICH0ENR {
-    #[doc = "Error injection is disabled on Error Injection Channel 0"]
-    _0,
-    #[doc = "Error injection is enabled on Error Injection Channel 0"]
-    _1,
+    #[doc = "Error injection is disabled on Error Injection Channel 0"] _0,
+    #[doc = "Error injection is enabled on Error Injection Channel 0"] _1,
 }
 impl EICH0ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -136,10 +134,8 @@ impl EICH0ENR {
 }
 #[doc = "Values that can be written to the field `EICH1EN`"]
 pub enum EICH1ENW {
-    #[doc = "Error injection is disabled on Error Injection Channel 1"]
-    _0,
-    #[doc = "Error injection is enabled on Error Injection Channel 1"]
-    _1,
+    #[doc = "Error injection is disabled on Error Injection Channel 1"] _0,
+    #[doc = "Error injection is enabled on Error Injection Channel 1"] _1,
 }
 impl EICH1ENW {
     #[allow(missing_docs)]
@@ -194,10 +190,8 @@ impl<'a> _EICH1ENW<'a> {
 }
 #[doc = "Values that can be written to the field `EICH0EN`"]
 pub enum EICH0ENW {
-    #[doc = "Error injection is disabled on Error Injection Channel 0"]
-    _0,
-    #[doc = "Error injection is enabled on Error Injection Channel 0"]
-    _1,
+    #[doc = "Error injection is disabled on Error Injection Channel 0"] _0,
+    #[doc = "Error injection is enabled on Error Injection Channel 0"] _1,
 }
 impl EICH0ENW {
     #[allow(missing_docs)]

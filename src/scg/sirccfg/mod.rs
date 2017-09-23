@@ -22,7 +22,9 @@ impl super::SIRCCFG {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SIRCCFG {
 #[doc = "Possible values of the field `RANGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RANGER {
-    #[doc = "Slow IRC low range clock (2 MHz)"]
-    _0,
-    #[doc = "Slow IRC high range clock (8 MHz )"]
-    _1,
+    #[doc = "Slow IRC low range clock (2 MHz)"] _0,
+    #[doc = "Slow IRC high range clock (8 MHz )"] _1,
 }
 impl RANGER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -89,10 +89,8 @@ impl RANGER {
 }
 #[doc = "Values that can be written to the field `RANGE`"]
 pub enum RANGEW {
-    #[doc = "Slow IRC low range clock (2 MHz)"]
-    _0,
-    #[doc = "Slow IRC high range clock (8 MHz )"]
-    _1,
+    #[doc = "Slow IRC low range clock (2 MHz)"] _0,
+    #[doc = "Slow IRC high range clock (8 MHz )"] _1,
 }
 impl RANGEW {
     #[allow(missing_docs)]

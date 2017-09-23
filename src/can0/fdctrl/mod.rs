@@ -22,7 +22,9 @@ impl super::FDCTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -65,10 +67,8 @@ impl TDCOFFR {
 #[doc = "Possible values of the field `TDCFAIL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDCFAILR {
-    #[doc = "Measured loop delay is in range."]
-    _0,
-    #[doc = "Measured loop delay is out of range."]
-    _1,
+    #[doc = "Measured loop delay is in range."] _0,
+    #[doc = "Measured loop delay is out of range."] _1,
 }
 impl TDCFAILR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -112,10 +112,8 @@ impl TDCFAILR {
 #[doc = "Possible values of the field `TDCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDCENR {
-    #[doc = "TDC is disabled"]
-    _0,
-    #[doc = "TDC is enabled"]
-    _1,
+    #[doc = "TDC is disabled"] _0,
+    #[doc = "TDC is enabled"] _1,
 }
 impl TDCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -159,14 +157,10 @@ impl TDCENR {
 #[doc = "Possible values of the field `MBDSR0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MBDSR0R {
-    #[doc = "Selects 8 bytes per Message Buffer."]
-    _00,
-    #[doc = "Selects 16 bytes per Message Buffer."]
-    _01,
-    #[doc = "Selects 32 bytes per Message Buffer."]
-    _10,
-    #[doc = "Selects 64 bytes per Message Buffer."]
-    _11,
+    #[doc = "Selects 8 bytes per Message Buffer."] _00,
+    #[doc = "Selects 16 bytes per Message Buffer."] _01,
+    #[doc = "Selects 32 bytes per Message Buffer."] _10,
+    #[doc = "Selects 64 bytes per Message Buffer."] _11,
 }
 impl MBDSR0R {
     #[doc = r" Value of the field as raw bits"]
@@ -215,10 +209,8 @@ impl MBDSR0R {
 #[doc = "Possible values of the field `FDRATE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FDRATER {
-    #[doc = "Transmit a frame in nominal rate. The BRS bit in the Tx MB has no effect."]
-    _0,
-    #[doc = "Transmit a frame with bit rate switching if the BRS bit in the Tx MB is recessive."]
-    _1,
+    #[doc = "Transmit a frame in nominal rate. The BRS bit in the Tx MB has no effect."] _0,
+    #[doc = "Transmit a frame with bit rate switching if the BRS bit in the Tx MB is recessive."] _1,
 }
 impl FDRATER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -276,10 +268,8 @@ impl<'a> _TDCOFFW<'a> {
 }
 #[doc = "Values that can be written to the field `TDCFAIL`"]
 pub enum TDCFAILW {
-    #[doc = "Measured loop delay is in range."]
-    _0,
-    #[doc = "Measured loop delay is out of range."]
-    _1,
+    #[doc = "Measured loop delay is in range."] _0,
+    #[doc = "Measured loop delay is out of range."] _1,
 }
 impl TDCFAILW {
     #[allow(missing_docs)]
@@ -334,10 +324,8 @@ impl<'a> _TDCFAILW<'a> {
 }
 #[doc = "Values that can be written to the field `TDCEN`"]
 pub enum TDCENW {
-    #[doc = "TDC is disabled"]
-    _0,
-    #[doc = "TDC is enabled"]
-    _1,
+    #[doc = "TDC is disabled"] _0,
+    #[doc = "TDC is enabled"] _1,
 }
 impl TDCENW {
     #[allow(missing_docs)]
@@ -392,14 +380,10 @@ impl<'a> _TDCENW<'a> {
 }
 #[doc = "Values that can be written to the field `MBDSR0`"]
 pub enum MBDSR0W {
-    #[doc = "Selects 8 bytes per Message Buffer."]
-    _00,
-    #[doc = "Selects 16 bytes per Message Buffer."]
-    _01,
-    #[doc = "Selects 32 bytes per Message Buffer."]
-    _10,
-    #[doc = "Selects 64 bytes per Message Buffer."]
-    _11,
+    #[doc = "Selects 8 bytes per Message Buffer."] _00,
+    #[doc = "Selects 16 bytes per Message Buffer."] _01,
+    #[doc = "Selects 32 bytes per Message Buffer."] _10,
+    #[doc = "Selects 64 bytes per Message Buffer."] _11,
 }
 impl MBDSR0W {
     #[allow(missing_docs)]
@@ -458,10 +442,8 @@ impl<'a> _MBDSR0W<'a> {
 }
 #[doc = "Values that can be written to the field `FDRATE`"]
 pub enum FDRATEW {
-    #[doc = "Transmit a frame in nominal rate. The BRS bit in the Tx MB has no effect."]
-    _0,
-    #[doc = "Transmit a frame with bit rate switching if the BRS bit in the Tx MB is recessive."]
-    _1,
+    #[doc = "Transmit a frame in nominal rate. The BRS bit in the Tx MB has no effect."] _0,
+    #[doc = "Transmit a frame with bit rate switching if the BRS bit in the Tx MB is recessive."] _1,
 }
 impl FDRATEW {
     #[allow(missing_docs)]

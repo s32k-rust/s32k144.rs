@@ -3,42 +3,27 @@ use vcell::VolatileCell;
 #[repr(C)]
 pub struct RegisterBlock {
     _reserved0: [u8; 4usize],
-    #[doc = "0x04 - Chip Control register"]
-    pub chipctl: CHIPCTL,
+    #[doc = "0x04 - Chip Control register"] pub chipctl: CHIPCTL,
     _reserved1: [u8; 4usize],
-    #[doc = "0x0c - FTM Option Register 0"]
-    pub ftmopt0: FTMOPT0,
-    #[doc = "0x10 - LPO Clock Select Register"]
-    pub lpoclks: LPOCLKS,
+    #[doc = "0x0c - FTM Option Register 0"] pub ftmopt0: FTMOPT0,
+    #[doc = "0x10 - LPO Clock Select Register"] pub lpoclks: LPOCLKS,
     _reserved2: [u8; 4usize],
-    #[doc = "0x18 - ADC Options Register"]
-    pub adcopt: ADCOPT,
-    #[doc = "0x1c - FTM Option Register 1"]
-    pub ftmopt1: FTMOPT1,
-    #[doc = "0x20 - Miscellaneous control register 0"]
-    pub misctrl0: MISCTRL0,
-    #[doc = "0x24 - System Device Identification Register"]
-    pub sdid: SDID,
+    #[doc = "0x18 - ADC Options Register"] pub adcopt: ADCOPT,
+    #[doc = "0x1c - FTM Option Register 1"] pub ftmopt1: FTMOPT1,
+    #[doc = "0x20 - Miscellaneous control register 0"] pub misctrl0: MISCTRL0,
+    #[doc = "0x24 - System Device Identification Register"] pub sdid: SDID,
     _reserved3: [u8; 24usize],
-    #[doc = "0x40 - Platform Clock Gating Control Register"]
-    pub platcgc: PLATCGC,
+    #[doc = "0x40 - Platform Clock Gating Control Register"] pub platcgc: PLATCGC,
     _reserved4: [u8; 8usize],
-    #[doc = "0x4c - Flash Configuration Register 1"]
-    pub fcfg1: FCFG1,
+    #[doc = "0x4c - Flash Configuration Register 1"] pub fcfg1: FCFG1,
     _reserved5: [u8; 4usize],
-    #[doc = "0x54 - Unique Identification Register High"]
-    pub uidh: UIDH,
-    #[doc = "0x58 - Unique Identification Register Mid-High"]
-    pub uidmh: UIDMH,
-    #[doc = "0x5c - Unique Identification Register Mid Low"]
-    pub uidml: UIDML,
-    #[doc = "0x60 - Unique Identification Register Low"]
-    pub uidl: UIDL,
+    #[doc = "0x54 - Unique Identification Register High"] pub uidh: UIDH,
+    #[doc = "0x58 - Unique Identification Register Mid-High"] pub uidmh: UIDMH,
+    #[doc = "0x5c - Unique Identification Register Mid Low"] pub uidml: UIDML,
+    #[doc = "0x60 - Unique Identification Register Low"] pub uidl: UIDL,
     _reserved6: [u8; 4usize],
-    #[doc = "0x68 - System Clock Divider Register 4"]
-    pub clkdiv4: CLKDIV4,
-    #[doc = "0x6c - Miscellaneous Control register 1"]
-    pub misctrl1: MISCTRL1,
+    #[doc = "0x68 - System Clock Divider Register 4"] pub clkdiv4: CLKDIV4,
+    #[doc = "0x6c - Miscellaneous Control register 1"] pub misctrl1: MISCTRL1,
 }
 #[doc = "Chip Control register"]
 pub struct CHIPCTL {

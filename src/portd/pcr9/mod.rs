@@ -22,7 +22,9 @@ impl super::PCR9 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -90,8 +92,7 @@ impl PSR {
 #[doc = "Possible values of the field `PE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PER {
-    #[doc = "Internal pullup or pulldown resistor is not enabled on the corresponding pin."]
-    _0,
+    #[doc = "Internal pullup or pulldown resistor is not enabled on the corresponding pin."] _0,
     #[doc = "Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input."]
     _1,
 }
@@ -137,22 +138,14 @@ impl PER {
 #[doc = "Possible values of the field `MUX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUXR {
-    #[doc = "Pin disabled (Alternative 0) (analog)."]
-    _000,
-    #[doc = "Alternative 1 (GPIO)."]
-    _001,
-    #[doc = "Alternative 2 (chip-specific)."]
-    _010,
-    #[doc = "Alternative 3 (chip-specific)."]
-    _011,
-    #[doc = "Alternative 4 (chip-specific)."]
-    _100,
-    #[doc = "Alternative 5 (chip-specific)."]
-    _101,
-    #[doc = "Alternative 6 (chip-specific)."]
-    _110,
-    #[doc = "Alternative 7 (chip-specific)."]
-    _111,
+    #[doc = "Pin disabled (Alternative 0) (analog)."] _000,
+    #[doc = "Alternative 1 (GPIO)."] _001,
+    #[doc = "Alternative 2 (chip-specific)."] _010,
+    #[doc = "Alternative 3 (chip-specific)."] _011,
+    #[doc = "Alternative 4 (chip-specific)."] _100,
+    #[doc = "Alternative 5 (chip-specific)."] _101,
+    #[doc = "Alternative 6 (chip-specific)."] _110,
+    #[doc = "Alternative 7 (chip-specific)."] _111,
 }
 impl MUXR {
     #[doc = r" Value of the field as raw bits"]
@@ -229,8 +222,7 @@ impl MUXR {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "Pin Control Register fields [15:0] are not locked."]
-    _0,
+    #[doc = "Pin Control Register fields [15:0] are not locked."] _0,
     #[doc = "Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset."]
     _1,
 }
@@ -276,26 +268,16 @@ impl LKR {
 #[doc = "Possible values of the field `IRQC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IRQCR {
-    #[doc = "Interrupt Status Flag (ISF) is disabled."]
-    _0000,
-    #[doc = "ISF flag and DMA request on rising edge."]
-    _0001,
-    #[doc = "ISF flag and DMA request on falling edge."]
-    _0010,
-    #[doc = "ISF flag and DMA request on either edge."]
-    _0011,
-    #[doc = "ISF flag and Interrupt when logic 0."]
-    _1000,
-    #[doc = "ISF flag and Interrupt on rising-edge."]
-    _1001,
-    #[doc = "ISF flag and Interrupt on falling-edge."]
-    _1010,
-    #[doc = "ISF flag and Interrupt on either edge."]
-    _1011,
-    #[doc = "ISF flag and Interrupt when logic 1."]
-    _1100,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Interrupt Status Flag (ISF) is disabled."] _0000,
+    #[doc = "ISF flag and DMA request on rising edge."] _0001,
+    #[doc = "ISF flag and DMA request on falling edge."] _0010,
+    #[doc = "ISF flag and DMA request on either edge."] _0011,
+    #[doc = "ISF flag and Interrupt when logic 0."] _1000,
+    #[doc = "ISF flag and Interrupt on rising-edge."] _1001,
+    #[doc = "ISF flag and Interrupt on falling-edge."] _1010,
+    #[doc = "ISF flag and Interrupt on either edge."] _1011,
+    #[doc = "ISF flag and Interrupt when logic 1."] _1100,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl IRQCR {
     #[doc = r" Value of the field as raw bits"]
@@ -380,8 +362,7 @@ impl IRQCR {
 #[doc = "Possible values of the field `ISF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISFR {
-    #[doc = "Configured interrupt is not detected."]
-    _0,
+    #[doc = "Configured interrupt is not detected."] _0,
     #[doc = "Configured interrupt is detected. If the pin is configured to generate a DMA request, then the corresponding flag will be cleared automatically at the completion of the requested DMA transfer. Otherwise, the flag remains set until a logic 1 is written to the flag. If the pin is configured for a level sensitive interrupt and the pin remains asserted, then the flag is set again immediately after it is cleared."]
     _1,
 }
@@ -484,8 +465,7 @@ impl<'a> _PSW<'a> {
 }
 #[doc = "Values that can be written to the field `PE`"]
 pub enum PEW {
-    #[doc = "Internal pullup or pulldown resistor is not enabled on the corresponding pin."]
-    _0,
+    #[doc = "Internal pullup or pulldown resistor is not enabled on the corresponding pin."] _0,
     #[doc = "Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input."]
     _1,
 }
@@ -542,22 +522,14 @@ impl<'a> _PEW<'a> {
 }
 #[doc = "Values that can be written to the field `MUX`"]
 pub enum MUXW {
-    #[doc = "Pin disabled (Alternative 0) (analog)."]
-    _000,
-    #[doc = "Alternative 1 (GPIO)."]
-    _001,
-    #[doc = "Alternative 2 (chip-specific)."]
-    _010,
-    #[doc = "Alternative 3 (chip-specific)."]
-    _011,
-    #[doc = "Alternative 4 (chip-specific)."]
-    _100,
-    #[doc = "Alternative 5 (chip-specific)."]
-    _101,
-    #[doc = "Alternative 6 (chip-specific)."]
-    _110,
-    #[doc = "Alternative 7 (chip-specific)."]
-    _111,
+    #[doc = "Pin disabled (Alternative 0) (analog)."] _000,
+    #[doc = "Alternative 1 (GPIO)."] _001,
+    #[doc = "Alternative 2 (chip-specific)."] _010,
+    #[doc = "Alternative 3 (chip-specific)."] _011,
+    #[doc = "Alternative 4 (chip-specific)."] _100,
+    #[doc = "Alternative 5 (chip-specific)."] _101,
+    #[doc = "Alternative 6 (chip-specific)."] _110,
+    #[doc = "Alternative 7 (chip-specific)."] _111,
 }
 impl MUXW {
     #[allow(missing_docs)]
@@ -640,8 +612,7 @@ impl<'a> _MUXW<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "Pin Control Register fields [15:0] are not locked."]
-    _0,
+    #[doc = "Pin Control Register fields [15:0] are not locked."] _0,
     #[doc = "Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset."]
     _1,
 }
@@ -698,24 +669,15 @@ impl<'a> _LKW<'a> {
 }
 #[doc = "Values that can be written to the field `IRQC`"]
 pub enum IRQCW {
-    #[doc = "Interrupt Status Flag (ISF) is disabled."]
-    _0000,
-    #[doc = "ISF flag and DMA request on rising edge."]
-    _0001,
-    #[doc = "ISF flag and DMA request on falling edge."]
-    _0010,
-    #[doc = "ISF flag and DMA request on either edge."]
-    _0011,
-    #[doc = "ISF flag and Interrupt when logic 0."]
-    _1000,
-    #[doc = "ISF flag and Interrupt on rising-edge."]
-    _1001,
-    #[doc = "ISF flag and Interrupt on falling-edge."]
-    _1010,
-    #[doc = "ISF flag and Interrupt on either edge."]
-    _1011,
-    #[doc = "ISF flag and Interrupt when logic 1."]
-    _1100,
+    #[doc = "Interrupt Status Flag (ISF) is disabled."] _0000,
+    #[doc = "ISF flag and DMA request on rising edge."] _0001,
+    #[doc = "ISF flag and DMA request on falling edge."] _0010,
+    #[doc = "ISF flag and DMA request on either edge."] _0011,
+    #[doc = "ISF flag and Interrupt when logic 0."] _1000,
+    #[doc = "ISF flag and Interrupt on rising-edge."] _1001,
+    #[doc = "ISF flag and Interrupt on falling-edge."] _1010,
+    #[doc = "ISF flag and Interrupt on either edge."] _1011,
+    #[doc = "ISF flag and Interrupt when logic 1."] _1100,
 }
 impl IRQCW {
     #[allow(missing_docs)]
@@ -802,8 +764,7 @@ impl<'a> _IRQCW<'a> {
 }
 #[doc = "Values that can be written to the field `ISF`"]
 pub enum ISFW {
-    #[doc = "Configured interrupt is not detected."]
-    _0,
+    #[doc = "Configured interrupt is not detected."] _0,
     #[doc = "Configured interrupt is detected. If the pin is configured to generate a DMA request, then the corresponding flag will be cleared automatically at the completion of the requested DMA transfer. Otherwise, the flag remains set until a logic 1 is written to the flag. If the pin is configured for a level sensitive interrupt and the pin remains asserted, then the flag is set again immediately after it is cleared."]
     _1,
 }

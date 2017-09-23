@@ -22,7 +22,9 @@ impl super::CSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CSR {
 #[doc = "Possible values of the field `TEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TENR {
-    #[doc = "LPTMR is disabled and internal logic is reset."]
-    _0,
-    #[doc = "LPTMR is enabled."]
-    _1,
+    #[doc = "LPTMR is disabled and internal logic is reset."] _0,
+    #[doc = "LPTMR is enabled."] _1,
 }
 impl TENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TENR {
 #[doc = "Possible values of the field `TMS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TMSR {
-    #[doc = "Time Counter mode."]
-    _0,
-    #[doc = "Pulse Counter mode."]
-    _1,
+    #[doc = "Time Counter mode."] _0,
+    #[doc = "Pulse Counter mode."] _1,
 }
 impl TMSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl TMSR {
 #[doc = "Possible values of the field `TFC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TFCR {
-    #[doc = "CNR is reset whenever TCF is set."]
-    _0,
-    #[doc = "CNR is reset on overflow."]
-    _1,
+    #[doc = "CNR is reset whenever TCF is set."] _0,
+    #[doc = "CNR is reset on overflow."] _1,
 }
 impl TFCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,14 +227,10 @@ impl TPPR {
 #[doc = "Possible values of the field `TPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TPSR {
-    #[doc = "Pulse counter input 0 is selected."]
-    _00,
-    #[doc = "Pulse counter input 1 is selected."]
-    _01,
-    #[doc = "Pulse counter input 2 is selected."]
-    _10,
-    #[doc = "Pulse counter input 3 is selected."]
-    _11,
+    #[doc = "Pulse counter input 0 is selected."] _00,
+    #[doc = "Pulse counter input 1 is selected."] _01,
+    #[doc = "Pulse counter input 2 is selected."] _10,
+    #[doc = "Pulse counter input 3 is selected."] _11,
 }
 impl TPSR {
     #[doc = r" Value of the field as raw bits"]
@@ -287,10 +279,8 @@ impl TPSR {
 #[doc = "Possible values of the field `TIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIER {
-    #[doc = "Timer interrupt disabled."]
-    _0,
-    #[doc = "Timer interrupt enabled."]
-    _1,
+    #[doc = "Timer interrupt disabled."] _0,
+    #[doc = "Timer interrupt enabled."] _1,
 }
 impl TIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -334,10 +324,8 @@ impl TIER {
 #[doc = "Possible values of the field `TCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCFR {
-    #[doc = "The value of CNR is not equal to CMR and increments."]
-    _0,
-    #[doc = "The value of CNR is equal to CMR and increments."]
-    _1,
+    #[doc = "The value of CNR is not equal to CMR and increments."] _0,
+    #[doc = "The value of CNR is equal to CMR and increments."] _1,
 }
 impl TCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -381,10 +369,8 @@ impl TCFR {
 #[doc = "Possible values of the field `TDRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDRER {
-    #[doc = "Timer DMA Request disabled."]
-    _0,
-    #[doc = "Timer DMA Request enabled."]
-    _1,
+    #[doc = "Timer DMA Request disabled."] _0,
+    #[doc = "Timer DMA Request enabled."] _1,
 }
 impl TDRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -427,10 +413,8 @@ impl TDRER {
 }
 #[doc = "Values that can be written to the field `TEN`"]
 pub enum TENW {
-    #[doc = "LPTMR is disabled and internal logic is reset."]
-    _0,
-    #[doc = "LPTMR is enabled."]
-    _1,
+    #[doc = "LPTMR is disabled and internal logic is reset."] _0,
+    #[doc = "LPTMR is enabled."] _1,
 }
 impl TENW {
     #[allow(missing_docs)]
@@ -485,10 +469,8 @@ impl<'a> _TENW<'a> {
 }
 #[doc = "Values that can be written to the field `TMS`"]
 pub enum TMSW {
-    #[doc = "Time Counter mode."]
-    _0,
-    #[doc = "Pulse Counter mode."]
-    _1,
+    #[doc = "Time Counter mode."] _0,
+    #[doc = "Pulse Counter mode."] _1,
 }
 impl TMSW {
     #[allow(missing_docs)]
@@ -543,10 +525,8 @@ impl<'a> _TMSW<'a> {
 }
 #[doc = "Values that can be written to the field `TFC`"]
 pub enum TFCW {
-    #[doc = "CNR is reset whenever TCF is set."]
-    _0,
-    #[doc = "CNR is reset on overflow."]
-    _1,
+    #[doc = "CNR is reset whenever TCF is set."] _0,
+    #[doc = "CNR is reset on overflow."] _1,
 }
 impl TFCW {
     #[allow(missing_docs)]
@@ -659,14 +639,10 @@ impl<'a> _TPPW<'a> {
 }
 #[doc = "Values that can be written to the field `TPS`"]
 pub enum TPSW {
-    #[doc = "Pulse counter input 0 is selected."]
-    _00,
-    #[doc = "Pulse counter input 1 is selected."]
-    _01,
-    #[doc = "Pulse counter input 2 is selected."]
-    _10,
-    #[doc = "Pulse counter input 3 is selected."]
-    _11,
+    #[doc = "Pulse counter input 0 is selected."] _00,
+    #[doc = "Pulse counter input 1 is selected."] _01,
+    #[doc = "Pulse counter input 2 is selected."] _10,
+    #[doc = "Pulse counter input 3 is selected."] _11,
 }
 impl TPSW {
     #[allow(missing_docs)]
@@ -725,10 +701,8 @@ impl<'a> _TPSW<'a> {
 }
 #[doc = "Values that can be written to the field `TIE`"]
 pub enum TIEW {
-    #[doc = "Timer interrupt disabled."]
-    _0,
-    #[doc = "Timer interrupt enabled."]
-    _1,
+    #[doc = "Timer interrupt disabled."] _0,
+    #[doc = "Timer interrupt enabled."] _1,
 }
 impl TIEW {
     #[allow(missing_docs)]
@@ -783,10 +757,8 @@ impl<'a> _TIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TCF`"]
 pub enum TCFW {
-    #[doc = "The value of CNR is not equal to CMR and increments."]
-    _0,
-    #[doc = "The value of CNR is equal to CMR and increments."]
-    _1,
+    #[doc = "The value of CNR is not equal to CMR and increments."] _0,
+    #[doc = "The value of CNR is equal to CMR and increments."] _1,
 }
 impl TCFW {
     #[allow(missing_docs)]
@@ -841,10 +813,8 @@ impl<'a> _TCFW<'a> {
 }
 #[doc = "Values that can be written to the field `TDRE`"]
 pub enum TDREW {
-    #[doc = "Timer DMA Request disabled."]
-    _0,
-    #[doc = "Timer DMA Request enabled."]
-    _1,
+    #[doc = "Timer DMA Request disabled."] _0,
+    #[doc = "Timer DMA Request enabled."] _1,
 }
 impl TDREW {
     #[allow(missing_docs)]

@@ -22,7 +22,9 @@ impl super::POL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::POL {
 #[doc = "Possible values of the field `POL0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL0R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl POL0R {
 #[doc = "Possible values of the field `POL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL1R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl POL1R {
 #[doc = "Possible values of the field `POL2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL2R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl POL2R {
 #[doc = "Possible values of the field `POL3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL3R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl POL3R {
 #[doc = "Possible values of the field `POL4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL4R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl POL4R {
 #[doc = "Possible values of the field `POL5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL5R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl POL5R {
 #[doc = "Possible values of the field `POL6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL6R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl POL6R {
 #[doc = "Possible values of the field `POL7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL7R {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -418,10 +404,8 @@ impl POL7R {
 }
 #[doc = "Values that can be written to the field `POL0`"]
 pub enum POL0W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL0W {
     #[allow(missing_docs)]
@@ -476,10 +460,8 @@ impl<'a> _POL0W<'a> {
 }
 #[doc = "Values that can be written to the field `POL1`"]
 pub enum POL1W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL1W {
     #[allow(missing_docs)]
@@ -534,10 +516,8 @@ impl<'a> _POL1W<'a> {
 }
 #[doc = "Values that can be written to the field `POL2`"]
 pub enum POL2W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL2W {
     #[allow(missing_docs)]
@@ -592,10 +572,8 @@ impl<'a> _POL2W<'a> {
 }
 #[doc = "Values that can be written to the field `POL3`"]
 pub enum POL3W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL3W {
     #[allow(missing_docs)]
@@ -650,10 +628,8 @@ impl<'a> _POL3W<'a> {
 }
 #[doc = "Values that can be written to the field `POL4`"]
 pub enum POL4W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL4W {
     #[allow(missing_docs)]
@@ -708,10 +684,8 @@ impl<'a> _POL4W<'a> {
 }
 #[doc = "Values that can be written to the field `POL5`"]
 pub enum POL5W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL5W {
     #[allow(missing_docs)]
@@ -766,10 +740,8 @@ impl<'a> _POL5W<'a> {
 }
 #[doc = "Values that can be written to the field `POL6`"]
 pub enum POL6W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL6W {
     #[allow(missing_docs)]
@@ -824,10 +796,8 @@ impl<'a> _POL6W<'a> {
 }
 #[doc = "Values that can be written to the field `POL7`"]
 pub enum POL7W {
-    #[doc = "The channel polarity is active high."]
-    _0,
-    #[doc = "The channel polarity is active low."]
-    _1,
+    #[doc = "The channel polarity is active high."] _0,
+    #[doc = "The channel polarity is active low."] _1,
 }
 impl POL7W {
     #[allow(missing_docs)]

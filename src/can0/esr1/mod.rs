@@ -22,7 +22,9 @@ impl super::ESR1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::ESR1 {
 #[doc = "Possible values of the field `ERRINT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRINTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "Indicates setting of any Error Bit in the Error and Status Register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "Indicates setting of any Error Bit in the Error and Status Register."] _1,
 }
 impl ERRINTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl ERRINTR {
 #[doc = "Possible values of the field `BOFFINT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFFINTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "FlexCAN module entered Bus Off state."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "FlexCAN module entered Bus Off state."] _1,
 }
 impl BOFFINTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl BOFFINTR {
 #[doc = "Possible values of the field `RX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXR {
-    #[doc = "FlexCAN is not receiving a message."]
-    _0,
-    #[doc = "FlexCAN is receiving a message."]
-    _1,
+    #[doc = "FlexCAN is not receiving a message."] _0,
+    #[doc = "FlexCAN is receiving a message."] _1,
 }
 impl RXR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,14 +180,10 @@ impl RXR {
 #[doc = "Possible values of the field `FLTCONF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLTCONFR {
-    #[doc = "Error Active"]
-    _00,
-    #[doc = "Error Passive"]
-    _01,
-    #[doc = "Bus Off"]
-    _1X,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Error Active"] _00,
+    #[doc = "Error Passive"] _01,
+    #[doc = "Bus Off"] _1X,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl FLTCONFR {
     #[doc = r" Value of the field as raw bits"]
@@ -234,10 +226,8 @@ impl FLTCONFR {
 #[doc = "Possible values of the field `TX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXR {
-    #[doc = "FlexCAN is not transmitting a message."]
-    _0,
-    #[doc = "FlexCAN is transmitting a message."]
-    _1,
+    #[doc = "FlexCAN is not transmitting a message."] _0,
+    #[doc = "FlexCAN is transmitting a message."] _1,
 }
 impl TXR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -281,10 +271,8 @@ impl TXR {
 #[doc = "Possible values of the field `IDLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLER {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "CAN bus is now IDLE."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "CAN bus is now IDLE."] _1,
 }
 impl IDLER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -328,10 +316,8 @@ impl IDLER {
 #[doc = "Possible values of the field `RXWRN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXWRNR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "RXERRCNT is greater than or equal to 96."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "RXERRCNT is greater than or equal to 96."] _1,
 }
 impl RXWRNR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -375,10 +361,8 @@ impl RXWRNR {
 #[doc = "Possible values of the field `TXWRN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXWRNR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "TXERRCNT is greater than or equal to 96."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "TXERRCNT is greater than or equal to 96."] _1,
 }
 impl TXWRNR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -422,10 +406,8 @@ impl TXWRNR {
 #[doc = "Possible values of the field `STFERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STFERRR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "A Stuffing Error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "A Stuffing Error occurred since last read of this register."] _1,
 }
 impl STFERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -469,10 +451,8 @@ impl STFERRR {
 #[doc = "Possible values of the field `FRMERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRMERRR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "A Form Error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "A Form Error occurred since last read of this register."] _1,
 }
 impl FRMERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -516,10 +496,8 @@ impl FRMERRR {
 #[doc = "Possible values of the field `CRCERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCERRR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "A CRC error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "A CRC error occurred since last read of this register."] _1,
 }
 impl CRCERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -563,10 +541,8 @@ impl CRCERRR {
 #[doc = "Possible values of the field `ACKERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACKERRR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "An ACK error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "An ACK error occurred since last read of this register."] _1,
 }
 impl ACKERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -610,10 +586,8 @@ impl ACKERRR {
 #[doc = "Possible values of the field `BIT0ERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIT0ERRR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "At least one bit sent as dominant is received as recessive."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "At least one bit sent as dominant is received as recessive."] _1,
 }
 impl BIT0ERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -657,10 +631,8 @@ impl BIT0ERRR {
 #[doc = "Possible values of the field `BIT1ERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIT1ERRR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "At least one bit sent as recessive is received as dominant."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "At least one bit sent as recessive is received as dominant."] _1,
 }
 impl BIT1ERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -704,8 +676,7 @@ impl BIT1ERRR {
 #[doc = "Possible values of the field `RWRNINT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RWRNINTR {
-    #[doc = "No such occurrence."]
-    _0,
+    #[doc = "No such occurrence."] _0,
     #[doc = "The Rx error counter transitioned from less than 96 to greater than or equal to 96."]
     _1,
 }
@@ -751,8 +722,7 @@ impl RWRNINTR {
 #[doc = "Possible values of the field `TWRNINT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TWRNINTR {
-    #[doc = "No such occurrence."]
-    _0,
+    #[doc = "No such occurrence."] _0,
     #[doc = "The Tx error counter transitioned from less than 96 to greater than or equal to 96."]
     _1,
 }
@@ -798,10 +768,8 @@ impl TWRNINTR {
 #[doc = "Possible values of the field `SYNCH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCHR {
-    #[doc = "FlexCAN is not synchronized to the CAN bus."]
-    _0,
-    #[doc = "FlexCAN is synchronized to the CAN bus."]
-    _1,
+    #[doc = "FlexCAN is not synchronized to the CAN bus."] _0,
+    #[doc = "FlexCAN is synchronized to the CAN bus."] _1,
 }
 impl SYNCHR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -845,10 +813,8 @@ impl SYNCHR {
 #[doc = "Possible values of the field `BOFFDONEINT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFFDONEINTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "FlexCAN module has completed Bus Off process."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "FlexCAN module has completed Bus Off process."] _1,
 }
 impl BOFFDONEINTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -892,8 +858,7 @@ impl BOFFDONEINTR {
 #[doc = "Possible values of the field `ERRINT_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRINT_FASTR {
-    #[doc = "No such occurrence."]
-    _0,
+    #[doc = "No such occurrence."] _0,
     #[doc = "Indicates setting of any Error Bit detected in the Data Phase of CAN FD frames with the BRS bit set."]
     _1,
 }
@@ -939,10 +904,8 @@ impl ERRINT_FASTR {
 #[doc = "Possible values of the field `ERROVR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROVRR {
-    #[doc = "Overrun has not occurred."]
-    _0,
-    #[doc = "Overrun has occurred."]
-    _1,
+    #[doc = "Overrun has not occurred."] _0,
+    #[doc = "Overrun has occurred."] _1,
 }
 impl ERROVRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -986,10 +949,8 @@ impl ERROVRR {
 #[doc = "Possible values of the field `STFERR_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STFERR_FASTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "A Stuffing Error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "A Stuffing Error occurred since last read of this register."] _1,
 }
 impl STFERR_FASTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1033,10 +994,8 @@ impl STFERR_FASTR {
 #[doc = "Possible values of the field `FRMERR_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRMERR_FASTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "A Form Error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "A Form Error occurred since last read of this register."] _1,
 }
 impl FRMERR_FASTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1080,10 +1039,8 @@ impl FRMERR_FASTR {
 #[doc = "Possible values of the field `CRCERR_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCERR_FASTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "A CRC error occurred since last read of this register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "A CRC error occurred since last read of this register."] _1,
 }
 impl CRCERR_FASTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1127,10 +1084,8 @@ impl CRCERR_FASTR {
 #[doc = "Possible values of the field `BIT0ERR_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIT0ERR_FASTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "At least one bit sent as dominant is received as recessive."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "At least one bit sent as dominant is received as recessive."] _1,
 }
 impl BIT0ERR_FASTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1174,10 +1129,8 @@ impl BIT0ERR_FASTR {
 #[doc = "Possible values of the field `BIT1ERR_FAST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIT1ERR_FASTR {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "At least one bit sent as recessive is received as dominant."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "At least one bit sent as recessive is received as dominant."] _1,
 }
 impl BIT1ERR_FASTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1220,10 +1173,8 @@ impl BIT1ERR_FASTR {
 }
 #[doc = "Values that can be written to the field `ERRINT`"]
 pub enum ERRINTW {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "Indicates setting of any Error Bit in the Error and Status Register."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "Indicates setting of any Error Bit in the Error and Status Register."] _1,
 }
 impl ERRINTW {
     #[allow(missing_docs)]
@@ -1278,10 +1229,8 @@ impl<'a> _ERRINTW<'a> {
 }
 #[doc = "Values that can be written to the field `BOFFINT`"]
 pub enum BOFFINTW {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "FlexCAN module entered Bus Off state."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "FlexCAN module entered Bus Off state."] _1,
 }
 impl BOFFINTW {
     #[allow(missing_docs)]
@@ -1336,8 +1285,7 @@ impl<'a> _BOFFINTW<'a> {
 }
 #[doc = "Values that can be written to the field `RWRNINT`"]
 pub enum RWRNINTW {
-    #[doc = "No such occurrence."]
-    _0,
+    #[doc = "No such occurrence."] _0,
     #[doc = "The Rx error counter transitioned from less than 96 to greater than or equal to 96."]
     _1,
 }
@@ -1394,8 +1342,7 @@ impl<'a> _RWRNINTW<'a> {
 }
 #[doc = "Values that can be written to the field `TWRNINT`"]
 pub enum TWRNINTW {
-    #[doc = "No such occurrence."]
-    _0,
+    #[doc = "No such occurrence."] _0,
     #[doc = "The Tx error counter transitioned from less than 96 to greater than or equal to 96."]
     _1,
 }
@@ -1452,10 +1399,8 @@ impl<'a> _TWRNINTW<'a> {
 }
 #[doc = "Values that can be written to the field `BOFFDONEINT`"]
 pub enum BOFFDONEINTW {
-    #[doc = "No such occurrence."]
-    _0,
-    #[doc = "FlexCAN module has completed Bus Off process."]
-    _1,
+    #[doc = "No such occurrence."] _0,
+    #[doc = "FlexCAN module has completed Bus Off process."] _1,
 }
 impl BOFFDONEINTW {
     #[allow(missing_docs)]
@@ -1510,8 +1455,7 @@ impl<'a> _BOFFDONEINTW<'a> {
 }
 #[doc = "Values that can be written to the field `ERRINT_FAST`"]
 pub enum ERRINT_FASTW {
-    #[doc = "No such occurrence."]
-    _0,
+    #[doc = "No such occurrence."] _0,
     #[doc = "Indicates setting of any Error Bit detected in the Data Phase of CAN FD frames with the BRS bit set."]
     _1,
 }
@@ -1568,10 +1512,8 @@ impl<'a> _ERRINT_FASTW<'a> {
 }
 #[doc = "Values that can be written to the field `ERROVR`"]
 pub enum ERROVRW {
-    #[doc = "Overrun has not occurred."]
-    _0,
-    #[doc = "Overrun has occurred."]
-    _1,
+    #[doc = "Overrun has not occurred."] _0,
+    #[doc = "Overrun has occurred."] _1,
 }
 impl ERROVRW {
     #[allow(missing_docs)]

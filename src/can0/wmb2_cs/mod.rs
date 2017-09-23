@@ -6,7 +6,9 @@ impl super::WMB2_CS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = r" Value of the field"]
@@ -23,10 +25,8 @@ impl DLCR {
 #[doc = "Possible values of the field `RTR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTRR {
-    #[doc = "Frame is data one (not remote)"]
-    _0,
-    #[doc = "Frame is a remote one"]
-    _1,
+    #[doc = "Frame is data one (not remote)"] _0,
+    #[doc = "Frame is a remote one"] _1,
 }
 impl RTRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -70,10 +70,8 @@ impl RTRR {
 #[doc = "Possible values of the field `IDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDER {
-    #[doc = "Frame format is standard"]
-    _0,
-    #[doc = "Frame format is extended"]
-    _1,
+    #[doc = "Frame format is standard"] _0,
+    #[doc = "Frame format is extended"] _1,
 }
 impl IDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]

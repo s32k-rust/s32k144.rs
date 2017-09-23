@@ -22,7 +22,9 @@ impl super::FIRCCSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::FIRCCSR {
 #[doc = "Possible values of the field `FIRCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCENR {
-    #[doc = "Fast IRC is disabled"]
-    _0,
-    #[doc = "Fast IRC is enabled"]
-    _1,
+    #[doc = "Fast IRC is disabled"] _0,
+    #[doc = "Fast IRC is enabled"] _1,
 }
 impl FIRCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl FIRCENR {
 #[doc = "Possible values of the field `FIRCREGOFF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCREGOFFR {
-    #[doc = "Fast IRC Regulator is enabled."]
-    _0,
-    #[doc = "Fast IRC Regulator is disabled."]
-    _1,
+    #[doc = "Fast IRC Regulator is enabled."] _0,
+    #[doc = "Fast IRC Regulator is disabled."] _1,
 }
 impl FIRCREGOFFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl FIRCREGOFFR {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "Control Status Register can be written."]
-    _0,
-    #[doc = "Control Status Register cannot be written."]
-    _1,
+    #[doc = "Control Status Register can be written."] _0,
+    #[doc = "Control Status Register cannot be written."] _1,
 }
 impl LKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,8 +180,7 @@ impl LKR {
 #[doc = "Possible values of the field `FIRCVLD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCVLDR {
-    #[doc = "Fast IRC is not enabled or clock is not valid."]
-    _0,
+    #[doc = "Fast IRC is not enabled or clock is not valid."] _0,
     #[doc = "Fast IRC is enabled and output clock is valid. The clock is valid once there is an output clock from the FIRC analog."]
     _1,
 }
@@ -231,10 +226,8 @@ impl FIRCVLDR {
 #[doc = "Possible values of the field `FIRCSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCSELR {
-    #[doc = "Fast IRC is not the system clock source"]
-    _0,
-    #[doc = "Fast IRC is the system clock source"]
-    _1,
+    #[doc = "Fast IRC is not the system clock source"] _0,
+    #[doc = "Fast IRC is the system clock source"] _1,
 }
 impl FIRCSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +271,8 @@ impl FIRCSELR {
 #[doc = "Possible values of the field `FIRCERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCERRR {
-    #[doc = "Error not detected with the Fast IRC trimming."]
-    _0,
-    #[doc = "Error detected with the Fast IRC trimming."]
-    _1,
+    #[doc = "Error not detected with the Fast IRC trimming."] _0,
+    #[doc = "Error detected with the Fast IRC trimming."] _1,
 }
 impl FIRCERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -324,10 +315,8 @@ impl FIRCERRR {
 }
 #[doc = "Values that can be written to the field `FIRCEN`"]
 pub enum FIRCENW {
-    #[doc = "Fast IRC is disabled"]
-    _0,
-    #[doc = "Fast IRC is enabled"]
-    _1,
+    #[doc = "Fast IRC is disabled"] _0,
+    #[doc = "Fast IRC is enabled"] _1,
 }
 impl FIRCENW {
     #[allow(missing_docs)]
@@ -382,10 +371,8 @@ impl<'a> _FIRCENW<'a> {
 }
 #[doc = "Values that can be written to the field `FIRCREGOFF`"]
 pub enum FIRCREGOFFW {
-    #[doc = "Fast IRC Regulator is enabled."]
-    _0,
-    #[doc = "Fast IRC Regulator is disabled."]
-    _1,
+    #[doc = "Fast IRC Regulator is enabled."] _0,
+    #[doc = "Fast IRC Regulator is disabled."] _1,
 }
 impl FIRCREGOFFW {
     #[allow(missing_docs)]
@@ -440,10 +427,8 @@ impl<'a> _FIRCREGOFFW<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "Control Status Register can be written."]
-    _0,
-    #[doc = "Control Status Register cannot be written."]
-    _1,
+    #[doc = "Control Status Register can be written."] _0,
+    #[doc = "Control Status Register cannot be written."] _1,
 }
 impl LKW {
     #[allow(missing_docs)]
@@ -498,10 +483,8 @@ impl<'a> _LKW<'a> {
 }
 #[doc = "Values that can be written to the field `FIRCERR`"]
 pub enum FIRCERRW {
-    #[doc = "Error not detected with the Fast IRC trimming."]
-    _0,
-    #[doc = "Error detected with the Fast IRC trimming."]
-    _1,
+    #[doc = "Error not detected with the Fast IRC trimming."] _0,
+    #[doc = "Error detected with the Fast IRC trimming."] _1,
 }
 impl FIRCERRW {
     #[allow(missing_docs)]

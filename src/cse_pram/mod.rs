@@ -2,70 +2,38 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - CSE PRAM 0 Register"]
-    pub embedded_ram0: EMBEDDEDRAM0,
-    #[doc = "0x04 - CSE PRAM 1 Register"]
-    pub embedded_ram1: EMBEDDEDRAM1,
-    #[doc = "0x08 - CSE PRAM 2 Register"]
-    pub embedded_ram2: EMBEDDEDRAM2,
-    #[doc = "0x0c - CSE PRAM 3 Register"]
-    pub embedded_ram3: EMBEDDEDRAM3,
-    #[doc = "0x10 - CSE PRAM 4 Register"]
-    pub embedded_ram4: EMBEDDEDRAM4,
-    #[doc = "0x14 - CSE PRAM 5 Register"]
-    pub embedded_ram5: EMBEDDEDRAM5,
-    #[doc = "0x18 - CSE PRAM 6 Register"]
-    pub embedded_ram6: EMBEDDEDRAM6,
-    #[doc = "0x1c - CSE PRAM 7 Register"]
-    pub embedded_ram7: EMBEDDEDRAM7,
-    #[doc = "0x20 - CSE PRAM 8 Register"]
-    pub embedded_ram8: EMBEDDEDRAM8,
-    #[doc = "0x24 - CSE PRAM 9 Register"]
-    pub embedded_ram9: EMBEDDEDRAM9,
-    #[doc = "0x28 - CSE PRAM 10 Register"]
-    pub embedded_ram10: EMBEDDEDRAM10,
-    #[doc = "0x2c - CSE PRAM 11 Register"]
-    pub embedded_ram11: EMBEDDEDRAM11,
-    #[doc = "0x30 - CSE PRAM 12 Register"]
-    pub embedded_ram12: EMBEDDEDRAM12,
-    #[doc = "0x34 - CSE PRAM 13 Register"]
-    pub embedded_ram13: EMBEDDEDRAM13,
-    #[doc = "0x38 - CSE PRAM 14 Register"]
-    pub embedded_ram14: EMBEDDEDRAM14,
-    #[doc = "0x3c - CSE PRAM 15 Register"]
-    pub embedded_ram15: EMBEDDEDRAM15,
-    #[doc = "0x40 - CSE PRAM 16 Register"]
-    pub embedded_ram16: EMBEDDEDRAM16,
-    #[doc = "0x44 - CSE PRAM 17 Register"]
-    pub embedded_ram17: EMBEDDEDRAM17,
-    #[doc = "0x48 - CSE PRAM 18 Register"]
-    pub embedded_ram18: EMBEDDEDRAM18,
-    #[doc = "0x4c - CSE PRAM 19 Register"]
-    pub embedded_ram19: EMBEDDEDRAM19,
-    #[doc = "0x50 - CSE PRAM 20 Register"]
-    pub embedded_ram20: EMBEDDEDRAM20,
-    #[doc = "0x54 - CSE PRAM 21 Register"]
-    pub embedded_ram21: EMBEDDEDRAM21,
-    #[doc = "0x58 - CSE PRAM 22 Register"]
-    pub embedded_ram22: EMBEDDEDRAM22,
-    #[doc = "0x5c - CSE PRAM 23 Register"]
-    pub embedded_ram23: EMBEDDEDRAM23,
-    #[doc = "0x60 - CSE PRAM 24 Register"]
-    pub embedded_ram24: EMBEDDEDRAM24,
-    #[doc = "0x64 - CSE PRAM 25 Register"]
-    pub embedded_ram25: EMBEDDEDRAM25,
-    #[doc = "0x68 - CSE PRAM 26 Register"]
-    pub embedded_ram26: EMBEDDEDRAM26,
-    #[doc = "0x6c - CSE PRAM 27 Register"]
-    pub embedded_ram27: EMBEDDEDRAM27,
-    #[doc = "0x70 - CSE PRAM 28 Register"]
-    pub embedded_ram28: EMBEDDEDRAM28,
-    #[doc = "0x74 - CSE PRAM 29 Register"]
-    pub embedded_ram29: EMBEDDEDRAM29,
-    #[doc = "0x78 - CSE PRAM 30 Register"]
-    pub embedded_ram30: EMBEDDEDRAM30,
-    #[doc = "0x7c - CSE PRAM 31 Register"]
-    pub embedded_ram31: EMBEDDEDRAM31,
+    #[doc = "0x00 - CSE PRAM 0 Register"] pub embedded_ram0: EMBEDDEDRAM0,
+    #[doc = "0x04 - CSE PRAM 1 Register"] pub embedded_ram1: EMBEDDEDRAM1,
+    #[doc = "0x08 - CSE PRAM 2 Register"] pub embedded_ram2: EMBEDDEDRAM2,
+    #[doc = "0x0c - CSE PRAM 3 Register"] pub embedded_ram3: EMBEDDEDRAM3,
+    #[doc = "0x10 - CSE PRAM 4 Register"] pub embedded_ram4: EMBEDDEDRAM4,
+    #[doc = "0x14 - CSE PRAM 5 Register"] pub embedded_ram5: EMBEDDEDRAM5,
+    #[doc = "0x18 - CSE PRAM 6 Register"] pub embedded_ram6: EMBEDDEDRAM6,
+    #[doc = "0x1c - CSE PRAM 7 Register"] pub embedded_ram7: EMBEDDEDRAM7,
+    #[doc = "0x20 - CSE PRAM 8 Register"] pub embedded_ram8: EMBEDDEDRAM8,
+    #[doc = "0x24 - CSE PRAM 9 Register"] pub embedded_ram9: EMBEDDEDRAM9,
+    #[doc = "0x28 - CSE PRAM 10 Register"] pub embedded_ram10: EMBEDDEDRAM10,
+    #[doc = "0x2c - CSE PRAM 11 Register"] pub embedded_ram11: EMBEDDEDRAM11,
+    #[doc = "0x30 - CSE PRAM 12 Register"] pub embedded_ram12: EMBEDDEDRAM12,
+    #[doc = "0x34 - CSE PRAM 13 Register"] pub embedded_ram13: EMBEDDEDRAM13,
+    #[doc = "0x38 - CSE PRAM 14 Register"] pub embedded_ram14: EMBEDDEDRAM14,
+    #[doc = "0x3c - CSE PRAM 15 Register"] pub embedded_ram15: EMBEDDEDRAM15,
+    #[doc = "0x40 - CSE PRAM 16 Register"] pub embedded_ram16: EMBEDDEDRAM16,
+    #[doc = "0x44 - CSE PRAM 17 Register"] pub embedded_ram17: EMBEDDEDRAM17,
+    #[doc = "0x48 - CSE PRAM 18 Register"] pub embedded_ram18: EMBEDDEDRAM18,
+    #[doc = "0x4c - CSE PRAM 19 Register"] pub embedded_ram19: EMBEDDEDRAM19,
+    #[doc = "0x50 - CSE PRAM 20 Register"] pub embedded_ram20: EMBEDDEDRAM20,
+    #[doc = "0x54 - CSE PRAM 21 Register"] pub embedded_ram21: EMBEDDEDRAM21,
+    #[doc = "0x58 - CSE PRAM 22 Register"] pub embedded_ram22: EMBEDDEDRAM22,
+    #[doc = "0x5c - CSE PRAM 23 Register"] pub embedded_ram23: EMBEDDEDRAM23,
+    #[doc = "0x60 - CSE PRAM 24 Register"] pub embedded_ram24: EMBEDDEDRAM24,
+    #[doc = "0x64 - CSE PRAM 25 Register"] pub embedded_ram25: EMBEDDEDRAM25,
+    #[doc = "0x68 - CSE PRAM 26 Register"] pub embedded_ram26: EMBEDDEDRAM26,
+    #[doc = "0x6c - CSE PRAM 27 Register"] pub embedded_ram27: EMBEDDEDRAM27,
+    #[doc = "0x70 - CSE PRAM 28 Register"] pub embedded_ram28: EMBEDDEDRAM28,
+    #[doc = "0x74 - CSE PRAM 29 Register"] pub embedded_ram29: EMBEDDEDRAM29,
+    #[doc = "0x78 - CSE PRAM 30 Register"] pub embedded_ram30: EMBEDDEDRAM30,
+    #[doc = "0x7c - CSE PRAM 31 Register"] pub embedded_ram31: EMBEDDEDRAM31,
 }
 #[doc = "CSE PRAM 0 Register"]
 pub struct EMBEDDEDRAM0 {

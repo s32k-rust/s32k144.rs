@@ -22,7 +22,9 @@ impl super::FLT_ID1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl FLT_ID1R {
 #[doc = "Possible values of the field `FLT_RTR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLT_RTRR {
-    #[doc = "Reject remote frame (accept data frame)"]
-    _0,
-    #[doc = "Accept remote frame"]
-    _1,
+    #[doc = "Reject remote frame (accept data frame)"] _0,
+    #[doc = "Accept remote frame"] _1,
 }
 impl FLT_RTRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,10 +101,8 @@ impl FLT_RTRR {
 #[doc = "Possible values of the field `FLT_IDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLT_IDER {
-    #[doc = "Accept standard frame format"]
-    _0,
-    #[doc = "Accept extended frame format"]
-    _1,
+    #[doc = "Accept standard frame format"] _0,
+    #[doc = "Accept extended frame format"] _1,
 }
 impl FLT_IDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -162,10 +160,8 @@ impl<'a> _FLT_ID1W<'a> {
 }
 #[doc = "Values that can be written to the field `FLT_RTR`"]
 pub enum FLT_RTRW {
-    #[doc = "Reject remote frame (accept data frame)"]
-    _0,
-    #[doc = "Accept remote frame"]
-    _1,
+    #[doc = "Reject remote frame (accept data frame)"] _0,
+    #[doc = "Accept remote frame"] _1,
 }
 impl FLT_RTRW {
     #[allow(missing_docs)]
@@ -220,10 +216,8 @@ impl<'a> _FLT_RTRW<'a> {
 }
 #[doc = "Values that can be written to the field `FLT_IDE`"]
 pub enum FLT_IDEW {
-    #[doc = "Accept standard frame format"]
-    _0,
-    #[doc = "Accept extended frame format"]
-    _1,
+    #[doc = "Accept standard frame format"] _0,
+    #[doc = "Accept extended frame format"] _1,
 }
 impl FLT_IDEW {
     #[allow(missing_docs)]

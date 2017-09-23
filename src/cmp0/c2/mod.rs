@@ -22,7 +22,9 @@ impl super::C2 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl ACONR {
 #[doc = "Possible values of the field `INITMOD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INITMODR {
-    #[doc = "The modulus is set to 64(same with 111111)."]
-    _000000,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "The modulus is set to 64(same with 111111)."] _000000,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl INITMODR {
     #[doc = r" Value of the field as raw bits"]
@@ -310,22 +310,14 @@ impl CH7FR {
 #[doc = "Possible values of the field `FXMXCH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FXMXCHR {
-    #[doc = "Channel 0 is selected as the fixed reference input for the fixed mux port."]
-    _000,
-    #[doc = "Channel 1 is selected as the fixed reference input for the fixed mux port."]
-    _001,
-    #[doc = "Channel 2 is selected as the fixed reference input for the fixed mux port."]
-    _010,
-    #[doc = "Channel 3 is selected as the fixed reference input for the fixed mux port."]
-    _011,
-    #[doc = "Channel 4 is selected as the fixed reference input for the fixed mux port."]
-    _100,
-    #[doc = "Channel 5 is selected as the fixed reference input for the fixed mux port."]
-    _101,
-    #[doc = "Channel 6 is selected as the fixed reference input for the fixed mux port."]
-    _110,
-    #[doc = "Channel 7 is selected as the fixed reference input for the fixed mux port."]
-    _111,
+    #[doc = "Channel 0 is selected as the fixed reference input for the fixed mux port."] _000,
+    #[doc = "Channel 1 is selected as the fixed reference input for the fixed mux port."] _001,
+    #[doc = "Channel 2 is selected as the fixed reference input for the fixed mux port."] _010,
+    #[doc = "Channel 3 is selected as the fixed reference input for the fixed mux port."] _011,
+    #[doc = "Channel 4 is selected as the fixed reference input for the fixed mux port."] _100,
+    #[doc = "Channel 5 is selected as the fixed reference input for the fixed mux port."] _101,
+    #[doc = "Channel 6 is selected as the fixed reference input for the fixed mux port."] _110,
+    #[doc = "Channel 7 is selected as the fixed reference input for the fixed mux port."] _111,
 }
 impl FXMXCHR {
     #[doc = r" Value of the field as raw bits"]
@@ -402,10 +394,8 @@ impl FXMXCHR {
 #[doc = "Possible values of the field `FXMP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FXMPR {
-    #[doc = "The Plus port is fixed. Only the inputs to the Minus port are swept in each round."]
-    _0,
-    #[doc = "The Minus port is fixed. Only the inputs to the Plus port are swept in each round."]
-    _1,
+    #[doc = "The Plus port is fixed. Only the inputs to the Minus port are swept in each round."] _0,
+    #[doc = "The Minus port is fixed. Only the inputs to the Plus port are swept in each round."] _1,
 }
 impl FXMPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -449,8 +439,7 @@ impl FXMPR {
 #[doc = "Possible values of the field `RRIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RRIER {
-    #[doc = "The round-robin interrupt is disabled."]
-    _0,
+    #[doc = "The round-robin interrupt is disabled."] _0,
     #[doc = "The round-robin interrupt is enabled when a comparison result changes from the last sample."]
     _1,
 }
@@ -496,10 +485,8 @@ impl RRIER {
 #[doc = "Possible values of the field `RRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RRER {
-    #[doc = "Round-robin operation is disabled."]
-    _0,
-    #[doc = "Round-robin operation is enabled."]
-    _1,
+    #[doc = "Round-robin operation is disabled."] _0,
+    #[doc = "Round-robin operation is enabled."] _1,
 }
 impl RRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -557,8 +544,7 @@ impl<'a> _ACONW<'a> {
 }
 #[doc = "Values that can be written to the field `INITMOD`"]
 pub enum INITMODW {
-    #[doc = "The modulus is set to 64(same with 111111)."]
-    _000000,
+    #[doc = "The modulus is set to 64(same with 111111)."] _000000,
 }
 impl INITMODW {
     #[allow(missing_docs)]
@@ -847,22 +833,14 @@ impl<'a> _CH7FW<'a> {
 }
 #[doc = "Values that can be written to the field `FXMXCH`"]
 pub enum FXMXCHW {
-    #[doc = "Channel 0 is selected as the fixed reference input for the fixed mux port."]
-    _000,
-    #[doc = "Channel 1 is selected as the fixed reference input for the fixed mux port."]
-    _001,
-    #[doc = "Channel 2 is selected as the fixed reference input for the fixed mux port."]
-    _010,
-    #[doc = "Channel 3 is selected as the fixed reference input for the fixed mux port."]
-    _011,
-    #[doc = "Channel 4 is selected as the fixed reference input for the fixed mux port."]
-    _100,
-    #[doc = "Channel 5 is selected as the fixed reference input for the fixed mux port."]
-    _101,
-    #[doc = "Channel 6 is selected as the fixed reference input for the fixed mux port."]
-    _110,
-    #[doc = "Channel 7 is selected as the fixed reference input for the fixed mux port."]
-    _111,
+    #[doc = "Channel 0 is selected as the fixed reference input for the fixed mux port."] _000,
+    #[doc = "Channel 1 is selected as the fixed reference input for the fixed mux port."] _001,
+    #[doc = "Channel 2 is selected as the fixed reference input for the fixed mux port."] _010,
+    #[doc = "Channel 3 is selected as the fixed reference input for the fixed mux port."] _011,
+    #[doc = "Channel 4 is selected as the fixed reference input for the fixed mux port."] _100,
+    #[doc = "Channel 5 is selected as the fixed reference input for the fixed mux port."] _101,
+    #[doc = "Channel 6 is selected as the fixed reference input for the fixed mux port."] _110,
+    #[doc = "Channel 7 is selected as the fixed reference input for the fixed mux port."] _111,
 }
 impl FXMXCHW {
     #[allow(missing_docs)]
@@ -945,10 +923,8 @@ impl<'a> _FXMXCHW<'a> {
 }
 #[doc = "Values that can be written to the field `FXMP`"]
 pub enum FXMPW {
-    #[doc = "The Plus port is fixed. Only the inputs to the Minus port are swept in each round."]
-    _0,
-    #[doc = "The Minus port is fixed. Only the inputs to the Plus port are swept in each round."]
-    _1,
+    #[doc = "The Plus port is fixed. Only the inputs to the Minus port are swept in each round."] _0,
+    #[doc = "The Minus port is fixed. Only the inputs to the Plus port are swept in each round."] _1,
 }
 impl FXMPW {
     #[allow(missing_docs)]
@@ -1003,8 +979,7 @@ impl<'a> _FXMPW<'a> {
 }
 #[doc = "Values that can be written to the field `RRIE`"]
 pub enum RRIEW {
-    #[doc = "The round-robin interrupt is disabled."]
-    _0,
+    #[doc = "The round-robin interrupt is disabled."] _0,
     #[doc = "The round-robin interrupt is enabled when a comparison result changes from the last sample."]
     _1,
 }
@@ -1061,10 +1036,8 @@ impl<'a> _RRIEW<'a> {
 }
 #[doc = "Values that can be written to the field `RRE`"]
 pub enum RREW {
-    #[doc = "Round-robin operation is disabled."]
-    _0,
-    #[doc = "Round-robin operation is enabled."]
-    _1,
+    #[doc = "Round-robin operation is disabled."] _0,
+    #[doc = "Round-robin operation is enabled."] _1,
 }
 impl RREW {
     #[allow(missing_docs)]

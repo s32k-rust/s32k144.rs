@@ -22,7 +22,9 @@ impl super::SC3 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,14 +45,10 @@ impl super::SC3 {
 #[doc = "Possible values of the field `AVGS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVGSR {
-    #[doc = "4 samples averaged."]
-    _00,
-    #[doc = "8 samples averaged."]
-    _01,
-    #[doc = "16 samples averaged."]
-    _10,
-    #[doc = "32 samples averaged."]
-    _11,
+    #[doc = "4 samples averaged."] _00,
+    #[doc = "8 samples averaged."] _01,
+    #[doc = "16 samples averaged."] _10,
+    #[doc = "32 samples averaged."] _11,
 }
 impl AVGSR {
     #[doc = r" Value of the field as raw bits"]
@@ -99,10 +97,8 @@ impl AVGSR {
 #[doc = "Possible values of the field `AVGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVGER {
-    #[doc = "Hardware average function disabled."]
-    _0,
-    #[doc = "Hardware average function enabled."]
-    _1,
+    #[doc = "Hardware average function disabled."] _0,
+    #[doc = "Hardware average function enabled."] _1,
 }
 impl AVGER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -213,14 +209,10 @@ impl CALR {
 }
 #[doc = "Values that can be written to the field `AVGS`"]
 pub enum AVGSW {
-    #[doc = "4 samples averaged."]
-    _00,
-    #[doc = "8 samples averaged."]
-    _01,
-    #[doc = "16 samples averaged."]
-    _10,
-    #[doc = "32 samples averaged."]
-    _11,
+    #[doc = "4 samples averaged."] _00,
+    #[doc = "8 samples averaged."] _01,
+    #[doc = "16 samples averaged."] _10,
+    #[doc = "32 samples averaged."] _11,
 }
 impl AVGSW {
     #[allow(missing_docs)]
@@ -279,10 +271,8 @@ impl<'a> _AVGSW<'a> {
 }
 #[doc = "Values that can be written to the field `AVGE`"]
 pub enum AVGEW {
-    #[doc = "Hardware average function disabled."]
-    _0,
-    #[doc = "Hardware average function enabled."]
-    _1,
+    #[doc = "Hardware average function disabled."] _0,
+    #[doc = "Hardware average function enabled."] _1,
 }
 impl AVGEW {
     #[allow(missing_docs)]

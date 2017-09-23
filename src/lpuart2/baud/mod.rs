@@ -22,7 +22,9 @@ impl super::BAUD {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl SBRR {
 #[doc = "Possible values of the field `SBNS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBNSR {
-    #[doc = "One stop bit."]
-    _0,
-    #[doc = "Two stop bits."]
-    _1,
+    #[doc = "One stop bit."] _0,
+    #[doc = "Two stop bits."] _1,
 }
 impl SBNSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,10 +101,8 @@ impl SBNSR {
 #[doc = "Possible values of the field `RXEDGIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEDGIER {
-    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."]
-    _0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."] _0,
+    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."] _1,
 }
 impl RXEDGIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -148,10 +146,8 @@ impl RXEDGIER {
 #[doc = "Possible values of the field `LBKDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBKDIER {
-    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."]
-    _0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."] _0,
+    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."] _1,
 }
 impl LBKDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -195,10 +191,8 @@ impl LBKDIER {
 #[doc = "Possible values of the field `RESYNCDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESYNCDISR {
-    #[doc = "Resynchronization during received data word is supported"]
-    _0,
-    #[doc = "Resynchronization during received data word is disabled"]
-    _1,
+    #[doc = "Resynchronization during received data word is supported"] _0,
+    #[doc = "Resynchronization during received data word is disabled"] _1,
 }
 impl RESYNCDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -242,8 +236,7 @@ impl RESYNCDISR {
 #[doc = "Possible values of the field `BOTHEDGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOTHEDGER {
-    #[doc = "Receiver samples input data using the rising edge of the baud rate clock."]
-    _0,
+    #[doc = "Receiver samples input data using the rising edge of the baud rate clock."] _0,
     #[doc = "Receiver samples input data using the rising and falling edge of the baud rate clock."]
     _1,
 }
@@ -289,14 +282,10 @@ impl BOTHEDGER {
 #[doc = "Possible values of the field `MATCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MATCFGR {
-    #[doc = "Address Match Wakeup"]
-    _00,
-    #[doc = "Idle Match Wakeup"]
-    _01,
-    #[doc = "Match On and Match Off"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Address Match Wakeup"] _00,
+    #[doc = "Idle Match Wakeup"] _01,
+    #[doc = "Match On and Match Off"] _10,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl MATCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -339,10 +328,8 @@ impl MATCFGR {
 #[doc = "Possible values of the field `RIDMAE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RIDMAER {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+    #[doc = "DMA request disabled."] _0,
+    #[doc = "DMA request enabled."] _1,
 }
 impl RIDMAER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -386,10 +373,8 @@ impl RIDMAER {
 #[doc = "Possible values of the field `RDMAE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDMAER {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+    #[doc = "DMA request disabled."] _0,
+    #[doc = "DMA request enabled."] _1,
 }
 impl RDMAER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -433,10 +418,8 @@ impl RDMAER {
 #[doc = "Possible values of the field `TDMAE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDMAER {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+    #[doc = "DMA request disabled."] _0,
+    #[doc = "DMA request enabled."] _1,
 }
 impl TDMAER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -480,68 +463,37 @@ impl TDMAER {
 #[doc = "Possible values of the field `OSR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSRR {
-    #[doc = "Writing 0 to this field will result in an oversampling ratio of 16"]
-    _00000,
-    #[doc = "Oversampling ratio of 4, requires BOTHEDGE to be set."]
-    _00011,
-    #[doc = "Oversampling ratio of 5, requires BOTHEDGE to be set."]
-    _00100,
-    #[doc = "Oversampling ratio of 6, requires BOTHEDGE to be set."]
-    _00101,
-    #[doc = "Oversampling ratio of 7, requires BOTHEDGE to be set."]
-    _00110,
-    #[doc = "Oversampling ratio of 8."]
-    _00111,
-    #[doc = "Oversampling ratio of 9."]
-    _01000,
-    #[doc = "Oversampling ratio of 10."]
-    _01001,
-    #[doc = "Oversampling ratio of 11."]
-    _01010,
-    #[doc = "Oversampling ratio of 12."]
-    _01011,
-    #[doc = "Oversampling ratio of 13."]
-    _01100,
-    #[doc = "Oversampling ratio of 14."]
-    _01101,
-    #[doc = "Oversampling ratio of 15."]
-    _01110,
-    #[doc = "Oversampling ratio of 16."]
-    _01111,
-    #[doc = "Oversampling ratio of 17."]
-    _10000,
-    #[doc = "Oversampling ratio of 18."]
-    _10001,
-    #[doc = "Oversampling ratio of 19."]
-    _10010,
-    #[doc = "Oversampling ratio of 20."]
-    _10011,
-    #[doc = "Oversampling ratio of 21."]
-    _10100,
-    #[doc = "Oversampling ratio of 22."]
-    _10101,
-    #[doc = "Oversampling ratio of 23."]
-    _10110,
-    #[doc = "Oversampling ratio of 24."]
-    _10111,
-    #[doc = "Oversampling ratio of 25."]
-    _11000,
-    #[doc = "Oversampling ratio of 26."]
-    _11001,
-    #[doc = "Oversampling ratio of 27."]
-    _11010,
-    #[doc = "Oversampling ratio of 28."]
-    _11011,
-    #[doc = "Oversampling ratio of 29."]
-    _11100,
-    #[doc = "Oversampling ratio of 30."]
-    _11101,
-    #[doc = "Oversampling ratio of 31."]
-    _11110,
-    #[doc = "Oversampling ratio of 32."]
-    _11111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Writing 0 to this field will result in an oversampling ratio of 16"] _00000,
+    #[doc = "Oversampling ratio of 4, requires BOTHEDGE to be set."] _00011,
+    #[doc = "Oversampling ratio of 5, requires BOTHEDGE to be set."] _00100,
+    #[doc = "Oversampling ratio of 6, requires BOTHEDGE to be set."] _00101,
+    #[doc = "Oversampling ratio of 7, requires BOTHEDGE to be set."] _00110,
+    #[doc = "Oversampling ratio of 8."] _00111,
+    #[doc = "Oversampling ratio of 9."] _01000,
+    #[doc = "Oversampling ratio of 10."] _01001,
+    #[doc = "Oversampling ratio of 11."] _01010,
+    #[doc = "Oversampling ratio of 12."] _01011,
+    #[doc = "Oversampling ratio of 13."] _01100,
+    #[doc = "Oversampling ratio of 14."] _01101,
+    #[doc = "Oversampling ratio of 15."] _01110,
+    #[doc = "Oversampling ratio of 16."] _01111,
+    #[doc = "Oversampling ratio of 17."] _10000,
+    #[doc = "Oversampling ratio of 18."] _10001,
+    #[doc = "Oversampling ratio of 19."] _10010,
+    #[doc = "Oversampling ratio of 20."] _10011,
+    #[doc = "Oversampling ratio of 21."] _10100,
+    #[doc = "Oversampling ratio of 22."] _10101,
+    #[doc = "Oversampling ratio of 23."] _10110,
+    #[doc = "Oversampling ratio of 24."] _10111,
+    #[doc = "Oversampling ratio of 25."] _11000,
+    #[doc = "Oversampling ratio of 26."] _11001,
+    #[doc = "Oversampling ratio of 27."] _11010,
+    #[doc = "Oversampling ratio of 28."] _11011,
+    #[doc = "Oversampling ratio of 29."] _11100,
+    #[doc = "Oversampling ratio of 30."] _11101,
+    #[doc = "Oversampling ratio of 31."] _11110,
+    #[doc = "Oversampling ratio of 32."] _11111,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl OSRR {
     #[doc = r" Value of the field as raw bits"]
@@ -773,10 +725,8 @@ impl OSRR {
 #[doc = "Possible values of the field `M10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum M10R {
-    #[doc = "Receiver and transmitter use 7-bit to 9-bit data characters."]
-    _0,
-    #[doc = "Receiver and transmitter use 10-bit data characters."]
-    _1,
+    #[doc = "Receiver and transmitter use 7-bit to 9-bit data characters."] _0,
+    #[doc = "Receiver and transmitter use 10-bit data characters."] _1,
 }
 impl M10R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -820,10 +770,8 @@ impl M10R {
 #[doc = "Possible values of the field `MAEN2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAEN2R {
-    #[doc = "Normal operation."]
-    _0,
-    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA2]."]
-    _1,
+    #[doc = "Normal operation."] _0,
+    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA2]."] _1,
 }
 impl MAEN2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -867,10 +815,8 @@ impl MAEN2R {
 #[doc = "Possible values of the field `MAEN1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAEN1R {
-    #[doc = "Normal operation."]
-    _0,
-    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA1]."]
-    _1,
+    #[doc = "Normal operation."] _0,
+    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA1]."] _1,
 }
 impl MAEN1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -928,10 +874,8 @@ impl<'a> _SBRW<'a> {
 }
 #[doc = "Values that can be written to the field `SBNS`"]
 pub enum SBNSW {
-    #[doc = "One stop bit."]
-    _0,
-    #[doc = "Two stop bits."]
-    _1,
+    #[doc = "One stop bit."] _0,
+    #[doc = "Two stop bits."] _1,
 }
 impl SBNSW {
     #[allow(missing_docs)]
@@ -986,10 +930,8 @@ impl<'a> _SBNSW<'a> {
 }
 #[doc = "Values that can be written to the field `RXEDGIE`"]
 pub enum RXEDGIEW {
-    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."]
-    _0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from LPUART_STAT[RXEDGIF] disabled."] _0,
+    #[doc = "Hardware interrupt requested when LPUART_STAT[RXEDGIF] flag is 1."] _1,
 }
 impl RXEDGIEW {
     #[allow(missing_docs)]
@@ -1044,10 +986,8 @@ impl<'a> _RXEDGIEW<'a> {
 }
 #[doc = "Values that can be written to the field `LBKDIE`"]
 pub enum LBKDIEW {
-    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."]
-    _0,
-    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."]
-    _1,
+    #[doc = "Hardware interrupts from LPUART_STAT[LBKDIF] disabled (use polling)."] _0,
+    #[doc = "Hardware interrupt requested when LPUART_STAT[LBKDIF] flag is 1."] _1,
 }
 impl LBKDIEW {
     #[allow(missing_docs)]
@@ -1102,10 +1042,8 @@ impl<'a> _LBKDIEW<'a> {
 }
 #[doc = "Values that can be written to the field `RESYNCDIS`"]
 pub enum RESYNCDISW {
-    #[doc = "Resynchronization during received data word is supported"]
-    _0,
-    #[doc = "Resynchronization during received data word is disabled"]
-    _1,
+    #[doc = "Resynchronization during received data word is supported"] _0,
+    #[doc = "Resynchronization during received data word is disabled"] _1,
 }
 impl RESYNCDISW {
     #[allow(missing_docs)]
@@ -1160,8 +1098,7 @@ impl<'a> _RESYNCDISW<'a> {
 }
 #[doc = "Values that can be written to the field `BOTHEDGE`"]
 pub enum BOTHEDGEW {
-    #[doc = "Receiver samples input data using the rising edge of the baud rate clock."]
-    _0,
+    #[doc = "Receiver samples input data using the rising edge of the baud rate clock."] _0,
     #[doc = "Receiver samples input data using the rising and falling edge of the baud rate clock."]
     _1,
 }
@@ -1218,12 +1155,9 @@ impl<'a> _BOTHEDGEW<'a> {
 }
 #[doc = "Values that can be written to the field `MATCFG`"]
 pub enum MATCFGW {
-    #[doc = "Address Match Wakeup"]
-    _00,
-    #[doc = "Idle Match Wakeup"]
-    _01,
-    #[doc = "Match On and Match Off"]
-    _10,
+    #[doc = "Address Match Wakeup"] _00,
+    #[doc = "Idle Match Wakeup"] _01,
+    #[doc = "Match On and Match Off"] _10,
 }
 impl MATCFGW {
     #[allow(missing_docs)]
@@ -1274,10 +1208,8 @@ impl<'a> _MATCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `RIDMAE`"]
 pub enum RIDMAEW {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+    #[doc = "DMA request disabled."] _0,
+    #[doc = "DMA request enabled."] _1,
 }
 impl RIDMAEW {
     #[allow(missing_docs)]
@@ -1332,10 +1264,8 @@ impl<'a> _RIDMAEW<'a> {
 }
 #[doc = "Values that can be written to the field `RDMAE`"]
 pub enum RDMAEW {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+    #[doc = "DMA request disabled."] _0,
+    #[doc = "DMA request enabled."] _1,
 }
 impl RDMAEW {
     #[allow(missing_docs)]
@@ -1390,10 +1320,8 @@ impl<'a> _RDMAEW<'a> {
 }
 #[doc = "Values that can be written to the field `TDMAE`"]
 pub enum TDMAEW {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+    #[doc = "DMA request disabled."] _0,
+    #[doc = "DMA request enabled."] _1,
 }
 impl TDMAEW {
     #[allow(missing_docs)]
@@ -1448,66 +1376,36 @@ impl<'a> _TDMAEW<'a> {
 }
 #[doc = "Values that can be written to the field `OSR`"]
 pub enum OSRW {
-    #[doc = "Writing 0 to this field will result in an oversampling ratio of 16"]
-    _00000,
-    #[doc = "Oversampling ratio of 4, requires BOTHEDGE to be set."]
-    _00011,
-    #[doc = "Oversampling ratio of 5, requires BOTHEDGE to be set."]
-    _00100,
-    #[doc = "Oversampling ratio of 6, requires BOTHEDGE to be set."]
-    _00101,
-    #[doc = "Oversampling ratio of 7, requires BOTHEDGE to be set."]
-    _00110,
-    #[doc = "Oversampling ratio of 8."]
-    _00111,
-    #[doc = "Oversampling ratio of 9."]
-    _01000,
-    #[doc = "Oversampling ratio of 10."]
-    _01001,
-    #[doc = "Oversampling ratio of 11."]
-    _01010,
-    #[doc = "Oversampling ratio of 12."]
-    _01011,
-    #[doc = "Oversampling ratio of 13."]
-    _01100,
-    #[doc = "Oversampling ratio of 14."]
-    _01101,
-    #[doc = "Oversampling ratio of 15."]
-    _01110,
-    #[doc = "Oversampling ratio of 16."]
-    _01111,
-    #[doc = "Oversampling ratio of 17."]
-    _10000,
-    #[doc = "Oversampling ratio of 18."]
-    _10001,
-    #[doc = "Oversampling ratio of 19."]
-    _10010,
-    #[doc = "Oversampling ratio of 20."]
-    _10011,
-    #[doc = "Oversampling ratio of 21."]
-    _10100,
-    #[doc = "Oversampling ratio of 22."]
-    _10101,
-    #[doc = "Oversampling ratio of 23."]
-    _10110,
-    #[doc = "Oversampling ratio of 24."]
-    _10111,
-    #[doc = "Oversampling ratio of 25."]
-    _11000,
-    #[doc = "Oversampling ratio of 26."]
-    _11001,
-    #[doc = "Oversampling ratio of 27."]
-    _11010,
-    #[doc = "Oversampling ratio of 28."]
-    _11011,
-    #[doc = "Oversampling ratio of 29."]
-    _11100,
-    #[doc = "Oversampling ratio of 30."]
-    _11101,
-    #[doc = "Oversampling ratio of 31."]
-    _11110,
-    #[doc = "Oversampling ratio of 32."]
-    _11111,
+    #[doc = "Writing 0 to this field will result in an oversampling ratio of 16"] _00000,
+    #[doc = "Oversampling ratio of 4, requires BOTHEDGE to be set."] _00011,
+    #[doc = "Oversampling ratio of 5, requires BOTHEDGE to be set."] _00100,
+    #[doc = "Oversampling ratio of 6, requires BOTHEDGE to be set."] _00101,
+    #[doc = "Oversampling ratio of 7, requires BOTHEDGE to be set."] _00110,
+    #[doc = "Oversampling ratio of 8."] _00111,
+    #[doc = "Oversampling ratio of 9."] _01000,
+    #[doc = "Oversampling ratio of 10."] _01001,
+    #[doc = "Oversampling ratio of 11."] _01010,
+    #[doc = "Oversampling ratio of 12."] _01011,
+    #[doc = "Oversampling ratio of 13."] _01100,
+    #[doc = "Oversampling ratio of 14."] _01101,
+    #[doc = "Oversampling ratio of 15."] _01110,
+    #[doc = "Oversampling ratio of 16."] _01111,
+    #[doc = "Oversampling ratio of 17."] _10000,
+    #[doc = "Oversampling ratio of 18."] _10001,
+    #[doc = "Oversampling ratio of 19."] _10010,
+    #[doc = "Oversampling ratio of 20."] _10011,
+    #[doc = "Oversampling ratio of 21."] _10100,
+    #[doc = "Oversampling ratio of 22."] _10101,
+    #[doc = "Oversampling ratio of 23."] _10110,
+    #[doc = "Oversampling ratio of 24."] _10111,
+    #[doc = "Oversampling ratio of 25."] _11000,
+    #[doc = "Oversampling ratio of 26."] _11001,
+    #[doc = "Oversampling ratio of 27."] _11010,
+    #[doc = "Oversampling ratio of 28."] _11011,
+    #[doc = "Oversampling ratio of 29."] _11100,
+    #[doc = "Oversampling ratio of 30."] _11101,
+    #[doc = "Oversampling ratio of 31."] _11110,
+    #[doc = "Oversampling ratio of 32."] _11111,
 }
 impl OSRW {
     #[allow(missing_docs)]
@@ -1720,10 +1618,8 @@ impl<'a> _OSRW<'a> {
 }
 #[doc = "Values that can be written to the field `M10`"]
 pub enum M10W {
-    #[doc = "Receiver and transmitter use 7-bit to 9-bit data characters."]
-    _0,
-    #[doc = "Receiver and transmitter use 10-bit data characters."]
-    _1,
+    #[doc = "Receiver and transmitter use 7-bit to 9-bit data characters."] _0,
+    #[doc = "Receiver and transmitter use 10-bit data characters."] _1,
 }
 impl M10W {
     #[allow(missing_docs)]
@@ -1778,10 +1674,8 @@ impl<'a> _M10W<'a> {
 }
 #[doc = "Values that can be written to the field `MAEN2`"]
 pub enum MAEN2W {
-    #[doc = "Normal operation."]
-    _0,
-    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA2]."]
-    _1,
+    #[doc = "Normal operation."] _0,
+    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA2]."] _1,
 }
 impl MAEN2W {
     #[allow(missing_docs)]
@@ -1836,10 +1730,8 @@ impl<'a> _MAEN2W<'a> {
 }
 #[doc = "Values that can be written to the field `MAEN1`"]
 pub enum MAEN1W {
-    #[doc = "Normal operation."]
-    _0,
-    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA1]."]
-    _1,
+    #[doc = "Normal operation."] _0,
+    #[doc = "Enables automatic address matching or data matching mode for MATCH[MA1]."] _1,
 }
 impl MAEN1W {
     #[allow(missing_docs)]

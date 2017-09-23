@@ -6,16 +6,16 @@ impl super::STATUS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `CH0F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH0FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,10 +59,8 @@ impl CH0FR {
 #[doc = "Possible values of the field `CH1F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH1FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -106,10 +104,8 @@ impl CH1FR {
 #[doc = "Possible values of the field `CH2F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH2FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -153,10 +149,8 @@ impl CH2FR {
 #[doc = "Possible values of the field `CH3F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH3FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -200,10 +194,8 @@ impl CH3FR {
 #[doc = "Possible values of the field `CH4F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH4FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -247,10 +239,8 @@ impl CH4FR {
 #[doc = "Possible values of the field `CH5F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH5FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -294,10 +284,8 @@ impl CH5FR {
 #[doc = "Possible values of the field `CH6F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH6FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -341,10 +329,8 @@ impl CH6FR {
 #[doc = "Possible values of the field `CH7F`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+    #[doc = "No channel event has occurred."] _0,
+    #[doc = "A channel event has occurred."] _1,
 }
 impl CH7FR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

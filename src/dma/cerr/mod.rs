@@ -54,10 +54,8 @@ impl<'a> _CAEIW<'a> {
 }
 #[doc = "Values that can be written to the field `NOP`"]
 pub enum NOPW {
-    #[doc = "Normal operation"]
-    _0,
-    #[doc = "No operation, ignore the other bits in this register"]
-    _1,
+    #[doc = "Normal operation"] _0,
+    #[doc = "No operation, ignore the other bits in this register"] _1,
 }
 impl NOPW {
     #[allow(missing_docs)]

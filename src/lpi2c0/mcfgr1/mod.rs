@@ -22,7 +22,9 @@ impl super::MCFGR1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,22 +45,14 @@ impl super::MCFGR1 {
 #[doc = "Possible values of the field `PRESCALE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESCALER {
-    #[doc = "Divide by 1."]
-    _000,
-    #[doc = "Divide by 2."]
-    _001,
-    #[doc = "Divide by 4."]
-    _010,
-    #[doc = "Divide by 8."]
-    _011,
-    #[doc = "Divide by 16."]
-    _100,
-    #[doc = "Divide by 32."]
-    _101,
-    #[doc = "Divide by 64."]
-    _110,
-    #[doc = "Divide by 128."]
-    _111,
+    #[doc = "Divide by 1."] _000,
+    #[doc = "Divide by 2."] _001,
+    #[doc = "Divide by 4."] _010,
+    #[doc = "Divide by 8."] _011,
+    #[doc = "Divide by 16."] _100,
+    #[doc = "Divide by 32."] _101,
+    #[doc = "Divide by 64."] _110,
+    #[doc = "Divide by 128."] _111,
 }
 impl PRESCALER {
     #[doc = r" Value of the field as raw bits"]
@@ -135,8 +129,7 @@ impl PRESCALER {
 #[doc = "Possible values of the field `AUTOSTOP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOSTOPR {
-    #[doc = "No effect."]
-    _0,
+    #[doc = "No effect."] _0,
     #[doc = "STOP condition is automatically generated whenever the transmit FIFO is empty and LPI2C master is busy."]
     _1,
 }
@@ -182,10 +175,8 @@ impl AUTOSTOPR {
 #[doc = "Possible values of the field `IGNACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IGNACKR {
-    #[doc = "LPI2C Master will receive ACK and NACK normally."]
-    _0,
-    #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."]
-    _1,
+    #[doc = "LPI2C Master will receive ACK and NACK normally."] _0,
+    #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."] _1,
 }
 impl IGNACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -276,22 +267,14 @@ impl TIMECFGR {
 #[doc = "Possible values of the field `MATCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MATCFGR {
-    #[doc = "Match disabled."]
-    _000,
-    #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."]
-    _010,
-    #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."]
-    _011,
-    #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."]
-    _100,
-    #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."]
-    _101,
-    #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _110,
-    #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Match disabled."] _000,
+    #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."] _010,
+    #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."] _011,
+    #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."] _100,
+    #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."] _101,
+    #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."] _110,
+    #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."] _111,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl MATCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -362,22 +345,15 @@ impl MATCFGR {
 #[doc = "Possible values of the field `PINCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINCFGR {
-    #[doc = "LPI2C configured for 2-pin open drain mode."]
-    _000,
-    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."]
-    _001,
-    #[doc = "LPI2C configured for 2-pin push-pull mode."]
-    _010,
-    #[doc = "LPI2C configured for 4-pin push-pull mode."]
-    _011,
-    #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."]
-    _100,
+    #[doc = "LPI2C configured for 2-pin open drain mode."] _000,
+    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."] _001,
+    #[doc = "LPI2C configured for 2-pin push-pull mode."] _010,
+    #[doc = "LPI2C configured for 4-pin push-pull mode."] _011,
+    #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."] _100,
     #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode) with separate LPI2C slave."]
     _101,
-    #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."]
-    _110,
-    #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."]
-    _111,
+    #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."] _110,
+    #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."] _111,
 }
 impl PINCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -453,22 +429,14 @@ impl PINCFGR {
 }
 #[doc = "Values that can be written to the field `PRESCALE`"]
 pub enum PRESCALEW {
-    #[doc = "Divide by 1."]
-    _000,
-    #[doc = "Divide by 2."]
-    _001,
-    #[doc = "Divide by 4."]
-    _010,
-    #[doc = "Divide by 8."]
-    _011,
-    #[doc = "Divide by 16."]
-    _100,
-    #[doc = "Divide by 32."]
-    _101,
-    #[doc = "Divide by 64."]
-    _110,
-    #[doc = "Divide by 128."]
-    _111,
+    #[doc = "Divide by 1."] _000,
+    #[doc = "Divide by 2."] _001,
+    #[doc = "Divide by 4."] _010,
+    #[doc = "Divide by 8."] _011,
+    #[doc = "Divide by 16."] _100,
+    #[doc = "Divide by 32."] _101,
+    #[doc = "Divide by 64."] _110,
+    #[doc = "Divide by 128."] _111,
 }
 impl PRESCALEW {
     #[allow(missing_docs)]
@@ -551,8 +519,7 @@ impl<'a> _PRESCALEW<'a> {
 }
 #[doc = "Values that can be written to the field `AUTOSTOP`"]
 pub enum AUTOSTOPW {
-    #[doc = "No effect."]
-    _0,
+    #[doc = "No effect."] _0,
     #[doc = "STOP condition is automatically generated whenever the transmit FIFO is empty and LPI2C master is busy."]
     _1,
 }
@@ -609,10 +576,8 @@ impl<'a> _AUTOSTOPW<'a> {
 }
 #[doc = "Values that can be written to the field `IGNACK`"]
 pub enum IGNACKW {
-    #[doc = "LPI2C Master will receive ACK and NACK normally."]
-    _0,
-    #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."]
-    _1,
+    #[doc = "LPI2C Master will receive ACK and NACK normally."] _0,
+    #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."] _1,
 }
 impl IGNACKW {
     #[allow(missing_docs)]
@@ -725,20 +690,13 @@ impl<'a> _TIMECFGW<'a> {
 }
 #[doc = "Values that can be written to the field `MATCFG`"]
 pub enum MATCFGW {
-    #[doc = "Match disabled."]
-    _000,
-    #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."]
-    _010,
-    #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."]
-    _011,
-    #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."]
-    _100,
-    #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."]
-    _101,
-    #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _110,
-    #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _111,
+    #[doc = "Match disabled."] _000,
+    #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."] _010,
+    #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."] _011,
+    #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."] _100,
+    #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."] _101,
+    #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."] _110,
+    #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."] _111,
 }
 impl MATCFGW {
     #[allow(missing_docs)]
@@ -813,22 +771,15 @@ impl<'a> _MATCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `PINCFG`"]
 pub enum PINCFGW {
-    #[doc = "LPI2C configured for 2-pin open drain mode."]
-    _000,
-    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."]
-    _001,
-    #[doc = "LPI2C configured for 2-pin push-pull mode."]
-    _010,
-    #[doc = "LPI2C configured for 4-pin push-pull mode."]
-    _011,
-    #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."]
-    _100,
+    #[doc = "LPI2C configured for 2-pin open drain mode."] _000,
+    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."] _001,
+    #[doc = "LPI2C configured for 2-pin push-pull mode."] _010,
+    #[doc = "LPI2C configured for 4-pin push-pull mode."] _011,
+    #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."] _100,
     #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode) with separate LPI2C slave."]
     _101,
-    #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."]
-    _110,
-    #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."]
-    _111,
+    #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."] _110,
+    #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."] _111,
 }
 impl PINCFGW {
     #[allow(missing_docs)]

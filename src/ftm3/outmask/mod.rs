@@ -22,7 +22,9 @@ impl super::OUTMASK {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::OUTMASK {
 #[doc = "Possible values of the field `CH0OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH0OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl CH0OMR {
 #[doc = "Possible values of the field `CH1OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH1OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl CH1OMR {
 #[doc = "Possible values of the field `CH2OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH2OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl CH2OMR {
 #[doc = "Possible values of the field `CH3OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH3OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl CH3OMR {
 #[doc = "Possible values of the field `CH4OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH4OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl CH4OMR {
 #[doc = "Possible values of the field `CH5OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH5OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl CH5OMR {
 #[doc = "Possible values of the field `CH6OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH6OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl CH6OMR {
 #[doc = "Possible values of the field `CH7OM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7OMR {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH7OMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -418,10 +404,8 @@ impl CH7OMR {
 }
 #[doc = "Values that can be written to the field `CH0OM`"]
 pub enum CH0OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH0OMW {
     #[allow(missing_docs)]
@@ -476,10 +460,8 @@ impl<'a> _CH0OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH1OM`"]
 pub enum CH1OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH1OMW {
     #[allow(missing_docs)]
@@ -534,10 +516,8 @@ impl<'a> _CH1OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH2OM`"]
 pub enum CH2OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH2OMW {
     #[allow(missing_docs)]
@@ -592,10 +572,8 @@ impl<'a> _CH2OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH3OM`"]
 pub enum CH3OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH3OMW {
     #[allow(missing_docs)]
@@ -650,10 +628,8 @@ impl<'a> _CH3OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH4OM`"]
 pub enum CH4OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH4OMW {
     #[allow(missing_docs)]
@@ -708,10 +684,8 @@ impl<'a> _CH4OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH5OM`"]
 pub enum CH5OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH5OMW {
     #[allow(missing_docs)]
@@ -766,10 +740,8 @@ impl<'a> _CH5OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH6OM`"]
 pub enum CH6OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH6OMW {
     #[allow(missing_docs)]
@@ -824,10 +796,8 @@ impl<'a> _CH6OMW<'a> {
 }
 #[doc = "Values that can be written to the field `CH7OM`"]
 pub enum CH7OMW {
-    #[doc = "Channel output is not masked. It continues to operate normally."]
-    _0,
-    #[doc = "Channel output is masked. It is forced to its inactive state."]
-    _1,
+    #[doc = "Channel output is not masked. It continues to operate normally."] _0,
+    #[doc = "Channel output is masked. It is forced to its inactive state."] _1,
 }
 impl CH7OMW {
     #[allow(missing_docs)]

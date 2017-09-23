@@ -22,7 +22,9 @@ impl super::CHS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,12 +45,10 @@ impl super::CHS {
 #[doc = "Possible values of the field `ERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRR {
-    #[doc = "Sequence error not detected on PDB channel's corresponding pre-trigger."]
-    _0,
+    #[doc = "Sequence error not detected on PDB channel's corresponding pre-trigger."] _0,
     #[doc = "Sequence error detected on PDB channel's corresponding pre-trigger. ADCn block can be triggered for a conversion by one pre-trigger from PDB channel n. When one conversion, which is triggered by one of the pre-triggers from PDB channel n, is in progress, new trigger from PDB channel's corresponding pre-trigger m cannot be accepted by ADCn, and ERR[m] is set. Writing 0's to clear the sequence error flags."]
     _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl ERRR {
     #[doc = r" Value of the field as raw bits"]
@@ -94,8 +94,7 @@ impl CFR {
 }
 #[doc = "Values that can be written to the field `ERR`"]
 pub enum ERRW {
-    #[doc = "Sequence error not detected on PDB channel's corresponding pre-trigger."]
-    _0,
+    #[doc = "Sequence error not detected on PDB channel's corresponding pre-trigger."] _0,
     #[doc = "Sequence error detected on PDB channel's corresponding pre-trigger. ADCn block can be triggered for a conversion by one pre-trigger from PDB channel n. When one conversion, which is triggered by one of the pre-triggers from PDB channel n, is in progress, new trigger from PDB channel's corresponding pre-trigger m cannot be accepted by ADCn, and ERR[m] is set. Writing 0's to clear the sequence error flags."]
     _1,
 }

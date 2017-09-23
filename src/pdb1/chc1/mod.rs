@@ -22,7 +22,9 @@ impl super::CHC1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,12 +45,9 @@ impl super::CHC1 {
 #[doc = "Possible values of the field `EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENR {
-    #[doc = "PDB channel's corresponding pre-trigger disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger enabled."]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "PDB channel's corresponding pre-trigger disabled."] _0,
+    #[doc = "PDB channel's corresponding pre-trigger enabled."] _1,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl ENR {
     #[doc = r" Value of the field as raw bits"]
@@ -88,8 +87,7 @@ pub enum TOSR {
     _0,
     #[doc = "PDB channel's corresponding pre-trigger asserts when the counter reaches the channel delay register and one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SETRIG is written with 1."]
     _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl TOSR {
     #[doc = r" Value of the field as raw bits"]
@@ -125,12 +123,9 @@ impl TOSR {
 #[doc = "Possible values of the field `BB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BBR {
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."] _0,
+    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."] _1,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl BBR {
     #[doc = r" Value of the field as raw bits"]
@@ -165,10 +160,8 @@ impl BBR {
 }
 #[doc = "Values that can be written to the field `EN`"]
 pub enum ENW {
-    #[doc = "PDB channel's corresponding pre-trigger disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger enabled."]
-    _1,
+    #[doc = "PDB channel's corresponding pre-trigger disabled."] _0,
+    #[doc = "PDB channel's corresponding pre-trigger enabled."] _1,
 }
 impl ENW {
     #[allow(missing_docs)]
@@ -261,10 +254,8 @@ impl<'a> _TOSW<'a> {
 }
 #[doc = "Values that can be written to the field `BB`"]
 pub enum BBW {
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."]
-    _1,
+    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."] _0,
+    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."] _1,
 }
 impl BBW {
     #[allow(missing_docs)]

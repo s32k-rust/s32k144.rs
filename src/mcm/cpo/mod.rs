@@ -22,7 +22,9 @@ impl super::CPO {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CPO {
 #[doc = "Possible values of the field `CPOREQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOREQR {
-    #[doc = "Request is cleared."]
-    _0,
-    #[doc = "Request Compute Operation."]
-    _1,
+    #[doc = "Request is cleared."] _0,
+    #[doc = "Request Compute Operation."] _1,
 }
 impl CPOREQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl CPOREQR {
 #[doc = "Possible values of the field `CPOACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOACKR {
-    #[doc = "Compute operation entry has not completed or compute operation exit has completed."]
-    _0,
-    #[doc = "Compute operation entry has completed or compute operation exit has not completed."]
-    _1,
+    #[doc = "Compute operation entry has not completed or compute operation exit has completed."] _0,
+    #[doc = "Compute operation entry has completed or compute operation exit has not completed."] _1,
 }
 impl CPOACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl CPOACKR {
 #[doc = "Possible values of the field `CPOWOI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOWOIR {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."]
-    _1,
+    #[doc = "No effect."] _0,
+    #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."] _1,
 }
 impl CPOWOIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -183,10 +179,8 @@ impl CPOWOIR {
 }
 #[doc = "Values that can be written to the field `CPOREQ`"]
 pub enum CPOREQW {
-    #[doc = "Request is cleared."]
-    _0,
-    #[doc = "Request Compute Operation."]
-    _1,
+    #[doc = "Request is cleared."] _0,
+    #[doc = "Request Compute Operation."] _1,
 }
 impl CPOREQW {
     #[allow(missing_docs)]
@@ -241,10 +235,8 @@ impl<'a> _CPOREQW<'a> {
 }
 #[doc = "Values that can be written to the field `CPOWOI`"]
 pub enum CPOWOIW {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."]
-    _1,
+    #[doc = "No effect."] _0,
+    #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."] _1,
 }
 impl CPOWOIW {
     #[allow(missing_docs)]

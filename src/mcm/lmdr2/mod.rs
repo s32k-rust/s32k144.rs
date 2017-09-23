@@ -22,7 +22,9 @@ impl super::LMDR2 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl CF1R {
 #[doc = "Possible values of the field `MT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MTR {
-    #[doc = "PC Cache"]
-    _010,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "PC Cache"] _010,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl MTR {
     #[doc = r" Value of the field as raw bits"]
@@ -86,10 +86,8 @@ impl MTR {
 #[doc = "Possible values of the field `LOCK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKR {
-    #[doc = "Writes to the LMDRn[7:0] are allowed."]
-    _0,
-    #[doc = "Writes to the LMDRn[7:0] are ignored."]
-    _1,
+    #[doc = "Writes to the LMDRn[7:0] are allowed."] _0,
+    #[doc = "Writes to the LMDRn[7:0] are ignored."] _1,
 }
 impl LOCKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -133,12 +131,9 @@ impl LOCKR {
 #[doc = "Possible values of the field `DPW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPWR {
-    #[doc = "LMEMn 32-bits wide"]
-    _010,
-    #[doc = "LMEMn 64-bits wide"]
-    _011,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "LMEMn 32-bits wide"] _010,
+    #[doc = "LMEMn 64-bits wide"] _011,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl DPWR {
     #[doc = r" Value of the field as raw bits"]
@@ -174,14 +169,10 @@ impl DPWR {
 #[doc = "Possible values of the field `WY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WYR {
-    #[doc = "No Cache"]
-    _0000,
-    #[doc = "2-Way Set Associative"]
-    _0010,
-    #[doc = "4-Way Set Associative"]
-    _0100,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "No Cache"] _0000,
+    #[doc = "2-Way Set Associative"] _0010,
+    #[doc = "4-Way Set Associative"] _0100,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl WYR {
     #[doc = r" Value of the field as raw bits"]
@@ -224,10 +215,8 @@ impl WYR {
 #[doc = "Possible values of the field `LMSZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LMSZR {
-    #[doc = "4 KB LMEMn"]
-    _0100,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "4 KB LMEMn"] _0100,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl LMSZR {
     #[doc = r" Value of the field as raw bits"]
@@ -256,10 +245,8 @@ impl LMSZR {
 #[doc = "Possible values of the field `LMSZH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LMSZHR {
-    #[doc = "LMEMn is a power-of-2 capacity."]
-    _0,
-    #[doc = "LMEMn is not a power-of-2, with a capacity is 0.75 * LMSZ."]
-    _1,
+    #[doc = "LMEMn is a power-of-2 capacity."] _0,
+    #[doc = "LMEMn is not a power-of-2, with a capacity is 0.75 * LMSZ."] _1,
 }
 impl LMSZHR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -303,10 +290,8 @@ impl LMSZHR {
 #[doc = "Possible values of the field `V`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VR {
-    #[doc = "LMEMn is not present."]
-    _0,
-    #[doc = "LMEMn is present."]
-    _1,
+    #[doc = "LMEMn is not present."] _0,
+    #[doc = "LMEMn is present."] _1,
 }
 impl VR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -364,10 +349,8 @@ impl<'a> _CF1W<'a> {
 }
 #[doc = "Values that can be written to the field `LOCK`"]
 pub enum LOCKW {
-    #[doc = "Writes to the LMDRn[7:0] are allowed."]
-    _0,
-    #[doc = "Writes to the LMDRn[7:0] are ignored."]
-    _1,
+    #[doc = "Writes to the LMDRn[7:0] are allowed."] _0,
+    #[doc = "Writes to the LMDRn[7:0] are ignored."] _1,
 }
 impl LOCKW {
     #[allow(missing_docs)]

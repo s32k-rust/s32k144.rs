@@ -22,7 +22,9 @@ impl super::INVCTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::INVCTRL {
 #[doc = "Possible values of the field `INV0EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INV0ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV0ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl INV0ENR {
 #[doc = "Possible values of the field `INV1EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INV1ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV1ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl INV1ENR {
 #[doc = "Possible values of the field `INV2EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INV2ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV2ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl INV2ENR {
 #[doc = "Possible values of the field `INV3EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INV3ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV3ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -230,10 +224,8 @@ impl INV3ENR {
 }
 #[doc = "Values that can be written to the field `INV0EN`"]
 pub enum INV0ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV0ENW {
     #[allow(missing_docs)]
@@ -288,10 +280,8 @@ impl<'a> _INV0ENW<'a> {
 }
 #[doc = "Values that can be written to the field `INV1EN`"]
 pub enum INV1ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV1ENW {
     #[allow(missing_docs)]
@@ -346,10 +336,8 @@ impl<'a> _INV1ENW<'a> {
 }
 #[doc = "Values that can be written to the field `INV2EN`"]
 pub enum INV2ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV2ENW {
     #[allow(missing_docs)]
@@ -404,10 +392,8 @@ impl<'a> _INV2ENW<'a> {
 }
 #[doc = "Values that can be written to the field `INV3EN`"]
 pub enum INV3ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+    #[doc = "Inverting is disabled."] _0,
+    #[doc = "Inverting is enabled."] _1,
 }
 impl INV3ENW {
     #[allow(missing_docs)]

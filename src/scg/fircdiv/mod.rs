@@ -22,7 +22,9 @@ impl super::FIRCDIV {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,22 +45,14 @@ impl super::FIRCDIV {
 #[doc = "Possible values of the field `FIRCDIV1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCDIV1R {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl FIRCDIV1R {
     #[doc = r" Value of the field as raw bits"]
@@ -135,22 +129,14 @@ impl FIRCDIV1R {
 #[doc = "Possible values of the field `FIRCDIV2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIRCDIV2R {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl FIRCDIV2R {
     #[doc = r" Value of the field as raw bits"]
@@ -226,22 +212,14 @@ impl FIRCDIV2R {
 }
 #[doc = "Values that can be written to the field `FIRCDIV1`"]
 pub enum FIRCDIV1W {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl FIRCDIV1W {
     #[allow(missing_docs)]
@@ -324,22 +302,14 @@ impl<'a> _FIRCDIV1W<'a> {
 }
 #[doc = "Values that can be written to the field `FIRCDIV2`"]
 pub enum FIRCDIV2W {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl FIRCDIV2W {
     #[allow(missing_docs)]

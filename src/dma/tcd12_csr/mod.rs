@@ -22,7 +22,9 @@ impl super::TCD12_CSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::TCD12_CSR {
 #[doc = "Possible values of the field `START`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STARTR {
-    #[doc = "The channel is not explicitly started."]
-    _0,
-    #[doc = "The channel is explicitly started via a software initiated service request."]
-    _1,
+    #[doc = "The channel is not explicitly started."] _0,
+    #[doc = "The channel is explicitly started via a software initiated service request."] _1,
 }
 impl STARTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl STARTR {
 #[doc = "Possible values of the field `INTMAJOR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTMAJORR {
-    #[doc = "The end-of-major loop interrupt is disabled."]
-    _0,
-    #[doc = "The end-of-major loop interrupt is enabled."]
-    _1,
+    #[doc = "The end-of-major loop interrupt is disabled."] _0,
+    #[doc = "The end-of-major loop interrupt is enabled."] _1,
 }
 impl INTMAJORR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl INTMAJORR {
 #[doc = "Possible values of the field `INTHALF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTHALFR {
-    #[doc = "The half-point interrupt is disabled."]
-    _0,
-    #[doc = "The half-point interrupt is enabled."]
-    _1,
+    #[doc = "The half-point interrupt is disabled."] _0,
+    #[doc = "The half-point interrupt is enabled."] _1,
 }
 impl INTHALFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -205,8 +201,7 @@ impl DREQR {
 #[doc = "Possible values of the field `ESG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESGR {
-    #[doc = "The current channel's TCD is normal format."]
-    _0,
+    #[doc = "The current channel's TCD is normal format."] _0,
     #[doc = "The current channel's TCD specifies a scatter gather format. The DLASTSGA field provides a memory pointer to the next TCD to be loaded into this channel after the major loop completes its execution."]
     _1,
 }
@@ -252,10 +247,8 @@ impl ESGR {
 #[doc = "Possible values of the field `MAJORELINK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAJORELINKR {
-    #[doc = "The channel-to-channel linking is disabled."]
-    _0,
-    #[doc = "The channel-to-channel linking is enabled."]
-    _1,
+    #[doc = "The channel-to-channel linking is disabled."] _0,
+    #[doc = "The channel-to-channel linking is enabled."] _1,
 }
 impl MAJORELINKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -352,14 +345,10 @@ impl MAJORLINKCHR {
 #[doc = "Possible values of the field `BWC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWCR {
-    #[doc = "No eDMA engine stalls."]
-    _0,
-    #[doc = "eDMA engine stalls for 4 cycles after each R/W."]
-    _10,
-    #[doc = "eDMA engine stalls for 8 cycles after each R/W."]
-    _11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "No eDMA engine stalls."] _0,
+    #[doc = "eDMA engine stalls for 4 cycles after each R/W."] _10,
+    #[doc = "eDMA engine stalls for 8 cycles after each R/W."] _11,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl BWCR {
     #[doc = r" Value of the field as raw bits"]
@@ -401,10 +390,8 @@ impl BWCR {
 }
 #[doc = "Values that can be written to the field `START`"]
 pub enum STARTW {
-    #[doc = "The channel is not explicitly started."]
-    _0,
-    #[doc = "The channel is explicitly started via a software initiated service request."]
-    _1,
+    #[doc = "The channel is not explicitly started."] _0,
+    #[doc = "The channel is explicitly started via a software initiated service request."] _1,
 }
 impl STARTW {
     #[allow(missing_docs)]
@@ -459,10 +446,8 @@ impl<'a> _STARTW<'a> {
 }
 #[doc = "Values that can be written to the field `INTMAJOR`"]
 pub enum INTMAJORW {
-    #[doc = "The end-of-major loop interrupt is disabled."]
-    _0,
-    #[doc = "The end-of-major loop interrupt is enabled."]
-    _1,
+    #[doc = "The end-of-major loop interrupt is disabled."] _0,
+    #[doc = "The end-of-major loop interrupt is enabled."] _1,
 }
 impl INTMAJORW {
     #[allow(missing_docs)]
@@ -517,10 +502,8 @@ impl<'a> _INTMAJORW<'a> {
 }
 #[doc = "Values that can be written to the field `INTHALF`"]
 pub enum INTHALFW {
-    #[doc = "The half-point interrupt is disabled."]
-    _0,
-    #[doc = "The half-point interrupt is enabled."]
-    _1,
+    #[doc = "The half-point interrupt is disabled."] _0,
+    #[doc = "The half-point interrupt is enabled."] _1,
 }
 impl INTHALFW {
     #[allow(missing_docs)]
@@ -598,8 +581,7 @@ impl<'a> _DREQW<'a> {
 }
 #[doc = "Values that can be written to the field `ESG`"]
 pub enum ESGW {
-    #[doc = "The current channel's TCD is normal format."]
-    _0,
+    #[doc = "The current channel's TCD is normal format."] _0,
     #[doc = "The current channel's TCD specifies a scatter gather format. The DLASTSGA field provides a memory pointer to the next TCD to be loaded into this channel after the major loop completes its execution."]
     _1,
 }
@@ -656,10 +638,8 @@ impl<'a> _ESGW<'a> {
 }
 #[doc = "Values that can be written to the field `MAJORELINK`"]
 pub enum MAJORELINKW {
-    #[doc = "The channel-to-channel linking is disabled."]
-    _0,
-    #[doc = "The channel-to-channel linking is enabled."]
-    _1,
+    #[doc = "The channel-to-channel linking is disabled."] _0,
+    #[doc = "The channel-to-channel linking is enabled."] _1,
 }
 impl MAJORELINKW {
     #[allow(missing_docs)]
@@ -775,12 +755,9 @@ impl<'a> _MAJORLINKCHW<'a> {
 }
 #[doc = "Values that can be written to the field `BWC`"]
 pub enum BWCW {
-    #[doc = "No eDMA engine stalls."]
-    _0,
-    #[doc = "eDMA engine stalls for 4 cycles after each R/W."]
-    _10,
-    #[doc = "eDMA engine stalls for 8 cycles after each R/W."]
-    _11,
+    #[doc = "No eDMA engine stalls."] _0,
+    #[doc = "eDMA engine stalls for 4 cycles after each R/W."] _10,
+    #[doc = "eDMA engine stalls for 8 cycles after each R/W."] _11,
 }
 impl BWCW {
     #[allow(missing_docs)]

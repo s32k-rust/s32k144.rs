@@ -22,7 +22,9 @@ impl super::FTMOPT1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -127,12 +129,9 @@ impl FTM3SYNCBITR {
 #[doc = "Possible values of the field `FTM1CH0SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM1CH0SELR {
-    #[doc = "FTM1_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "FTM1_CH0 input"] _00,
+    #[doc = "CMP0 output"] _01,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl FTM1CH0SELR {
     #[doc = r" Value of the field as raw bits"]
@@ -168,12 +167,9 @@ impl FTM1CH0SELR {
 #[doc = "Possible values of the field `FTM2CH0SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM2CH0SELR {
-    #[doc = "FTM2_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "FTM2_CH0 input"] _00,
+    #[doc = "CMP0 output"] _01,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl FTM2CH0SELR {
     #[doc = r" Value of the field as raw bits"]
@@ -209,10 +205,8 @@ impl FTM2CH0SELR {
 #[doc = "Possible values of the field `FTM2CH1SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM2CH1SELR {
-    #[doc = "FTM2_CH1 input"]
-    _0,
-    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
-    _1,
+    #[doc = "FTM2_CH1 input"] _0,
+    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"] _1,
 }
 impl FTM2CH1SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -256,10 +250,8 @@ impl FTM2CH1SELR {
 #[doc = "Possible values of the field `FTMGLDOK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTMGLDOKR {
-    #[doc = "FTM Global load mechanism disabled."]
-    _0,
-    #[doc = "FTM Global load mechanism enabled"]
-    _1,
+    #[doc = "FTM Global load mechanism disabled."] _0,
+    #[doc = "FTM Global load mechanism enabled"] _1,
 }
 impl FTMGLDOKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -303,12 +295,9 @@ impl FTMGLDOKR {
 #[doc = "Possible values of the field `FTM0_OUTSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM0_OUTSELR {
-    #[doc = "No modulation with FTM1_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM1_CH1"]
-    _00000001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "No modulation with FTM1_CH1"] _00000000,
+    #[doc = "Modulation with FTM1_CH1"] _00000001,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl FTM0_OUTSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -344,12 +333,9 @@ impl FTM0_OUTSELR {
 #[doc = "Possible values of the field `FTM3_OUTSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM3_OUTSELR {
-    #[doc = "No modulation with FTM2_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM2_CH1"]
-    _00000001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "No modulation with FTM2_CH1"] _00000000,
+    #[doc = "Modulation with FTM2_CH1"] _00000001,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl FTM3_OUTSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -476,10 +462,8 @@ impl<'a> _FTM3SYNCBITW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM1CH0SEL`"]
 pub enum FTM1CH0SELW {
-    #[doc = "FTM1_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
+    #[doc = "FTM1_CH0 input"] _00,
+    #[doc = "CMP0 output"] _01,
 }
 impl FTM1CH0SELW {
     #[allow(missing_docs)]
@@ -524,10 +508,8 @@ impl<'a> _FTM1CH0SELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM2CH0SEL`"]
 pub enum FTM2CH0SELW {
-    #[doc = "FTM2_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
+    #[doc = "FTM2_CH0 input"] _00,
+    #[doc = "CMP0 output"] _01,
 }
 impl FTM2CH0SELW {
     #[allow(missing_docs)]
@@ -572,10 +554,8 @@ impl<'a> _FTM2CH0SELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM2CH1SEL`"]
 pub enum FTM2CH1SELW {
-    #[doc = "FTM2_CH1 input"]
-    _0,
-    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
-    _1,
+    #[doc = "FTM2_CH1 input"] _0,
+    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"] _1,
 }
 impl FTM2CH1SELW {
     #[allow(missing_docs)]
@@ -630,10 +610,8 @@ impl<'a> _FTM2CH1SELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTMGLDOK`"]
 pub enum FTMGLDOKW {
-    #[doc = "FTM Global load mechanism disabled."]
-    _0,
-    #[doc = "FTM Global load mechanism enabled"]
-    _1,
+    #[doc = "FTM Global load mechanism disabled."] _0,
+    #[doc = "FTM Global load mechanism enabled"] _1,
 }
 impl FTMGLDOKW {
     #[allow(missing_docs)]
@@ -688,10 +666,8 @@ impl<'a> _FTMGLDOKW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM0_OUTSEL`"]
 pub enum FTM0_OUTSELW {
-    #[doc = "No modulation with FTM1_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM1_CH1"]
-    _00000001,
+    #[doc = "No modulation with FTM1_CH1"] _00000000,
+    #[doc = "Modulation with FTM1_CH1"] _00000001,
 }
 impl FTM0_OUTSELW {
     #[allow(missing_docs)]
@@ -736,10 +712,8 @@ impl<'a> _FTM0_OUTSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM3_OUTSEL`"]
 pub enum FTM3_OUTSELW {
-    #[doc = "No modulation with FTM2_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM2_CH1"]
-    _00000001,
+    #[doc = "No modulation with FTM2_CH1"] _00000000,
+    #[doc = "Modulation with FTM2_CH1"] _00000001,
 }
 impl FTM3_OUTSELW {
     #[allow(missing_docs)]

@@ -31,10 +31,8 @@ impl<'a> _SSRTW<'a> {
 }
 #[doc = "Values that can be written to the field `SAST`"]
 pub enum SASTW {
-    #[doc = "Set only the TCDn_CSR[START] bit specified in the SSRT field"]
-    _0,
-    #[doc = "Set all bits in TCDn_CSR[START]"]
-    _1,
+    #[doc = "Set only the TCDn_CSR[START] bit specified in the SSRT field"] _0,
+    #[doc = "Set all bits in TCDn_CSR[START]"] _1,
 }
 impl SASTW {
     #[allow(missing_docs)]
@@ -89,10 +87,8 @@ impl<'a> _SASTW<'a> {
 }
 #[doc = "Values that can be written to the field `NOP`"]
 pub enum NOPW {
-    #[doc = "Normal operation"]
-    _0,
-    #[doc = "No operation, ignore the other bits in this register"]
-    _1,
+    #[doc = "Normal operation"] _0,
+    #[doc = "No operation, ignore the other bits in this register"] _1,
 }
 impl NOPW {
     #[allow(missing_docs)]

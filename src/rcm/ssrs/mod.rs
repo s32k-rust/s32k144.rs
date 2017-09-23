@@ -22,7 +22,9 @@ impl super::SSRS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SSRS {
 #[doc = "Possible values of the field `SLVD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLVDR {
-    #[doc = "Reset not caused by LVD trip or POR"]
-    _0,
-    #[doc = "Reset caused by LVD trip or POR"]
-    _1,
+    #[doc = "Reset not caused by LVD trip or POR"] _0,
+    #[doc = "Reset caused by LVD trip or POR"] _1,
 }
 impl SLVDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl SLVDR {
 #[doc = "Possible values of the field `SLOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLOCR {
-    #[doc = "Reset not caused by a loss of external clock."]
-    _0,
-    #[doc = "Reset caused by a loss of external clock."]
-    _1,
+    #[doc = "Reset not caused by a loss of external clock."] _0,
+    #[doc = "Reset caused by a loss of external clock."] _1,
 }
 impl SLOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl SLOCR {
 #[doc = "Possible values of the field `SLOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLOLR {
-    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    _0,
-    #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    _1,
+    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"] _0,
+    #[doc = "Reset caused by a loss of lock in the PLL/FLL"] _1,
 }
 impl SLOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl SLOLR {
 #[doc = "Possible values of the field `SWDOG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWDOGR {
-    #[doc = "Reset not caused by watchdog timeout"]
-    _0,
-    #[doc = "Reset caused by watchdog timeout"]
-    _1,
+    #[doc = "Reset not caused by watchdog timeout"] _0,
+    #[doc = "Reset caused by watchdog timeout"] _1,
 }
 impl SWDOGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl SWDOGR {
 #[doc = "Possible values of the field `SPIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPINR {
-    #[doc = "Reset not caused by external reset pin"]
-    _0,
-    #[doc = "Reset caused by external reset pin"]
-    _1,
+    #[doc = "Reset not caused by external reset pin"] _0,
+    #[doc = "Reset caused by external reset pin"] _1,
 }
 impl SPINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl SPINR {
 #[doc = "Possible values of the field `SPOR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPORR {
-    #[doc = "Reset not caused by POR"]
-    _0,
-    #[doc = "Reset caused by POR"]
-    _1,
+    #[doc = "Reset not caused by POR"] _0,
+    #[doc = "Reset caused by POR"] _1,
 }
 impl SPORR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl SPORR {
 #[doc = "Possible values of the field `SJTAG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SJTAGR {
-    #[doc = "Reset not caused by JTAG"]
-    _0,
-    #[doc = "Reset caused by JTAG"]
-    _1,
+    #[doc = "Reset not caused by JTAG"] _0,
+    #[doc = "Reset caused by JTAG"] _1,
 }
 impl SJTAGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl SJTAGR {
 #[doc = "Possible values of the field `SLOCKUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLOCKUPR {
-    #[doc = "Reset not caused by core LOCKUP event"]
-    _0,
-    #[doc = "Reset caused by core LOCKUP event"]
-    _1,
+    #[doc = "Reset not caused by core LOCKUP event"] _0,
+    #[doc = "Reset caused by core LOCKUP event"] _1,
 }
 impl SLOCKUPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl SLOCKUPR {
 #[doc = "Possible values of the field `SSW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSWR {
-    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    _0,
-    #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    _1,
+    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"] _0,
+    #[doc = "Reset caused by software setting of SYSRESETREQ bit"] _1,
 }
 impl SSWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -468,8 +452,7 @@ impl SSWR {
 pub enum SMDM_APR {
     #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
     _0,
-    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    _1,
+    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"] _1,
 }
 impl SMDM_APR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +496,8 @@ impl SMDM_APR {
 #[doc = "Possible values of the field `SSACKERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSACKERRR {
-    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _0,
-    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _1,
+    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"] _0,
+    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"] _1,
 }
 impl SSACKERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -559,10 +540,8 @@ impl SSACKERRR {
 }
 #[doc = "Values that can be written to the field `SLVD`"]
 pub enum SLVDW {
-    #[doc = "Reset not caused by LVD trip or POR"]
-    _0,
-    #[doc = "Reset caused by LVD trip or POR"]
-    _1,
+    #[doc = "Reset not caused by LVD trip or POR"] _0,
+    #[doc = "Reset caused by LVD trip or POR"] _1,
 }
 impl SLVDW {
     #[allow(missing_docs)]
@@ -617,10 +596,8 @@ impl<'a> _SLVDW<'a> {
 }
 #[doc = "Values that can be written to the field `SLOC`"]
 pub enum SLOCW {
-    #[doc = "Reset not caused by a loss of external clock."]
-    _0,
-    #[doc = "Reset caused by a loss of external clock."]
-    _1,
+    #[doc = "Reset not caused by a loss of external clock."] _0,
+    #[doc = "Reset caused by a loss of external clock."] _1,
 }
 impl SLOCW {
     #[allow(missing_docs)]
@@ -675,10 +652,8 @@ impl<'a> _SLOCW<'a> {
 }
 #[doc = "Values that can be written to the field `SLOL`"]
 pub enum SLOLW {
-    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    _0,
-    #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    _1,
+    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"] _0,
+    #[doc = "Reset caused by a loss of lock in the PLL/FLL"] _1,
 }
 impl SLOLW {
     #[allow(missing_docs)]
@@ -733,10 +708,8 @@ impl<'a> _SLOLW<'a> {
 }
 #[doc = "Values that can be written to the field `SWDOG`"]
 pub enum SWDOGW {
-    #[doc = "Reset not caused by watchdog timeout"]
-    _0,
-    #[doc = "Reset caused by watchdog timeout"]
-    _1,
+    #[doc = "Reset not caused by watchdog timeout"] _0,
+    #[doc = "Reset caused by watchdog timeout"] _1,
 }
 impl SWDOGW {
     #[allow(missing_docs)]
@@ -791,10 +764,8 @@ impl<'a> _SWDOGW<'a> {
 }
 #[doc = "Values that can be written to the field `SPIN`"]
 pub enum SPINW {
-    #[doc = "Reset not caused by external reset pin"]
-    _0,
-    #[doc = "Reset caused by external reset pin"]
-    _1,
+    #[doc = "Reset not caused by external reset pin"] _0,
+    #[doc = "Reset caused by external reset pin"] _1,
 }
 impl SPINW {
     #[allow(missing_docs)]
@@ -849,10 +820,8 @@ impl<'a> _SPINW<'a> {
 }
 #[doc = "Values that can be written to the field `SPOR`"]
 pub enum SPORW {
-    #[doc = "Reset not caused by POR"]
-    _0,
-    #[doc = "Reset caused by POR"]
-    _1,
+    #[doc = "Reset not caused by POR"] _0,
+    #[doc = "Reset caused by POR"] _1,
 }
 impl SPORW {
     #[allow(missing_docs)]
@@ -907,10 +876,8 @@ impl<'a> _SPORW<'a> {
 }
 #[doc = "Values that can be written to the field `SJTAG`"]
 pub enum SJTAGW {
-    #[doc = "Reset not caused by JTAG"]
-    _0,
-    #[doc = "Reset caused by JTAG"]
-    _1,
+    #[doc = "Reset not caused by JTAG"] _0,
+    #[doc = "Reset caused by JTAG"] _1,
 }
 impl SJTAGW {
     #[allow(missing_docs)]
@@ -965,10 +932,8 @@ impl<'a> _SJTAGW<'a> {
 }
 #[doc = "Values that can be written to the field `SLOCKUP`"]
 pub enum SLOCKUPW {
-    #[doc = "Reset not caused by core LOCKUP event"]
-    _0,
-    #[doc = "Reset caused by core LOCKUP event"]
-    _1,
+    #[doc = "Reset not caused by core LOCKUP event"] _0,
+    #[doc = "Reset caused by core LOCKUP event"] _1,
 }
 impl SLOCKUPW {
     #[allow(missing_docs)]
@@ -1023,10 +988,8 @@ impl<'a> _SLOCKUPW<'a> {
 }
 #[doc = "Values that can be written to the field `SSW`"]
 pub enum SSWW {
-    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    _0,
-    #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    _1,
+    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"] _0,
+    #[doc = "Reset caused by software setting of SYSRESETREQ bit"] _1,
 }
 impl SSWW {
     #[allow(missing_docs)]
@@ -1083,8 +1046,7 @@ impl<'a> _SSWW<'a> {
 pub enum SMDM_APW {
     #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
     _0,
-    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    _1,
+    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"] _1,
 }
 impl SMDM_APW {
     #[allow(missing_docs)]
@@ -1139,10 +1101,8 @@ impl<'a> _SMDM_APW<'a> {
 }
 #[doc = "Values that can be written to the field `SSACKERR`"]
 pub enum SSACKERRW {
-    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _0,
-    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _1,
+    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"] _0,
+    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"] _1,
 }
 impl SSACKERRW {
     #[allow(missing_docs)]

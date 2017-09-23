@@ -6,7 +6,9 @@ impl super::MRDR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = r" Value of the field"]
@@ -23,10 +25,8 @@ impl DATAR {
 #[doc = "Possible values of the field `RXEMPTY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEMPTYR {
-    #[doc = "Receive FIFO is not empty."]
-    _0,
-    #[doc = "Receive FIFO is empty."]
-    _1,
+    #[doc = "Receive FIFO is not empty."] _0,
+    #[doc = "Receive FIFO is empty."] _1,
 }
 impl RXEMPTYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

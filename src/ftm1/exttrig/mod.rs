@@ -22,7 +22,9 @@ impl super::EXTTRIG {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::EXTTRIG {
 #[doc = "Possible values of the field `CH2TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH2TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl CH2TRIGR {
 #[doc = "Possible values of the field `CH3TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH3TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl CH3TRIGR {
 #[doc = "Possible values of the field `CH4TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH4TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl CH4TRIGR {
 #[doc = "Possible values of the field `CH5TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH5TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl CH5TRIGR {
 #[doc = "Possible values of the field `CH0TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH0TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl CH0TRIGR {
 #[doc = "Possible values of the field `CH1TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH1TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl CH1TRIGR {
 #[doc = "Possible values of the field `INITTRIGEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INITTRIGENR {
-    #[doc = "The generation of initialization trigger is disabled."]
-    _0,
-    #[doc = "The generation of initialization trigger is enabled."]
-    _1,
+    #[doc = "The generation of initialization trigger is disabled."] _0,
+    #[doc = "The generation of initialization trigger is enabled."] _1,
 }
 impl INITTRIGENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl INITTRIGENR {
 #[doc = "Possible values of the field `TRIGF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGFR {
-    #[doc = "No channel trigger was generated."]
-    _0,
-    #[doc = "A channel trigger was generated."]
-    _1,
+    #[doc = "No channel trigger was generated."] _0,
+    #[doc = "A channel trigger was generated."] _1,
 }
 impl TRIGFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl TRIGFR {
 #[doc = "Possible values of the field `CH6TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH6TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl CH6TRIGR {
 #[doc = "Possible values of the field `CH7TRIG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7TRIGR {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH7TRIGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -512,10 +494,8 @@ impl CH7TRIGR {
 }
 #[doc = "Values that can be written to the field `CH2TRIG`"]
 pub enum CH2TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH2TRIGW {
     #[allow(missing_docs)]
@@ -570,10 +550,8 @@ impl<'a> _CH2TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `CH3TRIG`"]
 pub enum CH3TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH3TRIGW {
     #[allow(missing_docs)]
@@ -628,10 +606,8 @@ impl<'a> _CH3TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `CH4TRIG`"]
 pub enum CH4TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH4TRIGW {
     #[allow(missing_docs)]
@@ -686,10 +662,8 @@ impl<'a> _CH4TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `CH5TRIG`"]
 pub enum CH5TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH5TRIGW {
     #[allow(missing_docs)]
@@ -744,10 +718,8 @@ impl<'a> _CH5TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `CH0TRIG`"]
 pub enum CH0TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH0TRIGW {
     #[allow(missing_docs)]
@@ -802,10 +774,8 @@ impl<'a> _CH0TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `CH1TRIG`"]
 pub enum CH1TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH1TRIGW {
     #[allow(missing_docs)]
@@ -860,10 +830,8 @@ impl<'a> _CH1TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `INITTRIGEN`"]
 pub enum INITTRIGENW {
-    #[doc = "The generation of initialization trigger is disabled."]
-    _0,
-    #[doc = "The generation of initialization trigger is enabled."]
-    _1,
+    #[doc = "The generation of initialization trigger is disabled."] _0,
+    #[doc = "The generation of initialization trigger is enabled."] _1,
 }
 impl INITTRIGENW {
     #[allow(missing_docs)]
@@ -918,10 +886,8 @@ impl<'a> _INITTRIGENW<'a> {
 }
 #[doc = "Values that can be written to the field `CH6TRIG`"]
 pub enum CH6TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH6TRIGW {
     #[allow(missing_docs)]
@@ -976,10 +942,8 @@ impl<'a> _CH6TRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `CH7TRIG`"]
 pub enum CH7TRIGW {
-    #[doc = "The generation of this external trigger is disabled."]
-    _0,
-    #[doc = "The generation of this external trigger is enabled."]
-    _1,
+    #[doc = "The generation of this external trigger is disabled."] _0,
+    #[doc = "The generation of this external trigger is enabled."] _1,
 }
 impl CH7TRIGW {
     #[allow(missing_docs)]

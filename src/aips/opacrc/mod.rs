@@ -22,7 +22,9 @@ impl super::OPACRC {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::OPACRC {
 #[doc = "Possible values of the field `TP7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP7R {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TP7R {
 #[doc = "Possible values of the field `WP7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WP7R {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl WP7R {
 #[doc = "Possible values of the field `SP7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SP7R {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl SP7R {
 #[doc = "Possible values of the field `TP6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP6R {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl TP6R {
 #[doc = "Possible values of the field `WP6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WP6R {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl WP6R {
 #[doc = "Possible values of the field `SP6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SP6R {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl SP6R {
 #[doc = "Possible values of the field `TP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP2R {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl TP2R {
 #[doc = "Possible values of the field `WP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WP2R {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl WP2R {
 #[doc = "Possible values of the field `SP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SP2R {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl SP2R {
 #[doc = "Possible values of the field `TP1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP1R {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl TP1R {
 #[doc = "Possible values of the field `WP1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WP1R {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -560,10 +540,8 @@ impl WP1R {
 #[doc = "Possible values of the field `SP1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SP1R {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -606,10 +584,8 @@ impl SP1R {
 }
 #[doc = "Values that can be written to the field `TP7`"]
 pub enum TP7W {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP7W {
     #[allow(missing_docs)]
@@ -664,10 +640,8 @@ impl<'a> _TP7W<'a> {
 }
 #[doc = "Values that can be written to the field `WP7`"]
 pub enum WP7W {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP7W {
     #[allow(missing_docs)]
@@ -722,10 +696,8 @@ impl<'a> _WP7W<'a> {
 }
 #[doc = "Values that can be written to the field `SP7`"]
 pub enum SP7W {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP7W {
     #[allow(missing_docs)]
@@ -780,10 +752,8 @@ impl<'a> _SP7W<'a> {
 }
 #[doc = "Values that can be written to the field `TP6`"]
 pub enum TP6W {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP6W {
     #[allow(missing_docs)]
@@ -838,10 +808,8 @@ impl<'a> _TP6W<'a> {
 }
 #[doc = "Values that can be written to the field `WP6`"]
 pub enum WP6W {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP6W {
     #[allow(missing_docs)]
@@ -896,10 +864,8 @@ impl<'a> _WP6W<'a> {
 }
 #[doc = "Values that can be written to the field `SP6`"]
 pub enum SP6W {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP6W {
     #[allow(missing_docs)]
@@ -954,10 +920,8 @@ impl<'a> _SP6W<'a> {
 }
 #[doc = "Values that can be written to the field `TP2`"]
 pub enum TP2W {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP2W {
     #[allow(missing_docs)]
@@ -1012,10 +976,8 @@ impl<'a> _TP2W<'a> {
 }
 #[doc = "Values that can be written to the field `WP2`"]
 pub enum WP2W {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP2W {
     #[allow(missing_docs)]
@@ -1070,10 +1032,8 @@ impl<'a> _WP2W<'a> {
 }
 #[doc = "Values that can be written to the field `SP2`"]
 pub enum SP2W {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP2W {
     #[allow(missing_docs)]
@@ -1128,10 +1088,8 @@ impl<'a> _SP2W<'a> {
 }
 #[doc = "Values that can be written to the field `TP1`"]
 pub enum TP1W {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+    #[doc = "Accesses from an untrusted master are allowed."] _0,
+    #[doc = "Accesses from an untrusted master are not allowed."] _1,
 }
 impl TP1W {
     #[allow(missing_docs)]
@@ -1186,10 +1144,8 @@ impl<'a> _TP1W<'a> {
 }
 #[doc = "Values that can be written to the field `WP1`"]
 pub enum WP1W {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+    #[doc = "This peripheral allows write accesses."] _0,
+    #[doc = "This peripheral is write protected."] _1,
 }
 impl WP1W {
     #[allow(missing_docs)]
@@ -1244,10 +1200,8 @@ impl<'a> _WP1W<'a> {
 }
 #[doc = "Values that can be written to the field `SP1`"]
 pub enum SP1W {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+    #[doc = "This peripheral does not require supervisor privilege level for accesses."] _0,
+    #[doc = "This peripheral requires supervisor privilege level for accesses."] _1,
 }
 impl SP1W {
     #[allow(missing_docs)]

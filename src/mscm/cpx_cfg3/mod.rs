@@ -6,16 +6,16 @@ impl super::CPXCFG3 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `FPU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FPUR {
-    #[doc = "FPU support is not included."]
-    _0,
-    #[doc = "FPU support is included."]
-    _1,
+    #[doc = "FPU support is not included."] _0,
+    #[doc = "FPU support is included."] _1,
 }
 impl FPUR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,10 +59,8 @@ impl FPUR {
 #[doc = "Possible values of the field `SIMD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIMDR {
-    #[doc = "SIMD/NEON support is not included."]
-    _0,
-    #[doc = "SIMD/NEON support is included."]
-    _1,
+    #[doc = "SIMD/NEON support is not included."] _0,
+    #[doc = "SIMD/NEON support is included."] _1,
 }
 impl SIMDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -106,10 +104,8 @@ impl SIMDR {
 #[doc = "Possible values of the field `JAZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum JAZR {
-    #[doc = "Jazelle support is not included."]
-    _0,
-    #[doc = "Jazelle support is included."]
-    _1,
+    #[doc = "Jazelle support is not included."] _0,
+    #[doc = "Jazelle support is included."] _1,
 }
 impl JAZR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -153,10 +149,8 @@ impl JAZR {
 #[doc = "Possible values of the field `MMU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMUR {
-    #[doc = "MMU support is not included."]
-    _0,
-    #[doc = "MMU support is included."]
-    _1,
+    #[doc = "MMU support is not included."] _0,
+    #[doc = "MMU support is included."] _1,
 }
 impl MMUR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -200,10 +194,8 @@ impl MMUR {
 #[doc = "Possible values of the field `TZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TZR {
-    #[doc = "Trust Zone support is not included."]
-    _0,
-    #[doc = "Trust Zone support is included."]
-    _1,
+    #[doc = "Trust Zone support is not included."] _0,
+    #[doc = "Trust Zone support is included."] _1,
 }
 impl TZR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -247,10 +239,8 @@ impl TZR {
 #[doc = "Possible values of the field `CMP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMPR {
-    #[doc = "Core Memory Protection is not included."]
-    _0,
-    #[doc = "Core Memory Protection is included."]
-    _1,
+    #[doc = "Core Memory Protection is not included."] _0,
+    #[doc = "Core Memory Protection is included."] _1,
 }
 impl CMPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -294,10 +284,8 @@ impl CMPR {
 #[doc = "Possible values of the field `BB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BBR {
-    #[doc = "Bit Banding is not supported."]
-    _0,
-    #[doc = "Bit Banding is supported."]
-    _1,
+    #[doc = "Bit Banding is not supported."] _0,
+    #[doc = "Bit Banding is supported."] _1,
 }
 impl BBR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

@@ -22,7 +22,9 @@ impl super::PSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,14 +45,10 @@ impl super::PSR {
 #[doc = "Possible values of the field `PCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCSR {
-    #[doc = "Prescaler/glitch filter clock 0 selected."]
-    _00,
-    #[doc = "Prescaler/glitch filter clock 1 selected."]
-    _01,
-    #[doc = "Prescaler/glitch filter clock 2 selected."]
-    _10,
-    #[doc = "Prescaler/glitch filter clock 3 selected."]
-    _11,
+    #[doc = "Prescaler/glitch filter clock 0 selected."] _00,
+    #[doc = "Prescaler/glitch filter clock 1 selected."] _01,
+    #[doc = "Prescaler/glitch filter clock 2 selected."] _10,
+    #[doc = "Prescaler/glitch filter clock 3 selected."] _11,
 }
 impl PCSR {
     #[doc = r" Value of the field as raw bits"]
@@ -99,10 +97,8 @@ impl PCSR {
 #[doc = "Possible values of the field `PBYP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PBYPR {
-    #[doc = "Prescaler/glitch filter is enabled."]
-    _0,
-    #[doc = "Prescaler/glitch filter is bypassed."]
-    _1,
+    #[doc = "Prescaler/glitch filter is enabled."] _0,
+    #[doc = "Prescaler/glitch filter is bypassed."] _1,
 }
 impl PBYPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -309,14 +305,10 @@ impl PRESCALER {
 }
 #[doc = "Values that can be written to the field `PCS`"]
 pub enum PCSW {
-    #[doc = "Prescaler/glitch filter clock 0 selected."]
-    _00,
-    #[doc = "Prescaler/glitch filter clock 1 selected."]
-    _01,
-    #[doc = "Prescaler/glitch filter clock 2 selected."]
-    _10,
-    #[doc = "Prescaler/glitch filter clock 3 selected."]
-    _11,
+    #[doc = "Prescaler/glitch filter clock 0 selected."] _00,
+    #[doc = "Prescaler/glitch filter clock 1 selected."] _01,
+    #[doc = "Prescaler/glitch filter clock 2 selected."] _10,
+    #[doc = "Prescaler/glitch filter clock 3 selected."] _11,
 }
 impl PCSW {
     #[allow(missing_docs)]
@@ -375,10 +367,8 @@ impl<'a> _PCSW<'a> {
 }
 #[doc = "Values that can be written to the field `PBYP`"]
 pub enum PBYPW {
-    #[doc = "Prescaler/glitch filter is enabled."]
-    _0,
-    #[doc = "Prescaler/glitch filter is bypassed."]
-    _1,
+    #[doc = "Prescaler/glitch filter is enabled."] _0,
+    #[doc = "Prescaler/glitch filter is bypassed."] _1,
 }
 impl PBYPW {
     #[allow(missing_docs)]

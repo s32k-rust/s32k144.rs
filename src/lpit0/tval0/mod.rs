@@ -22,7 +22,9 @@ impl super::TVAL0 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,12 +45,9 @@ impl super::TVAL0 {
 #[doc = "Possible values of the field `TMR_VAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TMR_VALR {
-    #[doc = "Invalid load value in compare modes."]
-    _0,
-    #[doc = "Invalid load value in compare modes."]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
+    #[doc = "Invalid load value in compare modes."] _0,
+    #[doc = "Invalid load value in compare modes."] _1,
+    #[doc = r" Reserved"] _Reserved(u32),
 }
 impl TMR_VALR {
     #[doc = r" Value of the field as raw bits"]
@@ -83,10 +82,8 @@ impl TMR_VALR {
 }
 #[doc = "Values that can be written to the field `TMR_VAL`"]
 pub enum TMR_VALW {
-    #[doc = "Invalid load value in compare modes."]
-    _0,
-    #[doc = "Invalid load value in compare modes."]
-    _1,
+    #[doc = "Invalid load value in compare modes."] _0,
+    #[doc = "Invalid load value in compare modes."] _1,
 }
 impl TMR_VALW {
     #[allow(missing_docs)]

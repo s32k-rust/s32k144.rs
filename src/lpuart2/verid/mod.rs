@@ -6,18 +6,17 @@ impl super::VERID {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `FEATURE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEATURER {
-    #[doc = "Standard feature set."]
-    _0000000000000001,
-    #[doc = "Standard feature set with MODEM/IrDA support."]
-    _0000000000000011,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
+    #[doc = "Standard feature set."] _0000000000000001,
+    #[doc = "Standard feature set with MODEM/IrDA support."] _0000000000000011,
+    #[doc = r" Reserved"] _Reserved(u16),
 }
 impl FEATURER {
     #[doc = r" Value of the field as raw bits"]

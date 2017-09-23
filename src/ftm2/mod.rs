@@ -2,97 +2,53 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Status And Control"]
-    pub sc: SC,
-    #[doc = "0x04 - Counter"]
-    pub cnt: CNT,
-    #[doc = "0x08 - Modulo"]
-    pub mod_: MOD,
-    #[doc = "0x0c - Channel (n) Status And Control"]
-    pub c0sc: C0SC,
-    #[doc = "0x10 - Channel (n) Value"]
-    pub c0v: C0V,
-    #[doc = "0x14 - Channel (n) Status And Control"]
-    pub c1sc: C1SC,
-    #[doc = "0x18 - Channel (n) Value"]
-    pub c1v: C1V,
-    #[doc = "0x1c - Channel (n) Status And Control"]
-    pub c2sc: C2SC,
-    #[doc = "0x20 - Channel (n) Value"]
-    pub c2v: C2V,
-    #[doc = "0x24 - Channel (n) Status And Control"]
-    pub c3sc: C3SC,
-    #[doc = "0x28 - Channel (n) Value"]
-    pub c3v: C3V,
-    #[doc = "0x2c - Channel (n) Status And Control"]
-    pub c4sc: C4SC,
-    #[doc = "0x30 - Channel (n) Value"]
-    pub c4v: C4V,
-    #[doc = "0x34 - Channel (n) Status And Control"]
-    pub c5sc: C5SC,
-    #[doc = "0x38 - Channel (n) Value"]
-    pub c5v: C5V,
-    #[doc = "0x3c - Channel (n) Status And Control"]
-    pub c6sc: C6SC,
-    #[doc = "0x40 - Channel (n) Value"]
-    pub c6v: C6V,
-    #[doc = "0x44 - Channel (n) Status And Control"]
-    pub c7sc: C7SC,
-    #[doc = "0x48 - Channel (n) Value"]
-    pub c7v: C7V,
-    #[doc = "0x4c - Counter Initial Value"]
-    pub cntin: CNTIN,
-    #[doc = "0x50 - Capture And Compare Status"]
-    pub status: STATUS,
-    #[doc = "0x54 - Features Mode Selection"]
-    pub mode: MODE,
-    #[doc = "0x58 - Synchronization"]
-    pub sync: SYNC,
-    #[doc = "0x5c - Initial State For Channels Output"]
-    pub outinit: OUTINIT,
-    #[doc = "0x60 - Output Mask"]
-    pub outmask: OUTMASK,
-    #[doc = "0x64 - Function For Linked Channels"]
-    pub combine: COMBINE,
-    #[doc = "0x68 - Deadtime Configuration"]
-    pub deadtime: DEADTIME,
-    #[doc = "0x6c - FTM External Trigger"]
-    pub exttrig: EXTTRIG,
-    #[doc = "0x70 - Channels Polarity"]
-    pub pol: POL,
-    #[doc = "0x74 - Fault Mode Status"]
-    pub fms: FMS,
-    #[doc = "0x78 - Input Capture Filter Control"]
-    pub filter: FILTER,
-    #[doc = "0x7c - Fault Control"]
-    pub fltctrl: FLTCTRL,
-    #[doc = "0x80 - Quadrature Decoder Control And Status"]
-    pub qdctrl: QDCTRL,
-    #[doc = "0x84 - Configuration"]
-    pub conf: CONF,
-    #[doc = "0x88 - FTM Fault Input Polarity"]
-    pub fltpol: FLTPOL,
-    #[doc = "0x8c - Synchronization Configuration"]
-    pub synconf: SYNCONF,
-    #[doc = "0x90 - FTM Inverting Control"]
-    pub invctrl: INVCTRL,
-    #[doc = "0x94 - FTM Software Output Control"]
-    pub swoctrl: SWOCTRL,
-    #[doc = "0x98 - FTM PWM Load"]
-    pub pwmload: PWMLOAD,
-    #[doc = "0x9c - Half Cycle Register"]
-    pub hcr: HCR,
-    #[doc = "0xa0 - Pair 0 Deadtime Configuration"]
-    pub pair0deadtime: PAIR0DEADTIME,
+    #[doc = "0x00 - Status And Control"] pub sc: SC,
+    #[doc = "0x04 - Counter"] pub cnt: CNT,
+    #[doc = "0x08 - Modulo"] pub mod_: MOD,
+    #[doc = "0x0c - Channel (n) Status And Control"] pub c0sc: C0SC,
+    #[doc = "0x10 - Channel (n) Value"] pub c0v: C0V,
+    #[doc = "0x14 - Channel (n) Status And Control"] pub c1sc: C1SC,
+    #[doc = "0x18 - Channel (n) Value"] pub c1v: C1V,
+    #[doc = "0x1c - Channel (n) Status And Control"] pub c2sc: C2SC,
+    #[doc = "0x20 - Channel (n) Value"] pub c2v: C2V,
+    #[doc = "0x24 - Channel (n) Status And Control"] pub c3sc: C3SC,
+    #[doc = "0x28 - Channel (n) Value"] pub c3v: C3V,
+    #[doc = "0x2c - Channel (n) Status And Control"] pub c4sc: C4SC,
+    #[doc = "0x30 - Channel (n) Value"] pub c4v: C4V,
+    #[doc = "0x34 - Channel (n) Status And Control"] pub c5sc: C5SC,
+    #[doc = "0x38 - Channel (n) Value"] pub c5v: C5V,
+    #[doc = "0x3c - Channel (n) Status And Control"] pub c6sc: C6SC,
+    #[doc = "0x40 - Channel (n) Value"] pub c6v: C6V,
+    #[doc = "0x44 - Channel (n) Status And Control"] pub c7sc: C7SC,
+    #[doc = "0x48 - Channel (n) Value"] pub c7v: C7V,
+    #[doc = "0x4c - Counter Initial Value"] pub cntin: CNTIN,
+    #[doc = "0x50 - Capture And Compare Status"] pub status: STATUS,
+    #[doc = "0x54 - Features Mode Selection"] pub mode: MODE,
+    #[doc = "0x58 - Synchronization"] pub sync: SYNC,
+    #[doc = "0x5c - Initial State For Channels Output"] pub outinit: OUTINIT,
+    #[doc = "0x60 - Output Mask"] pub outmask: OUTMASK,
+    #[doc = "0x64 - Function For Linked Channels"] pub combine: COMBINE,
+    #[doc = "0x68 - Deadtime Configuration"] pub deadtime: DEADTIME,
+    #[doc = "0x6c - FTM External Trigger"] pub exttrig: EXTTRIG,
+    #[doc = "0x70 - Channels Polarity"] pub pol: POL,
+    #[doc = "0x74 - Fault Mode Status"] pub fms: FMS,
+    #[doc = "0x78 - Input Capture Filter Control"] pub filter: FILTER,
+    #[doc = "0x7c - Fault Control"] pub fltctrl: FLTCTRL,
+    #[doc = "0x80 - Quadrature Decoder Control And Status"] pub qdctrl: QDCTRL,
+    #[doc = "0x84 - Configuration"] pub conf: CONF,
+    #[doc = "0x88 - FTM Fault Input Polarity"] pub fltpol: FLTPOL,
+    #[doc = "0x8c - Synchronization Configuration"] pub synconf: SYNCONF,
+    #[doc = "0x90 - FTM Inverting Control"] pub invctrl: INVCTRL,
+    #[doc = "0x94 - FTM Software Output Control"] pub swoctrl: SWOCTRL,
+    #[doc = "0x98 - FTM PWM Load"] pub pwmload: PWMLOAD,
+    #[doc = "0x9c - Half Cycle Register"] pub hcr: HCR,
+    #[doc = "0xa0 - Pair 0 Deadtime Configuration"] pub pair0deadtime: PAIR0DEADTIME,
     _reserved0: [u8; 4usize],
-    #[doc = "0xa8 - Pair 1 Deadtime Configuration"]
-    pub pair1deadtime: PAIR1DEADTIME,
+    #[doc = "0xa8 - Pair 1 Deadtime Configuration"] pub pair1deadtime: PAIR1DEADTIME,
     _reserved1: [u8; 4usize],
-    #[doc = "0xb0 - Pair 2 Deadtime Configuration"]
-    pub pair2deadtime: PAIR2DEADTIME,
+    #[doc = "0xb0 - Pair 2 Deadtime Configuration"] pub pair2deadtime: PAIR2DEADTIME,
     _reserved2: [u8; 4usize],
-    #[doc = "0xb8 - Pair 3 Deadtime Configuration"]
-    pub pair3deadtime: PAIR3DEADTIME,
+    #[doc = "0xb8 - Pair 3 Deadtime Configuration"] pub pair3deadtime: PAIR3DEADTIME,
 }
 #[doc = "Status And Control"]
 pub struct SC {

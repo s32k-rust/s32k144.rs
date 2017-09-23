@@ -22,7 +22,9 @@ impl super::STOPCTRL {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,12 +45,9 @@ impl super::STOPCTRL {
 #[doc = "Possible values of the field `STOPO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPOR {
-    #[doc = "STOP1 - Stop with both system and bus clocks disabled"]
-    _01,
-    #[doc = "STOP2 - Stop with system clock disabled and bus clock enabled"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "STOP1 - Stop with both system and bus clocks disabled"] _01,
+    #[doc = "STOP2 - Stop with system clock disabled and bus clock enabled"] _10,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl STOPOR {
     #[doc = r" Value of the field as raw bits"]
@@ -83,10 +82,8 @@ impl STOPOR {
 }
 #[doc = "Values that can be written to the field `STOPO`"]
 pub enum STOPOW {
-    #[doc = "STOP1 - Stop with both system and bus clocks disabled"]
-    _01,
-    #[doc = "STOP2 - Stop with system clock disabled and bus clock enabled"]
-    _10,
+    #[doc = "STOP1 - Stop with both system and bus clocks disabled"] _01,
+    #[doc = "STOP2 - Stop with system clock disabled and bus clock enabled"] _10,
 }
 impl STOPOW {
     #[allow(missing_docs)]

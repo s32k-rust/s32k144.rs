@@ -22,7 +22,9 @@ impl super::LVDSC1 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::LVDSC1 {
 #[doc = "Possible values of the field `LVDRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LVDRER {
-    #[doc = "No system resets on low voltage detect events."]
-    _0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
+    #[doc = "No system resets on low voltage detect events."] _0,
+    #[doc = r" Reserved"] _Reserved(bool),
 }
 impl LVDRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,10 +85,8 @@ impl LVDRER {
 #[doc = "Possible values of the field `LVDIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LVDIER {
-    #[doc = "Hardware interrupt disabled (use polling)"]
-    _0,
-    #[doc = "Request a hardware interrupt when LVDF = 1"]
-    _1,
+    #[doc = "Hardware interrupt disabled (use polling)"] _0,
+    #[doc = "Request a hardware interrupt when LVDF = 1"] _1,
 }
 impl LVDIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -132,10 +130,8 @@ impl LVDIER {
 #[doc = "Possible values of the field `LVDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LVDFR {
-    #[doc = "Low-voltage event not detected"]
-    _0,
-    #[doc = "Low-voltage event detected"]
-    _1,
+    #[doc = "Low-voltage event not detected"] _0,
+    #[doc = "Low-voltage event detected"] _1,
 }
 impl LVDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -178,8 +174,7 @@ impl LVDFR {
 }
 #[doc = "Values that can be written to the field `LVDRE`"]
 pub enum LVDREW {
-    #[doc = "No system resets on low voltage detect events."]
-    _0,
+    #[doc = "No system resets on low voltage detect events."] _0,
 }
 impl LVDREW {
     #[allow(missing_docs)]
@@ -228,10 +223,8 @@ impl<'a> _LVDREW<'a> {
 }
 #[doc = "Values that can be written to the field `LVDIE`"]
 pub enum LVDIEW {
-    #[doc = "Hardware interrupt disabled (use polling)"]
-    _0,
-    #[doc = "Request a hardware interrupt when LVDF = 1"]
-    _1,
+    #[doc = "Hardware interrupt disabled (use polling)"] _0,
+    #[doc = "Request a hardware interrupt when LVDF = 1"] _1,
 }
 impl LVDIEW {
     #[allow(missing_docs)]

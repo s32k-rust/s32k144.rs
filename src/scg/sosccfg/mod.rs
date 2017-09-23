@@ -22,7 +22,9 @@ impl super::SOSCCFG {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SOSCCFG {
 #[doc = "Possible values of the field `EREFS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EREFSR {
-    #[doc = "External reference clock selected"]
-    _0,
-    #[doc = "Internal crystal oscillator of OSC selected."]
-    _1,
+    #[doc = "External reference clock selected"] _0,
+    #[doc = "Internal crystal oscillator of OSC selected."] _1,
 }
 impl EREFSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl EREFSR {
 #[doc = "Possible values of the field `HGO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HGOR {
-    #[doc = "Configure crystal oscillator for low-gain operation"]
-    _0,
-    #[doc = "Configure crystal oscillator for high-gain operation"]
-    _1,
+    #[doc = "Configure crystal oscillator for low-gain operation"] _0,
+    #[doc = "Configure crystal oscillator for high-gain operation"] _1,
 }
 impl HGOR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,14 +135,10 @@ impl HGOR {
 #[doc = "Possible values of the field `RANGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RANGER {
-    #[doc = "Low frequency range selected for the crystal oscillator"]
-    _01,
-    #[doc = "Medium frequency range selected for the crytstal oscillator"]
-    _10,
-    #[doc = "High frequency range selected for the crystal oscillator"]
-    _11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "Low frequency range selected for the crystal oscillator"] _01,
+    #[doc = "Medium frequency range selected for the crytstal oscillator"] _10,
+    #[doc = "High frequency range selected for the crystal oscillator"] _11,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl RANGER {
     #[doc = r" Value of the field as raw bits"]
@@ -186,10 +180,8 @@ impl RANGER {
 }
 #[doc = "Values that can be written to the field `EREFS`"]
 pub enum EREFSW {
-    #[doc = "External reference clock selected"]
-    _0,
-    #[doc = "Internal crystal oscillator of OSC selected."]
-    _1,
+    #[doc = "External reference clock selected"] _0,
+    #[doc = "Internal crystal oscillator of OSC selected."] _1,
 }
 impl EREFSW {
     #[allow(missing_docs)]
@@ -244,10 +236,8 @@ impl<'a> _EREFSW<'a> {
 }
 #[doc = "Values that can be written to the field `HGO`"]
 pub enum HGOW {
-    #[doc = "Configure crystal oscillator for low-gain operation"]
-    _0,
-    #[doc = "Configure crystal oscillator for high-gain operation"]
-    _1,
+    #[doc = "Configure crystal oscillator for low-gain operation"] _0,
+    #[doc = "Configure crystal oscillator for high-gain operation"] _1,
 }
 impl HGOW {
     #[allow(missing_docs)]
@@ -302,12 +292,9 @@ impl<'a> _HGOW<'a> {
 }
 #[doc = "Values that can be written to the field `RANGE`"]
 pub enum RANGEW {
-    #[doc = "Low frequency range selected for the crystal oscillator"]
-    _01,
-    #[doc = "Medium frequency range selected for the crytstal oscillator"]
-    _10,
-    #[doc = "High frequency range selected for the crystal oscillator"]
-    _11,
+    #[doc = "Low frequency range selected for the crystal oscillator"] _01,
+    #[doc = "Medium frequency range selected for the crytstal oscillator"] _10,
+    #[doc = "High frequency range selected for the crystal oscillator"] _11,
 }
 impl RANGEW {
     #[allow(missing_docs)]

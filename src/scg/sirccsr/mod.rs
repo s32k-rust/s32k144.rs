@@ -22,7 +22,9 @@ impl super::SIRCCSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SIRCCSR {
 #[doc = "Possible values of the field `SIRCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCENR {
-    #[doc = "Slow IRC is disabled"]
-    _0,
-    #[doc = "Slow IRC is enabled"]
-    _1,
+    #[doc = "Slow IRC is disabled"] _0,
+    #[doc = "Slow IRC is enabled"] _1,
 }
 impl SIRCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl SIRCENR {
 #[doc = "Possible values of the field `SIRCSTEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCSTENR {
-    #[doc = "Slow IRC is disabled in supported Stop modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in supported Stop modes"]
-    _1,
+    #[doc = "Slow IRC is disabled in supported Stop modes"] _0,
+    #[doc = "Slow IRC is enabled in supported Stop modes"] _1,
 }
 impl SIRCSTENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl SIRCSTENR {
 #[doc = "Possible values of the field `SIRCLPEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCLPENR {
-    #[doc = "Slow IRC is disabled in VLP modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in VLP modes"]
-    _1,
+    #[doc = "Slow IRC is disabled in VLP modes"] _0,
+    #[doc = "Slow IRC is enabled in VLP modes"] _1,
 }
 impl SIRCLPENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl SIRCLPENR {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "Control Status Register can be written."]
-    _0,
-    #[doc = "Control Status Register cannot be written."]
-    _1,
+    #[doc = "Control Status Register can be written."] _0,
+    #[doc = "Control Status Register cannot be written."] _1,
 }
 impl LKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl LKR {
 #[doc = "Possible values of the field `SIRCVLD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCVLDR {
-    #[doc = "Slow IRC is not enabled or clock is not valid"]
-    _0,
-    #[doc = "Slow IRC is enabled and output clock is valid"]
-    _1,
+    #[doc = "Slow IRC is not enabled or clock is not valid"] _0,
+    #[doc = "Slow IRC is enabled and output clock is valid"] _1,
 }
 impl SIRCVLDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl SIRCVLDR {
 #[doc = "Possible values of the field `SIRCSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCSELR {
-    #[doc = "Slow IRC is not the system clock source"]
-    _0,
-    #[doc = "Slow IRC is the system clock source"]
-    _1,
+    #[doc = "Slow IRC is not the system clock source"] _0,
+    #[doc = "Slow IRC is the system clock source"] _1,
 }
 impl SIRCSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -324,10 +314,8 @@ impl SIRCSELR {
 }
 #[doc = "Values that can be written to the field `SIRCEN`"]
 pub enum SIRCENW {
-    #[doc = "Slow IRC is disabled"]
-    _0,
-    #[doc = "Slow IRC is enabled"]
-    _1,
+    #[doc = "Slow IRC is disabled"] _0,
+    #[doc = "Slow IRC is enabled"] _1,
 }
 impl SIRCENW {
     #[allow(missing_docs)]
@@ -382,10 +370,8 @@ impl<'a> _SIRCENW<'a> {
 }
 #[doc = "Values that can be written to the field `SIRCSTEN`"]
 pub enum SIRCSTENW {
-    #[doc = "Slow IRC is disabled in supported Stop modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in supported Stop modes"]
-    _1,
+    #[doc = "Slow IRC is disabled in supported Stop modes"] _0,
+    #[doc = "Slow IRC is enabled in supported Stop modes"] _1,
 }
 impl SIRCSTENW {
     #[allow(missing_docs)]
@@ -440,10 +426,8 @@ impl<'a> _SIRCSTENW<'a> {
 }
 #[doc = "Values that can be written to the field `SIRCLPEN`"]
 pub enum SIRCLPENW {
-    #[doc = "Slow IRC is disabled in VLP modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in VLP modes"]
-    _1,
+    #[doc = "Slow IRC is disabled in VLP modes"] _0,
+    #[doc = "Slow IRC is enabled in VLP modes"] _1,
 }
 impl SIRCLPENW {
     #[allow(missing_docs)]
@@ -498,10 +482,8 @@ impl<'a> _SIRCLPENW<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "Control Status Register can be written."]
-    _0,
-    #[doc = "Control Status Register cannot be written."]
-    _1,
+    #[doc = "Control Status Register can be written."] _0,
+    #[doc = "Control Status Register cannot be written."] _1,
 }
 impl LKW {
     #[allow(missing_docs)]

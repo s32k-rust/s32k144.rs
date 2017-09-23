@@ -22,7 +22,9 @@ impl super::TRGMUX_LPIT0 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -87,10 +89,8 @@ impl SEL3R {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "Register can be written."]
-    _0,
-    #[doc = "Register cannot be written until the next system Reset."]
-    _1,
+    #[doc = "Register can be written."] _0,
+    #[doc = "Register cannot be written until the next system Reset."] _1,
 }
 impl LKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -193,10 +193,8 @@ impl<'a> _SEL3W<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "Register can be written."]
-    _0,
-    #[doc = "Register cannot be written until the next system Reset."]
-    _1,
+    #[doc = "Register can be written."] _0,
+    #[doc = "Register cannot be written until the next system Reset."] _1,
 }
 impl LKW {
     #[allow(missing_docs)]

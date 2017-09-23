@@ -22,7 +22,9 @@ impl super::SR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SR {
 #[doc = "Possible values of the field `TIF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIFR {
-    #[doc = "Time is valid."]
-    _0,
-    #[doc = "Time is invalid and time counter is read as zero."]
-    _1,
+    #[doc = "Time is valid."] _0,
+    #[doc = "Time is invalid and time counter is read as zero."] _1,
 }
 impl TIFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TIFR {
 #[doc = "Possible values of the field `TOF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TOFR {
-    #[doc = "Time overflow has not occurred."]
-    _0,
-    #[doc = "Time overflow has occurred and time counter is read as zero."]
-    _1,
+    #[doc = "Time overflow has not occurred."] _0,
+    #[doc = "Time overflow has occurred and time counter is read as zero."] _1,
 }
 impl TOFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl TOFR {
 #[doc = "Possible values of the field `TAF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAFR {
-    #[doc = "Time alarm has not occurred."]
-    _0,
-    #[doc = "Time alarm has occurred."]
-    _1,
+    #[doc = "Time alarm has not occurred."] _0,
+    #[doc = "Time alarm has occurred."] _1,
 }
 impl TAFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl TAFR {
 #[doc = "Possible values of the field `TCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCER {
-    #[doc = "Time counter is disabled."]
-    _0,
-    #[doc = "Time counter is enabled."]
-    _1,
+    #[doc = "Time counter is disabled."] _0,
+    #[doc = "Time counter is enabled."] _1,
 }
 impl TCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -230,10 +224,8 @@ impl TCER {
 }
 #[doc = "Values that can be written to the field `TCE`"]
 pub enum TCEW {
-    #[doc = "Time counter is disabled."]
-    _0,
-    #[doc = "Time counter is enabled."]
-    _1,
+    #[doc = "Time counter is disabled."] _0,
+    #[doc = "Time counter is enabled."] _1,
 }
 impl TCEW {
     #[allow(missing_docs)]

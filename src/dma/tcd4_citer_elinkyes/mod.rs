@@ -22,7 +22,9 @@ impl super::TCD4_CITER_ELINKYES {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -65,10 +67,8 @@ impl LINKCHR {
 #[doc = "Possible values of the field `ELINK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELINKR {
-    #[doc = "The channel-to-channel linking is disabled"]
-    _0,
-    #[doc = "The channel-to-channel linking is enabled"]
-    _1,
+    #[doc = "The channel-to-channel linking is disabled"] _0,
+    #[doc = "The channel-to-channel linking is enabled"] _1,
 }
 impl ELINKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -141,10 +141,8 @@ impl<'a> _LINKCHW<'a> {
 }
 #[doc = "Values that can be written to the field `ELINK`"]
 pub enum ELINKW {
-    #[doc = "The channel-to-channel linking is disabled"]
-    _0,
-    #[doc = "The channel-to-channel linking is enabled"]
-    _1,
+    #[doc = "The channel-to-channel linking is disabled"] _0,
+    #[doc = "The channel-to-channel linking is enabled"] _1,
 }
 impl ELINKW {
     #[allow(missing_docs)]

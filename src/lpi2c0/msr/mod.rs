@@ -22,7 +22,9 @@ impl super::MSR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::MSR {
 #[doc = "Possible values of the field `TDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDFR {
-    #[doc = "Transmit data not requested."]
-    _0,
-    #[doc = "Transmit data is requested."]
-    _1,
+    #[doc = "Transmit data not requested."] _0,
+    #[doc = "Transmit data is requested."] _1,
 }
 impl TDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl TDFR {
 #[doc = "Possible values of the field `RDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDFR {
-    #[doc = "Receive Data is not ready."]
-    _0,
-    #[doc = "Receive data is ready."]
-    _1,
+    #[doc = "Receive Data is not ready."] _0,
+    #[doc = "Receive data is ready."] _1,
 }
 impl RDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl RDFR {
 #[doc = "Possible values of the field `EPF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPFR {
-    #[doc = "Master has not generated a STOP or Repeated START condition."]
-    _0,
-    #[doc = "Master has generated a STOP or Repeated START condition."]
-    _1,
+    #[doc = "Master has not generated a STOP or Repeated START condition."] _0,
+    #[doc = "Master has generated a STOP or Repeated START condition."] _1,
 }
 impl EPFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl EPFR {
 #[doc = "Possible values of the field `SDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDFR {
-    #[doc = "Master has not generated a STOP condition."]
-    _0,
-    #[doc = "Master has generated a STOP condition."]
-    _1,
+    #[doc = "Master has not generated a STOP condition."] _0,
+    #[doc = "Master has generated a STOP condition."] _1,
 }
 impl SDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -231,10 +225,8 @@ impl SDFR {
 #[doc = "Possible values of the field `NDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NDFR {
-    #[doc = "Unexpected NACK not detected."]
-    _0,
-    #[doc = "Unexpected NACK was detected."]
-    _1,
+    #[doc = "Unexpected NACK not detected."] _0,
+    #[doc = "Unexpected NACK was detected."] _1,
 }
 impl NDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -278,10 +270,8 @@ impl NDFR {
 #[doc = "Possible values of the field `ALF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALFR {
-    #[doc = "Master has not lost arbitration."]
-    _0,
-    #[doc = "Master has lost arbitration."]
-    _1,
+    #[doc = "Master has not lost arbitration."] _0,
+    #[doc = "Master has lost arbitration."] _1,
 }
 impl ALFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -325,10 +315,8 @@ impl ALFR {
 #[doc = "Possible values of the field `FEF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEFR {
-    #[doc = "No error."]
-    _0,
-    #[doc = "Master sending or receiving data without START condition."]
-    _1,
+    #[doc = "No error."] _0,
+    #[doc = "Master sending or receiving data without START condition."] _1,
 }
 impl FEFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,10 +360,8 @@ impl FEFR {
 #[doc = "Possible values of the field `PLTF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLTFR {
-    #[doc = "Pin low timeout has not occurred or is disabled."]
-    _0,
-    #[doc = "Pin low timeout has occurred."]
-    _1,
+    #[doc = "Pin low timeout has not occurred or is disabled."] _0,
+    #[doc = "Pin low timeout has occurred."] _1,
 }
 impl PLTFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,10 +405,8 @@ impl PLTFR {
 #[doc = "Possible values of the field `DMF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMFR {
-    #[doc = "Have not received matching data."]
-    _0,
-    #[doc = "Have received matching data."]
-    _1,
+    #[doc = "Have not received matching data."] _0,
+    #[doc = "Have received matching data."] _1,
 }
 impl DMFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -466,10 +450,8 @@ impl DMFR {
 #[doc = "Possible values of the field `MBF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MBFR {
-    #[doc = "I2C Master is idle."]
-    _0,
-    #[doc = "I2C Master is busy."]
-    _1,
+    #[doc = "I2C Master is idle."] _0,
+    #[doc = "I2C Master is busy."] _1,
 }
 impl MBFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -513,10 +495,8 @@ impl MBFR {
 #[doc = "Possible values of the field `BBF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BBFR {
-    #[doc = "I2C Bus is idle."]
-    _0,
-    #[doc = "I2C Bus is busy."]
-    _1,
+    #[doc = "I2C Bus is idle."] _0,
+    #[doc = "I2C Bus is busy."] _1,
 }
 impl BBFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -559,10 +539,8 @@ impl BBFR {
 }
 #[doc = "Values that can be written to the field `EPF`"]
 pub enum EPFW {
-    #[doc = "Master has not generated a STOP or Repeated START condition."]
-    _0,
-    #[doc = "Master has generated a STOP or Repeated START condition."]
-    _1,
+    #[doc = "Master has not generated a STOP or Repeated START condition."] _0,
+    #[doc = "Master has generated a STOP or Repeated START condition."] _1,
 }
 impl EPFW {
     #[allow(missing_docs)]
@@ -617,10 +595,8 @@ impl<'a> _EPFW<'a> {
 }
 #[doc = "Values that can be written to the field `SDF`"]
 pub enum SDFW {
-    #[doc = "Master has not generated a STOP condition."]
-    _0,
-    #[doc = "Master has generated a STOP condition."]
-    _1,
+    #[doc = "Master has not generated a STOP condition."] _0,
+    #[doc = "Master has generated a STOP condition."] _1,
 }
 impl SDFW {
     #[allow(missing_docs)]
@@ -675,10 +651,8 @@ impl<'a> _SDFW<'a> {
 }
 #[doc = "Values that can be written to the field `NDF`"]
 pub enum NDFW {
-    #[doc = "Unexpected NACK not detected."]
-    _0,
-    #[doc = "Unexpected NACK was detected."]
-    _1,
+    #[doc = "Unexpected NACK not detected."] _0,
+    #[doc = "Unexpected NACK was detected."] _1,
 }
 impl NDFW {
     #[allow(missing_docs)]
@@ -733,10 +707,8 @@ impl<'a> _NDFW<'a> {
 }
 #[doc = "Values that can be written to the field `ALF`"]
 pub enum ALFW {
-    #[doc = "Master has not lost arbitration."]
-    _0,
-    #[doc = "Master has lost arbitration."]
-    _1,
+    #[doc = "Master has not lost arbitration."] _0,
+    #[doc = "Master has lost arbitration."] _1,
 }
 impl ALFW {
     #[allow(missing_docs)]
@@ -791,10 +763,8 @@ impl<'a> _ALFW<'a> {
 }
 #[doc = "Values that can be written to the field `FEF`"]
 pub enum FEFW {
-    #[doc = "No error."]
-    _0,
-    #[doc = "Master sending or receiving data without START condition."]
-    _1,
+    #[doc = "No error."] _0,
+    #[doc = "Master sending or receiving data without START condition."] _1,
 }
 impl FEFW {
     #[allow(missing_docs)]
@@ -849,10 +819,8 @@ impl<'a> _FEFW<'a> {
 }
 #[doc = "Values that can be written to the field `PLTF`"]
 pub enum PLTFW {
-    #[doc = "Pin low timeout has not occurred or is disabled."]
-    _0,
-    #[doc = "Pin low timeout has occurred."]
-    _1,
+    #[doc = "Pin low timeout has not occurred or is disabled."] _0,
+    #[doc = "Pin low timeout has occurred."] _1,
 }
 impl PLTFW {
     #[allow(missing_docs)]
@@ -907,10 +875,8 @@ impl<'a> _PLTFW<'a> {
 }
 #[doc = "Values that can be written to the field `DMF`"]
 pub enum DMFW {
-    #[doc = "Have not received matching data."]
-    _0,
-    #[doc = "Have received matching data."]
-    _1,
+    #[doc = "Have not received matching data."] _0,
+    #[doc = "Have received matching data."] _1,
 }
 impl DMFW {
     #[allow(missing_docs)]

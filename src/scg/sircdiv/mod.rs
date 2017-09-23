@@ -22,7 +22,9 @@ impl super::SIRCDIV {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,22 +45,14 @@ impl super::SIRCDIV {
 #[doc = "Possible values of the field `SIRCDIV1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCDIV1R {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl SIRCDIV1R {
     #[doc = r" Value of the field as raw bits"]
@@ -135,22 +129,14 @@ impl SIRCDIV1R {
 #[doc = "Possible values of the field `SIRCDIV2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIRCDIV2R {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl SIRCDIV2R {
     #[doc = r" Value of the field as raw bits"]
@@ -226,22 +212,14 @@ impl SIRCDIV2R {
 }
 #[doc = "Values that can be written to the field `SIRCDIV1`"]
 pub enum SIRCDIV1W {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl SIRCDIV1W {
     #[allow(missing_docs)]
@@ -324,22 +302,14 @@ impl<'a> _SIRCDIV1W<'a> {
 }
 #[doc = "Values that can be written to the field `SIRCDIV2`"]
 pub enum SIRCDIV2W {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+    #[doc = "Output disabled"] _000,
+    #[doc = "Divide by 1"] _001,
+    #[doc = "Divide by 2"] _010,
+    #[doc = "Divide by 4"] _011,
+    #[doc = "Divide by 8"] _100,
+    #[doc = "Divide by 16"] _101,
+    #[doc = "Divide by 32"] _110,
+    #[doc = "Divide by 64"] _111,
 }
 impl SIRCDIV2W {
     #[allow(missing_docs)]

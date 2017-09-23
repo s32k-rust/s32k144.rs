@@ -22,7 +22,9 @@ impl super::CR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -85,8 +87,7 @@ impl ERCAR {
 #[doc = "Possible values of the field `HOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HOER {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Any error causes the HALT bit to set. Subsequently, all service requests are ignored until the HALT bit is cleared."]
     _1,
 }
@@ -132,8 +133,7 @@ impl HOER {
 #[doc = "Possible values of the field `HALT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HALTR {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Stall the start of any new channels. Executing channels are allowed to complete. Channel execution resumes when this bit is cleared."]
     _1,
 }
@@ -226,8 +226,7 @@ impl CLMR {
 #[doc = "Possible values of the field `EMLM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMLMR {
-    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."]
-    _0,
+    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."] _0,
     #[doc = "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field. The individual enable fields allow the minor loop offset to be applied to the source address, the destination address, or both. The NBYTES field is reduced when either offset is enabled."]
     _1,
 }
@@ -273,8 +272,7 @@ impl EMLMR {
 #[doc = "Possible values of the field `ECX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECXR {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Cancel the remaining data transfer in the same fashion as the CX bit. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The ECX bit clears itself after the cancel is honored. In addition to cancelling the transfer, ECX treats the cancel as an error condition, thus updating the Error Status register (DMAx_ES) and generating an optional error interrupt."]
     _1,
 }
@@ -320,8 +318,7 @@ impl ECXR {
 #[doc = "Possible values of the field `CX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CXR {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Cancel the remaining data transfer. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The CX bit clears itself after the cancel has been honored. This cancel retires the channel normally as if the minor loop was completed."]
     _1,
 }
@@ -412,8 +409,7 @@ impl<'a> _ERCAW<'a> {
 }
 #[doc = "Values that can be written to the field `HOE`"]
 pub enum HOEW {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Any error causes the HALT bit to set. Subsequently, all service requests are ignored until the HALT bit is cleared."]
     _1,
 }
@@ -470,8 +466,7 @@ impl<'a> _HOEW<'a> {
 }
 #[doc = "Values that can be written to the field `HALT`"]
 pub enum HALTW {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Stall the start of any new channels. Executing channels are allowed to complete. Channel execution resumes when this bit is cleared."]
     _1,
 }
@@ -586,8 +581,7 @@ impl<'a> _CLMW<'a> {
 }
 #[doc = "Values that can be written to the field `EMLM`"]
 pub enum EMLMW {
-    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."]
-    _0,
+    #[doc = "Disabled. TCDn.word2 is defined as a 32-bit NBYTES field."] _0,
     #[doc = "Enabled. TCDn.word2 is redefined to include individual enable fields, an offset field, and the NBYTES field. The individual enable fields allow the minor loop offset to be applied to the source address, the destination address, or both. The NBYTES field is reduced when either offset is enabled."]
     _1,
 }
@@ -644,8 +638,7 @@ impl<'a> _EMLMW<'a> {
 }
 #[doc = "Values that can be written to the field `ECX`"]
 pub enum ECXW {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Cancel the remaining data transfer in the same fashion as the CX bit. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The ECX bit clears itself after the cancel is honored. In addition to cancelling the transfer, ECX treats the cancel as an error condition, thus updating the Error Status register (DMAx_ES) and generating an optional error interrupt."]
     _1,
 }
@@ -702,8 +695,7 @@ impl<'a> _ECXW<'a> {
 }
 #[doc = "Values that can be written to the field `CX`"]
 pub enum CXW {
-    #[doc = "Normal operation"]
-    _0,
+    #[doc = "Normal operation"] _0,
     #[doc = "Cancel the remaining data transfer. Stop the executing channel and force the minor loop to finish. The cancel takes effect after the last write of the current read/write sequence. The CX bit clears itself after the cancel has been honored. This cancel retires the channel normally as if the minor loop was completed."]
     _1,
 }

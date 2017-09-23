@@ -22,7 +22,9 @@ impl super::SC {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,22 +45,14 @@ impl super::SC {
 #[doc = "Possible values of the field `PS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSR {
-    #[doc = "Divide by 1"]
-    _000,
-    #[doc = "Divide by 2"]
-    _001,
-    #[doc = "Divide by 4"]
-    _010,
-    #[doc = "Divide by 8"]
-    _011,
-    #[doc = "Divide by 16"]
-    _100,
-    #[doc = "Divide by 32"]
-    _101,
-    #[doc = "Divide by 64"]
-    _110,
-    #[doc = "Divide by 128"]
-    _111,
+    #[doc = "Divide by 1"] _000,
+    #[doc = "Divide by 2"] _001,
+    #[doc = "Divide by 4"] _010,
+    #[doc = "Divide by 8"] _011,
+    #[doc = "Divide by 16"] _100,
+    #[doc = "Divide by 32"] _101,
+    #[doc = "Divide by 64"] _110,
+    #[doc = "Divide by 128"] _111,
 }
 impl PSR {
     #[doc = r" Value of the field as raw bits"]
@@ -135,14 +129,10 @@ impl PSR {
 #[doc = "Possible values of the field `CLKS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKSR {
-    #[doc = "No clock selected. This in effect disables the FTM counter."]
-    _00,
-    #[doc = "FTM input clock"]
-    _01,
-    #[doc = "Fixed frequency clock"]
-    _10,
-    #[doc = "External clock"]
-    _11,
+    #[doc = "No clock selected. This in effect disables the FTM counter."] _00,
+    #[doc = "FTM input clock"] _01,
+    #[doc = "Fixed frequency clock"] _10,
+    #[doc = "External clock"] _11,
 }
 impl CLKSR {
     #[doc = r" Value of the field as raw bits"]
@@ -191,10 +181,8 @@ impl CLKSR {
 #[doc = "Possible values of the field `CPWMS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPWMSR {
-    #[doc = "FTM counter operates in Up Counting mode."]
-    _0,
-    #[doc = "FTM counter operates in Up-Down Counting mode."]
-    _1,
+    #[doc = "FTM counter operates in Up Counting mode."] _0,
+    #[doc = "FTM counter operates in Up-Down Counting mode."] _1,
 }
 impl CPWMSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -238,10 +226,8 @@ impl CPWMSR {
 #[doc = "Possible values of the field `RIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RIER {
-    #[doc = "Reload point interrupt is disabled."]
-    _0,
-    #[doc = "Reload point interrupt is enabled."]
-    _1,
+    #[doc = "Reload point interrupt is disabled."] _0,
+    #[doc = "Reload point interrupt is enabled."] _1,
 }
 impl RIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -285,10 +271,8 @@ impl RIER {
 #[doc = "Possible values of the field `RF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFR {
-    #[doc = "A selected reload point did not happen."]
-    _0,
-    #[doc = "A selected reload point happened."]
-    _1,
+    #[doc = "A selected reload point did not happen."] _0,
+    #[doc = "A selected reload point happened."] _1,
 }
 impl RFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -332,10 +316,8 @@ impl RFR {
 #[doc = "Possible values of the field `TOIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TOIER {
-    #[doc = "Disable TOF interrupts. Use software polling."]
-    _0,
-    #[doc = "Enable TOF interrupts. An interrupt is generated when TOF equals one."]
-    _1,
+    #[doc = "Disable TOF interrupts. Use software polling."] _0,
+    #[doc = "Enable TOF interrupts. An interrupt is generated when TOF equals one."] _1,
 }
 impl TOIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -379,10 +361,8 @@ impl TOIER {
 #[doc = "Possible values of the field `TOF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TOFR {
-    #[doc = "FTM counter has not overflowed."]
-    _0,
-    #[doc = "FTM counter has overflowed."]
-    _1,
+    #[doc = "FTM counter has not overflowed."] _0,
+    #[doc = "FTM counter has overflowed."] _1,
 }
 impl TOFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -426,10 +406,8 @@ impl TOFR {
 #[doc = "Possible values of the field `PWMEN0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN0R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -473,10 +451,8 @@ impl PWMEN0R {
 #[doc = "Possible values of the field `PWMEN1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN1R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -520,10 +496,8 @@ impl PWMEN1R {
 #[doc = "Possible values of the field `PWMEN2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN2R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -567,10 +541,8 @@ impl PWMEN2R {
 #[doc = "Possible values of the field `PWMEN3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN3R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -614,10 +586,8 @@ impl PWMEN3R {
 #[doc = "Possible values of the field `PWMEN4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN4R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -661,10 +631,8 @@ impl PWMEN4R {
 #[doc = "Possible values of the field `PWMEN5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN5R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -708,10 +676,8 @@ impl PWMEN5R {
 #[doc = "Possible values of the field `PWMEN6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN6R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -755,10 +721,8 @@ impl PWMEN6R {
 #[doc = "Possible values of the field `PWMEN7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN7R {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -802,38 +766,22 @@ impl PWMEN7R {
 #[doc = "Possible values of the field `FLTPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLTPSR {
-    #[doc = "Divide by 1"]
-    _0000,
-    #[doc = "Divide by 2"]
-    _0001,
-    #[doc = "Divide by 3"]
-    _0010,
-    #[doc = "Divide by 4"]
-    _0011,
-    #[doc = "Divide by 5"]
-    _0100,
-    #[doc = "Divide by 6"]
-    _0101,
-    #[doc = "Divide by 7"]
-    _0110,
-    #[doc = "Divide by 8"]
-    _0111,
-    #[doc = "Divide by 9"]
-    _1000,
-    #[doc = "Divide by 10"]
-    _1001,
-    #[doc = "Divide by 11"]
-    _1010,
-    #[doc = "Divide by 12"]
-    _1011,
-    #[doc = "Divide by 13"]
-    _1100,
-    #[doc = "Divide by 14"]
-    _1101,
-    #[doc = "Divide by 15"]
-    _1110,
-    #[doc = "Divide by 16"]
-    _1111,
+    #[doc = "Divide by 1"] _0000,
+    #[doc = "Divide by 2"] _0001,
+    #[doc = "Divide by 3"] _0010,
+    #[doc = "Divide by 4"] _0011,
+    #[doc = "Divide by 5"] _0100,
+    #[doc = "Divide by 6"] _0101,
+    #[doc = "Divide by 7"] _0110,
+    #[doc = "Divide by 8"] _0111,
+    #[doc = "Divide by 9"] _1000,
+    #[doc = "Divide by 10"] _1001,
+    #[doc = "Divide by 11"] _1010,
+    #[doc = "Divide by 12"] _1011,
+    #[doc = "Divide by 13"] _1100,
+    #[doc = "Divide by 14"] _1101,
+    #[doc = "Divide by 15"] _1110,
+    #[doc = "Divide by 16"] _1111,
 }
 impl FLTPSR {
     #[doc = r" Value of the field as raw bits"]
@@ -965,22 +913,14 @@ impl FLTPSR {
 }
 #[doc = "Values that can be written to the field `PS`"]
 pub enum PSW {
-    #[doc = "Divide by 1"]
-    _000,
-    #[doc = "Divide by 2"]
-    _001,
-    #[doc = "Divide by 4"]
-    _010,
-    #[doc = "Divide by 8"]
-    _011,
-    #[doc = "Divide by 16"]
-    _100,
-    #[doc = "Divide by 32"]
-    _101,
-    #[doc = "Divide by 64"]
-    _110,
-    #[doc = "Divide by 128"]
-    _111,
+    #[doc = "Divide by 1"] _000,
+    #[doc = "Divide by 2"] _001,
+    #[doc = "Divide by 4"] _010,
+    #[doc = "Divide by 8"] _011,
+    #[doc = "Divide by 16"] _100,
+    #[doc = "Divide by 32"] _101,
+    #[doc = "Divide by 64"] _110,
+    #[doc = "Divide by 128"] _111,
 }
 impl PSW {
     #[allow(missing_docs)]
@@ -1063,14 +1003,10 @@ impl<'a> _PSW<'a> {
 }
 #[doc = "Values that can be written to the field `CLKS`"]
 pub enum CLKSW {
-    #[doc = "No clock selected. This in effect disables the FTM counter."]
-    _00,
-    #[doc = "FTM input clock"]
-    _01,
-    #[doc = "Fixed frequency clock"]
-    _10,
-    #[doc = "External clock"]
-    _11,
+    #[doc = "No clock selected. This in effect disables the FTM counter."] _00,
+    #[doc = "FTM input clock"] _01,
+    #[doc = "Fixed frequency clock"] _10,
+    #[doc = "External clock"] _11,
 }
 impl CLKSW {
     #[allow(missing_docs)]
@@ -1129,10 +1065,8 @@ impl<'a> _CLKSW<'a> {
 }
 #[doc = "Values that can be written to the field `CPWMS`"]
 pub enum CPWMSW {
-    #[doc = "FTM counter operates in Up Counting mode."]
-    _0,
-    #[doc = "FTM counter operates in Up-Down Counting mode."]
-    _1,
+    #[doc = "FTM counter operates in Up Counting mode."] _0,
+    #[doc = "FTM counter operates in Up-Down Counting mode."] _1,
 }
 impl CPWMSW {
     #[allow(missing_docs)]
@@ -1187,10 +1121,8 @@ impl<'a> _CPWMSW<'a> {
 }
 #[doc = "Values that can be written to the field `RIE`"]
 pub enum RIEW {
-    #[doc = "Reload point interrupt is disabled."]
-    _0,
-    #[doc = "Reload point interrupt is enabled."]
-    _1,
+    #[doc = "Reload point interrupt is disabled."] _0,
+    #[doc = "Reload point interrupt is enabled."] _1,
 }
 impl RIEW {
     #[allow(missing_docs)]
@@ -1245,10 +1177,8 @@ impl<'a> _RIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TOIE`"]
 pub enum TOIEW {
-    #[doc = "Disable TOF interrupts. Use software polling."]
-    _0,
-    #[doc = "Enable TOF interrupts. An interrupt is generated when TOF equals one."]
-    _1,
+    #[doc = "Disable TOF interrupts. Use software polling."] _0,
+    #[doc = "Enable TOF interrupts. An interrupt is generated when TOF equals one."] _1,
 }
 impl TOIEW {
     #[allow(missing_docs)]
@@ -1303,10 +1233,8 @@ impl<'a> _TOIEW<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN0`"]
 pub enum PWMEN0W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN0W {
     #[allow(missing_docs)]
@@ -1361,10 +1289,8 @@ impl<'a> _PWMEN0W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN1`"]
 pub enum PWMEN1W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN1W {
     #[allow(missing_docs)]
@@ -1419,10 +1345,8 @@ impl<'a> _PWMEN1W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN2`"]
 pub enum PWMEN2W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN2W {
     #[allow(missing_docs)]
@@ -1477,10 +1401,8 @@ impl<'a> _PWMEN2W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN3`"]
 pub enum PWMEN3W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN3W {
     #[allow(missing_docs)]
@@ -1535,10 +1457,8 @@ impl<'a> _PWMEN3W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN4`"]
 pub enum PWMEN4W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN4W {
     #[allow(missing_docs)]
@@ -1593,10 +1513,8 @@ impl<'a> _PWMEN4W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN5`"]
 pub enum PWMEN5W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN5W {
     #[allow(missing_docs)]
@@ -1651,10 +1569,8 @@ impl<'a> _PWMEN5W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN6`"]
 pub enum PWMEN6W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN6W {
     #[allow(missing_docs)]
@@ -1709,10 +1625,8 @@ impl<'a> _PWMEN6W<'a> {
 }
 #[doc = "Values that can be written to the field `PWMEN7`"]
 pub enum PWMEN7W {
-    #[doc = "Channel output port is disabled"]
-    _0,
-    #[doc = "Channel output port is enabled"]
-    _1,
+    #[doc = "Channel output port is disabled"] _0,
+    #[doc = "Channel output port is enabled"] _1,
 }
 impl PWMEN7W {
     #[allow(missing_docs)]
@@ -1767,38 +1681,22 @@ impl<'a> _PWMEN7W<'a> {
 }
 #[doc = "Values that can be written to the field `FLTPS`"]
 pub enum FLTPSW {
-    #[doc = "Divide by 1"]
-    _0000,
-    #[doc = "Divide by 2"]
-    _0001,
-    #[doc = "Divide by 3"]
-    _0010,
-    #[doc = "Divide by 4"]
-    _0011,
-    #[doc = "Divide by 5"]
-    _0100,
-    #[doc = "Divide by 6"]
-    _0101,
-    #[doc = "Divide by 7"]
-    _0110,
-    #[doc = "Divide by 8"]
-    _0111,
-    #[doc = "Divide by 9"]
-    _1000,
-    #[doc = "Divide by 10"]
-    _1001,
-    #[doc = "Divide by 11"]
-    _1010,
-    #[doc = "Divide by 12"]
-    _1011,
-    #[doc = "Divide by 13"]
-    _1100,
-    #[doc = "Divide by 14"]
-    _1101,
-    #[doc = "Divide by 15"]
-    _1110,
-    #[doc = "Divide by 16"]
-    _1111,
+    #[doc = "Divide by 1"] _0000,
+    #[doc = "Divide by 2"] _0001,
+    #[doc = "Divide by 3"] _0010,
+    #[doc = "Divide by 4"] _0011,
+    #[doc = "Divide by 5"] _0100,
+    #[doc = "Divide by 6"] _0101,
+    #[doc = "Divide by 7"] _0110,
+    #[doc = "Divide by 8"] _0111,
+    #[doc = "Divide by 9"] _1000,
+    #[doc = "Divide by 10"] _1001,
+    #[doc = "Divide by 11"] _1010,
+    #[doc = "Divide by 12"] _1011,
+    #[doc = "Divide by 13"] _1100,
+    #[doc = "Divide by 14"] _1101,
+    #[doc = "Divide by 15"] _1110,
+    #[doc = "Divide by 16"] _1111,
 }
 impl FLTPSW {
     #[allow(missing_docs)]

@@ -22,7 +22,9 @@ impl super::SR0 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SR0 {
 #[doc = "Possible values of the field `NCE1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCE1R {
-    #[doc = "No non-correctable error event on Memory 1 detected"]
-    _0,
-    #[doc = "Non-correctable error event on Memory 1 detected"]
-    _1,
+    #[doc = "No non-correctable error event on Memory 1 detected"] _0,
+    #[doc = "Non-correctable error event on Memory 1 detected"] _1,
 }
 impl NCE1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl NCE1R {
 #[doc = "Possible values of the field `SBC1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBC1R {
-    #[doc = "No single-bit correction event on Memory 1 detected"]
-    _0,
-    #[doc = "Single-bit correction event on Memory 1 detected"]
-    _1,
+    #[doc = "No single-bit correction event on Memory 1 detected"] _0,
+    #[doc = "Single-bit correction event on Memory 1 detected"] _1,
 }
 impl SBC1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl SBC1R {
 #[doc = "Possible values of the field `NCE0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCE0R {
-    #[doc = "No non-correctable error event on Memory 0 detected"]
-    _0,
-    #[doc = "Non-correctable error event on Memory 0 detected"]
-    _1,
+    #[doc = "No non-correctable error event on Memory 0 detected"] _0,
+    #[doc = "Non-correctable error event on Memory 0 detected"] _1,
 }
 impl NCE0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl NCE0R {
 #[doc = "Possible values of the field `SBC0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBC0R {
-    #[doc = "No single-bit correction event on Memory 0 detected"]
-    _0,
-    #[doc = "Single-bit correction event on Memory 0 detected"]
-    _1,
+    #[doc = "No single-bit correction event on Memory 0 detected"] _0,
+    #[doc = "Single-bit correction event on Memory 0 detected"] _1,
 }
 impl SBC0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -230,10 +224,8 @@ impl SBC0R {
 }
 #[doc = "Values that can be written to the field `NCE1`"]
 pub enum NCE1W {
-    #[doc = "No non-correctable error event on Memory 1 detected"]
-    _0,
-    #[doc = "Non-correctable error event on Memory 1 detected"]
-    _1,
+    #[doc = "No non-correctable error event on Memory 1 detected"] _0,
+    #[doc = "Non-correctable error event on Memory 1 detected"] _1,
 }
 impl NCE1W {
     #[allow(missing_docs)]
@@ -288,10 +280,8 @@ impl<'a> _NCE1W<'a> {
 }
 #[doc = "Values that can be written to the field `SBC1`"]
 pub enum SBC1W {
-    #[doc = "No single-bit correction event on Memory 1 detected"]
-    _0,
-    #[doc = "Single-bit correction event on Memory 1 detected"]
-    _1,
+    #[doc = "No single-bit correction event on Memory 1 detected"] _0,
+    #[doc = "Single-bit correction event on Memory 1 detected"] _1,
 }
 impl SBC1W {
     #[allow(missing_docs)]
@@ -346,10 +336,8 @@ impl<'a> _SBC1W<'a> {
 }
 #[doc = "Values that can be written to the field `NCE0`"]
 pub enum NCE0W {
-    #[doc = "No non-correctable error event on Memory 0 detected"]
-    _0,
-    #[doc = "Non-correctable error event on Memory 0 detected"]
-    _1,
+    #[doc = "No non-correctable error event on Memory 0 detected"] _0,
+    #[doc = "Non-correctable error event on Memory 0 detected"] _1,
 }
 impl NCE0W {
     #[allow(missing_docs)]
@@ -404,10 +392,8 @@ impl<'a> _NCE0W<'a> {
 }
 #[doc = "Values that can be written to the field `SBC0`"]
 pub enum SBC0W {
-    #[doc = "No single-bit correction event on Memory 0 detected"]
-    _0,
-    #[doc = "Single-bit correction event on Memory 0 detected"]
-    _1,
+    #[doc = "No single-bit correction event on Memory 0 detected"] _0,
+    #[doc = "Single-bit correction event on Memory 0 detected"] _1,
 }
 impl SBC0W {
     #[allow(missing_docs)]

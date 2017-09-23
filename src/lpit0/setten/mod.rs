@@ -22,7 +22,9 @@ impl super::SETTEN {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::SETTEN {
 #[doc = "Possible values of the field `SET_T_EN_0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SET_T_EN_0R {
-    #[doc = "No effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 0"]
-    _1,
+    #[doc = "No effect"] _0,
+    #[doc = "Enables the Timer Channel 0"] _1,
 }
 impl SET_T_EN_0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +90,8 @@ impl SET_T_EN_0R {
 #[doc = "Possible values of the field `SET_T_EN_1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SET_T_EN_1R {
-    #[doc = "No Effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 1"]
-    _1,
+    #[doc = "No Effect"] _0,
+    #[doc = "Enables the Timer Channel 1"] _1,
 }
 impl SET_T_EN_1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -137,10 +135,8 @@ impl SET_T_EN_1R {
 #[doc = "Possible values of the field `SET_T_EN_2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SET_T_EN_2R {
-    #[doc = "No Effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 2"]
-    _1,
+    #[doc = "No Effect"] _0,
+    #[doc = "Enables the Timer Channel 2"] _1,
 }
 impl SET_T_EN_2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -184,10 +180,8 @@ impl SET_T_EN_2R {
 #[doc = "Possible values of the field `SET_T_EN_3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SET_T_EN_3R {
-    #[doc = "No effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 3"]
-    _1,
+    #[doc = "No effect"] _0,
+    #[doc = "Enables the Timer Channel 3"] _1,
 }
 impl SET_T_EN_3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -230,10 +224,8 @@ impl SET_T_EN_3R {
 }
 #[doc = "Values that can be written to the field `SET_T_EN_0`"]
 pub enum SET_T_EN_0W {
-    #[doc = "No effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 0"]
-    _1,
+    #[doc = "No effect"] _0,
+    #[doc = "Enables the Timer Channel 0"] _1,
 }
 impl SET_T_EN_0W {
     #[allow(missing_docs)]
@@ -288,10 +280,8 @@ impl<'a> _SET_T_EN_0W<'a> {
 }
 #[doc = "Values that can be written to the field `SET_T_EN_1`"]
 pub enum SET_T_EN_1W {
-    #[doc = "No Effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 1"]
-    _1,
+    #[doc = "No Effect"] _0,
+    #[doc = "Enables the Timer Channel 1"] _1,
 }
 impl SET_T_EN_1W {
     #[allow(missing_docs)]
@@ -346,10 +336,8 @@ impl<'a> _SET_T_EN_1W<'a> {
 }
 #[doc = "Values that can be written to the field `SET_T_EN_2`"]
 pub enum SET_T_EN_2W {
-    #[doc = "No Effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 2"]
-    _1,
+    #[doc = "No Effect"] _0,
+    #[doc = "Enables the Timer Channel 2"] _1,
 }
 impl SET_T_EN_2W {
     #[allow(missing_docs)]
@@ -404,10 +392,8 @@ impl<'a> _SET_T_EN_2W<'a> {
 }
 #[doc = "Values that can be written to the field `SET_T_EN_3`"]
 pub enum SET_T_EN_3W {
-    #[doc = "No effect"]
-    _0,
-    #[doc = "Enables the Timer Channel 3"]
-    _1,
+    #[doc = "No effect"] _0,
+    #[doc = "Enables the Timer Channel 3"] _1,
 }
 impl SET_T_EN_3W {
     #[allow(missing_docs)]

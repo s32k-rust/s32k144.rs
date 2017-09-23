@@ -2,84 +2,46 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Pin Control Register n"]
-    pub pcr0: PCR0,
-    #[doc = "0x04 - Pin Control Register n"]
-    pub pcr1: PCR1,
-    #[doc = "0x08 - Pin Control Register n"]
-    pub pcr2: PCR2,
-    #[doc = "0x0c - Pin Control Register n"]
-    pub pcr3: PCR3,
-    #[doc = "0x10 - Pin Control Register n"]
-    pub pcr4: PCR4,
-    #[doc = "0x14 - Pin Control Register n"]
-    pub pcr5: PCR5,
-    #[doc = "0x18 - Pin Control Register n"]
-    pub pcr6: PCR6,
-    #[doc = "0x1c - Pin Control Register n"]
-    pub pcr7: PCR7,
-    #[doc = "0x20 - Pin Control Register n"]
-    pub pcr8: PCR8,
-    #[doc = "0x24 - Pin Control Register n"]
-    pub pcr9: PCR9,
-    #[doc = "0x28 - Pin Control Register n"]
-    pub pcr10: PCR10,
-    #[doc = "0x2c - Pin Control Register n"]
-    pub pcr11: PCR11,
-    #[doc = "0x30 - Pin Control Register n"]
-    pub pcr12: PCR12,
-    #[doc = "0x34 - Pin Control Register n"]
-    pub pcr13: PCR13,
-    #[doc = "0x38 - Pin Control Register n"]
-    pub pcr14: PCR14,
-    #[doc = "0x3c - Pin Control Register n"]
-    pub pcr15: PCR15,
-    #[doc = "0x40 - Pin Control Register n"]
-    pub pcr16: PCR16,
-    #[doc = "0x44 - Pin Control Register n"]
-    pub pcr17: PCR17,
-    #[doc = "0x48 - Pin Control Register n"]
-    pub pcr18: PCR18,
-    #[doc = "0x4c - Pin Control Register n"]
-    pub pcr19: PCR19,
-    #[doc = "0x50 - Pin Control Register n"]
-    pub pcr20: PCR20,
-    #[doc = "0x54 - Pin Control Register n"]
-    pub pcr21: PCR21,
-    #[doc = "0x58 - Pin Control Register n"]
-    pub pcr22: PCR22,
-    #[doc = "0x5c - Pin Control Register n"]
-    pub pcr23: PCR23,
-    #[doc = "0x60 - Pin Control Register n"]
-    pub pcr24: PCR24,
-    #[doc = "0x64 - Pin Control Register n"]
-    pub pcr25: PCR25,
-    #[doc = "0x68 - Pin Control Register n"]
-    pub pcr26: PCR26,
-    #[doc = "0x6c - Pin Control Register n"]
-    pub pcr27: PCR27,
-    #[doc = "0x70 - Pin Control Register n"]
-    pub pcr28: PCR28,
-    #[doc = "0x74 - Pin Control Register n"]
-    pub pcr29: PCR29,
-    #[doc = "0x78 - Pin Control Register n"]
-    pub pcr30: PCR30,
-    #[doc = "0x7c - Pin Control Register n"]
-    pub pcr31: PCR31,
-    #[doc = "0x80 - Global Pin Control Low Register"]
-    pub gpclr: GPCLR,
-    #[doc = "0x84 - Global Pin Control High Register"]
-    pub gpchr: GPCHR,
+    #[doc = "0x00 - Pin Control Register n"] pub pcr0: PCR0,
+    #[doc = "0x04 - Pin Control Register n"] pub pcr1: PCR1,
+    #[doc = "0x08 - Pin Control Register n"] pub pcr2: PCR2,
+    #[doc = "0x0c - Pin Control Register n"] pub pcr3: PCR3,
+    #[doc = "0x10 - Pin Control Register n"] pub pcr4: PCR4,
+    #[doc = "0x14 - Pin Control Register n"] pub pcr5: PCR5,
+    #[doc = "0x18 - Pin Control Register n"] pub pcr6: PCR6,
+    #[doc = "0x1c - Pin Control Register n"] pub pcr7: PCR7,
+    #[doc = "0x20 - Pin Control Register n"] pub pcr8: PCR8,
+    #[doc = "0x24 - Pin Control Register n"] pub pcr9: PCR9,
+    #[doc = "0x28 - Pin Control Register n"] pub pcr10: PCR10,
+    #[doc = "0x2c - Pin Control Register n"] pub pcr11: PCR11,
+    #[doc = "0x30 - Pin Control Register n"] pub pcr12: PCR12,
+    #[doc = "0x34 - Pin Control Register n"] pub pcr13: PCR13,
+    #[doc = "0x38 - Pin Control Register n"] pub pcr14: PCR14,
+    #[doc = "0x3c - Pin Control Register n"] pub pcr15: PCR15,
+    #[doc = "0x40 - Pin Control Register n"] pub pcr16: PCR16,
+    #[doc = "0x44 - Pin Control Register n"] pub pcr17: PCR17,
+    #[doc = "0x48 - Pin Control Register n"] pub pcr18: PCR18,
+    #[doc = "0x4c - Pin Control Register n"] pub pcr19: PCR19,
+    #[doc = "0x50 - Pin Control Register n"] pub pcr20: PCR20,
+    #[doc = "0x54 - Pin Control Register n"] pub pcr21: PCR21,
+    #[doc = "0x58 - Pin Control Register n"] pub pcr22: PCR22,
+    #[doc = "0x5c - Pin Control Register n"] pub pcr23: PCR23,
+    #[doc = "0x60 - Pin Control Register n"] pub pcr24: PCR24,
+    #[doc = "0x64 - Pin Control Register n"] pub pcr25: PCR25,
+    #[doc = "0x68 - Pin Control Register n"] pub pcr26: PCR26,
+    #[doc = "0x6c - Pin Control Register n"] pub pcr27: PCR27,
+    #[doc = "0x70 - Pin Control Register n"] pub pcr28: PCR28,
+    #[doc = "0x74 - Pin Control Register n"] pub pcr29: PCR29,
+    #[doc = "0x78 - Pin Control Register n"] pub pcr30: PCR30,
+    #[doc = "0x7c - Pin Control Register n"] pub pcr31: PCR31,
+    #[doc = "0x80 - Global Pin Control Low Register"] pub gpclr: GPCLR,
+    #[doc = "0x84 - Global Pin Control High Register"] pub gpchr: GPCHR,
     _reserved0: [u8; 24usize],
-    #[doc = "0xa0 - Interrupt Status Flag Register"]
-    pub isfr: ISFR,
+    #[doc = "0xa0 - Interrupt Status Flag Register"] pub isfr: ISFR,
     _reserved1: [u8; 28usize],
-    #[doc = "0xc0 - Digital Filter Enable Register"]
-    pub dfer: DFER,
-    #[doc = "0xc4 - Digital Filter Clock Register"]
-    pub dfcr: DFCR,
-    #[doc = "0xc8 - Digital Filter Width Register"]
-    pub dfwr: DFWR,
+    #[doc = "0xc0 - Digital Filter Enable Register"] pub dfer: DFER,
+    #[doc = "0xc4 - Digital Filter Clock Register"] pub dfcr: DFCR,
+    #[doc = "0xc8 - Digital Filter Width Register"] pub dfwr: DFWR,
 }
 #[doc = "Pin Control Register n"]
 pub struct PCR0 {

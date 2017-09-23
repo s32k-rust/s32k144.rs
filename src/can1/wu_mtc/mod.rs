@@ -22,7 +22,9 @@ impl super::WU_MTC {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,10 +56,8 @@ impl MCOUNTERR {
 #[doc = "Possible values of the field `WUMF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUMFR {
-    #[doc = "No wake up by match event detected"]
-    _0,
-    #[doc = "Wake up by match event detected"]
-    _1,
+    #[doc = "No wake up by match event detected"] _0,
+    #[doc = "Wake up by match event detected"] _1,
 }
 impl WUMFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,10 +101,8 @@ impl WUMFR {
 #[doc = "Possible values of the field `WTOF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WTOFR {
-    #[doc = "No wake up by timeout event detected"]
-    _0,
-    #[doc = "Wake up by timeout event detected"]
-    _1,
+    #[doc = "No wake up by timeout event detected"] _0,
+    #[doc = "Wake up by timeout event detected"] _1,
 }
 impl WTOFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -147,10 +145,8 @@ impl WTOFR {
 }
 #[doc = "Values that can be written to the field `WUMF`"]
 pub enum WUMFW {
-    #[doc = "No wake up by match event detected"]
-    _0,
-    #[doc = "Wake up by match event detected"]
-    _1,
+    #[doc = "No wake up by match event detected"] _0,
+    #[doc = "Wake up by match event detected"] _1,
 }
 impl WUMFW {
     #[allow(missing_docs)]
@@ -205,10 +201,8 @@ impl<'a> _WUMFW<'a> {
 }
 #[doc = "Values that can be written to the field `WTOF`"]
 pub enum WTOFW {
-    #[doc = "No wake up by timeout event detected"]
-    _0,
-    #[doc = "Wake up by timeout event detected"]
-    _1,
+    #[doc = "No wake up by timeout event detected"] _0,
+    #[doc = "Wake up by timeout event detected"] _1,
 }
 impl WTOFW {
     #[allow(missing_docs)]

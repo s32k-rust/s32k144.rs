@@ -2,17 +2,12 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
-    pub ctrl: CTRL,
-    #[doc = "0x01 - Service Register"]
-    pub serv: SERV,
-    #[doc = "0x02 - Compare Low Register"]
-    pub cmpl: CMPL,
-    #[doc = "0x03 - Compare High Register"]
-    pub cmph: CMPH,
+    #[doc = "0x00 - Control Register"] pub ctrl: CTRL,
+    #[doc = "0x01 - Service Register"] pub serv: SERV,
+    #[doc = "0x02 - Compare Low Register"] pub cmpl: CMPL,
+    #[doc = "0x03 - Compare High Register"] pub cmph: CMPH,
     _reserved0: [u8; 1usize],
-    #[doc = "0x05 - Clock Prescaler Register"]
-    pub clkprescaler: CLKPRESCALER,
+    #[doc = "0x05 - Clock Prescaler Register"] pub clkprescaler: CLKPRESCALER,
 }
 #[doc = "Control Register"]
 pub struct CTRL {

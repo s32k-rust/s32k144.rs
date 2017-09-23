@@ -22,7 +22,9 @@ impl super::TIMCTL0 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,14 +45,10 @@ impl super::TIMCTL0 {
 #[doc = "Possible values of the field `TIMOD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMODR {
-    #[doc = "Timer Disabled."]
-    _0,
-    #[doc = "Dual 8-bit counters baud/bit mode."]
-    _1,
-    #[doc = "Dual 8-bit counters PWM mode."]
-    _10,
-    #[doc = "Single 16-bit counter mode."]
-    _11,
+    #[doc = "Timer Disabled."] _0,
+    #[doc = "Dual 8-bit counters baud/bit mode."] _1,
+    #[doc = "Dual 8-bit counters PWM mode."] _10,
+    #[doc = "Single 16-bit counter mode."] _11,
 }
 impl TIMODR {
     #[doc = r" Value of the field as raw bits"]
@@ -99,10 +97,8 @@ impl TIMODR {
 #[doc = "Possible values of the field `PINPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINPOLR {
-    #[doc = "Pin is active high"]
-    _0,
-    #[doc = "Pin is active low"]
-    _1,
+    #[doc = "Pin is active high"] _0,
+    #[doc = "Pin is active low"] _1,
 }
 impl PINPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -157,14 +153,10 @@ impl PINSELR {
 #[doc = "Possible values of the field `PINCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINCFGR {
-    #[doc = "Timer pin output disabled"]
-    _0,
-    #[doc = "Timer pin open drain or bidirectional output enable"]
-    _1,
-    #[doc = "Timer pin bidirectional output data"]
-    _10,
-    #[doc = "Timer pin output"]
-    _11,
+    #[doc = "Timer pin output disabled"] _0,
+    #[doc = "Timer pin open drain or bidirectional output enable"] _1,
+    #[doc = "Timer pin bidirectional output data"] _10,
+    #[doc = "Timer pin output"] _11,
 }
 impl PINCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -213,10 +205,8 @@ impl PINCFGR {
 #[doc = "Possible values of the field `TRGSRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGSRCR {
-    #[doc = "External trigger selected"]
-    _0,
-    #[doc = "Internal trigger selected"]
-    _1,
+    #[doc = "External trigger selected"] _0,
+    #[doc = "Internal trigger selected"] _1,
 }
 impl TRGSRCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -260,10 +250,8 @@ impl TRGSRCR {
 #[doc = "Possible values of the field `TRGPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGPOLR {
-    #[doc = "Trigger active high"]
-    _0,
-    #[doc = "Trigger active low"]
-    _1,
+    #[doc = "Trigger active high"] _0,
+    #[doc = "Trigger active low"] _1,
 }
 impl TRGPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -317,14 +305,10 @@ impl TRGSELR {
 }
 #[doc = "Values that can be written to the field `TIMOD`"]
 pub enum TIMODW {
-    #[doc = "Timer Disabled."]
-    _0,
-    #[doc = "Dual 8-bit counters baud/bit mode."]
-    _1,
-    #[doc = "Dual 8-bit counters PWM mode."]
-    _10,
-    #[doc = "Single 16-bit counter mode."]
-    _11,
+    #[doc = "Timer Disabled."] _0,
+    #[doc = "Dual 8-bit counters baud/bit mode."] _1,
+    #[doc = "Dual 8-bit counters PWM mode."] _10,
+    #[doc = "Single 16-bit counter mode."] _11,
 }
 impl TIMODW {
     #[allow(missing_docs)]
@@ -383,10 +367,8 @@ impl<'a> _TIMODW<'a> {
 }
 #[doc = "Values that can be written to the field `PINPOL`"]
 pub enum PINPOLW {
-    #[doc = "Pin is active high"]
-    _0,
-    #[doc = "Pin is active low"]
-    _1,
+    #[doc = "Pin is active high"] _0,
+    #[doc = "Pin is active low"] _1,
 }
 impl PINPOLW {
     #[allow(missing_docs)]
@@ -456,14 +438,10 @@ impl<'a> _PINSELW<'a> {
 }
 #[doc = "Values that can be written to the field `PINCFG`"]
 pub enum PINCFGW {
-    #[doc = "Timer pin output disabled"]
-    _0,
-    #[doc = "Timer pin open drain or bidirectional output enable"]
-    _1,
-    #[doc = "Timer pin bidirectional output data"]
-    _10,
-    #[doc = "Timer pin output"]
-    _11,
+    #[doc = "Timer pin output disabled"] _0,
+    #[doc = "Timer pin open drain or bidirectional output enable"] _1,
+    #[doc = "Timer pin bidirectional output data"] _10,
+    #[doc = "Timer pin output"] _11,
 }
 impl PINCFGW {
     #[allow(missing_docs)]
@@ -522,10 +500,8 @@ impl<'a> _PINCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `TRGSRC`"]
 pub enum TRGSRCW {
-    #[doc = "External trigger selected"]
-    _0,
-    #[doc = "Internal trigger selected"]
-    _1,
+    #[doc = "External trigger selected"] _0,
+    #[doc = "Internal trigger selected"] _1,
 }
 impl TRGSRCW {
     #[allow(missing_docs)]
@@ -580,10 +556,8 @@ impl<'a> _TRGSRCW<'a> {
 }
 #[doc = "Values that can be written to the field `TRGPOL`"]
 pub enum TRGPOLW {
-    #[doc = "Trigger active high"]
-    _0,
-    #[doc = "Trigger active low"]
-    _1,
+    #[doc = "Trigger active high"] _0,
+    #[doc = "Trigger active low"] _1,
 }
 impl TRGPOLW {
     #[allow(missing_docs)]

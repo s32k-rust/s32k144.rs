@@ -2,93 +2,53 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Module Configuration Register"]
-    pub mcr: MCR,
-    #[doc = "0x04 - Control 1 register"]
-    pub ctrl1: CTRL1,
-    #[doc = "0x08 - Free Running Timer"]
-    pub timer: TIMER,
+    #[doc = "0x00 - Module Configuration Register"] pub mcr: MCR,
+    #[doc = "0x04 - Control 1 register"] pub ctrl1: CTRL1,
+    #[doc = "0x08 - Free Running Timer"] pub timer: TIMER,
     _reserved0: [u8; 4usize],
-    #[doc = "0x10 - Rx Mailboxes Global Mask Register"]
-    pub rxmgmask: RXMGMASK,
-    #[doc = "0x14 - Rx 14 Mask register"]
-    pub rx14mask: RX14MASK,
-    #[doc = "0x18 - Rx 15 Mask register"]
-    pub rx15mask: RX15MASK,
-    #[doc = "0x1c - Error Counter"]
-    pub ecr: ECR,
-    #[doc = "0x20 - Error and Status 1 register"]
-    pub esr1: ESR1,
+    #[doc = "0x10 - Rx Mailboxes Global Mask Register"] pub rxmgmask: RXMGMASK,
+    #[doc = "0x14 - Rx 14 Mask register"] pub rx14mask: RX14MASK,
+    #[doc = "0x18 - Rx 15 Mask register"] pub rx15mask: RX15MASK,
+    #[doc = "0x1c - Error Counter"] pub ecr: ECR,
+    #[doc = "0x20 - Error and Status 1 register"] pub esr1: ESR1,
     _reserved1: [u8; 4usize],
-    #[doc = "0x28 - Interrupt Masks 1 register"]
-    pub imask1: IMASK1,
+    #[doc = "0x28 - Interrupt Masks 1 register"] pub imask1: IMASK1,
     _reserved2: [u8; 4usize],
-    #[doc = "0x30 - Interrupt Flags 1 register"]
-    pub iflag1: IFLAG1,
-    #[doc = "0x34 - Control 2 register"]
-    pub ctrl2: CTRL2,
-    #[doc = "0x38 - Error and Status 2 register"]
-    pub esr2: ESR2,
+    #[doc = "0x30 - Interrupt Flags 1 register"] pub iflag1: IFLAG1,
+    #[doc = "0x34 - Control 2 register"] pub ctrl2: CTRL2,
+    #[doc = "0x38 - Error and Status 2 register"] pub esr2: ESR2,
     _reserved3: [u8; 8usize],
-    #[doc = "0x44 - CRC Register"]
-    pub crcr: CRCR,
-    #[doc = "0x48 - Rx FIFO Global Mask register"]
-    pub rxfgmask: RXFGMASK,
-    #[doc = "0x4c - Rx FIFO Information Register"]
-    pub rxfir: RXFIR,
-    #[doc = "0x50 - CAN Bit Timing Register"]
-    pub cbt: CBT,
+    #[doc = "0x44 - CRC Register"] pub crcr: CRCR,
+    #[doc = "0x48 - Rx FIFO Global Mask register"] pub rxfgmask: RXFGMASK,
+    #[doc = "0x4c - Rx FIFO Information Register"] pub rxfir: RXFIR,
+    #[doc = "0x50 - CAN Bit Timing Register"] pub cbt: CBT,
     _reserved4: [u8; 44usize],
-    #[doc = "0x80 - Embedded RAM"]
-    pub embedded_ram: [EMBEDDEDRAM; 128],
+    #[doc = "0x80 - Embedded RAM"] pub embedded_ram: [EMBEDDEDRAM; 128],
     _reserved5: [u8; 1536usize],
-    #[doc = "0x880 - Rx Individual Mask Registers"]
-    pub rximr0: RXIMR0,
-    #[doc = "0x884 - Rx Individual Mask Registers"]
-    pub rximr1: RXIMR1,
-    #[doc = "0x888 - Rx Individual Mask Registers"]
-    pub rximr2: RXIMR2,
-    #[doc = "0x88c - Rx Individual Mask Registers"]
-    pub rximr3: RXIMR3,
-    #[doc = "0x890 - Rx Individual Mask Registers"]
-    pub rximr4: RXIMR4,
-    #[doc = "0x894 - Rx Individual Mask Registers"]
-    pub rximr5: RXIMR5,
-    #[doc = "0x898 - Rx Individual Mask Registers"]
-    pub rximr6: RXIMR6,
-    #[doc = "0x89c - Rx Individual Mask Registers"]
-    pub rximr7: RXIMR7,
-    #[doc = "0x8a0 - Rx Individual Mask Registers"]
-    pub rximr8: RXIMR8,
-    #[doc = "0x8a4 - Rx Individual Mask Registers"]
-    pub rximr9: RXIMR9,
-    #[doc = "0x8a8 - Rx Individual Mask Registers"]
-    pub rximr10: RXIMR10,
-    #[doc = "0x8ac - Rx Individual Mask Registers"]
-    pub rximr11: RXIMR11,
-    #[doc = "0x8b0 - Rx Individual Mask Registers"]
-    pub rximr12: RXIMR12,
-    #[doc = "0x8b4 - Rx Individual Mask Registers"]
-    pub rximr13: RXIMR13,
-    #[doc = "0x8b8 - Rx Individual Mask Registers"]
-    pub rximr14: RXIMR14,
-    #[doc = "0x8bc - Rx Individual Mask Registers"]
-    pub rximr15: RXIMR15,
+    #[doc = "0x880 - Rx Individual Mask Registers"] pub rximr0: RXIMR0,
+    #[doc = "0x884 - Rx Individual Mask Registers"] pub rximr1: RXIMR1,
+    #[doc = "0x888 - Rx Individual Mask Registers"] pub rximr2: RXIMR2,
+    #[doc = "0x88c - Rx Individual Mask Registers"] pub rximr3: RXIMR3,
+    #[doc = "0x890 - Rx Individual Mask Registers"] pub rximr4: RXIMR4,
+    #[doc = "0x894 - Rx Individual Mask Registers"] pub rximr5: RXIMR5,
+    #[doc = "0x898 - Rx Individual Mask Registers"] pub rximr6: RXIMR6,
+    #[doc = "0x89c - Rx Individual Mask Registers"] pub rximr7: RXIMR7,
+    #[doc = "0x8a0 - Rx Individual Mask Registers"] pub rximr8: RXIMR8,
+    #[doc = "0x8a4 - Rx Individual Mask Registers"] pub rximr9: RXIMR9,
+    #[doc = "0x8a8 - Rx Individual Mask Registers"] pub rximr10: RXIMR10,
+    #[doc = "0x8ac - Rx Individual Mask Registers"] pub rximr11: RXIMR11,
+    #[doc = "0x8b0 - Rx Individual Mask Registers"] pub rximr12: RXIMR12,
+    #[doc = "0x8b4 - Rx Individual Mask Registers"] pub rximr13: RXIMR13,
+    #[doc = "0x8b8 - Rx Individual Mask Registers"] pub rximr14: RXIMR14,
+    #[doc = "0x8bc - Rx Individual Mask Registers"] pub rximr15: RXIMR15,
     _reserved6: [u8; 576usize],
-    #[doc = "0xb00 - Pretended Networking Control 1 Register"]
-    pub ctrl1_pn: CTRL1_PN,
-    #[doc = "0xb04 - Pretended Networking Control 2 Register"]
-    pub ctrl2_pn: CTRL2_PN,
-    #[doc = "0xb08 - Pretended Networking Wake Up Match Register"]
-    pub wu_mtc: WU_MTC,
-    #[doc = "0xb0c - Pretended Networking ID Filter 1 Register"]
-    pub flt_id1: FLT_ID1,
-    #[doc = "0xb10 - Pretended Networking DLC Filter Register"]
-    pub flt_dlc: FLT_DLC,
-    #[doc = "0xb14 - Pretended Networking Payload Low Filter 1 Register"]
-    pub pl1_lo: PL1_LO,
-    #[doc = "0xb18 - Pretended Networking Payload High Filter 1 Register"]
-    pub pl1_hi: PL1_HI,
+    #[doc = "0xb00 - Pretended Networking Control 1 Register"] pub ctrl1_pn: CTRL1_PN,
+    #[doc = "0xb04 - Pretended Networking Control 2 Register"] pub ctrl2_pn: CTRL2_PN,
+    #[doc = "0xb08 - Pretended Networking Wake Up Match Register"] pub wu_mtc: WU_MTC,
+    #[doc = "0xb0c - Pretended Networking ID Filter 1 Register"] pub flt_id1: FLT_ID1,
+    #[doc = "0xb10 - Pretended Networking DLC Filter Register"] pub flt_dlc: FLT_DLC,
+    #[doc = "0xb14 - Pretended Networking Payload Low Filter 1 Register"] pub pl1_lo: PL1_LO,
+    #[doc = "0xb18 - Pretended Networking Payload High Filter 1 Register"] pub pl1_hi: PL1_HI,
     #[doc = "0xb1c - Pretended Networking ID Filter 2 Register / ID Mask Register"]
     pub flt_id2_idmask: FLT_ID2_IDMASK,
     #[doc = "0xb20 - Pretended Networking Payload Low Filter 2 Register / Payload Low Mask Register"]
@@ -96,45 +56,26 @@ pub struct RegisterBlock {
     #[doc = "0xb24 - Pretended Networking Payload High Filter 2 low order bits / Payload High Mask Register"]
     pub pl2_plmask_hi: PL2_PLMASK_HI,
     _reserved7: [u8; 24usize],
-    #[doc = "0xb40 - Wake Up Message Buffer Register for C/S"]
-    pub wmb0_cs: WMB0_CS,
-    #[doc = "0xb44 - Wake Up Message Buffer Register for ID"]
-    pub wmb0_id: WMB0_ID,
-    #[doc = "0xb48 - Wake Up Message Buffer Register for Data 0-3"]
-    pub wmb0_d03: WMB0_D03,
-    #[doc = "0xb4c - Wake Up Message Buffer Register Data 4-7"]
-    pub wmb0_d47: WMB0_D47,
-    #[doc = "0xb50 - Wake Up Message Buffer Register for C/S"]
-    pub wmb1_cs: WMB1_CS,
-    #[doc = "0xb54 - Wake Up Message Buffer Register for ID"]
-    pub wmb1_id: WMB1_ID,
-    #[doc = "0xb58 - Wake Up Message Buffer Register for Data 0-3"]
-    pub wmb1_d03: WMB1_D03,
-    #[doc = "0xb5c - Wake Up Message Buffer Register Data 4-7"]
-    pub wmb1_d47: WMB1_D47,
-    #[doc = "0xb60 - Wake Up Message Buffer Register for C/S"]
-    pub wmb2_cs: WMB2_CS,
-    #[doc = "0xb64 - Wake Up Message Buffer Register for ID"]
-    pub wmb2_id: WMB2_ID,
-    #[doc = "0xb68 - Wake Up Message Buffer Register for Data 0-3"]
-    pub wmb2_d03: WMB2_D03,
-    #[doc = "0xb6c - Wake Up Message Buffer Register Data 4-7"]
-    pub wmb2_d47: WMB2_D47,
-    #[doc = "0xb70 - Wake Up Message Buffer Register for C/S"]
-    pub wmb3_cs: WMB3_CS,
-    #[doc = "0xb74 - Wake Up Message Buffer Register for ID"]
-    pub wmb3_id: WMB3_ID,
-    #[doc = "0xb78 - Wake Up Message Buffer Register for Data 0-3"]
-    pub wmb3_d03: WMB3_D03,
-    #[doc = "0xb7c - Wake Up Message Buffer Register Data 4-7"]
-    pub wmb3_d47: WMB3_D47,
+    #[doc = "0xb40 - Wake Up Message Buffer Register for C/S"] pub wmb0_cs: WMB0_CS,
+    #[doc = "0xb44 - Wake Up Message Buffer Register for ID"] pub wmb0_id: WMB0_ID,
+    #[doc = "0xb48 - Wake Up Message Buffer Register for Data 0-3"] pub wmb0_d03: WMB0_D03,
+    #[doc = "0xb4c - Wake Up Message Buffer Register Data 4-7"] pub wmb0_d47: WMB0_D47,
+    #[doc = "0xb50 - Wake Up Message Buffer Register for C/S"] pub wmb1_cs: WMB1_CS,
+    #[doc = "0xb54 - Wake Up Message Buffer Register for ID"] pub wmb1_id: WMB1_ID,
+    #[doc = "0xb58 - Wake Up Message Buffer Register for Data 0-3"] pub wmb1_d03: WMB1_D03,
+    #[doc = "0xb5c - Wake Up Message Buffer Register Data 4-7"] pub wmb1_d47: WMB1_D47,
+    #[doc = "0xb60 - Wake Up Message Buffer Register for C/S"] pub wmb2_cs: WMB2_CS,
+    #[doc = "0xb64 - Wake Up Message Buffer Register for ID"] pub wmb2_id: WMB2_ID,
+    #[doc = "0xb68 - Wake Up Message Buffer Register for Data 0-3"] pub wmb2_d03: WMB2_D03,
+    #[doc = "0xb6c - Wake Up Message Buffer Register Data 4-7"] pub wmb2_d47: WMB2_D47,
+    #[doc = "0xb70 - Wake Up Message Buffer Register for C/S"] pub wmb3_cs: WMB3_CS,
+    #[doc = "0xb74 - Wake Up Message Buffer Register for ID"] pub wmb3_id: WMB3_ID,
+    #[doc = "0xb78 - Wake Up Message Buffer Register for Data 0-3"] pub wmb3_d03: WMB3_D03,
+    #[doc = "0xb7c - Wake Up Message Buffer Register Data 4-7"] pub wmb3_d47: WMB3_D47,
     _reserved8: [u8; 128usize],
-    #[doc = "0xc00 - CAN FD Control Register"]
-    pub fdctrl: FDCTRL,
-    #[doc = "0xc04 - CAN FD Bit Timing Register"]
-    pub fdcbt: FDCBT,
-    #[doc = "0xc08 - CAN FD CRC Register"]
-    pub fdcrc: FDCRC,
+    #[doc = "0xc00 - CAN FD Control Register"] pub fdctrl: FDCTRL,
+    #[doc = "0xc04 - CAN FD Bit Timing Register"] pub fdcbt: FDCBT,
+    #[doc = "0xc08 - CAN FD CRC Register"] pub fdcrc: FDCRC,
 }
 #[doc = "Module Configuration Register"]
 pub struct MCR {

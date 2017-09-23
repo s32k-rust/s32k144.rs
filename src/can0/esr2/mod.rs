@@ -6,14 +6,15 @@ impl super::ESR2 {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `IMB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IMBR {
-    #[doc = "If ESR2[VPS] is asserted, the ESR2[LPTM] is not an inactive Mailbox."]
-    _0,
+    #[doc = "If ESR2[VPS] is asserted, the ESR2[LPTM] is not an inactive Mailbox."] _0,
     #[doc = "If ESR2[VPS] is asserted, there is at least one inactive Mailbox. LPTM content is the number of the first one."]
     _1,
 }
@@ -59,10 +60,8 @@ impl IMBR {
 #[doc = "Possible values of the field `VPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VPSR {
-    #[doc = "Contents of IMB and LPTM are invalid."]
-    _0,
-    #[doc = "Contents of IMB and LPTM are valid."]
-    _1,
+    #[doc = "Contents of IMB and LPTM are invalid."] _0,
+    #[doc = "Contents of IMB and LPTM are valid."] _1,
 }
 impl VPSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

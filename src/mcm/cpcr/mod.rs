@@ -22,7 +22,9 @@ impl super::CPCR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,14 +45,10 @@ impl super::CPCR {
 #[doc = "Possible values of the field `HLT_FSM_ST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HLT_FSM_STR {
-    #[doc = "Waiting for request"]
-    _00,
-    #[doc = "Waiting for platform idle"]
-    _01,
-    #[doc = "Platform stalled"]
-    _11,
-    #[doc = "Unused state"]
-    _10,
+    #[doc = "Waiting for request"] _00,
+    #[doc = "Waiting for platform idle"] _01,
+    #[doc = "Platform stalled"] _11,
+    #[doc = "Unused state"] _10,
 }
 impl HLT_FSM_STR {
     #[doc = r" Value of the field as raw bits"]
@@ -99,10 +97,8 @@ impl HLT_FSM_STR {
 #[doc = "Possible values of the field `AXBS_HLT_REQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AXBS_HLT_REQR {
-    #[doc = "AXBS is not receiving halt request"]
-    _0,
-    #[doc = "AXBS is receiving halt request"]
-    _1,
+    #[doc = "AXBS is not receiving halt request"] _0,
+    #[doc = "AXBS is receiving halt request"] _1,
 }
 impl AXBS_HLT_REQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -146,10 +142,8 @@ impl AXBS_HLT_REQR {
 #[doc = "Possible values of the field `AXBS_HLTD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AXBS_HLTDR {
-    #[doc = "AXBS is not currently halted"]
-    _0,
-    #[doc = "AXBS is currently halted"]
-    _1,
+    #[doc = "AXBS is not currently halted"] _0,
+    #[doc = "AXBS is currently halted"] _1,
 }
 impl AXBS_HLTDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -193,10 +187,8 @@ impl AXBS_HLTDR {
 #[doc = "Possible values of the field `FMC_PF_IDLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FMC_PF_IDLER {
-    #[doc = "FMC program flash is not idle"]
-    _0,
-    #[doc = "FMC program flash is currently idle"]
-    _1,
+    #[doc = "FMC program flash is not idle"] _0,
+    #[doc = "FMC program flash is currently idle"] _1,
 }
 impl FMC_PF_IDLER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -240,10 +232,8 @@ impl FMC_PF_IDLER {
 #[doc = "Possible values of the field `PBRIDGE_IDLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PBRIDGE_IDLER {
-    #[doc = "PBRIDGE is not idle"]
-    _0,
-    #[doc = "PBRIDGE is currently idle"]
-    _1,
+    #[doc = "PBRIDGE is not idle"] _0,
+    #[doc = "PBRIDGE is currently idle"] _1,
 }
 impl PBRIDGE_IDLER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -287,10 +277,8 @@ impl PBRIDGE_IDLER {
 #[doc = "Possible values of the field `CBRR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CBRRR {
-    #[doc = "Fixed-priority arbitration"]
-    _0,
-    #[doc = "Round-robin arbitration"]
-    _1,
+    #[doc = "Fixed-priority arbitration"] _0,
+    #[doc = "Round-robin arbitration"] _1,
 }
 impl CBRRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -334,14 +322,10 @@ impl CBRRR {
 #[doc = "Possible values of the field `SRAMUAP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAMUAPR {
-    #[doc = "Round robin"]
-    _00,
-    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"]
-    _01,
-    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"]
-    _10,
-    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"]
-    _11,
+    #[doc = "Round robin"] _00,
+    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"] _01,
+    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"] _10,
+    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"] _11,
 }
 impl SRAMUAPR {
     #[doc = r" Value of the field as raw bits"]
@@ -411,14 +395,10 @@ impl SRAMUWPR {
 #[doc = "Possible values of the field `SRAMLAP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAMLAPR {
-    #[doc = "Round robin"]
-    _00,
-    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"]
-    _01,
-    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"]
-    _10,
-    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"]
-    _11,
+    #[doc = "Round robin"] _00,
+    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"] _01,
+    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"] _10,
+    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"] _11,
 }
 impl SRAMLAPR {
     #[doc = r" Value of the field as raw bits"]
@@ -487,10 +467,8 @@ impl SRAMLWPR {
 }
 #[doc = "Values that can be written to the field `CBRR`"]
 pub enum CBRRW {
-    #[doc = "Fixed-priority arbitration"]
-    _0,
-    #[doc = "Round-robin arbitration"]
-    _1,
+    #[doc = "Fixed-priority arbitration"] _0,
+    #[doc = "Round-robin arbitration"] _1,
 }
 impl CBRRW {
     #[allow(missing_docs)]
@@ -545,14 +523,10 @@ impl<'a> _CBRRW<'a> {
 }
 #[doc = "Values that can be written to the field `SRAMUAP`"]
 pub enum SRAMUAPW {
-    #[doc = "Round robin"]
-    _00,
-    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"]
-    _01,
-    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"]
-    _10,
-    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"]
-    _11,
+    #[doc = "Round robin"] _00,
+    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"] _01,
+    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"] _10,
+    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"] _11,
 }
 impl SRAMUAPW {
     #[allow(missing_docs)]
@@ -634,14 +608,10 @@ impl<'a> _SRAMUWPW<'a> {
 }
 #[doc = "Values that can be written to the field `SRAMLAP`"]
 pub enum SRAMLAPW {
-    #[doc = "Round robin"]
-    _00,
-    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"]
-    _01,
-    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"]
-    _10,
-    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"]
-    _11,
+    #[doc = "Round robin"] _00,
+    #[doc = "Special round robin (favors SRAM backdoor accesses over the processor)"] _01,
+    #[doc = "Fixed priority. Processor has highest, backdoor has lowest"] _10,
+    #[doc = "Fixed priority. Backdoor has highest, processor has lowest"] _11,
 }
 impl SRAMLAPW {
     #[allow(missing_docs)]

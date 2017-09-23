@@ -2,59 +2,34 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Flash Status Register"]
-    pub fstat: FSTAT,
-    #[doc = "0x01 - Flash Configuration Register"]
-    pub fcnfg: FCNFG,
-    #[doc = "0x02 - Flash Security Register"]
-    pub fsec: FSEC,
-    #[doc = "0x03 - Flash Option Register"]
-    pub fopt: FOPT,
-    #[doc = "0x04 - Flash Common Command Object Registers"]
-    pub fccob3: FCCOB3,
-    #[doc = "0x05 - Flash Common Command Object Registers"]
-    pub fccob2: FCCOB2,
-    #[doc = "0x06 - Flash Common Command Object Registers"]
-    pub fccob1: FCCOB1,
-    #[doc = "0x07 - Flash Common Command Object Registers"]
-    pub fccob0: FCCOB0,
-    #[doc = "0x08 - Flash Common Command Object Registers"]
-    pub fccob7: FCCOB7,
-    #[doc = "0x09 - Flash Common Command Object Registers"]
-    pub fccob6: FCCOB6,
-    #[doc = "0x0a - Flash Common Command Object Registers"]
-    pub fccob5: FCCOB5,
-    #[doc = "0x0b - Flash Common Command Object Registers"]
-    pub fccob4: FCCOB4,
-    #[doc = "0x0c - Flash Common Command Object Registers"]
-    pub fccobb: FCCOBB,
-    #[doc = "0x0d - Flash Common Command Object Registers"]
-    pub fccoba: FCCOBA,
-    #[doc = "0x0e - Flash Common Command Object Registers"]
-    pub fccob9: FCCOB9,
-    #[doc = "0x0f - Flash Common Command Object Registers"]
-    pub fccob8: FCCOB8,
-    #[doc = "0x10 - Program Flash Protection Registers"]
-    pub fprot3: FPROT3,
-    #[doc = "0x11 - Program Flash Protection Registers"]
-    pub fprot2: FPROT2,
-    #[doc = "0x12 - Program Flash Protection Registers"]
-    pub fprot1: FPROT1,
-    #[doc = "0x13 - Program Flash Protection Registers"]
-    pub fprot0: FPROT0,
+    #[doc = "0x00 - Flash Status Register"] pub fstat: FSTAT,
+    #[doc = "0x01 - Flash Configuration Register"] pub fcnfg: FCNFG,
+    #[doc = "0x02 - Flash Security Register"] pub fsec: FSEC,
+    #[doc = "0x03 - Flash Option Register"] pub fopt: FOPT,
+    #[doc = "0x04 - Flash Common Command Object Registers"] pub fccob3: FCCOB3,
+    #[doc = "0x05 - Flash Common Command Object Registers"] pub fccob2: FCCOB2,
+    #[doc = "0x06 - Flash Common Command Object Registers"] pub fccob1: FCCOB1,
+    #[doc = "0x07 - Flash Common Command Object Registers"] pub fccob0: FCCOB0,
+    #[doc = "0x08 - Flash Common Command Object Registers"] pub fccob7: FCCOB7,
+    #[doc = "0x09 - Flash Common Command Object Registers"] pub fccob6: FCCOB6,
+    #[doc = "0x0a - Flash Common Command Object Registers"] pub fccob5: FCCOB5,
+    #[doc = "0x0b - Flash Common Command Object Registers"] pub fccob4: FCCOB4,
+    #[doc = "0x0c - Flash Common Command Object Registers"] pub fccobb: FCCOBB,
+    #[doc = "0x0d - Flash Common Command Object Registers"] pub fccoba: FCCOBA,
+    #[doc = "0x0e - Flash Common Command Object Registers"] pub fccob9: FCCOB9,
+    #[doc = "0x0f - Flash Common Command Object Registers"] pub fccob8: FCCOB8,
+    #[doc = "0x10 - Program Flash Protection Registers"] pub fprot3: FPROT3,
+    #[doc = "0x11 - Program Flash Protection Registers"] pub fprot2: FPROT2,
+    #[doc = "0x12 - Program Flash Protection Registers"] pub fprot1: FPROT1,
+    #[doc = "0x13 - Program Flash Protection Registers"] pub fprot0: FPROT0,
     _reserved0: [u8; 2usize],
-    #[doc = "0x16 - EEPROM Protection Register"]
-    pub feprot: FEPROT,
-    #[doc = "0x17 - Data Flash Protection Register"]
-    pub fdprot: FDPROT,
+    #[doc = "0x16 - EEPROM Protection Register"] pub feprot: FEPROT,
+    #[doc = "0x17 - Data Flash Protection Register"] pub fdprot: FDPROT,
     _reserved1: [u8; 20usize],
-    #[doc = "0x2c - Flash CSEc Status Register"]
-    pub fcsestat: FCSESTAT,
+    #[doc = "0x2c - Flash CSEc Status Register"] pub fcsestat: FCSESTAT,
     _reserved2: [u8; 1usize],
-    #[doc = "0x2e - Flash Error Status Register"]
-    pub ferstat: FERSTAT,
-    #[doc = "0x2f - Flash Error Configuration Register"]
-    pub fercnfg: FERCNFG,
+    #[doc = "0x2e - Flash Error Status Register"] pub ferstat: FERSTAT,
+    #[doc = "0x2f - Flash Error Configuration Register"] pub fercnfg: FERCNFG,
 }
 #[doc = "Flash Status Register"]
 pub struct FSTAT {

@@ -22,7 +22,9 @@ impl super::CR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,10 +45,8 @@ impl super::CR {
 #[doc = "Possible values of the field `SWR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWRR {
-    #[doc = "No effect."]
-    _0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
+    #[doc = "No effect."] _0,
+    #[doc = r" Reserved"] _Reserved(bool),
 }
 impl SWRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -85,10 +85,8 @@ impl SWRR {
 #[doc = "Possible values of the field `SUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUPR {
-    #[doc = "Non-supervisor mode write accesses are not supported and generate a bus error."]
-    _0,
-    #[doc = "Non-supervisor mode write accesses are supported."]
-    _1,
+    #[doc = "Non-supervisor mode write accesses are not supported and generate a bus error."] _0,
+    #[doc = "Non-supervisor mode write accesses are supported."] _1,
 }
 impl SUPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -132,10 +130,8 @@ impl SUPR {
 #[doc = "Possible values of the field `UM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UMR {
-    #[doc = "Registers cannot be written when locked."]
-    _0,
-    #[doc = "Registers can be written when locked under limited conditions."]
-    _1,
+    #[doc = "Registers cannot be written when locked."] _0,
+    #[doc = "Registers can be written when locked under limited conditions."] _1,
 }
 impl UMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -179,8 +175,7 @@ impl UMR {
 #[doc = "Possible values of the field `CPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPSR {
-    #[doc = "The prescaler output clock (as configured by TSIC) is output on RTC_CLKOUT."]
-    _0,
+    #[doc = "The prescaler output clock (as configured by TSIC) is output on RTC_CLKOUT."] _0,
     #[doc = "The RTC 32kHz crystal clock is output on RTC_CLKOUT, provided it is output to other peripherals."]
     _1,
 }
@@ -226,10 +221,8 @@ impl CPSR {
 #[doc = "Possible values of the field `LPOS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPOSR {
-    #[doc = "RTC prescaler increments using 32kHz crystal."]
-    _0,
-    #[doc = "RTC prescaler increments using 1kHz LPO, bits [4:0] of the prescaler are ignored."]
-    _1,
+    #[doc = "RTC prescaler increments using 32kHz crystal."] _0,
+    #[doc = "RTC prescaler increments using 1kHz LPO, bits [4:0] of the prescaler are ignored."] _1,
 }
 impl LPOSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -273,10 +266,8 @@ impl LPOSR {
 #[doc = "Possible values of the field `CPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPER {
-    #[doc = "Disable RTC_CLKOUT pin."]
-    _0,
-    #[doc = "Enable RTC_CLKOUT pin."]
-    _1,
+    #[doc = "Disable RTC_CLKOUT pin."] _0,
+    #[doc = "Enable RTC_CLKOUT pin."] _1,
 }
 impl CPER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -319,8 +310,7 @@ impl CPER {
 }
 #[doc = "Values that can be written to the field `SWR`"]
 pub enum SWRW {
-    #[doc = "No effect."]
-    _0,
+    #[doc = "No effect."] _0,
 }
 impl SWRW {
     #[allow(missing_docs)]
@@ -369,10 +359,8 @@ impl<'a> _SWRW<'a> {
 }
 #[doc = "Values that can be written to the field `SUP`"]
 pub enum SUPW {
-    #[doc = "Non-supervisor mode write accesses are not supported and generate a bus error."]
-    _0,
-    #[doc = "Non-supervisor mode write accesses are supported."]
-    _1,
+    #[doc = "Non-supervisor mode write accesses are not supported and generate a bus error."] _0,
+    #[doc = "Non-supervisor mode write accesses are supported."] _1,
 }
 impl SUPW {
     #[allow(missing_docs)]
@@ -427,10 +415,8 @@ impl<'a> _SUPW<'a> {
 }
 #[doc = "Values that can be written to the field `UM`"]
 pub enum UMW {
-    #[doc = "Registers cannot be written when locked."]
-    _0,
-    #[doc = "Registers can be written when locked under limited conditions."]
-    _1,
+    #[doc = "Registers cannot be written when locked."] _0,
+    #[doc = "Registers can be written when locked under limited conditions."] _1,
 }
 impl UMW {
     #[allow(missing_docs)]
@@ -485,8 +471,7 @@ impl<'a> _UMW<'a> {
 }
 #[doc = "Values that can be written to the field `CPS`"]
 pub enum CPSW {
-    #[doc = "The prescaler output clock (as configured by TSIC) is output on RTC_CLKOUT."]
-    _0,
+    #[doc = "The prescaler output clock (as configured by TSIC) is output on RTC_CLKOUT."] _0,
     #[doc = "The RTC 32kHz crystal clock is output on RTC_CLKOUT, provided it is output to other peripherals."]
     _1,
 }
@@ -543,10 +528,8 @@ impl<'a> _CPSW<'a> {
 }
 #[doc = "Values that can be written to the field `LPOS`"]
 pub enum LPOSW {
-    #[doc = "RTC prescaler increments using 32kHz crystal."]
-    _0,
-    #[doc = "RTC prescaler increments using 1kHz LPO, bits [4:0] of the prescaler are ignored."]
-    _1,
+    #[doc = "RTC prescaler increments using 32kHz crystal."] _0,
+    #[doc = "RTC prescaler increments using 1kHz LPO, bits [4:0] of the prescaler are ignored."] _1,
 }
 impl LPOSW {
     #[allow(missing_docs)]
@@ -601,10 +584,8 @@ impl<'a> _LPOSW<'a> {
 }
 #[doc = "Values that can be written to the field `CPE`"]
 pub enum CPEW {
-    #[doc = "Disable RTC_CLKOUT pin."]
-    _0,
-    #[doc = "Enable RTC_CLKOUT pin."]
-    _1,
+    #[doc = "Disable RTC_CLKOUT pin."] _0,
+    #[doc = "Enable RTC_CLKOUT pin."] _1,
 }
 impl CPEW {
     #[allow(missing_docs)]

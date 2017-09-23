@@ -22,7 +22,9 @@ impl super::RPC {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -43,14 +45,10 @@ impl super::RPC {
 #[doc = "Possible values of the field `RSTFLTSRW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTFLTSRWR {
-    #[doc = "All filtering disabled"]
-    _00,
-    #[doc = "Bus clock filter enabled for normal operation"]
-    _01,
-    #[doc = "LPO clock filter enabled for normal operation"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[doc = "All filtering disabled"] _00,
+    #[doc = "Bus clock filter enabled for normal operation"] _01,
+    #[doc = "LPO clock filter enabled for normal operation"] _10,
+    #[doc = r" Reserved"] _Reserved(u8),
 }
 impl RSTFLTSRWR {
     #[doc = r" Value of the field as raw bits"]
@@ -93,10 +91,8 @@ impl RSTFLTSRWR {
 #[doc = "Possible values of the field `RSTFLTSS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTFLTSSR {
-    #[doc = "All filtering disabled"]
-    _0,
-    #[doc = "LPO clock filter enabled"]
-    _1,
+    #[doc = "All filtering disabled"] _0,
+    #[doc = "LPO clock filter enabled"] _1,
 }
 impl RSTFLTSSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -150,12 +146,9 @@ impl RSTFLTSELR {
 }
 #[doc = "Values that can be written to the field `RSTFLTSRW`"]
 pub enum RSTFLTSRWW {
-    #[doc = "All filtering disabled"]
-    _00,
-    #[doc = "Bus clock filter enabled for normal operation"]
-    _01,
-    #[doc = "LPO clock filter enabled for normal operation"]
-    _10,
+    #[doc = "All filtering disabled"] _00,
+    #[doc = "Bus clock filter enabled for normal operation"] _01,
+    #[doc = "LPO clock filter enabled for normal operation"] _10,
 }
 impl RSTFLTSRWW {
     #[allow(missing_docs)]
@@ -206,10 +199,8 @@ impl<'a> _RSTFLTSRWW<'a> {
 }
 #[doc = "Values that can be written to the field `RSTFLTSS`"]
 pub enum RSTFLTSSW {
-    #[doc = "All filtering disabled"]
-    _0,
-    #[doc = "LPO clock filter enabled"]
-    _1,
+    #[doc = "All filtering disabled"] _0,
+    #[doc = "LPO clock filter enabled"] _1,
 }
 impl RSTFLTSSW {
     #[allow(missing_docs)]

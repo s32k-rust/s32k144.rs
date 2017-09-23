@@ -6,16 +6,16 @@ impl super::HRS {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
 }
 #[doc = "Possible values of the field `HRS0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS0R {
-    #[doc = "A hardware service request for channel 0 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 0 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 0 is not present"] _0,
+    #[doc = "A hardware service request for channel 0 is present"] _1,
 }
 impl HRS0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,10 +59,8 @@ impl HRS0R {
 #[doc = "Possible values of the field `HRS1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS1R {
-    #[doc = "A hardware service request for channel 1 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 1 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 1 is not present"] _0,
+    #[doc = "A hardware service request for channel 1 is present"] _1,
 }
 impl HRS1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -106,10 +104,8 @@ impl HRS1R {
 #[doc = "Possible values of the field `HRS2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS2R {
-    #[doc = "A hardware service request for channel 2 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 2 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 2 is not present"] _0,
+    #[doc = "A hardware service request for channel 2 is present"] _1,
 }
 impl HRS2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -153,10 +149,8 @@ impl HRS2R {
 #[doc = "Possible values of the field `HRS3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS3R {
-    #[doc = "A hardware service request for channel 3 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 3 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 3 is not present"] _0,
+    #[doc = "A hardware service request for channel 3 is present"] _1,
 }
 impl HRS3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -200,10 +194,8 @@ impl HRS3R {
 #[doc = "Possible values of the field `HRS4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS4R {
-    #[doc = "A hardware service request for channel 4 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 4 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 4 is not present"] _0,
+    #[doc = "A hardware service request for channel 4 is present"] _1,
 }
 impl HRS4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -247,10 +239,8 @@ impl HRS4R {
 #[doc = "Possible values of the field `HRS5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS5R {
-    #[doc = "A hardware service request for channel 5 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 5 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 5 is not present"] _0,
+    #[doc = "A hardware service request for channel 5 is present"] _1,
 }
 impl HRS5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -294,10 +284,8 @@ impl HRS5R {
 #[doc = "Possible values of the field `HRS6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS6R {
-    #[doc = "A hardware service request for channel 6 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 6 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 6 is not present"] _0,
+    #[doc = "A hardware service request for channel 6 is present"] _1,
 }
 impl HRS6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -341,10 +329,8 @@ impl HRS6R {
 #[doc = "Possible values of the field `HRS7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS7R {
-    #[doc = "A hardware service request for channel 7 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 7 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 7 is not present"] _0,
+    #[doc = "A hardware service request for channel 7 is present"] _1,
 }
 impl HRS7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -388,10 +374,8 @@ impl HRS7R {
 #[doc = "Possible values of the field `HRS8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS8R {
-    #[doc = "A hardware service request for channel 8 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 8 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 8 is not present"] _0,
+    #[doc = "A hardware service request for channel 8 is present"] _1,
 }
 impl HRS8R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -435,10 +419,8 @@ impl HRS8R {
 #[doc = "Possible values of the field `HRS9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS9R {
-    #[doc = "A hardware service request for channel 9 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 9 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 9 is not present"] _0,
+    #[doc = "A hardware service request for channel 9 is present"] _1,
 }
 impl HRS9R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -482,10 +464,8 @@ impl HRS9R {
 #[doc = "Possible values of the field `HRS10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS10R {
-    #[doc = "A hardware service request for channel 10 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 10 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 10 is not present"] _0,
+    #[doc = "A hardware service request for channel 10 is present"] _1,
 }
 impl HRS10R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -529,10 +509,8 @@ impl HRS10R {
 #[doc = "Possible values of the field `HRS11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS11R {
-    #[doc = "A hardware service request for channel 11 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 11 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 11 is not present"] _0,
+    #[doc = "A hardware service request for channel 11 is present"] _1,
 }
 impl HRS11R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -576,10 +554,8 @@ impl HRS11R {
 #[doc = "Possible values of the field `HRS12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS12R {
-    #[doc = "A hardware service request for channel 12 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 12 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 12 is not present"] _0,
+    #[doc = "A hardware service request for channel 12 is present"] _1,
 }
 impl HRS12R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -623,10 +599,8 @@ impl HRS12R {
 #[doc = "Possible values of the field `HRS13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS13R {
-    #[doc = "A hardware service request for channel 13 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 13 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 13 is not present"] _0,
+    #[doc = "A hardware service request for channel 13 is present"] _1,
 }
 impl HRS13R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -670,10 +644,8 @@ impl HRS13R {
 #[doc = "Possible values of the field `HRS14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS14R {
-    #[doc = "A hardware service request for channel 14 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 14 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 14 is not present"] _0,
+    #[doc = "A hardware service request for channel 14 is present"] _1,
 }
 impl HRS14R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -717,10 +689,8 @@ impl HRS14R {
 #[doc = "Possible values of the field `HRS15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRS15R {
-    #[doc = "A hardware service request for channel 15 is not present"]
-    _0,
-    #[doc = "A hardware service request for channel 15 is present"]
-    _1,
+    #[doc = "A hardware service request for channel 15 is not present"] _0,
+    #[doc = "A hardware service request for channel 15 is present"] _1,
 }
 impl HRS15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]

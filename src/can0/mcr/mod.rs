@@ -22,7 +22,9 @@ impl super::MCR {
     #[doc = r" Reads the contents of the register"]
     #[inline]
     pub fn read(&self) -> R {
-        R { bits: self.register.get() }
+        R {
+            bits: self.register.get(),
+        }
     }
     #[doc = r" Writes to the register"]
     #[inline]
@@ -54,14 +56,11 @@ impl MAXMBR {
 #[doc = "Possible values of the field `IDAM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDAMR {
-    #[doc = "Format A: One full ID (standard and extended) per ID Filter Table element."]
-    _00,
+    #[doc = "Format A: One full ID (standard and extended) per ID Filter Table element."] _00,
     #[doc = "Format B: Two full standard IDs or two partial 14-bit (standard and extended) IDs per ID Filter Table element."]
     _01,
-    #[doc = "Format C: Four partial 8-bit Standard IDs per ID Filter Table element."]
-    _10,
-    #[doc = "Format D: All frames rejected."]
-    _11,
+    #[doc = "Format C: Four partial 8-bit Standard IDs per ID Filter Table element."] _10,
+    #[doc = "Format D: All frames rejected."] _11,
 }
 impl IDAMR {
     #[doc = r" Value of the field as raw bits"]
@@ -157,10 +156,8 @@ impl FDENR {
 #[doc = "Possible values of the field `AEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AENR {
-    #[doc = "Abort disabled."]
-    _0,
-    #[doc = "Abort enabled."]
-    _1,
+    #[doc = "Abort disabled."] _0,
+    #[doc = "Abort enabled."] _1,
 }
 impl AENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -204,10 +201,8 @@ impl AENR {
 #[doc = "Possible values of the field `LPRIOEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPRIOENR {
-    #[doc = "Local Priority disabled."]
-    _0,
-    #[doc = "Local Priority enabled."]
-    _1,
+    #[doc = "Local Priority disabled."] _0,
+    #[doc = "Local Priority enabled."] _1,
 }
 impl LPRIOENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -251,10 +246,8 @@ impl LPRIOENR {
 #[doc = "Possible values of the field `PNET_EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PNET_ENR {
-    #[doc = "Pretended Networking mode is disabled."]
-    _0,
-    #[doc = "Pretended Networking mode is enabled."]
-    _1,
+    #[doc = "Pretended Networking mode is disabled."] _0,
+    #[doc = "Pretended Networking mode is enabled."] _1,
 }
 impl PNET_ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -298,10 +291,8 @@ impl PNET_ENR {
 #[doc = "Possible values of the field `DMA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAR {
-    #[doc = "DMA feature for RX FIFO disabled."]
-    _0,
-    #[doc = "DMA feature for RX FIFO enabled."]
-    _1,
+    #[doc = "DMA feature for RX FIFO disabled."] _0,
+    #[doc = "DMA feature for RX FIFO enabled."] _1,
 }
 impl DMAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -347,8 +338,7 @@ impl DMAR {
 pub enum IRMQR {
     #[doc = "Individual Rx masking and queue feature are disabled. For backward compatibility with legacy applications, the reading of C/S word locks the MB even if it is EMPTY."]
     _0,
-    #[doc = "Individual Rx masking and queue feature are enabled."]
-    _1,
+    #[doc = "Individual Rx masking and queue feature are enabled."] _1,
 }
 impl IRMQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -392,10 +382,8 @@ impl IRMQR {
 #[doc = "Possible values of the field `SRXDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRXDISR {
-    #[doc = "Self reception enabled."]
-    _0,
-    #[doc = "Self reception disabled."]
-    _1,
+    #[doc = "Self reception enabled."] _0,
+    #[doc = "Self reception disabled."] _1,
 }
 impl SRXDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -439,10 +427,8 @@ impl SRXDISR {
 #[doc = "Possible values of the field `LPMACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPMACKR {
-    #[doc = "FlexCAN is not in a low-power mode."]
-    _0,
-    #[doc = "FlexCAN is in a low-power mode."]
-    _1,
+    #[doc = "FlexCAN is not in a low-power mode."] _0,
+    #[doc = "FlexCAN is in a low-power mode."] _1,
 }
 impl LPMACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -554,10 +540,8 @@ impl SUPVR {
 #[doc = "Possible values of the field `FRZACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRZACKR {
-    #[doc = "FlexCAN not in Freeze mode, prescaler running."]
-    _0,
-    #[doc = "FlexCAN in Freeze mode, prescaler stopped."]
-    _1,
+    #[doc = "FlexCAN not in Freeze mode, prescaler running."] _0,
+    #[doc = "FlexCAN in Freeze mode, prescaler stopped."] _1,
 }
 impl FRZACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -601,10 +585,8 @@ impl FRZACKR {
 #[doc = "Possible values of the field `SOFTRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOFTRSTR {
-    #[doc = "No reset request."]
-    _0,
-    #[doc = "Resets the registers affected by soft reset."]
-    _1,
+    #[doc = "No reset request."] _0,
+    #[doc = "Resets the registers affected by soft reset."] _1,
 }
 impl SOFTRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -648,10 +630,8 @@ impl SOFTRSTR {
 #[doc = "Possible values of the field `NOTRDY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NOTRDYR {
-    #[doc = "FlexCAN module is either in Normal mode, Listen-Only mode or Loop-Back mode."]
-    _0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
+    #[doc = "FlexCAN module is either in Normal mode, Listen-Only mode or Loop-Back mode."] _0,
+    #[doc = r" Reserved"] _Reserved(bool),
 }
 impl NOTRDYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -690,10 +670,8 @@ impl NOTRDYR {
 #[doc = "Possible values of the field `HALT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HALTR {
-    #[doc = "No Freeze mode request."]
-    _0,
-    #[doc = "Enters Freeze mode if the FRZ bit is asserted."]
-    _1,
+    #[doc = "No Freeze mode request."] _0,
+    #[doc = "Enters Freeze mode if the FRZ bit is asserted."] _1,
 }
 impl HALTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -737,10 +715,8 @@ impl HALTR {
 #[doc = "Possible values of the field `RFEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFENR {
-    #[doc = "Rx FIFO not enabled."]
-    _0,
-    #[doc = "Rx FIFO enabled."]
-    _1,
+    #[doc = "Rx FIFO not enabled."] _0,
+    #[doc = "Rx FIFO enabled."] _1,
 }
 impl RFENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -784,10 +760,8 @@ impl RFENR {
 #[doc = "Possible values of the field `FRZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRZR {
-    #[doc = "Not enabled to enter Freeze mode."]
-    _0,
-    #[doc = "Enabled to enter Freeze mode."]
-    _1,
+    #[doc = "Not enabled to enter Freeze mode."] _0,
+    #[doc = "Enabled to enter Freeze mode."] _1,
 }
 impl FRZR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -831,10 +805,8 @@ impl FRZR {
 #[doc = "Possible values of the field `MDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MDISR {
-    #[doc = "Enable the FlexCAN module."]
-    _0,
-    #[doc = "Disable the FlexCAN module."]
-    _1,
+    #[doc = "Enable the FlexCAN module."] _0,
+    #[doc = "Disable the FlexCAN module."] _1,
 }
 impl MDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -892,14 +864,11 @@ impl<'a> _MAXMBW<'a> {
 }
 #[doc = "Values that can be written to the field `IDAM`"]
 pub enum IDAMW {
-    #[doc = "Format A: One full ID (standard and extended) per ID Filter Table element."]
-    _00,
+    #[doc = "Format A: One full ID (standard and extended) per ID Filter Table element."] _00,
     #[doc = "Format B: Two full standard IDs or two partial 14-bit (standard and extended) IDs per ID Filter Table element."]
     _01,
-    #[doc = "Format C: Four partial 8-bit Standard IDs per ID Filter Table element."]
-    _10,
-    #[doc = "Format D: All frames rejected."]
-    _11,
+    #[doc = "Format C: Four partial 8-bit Standard IDs per ID Filter Table element."] _10,
+    #[doc = "Format D: All frames rejected."] _11,
 }
 impl IDAMW {
     #[allow(missing_docs)]
@@ -1016,10 +985,8 @@ impl<'a> _FDENW<'a> {
 }
 #[doc = "Values that can be written to the field `AEN`"]
 pub enum AENW {
-    #[doc = "Abort disabled."]
-    _0,
-    #[doc = "Abort enabled."]
-    _1,
+    #[doc = "Abort disabled."] _0,
+    #[doc = "Abort enabled."] _1,
 }
 impl AENW {
     #[allow(missing_docs)]
@@ -1074,10 +1041,8 @@ impl<'a> _AENW<'a> {
 }
 #[doc = "Values that can be written to the field `LPRIOEN`"]
 pub enum LPRIOENW {
-    #[doc = "Local Priority disabled."]
-    _0,
-    #[doc = "Local Priority enabled."]
-    _1,
+    #[doc = "Local Priority disabled."] _0,
+    #[doc = "Local Priority enabled."] _1,
 }
 impl LPRIOENW {
     #[allow(missing_docs)]
@@ -1132,10 +1097,8 @@ impl<'a> _LPRIOENW<'a> {
 }
 #[doc = "Values that can be written to the field `PNET_EN`"]
 pub enum PNET_ENW {
-    #[doc = "Pretended Networking mode is disabled."]
-    _0,
-    #[doc = "Pretended Networking mode is enabled."]
-    _1,
+    #[doc = "Pretended Networking mode is disabled."] _0,
+    #[doc = "Pretended Networking mode is enabled."] _1,
 }
 impl PNET_ENW {
     #[allow(missing_docs)]
@@ -1190,10 +1153,8 @@ impl<'a> _PNET_ENW<'a> {
 }
 #[doc = "Values that can be written to the field `DMA`"]
 pub enum DMAW {
-    #[doc = "DMA feature for RX FIFO disabled."]
-    _0,
-    #[doc = "DMA feature for RX FIFO enabled."]
-    _1,
+    #[doc = "DMA feature for RX FIFO disabled."] _0,
+    #[doc = "DMA feature for RX FIFO enabled."] _1,
 }
 impl DMAW {
     #[allow(missing_docs)]
@@ -1250,8 +1211,7 @@ impl<'a> _DMAW<'a> {
 pub enum IRMQW {
     #[doc = "Individual Rx masking and queue feature are disabled. For backward compatibility with legacy applications, the reading of C/S word locks the MB even if it is EMPTY."]
     _0,
-    #[doc = "Individual Rx masking and queue feature are enabled."]
-    _1,
+    #[doc = "Individual Rx masking and queue feature are enabled."] _1,
 }
 impl IRMQW {
     #[allow(missing_docs)]
@@ -1306,10 +1266,8 @@ impl<'a> _IRMQW<'a> {
 }
 #[doc = "Values that can be written to the field `SRXDIS`"]
 pub enum SRXDISW {
-    #[doc = "Self reception enabled."]
-    _0,
-    #[doc = "Self reception disabled."]
-    _1,
+    #[doc = "Self reception enabled."] _0,
+    #[doc = "Self reception disabled."] _1,
 }
 impl SRXDISW {
     #[allow(missing_docs)]
@@ -1445,10 +1403,8 @@ impl<'a> _SUPVW<'a> {
 }
 #[doc = "Values that can be written to the field `SOFTRST`"]
 pub enum SOFTRSTW {
-    #[doc = "No reset request."]
-    _0,
-    #[doc = "Resets the registers affected by soft reset."]
-    _1,
+    #[doc = "No reset request."] _0,
+    #[doc = "Resets the registers affected by soft reset."] _1,
 }
 impl SOFTRSTW {
     #[allow(missing_docs)]
@@ -1503,10 +1459,8 @@ impl<'a> _SOFTRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `HALT`"]
 pub enum HALTW {
-    #[doc = "No Freeze mode request."]
-    _0,
-    #[doc = "Enters Freeze mode if the FRZ bit is asserted."]
-    _1,
+    #[doc = "No Freeze mode request."] _0,
+    #[doc = "Enters Freeze mode if the FRZ bit is asserted."] _1,
 }
 impl HALTW {
     #[allow(missing_docs)]
@@ -1561,10 +1515,8 @@ impl<'a> _HALTW<'a> {
 }
 #[doc = "Values that can be written to the field `RFEN`"]
 pub enum RFENW {
-    #[doc = "Rx FIFO not enabled."]
-    _0,
-    #[doc = "Rx FIFO enabled."]
-    _1,
+    #[doc = "Rx FIFO not enabled."] _0,
+    #[doc = "Rx FIFO enabled."] _1,
 }
 impl RFENW {
     #[allow(missing_docs)]
@@ -1619,10 +1571,8 @@ impl<'a> _RFENW<'a> {
 }
 #[doc = "Values that can be written to the field `FRZ`"]
 pub enum FRZW {
-    #[doc = "Not enabled to enter Freeze mode."]
-    _0,
-    #[doc = "Enabled to enter Freeze mode."]
-    _1,
+    #[doc = "Not enabled to enter Freeze mode."] _0,
+    #[doc = "Enabled to enter Freeze mode."] _1,
 }
 impl FRZW {
     #[allow(missing_docs)]
@@ -1677,10 +1627,8 @@ impl<'a> _FRZW<'a> {
 }
 #[doc = "Values that can be written to the field `MDIS`"]
 pub enum MDISW {
-    #[doc = "Enable the FlexCAN module."]
-    _0,
-    #[doc = "Disable the FlexCAN module."]
-    _1,
+    #[doc = "Enable the FlexCAN module."] _0,
+    #[doc = "Disable the FlexCAN module."] _1,
 }
 impl MDISW {
     #[allow(missing_docs)]
