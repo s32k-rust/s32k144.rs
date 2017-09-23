@@ -3,7 +3,6 @@
 #![cfg_attr(feature = "rt", feature(used))]
 #![doc = "Peripheral access API for S32K144 microcontrollers (generated using svd2rust v0.11.4)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.4/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
-#![deny(warnings)]
 #![allow(non_camel_case_types)]
 #![feature(const_fn)]
 #![no_std]
