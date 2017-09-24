@@ -7,7 +7,7 @@ description = "Peripheral access API for NXP S32K144 microcontrollers (generated
 repository = "https://github.com/kjetilkjeka/s32k144.rs"
 
 keywords = ["arm", "embedded", "svd2rust", "cortex-m4", "NXP"]
-cateogries = ["embedded"]
+categories = ["embedded"]
 
 license = "Apache-2.0/MIT"
 
