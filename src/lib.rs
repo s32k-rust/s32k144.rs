@@ -158,29 +158,25 @@ impl Deref for CAN0 {
 }
 #[doc = "Flex Controller Area Network module"]
 pub const CAN1: Peripheral<CAN1> = unsafe { Peripheral::new(1073893376) };
-#[doc = "Flex Controller Area Network module"]
-pub mod can1;
-#[doc = "Flex Controller Area Network module"]
+#[doc = r" Register block"]
 pub struct CAN1 {
-    register_block: can1::RegisterBlock,
+    register_block: can0::RegisterBlock,
 }
 impl Deref for CAN1 {
-    type Target = can1::RegisterBlock;
-    fn deref(&self) -> &can1::RegisterBlock {
+    type Target = can0::RegisterBlock;
+    fn deref(&self) -> &can0::RegisterBlock {
         &self.register_block
     }
 }
 #[doc = "Flex Controller Area Network module"]
 pub const CAN2: Peripheral<CAN2> = unsafe { Peripheral::new(1073917952) };
-#[doc = "Flex Controller Area Network module"]
-pub mod can2;
-#[doc = "Flex Controller Area Network module"]
+#[doc = r" Register block"]
 pub struct CAN2 {
-    register_block: can2::RegisterBlock,
+    register_block: can0::RegisterBlock,
 }
 impl Deref for CAN2 {
-    type Target = can2::RegisterBlock;
-    fn deref(&self) -> &can2::RegisterBlock {
+    type Target = can0::RegisterBlock;
+    fn deref(&self) -> &can0::RegisterBlock {
         &self.register_block
     }
 }
