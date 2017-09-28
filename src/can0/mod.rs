@@ -25,22 +25,7 @@ pub struct RegisterBlock {
     _reserved4: [u8; 44usize],
     #[doc = "0x80 - Embedded RAM"] pub embedded_ram: [EMBEDDEDRAM; 128],
     _reserved5: [u8; 1536usize],
-    #[doc = "0x880 - Rx Individual Mask Registers"] pub rximr0: RXIMR0,
-    #[doc = "0x884 - Rx Individual Mask Registers"] pub rximr1: RXIMR1,
-    #[doc = "0x888 - Rx Individual Mask Registers"] pub rximr2: RXIMR2,
-    #[doc = "0x88c - Rx Individual Mask Registers"] pub rximr3: RXIMR3,
-    #[doc = "0x890 - Rx Individual Mask Registers"] pub rximr4: RXIMR4,
-    #[doc = "0x894 - Rx Individual Mask Registers"] pub rximr5: RXIMR5,
-    #[doc = "0x898 - Rx Individual Mask Registers"] pub rximr6: RXIMR6,
-    #[doc = "0x89c - Rx Individual Mask Registers"] pub rximr7: RXIMR7,
-    #[doc = "0x8a0 - Rx Individual Mask Registers"] pub rximr8: RXIMR8,
-    #[doc = "0x8a4 - Rx Individual Mask Registers"] pub rximr9: RXIMR9,
-    #[doc = "0x8a8 - Rx Individual Mask Registers"] pub rximr10: RXIMR10,
-    #[doc = "0x8ac - Rx Individual Mask Registers"] pub rximr11: RXIMR11,
-    #[doc = "0x8b0 - Rx Individual Mask Registers"] pub rximr12: RXIMR12,
-    #[doc = "0x8b4 - Rx Individual Mask Registers"] pub rximr13: RXIMR13,
-    #[doc = "0x8b8 - Rx Individual Mask Registers"] pub rximr14: RXIMR14,
-    #[doc = "0x8bc - Rx Individual Mask Registers"] pub rximr15: RXIMR15,
+    #[doc = "0x880 - Rx Individual Mask Registers"] pub rximr: [RXIMR; 16],
     _reserved6: [u8; 576usize],
     #[doc = "0xb00 - Pretended Networking Control 1 Register"] pub ctrl1_pn: CTRL1_PN,
     #[doc = "0xb04 - Pretended Networking Control 2 Register"] pub ctrl2_pn: CTRL2_PN,
@@ -180,101 +165,11 @@ pub struct EMBEDDEDRAM {
 #[doc = "Embedded RAM"]
 pub mod embedded_ram;
 #[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR0 {
+pub struct RXIMR {
     register: VolatileCell<u32>,
 }
 #[doc = "Rx Individual Mask Registers"]
-pub mod rximr0;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR1 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr1;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR2 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr2;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR3 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr3;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR4 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr4;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR5 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr5;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR6 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr6;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR7 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr7;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR8 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr8;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR9 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr9;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR10 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr10;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR11 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr11;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR12 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr12;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR13 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr13;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR14 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr14;
-#[doc = "Rx Individual Mask Registers"]
-pub struct RXIMR15 {
-    register: VolatileCell<u32>,
-}
-#[doc = "Rx Individual Mask Registers"]
-pub mod rximr15;
+pub mod rximr;
 #[doc = "Pretended Networking Control 1 Register"]
 pub struct CTRL1_PN {
     register: VolatileCell<u32>,
