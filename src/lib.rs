@@ -588,29 +588,25 @@ impl Deref for LPUART0 {
 }
 #[doc = "Universal Asynchronous Receiver/Transmitter"]
 pub const LPUART1: Peripheral<LPUART1> = unsafe { Peripheral::new(1074180096) };
-#[doc = "Universal Asynchronous Receiver/Transmitter"]
-pub mod lpuart1;
-#[doc = "Universal Asynchronous Receiver/Transmitter"]
+#[doc = r" Register block"]
 pub struct LPUART1 {
-    register_block: lpuart1::RegisterBlock,
+    register_block: lpuart0::RegisterBlock,
 }
 impl Deref for LPUART1 {
-    type Target = lpuart1::RegisterBlock;
-    fn deref(&self) -> &lpuart1::RegisterBlock {
+    type Target = lpuart0::RegisterBlock;
+    fn deref(&self) -> &lpuart0::RegisterBlock {
         &self.register_block
     }
 }
 #[doc = "Universal Asynchronous Receiver/Transmitter"]
 pub const LPUART2: Peripheral<LPUART2> = unsafe { Peripheral::new(1074184192) };
-#[doc = "Universal Asynchronous Receiver/Transmitter"]
-pub mod lpuart2;
-#[doc = "Universal Asynchronous Receiver/Transmitter"]
+#[doc = r" Register block"]
 pub struct LPUART2 {
-    register_block: lpuart2::RegisterBlock,
+    register_block: lpuart0::RegisterBlock,
 }
 impl Deref for LPUART2 {
-    type Target = lpuart2::RegisterBlock;
-    fn deref(&self) -> &lpuart2::RegisterBlock {
+    type Target = lpuart0::RegisterBlock;
+    fn deref(&self) -> &lpuart0::RegisterBlock {
         &self.register_block
     }
 }
