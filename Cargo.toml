@@ -15,3 +15,10 @@ license = "Apache-2.0/MIT"
 cortex-m = "0.3.1"
 bare-metal = "0.1.1"
 vcell = "0.1.0"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.3.6"
+
+[features]
+rt = ["cortex-m-rt"]
