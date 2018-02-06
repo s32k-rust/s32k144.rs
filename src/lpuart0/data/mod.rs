@@ -255,8 +255,10 @@ impl R9T9R {
 #[doc = "Possible values of the field `IDLINE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLINER {
-    #[doc = "Receiver was not idle before receiving this character."] _0,
-    #[doc = "Receiver was idle before receiving this character."] _1,
+    #[doc = "Receiver was not idle before receiving this character."]
+    _0,
+    #[doc = "Receiver was idle before receiving this character."]
+    _1,
 }
 impl IDLINER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -300,8 +302,10 @@ impl IDLINER {
 #[doc = "Possible values of the field `RXEMPT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEMPTR {
-    #[doc = "Receive buffer contains valid data."] _0,
-    #[doc = "Receive buffer is empty, data returned on read is not valid."] _1,
+    #[doc = "Receive buffer contains valid data."]
+    _0,
+    #[doc = "Receive buffer is empty, data returned on read is not valid."]
+    _1,
 }
 impl RXEMPTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -392,8 +396,10 @@ impl FRETSCR {
 #[doc = "Possible values of the field `PARITYE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITYER {
-    #[doc = "The dataword was received without a parity error."] _0,
-    #[doc = "The dataword was received with a parity error."] _1,
+    #[doc = "The dataword was received without a parity error."]
+    _0,
+    #[doc = "The dataword was received with a parity error."]
+    _1,
 }
 impl PARITYER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -437,8 +443,10 @@ impl PARITYER {
 #[doc = "Possible values of the field `NOISY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NOISYR {
-    #[doc = "The dataword was received without noise."] _0,
-    #[doc = "The data was received with noise."] _1,
+    #[doc = "The dataword was received without noise."]
+    _0,
+    #[doc = "The data was received with noise."]
+    _1,
 }
 impl NOISYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

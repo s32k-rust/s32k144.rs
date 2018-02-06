@@ -45,8 +45,10 @@ impl super::CFGR0 {
 #[doc = "Possible values of the field `HREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRENR {
-    #[doc = "Host request is disabled."] _0,
-    #[doc = "Host request is enabled."] _1,
+    #[doc = "Host request is disabled."]
+    _0,
+    #[doc = "Host request is enabled."]
+    _1,
 }
 impl HRENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl HRENR {
 #[doc = "Possible values of the field `HRPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRPOLR {
-    #[doc = "Active low."] _0,
-    #[doc = "Active high."] _1,
+    #[doc = "Active low."]
+    _0,
+    #[doc = "Active high."]
+    _1,
 }
 impl HRPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl HRPOLR {
 #[doc = "Possible values of the field `HRSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HRSELR {
-    #[doc = "Host request input is pin LPSPI_HREQ."] _0,
-    #[doc = "Host request input is input trigger."] _1,
+    #[doc = "Host request input is pin LPSPI_HREQ."]
+    _0,
+    #[doc = "Host request input is input trigger."]
+    _1,
 }
 impl HRSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl HRSELR {
 #[doc = "Possible values of the field `CIRFIFO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CIRFIFOR {
-    #[doc = "Circular FIFO is disabled."] _0,
-    #[doc = "Circular FIFO is enabled."] _1,
+    #[doc = "Circular FIFO is disabled."]
+    _0,
+    #[doc = "Circular FIFO is enabled."]
+    _1,
 }
 impl CIRFIFOR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl CIRFIFOR {
 #[doc = "Possible values of the field `RDMO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDMOR {
-    #[doc = "Received data is stored in the receive FIFO as normal."] _0,
-    #[doc = "Received data is discarded unless the DMF is set."] _1,
+    #[doc = "Received data is stored in the receive FIFO as normal."]
+    _0,
+    #[doc = "Received data is discarded unless the DMF is set."]
+    _1,
 }
 impl RDMOR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -269,8 +279,10 @@ impl RDMOR {
 }
 #[doc = "Values that can be written to the field `HREN`"]
 pub enum HRENW {
-    #[doc = "Host request is disabled."] _0,
-    #[doc = "Host request is enabled."] _1,
+    #[doc = "Host request is disabled."]
+    _0,
+    #[doc = "Host request is enabled."]
+    _1,
 }
 impl HRENW {
     #[allow(missing_docs)]
@@ -325,8 +337,10 @@ impl<'a> _HRENW<'a> {
 }
 #[doc = "Values that can be written to the field `HRPOL`"]
 pub enum HRPOLW {
-    #[doc = "Active low."] _0,
-    #[doc = "Active high."] _1,
+    #[doc = "Active low."]
+    _0,
+    #[doc = "Active high."]
+    _1,
 }
 impl HRPOLW {
     #[allow(missing_docs)]
@@ -381,8 +395,10 @@ impl<'a> _HRPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `HRSEL`"]
 pub enum HRSELW {
-    #[doc = "Host request input is pin LPSPI_HREQ."] _0,
-    #[doc = "Host request input is input trigger."] _1,
+    #[doc = "Host request input is pin LPSPI_HREQ."]
+    _0,
+    #[doc = "Host request input is input trigger."]
+    _1,
 }
 impl HRSELW {
     #[allow(missing_docs)]
@@ -437,8 +453,10 @@ impl<'a> _HRSELW<'a> {
 }
 #[doc = "Values that can be written to the field `CIRFIFO`"]
 pub enum CIRFIFOW {
-    #[doc = "Circular FIFO is disabled."] _0,
-    #[doc = "Circular FIFO is enabled."] _1,
+    #[doc = "Circular FIFO is disabled."]
+    _0,
+    #[doc = "Circular FIFO is enabled."]
+    _1,
 }
 impl CIRFIFOW {
     #[allow(missing_docs)]
@@ -493,8 +511,10 @@ impl<'a> _CIRFIFOW<'a> {
 }
 #[doc = "Values that can be written to the field `RDMO`"]
 pub enum RDMOW {
-    #[doc = "Received data is stored in the receive FIFO as normal."] _0,
-    #[doc = "Received data is discarded unless the DMF is set."] _1,
+    #[doc = "Received data is stored in the receive FIFO as normal."]
+    _0,
+    #[doc = "Received data is discarded unless the DMF is set."]
+    _1,
 }
 impl RDMOW {
     #[allow(missing_docs)]

@@ -2,25 +2,42 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Master Privilege Register A"] pub mpra: MPRA,
+    #[doc = "0x00 - Master Privilege Register A"]
+    pub mpra: MPRA,
     _reserved0: [u8; 28usize],
-    #[doc = "0x20 - Peripheral Access Control Register"] pub pacra: PACRA,
-    #[doc = "0x24 - Peripheral Access Control Register"] pub pacrb: PACRB,
-    #[doc = "0x28 - Peripheral Access Control Register"] pub pacrc: PACRC,
-    #[doc = "0x2c - Peripheral Access Control Register"] pub pacrd: PACRD,
+    #[doc = "0x20 - Peripheral Access Control Register"]
+    pub pacra: PACRA,
+    #[doc = "0x24 - Peripheral Access Control Register"]
+    pub pacrb: PACRB,
+    #[doc = "0x28 - Peripheral Access Control Register"]
+    pub pacrc: PACRC,
+    #[doc = "0x2c - Peripheral Access Control Register"]
+    pub pacrd: PACRD,
     _reserved1: [u8; 16usize],
-    #[doc = "0x40 - Off-Platform Peripheral Access Control Register"] pub opacra: OPACRA,
-    #[doc = "0x44 - Off-Platform Peripheral Access Control Register"] pub opacrb: OPACRB,
-    #[doc = "0x48 - Off-Platform Peripheral Access Control Register"] pub opacrc: OPACRC,
-    #[doc = "0x4c - Off-Platform Peripheral Access Control Register"] pub opacrd: OPACRD,
-    #[doc = "0x50 - Off-Platform Peripheral Access Control Register"] pub opacre: OPACRE,
-    #[doc = "0x54 - Off-Platform Peripheral Access Control Register"] pub opacrf: OPACRF,
-    #[doc = "0x58 - Off-Platform Peripheral Access Control Register"] pub opacrg: OPACRG,
-    #[doc = "0x5c - Off-Platform Peripheral Access Control Register"] pub opacrh: OPACRH,
-    #[doc = "0x60 - Off-Platform Peripheral Access Control Register"] pub opacri: OPACRI,
-    #[doc = "0x64 - Off-Platform Peripheral Access Control Register"] pub opacrj: OPACRJ,
-    #[doc = "0x68 - Off-Platform Peripheral Access Control Register"] pub opacrk: OPACRK,
-    #[doc = "0x6c - Off-Platform Peripheral Access Control Register"] pub opacrl: OPACRL,
+    #[doc = "0x40 - Off-Platform Peripheral Access Control Register"]
+    pub opacra: OPACRA,
+    #[doc = "0x44 - Off-Platform Peripheral Access Control Register"]
+    pub opacrb: OPACRB,
+    #[doc = "0x48 - Off-Platform Peripheral Access Control Register"]
+    pub opacrc: OPACRC,
+    #[doc = "0x4c - Off-Platform Peripheral Access Control Register"]
+    pub opacrd: OPACRD,
+    #[doc = "0x50 - Off-Platform Peripheral Access Control Register"]
+    pub opacre: OPACRE,
+    #[doc = "0x54 - Off-Platform Peripheral Access Control Register"]
+    pub opacrf: OPACRF,
+    #[doc = "0x58 - Off-Platform Peripheral Access Control Register"]
+    pub opacrg: OPACRG,
+    #[doc = "0x5c - Off-Platform Peripheral Access Control Register"]
+    pub opacrh: OPACRH,
+    #[doc = "0x60 - Off-Platform Peripheral Access Control Register"]
+    pub opacri: OPACRI,
+    #[doc = "0x64 - Off-Platform Peripheral Access Control Register"]
+    pub opacrj: OPACRJ,
+    #[doc = "0x68 - Off-Platform Peripheral Access Control Register"]
+    pub opacrk: OPACRK,
+    #[doc = "0x6c - Off-Platform Peripheral Access Control Register"]
+    pub opacrl: OPACRL,
 }
 #[doc = "Master Privilege Register A"]
 pub struct MPRA {

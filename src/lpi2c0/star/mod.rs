@@ -45,8 +45,10 @@ impl super::STAR {
 #[doc = "Possible values of the field `TXNACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXNACKR {
-    #[doc = "Transmit ACK for received word."] _0,
-    #[doc = "Transmit NACK for received word."] _1,
+    #[doc = "Transmit ACK for received word."]
+    _0,
+    #[doc = "Transmit NACK for received word."]
+    _1,
 }
 impl TXNACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -89,8 +91,10 @@ impl TXNACKR {
 }
 #[doc = "Values that can be written to the field `TXNACK`"]
 pub enum TXNACKW {
-    #[doc = "Transmit ACK for received word."] _0,
-    #[doc = "Transmit NACK for received word."] _1,
+    #[doc = "Transmit ACK for received word."]
+    _0,
+    #[doc = "Transmit NACK for received word."]
+    _1,
 }
 impl TXNACKW {
     #[allow(missing_docs)]

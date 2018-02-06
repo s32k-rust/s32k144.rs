@@ -45,7 +45,8 @@ impl super::SHIFTCTL2 {
 #[doc = "Possible values of the field `SMOD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMODR {
-    #[doc = "Disabled."] _0,
+    #[doc = "Disabled."]
+    _0,
     #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
     _1,
     #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
@@ -54,7 +55,8 @@ pub enum SMODR {
     _100,
     #[doc = "Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
     _101,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SMODR {
     #[doc = r" Value of the field as raw bits"]
@@ -111,8 +113,10 @@ impl SMODR {
 #[doc = "Possible values of the field `PINPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINPOLR {
-    #[doc = "Pin is active high"] _0,
-    #[doc = "Pin is active low"] _1,
+    #[doc = "Pin is active high"]
+    _0,
+    #[doc = "Pin is active low"]
+    _1,
 }
 impl PINPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -167,10 +171,14 @@ impl PINSELR {
 #[doc = "Possible values of the field `PINCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINCFGR {
-    #[doc = "Shifter pin output disabled"] _0,
-    #[doc = "Shifter pin open drain or bidirectional output enable"] _1,
-    #[doc = "Shifter pin bidirectional output data"] _10,
-    #[doc = "Shifter pin output"] _11,
+    #[doc = "Shifter pin output disabled"]
+    _0,
+    #[doc = "Shifter pin open drain or bidirectional output enable"]
+    _1,
+    #[doc = "Shifter pin bidirectional output data"]
+    _10,
+    #[doc = "Shifter pin output"]
+    _11,
 }
 impl PINCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -219,8 +227,10 @@ impl PINCFGR {
 #[doc = "Possible values of the field `TIMPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMPOLR {
-    #[doc = "Shift on posedge of Shift clock"] _0,
-    #[doc = "Shift on negedge of Shift clock"] _1,
+    #[doc = "Shift on posedge of Shift clock"]
+    _0,
+    #[doc = "Shift on negedge of Shift clock"]
+    _1,
 }
 impl TIMPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -274,7 +284,8 @@ impl TIMSELR {
 }
 #[doc = "Values that can be written to the field `SMOD`"]
 pub enum SMODW {
-    #[doc = "Disabled."] _0,
+    #[doc = "Disabled."]
+    _0,
     #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
     _1,
     #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
@@ -345,8 +356,10 @@ impl<'a> _SMODW<'a> {
 }
 #[doc = "Values that can be written to the field `PINPOL`"]
 pub enum PINPOLW {
-    #[doc = "Pin is active high"] _0,
-    #[doc = "Pin is active low"] _1,
+    #[doc = "Pin is active high"]
+    _0,
+    #[doc = "Pin is active low"]
+    _1,
 }
 impl PINPOLW {
     #[allow(missing_docs)]
@@ -416,10 +429,14 @@ impl<'a> _PINSELW<'a> {
 }
 #[doc = "Values that can be written to the field `PINCFG`"]
 pub enum PINCFGW {
-    #[doc = "Shifter pin output disabled"] _0,
-    #[doc = "Shifter pin open drain or bidirectional output enable"] _1,
-    #[doc = "Shifter pin bidirectional output data"] _10,
-    #[doc = "Shifter pin output"] _11,
+    #[doc = "Shifter pin output disabled"]
+    _0,
+    #[doc = "Shifter pin open drain or bidirectional output enable"]
+    _1,
+    #[doc = "Shifter pin bidirectional output data"]
+    _10,
+    #[doc = "Shifter pin output"]
+    _11,
 }
 impl PINCFGW {
     #[allow(missing_docs)]
@@ -478,8 +495,10 @@ impl<'a> _PINCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `TIMPOL`"]
 pub enum TIMPOLW {
-    #[doc = "Shift on posedge of Shift clock"] _0,
-    #[doc = "Shift on negedge of Shift clock"] _1,
+    #[doc = "Shift on posedge of Shift clock"]
+    _0,
+    #[doc = "Shift on negedge of Shift clock"]
+    _1,
 }
 impl TIMPOLW {
     #[allow(missing_docs)]

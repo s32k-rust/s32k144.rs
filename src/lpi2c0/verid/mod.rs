@@ -14,9 +14,12 @@ impl super::VERID {
 #[doc = "Possible values of the field `FEATURE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEATURER {
-    #[doc = "Master only with standard feature set."] _0000000000000010,
-    #[doc = "Master and slave with standard feature set."] _0000000000000011,
-    #[doc = r" Reserved"] _Reserved(u16),
+    #[doc = "Master only with standard feature set."]
+    _0000000000000010,
+    #[doc = "Master and slave with standard feature set."]
+    _0000000000000011,
+    #[doc = r" Reserved"]
+    _Reserved(u16),
 }
 impl FEATURER {
     #[doc = r" Value of the field as raw bits"]

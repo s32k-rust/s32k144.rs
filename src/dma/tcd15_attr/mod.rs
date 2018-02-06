@@ -67,10 +67,14 @@ impl DMODR {
 #[doc = "Possible values of the field `SSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSIZER {
-    #[doc = "8-bit"] _0,
-    #[doc = "16-bit"] _1,
-    #[doc = "32-bit"] _10,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "8-bit"]
+    _0,
+    #[doc = "16-bit"]
+    _1,
+    #[doc = "32-bit"]
+    _10,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SSIZER {
     #[doc = r" Value of the field as raw bits"]
@@ -113,8 +117,10 @@ impl SSIZER {
 #[doc = "Possible values of the field `SMOD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMODR {
-    #[doc = "Source address modulo feature is disabled"] _0,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Source address modulo feature is disabled"]
+    _0,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SMODR {
     #[doc = r" Value of the field as raw bits"]
@@ -172,9 +178,12 @@ impl<'a> _DMODW<'a> {
 }
 #[doc = "Values that can be written to the field `SSIZE`"]
 pub enum SSIZEW {
-    #[doc = "8-bit"] _0,
-    #[doc = "16-bit"] _1,
-    #[doc = "32-bit"] _10,
+    #[doc = "8-bit"]
+    _0,
+    #[doc = "16-bit"]
+    _1,
+    #[doc = "32-bit"]
+    _10,
 }
 impl SSIZEW {
     #[allow(missing_docs)]
@@ -225,7 +234,8 @@ impl<'a> _SSIZEW<'a> {
 }
 #[doc = "Values that can be written to the field `SMOD`"]
 pub enum SMODW {
-    #[doc = "Source address modulo feature is disabled"] _0,
+    #[doc = "Source address modulo feature is disabled"]
+    _0,
 }
 impl SMODW {
     #[allow(missing_docs)]

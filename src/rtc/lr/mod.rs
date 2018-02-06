@@ -45,8 +45,10 @@ impl super::LR {
 #[doc = "Possible values of the field `TCL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCLR {
-    #[doc = "Time Compensation Register is locked and writes are ignored."] _0,
-    #[doc = "Time Compensation Register is not locked and writes complete as normal."] _1,
+    #[doc = "Time Compensation Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Time Compensation Register is not locked and writes complete as normal."]
+    _1,
 }
 impl TCLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TCLR {
 #[doc = "Possible values of the field `CRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRLR {
-    #[doc = "Control Register is locked and writes are ignored."] _0,
-    #[doc = "Control Register is not locked and writes complete as normal."] _1,
+    #[doc = "Control Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Control Register is not locked and writes complete as normal."]
+    _1,
 }
 impl CRLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl CRLR {
 #[doc = "Possible values of the field `SRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRLR {
-    #[doc = "Status Register is locked and writes are ignored."] _0,
-    #[doc = "Status Register is not locked and writes complete as normal."] _1,
+    #[doc = "Status Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Status Register is not locked and writes complete as normal."]
+    _1,
 }
 impl SRLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl SRLR {
 #[doc = "Possible values of the field `LRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LRLR {
-    #[doc = "Lock Register is locked and writes are ignored."] _0,
-    #[doc = "Lock Register is not locked and writes complete as normal."] _1,
+    #[doc = "Lock Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Lock Register is not locked and writes complete as normal."]
+    _1,
 }
 impl LRLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl LRLR {
 }
 #[doc = "Values that can be written to the field `TCL`"]
 pub enum TCLW {
-    #[doc = "Time Compensation Register is locked and writes are ignored."] _0,
-    #[doc = "Time Compensation Register is not locked and writes complete as normal."] _1,
+    #[doc = "Time Compensation Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Time Compensation Register is not locked and writes complete as normal."]
+    _1,
 }
 impl TCLW {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _TCLW<'a> {
 }
 #[doc = "Values that can be written to the field `CRL`"]
 pub enum CRLW {
-    #[doc = "Control Register is locked and writes are ignored."] _0,
-    #[doc = "Control Register is not locked and writes complete as normal."] _1,
+    #[doc = "Control Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Control Register is not locked and writes complete as normal."]
+    _1,
 }
 impl CRLW {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _CRLW<'a> {
 }
 #[doc = "Values that can be written to the field `SRL`"]
 pub enum SRLW {
-    #[doc = "Status Register is locked and writes are ignored."] _0,
-    #[doc = "Status Register is not locked and writes complete as normal."] _1,
+    #[doc = "Status Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Status Register is not locked and writes complete as normal."]
+    _1,
 }
 impl SRLW {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _SRLW<'a> {
 }
 #[doc = "Values that can be written to the field `LRL`"]
 pub enum LRLW {
-    #[doc = "Lock Register is locked and writes are ignored."] _0,
-    #[doc = "Lock Register is not locked and writes complete as normal."] _1,
+    #[doc = "Lock Register is locked and writes are ignored."]
+    _0,
+    #[doc = "Lock Register is not locked and writes complete as normal."]
+    _1,
 }
 impl LRLW {
     #[allow(missing_docs)]

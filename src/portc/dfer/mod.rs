@@ -49,7 +49,8 @@ pub enum DFER {
     _0,
     #[doc = "Digital filter is enabled on the corresponding pin, if the pin is configured as a digital input."]
     _1,
-    #[doc = r" Reserved"] _Reserved(u32),
+    #[doc = r" Reserved"]
+    _Reserved(u32),
 }
 impl DFER {
     #[doc = r" Value of the field as raw bits"]

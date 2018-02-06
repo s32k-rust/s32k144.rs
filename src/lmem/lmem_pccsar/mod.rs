@@ -45,7 +45,8 @@ impl super::LMEM_PCCSAR {
 #[doc = "Possible values of the field `LGO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LGOR {
-    #[doc = "Write: no effect. Read: no line command active."] _0,
+    #[doc = "Write: no effect. Read: no line command active."]
+    _0,
     #[doc = "Write: initiate line command indicated by bits CLCR[27:24]. Read: line command active."]
     _1,
 }
@@ -101,7 +102,8 @@ impl PHYADDRR {
 }
 #[doc = "Values that can be written to the field `LGO`"]
 pub enum LGOW {
-    #[doc = "Write: no effect. Read: no line command active."] _0,
+    #[doc = "Write: no effect. Read: no line command active."]
+    _0,
     #[doc = "Write: initiate line command indicated by bits CLCR[27:24]. Read: line command active."]
     _1,
 }

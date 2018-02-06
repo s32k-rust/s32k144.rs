@@ -99,13 +99,20 @@ impl OCMPUR {
 #[doc = "Possible values of the field `OCMT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCMTR {
-    #[doc = "OCMEMn is a System RAM."] _000,
-    #[doc = "OCMEMn is a Graphics RAM."] _001,
-    #[doc = "OCMEMn is a ROM."] _011,
-    #[doc = "OCMEMn is a Program Flash."] _100,
-    #[doc = "OCMEMn is a Data Flash."] _101,
-    #[doc = "OCMEMn is an EEE."] _110,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "OCMEMn is a System RAM."]
+    _000,
+    #[doc = "OCMEMn is a Graphics RAM."]
+    _001,
+    #[doc = "OCMEMn is a ROM."]
+    _011,
+    #[doc = "OCMEMn is a Program Flash."]
+    _100,
+    #[doc = "OCMEMn is a Data Flash."]
+    _101,
+    #[doc = "OCMEMn is an EEE."]
+    _110,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl OCMTR {
     #[doc = r" Value of the field as raw bits"]
@@ -169,8 +176,10 @@ impl OCMTR {
 #[doc = "Possible values of the field `RO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ROR {
-    #[doc = "Writes to the OCMDRn[11:0] are allowed"] _0,
-    #[doc = "Writes to the OCMDRn[11:0] are ignored"] _1,
+    #[doc = "Writes to the OCMDRn[11:0] are allowed"]
+    _0,
+    #[doc = "Writes to the OCMDRn[11:0] are ignored"]
+    _1,
 }
 impl ROR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -214,11 +223,16 @@ impl ROR {
 #[doc = "Possible values of the field `OCMW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCMWR {
-    #[doc = "OCMEMn 32-bits wide"] _010,
-    #[doc = "OCMEMn 64-bits wide"] _011,
-    #[doc = "OCMEMn 128-bits wide"] _100,
-    #[doc = "OCMEMn 256-bits wide"] _101,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "OCMEMn 32-bits wide"]
+    _010,
+    #[doc = "OCMEMn 64-bits wide"]
+    _011,
+    #[doc = "OCMEMn 128-bits wide"]
+    _100,
+    #[doc = "OCMEMn 256-bits wide"]
+    _101,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl OCMWR {
     #[doc = r" Value of the field as raw bits"]
@@ -268,22 +282,38 @@ impl OCMWR {
 #[doc = "Possible values of the field `OCMSZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCMSZR {
-    #[doc = "no OCMEMn"] _0000,
-    #[doc = "1KB OCMEMn"] _0001,
-    #[doc = "2KB OCMEMn"] _0010,
-    #[doc = "4KB OCMEMn"] _0011,
-    #[doc = "8KB OCMEMn"] _0100,
-    #[doc = "16KB OCMEMn"] _0101,
-    #[doc = "32KB OCMEMn"] _0110,
-    #[doc = "64KB OCMEMn"] _0111,
-    #[doc = "128KB OCMEMn"] _1000,
-    #[doc = "256KB OCMEMn"] _1001,
-    #[doc = "512KB OCMEMn"] _1010,
-    #[doc = "1MB OCMEMn"] _1011,
-    #[doc = "2MB OCMEMn"] _1100,
-    #[doc = "4MB OCMEMn"] _1101,
-    #[doc = "8MB OCMEMn"] _1110,
-    #[doc = "16MB OCMEMn"] _1111,
+    #[doc = "no OCMEMn"]
+    _0000,
+    #[doc = "1KB OCMEMn"]
+    _0001,
+    #[doc = "2KB OCMEMn"]
+    _0010,
+    #[doc = "4KB OCMEMn"]
+    _0011,
+    #[doc = "8KB OCMEMn"]
+    _0100,
+    #[doc = "16KB OCMEMn"]
+    _0101,
+    #[doc = "32KB OCMEMn"]
+    _0110,
+    #[doc = "64KB OCMEMn"]
+    _0111,
+    #[doc = "128KB OCMEMn"]
+    _1000,
+    #[doc = "256KB OCMEMn"]
+    _1001,
+    #[doc = "512KB OCMEMn"]
+    _1010,
+    #[doc = "1MB OCMEMn"]
+    _1011,
+    #[doc = "2MB OCMEMn"]
+    _1100,
+    #[doc = "4MB OCMEMn"]
+    _1101,
+    #[doc = "8MB OCMEMn"]
+    _1110,
+    #[doc = "16MB OCMEMn"]
+    _1111,
 }
 impl OCMSZR {
     #[doc = r" Value of the field as raw bits"]
@@ -416,8 +446,10 @@ impl OCMSZR {
 #[doc = "Possible values of the field `OCMSZH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCMSZHR {
-    #[doc = "OCMEMn is a power-of-2 capacity."] _0,
-    #[doc = "OCMEMn is not a power-of-2, with a capacity is 0.75 * OCMSZ."] _1,
+    #[doc = "OCMEMn is a power-of-2 capacity."]
+    _0,
+    #[doc = "OCMEMn is not a power-of-2, with a capacity is 0.75 * OCMSZ."]
+    _1,
 }
 impl OCMSZHR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -461,8 +493,10 @@ impl OCMSZHR {
 #[doc = "Possible values of the field `V`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VR {
-    #[doc = "OCMEMn is not present."] _0,
-    #[doc = "OCMEMn is present."] _1,
+    #[doc = "OCMEMn is not present."]
+    _0,
+    #[doc = "OCMEMn is present."]
+    _1,
 }
 impl VR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -550,8 +584,10 @@ impl<'a> _OCM2W<'a> {
 }
 #[doc = "Values that can be written to the field `RO`"]
 pub enum ROW {
-    #[doc = "Writes to the OCMDRn[11:0] are allowed"] _0,
-    #[doc = "Writes to the OCMDRn[11:0] are ignored"] _1,
+    #[doc = "Writes to the OCMDRn[11:0] are allowed"]
+    _0,
+    #[doc = "Writes to the OCMDRn[11:0] are ignored"]
+    _1,
 }
 impl ROW {
     #[allow(missing_docs)]

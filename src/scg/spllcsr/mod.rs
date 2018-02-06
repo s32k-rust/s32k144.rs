@@ -45,8 +45,10 @@ impl super::SPLLCSR {
 #[doc = "Possible values of the field `SPLLEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLENR {
-    #[doc = "System PLL is disabled"] _0,
-    #[doc = "System PLL is enabled"] _1,
+    #[doc = "System PLL is disabled"]
+    _0,
+    #[doc = "System PLL is enabled"]
+    _1,
 }
 impl SPLLENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl SPLLENR {
 #[doc = "Possible values of the field `SPLLCM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLCMR {
-    #[doc = "System PLL Clock Monitor is disabled"] _0,
-    #[doc = "System PLL Clock Monitor is enabled"] _1,
+    #[doc = "System PLL Clock Monitor is disabled"]
+    _0,
+    #[doc = "System PLL Clock Monitor is enabled"]
+    _1,
 }
 impl SPLLCMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl SPLLCMR {
 #[doc = "Possible values of the field `SPLLCMRE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLCMRER {
-    #[doc = "Clock Monitor generates interrupt when error detected"] _0,
-    #[doc = "Clock Monitor generates reset when error detected"] _1,
+    #[doc = "Clock Monitor generates interrupt when error detected"]
+    _0,
+    #[doc = "Clock Monitor generates reset when error detected"]
+    _1,
 }
 impl SPLLCMRER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl SPLLCMRER {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "Control Status Register can be written."] _0,
-    #[doc = "Control Status Register cannot be written."] _1,
+    #[doc = "Control Status Register can be written."]
+    _0,
+    #[doc = "Control Status Register cannot be written."]
+    _1,
 }
 impl LKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl LKR {
 #[doc = "Possible values of the field `SPLLVLD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLVLDR {
-    #[doc = "System PLL is not enabled or clock is not valid"] _0,
-    #[doc = "System PLL is enabled and output clock is valid"] _1,
+    #[doc = "System PLL is not enabled or clock is not valid"]
+    _0,
+    #[doc = "System PLL is enabled and output clock is valid"]
+    _1,
 }
 impl SPLLVLDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl SPLLVLDR {
 #[doc = "Possible values of the field `SPLLSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLSELR {
-    #[doc = "System PLL is not the system clock source"] _0,
-    #[doc = "System PLL is the system clock source"] _1,
+    #[doc = "System PLL is not the system clock source"]
+    _0,
+    #[doc = "System PLL is the system clock source"]
+    _1,
 }
 impl SPLLSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,7 +327,8 @@ impl SPLLSELR {
 #[doc = "Possible values of the field `SPLLERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLERRR {
-    #[doc = "System PLL Clock Monitor is disabled or has not detected an error"] _0,
+    #[doc = "System PLL Clock Monitor is disabled or has not detected an error"]
+    _0,
     #[doc = "System PLL Clock Monitor is enabled and detected an error. System PLL Clock Error flag will not set when System OSC is selected as its source and SOSCERR has set."]
     _1,
 }
@@ -360,8 +373,10 @@ impl SPLLERRR {
 }
 #[doc = "Values that can be written to the field `SPLLEN`"]
 pub enum SPLLENW {
-    #[doc = "System PLL is disabled"] _0,
-    #[doc = "System PLL is enabled"] _1,
+    #[doc = "System PLL is disabled"]
+    _0,
+    #[doc = "System PLL is enabled"]
+    _1,
 }
 impl SPLLENW {
     #[allow(missing_docs)]
@@ -416,8 +431,10 @@ impl<'a> _SPLLENW<'a> {
 }
 #[doc = "Values that can be written to the field `SPLLCM`"]
 pub enum SPLLCMW {
-    #[doc = "System PLL Clock Monitor is disabled"] _0,
-    #[doc = "System PLL Clock Monitor is enabled"] _1,
+    #[doc = "System PLL Clock Monitor is disabled"]
+    _0,
+    #[doc = "System PLL Clock Monitor is enabled"]
+    _1,
 }
 impl SPLLCMW {
     #[allow(missing_docs)]
@@ -472,8 +489,10 @@ impl<'a> _SPLLCMW<'a> {
 }
 #[doc = "Values that can be written to the field `SPLLCMRE`"]
 pub enum SPLLCMREW {
-    #[doc = "Clock Monitor generates interrupt when error detected"] _0,
-    #[doc = "Clock Monitor generates reset when error detected"] _1,
+    #[doc = "Clock Monitor generates interrupt when error detected"]
+    _0,
+    #[doc = "Clock Monitor generates reset when error detected"]
+    _1,
 }
 impl SPLLCMREW {
     #[allow(missing_docs)]
@@ -528,8 +547,10 @@ impl<'a> _SPLLCMREW<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "Control Status Register can be written."] _0,
-    #[doc = "Control Status Register cannot be written."] _1,
+    #[doc = "Control Status Register can be written."]
+    _0,
+    #[doc = "Control Status Register cannot be written."]
+    _1,
 }
 impl LKW {
     #[allow(missing_docs)]
@@ -584,7 +605,8 @@ impl<'a> _LKW<'a> {
 }
 #[doc = "Values that can be written to the field `SPLLERR`"]
 pub enum SPLLERRW {
-    #[doc = "System PLL Clock Monitor is disabled or has not detected an error"] _0,
+    #[doc = "System PLL Clock Monitor is disabled or has not detected an error"]
+    _0,
     #[doc = "System PLL Clock Monitor is enabled and detected an error. System PLL Clock Error flag will not set when System OSC is selected as its source and SOSCERR has set."]
     _1,
 }

@@ -45,8 +45,10 @@ impl super::EARS {
 #[doc = "Possible values of the field `EDREQ_0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_0R {
-    #[doc = "Disable asynchronous DMA request for channel 0."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 0."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 0."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 0."]
+    _1,
 }
 impl EDREQ_0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl EDREQ_0R {
 #[doc = "Possible values of the field `EDREQ_1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_1R {
-    #[doc = "Disable asynchronous DMA request for channel 1"] _0,
-    #[doc = "Enable asynchronous DMA request for channel 1."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 1"]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 1."]
+    _1,
 }
 impl EDREQ_1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl EDREQ_1R {
 #[doc = "Possible values of the field `EDREQ_2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_2R {
-    #[doc = "Disable asynchronous DMA request for channel 2."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 2."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 2."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 2."]
+    _1,
 }
 impl EDREQ_2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl EDREQ_2R {
 #[doc = "Possible values of the field `EDREQ_3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_3R {
-    #[doc = "Disable asynchronous DMA request for channel 3."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 3."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 3."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 3."]
+    _1,
 }
 impl EDREQ_3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl EDREQ_3R {
 #[doc = "Possible values of the field `EDREQ_4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_4R {
-    #[doc = "Disable asynchronous DMA request for channel 4."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 4."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 4."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 4."]
+    _1,
 }
 impl EDREQ_4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl EDREQ_4R {
 #[doc = "Possible values of the field `EDREQ_5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_5R {
-    #[doc = "Disable asynchronous DMA request for channel 5."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 5."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 5."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 5."]
+    _1,
 }
 impl EDREQ_5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl EDREQ_5R {
 #[doc = "Possible values of the field `EDREQ_6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_6R {
-    #[doc = "Disable asynchronous DMA request for channel 6."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 6."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 6."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 6."]
+    _1,
 }
 impl EDREQ_6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl EDREQ_6R {
 #[doc = "Possible values of the field `EDREQ_7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_7R {
-    #[doc = "Disable asynchronous DMA request for channel 7."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 7."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 7."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 7."]
+    _1,
 }
 impl EDREQ_7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl EDREQ_7R {
 #[doc = "Possible values of the field `EDREQ_8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_8R {
-    #[doc = "Disable asynchronous DMA request for channel 8."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 8."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 8."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 8."]
+    _1,
 }
 impl EDREQ_8R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -450,8 +468,10 @@ impl EDREQ_8R {
 #[doc = "Possible values of the field `EDREQ_9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_9R {
-    #[doc = "Disable asynchronous DMA request for channel 9."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 9."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 9."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 9."]
+    _1,
 }
 impl EDREQ_9R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -495,8 +515,10 @@ impl EDREQ_9R {
 #[doc = "Possible values of the field `EDREQ_10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_10R {
-    #[doc = "Disable asynchronous DMA request for channel 10."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 10."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 10."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 10."]
+    _1,
 }
 impl EDREQ_10R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -540,8 +562,10 @@ impl EDREQ_10R {
 #[doc = "Possible values of the field `EDREQ_11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_11R {
-    #[doc = "Disable asynchronous DMA request for channel 11."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 11."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 11."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 11."]
+    _1,
 }
 impl EDREQ_11R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -585,8 +609,10 @@ impl EDREQ_11R {
 #[doc = "Possible values of the field `EDREQ_12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_12R {
-    #[doc = "Disable asynchronous DMA request for channel 12."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 12."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 12."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 12."]
+    _1,
 }
 impl EDREQ_12R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -630,8 +656,10 @@ impl EDREQ_12R {
 #[doc = "Possible values of the field `EDREQ_13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_13R {
-    #[doc = "Disable asynchronous DMA request for channel 13."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 13."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 13."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 13."]
+    _1,
 }
 impl EDREQ_13R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -675,8 +703,10 @@ impl EDREQ_13R {
 #[doc = "Possible values of the field `EDREQ_14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_14R {
-    #[doc = "Disable asynchronous DMA request for channel 14."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 14."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 14."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 14."]
+    _1,
 }
 impl EDREQ_14R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -720,8 +750,10 @@ impl EDREQ_14R {
 #[doc = "Possible values of the field `EDREQ_15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDREQ_15R {
-    #[doc = "Disable asynchronous DMA request for channel 15."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 15."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 15."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 15."]
+    _1,
 }
 impl EDREQ_15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -764,8 +796,10 @@ impl EDREQ_15R {
 }
 #[doc = "Values that can be written to the field `EDREQ_0`"]
 pub enum EDREQ_0W {
-    #[doc = "Disable asynchronous DMA request for channel 0."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 0."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 0."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 0."]
+    _1,
 }
 impl EDREQ_0W {
     #[allow(missing_docs)]
@@ -820,8 +854,10 @@ impl<'a> _EDREQ_0W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_1`"]
 pub enum EDREQ_1W {
-    #[doc = "Disable asynchronous DMA request for channel 1"] _0,
-    #[doc = "Enable asynchronous DMA request for channel 1."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 1"]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 1."]
+    _1,
 }
 impl EDREQ_1W {
     #[allow(missing_docs)]
@@ -876,8 +912,10 @@ impl<'a> _EDREQ_1W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_2`"]
 pub enum EDREQ_2W {
-    #[doc = "Disable asynchronous DMA request for channel 2."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 2."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 2."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 2."]
+    _1,
 }
 impl EDREQ_2W {
     #[allow(missing_docs)]
@@ -932,8 +970,10 @@ impl<'a> _EDREQ_2W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_3`"]
 pub enum EDREQ_3W {
-    #[doc = "Disable asynchronous DMA request for channel 3."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 3."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 3."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 3."]
+    _1,
 }
 impl EDREQ_3W {
     #[allow(missing_docs)]
@@ -988,8 +1028,10 @@ impl<'a> _EDREQ_3W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_4`"]
 pub enum EDREQ_4W {
-    #[doc = "Disable asynchronous DMA request for channel 4."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 4."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 4."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 4."]
+    _1,
 }
 impl EDREQ_4W {
     #[allow(missing_docs)]
@@ -1044,8 +1086,10 @@ impl<'a> _EDREQ_4W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_5`"]
 pub enum EDREQ_5W {
-    #[doc = "Disable asynchronous DMA request for channel 5."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 5."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 5."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 5."]
+    _1,
 }
 impl EDREQ_5W {
     #[allow(missing_docs)]
@@ -1100,8 +1144,10 @@ impl<'a> _EDREQ_5W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_6`"]
 pub enum EDREQ_6W {
-    #[doc = "Disable asynchronous DMA request for channel 6."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 6."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 6."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 6."]
+    _1,
 }
 impl EDREQ_6W {
     #[allow(missing_docs)]
@@ -1156,8 +1202,10 @@ impl<'a> _EDREQ_6W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_7`"]
 pub enum EDREQ_7W {
-    #[doc = "Disable asynchronous DMA request for channel 7."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 7."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 7."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 7."]
+    _1,
 }
 impl EDREQ_7W {
     #[allow(missing_docs)]
@@ -1212,8 +1260,10 @@ impl<'a> _EDREQ_7W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_8`"]
 pub enum EDREQ_8W {
-    #[doc = "Disable asynchronous DMA request for channel 8."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 8."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 8."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 8."]
+    _1,
 }
 impl EDREQ_8W {
     #[allow(missing_docs)]
@@ -1268,8 +1318,10 @@ impl<'a> _EDREQ_8W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_9`"]
 pub enum EDREQ_9W {
-    #[doc = "Disable asynchronous DMA request for channel 9."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 9."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 9."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 9."]
+    _1,
 }
 impl EDREQ_9W {
     #[allow(missing_docs)]
@@ -1324,8 +1376,10 @@ impl<'a> _EDREQ_9W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_10`"]
 pub enum EDREQ_10W {
-    #[doc = "Disable asynchronous DMA request for channel 10."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 10."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 10."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 10."]
+    _1,
 }
 impl EDREQ_10W {
     #[allow(missing_docs)]
@@ -1380,8 +1434,10 @@ impl<'a> _EDREQ_10W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_11`"]
 pub enum EDREQ_11W {
-    #[doc = "Disable asynchronous DMA request for channel 11."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 11."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 11."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 11."]
+    _1,
 }
 impl EDREQ_11W {
     #[allow(missing_docs)]
@@ -1436,8 +1492,10 @@ impl<'a> _EDREQ_11W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_12`"]
 pub enum EDREQ_12W {
-    #[doc = "Disable asynchronous DMA request for channel 12."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 12."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 12."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 12."]
+    _1,
 }
 impl EDREQ_12W {
     #[allow(missing_docs)]
@@ -1492,8 +1550,10 @@ impl<'a> _EDREQ_12W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_13`"]
 pub enum EDREQ_13W {
-    #[doc = "Disable asynchronous DMA request for channel 13."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 13."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 13."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 13."]
+    _1,
 }
 impl EDREQ_13W {
     #[allow(missing_docs)]
@@ -1548,8 +1608,10 @@ impl<'a> _EDREQ_13W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_14`"]
 pub enum EDREQ_14W {
-    #[doc = "Disable asynchronous DMA request for channel 14."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 14."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 14."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 14."]
+    _1,
 }
 impl EDREQ_14W {
     #[allow(missing_docs)]
@@ -1604,8 +1666,10 @@ impl<'a> _EDREQ_14W<'a> {
 }
 #[doc = "Values that can be written to the field `EDREQ_15`"]
 pub enum EDREQ_15W {
-    #[doc = "Disable asynchronous DMA request for channel 15."] _0,
-    #[doc = "Enable asynchronous DMA request for channel 15."] _1,
+    #[doc = "Disable asynchronous DMA request for channel 15."]
+    _0,
+    #[doc = "Enable asynchronous DMA request for channel 15."]
+    _1,
 }
 impl EDREQ_15W {
     #[allow(missing_docs)]

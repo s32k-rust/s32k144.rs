@@ -45,8 +45,10 @@ impl super::MCR {
 #[doc = "Possible values of the field `M_CEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum M_CENR {
-    #[doc = "Peripheral clock to timers is disabled"] _0,
-    #[doc = "Peripheral clock to timers is enabled"] _1,
+    #[doc = "Peripheral clock to timers is disabled"]
+    _0,
+    #[doc = "Peripheral clock to timers is enabled"]
+    _1,
 }
 impl M_CENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl M_CENR {
 #[doc = "Possible values of the field `SW_RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SW_RSTR {
-    #[doc = "Timer channels and registers are not reset"] _0,
-    #[doc = "Timer channels and registers are reset"] _1,
+    #[doc = "Timer channels and registers are not reset"]
+    _0,
+    #[doc = "Timer channels and registers are reset"]
+    _1,
 }
 impl SW_RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl SW_RSTR {
 #[doc = "Possible values of the field `DOZE_EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOZE_ENR {
-    #[doc = "Timer channels are stopped in DOZE mode"] _0,
-    #[doc = "Timer channels continue to run in DOZE mode"] _1,
+    #[doc = "Timer channels are stopped in DOZE mode"]
+    _0,
+    #[doc = "Timer channels continue to run in DOZE mode"]
+    _1,
 }
 impl DOZE_ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl DOZE_ENR {
 #[doc = "Possible values of the field `DBG_EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_ENR {
-    #[doc = "Timer channels are stopped in Debug mode"] _0,
-    #[doc = "Timer channels continue to run in Debug mode"] _1,
+    #[doc = "Timer channels are stopped in Debug mode"]
+    _0,
+    #[doc = "Timer channels continue to run in Debug mode"]
+    _1,
 }
 impl DBG_ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl DBG_ENR {
 }
 #[doc = "Values that can be written to the field `M_CEN`"]
 pub enum M_CENW {
-    #[doc = "Peripheral clock to timers is disabled"] _0,
-    #[doc = "Peripheral clock to timers is enabled"] _1,
+    #[doc = "Peripheral clock to timers is disabled"]
+    _0,
+    #[doc = "Peripheral clock to timers is enabled"]
+    _1,
 }
 impl M_CENW {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _M_CENW<'a> {
 }
 #[doc = "Values that can be written to the field `SW_RST`"]
 pub enum SW_RSTW {
-    #[doc = "Timer channels and registers are not reset"] _0,
-    #[doc = "Timer channels and registers are reset"] _1,
+    #[doc = "Timer channels and registers are not reset"]
+    _0,
+    #[doc = "Timer channels and registers are reset"]
+    _1,
 }
 impl SW_RSTW {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _SW_RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `DOZE_EN`"]
 pub enum DOZE_ENW {
-    #[doc = "Timer channels are stopped in DOZE mode"] _0,
-    #[doc = "Timer channels continue to run in DOZE mode"] _1,
+    #[doc = "Timer channels are stopped in DOZE mode"]
+    _0,
+    #[doc = "Timer channels continue to run in DOZE mode"]
+    _1,
 }
 impl DOZE_ENW {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _DOZE_ENW<'a> {
 }
 #[doc = "Values that can be written to the field `DBG_EN`"]
 pub enum DBG_ENW {
-    #[doc = "Timer channels are stopped in Debug mode"] _0,
-    #[doc = "Timer channels continue to run in Debug mode"] _1,
+    #[doc = "Timer channels are stopped in Debug mode"]
+    _0,
+    #[doc = "Timer channels continue to run in Debug mode"]
+    _1,
 }
 impl DBG_ENW {
     #[allow(missing_docs)]

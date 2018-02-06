@@ -45,10 +45,12 @@ impl super::SC2 {
 #[doc = "Possible values of the field `REFSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFSELR {
-    #[doc = "Default voltage reference pin pair, that is, external pins VREFH and VREFL"] _00,
+    #[doc = "Default voltage reference pin pair, that is, external pins VREFH and VREFL"]
+    _00,
     #[doc = "Alternate reference voltage, that is, VALTH. This voltage may be additional external pin or internal source depending on the MCU configuration. See the chip configuration information for details specific to this MCU."]
     _01,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl REFSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -84,7 +86,8 @@ impl REFSELR {
 #[doc = "Possible values of the field `DMAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAENR {
-    #[doc = "DMA is disabled."] _0,
+    #[doc = "DMA is disabled."]
+    _0,
     #[doc = "DMA is enabled and will assert the ADC DMA request during an ADC conversion complete event , which is indicated when any SC1n[COCO] flag is asserted."]
     _1,
 }
@@ -172,8 +175,10 @@ impl ACFGTR {
 #[doc = "Possible values of the field `ACFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACFER {
-    #[doc = "Compare function disabled."] _0,
-    #[doc = "Compare function enabled."] _1,
+    #[doc = "Compare function disabled."]
+    _0,
+    #[doc = "Compare function enabled."]
+    _1,
 }
 impl ACFER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -217,8 +222,10 @@ impl ACFER {
 #[doc = "Possible values of the field `ADTRG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADTRGR {
-    #[doc = "Software trigger selected."] _0,
-    #[doc = "Hardware trigger selected."] _1,
+    #[doc = "Software trigger selected."]
+    _0,
+    #[doc = "Hardware trigger selected."]
+    _1,
 }
 impl ADTRGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -262,8 +269,10 @@ impl ADTRGR {
 #[doc = "Possible values of the field `ADACT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADACTR {
-    #[doc = "Conversion not in progress."] _0,
-    #[doc = "Conversion in progress."] _1,
+    #[doc = "Conversion not in progress."]
+    _0,
+    #[doc = "Conversion in progress."]
+    _1,
 }
 impl ADACTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -318,9 +327,12 @@ impl TRGPRNUMR {
 #[doc = "Possible values of the field `TRGSTLAT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGSTLATR {
-    #[doc = "No trigger request has been latched"] _0,
-    #[doc = "A trigger request has been latched"] _1,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "No trigger request has been latched"]
+    _0,
+    #[doc = "A trigger request has been latched"]
+    _1,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl TRGSTLATR {
     #[doc = r" Value of the field as raw bits"]
@@ -356,9 +368,12 @@ impl TRGSTLATR {
 #[doc = "Possible values of the field `TRGSTERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGSTERRR {
-    #[doc = "No error has occurred"] _0,
-    #[doc = "An error has occurred"] _1,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "No error has occurred"]
+    _0,
+    #[doc = "An error has occurred"]
+    _1,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl TRGSTERRR {
     #[doc = r" Value of the field as raw bits"]
@@ -393,7 +408,8 @@ impl TRGSTERRR {
 }
 #[doc = "Values that can be written to the field `REFSEL`"]
 pub enum REFSELW {
-    #[doc = "Default voltage reference pin pair, that is, external pins VREFH and VREFL"] _00,
+    #[doc = "Default voltage reference pin pair, that is, external pins VREFH and VREFL"]
+    _00,
     #[doc = "Alternate reference voltage, that is, VALTH. This voltage may be additional external pin or internal source depending on the MCU configuration. See the chip configuration information for details specific to this MCU."]
     _01,
 }
@@ -440,7 +456,8 @@ impl<'a> _REFSELW<'a> {
 }
 #[doc = "Values that can be written to the field `DMAEN`"]
 pub enum DMAENW {
-    #[doc = "DMA is disabled."] _0,
+    #[doc = "DMA is disabled."]
+    _0,
     #[doc = "DMA is enabled and will assert the ADC DMA request during an ADC conversion complete event , which is indicated when any SC1n[COCO] flag is asserted."]
     _1,
 }
@@ -543,8 +560,10 @@ impl<'a> _ACFGTW<'a> {
 }
 #[doc = "Values that can be written to the field `ACFE`"]
 pub enum ACFEW {
-    #[doc = "Compare function disabled."] _0,
-    #[doc = "Compare function enabled."] _1,
+    #[doc = "Compare function disabled."]
+    _0,
+    #[doc = "Compare function enabled."]
+    _1,
 }
 impl ACFEW {
     #[allow(missing_docs)]
@@ -599,8 +618,10 @@ impl<'a> _ACFEW<'a> {
 }
 #[doc = "Values that can be written to the field `ADTRG`"]
 pub enum ADTRGW {
-    #[doc = "Software trigger selected."] _0,
-    #[doc = "Hardware trigger selected."] _1,
+    #[doc = "Software trigger selected."]
+    _0,
+    #[doc = "Hardware trigger selected."]
+    _1,
 }
 impl ADTRGW {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::TCTRL0 {
 #[doc = "Possible values of the field `T_EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum T_ENR {
-    #[doc = "Timer Channel is disabled"] _0,
-    #[doc = "Timer Channel is enabled"] _1,
+    #[doc = "Timer Channel is disabled"]
+    _0,
+    #[doc = "Timer Channel is enabled"]
+    _1,
 }
 impl T_ENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl T_ENR {
 #[doc = "Possible values of the field `CHAIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHAINR {
-    #[doc = "Channel Chaining is disabled. Channel Timer runs independently."] _0,
-    #[doc = "Channel Chaining is enabled. Timer decrements on previous channel's timeout"] _1,
+    #[doc = "Channel Chaining is disabled. Channel Timer runs independently."]
+    _0,
+    #[doc = "Channel Chaining is enabled. Timer decrements on previous channel's timeout"]
+    _1,
 }
 impl CHAINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,10 +139,14 @@ impl CHAINR {
 #[doc = "Possible values of the field `MODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODER {
-    #[doc = "32-bit Periodic Counter"] _0,
-    #[doc = "Dual 16-bit Periodic Counter"] _1,
-    #[doc = "32-bit Trigger Accumulator"] _10,
-    #[doc = "32-bit Trigger Input Capture"] _11,
+    #[doc = "32-bit Periodic Counter"]
+    _0,
+    #[doc = "Dual 16-bit Periodic Counter"]
+    _1,
+    #[doc = "32-bit Trigger Accumulator"]
+    _10,
+    #[doc = "32-bit Trigger Input Capture"]
+    _11,
 }
 impl MODER {
     #[doc = r" Value of the field as raw bits"]
@@ -189,7 +197,8 @@ impl MODER {
 pub enum TSOTR {
     #[doc = "Timer starts to decrement immediately based on restart condition (controlled by TSOI bit)"]
     _0,
-    #[doc = "Timer starts to decrement when rising edge on selected trigger is detected"] _1,
+    #[doc = "Timer starts to decrement when rising edge on selected trigger is detected"]
+    _1,
 }
 impl TSOTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -233,7 +242,8 @@ impl TSOTR {
 #[doc = "Possible values of the field `TSOI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSOIR {
-    #[doc = "The channel timer does not stop after timeout."] _0,
+    #[doc = "The channel timer does not stop after timeout."]
+    _0,
     #[doc = "The channel timer will stop after a timeout, and the channel timer will restart based on TSOT. When TSOT = 0, the channel timer will restart after a rising edge on the T_EN bit is detected (which means that the timer channel is disabled and then enabled); when TSOT = 1, the channel timer will restart after a rising edge on the selected trigger is detected."]
     _1,
 }
@@ -279,8 +289,10 @@ impl TSOIR {
 #[doc = "Possible values of the field `TROT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TROTR {
-    #[doc = "Timer will not reload on selected trigger"] _0,
-    #[doc = "Timer will reload on selected trigger"] _1,
+    #[doc = "Timer will not reload on selected trigger"]
+    _0,
+    #[doc = "Timer will reload on selected trigger"]
+    _1,
 }
 impl TROTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -324,8 +336,10 @@ impl TROTR {
 #[doc = "Possible values of the field `TRG_SRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRG_SRCR {
-    #[doc = "Trigger source selected in external"] _0,
-    #[doc = "Trigger source selected is the internal trigger"] _1,
+    #[doc = "Trigger source selected in external"]
+    _0,
+    #[doc = "Trigger source selected is the internal trigger"]
+    _1,
 }
 impl TRG_SRCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -379,8 +393,10 @@ impl TRG_SELR {
 }
 #[doc = "Values that can be written to the field `T_EN`"]
 pub enum T_ENW {
-    #[doc = "Timer Channel is disabled"] _0,
-    #[doc = "Timer Channel is enabled"] _1,
+    #[doc = "Timer Channel is disabled"]
+    _0,
+    #[doc = "Timer Channel is enabled"]
+    _1,
 }
 impl T_ENW {
     #[allow(missing_docs)]
@@ -435,8 +451,10 @@ impl<'a> _T_ENW<'a> {
 }
 #[doc = "Values that can be written to the field `CHAIN`"]
 pub enum CHAINW {
-    #[doc = "Channel Chaining is disabled. Channel Timer runs independently."] _0,
-    #[doc = "Channel Chaining is enabled. Timer decrements on previous channel's timeout"] _1,
+    #[doc = "Channel Chaining is disabled. Channel Timer runs independently."]
+    _0,
+    #[doc = "Channel Chaining is enabled. Timer decrements on previous channel's timeout"]
+    _1,
 }
 impl CHAINW {
     #[allow(missing_docs)]
@@ -491,10 +509,14 @@ impl<'a> _CHAINW<'a> {
 }
 #[doc = "Values that can be written to the field `MODE`"]
 pub enum MODEW {
-    #[doc = "32-bit Periodic Counter"] _0,
-    #[doc = "Dual 16-bit Periodic Counter"] _1,
-    #[doc = "32-bit Trigger Accumulator"] _10,
-    #[doc = "32-bit Trigger Input Capture"] _11,
+    #[doc = "32-bit Periodic Counter"]
+    _0,
+    #[doc = "Dual 16-bit Periodic Counter"]
+    _1,
+    #[doc = "32-bit Trigger Accumulator"]
+    _10,
+    #[doc = "32-bit Trigger Input Capture"]
+    _11,
 }
 impl MODEW {
     #[allow(missing_docs)]
@@ -555,7 +577,8 @@ impl<'a> _MODEW<'a> {
 pub enum TSOTW {
     #[doc = "Timer starts to decrement immediately based on restart condition (controlled by TSOI bit)"]
     _0,
-    #[doc = "Timer starts to decrement when rising edge on selected trigger is detected"] _1,
+    #[doc = "Timer starts to decrement when rising edge on selected trigger is detected"]
+    _1,
 }
 impl TSOTW {
     #[allow(missing_docs)]
@@ -610,7 +633,8 @@ impl<'a> _TSOTW<'a> {
 }
 #[doc = "Values that can be written to the field `TSOI`"]
 pub enum TSOIW {
-    #[doc = "The channel timer does not stop after timeout."] _0,
+    #[doc = "The channel timer does not stop after timeout."]
+    _0,
     #[doc = "The channel timer will stop after a timeout, and the channel timer will restart based on TSOT. When TSOT = 0, the channel timer will restart after a rising edge on the T_EN bit is detected (which means that the timer channel is disabled and then enabled); when TSOT = 1, the channel timer will restart after a rising edge on the selected trigger is detected."]
     _1,
 }
@@ -667,8 +691,10 @@ impl<'a> _TSOIW<'a> {
 }
 #[doc = "Values that can be written to the field `TROT`"]
 pub enum TROTW {
-    #[doc = "Timer will not reload on selected trigger"] _0,
-    #[doc = "Timer will reload on selected trigger"] _1,
+    #[doc = "Timer will not reload on selected trigger"]
+    _0,
+    #[doc = "Timer will reload on selected trigger"]
+    _1,
 }
 impl TROTW {
     #[allow(missing_docs)]
@@ -723,8 +749,10 @@ impl<'a> _TROTW<'a> {
 }
 #[doc = "Values that can be written to the field `TRG_SRC`"]
 pub enum TRG_SRCW {
-    #[doc = "Trigger source selected in external"] _0,
-    #[doc = "Trigger source selected is the internal trigger"] _1,
+    #[doc = "Trigger source selected in external"]
+    _0,
+    #[doc = "Trigger source selected is the internal trigger"]
+    _1,
 }
 impl TRG_SRCW {
     #[allow(missing_docs)]

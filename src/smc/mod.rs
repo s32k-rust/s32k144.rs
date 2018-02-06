@@ -2,12 +2,18 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - SMC Version ID Register"] pub verid: VERID,
-    #[doc = "0x04 - SMC Parameter Register"] pub param: PARAM,
-    #[doc = "0x08 - Power Mode Protection register"] pub pmprot: PMPROT,
-    #[doc = "0x0c - Power Mode Control register"] pub pmctrl: PMCTRL,
-    #[doc = "0x10 - Stop Control Register"] pub stopctrl: STOPCTRL,
-    #[doc = "0x14 - Power Mode Status register"] pub pmstat: PMSTAT,
+    #[doc = "0x00 - SMC Version ID Register"]
+    pub verid: VERID,
+    #[doc = "0x04 - SMC Parameter Register"]
+    pub param: PARAM,
+    #[doc = "0x08 - Power Mode Protection register"]
+    pub pmprot: PMPROT,
+    #[doc = "0x0c - Power Mode Control register"]
+    pub pmctrl: PMCTRL,
+    #[doc = "0x10 - Stop Control Register"]
+    pub stopctrl: STOPCTRL,
+    #[doc = "0x14 - Power Mode Status register"]
+    pub pmstat: PMSTAT,
 }
 #[doc = "SMC Version ID Register"]
 pub struct VERID {

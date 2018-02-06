@@ -14,9 +14,12 @@ impl super::VERID {
 #[doc = "Possible values of the field `FEATURE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEATURER {
-    #[doc = "Standard features implemented."] _0000000000000000,
-    #[doc = "Supports state, logic and parallel modes."] _0000000000000001,
-    #[doc = r" Reserved"] _Reserved(u16),
+    #[doc = "Standard features implemented."]
+    _0000000000000000,
+    #[doc = "Supports state, logic and parallel modes."]
+    _0000000000000001,
+    #[doc = r" Reserved"]
+    _Reserved(u16),
 }
 impl FEATURER {
     #[doc = r" Value of the field as raw bits"]

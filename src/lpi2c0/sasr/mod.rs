@@ -25,8 +25,10 @@ impl RADDRR {
 #[doc = "Possible values of the field `ANV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANVR {
-    #[doc = "RADDR is valid."] _0,
-    #[doc = "RADDR is not valid."] _1,
+    #[doc = "RADDR is valid."]
+    _0,
+    #[doc = "RADDR is not valid."]
+    _1,
 }
 impl ANVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

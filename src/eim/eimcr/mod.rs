@@ -45,8 +45,10 @@ impl super::EIMCR {
 #[doc = "Possible values of the field `GEIEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GEIENR {
-    #[doc = "Disabled"] _0,
-    #[doc = "Enabled"] _1,
+    #[doc = "Disabled"]
+    _0,
+    #[doc = "Enabled"]
+    _1,
 }
 impl GEIENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -89,8 +91,10 @@ impl GEIENR {
 }
 #[doc = "Values that can be written to the field `GEIEN`"]
 pub enum GEIENW {
-    #[doc = "Disabled"] _0,
-    #[doc = "Enabled"] _1,
+    #[doc = "Disabled"]
+    _0,
+    #[doc = "Enabled"]
+    _1,
 }
 impl GEIENW {
     #[allow(missing_docs)]

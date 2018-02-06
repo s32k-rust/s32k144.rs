@@ -2,64 +2,111 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Version ID Register"] pub verid: VERID,
-    #[doc = "0x04 - Parameter Register"] pub param: PARAM,
-    #[doc = "0x08 - FlexIO Control Register"] pub ctrl: CTRL,
-    #[doc = "0x0c - Pin State Register"] pub pin: PIN,
-    #[doc = "0x10 - Shifter Status Register"] pub shiftstat: SHIFTSTAT,
-    #[doc = "0x14 - Shifter Error Register"] pub shifterr: SHIFTERR,
-    #[doc = "0x18 - Timer Status Register"] pub timstat: TIMSTAT,
+    #[doc = "0x00 - Version ID Register"]
+    pub verid: VERID,
+    #[doc = "0x04 - Parameter Register"]
+    pub param: PARAM,
+    #[doc = "0x08 - FlexIO Control Register"]
+    pub ctrl: CTRL,
+    #[doc = "0x0c - Pin State Register"]
+    pub pin: PIN,
+    #[doc = "0x10 - Shifter Status Register"]
+    pub shiftstat: SHIFTSTAT,
+    #[doc = "0x14 - Shifter Error Register"]
+    pub shifterr: SHIFTERR,
+    #[doc = "0x18 - Timer Status Register"]
+    pub timstat: TIMSTAT,
     _reserved0: [u8; 4usize],
-    #[doc = "0x20 - Shifter Status Interrupt Enable"] pub shiftsien: SHIFTSIEN,
-    #[doc = "0x24 - Shifter Error Interrupt Enable"] pub shifteien: SHIFTEIEN,
-    #[doc = "0x28 - Timer Interrupt Enable Register"] pub timien: TIMIEN,
+    #[doc = "0x20 - Shifter Status Interrupt Enable"]
+    pub shiftsien: SHIFTSIEN,
+    #[doc = "0x24 - Shifter Error Interrupt Enable"]
+    pub shifteien: SHIFTEIEN,
+    #[doc = "0x28 - Timer Interrupt Enable Register"]
+    pub timien: TIMIEN,
     _reserved1: [u8; 4usize],
-    #[doc = "0x30 - Shifter Status DMA Enable"] pub shiftsden: SHIFTSDEN,
+    #[doc = "0x30 - Shifter Status DMA Enable"]
+    pub shiftsden: SHIFTSDEN,
     _reserved2: [u8; 76usize],
-    #[doc = "0x80 - Shifter Control N Register"] pub shiftctl0: SHIFTCTL0,
-    #[doc = "0x84 - Shifter Control N Register"] pub shiftctl1: SHIFTCTL1,
-    #[doc = "0x88 - Shifter Control N Register"] pub shiftctl2: SHIFTCTL2,
-    #[doc = "0x8c - Shifter Control N Register"] pub shiftctl3: SHIFTCTL3,
+    #[doc = "0x80 - Shifter Control N Register"]
+    pub shiftctl0: SHIFTCTL0,
+    #[doc = "0x84 - Shifter Control N Register"]
+    pub shiftctl1: SHIFTCTL1,
+    #[doc = "0x88 - Shifter Control N Register"]
+    pub shiftctl2: SHIFTCTL2,
+    #[doc = "0x8c - Shifter Control N Register"]
+    pub shiftctl3: SHIFTCTL3,
     _reserved3: [u8; 112usize],
-    #[doc = "0x100 - Shifter Configuration N Register"] pub shiftcfg0: SHIFTCFG0,
-    #[doc = "0x104 - Shifter Configuration N Register"] pub shiftcfg1: SHIFTCFG1,
-    #[doc = "0x108 - Shifter Configuration N Register"] pub shiftcfg2: SHIFTCFG2,
-    #[doc = "0x10c - Shifter Configuration N Register"] pub shiftcfg3: SHIFTCFG3,
+    #[doc = "0x100 - Shifter Configuration N Register"]
+    pub shiftcfg0: SHIFTCFG0,
+    #[doc = "0x104 - Shifter Configuration N Register"]
+    pub shiftcfg1: SHIFTCFG1,
+    #[doc = "0x108 - Shifter Configuration N Register"]
+    pub shiftcfg2: SHIFTCFG2,
+    #[doc = "0x10c - Shifter Configuration N Register"]
+    pub shiftcfg3: SHIFTCFG3,
     _reserved4: [u8; 240usize],
-    #[doc = "0x200 - Shifter Buffer N Register"] pub shiftbuf0: SHIFTBUF0,
-    #[doc = "0x204 - Shifter Buffer N Register"] pub shiftbuf1: SHIFTBUF1,
-    #[doc = "0x208 - Shifter Buffer N Register"] pub shiftbuf2: SHIFTBUF2,
-    #[doc = "0x20c - Shifter Buffer N Register"] pub shiftbuf3: SHIFTBUF3,
+    #[doc = "0x200 - Shifter Buffer N Register"]
+    pub shiftbuf0: SHIFTBUF0,
+    #[doc = "0x204 - Shifter Buffer N Register"]
+    pub shiftbuf1: SHIFTBUF1,
+    #[doc = "0x208 - Shifter Buffer N Register"]
+    pub shiftbuf2: SHIFTBUF2,
+    #[doc = "0x20c - Shifter Buffer N Register"]
+    pub shiftbuf3: SHIFTBUF3,
     _reserved5: [u8; 112usize],
-    #[doc = "0x280 - Shifter Buffer N Bit Swapped Register"] pub shiftbufbis0: SHIFTBUFBIS0,
-    #[doc = "0x284 - Shifter Buffer N Bit Swapped Register"] pub shiftbufbis1: SHIFTBUFBIS1,
-    #[doc = "0x288 - Shifter Buffer N Bit Swapped Register"] pub shiftbufbis2: SHIFTBUFBIS2,
-    #[doc = "0x28c - Shifter Buffer N Bit Swapped Register"] pub shiftbufbis3: SHIFTBUFBIS3,
+    #[doc = "0x280 - Shifter Buffer N Bit Swapped Register"]
+    pub shiftbufbis0: SHIFTBUFBIS0,
+    #[doc = "0x284 - Shifter Buffer N Bit Swapped Register"]
+    pub shiftbufbis1: SHIFTBUFBIS1,
+    #[doc = "0x288 - Shifter Buffer N Bit Swapped Register"]
+    pub shiftbufbis2: SHIFTBUFBIS2,
+    #[doc = "0x28c - Shifter Buffer N Bit Swapped Register"]
+    pub shiftbufbis3: SHIFTBUFBIS3,
     _reserved6: [u8; 112usize],
-    #[doc = "0x300 - Shifter Buffer N Byte Swapped Register"] pub shiftbufbys0: SHIFTBUFBYS0,
-    #[doc = "0x304 - Shifter Buffer N Byte Swapped Register"] pub shiftbufbys1: SHIFTBUFBYS1,
-    #[doc = "0x308 - Shifter Buffer N Byte Swapped Register"] pub shiftbufbys2: SHIFTBUFBYS2,
-    #[doc = "0x30c - Shifter Buffer N Byte Swapped Register"] pub shiftbufbys3: SHIFTBUFBYS3,
+    #[doc = "0x300 - Shifter Buffer N Byte Swapped Register"]
+    pub shiftbufbys0: SHIFTBUFBYS0,
+    #[doc = "0x304 - Shifter Buffer N Byte Swapped Register"]
+    pub shiftbufbys1: SHIFTBUFBYS1,
+    #[doc = "0x308 - Shifter Buffer N Byte Swapped Register"]
+    pub shiftbufbys2: SHIFTBUFBYS2,
+    #[doc = "0x30c - Shifter Buffer N Byte Swapped Register"]
+    pub shiftbufbys3: SHIFTBUFBYS3,
     _reserved7: [u8; 112usize],
-    #[doc = "0x380 - Shifter Buffer N Bit Byte Swapped Register"] pub shiftbufbbs0: SHIFTBUFBBS0,
-    #[doc = "0x384 - Shifter Buffer N Bit Byte Swapped Register"] pub shiftbufbbs1: SHIFTBUFBBS1,
-    #[doc = "0x388 - Shifter Buffer N Bit Byte Swapped Register"] pub shiftbufbbs2: SHIFTBUFBBS2,
-    #[doc = "0x38c - Shifter Buffer N Bit Byte Swapped Register"] pub shiftbufbbs3: SHIFTBUFBBS3,
+    #[doc = "0x380 - Shifter Buffer N Bit Byte Swapped Register"]
+    pub shiftbufbbs0: SHIFTBUFBBS0,
+    #[doc = "0x384 - Shifter Buffer N Bit Byte Swapped Register"]
+    pub shiftbufbbs1: SHIFTBUFBBS1,
+    #[doc = "0x388 - Shifter Buffer N Bit Byte Swapped Register"]
+    pub shiftbufbbs2: SHIFTBUFBBS2,
+    #[doc = "0x38c - Shifter Buffer N Bit Byte Swapped Register"]
+    pub shiftbufbbs3: SHIFTBUFBBS3,
     _reserved8: [u8; 112usize],
-    #[doc = "0x400 - Timer Control N Register"] pub timctl0: TIMCTL0,
-    #[doc = "0x404 - Timer Control N Register"] pub timctl1: TIMCTL1,
-    #[doc = "0x408 - Timer Control N Register"] pub timctl2: TIMCTL2,
-    #[doc = "0x40c - Timer Control N Register"] pub timctl3: TIMCTL3,
+    #[doc = "0x400 - Timer Control N Register"]
+    pub timctl0: TIMCTL0,
+    #[doc = "0x404 - Timer Control N Register"]
+    pub timctl1: TIMCTL1,
+    #[doc = "0x408 - Timer Control N Register"]
+    pub timctl2: TIMCTL2,
+    #[doc = "0x40c - Timer Control N Register"]
+    pub timctl3: TIMCTL3,
     _reserved9: [u8; 112usize],
-    #[doc = "0x480 - Timer Configuration N Register"] pub timcfg0: TIMCFG0,
-    #[doc = "0x484 - Timer Configuration N Register"] pub timcfg1: TIMCFG1,
-    #[doc = "0x488 - Timer Configuration N Register"] pub timcfg2: TIMCFG2,
-    #[doc = "0x48c - Timer Configuration N Register"] pub timcfg3: TIMCFG3,
+    #[doc = "0x480 - Timer Configuration N Register"]
+    pub timcfg0: TIMCFG0,
+    #[doc = "0x484 - Timer Configuration N Register"]
+    pub timcfg1: TIMCFG1,
+    #[doc = "0x488 - Timer Configuration N Register"]
+    pub timcfg2: TIMCFG2,
+    #[doc = "0x48c - Timer Configuration N Register"]
+    pub timcfg3: TIMCFG3,
     _reserved10: [u8; 112usize],
-    #[doc = "0x500 - Timer Compare N Register"] pub timcmp0: TIMCMP0,
-    #[doc = "0x504 - Timer Compare N Register"] pub timcmp1: TIMCMP1,
-    #[doc = "0x508 - Timer Compare N Register"] pub timcmp2: TIMCMP2,
-    #[doc = "0x50c - Timer Compare N Register"] pub timcmp3: TIMCMP3,
+    #[doc = "0x500 - Timer Compare N Register"]
+    pub timcmp0: TIMCMP0,
+    #[doc = "0x504 - Timer Compare N Register"]
+    pub timcmp1: TIMCMP1,
+    #[doc = "0x508 - Timer Compare N Register"]
+    pub timcmp2: TIMCMP2,
+    #[doc = "0x50c - Timer Compare N Register"]
+    pub timcmp3: TIMCMP3,
 }
 #[doc = "Version ID Register"]
 pub struct VERID {

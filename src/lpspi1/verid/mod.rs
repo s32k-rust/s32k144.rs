@@ -14,8 +14,10 @@ impl super::VERID {
 #[doc = "Possible values of the field `FEATURE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEATURER {
-    #[doc = "Standard feature set supporting 32-bit shift register."] _0000000000000100,
-    #[doc = r" Reserved"] _Reserved(u16),
+    #[doc = "Standard feature set supporting 32-bit shift register."]
+    _0000000000000100,
+    #[doc = r" Reserved"]
+    _Reserved(u16),
 }
 impl FEATURER {
     #[doc = r" Value of the field as raw bits"]

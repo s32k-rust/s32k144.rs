@@ -45,8 +45,10 @@ impl super::FLTPOL {
 #[doc = "Possible values of the field `FLT0POL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLT0POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT0POLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl FLT0POLR {
 #[doc = "Possible values of the field `FLT1POL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLT1POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT1POLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl FLT1POLR {
 #[doc = "Possible values of the field `FLT2POL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLT2POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT2POLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl FLT2POLR {
 #[doc = "Possible values of the field `FLT3POL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLT3POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT3POLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl FLT3POLR {
 }
 #[doc = "Values that can be written to the field `FLT0POL`"]
 pub enum FLT0POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT0POLW {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _FLT0POLW<'a> {
 }
 #[doc = "Values that can be written to the field `FLT1POL`"]
 pub enum FLT1POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT1POLW {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _FLT1POLW<'a> {
 }
 #[doc = "Values that can be written to the field `FLT2POL`"]
 pub enum FLT2POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT2POLW {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _FLT2POLW<'a> {
 }
 #[doc = "Values that can be written to the field `FLT3POL`"]
 pub enum FLT3POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."] _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."] _1,
+    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0,
+    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1,
 }
 impl FLT3POLW {
     #[allow(missing_docs)]

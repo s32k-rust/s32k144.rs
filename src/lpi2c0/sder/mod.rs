@@ -45,8 +45,10 @@ impl super::SDER {
 #[doc = "Possible values of the field `TDDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDDER {
-    #[doc = "DMA request disabled."] _0,
-    #[doc = "DMA request enabled"] _1,
+    #[doc = "DMA request disabled."]
+    _0,
+    #[doc = "DMA request enabled"]
+    _1,
 }
 impl TDDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TDDER {
 #[doc = "Possible values of the field `RDDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDDER {
-    #[doc = "DMA request disabled."] _0,
-    #[doc = "DMA request enabled."] _1,
+    #[doc = "DMA request disabled."]
+    _0,
+    #[doc = "DMA request enabled."]
+    _1,
 }
 impl RDDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl RDDER {
 #[doc = "Possible values of the field `AVDE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVDER {
-    #[doc = "DMA request disabled."] _0,
-    #[doc = "DMA request enabled."] _1,
+    #[doc = "DMA request disabled."]
+    _0,
+    #[doc = "DMA request enabled."]
+    _1,
 }
 impl AVDER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -179,8 +185,10 @@ impl AVDER {
 }
 #[doc = "Values that can be written to the field `TDDE`"]
 pub enum TDDEW {
-    #[doc = "DMA request disabled."] _0,
-    #[doc = "DMA request enabled"] _1,
+    #[doc = "DMA request disabled."]
+    _0,
+    #[doc = "DMA request enabled"]
+    _1,
 }
 impl TDDEW {
     #[allow(missing_docs)]
@@ -235,8 +243,10 @@ impl<'a> _TDDEW<'a> {
 }
 #[doc = "Values that can be written to the field `RDDE`"]
 pub enum RDDEW {
-    #[doc = "DMA request disabled."] _0,
-    #[doc = "DMA request enabled."] _1,
+    #[doc = "DMA request disabled."]
+    _0,
+    #[doc = "DMA request enabled."]
+    _1,
 }
 impl RDDEW {
     #[allow(missing_docs)]
@@ -291,8 +301,10 @@ impl<'a> _RDDEW<'a> {
 }
 #[doc = "Values that can be written to the field `AVDE`"]
 pub enum AVDEW {
-    #[doc = "DMA request disabled."] _0,
-    #[doc = "DMA request enabled."] _1,
+    #[doc = "DMA request disabled."]
+    _0,
+    #[doc = "DMA request enabled."]
+    _1,
 }
 impl AVDEW {
     #[allow(missing_docs)]

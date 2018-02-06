@@ -25,11 +25,16 @@ impl PEFPRTR {
 #[doc = "Possible values of the field `PEFSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEFSIZER {
-    #[doc = "8-bit access"] _000,
-    #[doc = "16-bit access"] _001,
-    #[doc = "32-bit access"] _010,
-    #[doc = "64-bit access"] _011,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "8-bit access"]
+    _000,
+    #[doc = "16-bit access"]
+    _001,
+    #[doc = "32-bit access"]
+    _010,
+    #[doc = "64-bit access"]
+    _011,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PEFSIZER {
     #[doc = r" Value of the field as raw bits"]

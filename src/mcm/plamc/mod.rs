@@ -14,9 +14,12 @@ impl super::PLAMC {
 #[doc = "Possible values of the field `AMC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AMCR {
-    #[doc = "A bus master connection to AXBS input port n is absent"] _0,
-    #[doc = "A bus master connection to AXBS input port n is present"] _1,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "A bus master connection to AXBS input port n is absent"]
+    _0,
+    #[doc = "A bus master connection to AXBS input port n is present"]
+    _1,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl AMCR {
     #[doc = r" Value of the field as raw bits"]

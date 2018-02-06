@@ -56,8 +56,10 @@ impl SEL0R {
 #[doc = "Possible values of the field `LK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LKR {
-    #[doc = "Register can be written."] _0,
-    #[doc = "Register cannot be written until the next system Reset."] _1,
+    #[doc = "Register can be written."]
+    _0,
+    #[doc = "Register cannot be written until the next system Reset."]
+    _1,
 }
 impl LKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -115,8 +117,10 @@ impl<'a> _SEL0W<'a> {
 }
 #[doc = "Values that can be written to the field `LK`"]
 pub enum LKW {
-    #[doc = "Register can be written."] _0,
-    #[doc = "Register cannot be written until the next system Reset."] _1,
+    #[doc = "Register can be written."]
+    _0,
+    #[doc = "Register cannot be written until the next system Reset."]
+    _1,
 }
 impl LKW {
     #[allow(missing_docs)]

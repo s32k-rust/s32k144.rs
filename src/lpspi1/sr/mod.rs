@@ -45,8 +45,10 @@ impl super::SR {
 #[doc = "Possible values of the field `TDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDFR {
-    #[doc = "Transmit data not requested."] _0,
-    #[doc = "Transmit data is requested."] _1,
+    #[doc = "Transmit data not requested."]
+    _0,
+    #[doc = "Transmit data is requested."]
+    _1,
 }
 impl TDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TDFR {
 #[doc = "Possible values of the field `RDF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDFR {
-    #[doc = "Receive Data is not ready."] _0,
-    #[doc = "Receive data is ready."] _1,
+    #[doc = "Receive Data is not ready."]
+    _0,
+    #[doc = "Receive data is ready."]
+    _1,
 }
 impl RDFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl RDFR {
 #[doc = "Possible values of the field `WCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WCFR {
-    #[doc = "Transfer word not completed."] _0,
-    #[doc = "Transfer word completed."] _1,
+    #[doc = "Transfer word not completed."]
+    _0,
+    #[doc = "Transfer word completed."]
+    _1,
 }
 impl WCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl WCFR {
 #[doc = "Possible values of the field `FCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCFR {
-    #[doc = "Frame transfer has not completed."] _0,
-    #[doc = "Frame transfer has completed."] _1,
+    #[doc = "Frame transfer has not completed."]
+    _0,
+    #[doc = "Frame transfer has completed."]
+    _1,
 }
 impl FCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl FCFR {
 #[doc = "Possible values of the field `TCF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCFR {
-    #[doc = "All transfers have not completed."] _0,
-    #[doc = "All transfers have completed."] _1,
+    #[doc = "All transfers have not completed."]
+    _0,
+    #[doc = "All transfers have completed."]
+    _1,
 }
 impl TCFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl TCFR {
 #[doc = "Possible values of the field `TEF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEFR {
-    #[doc = "Transmit FIFO underrun has not occurred."] _0,
-    #[doc = "Transmit FIFO underrun has occurred"] _1,
+    #[doc = "Transmit FIFO underrun has not occurred."]
+    _0,
+    #[doc = "Transmit FIFO underrun has occurred"]
+    _1,
 }
 impl TEFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl TEFR {
 #[doc = "Possible values of the field `REF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFR {
-    #[doc = "Receive FIFO has not overflowed."] _0,
-    #[doc = "Receive FIFO has overflowed."] _1,
+    #[doc = "Receive FIFO has not overflowed."]
+    _0,
+    #[doc = "Receive FIFO has overflowed."]
+    _1,
 }
 impl REFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl REFR {
 #[doc = "Possible values of the field `DMF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMFR {
-    #[doc = "Have not received matching data."] _0,
-    #[doc = "Have received matching data."] _1,
+    #[doc = "Have not received matching data."]
+    _0,
+    #[doc = "Have received matching data."]
+    _1,
 }
 impl DMFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl DMFR {
 #[doc = "Possible values of the field `MBF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MBFR {
-    #[doc = "LPSPI is idle."] _0,
-    #[doc = "LPSPI is busy."] _1,
+    #[doc = "LPSPI is idle."]
+    _0,
+    #[doc = "LPSPI is busy."]
+    _1,
 }
 impl MBFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -449,8 +467,10 @@ impl MBFR {
 }
 #[doc = "Values that can be written to the field `WCF`"]
 pub enum WCFW {
-    #[doc = "Transfer word not completed."] _0,
-    #[doc = "Transfer word completed."] _1,
+    #[doc = "Transfer word not completed."]
+    _0,
+    #[doc = "Transfer word completed."]
+    _1,
 }
 impl WCFW {
     #[allow(missing_docs)]
@@ -505,8 +525,10 @@ impl<'a> _WCFW<'a> {
 }
 #[doc = "Values that can be written to the field `FCF`"]
 pub enum FCFW {
-    #[doc = "Frame transfer has not completed."] _0,
-    #[doc = "Frame transfer has completed."] _1,
+    #[doc = "Frame transfer has not completed."]
+    _0,
+    #[doc = "Frame transfer has completed."]
+    _1,
 }
 impl FCFW {
     #[allow(missing_docs)]
@@ -561,8 +583,10 @@ impl<'a> _FCFW<'a> {
 }
 #[doc = "Values that can be written to the field `TCF`"]
 pub enum TCFW {
-    #[doc = "All transfers have not completed."] _0,
-    #[doc = "All transfers have completed."] _1,
+    #[doc = "All transfers have not completed."]
+    _0,
+    #[doc = "All transfers have completed."]
+    _1,
 }
 impl TCFW {
     #[allow(missing_docs)]
@@ -617,8 +641,10 @@ impl<'a> _TCFW<'a> {
 }
 #[doc = "Values that can be written to the field `TEF`"]
 pub enum TEFW {
-    #[doc = "Transmit FIFO underrun has not occurred."] _0,
-    #[doc = "Transmit FIFO underrun has occurred"] _1,
+    #[doc = "Transmit FIFO underrun has not occurred."]
+    _0,
+    #[doc = "Transmit FIFO underrun has occurred"]
+    _1,
 }
 impl TEFW {
     #[allow(missing_docs)]
@@ -673,8 +699,10 @@ impl<'a> _TEFW<'a> {
 }
 #[doc = "Values that can be written to the field `REF`"]
 pub enum REFW {
-    #[doc = "Receive FIFO has not overflowed."] _0,
-    #[doc = "Receive FIFO has overflowed."] _1,
+    #[doc = "Receive FIFO has not overflowed."]
+    _0,
+    #[doc = "Receive FIFO has overflowed."]
+    _1,
 }
 impl REFW {
     #[allow(missing_docs)]
@@ -729,8 +757,10 @@ impl<'a> _REFW<'a> {
 }
 #[doc = "Values that can be written to the field `DMF`"]
 pub enum DMFW {
-    #[doc = "Have not received matching data."] _0,
-    #[doc = "Have received matching data."] _1,
+    #[doc = "Have not received matching data."]
+    _0,
+    #[doc = "Have received matching data."]
+    _1,
 }
 impl DMFW {
     #[allow(missing_docs)]

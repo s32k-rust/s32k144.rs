@@ -31,8 +31,10 @@ impl<'a> _CDNEW<'a> {
 }
 #[doc = "Values that can be written to the field `CADN`"]
 pub enum CADNW {
-    #[doc = "Clears only the TCDn_CSR[DONE] bit specified in the CDNE field"] _0,
-    #[doc = "Clears all bits in TCDn_CSR[DONE]"] _1,
+    #[doc = "Clears only the TCDn_CSR[DONE] bit specified in the CDNE field"]
+    _0,
+    #[doc = "Clears all bits in TCDn_CSR[DONE]"]
+    _1,
 }
 impl CADNW {
     #[allow(missing_docs)]
@@ -87,8 +89,10 @@ impl<'a> _CADNW<'a> {
 }
 #[doc = "Values that can be written to the field `NOP`"]
 pub enum NOPW {
-    #[doc = "Normal operation"] _0,
-    #[doc = "No operation, ignore the other bits in this register"] _1,
+    #[doc = "Normal operation"]
+    _0,
+    #[doc = "No operation, ignore the other bits in this register"]
+    _1,
 }
 impl NOPW {
     #[allow(missing_docs)]

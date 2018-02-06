@@ -45,8 +45,10 @@ impl super::PMPROT {
 #[doc = "Possible values of the field `AVLP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVLPR {
-    #[doc = "VLPR and VLPS are not allowed."] _0,
-    #[doc = "VLPR and VLPS are allowed."] _1,
+    #[doc = "VLPR and VLPS are not allowed."]
+    _0,
+    #[doc = "VLPR and VLPS are allowed."]
+    _1,
 }
 impl AVLPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl AVLPR {
 #[doc = "Possible values of the field `AHSRUN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AHSRUNR {
-    #[doc = "HSRUN is not allowed"] _0,
-    #[doc = "HSRUN is allowed"] _1,
+    #[doc = "HSRUN is not allowed"]
+    _0,
+    #[doc = "HSRUN is allowed"]
+    _1,
 }
 impl AHSRUNR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -134,8 +138,10 @@ impl AHSRUNR {
 }
 #[doc = "Values that can be written to the field `AVLP`"]
 pub enum AVLPW {
-    #[doc = "VLPR and VLPS are not allowed."] _0,
-    #[doc = "VLPR and VLPS are allowed."] _1,
+    #[doc = "VLPR and VLPS are not allowed."]
+    _0,
+    #[doc = "VLPR and VLPS are allowed."]
+    _1,
 }
 impl AVLPW {
     #[allow(missing_docs)]
@@ -190,8 +196,10 @@ impl<'a> _AVLPW<'a> {
 }
 #[doc = "Values that can be written to the field `AHSRUN`"]
 pub enum AHSRUNW {
-    #[doc = "HSRUN is not allowed"] _0,
-    #[doc = "HSRUN is allowed"] _1,
+    #[doc = "HSRUN is not allowed"]
+    _0,
+    #[doc = "HSRUN is allowed"]
+    _1,
 }
 impl AHSRUNW {
     #[allow(missing_docs)]

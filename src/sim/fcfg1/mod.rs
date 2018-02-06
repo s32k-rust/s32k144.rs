@@ -56,16 +56,26 @@ impl DEPARTR {
 #[doc = "Possible values of the field `EEERAMSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEERAMSIZER {
-    #[doc = "4 KB"] _0010,
-    #[doc = "2 KB"] _0011,
-    #[doc = "1 KB"] _0100,
-    #[doc = "512 Bytes"] _0101,
-    #[doc = "256 Bytes"] _0110,
-    #[doc = "128 Bytes"] _0111,
-    #[doc = "64 Bytes"] _1000,
-    #[doc = "32 Bytes"] _1001,
-    #[doc = "0 Bytes"] _1111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "4 KB"]
+    _0010,
+    #[doc = "2 KB"]
+    _0011,
+    #[doc = "1 KB"]
+    _0100,
+    #[doc = "512 Bytes"]
+    _0101,
+    #[doc = "256 Bytes"]
+    _0110,
+    #[doc = "128 Bytes"]
+    _0111,
+    #[doc = "64 Bytes"]
+    _1000,
+    #[doc = "32 Bytes"]
+    _1001,
+    #[doc = "0 Bytes"]
+    _1111,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl EEERAMSIZER {
     #[doc = r" Value of the field as raw bits"]

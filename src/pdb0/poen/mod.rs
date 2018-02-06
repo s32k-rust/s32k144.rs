@@ -45,9 +45,12 @@ impl super::POEN {
 #[doc = "Possible values of the field `POEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POENR {
-    #[doc = "PDB Pulse-Out disabled"] _0,
-    #[doc = "PDB Pulse-Out enabled"] _1,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "PDB Pulse-Out disabled"]
+    _0,
+    #[doc = "PDB Pulse-Out enabled"]
+    _1,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl POENR {
     #[doc = r" Value of the field as raw bits"]
@@ -82,8 +85,10 @@ impl POENR {
 }
 #[doc = "Values that can be written to the field `POEN`"]
 pub enum POENW {
-    #[doc = "PDB Pulse-Out disabled"] _0,
-    #[doc = "PDB Pulse-Out enabled"] _1,
+    #[doc = "PDB Pulse-Out disabled"]
+    _0,
+    #[doc = "PDB Pulse-Out enabled"]
+    _1,
 }
 impl POENW {
     #[allow(missing_docs)]

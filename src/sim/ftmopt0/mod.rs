@@ -45,9 +45,12 @@ impl super::FTMOPT0 {
 #[doc = "Possible values of the field `FTM0FLTxSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM0FLTXSELR {
-    #[doc = "FTM0_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM0 out"] _001,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "FTM0_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM0 out"]
+    _001,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl FTM0FLTXSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -83,9 +86,12 @@ impl FTM0FLTXSELR {
 #[doc = "Possible values of the field `FTM1FLTxSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM1FLTXSELR {
-    #[doc = "FTM1_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM1 out"] _001,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "FTM1_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM1 out"]
+    _001,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl FTM1FLTXSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -121,9 +127,12 @@ impl FTM1FLTXSELR {
 #[doc = "Possible values of the field `FTM2FLTxSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM2FLTXSELR {
-    #[doc = "FTM2_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM2 out"] _001,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "FTM2_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM2 out"]
+    _001,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl FTM2FLTXSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -159,9 +168,12 @@ impl FTM2FLTXSELR {
 #[doc = "Possible values of the field `FTM3FLTxSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM3FLTXSELR {
-    #[doc = "FTM3_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM3 out"] _001,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "FTM3_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM3 out"]
+    _001,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl FTM3FLTXSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -197,10 +209,14 @@ impl FTM3FLTXSELR {
 #[doc = "Possible values of the field `FTM0CLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM0CLKSELR {
-    #[doc = "FTM0 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM0 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM0 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM0 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM0 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM0 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM0CLKSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -249,10 +265,14 @@ impl FTM0CLKSELR {
 #[doc = "Possible values of the field `FTM1CLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM1CLKSELR {
-    #[doc = "FTM1 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM1 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM1 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM1 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM1 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM1 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM1CLKSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -301,10 +321,14 @@ impl FTM1CLKSELR {
 #[doc = "Possible values of the field `FTM2CLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM2CLKSELR {
-    #[doc = "FTM2 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM2 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM2 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM2 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM2 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM2 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM2CLKSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -353,10 +377,14 @@ impl FTM2CLKSELR {
 #[doc = "Possible values of the field `FTM3CLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTM3CLKSELR {
-    #[doc = "FTM3 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM3 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM3 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM3 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM3 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM3 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM3CLKSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -404,8 +432,10 @@ impl FTM3CLKSELR {
 }
 #[doc = "Values that can be written to the field `FTM0FLTxSEL`"]
 pub enum FTM0FLTXSELW {
-    #[doc = "FTM0_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM0 out"] _001,
+    #[doc = "FTM0_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM0 out"]
+    _001,
 }
 impl FTM0FLTXSELW {
     #[allow(missing_docs)]
@@ -450,8 +480,10 @@ impl<'a> _FTM0FLTXSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM1FLTxSEL`"]
 pub enum FTM1FLTXSELW {
-    #[doc = "FTM1_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM1 out"] _001,
+    #[doc = "FTM1_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM1 out"]
+    _001,
 }
 impl FTM1FLTXSELW {
     #[allow(missing_docs)]
@@ -496,8 +528,10 @@ impl<'a> _FTM1FLTXSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM2FLTxSEL`"]
 pub enum FTM2FLTXSELW {
-    #[doc = "FTM2_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM2 out"] _001,
+    #[doc = "FTM2_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM2 out"]
+    _001,
 }
 impl FTM2FLTXSELW {
     #[allow(missing_docs)]
@@ -542,8 +576,10 @@ impl<'a> _FTM2FLTXSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM3FLTxSEL`"]
 pub enum FTM3FLTXSELW {
-    #[doc = "FTM3_FLTx pin"] _000,
-    #[doc = "TRGMUX_FTM3 out"] _001,
+    #[doc = "FTM3_FLTx pin"]
+    _000,
+    #[doc = "TRGMUX_FTM3 out"]
+    _001,
 }
 impl FTM3FLTXSELW {
     #[allow(missing_docs)]
@@ -588,10 +624,14 @@ impl<'a> _FTM3FLTXSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM0CLKSEL`"]
 pub enum FTM0CLKSELW {
-    #[doc = "FTM0 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM0 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM0 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM0 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM0 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM0 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM0CLKSELW {
     #[allow(missing_docs)]
@@ -650,10 +690,14 @@ impl<'a> _FTM0CLKSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM1CLKSEL`"]
 pub enum FTM1CLKSELW {
-    #[doc = "FTM1 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM1 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM1 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM1 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM1 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM1 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM1CLKSELW {
     #[allow(missing_docs)]
@@ -712,10 +756,14 @@ impl<'a> _FTM1CLKSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM2CLKSEL`"]
 pub enum FTM2CLKSELW {
-    #[doc = "FTM2 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM2 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM2 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM2 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM2 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM2 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM2CLKSELW {
     #[allow(missing_docs)]
@@ -774,10 +822,14 @@ impl<'a> _FTM2CLKSELW<'a> {
 }
 #[doc = "Values that can be written to the field `FTM3CLKSEL`"]
 pub enum FTM3CLKSELW {
-    #[doc = "FTM3 external clock driven by TCLK0 pin."] _00,
-    #[doc = "FTM3 external clock driven by TCLK1 pin."] _01,
-    #[doc = "FTM3 external clock driven by TCLK2 pin."] _10,
-    #[doc = "No clock input"] _11,
+    #[doc = "FTM3 external clock driven by TCLK0 pin."]
+    _00,
+    #[doc = "FTM3 external clock driven by TCLK1 pin."]
+    _01,
+    #[doc = "FTM3 external clock driven by TCLK2 pin."]
+    _10,
+    #[doc = "No clock input"]
+    _11,
 }
 impl FTM3CLKSELW {
     #[allow(missing_docs)]

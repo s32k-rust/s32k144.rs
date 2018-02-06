@@ -45,10 +45,14 @@ impl super::PCCRMR {
 #[doc = "Possible values of the field `R15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R15R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R15R {
     #[doc = r" Value of the field as raw bits"]
@@ -97,10 +101,14 @@ impl R15R {
 #[doc = "Possible values of the field `R14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R14R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R14R {
     #[doc = r" Value of the field as raw bits"]
@@ -149,10 +157,14 @@ impl R14R {
 #[doc = "Possible values of the field `R13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R13R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R13R {
     #[doc = r" Value of the field as raw bits"]
@@ -201,10 +213,14 @@ impl R13R {
 #[doc = "Possible values of the field `R12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R12R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R12R {
     #[doc = r" Value of the field as raw bits"]
@@ -253,10 +269,14 @@ impl R12R {
 #[doc = "Possible values of the field `R11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R11R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R11R {
     #[doc = r" Value of the field as raw bits"]
@@ -305,10 +325,14 @@ impl R11R {
 #[doc = "Possible values of the field `R10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R10R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R10R {
     #[doc = r" Value of the field as raw bits"]
@@ -357,10 +381,14 @@ impl R10R {
 #[doc = "Possible values of the field `R9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R9R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R9R {
     #[doc = r" Value of the field as raw bits"]
@@ -409,10 +437,14 @@ impl R9R {
 #[doc = "Possible values of the field `R8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R8R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R8R {
     #[doc = r" Value of the field as raw bits"]
@@ -461,10 +493,14 @@ impl R8R {
 #[doc = "Possible values of the field `R7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R7R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R7R {
     #[doc = r" Value of the field as raw bits"]
@@ -513,10 +549,14 @@ impl R7R {
 #[doc = "Possible values of the field `R6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R6R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R6R {
     #[doc = r" Value of the field as raw bits"]
@@ -565,10 +605,14 @@ impl R6R {
 #[doc = "Possible values of the field `R5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R5R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R5R {
     #[doc = r" Value of the field as raw bits"]
@@ -617,10 +661,14 @@ impl R5R {
 #[doc = "Possible values of the field `R4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R4R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R4R {
     #[doc = r" Value of the field as raw bits"]
@@ -669,10 +717,14 @@ impl R4R {
 #[doc = "Possible values of the field `R3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R3R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R3R {
     #[doc = r" Value of the field as raw bits"]
@@ -721,10 +773,14 @@ impl R3R {
 #[doc = "Possible values of the field `R2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R2R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R2R {
     #[doc = r" Value of the field as raw bits"]
@@ -773,10 +829,14 @@ impl R2R {
 #[doc = "Possible values of the field `R1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R1R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R1R {
     #[doc = r" Value of the field as raw bits"]
@@ -825,10 +885,14 @@ impl R1R {
 #[doc = "Possible values of the field `R0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R0R {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R0R {
     #[doc = r" Value of the field as raw bits"]
@@ -876,10 +940,14 @@ impl R0R {
 }
 #[doc = "Values that can be written to the field `R15`"]
 pub enum R15W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R15W {
     #[allow(missing_docs)]
@@ -938,10 +1006,14 @@ impl<'a> _R15W<'a> {
 }
 #[doc = "Values that can be written to the field `R14`"]
 pub enum R14W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R14W {
     #[allow(missing_docs)]
@@ -1000,10 +1072,14 @@ impl<'a> _R14W<'a> {
 }
 #[doc = "Values that can be written to the field `R13`"]
 pub enum R13W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R13W {
     #[allow(missing_docs)]
@@ -1062,10 +1138,14 @@ impl<'a> _R13W<'a> {
 }
 #[doc = "Values that can be written to the field `R12`"]
 pub enum R12W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R12W {
     #[allow(missing_docs)]
@@ -1124,10 +1204,14 @@ impl<'a> _R12W<'a> {
 }
 #[doc = "Values that can be written to the field `R11`"]
 pub enum R11W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R11W {
     #[allow(missing_docs)]
@@ -1186,10 +1270,14 @@ impl<'a> _R11W<'a> {
 }
 #[doc = "Values that can be written to the field `R10`"]
 pub enum R10W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R10W {
     #[allow(missing_docs)]
@@ -1248,10 +1336,14 @@ impl<'a> _R10W<'a> {
 }
 #[doc = "Values that can be written to the field `R9`"]
 pub enum R9W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R9W {
     #[allow(missing_docs)]
@@ -1310,10 +1402,14 @@ impl<'a> _R9W<'a> {
 }
 #[doc = "Values that can be written to the field `R8`"]
 pub enum R8W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R8W {
     #[allow(missing_docs)]
@@ -1372,10 +1468,14 @@ impl<'a> _R8W<'a> {
 }
 #[doc = "Values that can be written to the field `R7`"]
 pub enum R7W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R7W {
     #[allow(missing_docs)]
@@ -1434,10 +1534,14 @@ impl<'a> _R7W<'a> {
 }
 #[doc = "Values that can be written to the field `R6`"]
 pub enum R6W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R6W {
     #[allow(missing_docs)]
@@ -1496,10 +1600,14 @@ impl<'a> _R6W<'a> {
 }
 #[doc = "Values that can be written to the field `R5`"]
 pub enum R5W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R5W {
     #[allow(missing_docs)]
@@ -1558,10 +1666,14 @@ impl<'a> _R5W<'a> {
 }
 #[doc = "Values that can be written to the field `R4`"]
 pub enum R4W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R4W {
     #[allow(missing_docs)]
@@ -1620,10 +1732,14 @@ impl<'a> _R4W<'a> {
 }
 #[doc = "Values that can be written to the field `R3`"]
 pub enum R3W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R3W {
     #[allow(missing_docs)]
@@ -1682,10 +1798,14 @@ impl<'a> _R3W<'a> {
 }
 #[doc = "Values that can be written to the field `R2`"]
 pub enum R2W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R2W {
     #[allow(missing_docs)]
@@ -1744,10 +1864,14 @@ impl<'a> _R2W<'a> {
 }
 #[doc = "Values that can be written to the field `R1`"]
 pub enum R1W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R1W {
     #[allow(missing_docs)]
@@ -1806,10 +1930,14 @@ impl<'a> _R1W<'a> {
 }
 #[doc = "Values that can be written to the field `R0`"]
 pub enum R0W {
-    #[doc = "Non-cacheable"] _00,
-    #[doc = "Non-cacheable"] _01,
-    #[doc = "Write-through"] _10,
-    #[doc = "Write-back"] _11,
+    #[doc = "Non-cacheable"]
+    _00,
+    #[doc = "Non-cacheable"]
+    _01,
+    #[doc = "Write-through"]
+    _10,
+    #[doc = "Write-back"]
+    _11,
 }
 impl R0W {
     #[allow(missing_docs)]

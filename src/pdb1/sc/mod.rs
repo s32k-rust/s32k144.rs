@@ -66,8 +66,10 @@ impl LDOKR {
 #[doc = "Possible values of the field `CONT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONTR {
-    #[doc = "PDB operation in One-Shot mode"] _0,
-    #[doc = "PDB operation in Continuous mode"] _1,
+    #[doc = "PDB operation in One-Shot mode"]
+    _0,
+    #[doc = "PDB operation in Continuous mode"]
+    _1,
 }
 impl CONTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -111,10 +113,14 @@ impl CONTR {
 #[doc = "Possible values of the field `MULT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MULTR {
-    #[doc = "Multiplication factor is 1."] _00,
-    #[doc = "Multiplication factor is 10."] _01,
-    #[doc = "Multiplication factor is 20."] _10,
-    #[doc = "Multiplication factor is 40."] _11,
+    #[doc = "Multiplication factor is 1."]
+    _00,
+    #[doc = "Multiplication factor is 10."]
+    _01,
+    #[doc = "Multiplication factor is 20."]
+    _10,
+    #[doc = "Multiplication factor is 40."]
+    _11,
 }
 impl MULTR {
     #[doc = r" Value of the field as raw bits"]
@@ -163,8 +169,10 @@ impl MULTR {
 #[doc = "Possible values of the field `PDBIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDBIER {
-    #[doc = "PDB interrupt disabled."] _0,
-    #[doc = "PDB interrupt enabled."] _1,
+    #[doc = "PDB interrupt disabled."]
+    _0,
+    #[doc = "PDB interrupt enabled."]
+    _1,
 }
 impl PDBIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -229,8 +237,10 @@ impl PDBIFR {
 #[doc = "Possible values of the field `PDBEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDBENR {
-    #[doc = "PDB disabled. Counter is off."] _0,
-    #[doc = "PDB enabled."] _1,
+    #[doc = "PDB disabled. Counter is off."]
+    _0,
+    #[doc = "PDB enabled."]
+    _1,
 }
 impl PDBENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -274,22 +284,38 @@ impl PDBENR {
 #[doc = "Possible values of the field `TRGSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGSELR {
-    #[doc = "Trigger-In 0 is selected."] _0000,
-    #[doc = "Trigger-In 1 is selected."] _0001,
-    #[doc = "Trigger-In 2 is selected."] _0010,
-    #[doc = "Trigger-In 3 is selected."] _0011,
-    #[doc = "Trigger-In 4 is selected."] _0100,
-    #[doc = "Trigger-In 5 is selected."] _0101,
-    #[doc = "Trigger-In 6 is selected."] _0110,
-    #[doc = "Trigger-In 7 is selected."] _0111,
-    #[doc = "Trigger-In 8 is selected."] _1000,
-    #[doc = "Trigger-In 9 is selected."] _1001,
-    #[doc = "Trigger-In 10 is selected."] _1010,
-    #[doc = "Trigger-In 11 is selected."] _1011,
-    #[doc = "Trigger-In 12 is selected."] _1100,
-    #[doc = "Trigger-In 13 is selected."] _1101,
-    #[doc = "Trigger-In 14 is selected."] _1110,
-    #[doc = "Software trigger is selected."] _1111,
+    #[doc = "Trigger-In 0 is selected."]
+    _0000,
+    #[doc = "Trigger-In 1 is selected."]
+    _0001,
+    #[doc = "Trigger-In 2 is selected."]
+    _0010,
+    #[doc = "Trigger-In 3 is selected."]
+    _0011,
+    #[doc = "Trigger-In 4 is selected."]
+    _0100,
+    #[doc = "Trigger-In 5 is selected."]
+    _0101,
+    #[doc = "Trigger-In 6 is selected."]
+    _0110,
+    #[doc = "Trigger-In 7 is selected."]
+    _0111,
+    #[doc = "Trigger-In 8 is selected."]
+    _1000,
+    #[doc = "Trigger-In 9 is selected."]
+    _1001,
+    #[doc = "Trigger-In 10 is selected."]
+    _1010,
+    #[doc = "Trigger-In 11 is selected."]
+    _1011,
+    #[doc = "Trigger-In 12 is selected."]
+    _1100,
+    #[doc = "Trigger-In 13 is selected."]
+    _1101,
+    #[doc = "Trigger-In 14 is selected."]
+    _1110,
+    #[doc = "Software trigger is selected."]
+    _1111,
 }
 impl TRGSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -422,7 +448,8 @@ impl TRGSELR {
 #[doc = "Possible values of the field `PRESCALER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRESCALERR {
-    #[doc = "Counting uses the peripheral clock divided by MULT (the multiplication factor)."] _000,
+    #[doc = "Counting uses the peripheral clock divided by MULT (the multiplication factor)."]
+    _000,
     #[doc = "Counting uses the peripheral clock divided by 2 x MULT (the multiplication factor)."]
     _001,
     #[doc = "Counting uses the peripheral clock divided by 4 x MULT (the multiplication factor)."]
@@ -513,8 +540,10 @@ impl PRESCALERR {
 #[doc = "Possible values of the field `DMAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAENR {
-    #[doc = "DMA disabled."] _0,
-    #[doc = "DMA enabled."] _1,
+    #[doc = "DMA disabled."]
+    _0,
+    #[doc = "DMA enabled."]
+    _1,
 }
 impl DMAENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -558,8 +587,10 @@ impl DMAENR {
 #[doc = "Possible values of the field `PDBEIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDBEIER {
-    #[doc = "PDB sequence error interrupt disabled."] _0,
-    #[doc = "PDB sequence error interrupt enabled."] _1,
+    #[doc = "PDB sequence error interrupt disabled."]
+    _0,
+    #[doc = "PDB sequence error interrupt enabled."]
+    _1,
 }
 impl PDBEIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -681,8 +712,10 @@ impl<'a> _LDOKW<'a> {
 }
 #[doc = "Values that can be written to the field `CONT`"]
 pub enum CONTW {
-    #[doc = "PDB operation in One-Shot mode"] _0,
-    #[doc = "PDB operation in Continuous mode"] _1,
+    #[doc = "PDB operation in One-Shot mode"]
+    _0,
+    #[doc = "PDB operation in Continuous mode"]
+    _1,
 }
 impl CONTW {
     #[allow(missing_docs)]
@@ -737,10 +770,14 @@ impl<'a> _CONTW<'a> {
 }
 #[doc = "Values that can be written to the field `MULT`"]
 pub enum MULTW {
-    #[doc = "Multiplication factor is 1."] _00,
-    #[doc = "Multiplication factor is 10."] _01,
-    #[doc = "Multiplication factor is 20."] _10,
-    #[doc = "Multiplication factor is 40."] _11,
+    #[doc = "Multiplication factor is 1."]
+    _00,
+    #[doc = "Multiplication factor is 10."]
+    _01,
+    #[doc = "Multiplication factor is 20."]
+    _10,
+    #[doc = "Multiplication factor is 40."]
+    _11,
 }
 impl MULTW {
     #[allow(missing_docs)]
@@ -799,8 +836,10 @@ impl<'a> _MULTW<'a> {
 }
 #[doc = "Values that can be written to the field `PDBIE`"]
 pub enum PDBIEW {
-    #[doc = "PDB interrupt disabled."] _0,
-    #[doc = "PDB interrupt enabled."] _1,
+    #[doc = "PDB interrupt disabled."]
+    _0,
+    #[doc = "PDB interrupt enabled."]
+    _1,
 }
 impl PDBIEW {
     #[allow(missing_docs)]
@@ -878,8 +917,10 @@ impl<'a> _PDBIFW<'a> {
 }
 #[doc = "Values that can be written to the field `PDBEN`"]
 pub enum PDBENW {
-    #[doc = "PDB disabled. Counter is off."] _0,
-    #[doc = "PDB enabled."] _1,
+    #[doc = "PDB disabled. Counter is off."]
+    _0,
+    #[doc = "PDB enabled."]
+    _1,
 }
 impl PDBENW {
     #[allow(missing_docs)]
@@ -934,22 +975,38 @@ impl<'a> _PDBENW<'a> {
 }
 #[doc = "Values that can be written to the field `TRGSEL`"]
 pub enum TRGSELW {
-    #[doc = "Trigger-In 0 is selected."] _0000,
-    #[doc = "Trigger-In 1 is selected."] _0001,
-    #[doc = "Trigger-In 2 is selected."] _0010,
-    #[doc = "Trigger-In 3 is selected."] _0011,
-    #[doc = "Trigger-In 4 is selected."] _0100,
-    #[doc = "Trigger-In 5 is selected."] _0101,
-    #[doc = "Trigger-In 6 is selected."] _0110,
-    #[doc = "Trigger-In 7 is selected."] _0111,
-    #[doc = "Trigger-In 8 is selected."] _1000,
-    #[doc = "Trigger-In 9 is selected."] _1001,
-    #[doc = "Trigger-In 10 is selected."] _1010,
-    #[doc = "Trigger-In 11 is selected."] _1011,
-    #[doc = "Trigger-In 12 is selected."] _1100,
-    #[doc = "Trigger-In 13 is selected."] _1101,
-    #[doc = "Trigger-In 14 is selected."] _1110,
-    #[doc = "Software trigger is selected."] _1111,
+    #[doc = "Trigger-In 0 is selected."]
+    _0000,
+    #[doc = "Trigger-In 1 is selected."]
+    _0001,
+    #[doc = "Trigger-In 2 is selected."]
+    _0010,
+    #[doc = "Trigger-In 3 is selected."]
+    _0011,
+    #[doc = "Trigger-In 4 is selected."]
+    _0100,
+    #[doc = "Trigger-In 5 is selected."]
+    _0101,
+    #[doc = "Trigger-In 6 is selected."]
+    _0110,
+    #[doc = "Trigger-In 7 is selected."]
+    _0111,
+    #[doc = "Trigger-In 8 is selected."]
+    _1000,
+    #[doc = "Trigger-In 9 is selected."]
+    _1001,
+    #[doc = "Trigger-In 10 is selected."]
+    _1010,
+    #[doc = "Trigger-In 11 is selected."]
+    _1011,
+    #[doc = "Trigger-In 12 is selected."]
+    _1100,
+    #[doc = "Trigger-In 13 is selected."]
+    _1101,
+    #[doc = "Trigger-In 14 is selected."]
+    _1110,
+    #[doc = "Software trigger is selected."]
+    _1111,
 }
 impl TRGSELW {
     #[allow(missing_docs)]
@@ -1080,7 +1137,8 @@ impl<'a> _TRGSELW<'a> {
 }
 #[doc = "Values that can be written to the field `PRESCALER`"]
 pub enum PRESCALERW {
-    #[doc = "Counting uses the peripheral clock divided by MULT (the multiplication factor)."] _000,
+    #[doc = "Counting uses the peripheral clock divided by MULT (the multiplication factor)."]
+    _000,
     #[doc = "Counting uses the peripheral clock divided by 2 x MULT (the multiplication factor)."]
     _001,
     #[doc = "Counting uses the peripheral clock divided by 4 x MULT (the multiplication factor)."]
@@ -1177,8 +1235,10 @@ impl<'a> _PRESCALERW<'a> {
 }
 #[doc = "Values that can be written to the field `DMAEN`"]
 pub enum DMAENW {
-    #[doc = "DMA disabled."] _0,
-    #[doc = "DMA enabled."] _1,
+    #[doc = "DMA disabled."]
+    _0,
+    #[doc = "DMA enabled."]
+    _1,
 }
 impl DMAENW {
     #[allow(missing_docs)]
@@ -1256,8 +1316,10 @@ impl<'a> _SWTRIGW<'a> {
 }
 #[doc = "Values that can be written to the field `PDBEIE`"]
 pub enum PDBEIEW {
-    #[doc = "PDB sequence error interrupt disabled."] _0,
-    #[doc = "PDB sequence error interrupt enabled."] _1,
+    #[doc = "PDB sequence error interrupt disabled."]
+    _0,
+    #[doc = "PDB sequence error interrupt enabled."]
+    _1,
 }
 impl PDBEIEW {
     #[allow(missing_docs)]

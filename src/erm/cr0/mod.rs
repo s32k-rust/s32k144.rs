@@ -45,8 +45,10 @@ impl super::CR0 {
 #[doc = "Possible values of the field `ENCIE1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENCIE1R {
-    #[doc = "Interrupt notification of Memory 1 non-correctable error events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 1 non-correctable error events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 1 non-correctable error events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 1 non-correctable error events is enabled."]
+    _1,
 }
 impl ENCIE1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl ENCIE1R {
 #[doc = "Possible values of the field `ESCIE1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESCIE1R {
-    #[doc = "Interrupt notification of Memory 1 single-bit correction events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 1 single-bit correction events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 1 single-bit correction events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 1 single-bit correction events is enabled."]
+    _1,
 }
 impl ESCIE1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl ESCIE1R {
 #[doc = "Possible values of the field `ENCIE0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENCIE0R {
-    #[doc = "Interrupt notification of Memory 0 non-correctable error events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 0 non-correctable error events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 0 non-correctable error events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 0 non-correctable error events is enabled."]
+    _1,
 }
 impl ENCIE0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl ENCIE0R {
 #[doc = "Possible values of the field `ESCIE0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESCIE0R {
-    #[doc = "Interrupt notification of Memory 0 single-bit correction events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 0 single-bit correction events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 0 single-bit correction events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 0 single-bit correction events is enabled."]
+    _1,
 }
 impl ESCIE0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl ESCIE0R {
 }
 #[doc = "Values that can be written to the field `ENCIE1`"]
 pub enum ENCIE1W {
-    #[doc = "Interrupt notification of Memory 1 non-correctable error events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 1 non-correctable error events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 1 non-correctable error events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 1 non-correctable error events is enabled."]
+    _1,
 }
 impl ENCIE1W {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _ENCIE1W<'a> {
 }
 #[doc = "Values that can be written to the field `ESCIE1`"]
 pub enum ESCIE1W {
-    #[doc = "Interrupt notification of Memory 1 single-bit correction events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 1 single-bit correction events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 1 single-bit correction events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 1 single-bit correction events is enabled."]
+    _1,
 }
 impl ESCIE1W {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _ESCIE1W<'a> {
 }
 #[doc = "Values that can be written to the field `ENCIE0`"]
 pub enum ENCIE0W {
-    #[doc = "Interrupt notification of Memory 0 non-correctable error events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 0 non-correctable error events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 0 non-correctable error events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 0 non-correctable error events is enabled."]
+    _1,
 }
 impl ENCIE0W {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _ENCIE0W<'a> {
 }
 #[doc = "Values that can be written to the field `ESCIE0`"]
 pub enum ESCIE0W {
-    #[doc = "Interrupt notification of Memory 0 single-bit correction events is disabled."] _0,
-    #[doc = "Interrupt notification of Memory 0 single-bit correction events is enabled."] _1,
+    #[doc = "Interrupt notification of Memory 0 single-bit correction events is disabled."]
+    _0,
+    #[doc = "Interrupt notification of Memory 0 single-bit correction events is enabled."]
+    _1,
 }
 impl ESCIE0W {
     #[allow(missing_docs)]

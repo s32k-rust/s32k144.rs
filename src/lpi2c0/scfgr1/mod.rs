@@ -45,8 +45,10 @@ impl super::SCFGR1 {
 #[doc = "Possible values of the field `ADRSTALL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADRSTALLR {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl ADRSTALLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl ADRSTALLR {
 #[doc = "Possible values of the field `RXSTALL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXSTALLR {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl RXSTALLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl RXSTALLR {
 #[doc = "Possible values of the field `TXDSTALL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDSTALLR {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl TXDSTALLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl TXDSTALLR {
 #[doc = "Possible values of the field `ACKSTALL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACKSTALLR {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl ACKSTALLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl ACKSTALLR {
 #[doc = "Possible values of the field `GCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GCENR {
-    #[doc = "General Call address is disabled."] _0,
-    #[doc = "General call address is enabled."] _1,
+    #[doc = "General Call address is disabled."]
+    _0,
+    #[doc = "General call address is enabled."]
+    _1,
 }
 impl GCENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl GCENR {
 #[doc = "Possible values of the field `SAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAENR {
-    #[doc = "Disables match on SMBus Alert."] _0,
-    #[doc = "Enables match on SMBus Alert."] _1,
+    #[doc = "Disables match on SMBus Alert."]
+    _0,
+    #[doc = "Enables match on SMBus Alert."]
+    _1,
 }
 impl SAENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -317,7 +329,8 @@ impl SAENR {
 pub enum TXCFGR {
     #[doc = "Transmit Data Flag will only assert during a slave-transmit transfer when the transmit data register is empty."]
     _0,
-    #[doc = "Transmit Data Flag will assert whenever the transmit data register is empty."] _1,
+    #[doc = "Transmit Data Flag will assert whenever the transmit data register is empty."]
+    _1,
 }
 impl TXCFGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -408,8 +421,10 @@ impl RXCFGR {
 #[doc = "Possible values of the field `IGNACK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IGNACKR {
-    #[doc = "Slave will end transfer when NACK detected."] _0,
-    #[doc = "Slave will not end transfer when NACK detected."] _1,
+    #[doc = "Slave will end transfer when NACK detected."]
+    _0,
+    #[doc = "Slave will not end transfer when NACK detected."]
+    _1,
 }
 impl IGNACKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -453,8 +468,10 @@ impl IGNACKR {
 #[doc = "Possible values of the field `HSMEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSMENR {
-    #[doc = "Disables detection of Hs-mode master code."] _0,
-    #[doc = "Enables detection of Hs-mode master code."] _1,
+    #[doc = "Disables detection of Hs-mode master code."]
+    _0,
+    #[doc = "Enables detection of Hs-mode master code."]
+    _1,
 }
 impl HSMENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -498,14 +515,22 @@ impl HSMENR {
 #[doc = "Possible values of the field `ADDRCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRCFGR {
-    #[doc = "Address match 0 (7-bit)."] _000,
-    #[doc = "Address match 0 (10-bit)."] _001,
-    #[doc = "Address match 0 (7-bit) or Address match 1 (7-bit)."] _010,
-    #[doc = "Address match 0 (10-bit) or Address match 1 (10-bit)."] _011,
-    #[doc = "Address match 0 (7-bit) or Address match 1 (10-bit)."] _100,
-    #[doc = "Address match 0 (10-bit) or Address match 1 (7-bit)."] _101,
-    #[doc = "From Address match 0 (7-bit) to Address match 1 (7-bit)."] _110,
-    #[doc = "From Address match 0 (10-bit) to Address match 1 (10-bit)."] _111,
+    #[doc = "Address match 0 (7-bit)."]
+    _000,
+    #[doc = "Address match 0 (10-bit)."]
+    _001,
+    #[doc = "Address match 0 (7-bit) or Address match 1 (7-bit)."]
+    _010,
+    #[doc = "Address match 0 (10-bit) or Address match 1 (10-bit)."]
+    _011,
+    #[doc = "Address match 0 (7-bit) or Address match 1 (10-bit)."]
+    _100,
+    #[doc = "Address match 0 (10-bit) or Address match 1 (7-bit)."]
+    _101,
+    #[doc = "From Address match 0 (7-bit) to Address match 1 (7-bit)."]
+    _110,
+    #[doc = "From Address match 0 (10-bit) to Address match 1 (10-bit)."]
+    _111,
 }
 impl ADDRCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -581,8 +606,10 @@ impl ADDRCFGR {
 }
 #[doc = "Values that can be written to the field `ADRSTALL`"]
 pub enum ADRSTALLW {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl ADRSTALLW {
     #[allow(missing_docs)]
@@ -637,8 +664,10 @@ impl<'a> _ADRSTALLW<'a> {
 }
 #[doc = "Values that can be written to the field `RXSTALL`"]
 pub enum RXSTALLW {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl RXSTALLW {
     #[allow(missing_docs)]
@@ -693,8 +722,10 @@ impl<'a> _RXSTALLW<'a> {
 }
 #[doc = "Values that can be written to the field `TXDSTALL`"]
 pub enum TXDSTALLW {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl TXDSTALLW {
     #[allow(missing_docs)]
@@ -749,8 +780,10 @@ impl<'a> _TXDSTALLW<'a> {
 }
 #[doc = "Values that can be written to the field `ACKSTALL`"]
 pub enum ACKSTALLW {
-    #[doc = "Clock stretching disabled."] _0,
-    #[doc = "Clock stretching enabled."] _1,
+    #[doc = "Clock stretching disabled."]
+    _0,
+    #[doc = "Clock stretching enabled."]
+    _1,
 }
 impl ACKSTALLW {
     #[allow(missing_docs)]
@@ -805,8 +838,10 @@ impl<'a> _ACKSTALLW<'a> {
 }
 #[doc = "Values that can be written to the field `GCEN`"]
 pub enum GCENW {
-    #[doc = "General Call address is disabled."] _0,
-    #[doc = "General call address is enabled."] _1,
+    #[doc = "General Call address is disabled."]
+    _0,
+    #[doc = "General call address is enabled."]
+    _1,
 }
 impl GCENW {
     #[allow(missing_docs)]
@@ -861,8 +896,10 @@ impl<'a> _GCENW<'a> {
 }
 #[doc = "Values that can be written to the field `SAEN`"]
 pub enum SAENW {
-    #[doc = "Disables match on SMBus Alert."] _0,
-    #[doc = "Enables match on SMBus Alert."] _1,
+    #[doc = "Disables match on SMBus Alert."]
+    _0,
+    #[doc = "Enables match on SMBus Alert."]
+    _1,
 }
 impl SAENW {
     #[allow(missing_docs)]
@@ -919,7 +956,8 @@ impl<'a> _SAENW<'a> {
 pub enum TXCFGW {
     #[doc = "Transmit Data Flag will only assert during a slave-transmit transfer when the transmit data register is empty."]
     _0,
-    #[doc = "Transmit Data Flag will assert whenever the transmit data register is empty."] _1,
+    #[doc = "Transmit Data Flag will assert whenever the transmit data register is empty."]
+    _1,
 }
 impl TXCFGW {
     #[allow(missing_docs)]
@@ -1032,8 +1070,10 @@ impl<'a> _RXCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `IGNACK`"]
 pub enum IGNACKW {
-    #[doc = "Slave will end transfer when NACK detected."] _0,
-    #[doc = "Slave will not end transfer when NACK detected."] _1,
+    #[doc = "Slave will end transfer when NACK detected."]
+    _0,
+    #[doc = "Slave will not end transfer when NACK detected."]
+    _1,
 }
 impl IGNACKW {
     #[allow(missing_docs)]
@@ -1088,8 +1128,10 @@ impl<'a> _IGNACKW<'a> {
 }
 #[doc = "Values that can be written to the field `HSMEN`"]
 pub enum HSMENW {
-    #[doc = "Disables detection of Hs-mode master code."] _0,
-    #[doc = "Enables detection of Hs-mode master code."] _1,
+    #[doc = "Disables detection of Hs-mode master code."]
+    _0,
+    #[doc = "Enables detection of Hs-mode master code."]
+    _1,
 }
 impl HSMENW {
     #[allow(missing_docs)]
@@ -1144,14 +1186,22 @@ impl<'a> _HSMENW<'a> {
 }
 #[doc = "Values that can be written to the field `ADDRCFG`"]
 pub enum ADDRCFGW {
-    #[doc = "Address match 0 (7-bit)."] _000,
-    #[doc = "Address match 0 (10-bit)."] _001,
-    #[doc = "Address match 0 (7-bit) or Address match 1 (7-bit)."] _010,
-    #[doc = "Address match 0 (10-bit) or Address match 1 (10-bit)."] _011,
-    #[doc = "Address match 0 (7-bit) or Address match 1 (10-bit)."] _100,
-    #[doc = "Address match 0 (10-bit) or Address match 1 (7-bit)."] _101,
-    #[doc = "From Address match 0 (7-bit) to Address match 1 (7-bit)."] _110,
-    #[doc = "From Address match 0 (10-bit) to Address match 1 (10-bit)."] _111,
+    #[doc = "Address match 0 (7-bit)."]
+    _000,
+    #[doc = "Address match 0 (10-bit)."]
+    _001,
+    #[doc = "Address match 0 (7-bit) or Address match 1 (7-bit)."]
+    _010,
+    #[doc = "Address match 0 (10-bit) or Address match 1 (10-bit)."]
+    _011,
+    #[doc = "Address match 0 (7-bit) or Address match 1 (10-bit)."]
+    _100,
+    #[doc = "Address match 0 (10-bit) or Address match 1 (7-bit)."]
+    _101,
+    #[doc = "From Address match 0 (7-bit) to Address match 1 (7-bit)."]
+    _110,
+    #[doc = "From Address match 0 (10-bit) to Address match 1 (10-bit)."]
+    _111,
 }
 impl ADDRCFGW {
     #[allow(missing_docs)]

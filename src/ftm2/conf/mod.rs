@@ -109,8 +109,10 @@ impl GTBEOUTR {
 #[doc = "Possible values of the field `ITRIGR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITRIGRR {
-    #[doc = "Initialization trigger is generated on counter wrap events."] _0,
-    #[doc = "Initialization trigger is generated when a reload point is reached."] _1,
+    #[doc = "Initialization trigger is generated on counter wrap events."]
+    _0,
+    #[doc = "Initialization trigger is generated when a reload point is reached."]
+    _1,
 }
 impl ITRIGRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -229,8 +231,10 @@ impl<'a> _GTBEOUTW<'a> {
 }
 #[doc = "Values that can be written to the field `ITRIGR`"]
 pub enum ITRIGRW {
-    #[doc = "Initialization trigger is generated on counter wrap events."] _0,
-    #[doc = "Initialization trigger is generated when a reload point is reached."] _1,
+    #[doc = "Initialization trigger is generated on counter wrap events."]
+    _0,
+    #[doc = "Initialization trigger is generated when a reload point is reached."]
+    _1,
 }
 impl ITRIGRW {
     #[allow(missing_docs)]

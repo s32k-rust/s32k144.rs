@@ -25,13 +25,20 @@ impl FEATURESR {
 #[doc = "Possible values of the field `PACKAGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PACKAGER {
-    #[doc = "48 LQFP"] _0010,
-    #[doc = "64 LQFP"] _0011,
-    #[doc = "100 LQFP"] _0100,
-    #[doc = "144 LQFP"] _0110,
-    #[doc = "176 LQFP"] _0111,
-    #[doc = "100 MAP BGA"] _1000,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "48 LQFP"]
+    _0010,
+    #[doc = "64 LQFP"]
+    _0011,
+    #[doc = "100 LQFP"]
+    _0100,
+    #[doc = "144 LQFP"]
+    _0110,
+    #[doc = "176 LQFP"]
+    _0111,
+    #[doc = "100 MAP BGA"]
+    _1000,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PACKAGER {
     #[doc = r" Value of the field as raw bits"]
@@ -106,12 +113,18 @@ impl REVIDR {
 #[doc = "Possible values of the field `RAMSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMSIZER {
-    #[doc = "128 KB (S32K148), Reserved (others)"] _0111,
-    #[doc = "160 KB (S32K148) , Reserved (others)"] _1001,
-    #[doc = "192 KB (S32K148), 16 KB (S32K142), Reserved (others)"] _1011,
-    #[doc = "48 KB (S32K144), 24 KB (S32K142), Reserved (others)"] _1101,
-    #[doc = "256 KB (S32K148), 64 KB (S32K144), 32 KB (S32K142)"] _1111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "128 KB (S32K148), Reserved (others)"]
+    _0111,
+    #[doc = "160 KB (S32K148) , Reserved (others)"]
+    _1001,
+    #[doc = "192 KB (S32K148), 16 KB (S32K142), Reserved (others)"]
+    _1011,
+    #[doc = "48 KB (S32K144), 24 KB (S32K142), Reserved (others)"]
+    _1101,
+    #[doc = "256 KB (S32K148), 64 KB (S32K144), 32 KB (S32K142)"]
+    _1111,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl RAMSIZER {
     #[doc = r" Value of the field as raw bits"]

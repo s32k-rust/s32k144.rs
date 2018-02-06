@@ -45,8 +45,10 @@ impl super::ISCR {
 #[doc = "Possible values of the field `FIOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIOCR {
-    #[doc = "No interrupt"] _0,
-    #[doc = "Interrupt occurred"] _1,
+    #[doc = "No interrupt"]
+    _0,
+    #[doc = "Interrupt occurred"]
+    _1,
 }
 impl FIOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl FIOCR {
 #[doc = "Possible values of the field `FDZC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FDZCR {
-    #[doc = "No interrupt"] _0,
-    #[doc = "Interrupt occurred"] _1,
+    #[doc = "No interrupt"]
+    _0,
+    #[doc = "Interrupt occurred"]
+    _1,
 }
 impl FDZCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl FDZCR {
 #[doc = "Possible values of the field `FOFC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFCR {
-    #[doc = "No interrupt"] _0,
-    #[doc = "Interrupt occurred"] _1,
+    #[doc = "No interrupt"]
+    _0,
+    #[doc = "Interrupt occurred"]
+    _1,
 }
 impl FOFCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl FOFCR {
 #[doc = "Possible values of the field `FUFC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FUFCR {
-    #[doc = "No interrupt"] _0,
-    #[doc = "Interrupt occurred"] _1,
+    #[doc = "No interrupt"]
+    _0,
+    #[doc = "Interrupt occurred"]
+    _1,
 }
 impl FUFCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl FUFCR {
 #[doc = "Possible values of the field `FIXC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIXCR {
-    #[doc = "No interrupt"] _0,
-    #[doc = "Interrupt occurred"] _1,
+    #[doc = "No interrupt"]
+    _0,
+    #[doc = "Interrupt occurred"]
+    _1,
 }
 impl FIXCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl FIXCR {
 #[doc = "Possible values of the field `FIDC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIDCR {
-    #[doc = "No interrupt"] _0,
-    #[doc = "Interrupt occurred"] _1,
+    #[doc = "No interrupt"]
+    _0,
+    #[doc = "Interrupt occurred"]
+    _1,
 }
 impl FIDCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl FIDCR {
 #[doc = "Possible values of the field `FIOCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIOCER {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FIOCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl FIOCER {
 #[doc = "Possible values of the field `FDZCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FDZCER {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FDZCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl FDZCER {
 #[doc = "Possible values of the field `FOFCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFCER {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FOFCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -450,8 +468,10 @@ impl FOFCER {
 #[doc = "Possible values of the field `FUFCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FUFCER {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FUFCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -495,8 +515,10 @@ impl FUFCER {
 #[doc = "Possible values of the field `FIXCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIXCER {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FIXCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -540,8 +562,10 @@ impl FIXCER {
 #[doc = "Possible values of the field `FIDCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIDCER {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FIDCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -584,8 +608,10 @@ impl FIDCER {
 }
 #[doc = "Values that can be written to the field `FIOCE`"]
 pub enum FIOCEW {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FIOCEW {
     #[allow(missing_docs)]
@@ -640,8 +666,10 @@ impl<'a> _FIOCEW<'a> {
 }
 #[doc = "Values that can be written to the field `FDZCE`"]
 pub enum FDZCEW {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FDZCEW {
     #[allow(missing_docs)]
@@ -696,8 +724,10 @@ impl<'a> _FDZCEW<'a> {
 }
 #[doc = "Values that can be written to the field `FOFCE`"]
 pub enum FOFCEW {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FOFCEW {
     #[allow(missing_docs)]
@@ -752,8 +782,10 @@ impl<'a> _FOFCEW<'a> {
 }
 #[doc = "Values that can be written to the field `FUFCE`"]
 pub enum FUFCEW {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FUFCEW {
     #[allow(missing_docs)]
@@ -808,8 +840,10 @@ impl<'a> _FUFCEW<'a> {
 }
 #[doc = "Values that can be written to the field `FIXCE`"]
 pub enum FIXCEW {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FIXCEW {
     #[allow(missing_docs)]
@@ -864,8 +898,10 @@ impl<'a> _FIXCEW<'a> {
 }
 #[doc = "Values that can be written to the field `FIDCE`"]
 pub enum FIDCEW {
-    #[doc = "Disable interrupt"] _0,
-    #[doc = "Enable interrupt"] _1,
+    #[doc = "Disable interrupt"]
+    _0,
+    #[doc = "Enable interrupt"]
+    _1,
 }
 impl FIDCEW {
     #[allow(missing_docs)]

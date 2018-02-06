@@ -45,7 +45,8 @@ impl super::REGSC {
 #[doc = "Possible values of the field `BIASEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIASENR {
-    #[doc = "Biasing disabled, core logic can run in full performance"] _0,
+    #[doc = "Biasing disabled, core logic can run in full performance"]
+    _0,
     #[doc = "Biasing enabled, core logic is slower and there are restrictions in allowed system clock speed (see Data Sheet for details)"]
     _1,
 }
@@ -91,7 +92,8 @@ impl BIASENR {
 #[doc = "Possible values of the field `CLKBIASDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKBIASDISR {
-    #[doc = "No effect"] _0,
+    #[doc = "No effect"]
+    _0,
     #[doc = "In VLPS mode, the bias currents and reference voltages for the following clock modules are disabled: SIRC, FIRC, PLL. (if available on device)"]
     _1,
 }
@@ -137,8 +139,10 @@ impl CLKBIASDISR {
 #[doc = "Possible values of the field `REGFPM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGFPMR {
-    #[doc = "Regulator is in low power mode or transition to/from"] _0,
-    #[doc = "Regulator is in full performance mode"] _1,
+    #[doc = "Regulator is in low power mode or transition to/from"]
+    _0,
+    #[doc = "Regulator is in full performance mode"]
+    _1,
 }
 impl REGFPMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -182,8 +186,10 @@ impl REGFPMR {
 #[doc = "Possible values of the field `LPOSTAT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPOSTATR {
-    #[doc = "Low power oscillator in low phase"] _0,
-    #[doc = "Low power oscillator in high phase"] _1,
+    #[doc = "Low power oscillator in low phase"]
+    _0,
+    #[doc = "Low power oscillator in high phase"]
+    _1,
 }
 impl LPOSTATR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -227,8 +233,10 @@ impl LPOSTATR {
 #[doc = "Possible values of the field `LPODIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPODISR {
-    #[doc = "Low power oscillator enabled"] _0,
-    #[doc = "Low power oscillator disabled"] _1,
+    #[doc = "Low power oscillator enabled"]
+    _0,
+    #[doc = "Low power oscillator disabled"]
+    _1,
 }
 impl LPODISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -271,7 +279,8 @@ impl LPODISR {
 }
 #[doc = "Values that can be written to the field `BIASEN`"]
 pub enum BIASENW {
-    #[doc = "Biasing disabled, core logic can run in full performance"] _0,
+    #[doc = "Biasing disabled, core logic can run in full performance"]
+    _0,
     #[doc = "Biasing enabled, core logic is slower and there are restrictions in allowed system clock speed (see Data Sheet for details)"]
     _1,
 }
@@ -328,7 +337,8 @@ impl<'a> _BIASENW<'a> {
 }
 #[doc = "Values that can be written to the field `CLKBIASDIS`"]
 pub enum CLKBIASDISW {
-    #[doc = "No effect"] _0,
+    #[doc = "No effect"]
+    _0,
     #[doc = "In VLPS mode, the bias currents and reference voltages for the following clock modules are disabled: SIRC, FIRC, PLL. (if available on device)"]
     _1,
 }
@@ -385,8 +395,10 @@ impl<'a> _CLKBIASDISW<'a> {
 }
 #[doc = "Values that can be written to the field `LPODIS`"]
 pub enum LPODISW {
-    #[doc = "Low power oscillator enabled"] _0,
-    #[doc = "Low power oscillator disabled"] _1,
+    #[doc = "Low power oscillator enabled"]
+    _0,
+    #[doc = "Low power oscillator disabled"]
+    _1,
 }
 impl LPODISW {
     #[allow(missing_docs)]

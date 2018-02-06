@@ -45,8 +45,10 @@ impl super::SYNC {
 #[doc = "Possible values of the field `CNTMIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CNTMINR {
-    #[doc = "The minimum loading point is disabled."] _0,
-    #[doc = "The minimum loading point is enabled."] _1,
+    #[doc = "The minimum loading point is disabled."]
+    _0,
+    #[doc = "The minimum loading point is enabled."]
+    _1,
 }
 impl CNTMINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CNTMINR {
 #[doc = "Possible values of the field `CNTMAX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CNTMAXR {
-    #[doc = "The maximum loading point is disabled."] _0,
-    #[doc = "The maximum loading point is enabled."] _1,
+    #[doc = "The maximum loading point is disabled."]
+    _0,
+    #[doc = "The maximum loading point is enabled."]
+    _1,
 }
 impl CNTMAXR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,7 +139,8 @@ impl CNTMAXR {
 #[doc = "Possible values of the field `REINIT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REINITR {
-    #[doc = "FTM counter continues to count normally."] _0,
+    #[doc = "FTM counter continues to count normally."]
+    _0,
     #[doc = "FTM counter is updated with its initial value when the selected trigger is detected."]
     _1,
 }
@@ -228,8 +233,10 @@ impl SYNCHOMR {
 #[doc = "Possible values of the field `TRIG0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIG0R {
-    #[doc = "Trigger is disabled."] _0,
-    #[doc = "Trigger is enabled."] _1,
+    #[doc = "Trigger is disabled."]
+    _0,
+    #[doc = "Trigger is enabled."]
+    _1,
 }
 impl TRIG0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -273,8 +280,10 @@ impl TRIG0R {
 #[doc = "Possible values of the field `TRIG1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIG1R {
-    #[doc = "Trigger is disabled."] _0,
-    #[doc = "Trigger is enabled."] _1,
+    #[doc = "Trigger is disabled."]
+    _0,
+    #[doc = "Trigger is enabled."]
+    _1,
 }
 impl TRIG1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -318,8 +327,10 @@ impl TRIG1R {
 #[doc = "Possible values of the field `TRIG2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIG2R {
-    #[doc = "Trigger is disabled."] _0,
-    #[doc = "Trigger is enabled."] _1,
+    #[doc = "Trigger is disabled."]
+    _0,
+    #[doc = "Trigger is enabled."]
+    _1,
 }
 impl TRIG2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -363,8 +374,10 @@ impl TRIG2R {
 #[doc = "Possible values of the field `SWSYNC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWSYNCR {
-    #[doc = "Software trigger is not selected."] _0,
-    #[doc = "Software trigger is selected."] _1,
+    #[doc = "Software trigger is not selected."]
+    _0,
+    #[doc = "Software trigger is selected."]
+    _1,
 }
 impl SWSYNCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -407,8 +420,10 @@ impl SWSYNCR {
 }
 #[doc = "Values that can be written to the field `CNTMIN`"]
 pub enum CNTMINW {
-    #[doc = "The minimum loading point is disabled."] _0,
-    #[doc = "The minimum loading point is enabled."] _1,
+    #[doc = "The minimum loading point is disabled."]
+    _0,
+    #[doc = "The minimum loading point is enabled."]
+    _1,
 }
 impl CNTMINW {
     #[allow(missing_docs)]
@@ -463,8 +478,10 @@ impl<'a> _CNTMINW<'a> {
 }
 #[doc = "Values that can be written to the field `CNTMAX`"]
 pub enum CNTMAXW {
-    #[doc = "The maximum loading point is disabled."] _0,
-    #[doc = "The maximum loading point is enabled."] _1,
+    #[doc = "The maximum loading point is disabled."]
+    _0,
+    #[doc = "The maximum loading point is enabled."]
+    _1,
 }
 impl CNTMAXW {
     #[allow(missing_docs)]
@@ -519,7 +536,8 @@ impl<'a> _CNTMAXW<'a> {
 }
 #[doc = "Values that can be written to the field `REINIT`"]
 pub enum REINITW {
-    #[doc = "FTM counter continues to count normally."] _0,
+    #[doc = "FTM counter continues to count normally."]
+    _0,
     #[doc = "FTM counter is updated with its initial value when the selected trigger is detected."]
     _1,
 }
@@ -634,8 +652,10 @@ impl<'a> _SYNCHOMW<'a> {
 }
 #[doc = "Values that can be written to the field `TRIG0`"]
 pub enum TRIG0W {
-    #[doc = "Trigger is disabled."] _0,
-    #[doc = "Trigger is enabled."] _1,
+    #[doc = "Trigger is disabled."]
+    _0,
+    #[doc = "Trigger is enabled."]
+    _1,
 }
 impl TRIG0W {
     #[allow(missing_docs)]
@@ -690,8 +710,10 @@ impl<'a> _TRIG0W<'a> {
 }
 #[doc = "Values that can be written to the field `TRIG1`"]
 pub enum TRIG1W {
-    #[doc = "Trigger is disabled."] _0,
-    #[doc = "Trigger is enabled."] _1,
+    #[doc = "Trigger is disabled."]
+    _0,
+    #[doc = "Trigger is enabled."]
+    _1,
 }
 impl TRIG1W {
     #[allow(missing_docs)]
@@ -746,8 +768,10 @@ impl<'a> _TRIG1W<'a> {
 }
 #[doc = "Values that can be written to the field `TRIG2`"]
 pub enum TRIG2W {
-    #[doc = "Trigger is disabled."] _0,
-    #[doc = "Trigger is enabled."] _1,
+    #[doc = "Trigger is disabled."]
+    _0,
+    #[doc = "Trigger is enabled."]
+    _1,
 }
 impl TRIG2W {
     #[allow(missing_docs)]
@@ -802,8 +826,10 @@ impl<'a> _TRIG2W<'a> {
 }
 #[doc = "Values that can be written to the field `SWSYNC`"]
 pub enum SWSYNCW {
-    #[doc = "Software trigger is not selected."] _0,
-    #[doc = "Software trigger is selected."] _1,
+    #[doc = "Software trigger is not selected."]
+    _0,
+    #[doc = "Software trigger is selected."]
+    _1,
 }
 impl SWSYNCW {
     #[allow(missing_docs)]

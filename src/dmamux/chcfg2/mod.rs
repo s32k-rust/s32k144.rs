@@ -105,7 +105,8 @@ impl TRIGR {
 pub enum ENBLR {
     #[doc = "DMA channel is disabled. This mode is primarily used during configuration of the DMAMux. The DMA has separate channel enables/disables, which should be used to disable or reconfigure a DMA channel."]
     _0,
-    #[doc = "DMA channel is enabled"] _1,
+    #[doc = "DMA channel is enabled"]
+    _1,
 }
 impl ENBLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -223,7 +224,8 @@ impl<'a> _TRIGW<'a> {
 pub enum ENBLW {
     #[doc = "DMA channel is disabled. This mode is primarily used during configuration of the DMAMux. The DMA has separate channel enables/disables, which should be used to disable or reconfigure a DMA channel."]
     _0,
-    #[doc = "DMA channel is enabled"] _1,
+    #[doc = "DMA channel is enabled"]
+    _1,
 }
 impl ENBLW {
     #[allow(missing_docs)]

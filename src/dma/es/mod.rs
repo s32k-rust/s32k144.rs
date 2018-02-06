@@ -14,8 +14,10 @@ impl super::ES {
 #[doc = "Possible values of the field `DBE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBER {
-    #[doc = "No destination bus error"] _0,
-    #[doc = "The last recorded error was a bus error on a destination write"] _1,
+    #[doc = "No destination bus error"]
+    _0,
+    #[doc = "The last recorded error was a bus error on a destination write"]
+    _1,
 }
 impl DBER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,8 +61,10 @@ impl DBER {
 #[doc = "Possible values of the field `SBE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBER {
-    #[doc = "No source bus error"] _0,
-    #[doc = "The last recorded error was a bus error on a source read"] _1,
+    #[doc = "No source bus error"]
+    _0,
+    #[doc = "The last recorded error was a bus error on a source read"]
+    _1,
 }
 impl SBER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -104,7 +108,8 @@ impl SBER {
 #[doc = "Possible values of the field `SGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SGER {
-    #[doc = "No scatter/gather configuration error"] _0,
+    #[doc = "No scatter/gather configuration error"]
+    _0,
     #[doc = "The last recorded error was a configuration error detected in the TCDn_DLASTSGA field. This field is checked at the beginning of a scatter/gather operation after major loop completion if TCDn_CSR[ESG] is enabled. TCDn_DLASTSGA is not on a 32 byte boundary."]
     _1,
 }
@@ -150,8 +155,10 @@ impl SGER {
 #[doc = "Possible values of the field `NCE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCER {
-    #[doc = "No NBYTES/CITER configuration error"] _0,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "No NBYTES/CITER configuration error"]
+    _0,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl NCER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -190,7 +197,8 @@ impl NCER {
 #[doc = "Possible values of the field `DOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOER {
-    #[doc = "No destination offset configuration error"] _0,
+    #[doc = "No destination offset configuration error"]
+    _0,
     #[doc = "The last recorded error was a configuration error detected in the TCDn_DOFF field. TCDn_DOFF is inconsistent with TCDn_ATTR[DSIZE]."]
     _1,
 }
@@ -236,7 +244,8 @@ impl DOER {
 #[doc = "Possible values of the field `DAE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAER {
-    #[doc = "No destination address configuration error"] _0,
+    #[doc = "No destination address configuration error"]
+    _0,
     #[doc = "The last recorded error was a configuration error detected in the TCDn_DADDR field. TCDn_DADDR is inconsistent with TCDn_ATTR[DSIZE]."]
     _1,
 }
@@ -282,7 +291,8 @@ impl DAER {
 #[doc = "Possible values of the field `SOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOER {
-    #[doc = "No source offset configuration error"] _0,
+    #[doc = "No source offset configuration error"]
+    _0,
     #[doc = "The last recorded error was a configuration error detected in the TCDn_SOFF field. TCDn_SOFF is inconsistent with TCDn_ATTR[SSIZE]."]
     _1,
 }
@@ -328,7 +338,8 @@ impl SOER {
 #[doc = "Possible values of the field `SAE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAER {
-    #[doc = "No source address configuration error."] _0,
+    #[doc = "No source address configuration error."]
+    _0,
     #[doc = "The last recorded error was a configuration error detected in the TCDn_SADDR field. TCDn_SADDR is inconsistent with TCDn_ATTR[SSIZE]."]
     _1,
 }
@@ -385,8 +396,10 @@ impl ERRCHNR {
 #[doc = "Possible values of the field `CPE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPER {
-    #[doc = "No channel priority error"] _0,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "No channel priority error"]
+    _0,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl CPER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -425,8 +438,10 @@ impl CPER {
 #[doc = "Possible values of the field `ECX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECXR {
-    #[doc = "No canceled transfers"] _0,
-    #[doc = "The last recorded entry was a canceled transfer by the error cancel transfer input"] _1,
+    #[doc = "No canceled transfers"]
+    _0,
+    #[doc = "The last recorded entry was a canceled transfer by the error cancel transfer input"]
+    _1,
 }
 impl ECXR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -470,7 +485,8 @@ impl ECXR {
 #[doc = "Possible values of the field `VLD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VLDR {
-    #[doc = "No ERR bits are set."] _0,
+    #[doc = "No ERR bits are set."]
+    _0,
     #[doc = "At least one ERR bit is set indicating a valid error exists that has not been cleared."]
     _1,
 }

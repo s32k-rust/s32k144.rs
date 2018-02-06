@@ -45,8 +45,10 @@ impl super::PWMLOAD {
 #[doc = "Possible values of the field `CH0SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH0SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CH0SELR {
 #[doc = "Possible values of the field `CH1SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH1SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl CH1SELR {
 #[doc = "Possible values of the field `CH2SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH2SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl CH2SELR {
 #[doc = "Possible values of the field `CH3SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH3SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl CH3SELR {
 #[doc = "Possible values of the field `CH4SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH4SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl CH4SELR {
 #[doc = "Possible values of the field `CH5SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH5SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl CH5SELR {
 #[doc = "Possible values of the field `CH6SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH6SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl CH6SELR {
 #[doc = "Possible values of the field `CH7SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7SELR {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH7SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl CH7SELR {
 #[doc = "Possible values of the field `HCSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HCSELR {
-    #[doc = "Half cycle reload is disabled and it is not considered as a reload opportunity."] _0,
-    #[doc = "Half cycle reload is enabled and it is considered as a reload opportunity."] _1,
+    #[doc = "Half cycle reload is disabled and it is not considered as a reload opportunity."]
+    _0,
+    #[doc = "Half cycle reload is enabled and it is considered as a reload opportunity."]
+    _1,
 }
 impl HCSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -450,8 +468,10 @@ impl HCSELR {
 #[doc = "Possible values of the field `LDOK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDOKR {
-    #[doc = "Loading updated values is disabled."] _0,
-    #[doc = "Loading updated values is enabled."] _1,
+    #[doc = "Loading updated values is disabled."]
+    _0,
+    #[doc = "Loading updated values is enabled."]
+    _1,
 }
 impl LDOKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -495,7 +515,8 @@ impl LDOKR {
 #[doc = "Possible values of the field `GLEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GLENR {
-    #[doc = "Global Load Ok disabled."] _0,
+    #[doc = "Global Load Ok disabled."]
+    _0,
     #[doc = "Global Load OK enabled. A pulse event on the module global load input sets the LDOK bit."]
     _1,
 }
@@ -540,8 +561,10 @@ impl GLENR {
 }
 #[doc = "Values that can be written to the field `CH0SEL`"]
 pub enum CH0SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH0SELW {
     #[allow(missing_docs)]
@@ -596,8 +619,10 @@ impl<'a> _CH0SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH1SEL`"]
 pub enum CH1SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH1SELW {
     #[allow(missing_docs)]
@@ -652,8 +677,10 @@ impl<'a> _CH1SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH2SEL`"]
 pub enum CH2SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH2SELW {
     #[allow(missing_docs)]
@@ -708,8 +735,10 @@ impl<'a> _CH2SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH3SEL`"]
 pub enum CH3SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH3SELW {
     #[allow(missing_docs)]
@@ -764,8 +793,10 @@ impl<'a> _CH3SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH4SEL`"]
 pub enum CH4SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH4SELW {
     #[allow(missing_docs)]
@@ -820,8 +851,10 @@ impl<'a> _CH4SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH5SEL`"]
 pub enum CH5SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH5SELW {
     #[allow(missing_docs)]
@@ -876,8 +909,10 @@ impl<'a> _CH5SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH6SEL`"]
 pub enum CH6SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH6SELW {
     #[allow(missing_docs)]
@@ -932,8 +967,10 @@ impl<'a> _CH6SELW<'a> {
 }
 #[doc = "Values that can be written to the field `CH7SEL`"]
 pub enum CH7SELW {
-    #[doc = "Channel match is not included as a reload opportunity."] _0,
-    #[doc = "Channel match is included as a reload opportunity."] _1,
+    #[doc = "Channel match is not included as a reload opportunity."]
+    _0,
+    #[doc = "Channel match is included as a reload opportunity."]
+    _1,
 }
 impl CH7SELW {
     #[allow(missing_docs)]
@@ -988,8 +1025,10 @@ impl<'a> _CH7SELW<'a> {
 }
 #[doc = "Values that can be written to the field `HCSEL`"]
 pub enum HCSELW {
-    #[doc = "Half cycle reload is disabled and it is not considered as a reload opportunity."] _0,
-    #[doc = "Half cycle reload is enabled and it is considered as a reload opportunity."] _1,
+    #[doc = "Half cycle reload is disabled and it is not considered as a reload opportunity."]
+    _0,
+    #[doc = "Half cycle reload is enabled and it is considered as a reload opportunity."]
+    _1,
 }
 impl HCSELW {
     #[allow(missing_docs)]
@@ -1044,8 +1083,10 @@ impl<'a> _HCSELW<'a> {
 }
 #[doc = "Values that can be written to the field `LDOK`"]
 pub enum LDOKW {
-    #[doc = "Loading updated values is disabled."] _0,
-    #[doc = "Loading updated values is enabled."] _1,
+    #[doc = "Loading updated values is disabled."]
+    _0,
+    #[doc = "Loading updated values is enabled."]
+    _1,
 }
 impl LDOKW {
     #[allow(missing_docs)]
@@ -1100,7 +1141,8 @@ impl<'a> _LDOKW<'a> {
 }
 #[doc = "Values that can be written to the field `GLEN`"]
 pub enum GLENW {
-    #[doc = "Global Load Ok disabled."] _0,
+    #[doc = "Global Load Ok disabled."]
+    _0,
     #[doc = "Global Load OK enabled. A pulse event on the module global load input sets the LDOK bit."]
     _1,
 }
@@ -1157,8 +1199,10 @@ impl<'a> _GLENW<'a> {
 }
 #[doc = "Values that can be written to the field `GLDOK`"]
 pub enum GLDOKW {
-    #[doc = "No action."] _0,
-    #[doc = "LDOK bit is set."] _1,
+    #[doc = "No action."]
+    _0,
+    #[doc = "LDOK bit is set."]
+    _1,
 }
 impl GLDOKW {
     #[allow(missing_docs)]

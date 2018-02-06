@@ -16,7 +16,8 @@ impl super::FSEC {
 pub enum SECR {
     #[doc = "MCU security status is unsecure (The standard shipping condition of the FTFC is unsecure.)"]
     _10,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SECR {
     #[doc = r" Value of the field as raw bits"]
@@ -45,9 +46,12 @@ impl SECR {
 #[doc = "Possible values of the field `FSLACC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FSLACCR {
-    #[doc = "Factory access granted"] _00,
-    #[doc = "Factory access granted"] _11,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Factory access granted"]
+    _00,
+    #[doc = "Factory access granted"]
+    _11,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl FSLACCR {
     #[doc = r" Value of the field as raw bits"]
@@ -83,10 +87,14 @@ impl FSLACCR {
 #[doc = "Possible values of the field `MEEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MEENR {
-    #[doc = "Mass erase is enabled"] _00,
-    #[doc = "Mass erase is enabled"] _01,
-    #[doc = "Mass erase is enabled"] _11,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Mass erase is enabled"]
+    _00,
+    #[doc = "Mass erase is enabled"]
+    _01,
+    #[doc = "Mass erase is enabled"]
+    _11,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl MEENR {
     #[doc = r" Value of the field as raw bits"]
@@ -129,11 +137,14 @@ impl MEENR {
 #[doc = "Possible values of the field `KEYEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum KEYENR {
-    #[doc = "Backdoor key access disabled"] _00,
+    #[doc = "Backdoor key access disabled"]
+    _00,
     #[doc = "Backdoor key access disabled (preferred KEYEN state to disable backdoor key access)"]
     _01,
-    #[doc = "Backdoor key access enabled"] _10,
-    #[doc = "Backdoor key access disabled"] _11,
+    #[doc = "Backdoor key access enabled"]
+    _10,
+    #[doc = "Backdoor key access disabled"]
+    _11,
 }
 impl KEYENR {
     #[doc = r" Value of the field as raw bits"]

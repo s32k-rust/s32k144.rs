@@ -66,8 +66,10 @@ impl COMBINE0R {
 #[doc = "Possible values of the field `COMP0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMP0R {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -132,8 +134,10 @@ impl DECAPEN0R {
 #[doc = "Possible values of the field `DECAP0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DECAP0R {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -177,8 +181,10 @@ impl DECAP0R {
 #[doc = "Possible values of the field `DTEN0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTEN0R {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -222,8 +228,10 @@ impl DTEN0R {
 #[doc = "Possible values of the field `SYNCEN0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCEN0R {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -267,8 +275,10 @@ impl SYNCEN0R {
 #[doc = "Possible values of the field `FAULTEN0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTEN0R {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -354,8 +364,10 @@ impl COMBINE1R {
 #[doc = "Possible values of the field `COMP1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMP1R {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -420,8 +432,10 @@ impl DECAPEN1R {
 #[doc = "Possible values of the field `DECAP1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DECAP1R {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -465,8 +479,10 @@ impl DECAP1R {
 #[doc = "Possible values of the field `DTEN1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTEN1R {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -510,8 +526,10 @@ impl DTEN1R {
 #[doc = "Possible values of the field `SYNCEN1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCEN1R {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -555,8 +573,10 @@ impl SYNCEN1R {
 #[doc = "Possible values of the field `FAULTEN1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTEN1R {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -642,8 +662,10 @@ impl COMBINE2R {
 #[doc = "Possible values of the field `COMP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMP2R {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -708,8 +730,10 @@ impl DECAPEN2R {
 #[doc = "Possible values of the field `DECAP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DECAP2R {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -753,8 +777,10 @@ impl DECAP2R {
 #[doc = "Possible values of the field `DTEN2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTEN2R {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -798,8 +824,10 @@ impl DTEN2R {
 #[doc = "Possible values of the field `SYNCEN2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCEN2R {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -843,8 +871,10 @@ impl SYNCEN2R {
 #[doc = "Possible values of the field `FAULTEN2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTEN2R {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -930,8 +960,10 @@ impl COMBINE3R {
 #[doc = "Possible values of the field `COMP3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMP3R {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -996,8 +1028,10 @@ impl DECAPEN3R {
 #[doc = "Possible values of the field `DECAP3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DECAP3R {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1041,8 +1075,10 @@ impl DECAP3R {
 #[doc = "Possible values of the field `DTEN3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTEN3R {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1086,8 +1122,10 @@ impl DTEN3R {
 #[doc = "Possible values of the field `SYNCEN3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCEN3R {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1131,8 +1169,10 @@ impl SYNCEN3R {
 #[doc = "Possible values of the field `FAULTEN3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTEN3R {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -1219,8 +1259,10 @@ impl<'a> _COMBINE0W<'a> {
 }
 #[doc = "Values that can be written to the field `COMP0`"]
 pub enum COMP0W {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP0W {
     #[allow(missing_docs)]
@@ -1298,8 +1340,10 @@ impl<'a> _DECAPEN0W<'a> {
 }
 #[doc = "Values that can be written to the field `DECAP0`"]
 pub enum DECAP0W {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP0W {
     #[allow(missing_docs)]
@@ -1354,8 +1398,10 @@ impl<'a> _DECAP0W<'a> {
 }
 #[doc = "Values that can be written to the field `DTEN0`"]
 pub enum DTEN0W {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN0W {
     #[allow(missing_docs)]
@@ -1410,8 +1456,10 @@ impl<'a> _DTEN0W<'a> {
 }
 #[doc = "Values that can be written to the field `SYNCEN0`"]
 pub enum SYNCEN0W {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN0W {
     #[allow(missing_docs)]
@@ -1466,8 +1514,10 @@ impl<'a> _SYNCEN0W<'a> {
 }
 #[doc = "Values that can be written to the field `FAULTEN0`"]
 pub enum FAULTEN0W {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN0W {
     #[allow(missing_docs)]
@@ -1568,8 +1618,10 @@ impl<'a> _COMBINE1W<'a> {
 }
 #[doc = "Values that can be written to the field `COMP1`"]
 pub enum COMP1W {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP1W {
     #[allow(missing_docs)]
@@ -1647,8 +1699,10 @@ impl<'a> _DECAPEN1W<'a> {
 }
 #[doc = "Values that can be written to the field `DECAP1`"]
 pub enum DECAP1W {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP1W {
     #[allow(missing_docs)]
@@ -1703,8 +1757,10 @@ impl<'a> _DECAP1W<'a> {
 }
 #[doc = "Values that can be written to the field `DTEN1`"]
 pub enum DTEN1W {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN1W {
     #[allow(missing_docs)]
@@ -1759,8 +1815,10 @@ impl<'a> _DTEN1W<'a> {
 }
 #[doc = "Values that can be written to the field `SYNCEN1`"]
 pub enum SYNCEN1W {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN1W {
     #[allow(missing_docs)]
@@ -1815,8 +1873,10 @@ impl<'a> _SYNCEN1W<'a> {
 }
 #[doc = "Values that can be written to the field `FAULTEN1`"]
 pub enum FAULTEN1W {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN1W {
     #[allow(missing_docs)]
@@ -1917,8 +1977,10 @@ impl<'a> _COMBINE2W<'a> {
 }
 #[doc = "Values that can be written to the field `COMP2`"]
 pub enum COMP2W {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP2W {
     #[allow(missing_docs)]
@@ -1996,8 +2058,10 @@ impl<'a> _DECAPEN2W<'a> {
 }
 #[doc = "Values that can be written to the field `DECAP2`"]
 pub enum DECAP2W {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP2W {
     #[allow(missing_docs)]
@@ -2052,8 +2116,10 @@ impl<'a> _DECAP2W<'a> {
 }
 #[doc = "Values that can be written to the field `DTEN2`"]
 pub enum DTEN2W {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN2W {
     #[allow(missing_docs)]
@@ -2108,8 +2174,10 @@ impl<'a> _DTEN2W<'a> {
 }
 #[doc = "Values that can be written to the field `SYNCEN2`"]
 pub enum SYNCEN2W {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN2W {
     #[allow(missing_docs)]
@@ -2164,8 +2232,10 @@ impl<'a> _SYNCEN2W<'a> {
 }
 #[doc = "Values that can be written to the field `FAULTEN2`"]
 pub enum FAULTEN2W {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN2W {
     #[allow(missing_docs)]
@@ -2266,8 +2336,10 @@ impl<'a> _COMBINE3W<'a> {
 }
 #[doc = "Values that can be written to the field `COMP3`"]
 pub enum COMP3W {
-    #[doc = "The channel (n+1) output is the same as the channel (n) output."] _0,
-    #[doc = "The channel (n+1) output is the complement of the channel (n) output."] _1,
+    #[doc = "The channel (n+1) output is the same as the channel (n) output."]
+    _0,
+    #[doc = "The channel (n+1) output is the complement of the channel (n) output."]
+    _1,
 }
 impl COMP3W {
     #[allow(missing_docs)]
@@ -2345,8 +2417,10 @@ impl<'a> _DECAPEN3W<'a> {
 }
 #[doc = "Values that can be written to the field `DECAP3`"]
 pub enum DECAP3W {
-    #[doc = "The dual edge captures are inactive."] _0,
-    #[doc = "The dual edge captures are active."] _1,
+    #[doc = "The dual edge captures are inactive."]
+    _0,
+    #[doc = "The dual edge captures are active."]
+    _1,
 }
 impl DECAP3W {
     #[allow(missing_docs)]
@@ -2401,8 +2475,10 @@ impl<'a> _DECAP3W<'a> {
 }
 #[doc = "Values that can be written to the field `DTEN3`"]
 pub enum DTEN3W {
-    #[doc = "The deadtime insertion in this pair of channels is disabled."] _0,
-    #[doc = "The deadtime insertion in this pair of channels is enabled."] _1,
+    #[doc = "The deadtime insertion in this pair of channels is disabled."]
+    _0,
+    #[doc = "The deadtime insertion in this pair of channels is enabled."]
+    _1,
 }
 impl DTEN3W {
     #[allow(missing_docs)]
@@ -2457,8 +2533,10 @@ impl<'a> _DTEN3W<'a> {
 }
 #[doc = "Values that can be written to the field `SYNCEN3`"]
 pub enum SYNCEN3W {
-    #[doc = "The PWM synchronization in this pair of channels is disabled."] _0,
-    #[doc = "The PWM synchronization in this pair of channels is enabled."] _1,
+    #[doc = "The PWM synchronization in this pair of channels is disabled."]
+    _0,
+    #[doc = "The PWM synchronization in this pair of channels is enabled."]
+    _1,
 }
 impl SYNCEN3W {
     #[allow(missing_docs)]
@@ -2513,8 +2591,10 @@ impl<'a> _SYNCEN3W<'a> {
 }
 #[doc = "Values that can be written to the field `FAULTEN3`"]
 pub enum FAULTEN3W {
-    #[doc = "The fault control in this pair of channels is disabled."] _0,
-    #[doc = "The fault control in this pair of channels is enabled."] _1,
+    #[doc = "The fault control in this pair of channels is disabled."]
+    _0,
+    #[doc = "The fault control in this pair of channels is enabled."]
+    _1,
 }
 impl FAULTEN3W {
     #[allow(missing_docs)]

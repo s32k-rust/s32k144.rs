@@ -31,8 +31,10 @@ impl<'a> _GPWDW<'a> {
 }
 #[doc = "Values that can be written to the field `GPWE`"]
 pub enum GPWEW {
-    #[doc = "Corresponding Pin Control Register is not updated with the value in GPWD."] _0,
-    #[doc = "Corresponding Pin Control Register is updated with the value in GPWD."] _1,
+    #[doc = "Corresponding Pin Control Register is not updated with the value in GPWD."]
+    _0,
+    #[doc = "Corresponding Pin Control Register is updated with the value in GPWD."]
+    _1,
 }
 impl GPWEW {
     #[allow(missing_docs)]

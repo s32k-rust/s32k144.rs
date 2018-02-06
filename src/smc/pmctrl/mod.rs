@@ -45,10 +45,14 @@ impl super::PMCTRL {
 #[doc = "Possible values of the field `STOPM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPMR {
-    #[doc = "Normal Stop (STOP)"] _000,
-    #[doc = "Very-Low-Power Stop (VLPS)"] _010,
-    #[doc = "Reseved"] _110,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Normal Stop (STOP)"]
+    _000,
+    #[doc = "Very-Low-Power Stop (VLPS)"]
+    _010,
+    #[doc = "Reseved"]
+    _110,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl STOPMR {
     #[doc = r" Value of the field as raw bits"]
@@ -91,8 +95,10 @@ impl STOPMR {
 #[doc = "Possible values of the field `VLPSA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VLPSAR {
-    #[doc = "The previous stop mode entry was successful."] _0,
-    #[doc = "The previous stop mode entry was aborted."] _1,
+    #[doc = "The previous stop mode entry was successful."]
+    _0,
+    #[doc = "The previous stop mode entry was aborted."]
+    _1,
 }
 impl VLPSAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -136,10 +142,14 @@ impl VLPSAR {
 #[doc = "Possible values of the field `RUNM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RUNMR {
-    #[doc = "Normal Run mode (RUN)"] _00,
-    #[doc = "Very-Low-Power Run mode (VLPR)"] _10,
-    #[doc = "High Speed Run mode (HSRUN)"] _11,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Normal Run mode (RUN)"]
+    _00,
+    #[doc = "Very-Low-Power Run mode (VLPR)"]
+    _10,
+    #[doc = "High Speed Run mode (HSRUN)"]
+    _11,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl RUNMR {
     #[doc = r" Value of the field as raw bits"]
@@ -181,9 +191,12 @@ impl RUNMR {
 }
 #[doc = "Values that can be written to the field `STOPM`"]
 pub enum STOPMW {
-    #[doc = "Normal Stop (STOP)"] _000,
-    #[doc = "Very-Low-Power Stop (VLPS)"] _010,
-    #[doc = "Reseved"] _110,
+    #[doc = "Normal Stop (STOP)"]
+    _000,
+    #[doc = "Very-Low-Power Stop (VLPS)"]
+    _010,
+    #[doc = "Reseved"]
+    _110,
 }
 impl STOPMW {
     #[allow(missing_docs)]
@@ -234,9 +247,12 @@ impl<'a> _STOPMW<'a> {
 }
 #[doc = "Values that can be written to the field `RUNM`"]
 pub enum RUNMW {
-    #[doc = "Normal Run mode (RUN)"] _00,
-    #[doc = "Very-Low-Power Run mode (VLPR)"] _10,
-    #[doc = "High Speed Run mode (HSRUN)"] _11,
+    #[doc = "Normal Run mode (RUN)"]
+    _00,
+    #[doc = "Very-Low-Power Run mode (VLPR)"]
+    _10,
+    #[doc = "High Speed Run mode (HSRUN)"]
+    _11,
 }
 impl RUNMW {
     #[allow(missing_docs)]

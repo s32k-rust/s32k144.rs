@@ -2,46 +2,74 @@ use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Version ID Register"] pub verid: VERID,
-    #[doc = "0x04 - Parameter Register"] pub param: PARAM,
+    #[doc = "0x00 - Version ID Register"]
+    pub verid: VERID,
+    #[doc = "0x04 - Parameter Register"]
+    pub param: PARAM,
     _reserved0: [u8; 8usize],
-    #[doc = "0x10 - Master Control Register"] pub mcr: MCR,
-    #[doc = "0x14 - Master Status Register"] pub msr: MSR,
-    #[doc = "0x18 - Master Interrupt Enable Register"] pub mier: MIER,
-    #[doc = "0x1c - Master DMA Enable Register"] pub mder: MDER,
-    #[doc = "0x20 - Master Configuration Register 0"] pub mcfgr0: MCFGR0,
-    #[doc = "0x24 - Master Configuration Register 1"] pub mcfgr1: MCFGR1,
-    #[doc = "0x28 - Master Configuration Register 2"] pub mcfgr2: MCFGR2,
-    #[doc = "0x2c - Master Configuration Register 3"] pub mcfgr3: MCFGR3,
+    #[doc = "0x10 - Master Control Register"]
+    pub mcr: MCR,
+    #[doc = "0x14 - Master Status Register"]
+    pub msr: MSR,
+    #[doc = "0x18 - Master Interrupt Enable Register"]
+    pub mier: MIER,
+    #[doc = "0x1c - Master DMA Enable Register"]
+    pub mder: MDER,
+    #[doc = "0x20 - Master Configuration Register 0"]
+    pub mcfgr0: MCFGR0,
+    #[doc = "0x24 - Master Configuration Register 1"]
+    pub mcfgr1: MCFGR1,
+    #[doc = "0x28 - Master Configuration Register 2"]
+    pub mcfgr2: MCFGR2,
+    #[doc = "0x2c - Master Configuration Register 3"]
+    pub mcfgr3: MCFGR3,
     _reserved1: [u8; 16usize],
-    #[doc = "0x40 - Master Data Match Register"] pub mdmr: MDMR,
+    #[doc = "0x40 - Master Data Match Register"]
+    pub mdmr: MDMR,
     _reserved2: [u8; 4usize],
-    #[doc = "0x48 - Master Clock Configuration Register 0"] pub mccr0: MCCR0,
+    #[doc = "0x48 - Master Clock Configuration Register 0"]
+    pub mccr0: MCCR0,
     _reserved3: [u8; 4usize],
-    #[doc = "0x50 - Master Clock Configuration Register 1"] pub mccr1: MCCR1,
+    #[doc = "0x50 - Master Clock Configuration Register 1"]
+    pub mccr1: MCCR1,
     _reserved4: [u8; 4usize],
-    #[doc = "0x58 - Master FIFO Control Register"] pub mfcr: MFCR,
-    #[doc = "0x5c - Master FIFO Status Register"] pub mfsr: MFSR,
-    #[doc = "0x60 - Master Transmit Data Register"] pub mtdr: MTDR,
+    #[doc = "0x58 - Master FIFO Control Register"]
+    pub mfcr: MFCR,
+    #[doc = "0x5c - Master FIFO Status Register"]
+    pub mfsr: MFSR,
+    #[doc = "0x60 - Master Transmit Data Register"]
+    pub mtdr: MTDR,
     _reserved5: [u8; 12usize],
-    #[doc = "0x70 - Master Receive Data Register"] pub mrdr: MRDR,
+    #[doc = "0x70 - Master Receive Data Register"]
+    pub mrdr: MRDR,
     _reserved6: [u8; 156usize],
-    #[doc = "0x110 - Slave Control Register"] pub scr: SCR,
-    #[doc = "0x114 - Slave Status Register"] pub ssr: SSR,
-    #[doc = "0x118 - Slave Interrupt Enable Register"] pub sier: SIER,
-    #[doc = "0x11c - Slave DMA Enable Register"] pub sder: SDER,
+    #[doc = "0x110 - Slave Control Register"]
+    pub scr: SCR,
+    #[doc = "0x114 - Slave Status Register"]
+    pub ssr: SSR,
+    #[doc = "0x118 - Slave Interrupt Enable Register"]
+    pub sier: SIER,
+    #[doc = "0x11c - Slave DMA Enable Register"]
+    pub sder: SDER,
     _reserved7: [u8; 4usize],
-    #[doc = "0x124 - Slave Configuration Register 1"] pub scfgr1: SCFGR1,
-    #[doc = "0x128 - Slave Configuration Register 2"] pub scfgr2: SCFGR2,
+    #[doc = "0x124 - Slave Configuration Register 1"]
+    pub scfgr1: SCFGR1,
+    #[doc = "0x128 - Slave Configuration Register 2"]
+    pub scfgr2: SCFGR2,
     _reserved8: [u8; 20usize],
-    #[doc = "0x140 - Slave Address Match Register"] pub samr: SAMR,
+    #[doc = "0x140 - Slave Address Match Register"]
+    pub samr: SAMR,
     _reserved9: [u8; 12usize],
-    #[doc = "0x150 - Slave Address Status Register"] pub sasr: SASR,
-    #[doc = "0x154 - Slave Transmit ACK Register"] pub star: STAR,
+    #[doc = "0x150 - Slave Address Status Register"]
+    pub sasr: SASR,
+    #[doc = "0x154 - Slave Transmit ACK Register"]
+    pub star: STAR,
     _reserved10: [u8; 8usize],
-    #[doc = "0x160 - Slave Transmit Data Register"] pub stdr: STDR,
+    #[doc = "0x160 - Slave Transmit Data Register"]
+    pub stdr: STDR,
     _reserved11: [u8; 12usize],
-    #[doc = "0x170 - Slave Receive Data Register"] pub srdr: SRDR,
+    #[doc = "0x170 - Slave Receive Data Register"]
+    pub srdr: SRDR,
 }
 #[doc = "Version ID Register"]
 pub struct VERID {

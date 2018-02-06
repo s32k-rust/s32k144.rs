@@ -45,8 +45,10 @@ impl super::TIMCFG2 {
 #[doc = "Possible values of the field `TSTART`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSTARTR {
-    #[doc = "Start bit disabled"] _0,
-    #[doc = "Start bit enabled"] _1,
+    #[doc = "Start bit disabled"]
+    _0,
+    #[doc = "Start bit enabled"]
+    _1,
 }
 impl TSTARTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,10 +92,14 @@ impl TSTARTR {
 #[doc = "Possible values of the field `TSTOP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSTOPR {
-    #[doc = "Stop bit disabled"] _0,
-    #[doc = "Stop bit is enabled on timer compare"] _1,
-    #[doc = "Stop bit is enabled on timer disable"] _10,
-    #[doc = "Stop bit is enabled on timer compare and timer disable"] _11,
+    #[doc = "Stop bit disabled"]
+    _0,
+    #[doc = "Stop bit is enabled on timer compare"]
+    _1,
+    #[doc = "Stop bit is enabled on timer disable"]
+    _10,
+    #[doc = "Stop bit is enabled on timer compare and timer disable"]
+    _11,
 }
 impl TSTOPR {
     #[doc = r" Value of the field as raw bits"]
@@ -142,14 +148,22 @@ impl TSTOPR {
 #[doc = "Possible values of the field `TIMENA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMENAR {
-    #[doc = "Timer always enabled"] _0,
-    #[doc = "Timer enabled on Timer N-1 enable"] _1,
-    #[doc = "Timer enabled on Trigger high"] _10,
-    #[doc = "Timer enabled on Trigger high and Pin high"] _11,
-    #[doc = "Timer enabled on Pin rising edge"] _100,
-    #[doc = "Timer enabled on Pin rising edge and Trigger high"] _101,
-    #[doc = "Timer enabled on Trigger rising edge"] _110,
-    #[doc = "Timer enabled on Trigger rising or falling edge"] _111,
+    #[doc = "Timer always enabled"]
+    _0,
+    #[doc = "Timer enabled on Timer N-1 enable"]
+    _1,
+    #[doc = "Timer enabled on Trigger high"]
+    _10,
+    #[doc = "Timer enabled on Trigger high and Pin high"]
+    _11,
+    #[doc = "Timer enabled on Pin rising edge"]
+    _100,
+    #[doc = "Timer enabled on Pin rising edge and Trigger high"]
+    _101,
+    #[doc = "Timer enabled on Trigger rising edge"]
+    _110,
+    #[doc = "Timer enabled on Trigger rising or falling edge"]
+    _111,
 }
 impl TIMENAR {
     #[doc = r" Value of the field as raw bits"]
@@ -226,14 +240,22 @@ impl TIMENAR {
 #[doc = "Possible values of the field `TIMDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMDISR {
-    #[doc = "Timer never disabled"] _0,
-    #[doc = "Timer disabled on Timer N-1 disable"] _1,
-    #[doc = "Timer disabled on Timer compare"] _10,
-    #[doc = "Timer disabled on Timer compare and Trigger Low"] _11,
-    #[doc = "Timer disabled on Pin rising or falling edge"] _100,
-    #[doc = "Timer disabled on Pin rising or falling edge provided Trigger is high"] _101,
-    #[doc = "Timer disabled on Trigger falling edge"] _110,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Timer never disabled"]
+    _0,
+    #[doc = "Timer disabled on Timer N-1 disable"]
+    _1,
+    #[doc = "Timer disabled on Timer compare"]
+    _10,
+    #[doc = "Timer disabled on Timer compare and Trigger Low"]
+    _11,
+    #[doc = "Timer disabled on Pin rising or falling edge"]
+    _100,
+    #[doc = "Timer disabled on Pin rising or falling edge provided Trigger is high"]
+    _101,
+    #[doc = "Timer disabled on Trigger falling edge"]
+    _110,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl TIMDISR {
     #[doc = r" Value of the field as raw bits"]
@@ -304,13 +326,20 @@ impl TIMDISR {
 #[doc = "Possible values of the field `TIMRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMRSTR {
-    #[doc = "Timer never reset"] _0,
-    #[doc = "Timer reset on Timer Pin equal to Timer Output"] _10,
-    #[doc = "Timer reset on Timer Trigger equal to Timer Output"] _11,
-    #[doc = "Timer reset on Timer Pin rising edge"] _100,
-    #[doc = "Timer reset on Trigger rising edge"] _110,
-    #[doc = "Timer reset on Trigger rising or falling edge"] _111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Timer never reset"]
+    _0,
+    #[doc = "Timer reset on Timer Pin equal to Timer Output"]
+    _10,
+    #[doc = "Timer reset on Timer Trigger equal to Timer Output"]
+    _11,
+    #[doc = "Timer reset on Timer Pin rising edge"]
+    _100,
+    #[doc = "Timer reset on Trigger rising edge"]
+    _110,
+    #[doc = "Timer reset on Trigger rising or falling edge"]
+    _111,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl TIMRSTR {
     #[doc = r" Value of the field as raw bits"]
@@ -374,9 +403,12 @@ impl TIMRSTR {
 #[doc = "Possible values of the field `TIMDEC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMDECR {
-    #[doc = "Decrement counter on FlexIO clock, Shift clock equals Timer output."] _0,
-    #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Timer output."] _1,
-    #[doc = "Decrement counter on Pin input (both edges), Shift clock equals Pin input."] _10,
+    #[doc = "Decrement counter on FlexIO clock, Shift clock equals Timer output."]
+    _0,
+    #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Timer output."]
+    _1,
+    #[doc = "Decrement counter on Pin input (both edges), Shift clock equals Pin input."]
+    _10,
     #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Trigger input."]
     _11,
 }
@@ -427,10 +459,14 @@ impl TIMDECR {
 #[doc = "Possible values of the field `TIMOUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMOUTR {
-    #[doc = "Timer output is logic one when enabled and is not affected by timer reset"] _0,
-    #[doc = "Timer output is logic zero when enabled and is not affected by timer reset"] _1,
-    #[doc = "Timer output is logic one when enabled and on timer reset"] _10,
-    #[doc = "Timer output is logic zero when enabled and on timer reset"] _11,
+    #[doc = "Timer output is logic one when enabled and is not affected by timer reset"]
+    _0,
+    #[doc = "Timer output is logic zero when enabled and is not affected by timer reset"]
+    _1,
+    #[doc = "Timer output is logic one when enabled and on timer reset"]
+    _10,
+    #[doc = "Timer output is logic zero when enabled and on timer reset"]
+    _11,
 }
 impl TIMOUTR {
     #[doc = r" Value of the field as raw bits"]
@@ -478,8 +514,10 @@ impl TIMOUTR {
 }
 #[doc = "Values that can be written to the field `TSTART`"]
 pub enum TSTARTW {
-    #[doc = "Start bit disabled"] _0,
-    #[doc = "Start bit enabled"] _1,
+    #[doc = "Start bit disabled"]
+    _0,
+    #[doc = "Start bit enabled"]
+    _1,
 }
 impl TSTARTW {
     #[allow(missing_docs)]
@@ -534,10 +572,14 @@ impl<'a> _TSTARTW<'a> {
 }
 #[doc = "Values that can be written to the field `TSTOP`"]
 pub enum TSTOPW {
-    #[doc = "Stop bit disabled"] _0,
-    #[doc = "Stop bit is enabled on timer compare"] _1,
-    #[doc = "Stop bit is enabled on timer disable"] _10,
-    #[doc = "Stop bit is enabled on timer compare and timer disable"] _11,
+    #[doc = "Stop bit disabled"]
+    _0,
+    #[doc = "Stop bit is enabled on timer compare"]
+    _1,
+    #[doc = "Stop bit is enabled on timer disable"]
+    _10,
+    #[doc = "Stop bit is enabled on timer compare and timer disable"]
+    _11,
 }
 impl TSTOPW {
     #[allow(missing_docs)]
@@ -596,14 +638,22 @@ impl<'a> _TSTOPW<'a> {
 }
 #[doc = "Values that can be written to the field `TIMENA`"]
 pub enum TIMENAW {
-    #[doc = "Timer always enabled"] _0,
-    #[doc = "Timer enabled on Timer N-1 enable"] _1,
-    #[doc = "Timer enabled on Trigger high"] _10,
-    #[doc = "Timer enabled on Trigger high and Pin high"] _11,
-    #[doc = "Timer enabled on Pin rising edge"] _100,
-    #[doc = "Timer enabled on Pin rising edge and Trigger high"] _101,
-    #[doc = "Timer enabled on Trigger rising edge"] _110,
-    #[doc = "Timer enabled on Trigger rising or falling edge"] _111,
+    #[doc = "Timer always enabled"]
+    _0,
+    #[doc = "Timer enabled on Timer N-1 enable"]
+    _1,
+    #[doc = "Timer enabled on Trigger high"]
+    _10,
+    #[doc = "Timer enabled on Trigger high and Pin high"]
+    _11,
+    #[doc = "Timer enabled on Pin rising edge"]
+    _100,
+    #[doc = "Timer enabled on Pin rising edge and Trigger high"]
+    _101,
+    #[doc = "Timer enabled on Trigger rising edge"]
+    _110,
+    #[doc = "Timer enabled on Trigger rising or falling edge"]
+    _111,
 }
 impl TIMENAW {
     #[allow(missing_docs)]
@@ -686,13 +736,20 @@ impl<'a> _TIMENAW<'a> {
 }
 #[doc = "Values that can be written to the field `TIMDIS`"]
 pub enum TIMDISW {
-    #[doc = "Timer never disabled"] _0,
-    #[doc = "Timer disabled on Timer N-1 disable"] _1,
-    #[doc = "Timer disabled on Timer compare"] _10,
-    #[doc = "Timer disabled on Timer compare and Trigger Low"] _11,
-    #[doc = "Timer disabled on Pin rising or falling edge"] _100,
-    #[doc = "Timer disabled on Pin rising or falling edge provided Trigger is high"] _101,
-    #[doc = "Timer disabled on Trigger falling edge"] _110,
+    #[doc = "Timer never disabled"]
+    _0,
+    #[doc = "Timer disabled on Timer N-1 disable"]
+    _1,
+    #[doc = "Timer disabled on Timer compare"]
+    _10,
+    #[doc = "Timer disabled on Timer compare and Trigger Low"]
+    _11,
+    #[doc = "Timer disabled on Pin rising or falling edge"]
+    _100,
+    #[doc = "Timer disabled on Pin rising or falling edge provided Trigger is high"]
+    _101,
+    #[doc = "Timer disabled on Trigger falling edge"]
+    _110,
 }
 impl TIMDISW {
     #[allow(missing_docs)]
@@ -767,12 +824,18 @@ impl<'a> _TIMDISW<'a> {
 }
 #[doc = "Values that can be written to the field `TIMRST`"]
 pub enum TIMRSTW {
-    #[doc = "Timer never reset"] _0,
-    #[doc = "Timer reset on Timer Pin equal to Timer Output"] _10,
-    #[doc = "Timer reset on Timer Trigger equal to Timer Output"] _11,
-    #[doc = "Timer reset on Timer Pin rising edge"] _100,
-    #[doc = "Timer reset on Trigger rising edge"] _110,
-    #[doc = "Timer reset on Trigger rising or falling edge"] _111,
+    #[doc = "Timer never reset"]
+    _0,
+    #[doc = "Timer reset on Timer Pin equal to Timer Output"]
+    _10,
+    #[doc = "Timer reset on Timer Trigger equal to Timer Output"]
+    _11,
+    #[doc = "Timer reset on Timer Pin rising edge"]
+    _100,
+    #[doc = "Timer reset on Trigger rising edge"]
+    _110,
+    #[doc = "Timer reset on Trigger rising or falling edge"]
+    _111,
 }
 impl TIMRSTW {
     #[allow(missing_docs)]
@@ -841,9 +904,12 @@ impl<'a> _TIMRSTW<'a> {
 }
 #[doc = "Values that can be written to the field `TIMDEC`"]
 pub enum TIMDECW {
-    #[doc = "Decrement counter on FlexIO clock, Shift clock equals Timer output."] _0,
-    #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Timer output."] _1,
-    #[doc = "Decrement counter on Pin input (both edges), Shift clock equals Pin input."] _10,
+    #[doc = "Decrement counter on FlexIO clock, Shift clock equals Timer output."]
+    _0,
+    #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Timer output."]
+    _1,
+    #[doc = "Decrement counter on Pin input (both edges), Shift clock equals Pin input."]
+    _10,
     #[doc = "Decrement counter on Trigger input (both edges), Shift clock equals Trigger input."]
     _11,
 }
@@ -904,10 +970,14 @@ impl<'a> _TIMDECW<'a> {
 }
 #[doc = "Values that can be written to the field `TIMOUT`"]
 pub enum TIMOUTW {
-    #[doc = "Timer output is logic one when enabled and is not affected by timer reset"] _0,
-    #[doc = "Timer output is logic zero when enabled and is not affected by timer reset"] _1,
-    #[doc = "Timer output is logic one when enabled and on timer reset"] _10,
-    #[doc = "Timer output is logic zero when enabled and on timer reset"] _11,
+    #[doc = "Timer output is logic one when enabled and is not affected by timer reset"]
+    _0,
+    #[doc = "Timer output is logic zero when enabled and is not affected by timer reset"]
+    _1,
+    #[doc = "Timer output is logic one when enabled and on timer reset"]
+    _10,
+    #[doc = "Timer output is logic zero when enabled and on timer reset"]
+    _11,
 }
 impl TIMOUTW {
     #[allow(missing_docs)]

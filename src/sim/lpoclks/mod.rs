@@ -45,8 +45,10 @@ impl super::LPOCLKS {
 #[doc = "Possible values of the field `LPO1KCLKEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPO1KCLKENR {
-    #[doc = "Disable 1 kHz LPO_CLK output"] _0,
-    #[doc = "Enable 1 kHz LPO_CLK output"] _1,
+    #[doc = "Disable 1 kHz LPO_CLK output"]
+    _0,
+    #[doc = "Enable 1 kHz LPO_CLK output"]
+    _1,
 }
 impl LPO1KCLKENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl LPO1KCLKENR {
 #[doc = "Possible values of the field `LPO32KCLKEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPO32KCLKENR {
-    #[doc = "Disable 32 kHz LPO_CLK output"] _0,
-    #[doc = "Enable 32 kHz LPO_CLK output"] _1,
+    #[doc = "Disable 32 kHz LPO_CLK output"]
+    _0,
+    #[doc = "Enable 32 kHz LPO_CLK output"]
+    _1,
 }
 impl LPO32KCLKENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,10 +139,14 @@ impl LPO32KCLKENR {
 #[doc = "Possible values of the field `LPOCLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPOCLKSELR {
-    #[doc = "128 kHz LPO_CLK"] _00,
-    #[doc = "No clock"] _01,
-    #[doc = "32 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"] _10,
-    #[doc = "1 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"] _11,
+    #[doc = "128 kHz LPO_CLK"]
+    _00,
+    #[doc = "No clock"]
+    _01,
+    #[doc = "32 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"]
+    _10,
+    #[doc = "1 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"]
+    _11,
 }
 impl LPOCLKSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -187,10 +195,14 @@ impl LPOCLKSELR {
 #[doc = "Possible values of the field `RTCCLKSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCCLKSELR {
-    #[doc = "SOSCDIV1_CLK"] _00,
-    #[doc = "32 kHz LPO_CLK"] _01,
-    #[doc = "RTC_CLKIN clock"] _10,
-    #[doc = "FIRCDIV1_CLK"] _11,
+    #[doc = "SOSCDIV1_CLK"]
+    _00,
+    #[doc = "32 kHz LPO_CLK"]
+    _01,
+    #[doc = "RTC_CLKIN clock"]
+    _10,
+    #[doc = "FIRCDIV1_CLK"]
+    _11,
 }
 impl RTCCLKSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -238,8 +250,10 @@ impl RTCCLKSELR {
 }
 #[doc = "Values that can be written to the field `LPO1KCLKEN`"]
 pub enum LPO1KCLKENW {
-    #[doc = "Disable 1 kHz LPO_CLK output"] _0,
-    #[doc = "Enable 1 kHz LPO_CLK output"] _1,
+    #[doc = "Disable 1 kHz LPO_CLK output"]
+    _0,
+    #[doc = "Enable 1 kHz LPO_CLK output"]
+    _1,
 }
 impl LPO1KCLKENW {
     #[allow(missing_docs)]
@@ -294,8 +308,10 @@ impl<'a> _LPO1KCLKENW<'a> {
 }
 #[doc = "Values that can be written to the field `LPO32KCLKEN`"]
 pub enum LPO32KCLKENW {
-    #[doc = "Disable 32 kHz LPO_CLK output"] _0,
-    #[doc = "Enable 32 kHz LPO_CLK output"] _1,
+    #[doc = "Disable 32 kHz LPO_CLK output"]
+    _0,
+    #[doc = "Enable 32 kHz LPO_CLK output"]
+    _1,
 }
 impl LPO32KCLKENW {
     #[allow(missing_docs)]
@@ -350,10 +366,14 @@ impl<'a> _LPO32KCLKENW<'a> {
 }
 #[doc = "Values that can be written to the field `LPOCLKSEL`"]
 pub enum LPOCLKSELW {
-    #[doc = "128 kHz LPO_CLK"] _00,
-    #[doc = "No clock"] _01,
-    #[doc = "32 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"] _10,
-    #[doc = "1 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"] _11,
+    #[doc = "128 kHz LPO_CLK"]
+    _00,
+    #[doc = "No clock"]
+    _01,
+    #[doc = "32 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"]
+    _10,
+    #[doc = "1 kHz LPO_CLK which is derived from the 128 kHz LPO_CLK"]
+    _11,
 }
 impl LPOCLKSELW {
     #[allow(missing_docs)]
@@ -412,10 +432,14 @@ impl<'a> _LPOCLKSELW<'a> {
 }
 #[doc = "Values that can be written to the field `RTCCLKSEL`"]
 pub enum RTCCLKSELW {
-    #[doc = "SOSCDIV1_CLK"] _00,
-    #[doc = "32 kHz LPO_CLK"] _01,
-    #[doc = "RTC_CLKIN clock"] _10,
-    #[doc = "FIRCDIV1_CLK"] _11,
+    #[doc = "SOSCDIV1_CLK"]
+    _00,
+    #[doc = "32 kHz LPO_CLK"]
+    _01,
+    #[doc = "RTC_CLKIN clock"]
+    _10,
+    #[doc = "FIRCDIV1_CLK"]
+    _11,
 }
 impl RTCCLKSELW {
     #[allow(missing_docs)]

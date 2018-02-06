@@ -47,11 +47,16 @@ impl super::CHIPCTL {
 pub enum ADC_INTERLEAVE_ENR {
     #[doc = "Interleaving disabled. No channel pair interleaved. Interleaved channels are individually connected to pins. PTC0 is connected to ADC0_SE8. PTC1 is connected to ADC0_SE9. PTB15 is connected to ADC1_SE14. PTB16 is connected to ADC1_SE15. PTB0 is connected to ADC0_SE4. PTB1 is connected to ADC0_SE5. PTB13 is connected to ADC1_SE8. PTB14 is connected to ADC1_SE9."]
     _0000,
-    #[doc = "PTB14 to ADC1_SE9 and ADC0_SE9"] _1XXX,
-    #[doc = "PTB13 to ADC1_SE8 and ADC0_SE8"] X1XX,
-    #[doc = "PTB1 to ADC0_SE5 and ADC1_SE15"] XX1X,
-    #[doc = "PTB0 to ADC0_SE4 and ADC1_SE14"] XXX1,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "PTB14 to ADC1_SE9 and ADC0_SE9"]
+    _1XXX,
+    #[doc = "PTB13 to ADC1_SE8 and ADC0_SE8"]
+    X1XX,
+    #[doc = "PTB1 to ADC0_SE5 and ADC1_SE15"]
+    XX1X,
+    #[doc = "PTB0 to ADC0_SE4 and ADC1_SE14"]
+    XXX1,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl ADC_INTERLEAVE_ENR {
     #[doc = r" Value of the field as raw bits"]
@@ -108,22 +113,36 @@ impl ADC_INTERLEAVE_ENR {
 #[doc = "Possible values of the field `CLKOUTSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTSELR {
-    #[doc = "SCG CLKOUT"] _0000,
-    #[doc = "SOSC DIV2 CLK"] _0010,
-    #[doc = "SIRC DIV2 CLK"] _0100,
+    #[doc = "SCG CLKOUT"]
+    _0000,
+    #[doc = "SOSC DIV2 CLK"]
+    _0010,
+    #[doc = "SIRC DIV2 CLK"]
+    _0100,
     #[doc = "For S32K148: QSPI SFIF_CLK_HYP: Divide by 2 clock (configured through SCLKCONFIG[5]) for HyperRAM going to sfif clock to QSPI; For others: Reserved"]
     _0101,
-    #[doc = "FIRC DIV2 CLK"] _0110,
-    #[doc = "HCLK"] _0111,
-    #[doc = "SPLL DIV2 CLK"] _1000,
-    #[doc = "BUS_CLK"] _1001,
-    #[doc = "LPO128K_CLK"] _1010,
-    #[doc = "For S32K148: QSPI IPG_CLK; For others: Reserved"] _1011,
-    #[doc = "LPO_CLK as selected by SIM_LPOCLKS[LPOCLKSEL]"] _1100,
-    #[doc = "For S32K148: QSPI IPG_CLK_SFIF; For others: Reserved"] _1101,
-    #[doc = "RTC_CLK as selected by SIM_LPOCLKS[RTCCLKSEL]"] _1110,
-    #[doc = "For S32K148: QSPI IPG_CLK_2XSFIF; For others: Reserved"] _1111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "FIRC DIV2 CLK"]
+    _0110,
+    #[doc = "HCLK"]
+    _0111,
+    #[doc = "SPLL DIV2 CLK"]
+    _1000,
+    #[doc = "BUS_CLK"]
+    _1001,
+    #[doc = "LPO128K_CLK"]
+    _1010,
+    #[doc = "For S32K148: QSPI IPG_CLK; For others: Reserved"]
+    _1011,
+    #[doc = "LPO_CLK as selected by SIM_LPOCLKS[LPOCLKSEL]"]
+    _1100,
+    #[doc = "For S32K148: QSPI IPG_CLK_SFIF; For others: Reserved"]
+    _1101,
+    #[doc = "RTC_CLK as selected by SIM_LPOCLKS[RTCCLKSEL]"]
+    _1110,
+    #[doc = "For S32K148: QSPI IPG_CLK_2XSFIF; For others: Reserved"]
+    _1111,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl CLKOUTSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -243,14 +262,22 @@ impl CLKOUTSELR {
 #[doc = "Possible values of the field `CLKOUTDIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTDIVR {
-    #[doc = "Divide by 1"] _000,
-    #[doc = "Divide by 2"] _001,
-    #[doc = "Divide by 3"] _010,
-    #[doc = "Divide by 4"] _011,
-    #[doc = "Divide by 5"] _100,
-    #[doc = "Divide by 6"] _101,
-    #[doc = "Divide by 7"] _110,
-    #[doc = "Divide by 8"] _111,
+    #[doc = "Divide by 1"]
+    _000,
+    #[doc = "Divide by 2"]
+    _001,
+    #[doc = "Divide by 3"]
+    _010,
+    #[doc = "Divide by 4"]
+    _011,
+    #[doc = "Divide by 5"]
+    _100,
+    #[doc = "Divide by 6"]
+    _101,
+    #[doc = "Divide by 7"]
+    _110,
+    #[doc = "Divide by 8"]
+    _111,
 }
 impl CLKOUTDIVR {
     #[doc = r" Value of the field as raw bits"]
@@ -327,8 +354,10 @@ impl CLKOUTDIVR {
 #[doc = "Possible values of the field `CLKOUTEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKOUTENR {
-    #[doc = "Clockout disable"] _0,
-    #[doc = "Clockout enable"] _1,
+    #[doc = "Clockout disable"]
+    _0,
+    #[doc = "Clockout enable"]
+    _1,
 }
 impl CLKOUTENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,8 +401,10 @@ impl CLKOUTENR {
 #[doc = "Possible values of the field `TRACECLK_SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRACECLK_SELR {
-    #[doc = "Core clock"] _0,
-    #[doc = "Platform clock"] _1,
+    #[doc = "Core clock"]
+    _0,
+    #[doc = "Platform clock"]
+    _1,
 }
 impl TRACECLK_SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,7 +450,8 @@ impl TRACECLK_SELR {
 pub enum PDB_BB_SELR {
     #[doc = "PDB0 channel 0 back-to-back operation with ADC0 COCO[7:0] and PDB1 channel 0 back-to-back operation with ADC1 COCO[7:0]"]
     _0,
-    #[doc = "Channel 0 of PDB0 and PDB1 back-to-back operation with COCO[7:0] of ADC0 and ADC1."] _1,
+    #[doc = "Channel 0 of PDB0 and PDB1 back-to-back operation with COCO[7:0] of ADC0 and ADC1."]
+    _1,
 }
 impl PDB_BB_SELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -463,13 +495,20 @@ impl PDB_BB_SELR {
 #[doc = "Possible values of the field `ADC_SUPPLY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC_SUPPLYR {
-    #[doc = "5 V input VDD supply (VDD)"] _000,
-    #[doc = "5 V input analog supply (VDDA)"] _001,
-    #[doc = "ADC Reference Supply (VREFH)"] _010,
-    #[doc = "3.3 V Oscillator Regulator Output (VDD_3V)"] _011,
-    #[doc = "3.3 V flash regulator output (VDD_flash_3V)"] _100,
-    #[doc = "1.2 V core regulator output (VDD_LV)"] _101,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "5 V input VDD supply (VDD)"]
+    _000,
+    #[doc = "5 V input analog supply (VDDA)"]
+    _001,
+    #[doc = "ADC Reference Supply (VREFH)"]
+    _010,
+    #[doc = "3.3 V Oscillator Regulator Output (VDD_3V)"]
+    _011,
+    #[doc = "3.3 V flash regulator output (VDD_flash_3V)"]
+    _100,
+    #[doc = "1.2 V core regulator output (VDD_LV)"]
+    _101,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl ADC_SUPPLYR {
     #[doc = r" Value of the field as raw bits"]
@@ -533,8 +572,10 @@ impl ADC_SUPPLYR {
 #[doc = "Possible values of the field `ADC_SUPPLYEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC_SUPPLYENR {
-    #[doc = "Disable internal supply monitoring"] _0,
-    #[doc = "Enable internal supply monitoring"] _1,
+    #[doc = "Disable internal supply monitoring"]
+    _0,
+    #[doc = "Enable internal supply monitoring"]
+    _1,
 }
 impl ADC_SUPPLYENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -578,8 +619,10 @@ impl ADC_SUPPLYENR {
 #[doc = "Possible values of the field `SRAMU_RETEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAMU_RETENR {
-    #[doc = "SRAMU contents are retained across resets"] _0,
-    #[doc = "No SRAMU retention"] _1,
+    #[doc = "SRAMU contents are retained across resets"]
+    _0,
+    #[doc = "No SRAMU retention"]
+    _1,
 }
 impl SRAMU_RETENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -623,8 +666,10 @@ impl SRAMU_RETENR {
 #[doc = "Possible values of the field `SRAML_RETEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAML_RETENR {
-    #[doc = "SRAML contents are retained across resets"] _0,
-    #[doc = "No SRAML retention"] _1,
+    #[doc = "SRAML contents are retained across resets"]
+    _0,
+    #[doc = "No SRAML retention"]
+    _1,
 }
 impl SRAML_RETENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -669,10 +714,14 @@ impl SRAML_RETENR {
 pub enum ADC_INTERLEAVE_ENW {
     #[doc = "Interleaving disabled. No channel pair interleaved. Interleaved channels are individually connected to pins. PTC0 is connected to ADC0_SE8. PTC1 is connected to ADC0_SE9. PTB15 is connected to ADC1_SE14. PTB16 is connected to ADC1_SE15. PTB0 is connected to ADC0_SE4. PTB1 is connected to ADC0_SE5. PTB13 is connected to ADC1_SE8. PTB14 is connected to ADC1_SE9."]
     _0000,
-    #[doc = "PTB14 to ADC1_SE9 and ADC0_SE9"] _1XXX,
-    #[doc = "PTB13 to ADC1_SE8 and ADC0_SE8"] X1XX,
-    #[doc = "PTB1 to ADC0_SE5 and ADC1_SE15"] XX1X,
-    #[doc = "PTB0 to ADC0_SE4 and ADC1_SE14"] XXX1,
+    #[doc = "PTB14 to ADC1_SE9 and ADC0_SE9"]
+    _1XXX,
+    #[doc = "PTB13 to ADC1_SE8 and ADC0_SE8"]
+    X1XX,
+    #[doc = "PTB1 to ADC0_SE5 and ADC1_SE15"]
+    XX1X,
+    #[doc = "PTB0 to ADC0_SE4 and ADC1_SE14"]
+    XXX1,
 }
 impl ADC_INTERLEAVE_ENW {
     #[allow(missing_docs)]
@@ -735,21 +784,34 @@ impl<'a> _ADC_INTERLEAVE_ENW<'a> {
 }
 #[doc = "Values that can be written to the field `CLKOUTSEL`"]
 pub enum CLKOUTSELW {
-    #[doc = "SCG CLKOUT"] _0000,
-    #[doc = "SOSC DIV2 CLK"] _0010,
-    #[doc = "SIRC DIV2 CLK"] _0100,
+    #[doc = "SCG CLKOUT"]
+    _0000,
+    #[doc = "SOSC DIV2 CLK"]
+    _0010,
+    #[doc = "SIRC DIV2 CLK"]
+    _0100,
     #[doc = "For S32K148: QSPI SFIF_CLK_HYP: Divide by 2 clock (configured through SCLKCONFIG[5]) for HyperRAM going to sfif clock to QSPI; For others: Reserved"]
     _0101,
-    #[doc = "FIRC DIV2 CLK"] _0110,
-    #[doc = "HCLK"] _0111,
-    #[doc = "SPLL DIV2 CLK"] _1000,
-    #[doc = "BUS_CLK"] _1001,
-    #[doc = "LPO128K_CLK"] _1010,
-    #[doc = "For S32K148: QSPI IPG_CLK; For others: Reserved"] _1011,
-    #[doc = "LPO_CLK as selected by SIM_LPOCLKS[LPOCLKSEL]"] _1100,
-    #[doc = "For S32K148: QSPI IPG_CLK_SFIF; For others: Reserved"] _1101,
-    #[doc = "RTC_CLK as selected by SIM_LPOCLKS[RTCCLKSEL]"] _1110,
-    #[doc = "For S32K148: QSPI IPG_CLK_2XSFIF; For others: Reserved"] _1111,
+    #[doc = "FIRC DIV2 CLK"]
+    _0110,
+    #[doc = "HCLK"]
+    _0111,
+    #[doc = "SPLL DIV2 CLK"]
+    _1000,
+    #[doc = "BUS_CLK"]
+    _1001,
+    #[doc = "LPO128K_CLK"]
+    _1010,
+    #[doc = "For S32K148: QSPI IPG_CLK; For others: Reserved"]
+    _1011,
+    #[doc = "LPO_CLK as selected by SIM_LPOCLKS[LPOCLKSEL]"]
+    _1100,
+    #[doc = "For S32K148: QSPI IPG_CLK_SFIF; For others: Reserved"]
+    _1101,
+    #[doc = "RTC_CLK as selected by SIM_LPOCLKS[RTCCLKSEL]"]
+    _1110,
+    #[doc = "For S32K148: QSPI IPG_CLK_2XSFIF; For others: Reserved"]
+    _1111,
 }
 impl CLKOUTSELW {
     #[allow(missing_docs)]
@@ -866,14 +928,22 @@ impl<'a> _CLKOUTSELW<'a> {
 }
 #[doc = "Values that can be written to the field `CLKOUTDIV`"]
 pub enum CLKOUTDIVW {
-    #[doc = "Divide by 1"] _000,
-    #[doc = "Divide by 2"] _001,
-    #[doc = "Divide by 3"] _010,
-    #[doc = "Divide by 4"] _011,
-    #[doc = "Divide by 5"] _100,
-    #[doc = "Divide by 6"] _101,
-    #[doc = "Divide by 7"] _110,
-    #[doc = "Divide by 8"] _111,
+    #[doc = "Divide by 1"]
+    _000,
+    #[doc = "Divide by 2"]
+    _001,
+    #[doc = "Divide by 3"]
+    _010,
+    #[doc = "Divide by 4"]
+    _011,
+    #[doc = "Divide by 5"]
+    _100,
+    #[doc = "Divide by 6"]
+    _101,
+    #[doc = "Divide by 7"]
+    _110,
+    #[doc = "Divide by 8"]
+    _111,
 }
 impl CLKOUTDIVW {
     #[allow(missing_docs)]
@@ -956,8 +1026,10 @@ impl<'a> _CLKOUTDIVW<'a> {
 }
 #[doc = "Values that can be written to the field `CLKOUTEN`"]
 pub enum CLKOUTENW {
-    #[doc = "Clockout disable"] _0,
-    #[doc = "Clockout enable"] _1,
+    #[doc = "Clockout disable"]
+    _0,
+    #[doc = "Clockout enable"]
+    _1,
 }
 impl CLKOUTENW {
     #[allow(missing_docs)]
@@ -1012,8 +1084,10 @@ impl<'a> _CLKOUTENW<'a> {
 }
 #[doc = "Values that can be written to the field `TRACECLK_SEL`"]
 pub enum TRACECLK_SELW {
-    #[doc = "Core clock"] _0,
-    #[doc = "Platform clock"] _1,
+    #[doc = "Core clock"]
+    _0,
+    #[doc = "Platform clock"]
+    _1,
 }
 impl TRACECLK_SELW {
     #[allow(missing_docs)]
@@ -1070,7 +1144,8 @@ impl<'a> _TRACECLK_SELW<'a> {
 pub enum PDB_BB_SELW {
     #[doc = "PDB0 channel 0 back-to-back operation with ADC0 COCO[7:0] and PDB1 channel 0 back-to-back operation with ADC1 COCO[7:0]"]
     _0,
-    #[doc = "Channel 0 of PDB0 and PDB1 back-to-back operation with COCO[7:0] of ADC0 and ADC1."] _1,
+    #[doc = "Channel 0 of PDB0 and PDB1 back-to-back operation with COCO[7:0] of ADC0 and ADC1."]
+    _1,
 }
 impl PDB_BB_SELW {
     #[allow(missing_docs)]
@@ -1125,12 +1200,18 @@ impl<'a> _PDB_BB_SELW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC_SUPPLY`"]
 pub enum ADC_SUPPLYW {
-    #[doc = "5 V input VDD supply (VDD)"] _000,
-    #[doc = "5 V input analog supply (VDDA)"] _001,
-    #[doc = "ADC Reference Supply (VREFH)"] _010,
-    #[doc = "3.3 V Oscillator Regulator Output (VDD_3V)"] _011,
-    #[doc = "3.3 V flash regulator output (VDD_flash_3V)"] _100,
-    #[doc = "1.2 V core regulator output (VDD_LV)"] _101,
+    #[doc = "5 V input VDD supply (VDD)"]
+    _000,
+    #[doc = "5 V input analog supply (VDDA)"]
+    _001,
+    #[doc = "ADC Reference Supply (VREFH)"]
+    _010,
+    #[doc = "3.3 V Oscillator Regulator Output (VDD_3V)"]
+    _011,
+    #[doc = "3.3 V flash regulator output (VDD_flash_3V)"]
+    _100,
+    #[doc = "1.2 V core regulator output (VDD_LV)"]
+    _101,
 }
 impl ADC_SUPPLYW {
     #[allow(missing_docs)]
@@ -1199,8 +1280,10 @@ impl<'a> _ADC_SUPPLYW<'a> {
 }
 #[doc = "Values that can be written to the field `ADC_SUPPLYEN`"]
 pub enum ADC_SUPPLYENW {
-    #[doc = "Disable internal supply monitoring"] _0,
-    #[doc = "Enable internal supply monitoring"] _1,
+    #[doc = "Disable internal supply monitoring"]
+    _0,
+    #[doc = "Enable internal supply monitoring"]
+    _1,
 }
 impl ADC_SUPPLYENW {
     #[allow(missing_docs)]
@@ -1255,8 +1338,10 @@ impl<'a> _ADC_SUPPLYENW<'a> {
 }
 #[doc = "Values that can be written to the field `SRAMU_RETEN`"]
 pub enum SRAMU_RETENW {
-    #[doc = "SRAMU contents are retained across resets"] _0,
-    #[doc = "No SRAMU retention"] _1,
+    #[doc = "SRAMU contents are retained across resets"]
+    _0,
+    #[doc = "No SRAMU retention"]
+    _1,
 }
 impl SRAMU_RETENW {
     #[allow(missing_docs)]
@@ -1311,8 +1396,10 @@ impl<'a> _SRAMU_RETENW<'a> {
 }
 #[doc = "Values that can be written to the field `SRAML_RETEN`"]
 pub enum SRAML_RETENW {
-    #[doc = "SRAML contents are retained across resets"] _0,
-    #[doc = "No SRAML retention"] _1,
+    #[doc = "SRAML contents are retained across resets"]
+    _0,
+    #[doc = "No SRAML retention"]
+    _1,
 }
 impl SRAML_RETENW {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::PCC_DMAMUX {
 #[doc = "Possible values of the field `CGC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled. The current clock selection and divider options are locked."] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled. The current clock selection and divider options are locked."]
+    _1,
 }
 impl CGCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CGCR {
 #[doc = "Possible values of the field `PR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRR {
-    #[doc = "Peripheral is not present."] _0,
-    #[doc = "Peripheral is present."] _1,
+    #[doc = "Peripheral is not present."]
+    _0,
+    #[doc = "Peripheral is present."]
+    _1,
 }
 impl PRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -134,8 +138,10 @@ impl PRR {
 }
 #[doc = "Values that can be written to the field `CGC`"]
 pub enum CGCW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled. The current clock selection and divider options are locked."] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled. The current clock selection and divider options are locked."]
+    _1,
 }
 impl CGCW {
     #[allow(missing_docs)]

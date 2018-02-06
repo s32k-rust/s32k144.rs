@@ -14,8 +14,10 @@ impl super::PARAM {
 #[doc = "Possible values of the field `EWAKEUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWAKEUPR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl EWAKEUPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -59,8 +61,10 @@ impl EWAKEUPR {
 #[doc = "Possible values of the field `ELVD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELVDR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ELVDR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -104,8 +108,10 @@ impl ELVDR {
 #[doc = "Possible values of the field `ELOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELOCR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ELOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -149,8 +155,10 @@ impl ELOCR {
 #[doc = "Possible values of the field `ELOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELOLR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ELOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -194,8 +202,10 @@ impl ELOLR {
 #[doc = "Possible values of the field `EWDOG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWDOGR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl EWDOGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -239,8 +249,10 @@ impl EWDOGR {
 #[doc = "Possible values of the field `EPIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPINR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl EPINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -284,8 +296,10 @@ impl EPINR {
 #[doc = "Possible values of the field `EPOR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPORR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl EPORR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -329,8 +343,10 @@ impl EPORR {
 #[doc = "Possible values of the field `EJTAG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EJTAGR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl EJTAGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -374,8 +390,10 @@ impl EJTAGR {
 #[doc = "Possible values of the field `ELOCKUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELOCKUPR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ELOCKUPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,8 +437,10 @@ impl ELOCKUPR {
 #[doc = "Possible values of the field `ESW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESWR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ESWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -464,8 +484,10 @@ impl ESWR {
 #[doc = "Possible values of the field `EMDM_AP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMDM_APR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl EMDM_APR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -509,8 +531,10 @@ impl EMDM_APR {
 #[doc = "Possible values of the field `ESACKERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESACKERRR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ESACKERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -554,8 +578,10 @@ impl ESACKERRR {
 #[doc = "Possible values of the field `ETAMPER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETAMPERR {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ETAMPERR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -599,8 +625,10 @@ impl ETAMPERR {
 #[doc = "Possible values of the field `ECORE1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECORE1R {
-    #[doc = "The feature is not available."] _0,
-    #[doc = "The feature is available."] _1,
+    #[doc = "The feature is not available."]
+    _0,
+    #[doc = "The feature is available."]
+    _1,
 }
 impl ECORE1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]

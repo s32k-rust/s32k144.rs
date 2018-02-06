@@ -66,8 +66,10 @@ impl MGSTAT0R {
 #[doc = "Possible values of the field `FPVIOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FPVIOLR {
-    #[doc = "No protection violation detected"] _0,
-    #[doc = "Protection violation detected"] _1,
+    #[doc = "No protection violation detected"]
+    _0,
+    #[doc = "Protection violation detected"]
+    _1,
 }
 impl FPVIOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -111,8 +113,10 @@ impl FPVIOLR {
 #[doc = "Possible values of the field `ACCERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACCERRR {
-    #[doc = "No access error detected"] _0,
-    #[doc = "Access error detected"] _1,
+    #[doc = "No access error detected"]
+    _0,
+    #[doc = "Access error detected"]
+    _1,
 }
 impl ACCERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -156,8 +160,10 @@ impl ACCERRR {
 #[doc = "Possible values of the field `RDCOLERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDCOLERRR {
-    #[doc = "No collision error detected"] _0,
-    #[doc = "Collision error detected"] _1,
+    #[doc = "No collision error detected"]
+    _0,
+    #[doc = "Collision error detected"]
+    _1,
 }
 impl RDCOLERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -221,8 +227,10 @@ impl CCIFR {
 }
 #[doc = "Values that can be written to the field `FPVIOL`"]
 pub enum FPVIOLW {
-    #[doc = "No protection violation detected"] _0,
-    #[doc = "Protection violation detected"] _1,
+    #[doc = "No protection violation detected"]
+    _0,
+    #[doc = "Protection violation detected"]
+    _1,
 }
 impl FPVIOLW {
     #[allow(missing_docs)]
@@ -277,8 +285,10 @@ impl<'a> _FPVIOLW<'a> {
 }
 #[doc = "Values that can be written to the field `ACCERR`"]
 pub enum ACCERRW {
-    #[doc = "No access error detected"] _0,
-    #[doc = "Access error detected"] _1,
+    #[doc = "No access error detected"]
+    _0,
+    #[doc = "Access error detected"]
+    _1,
 }
 impl ACCERRW {
     #[allow(missing_docs)]
@@ -333,8 +343,10 @@ impl<'a> _ACCERRW<'a> {
 }
 #[doc = "Values that can be written to the field `RDCOLERR`"]
 pub enum RDCOLERRW {
-    #[doc = "No collision error detected"] _0,
-    #[doc = "Collision error detected"] _1,
+    #[doc = "No collision error detected"]
+    _0,
+    #[doc = "Collision error detected"]
+    _1,
 }
 impl RDCOLERRW {
     #[allow(missing_docs)]

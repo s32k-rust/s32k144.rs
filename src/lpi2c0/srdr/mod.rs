@@ -25,8 +25,10 @@ impl DATAR {
 #[doc = "Possible values of the field `RXEMPTY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEMPTYR {
-    #[doc = "The Receive Data Register is not empty."] _0,
-    #[doc = "The Receive Data Register is empty."] _1,
+    #[doc = "The Receive Data Register is not empty."]
+    _0,
+    #[doc = "The Receive Data Register is empty."]
+    _1,
 }
 impl RXEMPTYR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -72,7 +74,8 @@ impl RXEMPTYR {
 pub enum SOFR {
     #[doc = "Indicates this is not the first data word since a (repeated) START or STOP condition."]
     _0,
-    #[doc = "Indicates this is the first data word since a (repeated) START or STOP condition."] _1,
+    #[doc = "Indicates this is the first data word since a (repeated) START or STOP condition."]
+    _1,
 }
 impl SOFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]

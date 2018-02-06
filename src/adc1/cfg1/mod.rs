@@ -45,10 +45,14 @@ impl super::CFG1 {
 #[doc = "Possible values of the field `ADICLK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADICLKR {
-    #[doc = "Alternate clock 1 (ADC_ALTCLK1)"] _00,
-    #[doc = "Alternate clock 2 (ADC_ALTCLK2)"] _01,
-    #[doc = "Alternate clock 3 (ADC_ALTCLK3)"] _10,
-    #[doc = "Alternate clock 4 (ADC_ALTCLK4)"] _11,
+    #[doc = "Alternate clock 1 (ADC_ALTCLK1)"]
+    _00,
+    #[doc = "Alternate clock 2 (ADC_ALTCLK2)"]
+    _01,
+    #[doc = "Alternate clock 3 (ADC_ALTCLK3)"]
+    _10,
+    #[doc = "Alternate clock 4 (ADC_ALTCLK4)"]
+    _11,
 }
 impl ADICLKR {
     #[doc = r" Value of the field as raw bits"]
@@ -97,10 +101,14 @@ impl ADICLKR {
 #[doc = "Possible values of the field `MODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODER {
-    #[doc = "8-bit conversion."] _00,
-    #[doc = "12-bit conversion."] _01,
-    #[doc = "10-bit conversion."] _10,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "8-bit conversion."]
+    _00,
+    #[doc = "12-bit conversion."]
+    _01,
+    #[doc = "10-bit conversion."]
+    _10,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl MODER {
     #[doc = r" Value of the field as raw bits"]
@@ -143,10 +151,14 @@ impl MODER {
 #[doc = "Possible values of the field `ADIV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADIVR {
-    #[doc = "The divide ratio is 1 and the clock rate is input clock."] _00,
-    #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."] _01,
-    #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."] _10,
-    #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."] _11,
+    #[doc = "The divide ratio is 1 and the clock rate is input clock."]
+    _00,
+    #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."]
+    _01,
+    #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."]
+    _10,
+    #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."]
+    _11,
 }
 impl ADIVR {
     #[doc = r" Value of the field as raw bits"]
@@ -194,10 +206,14 @@ impl ADIVR {
 }
 #[doc = "Values that can be written to the field `ADICLK`"]
 pub enum ADICLKW {
-    #[doc = "Alternate clock 1 (ADC_ALTCLK1)"] _00,
-    #[doc = "Alternate clock 2 (ADC_ALTCLK2)"] _01,
-    #[doc = "Alternate clock 3 (ADC_ALTCLK3)"] _10,
-    #[doc = "Alternate clock 4 (ADC_ALTCLK4)"] _11,
+    #[doc = "Alternate clock 1 (ADC_ALTCLK1)"]
+    _00,
+    #[doc = "Alternate clock 2 (ADC_ALTCLK2)"]
+    _01,
+    #[doc = "Alternate clock 3 (ADC_ALTCLK3)"]
+    _10,
+    #[doc = "Alternate clock 4 (ADC_ALTCLK4)"]
+    _11,
 }
 impl ADICLKW {
     #[allow(missing_docs)]
@@ -256,9 +272,12 @@ impl<'a> _ADICLKW<'a> {
 }
 #[doc = "Values that can be written to the field `MODE`"]
 pub enum MODEW {
-    #[doc = "8-bit conversion."] _00,
-    #[doc = "12-bit conversion."] _01,
-    #[doc = "10-bit conversion."] _10,
+    #[doc = "8-bit conversion."]
+    _00,
+    #[doc = "12-bit conversion."]
+    _01,
+    #[doc = "10-bit conversion."]
+    _10,
 }
 impl MODEW {
     #[allow(missing_docs)]
@@ -309,10 +328,14 @@ impl<'a> _MODEW<'a> {
 }
 #[doc = "Values that can be written to the field `ADIV`"]
 pub enum ADIVW {
-    #[doc = "The divide ratio is 1 and the clock rate is input clock."] _00,
-    #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."] _01,
-    #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."] _10,
-    #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."] _11,
+    #[doc = "The divide ratio is 1 and the clock rate is input clock."]
+    _00,
+    #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."]
+    _01,
+    #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."]
+    _10,
+    #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."]
+    _11,
 }
 impl ADIVW {
     #[allow(missing_docs)]

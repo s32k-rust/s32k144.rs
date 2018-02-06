@@ -45,8 +45,10 @@ impl super::CTRL {
 #[doc = "Possible values of the field `TCRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCRCR {
-    #[doc = "16-bit CRC protocol."] _0,
-    #[doc = "32-bit CRC protocol."] _1,
+    #[doc = "16-bit CRC protocol."]
+    _0,
+    #[doc = "32-bit CRC protocol."]
+    _1,
 }
 impl TCRCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TCRCR {
 #[doc = "Possible values of the field `WAS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WASR {
-    #[doc = "Writes to the CRC data register are data values."] _0,
-    #[doc = "Writes to the CRC data register are seed values."] _1,
+    #[doc = "Writes to the CRC data register are data values."]
+    _0,
+    #[doc = "Writes to the CRC data register are seed values."]
+    _1,
 }
 impl WASR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl WASR {
 #[doc = "Possible values of the field `FXOR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FXORR {
-    #[doc = "No XOR on reading."] _0,
-    #[doc = "Invert or complement the read value of the CRC Data register."] _1,
+    #[doc = "No XOR on reading."]
+    _0,
+    #[doc = "Invert or complement the read value of the CRC Data register."]
+    _1,
 }
 impl FXORR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,10 +186,14 @@ impl FXORR {
 #[doc = "Possible values of the field `TOTR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TOTRR {
-    #[doc = "No transposition."] _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."] _01,
-    #[doc = "Both bits in bytes and bytes are transposed."] _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."] _11,
+    #[doc = "No transposition."]
+    _00,
+    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
+    _01,
+    #[doc = "Both bits in bytes and bytes are transposed."]
+    _10,
+    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
+    _11,
 }
 impl TOTRR {
     #[doc = r" Value of the field as raw bits"]
@@ -232,10 +242,14 @@ impl TOTRR {
 #[doc = "Possible values of the field `TOT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TOTR {
-    #[doc = "No transposition."] _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."] _01,
-    #[doc = "Both bits in bytes and bytes are transposed."] _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."] _11,
+    #[doc = "No transposition."]
+    _00,
+    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
+    _01,
+    #[doc = "Both bits in bytes and bytes are transposed."]
+    _10,
+    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
+    _11,
 }
 impl TOTR {
     #[doc = r" Value of the field as raw bits"]
@@ -283,8 +297,10 @@ impl TOTR {
 }
 #[doc = "Values that can be written to the field `TCRC`"]
 pub enum TCRCW {
-    #[doc = "16-bit CRC protocol."] _0,
-    #[doc = "32-bit CRC protocol."] _1,
+    #[doc = "16-bit CRC protocol."]
+    _0,
+    #[doc = "32-bit CRC protocol."]
+    _1,
 }
 impl TCRCW {
     #[allow(missing_docs)]
@@ -339,8 +355,10 @@ impl<'a> _TCRCW<'a> {
 }
 #[doc = "Values that can be written to the field `WAS`"]
 pub enum WASW {
-    #[doc = "Writes to the CRC data register are data values."] _0,
-    #[doc = "Writes to the CRC data register are seed values."] _1,
+    #[doc = "Writes to the CRC data register are data values."]
+    _0,
+    #[doc = "Writes to the CRC data register are seed values."]
+    _1,
 }
 impl WASW {
     #[allow(missing_docs)]
@@ -395,8 +413,10 @@ impl<'a> _WASW<'a> {
 }
 #[doc = "Values that can be written to the field `FXOR`"]
 pub enum FXORW {
-    #[doc = "No XOR on reading."] _0,
-    #[doc = "Invert or complement the read value of the CRC Data register."] _1,
+    #[doc = "No XOR on reading."]
+    _0,
+    #[doc = "Invert or complement the read value of the CRC Data register."]
+    _1,
 }
 impl FXORW {
     #[allow(missing_docs)]
@@ -451,10 +471,14 @@ impl<'a> _FXORW<'a> {
 }
 #[doc = "Values that can be written to the field `TOTR`"]
 pub enum TOTRW {
-    #[doc = "No transposition."] _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."] _01,
-    #[doc = "Both bits in bytes and bytes are transposed."] _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."] _11,
+    #[doc = "No transposition."]
+    _00,
+    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
+    _01,
+    #[doc = "Both bits in bytes and bytes are transposed."]
+    _10,
+    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
+    _11,
 }
 impl TOTRW {
     #[allow(missing_docs)]
@@ -513,10 +537,14 @@ impl<'a> _TOTRW<'a> {
 }
 #[doc = "Values that can be written to the field `TOT`"]
 pub enum TOTW {
-    #[doc = "No transposition."] _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."] _01,
-    #[doc = "Both bits in bytes and bytes are transposed."] _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."] _11,
+    #[doc = "No transposition."]
+    _00,
+    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
+    _01,
+    #[doc = "Both bits in bytes and bytes are transposed."]
+    _10,
+    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
+    _11,
 }
 impl TOTW {
     #[allow(missing_docs)]

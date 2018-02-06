@@ -45,14 +45,22 @@ impl super::FIFO {
 #[doc = "Possible values of the field `RXFIFOSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFIFOSIZER {
-    #[doc = "Receive FIFO/Buffer depth = 1 dataword."] _000,
-    #[doc = "Receive FIFO/Buffer depth = 4 datawords."] _001,
-    #[doc = "Receive FIFO/Buffer depth = 8 datawords."] _010,
-    #[doc = "Receive FIFO/Buffer depth = 16 datawords."] _011,
-    #[doc = "Receive FIFO/Buffer depth = 32 datawords."] _100,
-    #[doc = "Receive FIFO/Buffer depth = 64 datawords."] _101,
-    #[doc = "Receive FIFO/Buffer depth = 128 datawords."] _110,
-    #[doc = "Receive FIFO/Buffer depth = 256 datawords."] _111,
+    #[doc = "Receive FIFO/Buffer depth = 1 dataword."]
+    _000,
+    #[doc = "Receive FIFO/Buffer depth = 4 datawords."]
+    _001,
+    #[doc = "Receive FIFO/Buffer depth = 8 datawords."]
+    _010,
+    #[doc = "Receive FIFO/Buffer depth = 16 datawords."]
+    _011,
+    #[doc = "Receive FIFO/Buffer depth = 32 datawords."]
+    _100,
+    #[doc = "Receive FIFO/Buffer depth = 64 datawords."]
+    _101,
+    #[doc = "Receive FIFO/Buffer depth = 128 datawords."]
+    _110,
+    #[doc = "Receive FIFO/Buffer depth = 256 datawords."]
+    _111,
 }
 impl RXFIFOSIZER {
     #[doc = r" Value of the field as raw bits"]
@@ -129,8 +137,10 @@ impl RXFIFOSIZER {
 #[doc = "Possible values of the field `RXFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFER {
-    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"] _0,
-    #[doc = "Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE."] _1,
+    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"]
+    _0,
+    #[doc = "Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE."]
+    _1,
 }
 impl RXFER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -174,14 +184,22 @@ impl RXFER {
 #[doc = "Possible values of the field `TXFIFOSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFIFOSIZER {
-    #[doc = "Transmit FIFO/Buffer depth = 1 dataword."] _000,
-    #[doc = "Transmit FIFO/Buffer depth = 4 datawords."] _001,
-    #[doc = "Transmit FIFO/Buffer depth = 8 datawords."] _010,
-    #[doc = "Transmit FIFO/Buffer depth = 16 datawords."] _011,
-    #[doc = "Transmit FIFO/Buffer depth = 32 datawords."] _100,
-    #[doc = "Transmit FIFO/Buffer depth = 64 datawords."] _101,
-    #[doc = "Transmit FIFO/Buffer depth = 128 datawords."] _110,
-    #[doc = "Transmit FIFO/Buffer depth = 256 datawords"] _111,
+    #[doc = "Transmit FIFO/Buffer depth = 1 dataword."]
+    _000,
+    #[doc = "Transmit FIFO/Buffer depth = 4 datawords."]
+    _001,
+    #[doc = "Transmit FIFO/Buffer depth = 8 datawords."]
+    _010,
+    #[doc = "Transmit FIFO/Buffer depth = 16 datawords."]
+    _011,
+    #[doc = "Transmit FIFO/Buffer depth = 32 datawords."]
+    _100,
+    #[doc = "Transmit FIFO/Buffer depth = 64 datawords."]
+    _101,
+    #[doc = "Transmit FIFO/Buffer depth = 128 datawords."]
+    _110,
+    #[doc = "Transmit FIFO/Buffer depth = 256 datawords"]
+    _111,
 }
 impl TXFIFOSIZER {
     #[doc = r" Value of the field as raw bits"]
@@ -258,8 +276,10 @@ impl TXFIFOSIZER {
 #[doc = "Possible values of the field `TXFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFER {
-    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."] _0,
-    #[doc = "Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE."] _1,
+    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."]
+    _0,
+    #[doc = "Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE."]
+    _1,
 }
 impl TXFER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -303,8 +323,10 @@ impl TXFER {
 #[doc = "Possible values of the field `RXUFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXUFER {
-    #[doc = "RXUF flag does not generate an interrupt to the host."] _0,
-    #[doc = "RXUF flag generates an interrupt to the host."] _1,
+    #[doc = "RXUF flag does not generate an interrupt to the host."]
+    _0,
+    #[doc = "RXUF flag generates an interrupt to the host."]
+    _1,
 }
 impl RXUFER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -348,8 +370,10 @@ impl RXUFER {
 #[doc = "Possible values of the field `TXOFE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXOFER {
-    #[doc = "TXOF flag does not generate an interrupt to the host."] _0,
-    #[doc = "TXOF flag generates an interrupt to the host."] _1,
+    #[doc = "TXOF flag does not generate an interrupt to the host."]
+    _0,
+    #[doc = "TXOF flag generates an interrupt to the host."]
+    _1,
 }
 impl TXOFER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -393,7 +417,8 @@ impl TXOFER {
 #[doc = "Possible values of the field `RXIDEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXIDENR {
-    #[doc = "Disable RDRF assertion due to partially filled FIFO when receiver is idle."] _000,
+    #[doc = "Disable RDRF assertion due to partially filled FIFO when receiver is idle."]
+    _000,
     #[doc = "Enable RDRF assertion due to partially filled FIFO when receiver is idle for 1 character."]
     _001,
     #[doc = "Enable RDRF assertion due to partially filled FIFO when receiver is idle for 2 characters."]
@@ -484,7 +509,8 @@ impl RXIDENR {
 #[doc = "Possible values of the field `RXUF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXUFR {
-    #[doc = "No receive buffer underflow has occurred since the last time the flag was cleared."] _0,
+    #[doc = "No receive buffer underflow has occurred since the last time the flag was cleared."]
+    _0,
     #[doc = "At least one receive buffer underflow has occurred since the last time the flag was cleared."]
     _1,
 }
@@ -530,7 +556,8 @@ impl RXUFR {
 #[doc = "Possible values of the field `TXOF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXOFR {
-    #[doc = "No transmit buffer overflow has occurred since the last time the flag was cleared."] _0,
+    #[doc = "No transmit buffer overflow has occurred since the last time the flag was cleared."]
+    _0,
     #[doc = "At least one transmit buffer overflow has occurred since the last time the flag was cleared."]
     _1,
 }
@@ -576,8 +603,10 @@ impl TXOFR {
 #[doc = "Possible values of the field `RXEMPT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEMPTR {
-    #[doc = "Receive buffer is not empty."] _0,
-    #[doc = "Receive buffer is empty."] _1,
+    #[doc = "Receive buffer is not empty."]
+    _0,
+    #[doc = "Receive buffer is empty."]
+    _1,
 }
 impl RXEMPTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -621,8 +650,10 @@ impl RXEMPTR {
 #[doc = "Possible values of the field `TXEMPT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEMPTR {
-    #[doc = "Transmit buffer is not empty."] _0,
-    #[doc = "Transmit buffer is empty."] _1,
+    #[doc = "Transmit buffer is not empty."]
+    _0,
+    #[doc = "Transmit buffer is empty."]
+    _1,
 }
 impl TXEMPTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -665,8 +696,10 @@ impl TXEMPTR {
 }
 #[doc = "Values that can be written to the field `RXFE`"]
 pub enum RXFEW {
-    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"] _0,
-    #[doc = "Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE."] _1,
+    #[doc = "Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)"]
+    _0,
+    #[doc = "Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE."]
+    _1,
 }
 impl RXFEW {
     #[allow(missing_docs)]
@@ -721,8 +754,10 @@ impl<'a> _RXFEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXFE`"]
 pub enum TXFEW {
-    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."] _0,
-    #[doc = "Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE."] _1,
+    #[doc = "Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support)."]
+    _0,
+    #[doc = "Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE."]
+    _1,
 }
 impl TXFEW {
     #[allow(missing_docs)]
@@ -777,8 +812,10 @@ impl<'a> _TXFEW<'a> {
 }
 #[doc = "Values that can be written to the field `RXUFE`"]
 pub enum RXUFEW {
-    #[doc = "RXUF flag does not generate an interrupt to the host."] _0,
-    #[doc = "RXUF flag generates an interrupt to the host."] _1,
+    #[doc = "RXUF flag does not generate an interrupt to the host."]
+    _0,
+    #[doc = "RXUF flag generates an interrupt to the host."]
+    _1,
 }
 impl RXUFEW {
     #[allow(missing_docs)]
@@ -833,8 +870,10 @@ impl<'a> _RXUFEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXOFE`"]
 pub enum TXOFEW {
-    #[doc = "TXOF flag does not generate an interrupt to the host."] _0,
-    #[doc = "TXOF flag generates an interrupt to the host."] _1,
+    #[doc = "TXOF flag does not generate an interrupt to the host."]
+    _0,
+    #[doc = "TXOF flag generates an interrupt to the host."]
+    _1,
 }
 impl TXOFEW {
     #[allow(missing_docs)]
@@ -889,7 +928,8 @@ impl<'a> _TXOFEW<'a> {
 }
 #[doc = "Values that can be written to the field `RXIDEN`"]
 pub enum RXIDENW {
-    #[doc = "Disable RDRF assertion due to partially filled FIFO when receiver is idle."] _000,
+    #[doc = "Disable RDRF assertion due to partially filled FIFO when receiver is idle."]
+    _000,
     #[doc = "Enable RDRF assertion due to partially filled FIFO when receiver is idle for 1 character."]
     _001,
     #[doc = "Enable RDRF assertion due to partially filled FIFO when receiver is idle for 2 characters."]
@@ -986,8 +1026,10 @@ impl<'a> _RXIDENW<'a> {
 }
 #[doc = "Values that can be written to the field `RXFLUSH`"]
 pub enum RXFLUSHW {
-    #[doc = "No flush operation occurs."] _0,
-    #[doc = "All data in the receive FIFO/buffer is cleared out."] _1,
+    #[doc = "No flush operation occurs."]
+    _0,
+    #[doc = "All data in the receive FIFO/buffer is cleared out."]
+    _1,
 }
 impl RXFLUSHW {
     #[allow(missing_docs)]
@@ -1042,8 +1084,10 @@ impl<'a> _RXFLUSHW<'a> {
 }
 #[doc = "Values that can be written to the field `TXFLUSH`"]
 pub enum TXFLUSHW {
-    #[doc = "No flush operation occurs."] _0,
-    #[doc = "All data in the transmit FIFO/Buffer is cleared out."] _1,
+    #[doc = "No flush operation occurs."]
+    _0,
+    #[doc = "All data in the transmit FIFO/Buffer is cleared out."]
+    _1,
 }
 impl TXFLUSHW {
     #[allow(missing_docs)]
@@ -1098,7 +1142,8 @@ impl<'a> _TXFLUSHW<'a> {
 }
 #[doc = "Values that can be written to the field `RXUF`"]
 pub enum RXUFW {
-    #[doc = "No receive buffer underflow has occurred since the last time the flag was cleared."] _0,
+    #[doc = "No receive buffer underflow has occurred since the last time the flag was cleared."]
+    _0,
     #[doc = "At least one receive buffer underflow has occurred since the last time the flag was cleared."]
     _1,
 }
@@ -1155,7 +1200,8 @@ impl<'a> _RXUFW<'a> {
 }
 #[doc = "Values that can be written to the field `TXOF`"]
 pub enum TXOFW {
-    #[doc = "No transmit buffer overflow has occurred since the last time the flag was cleared."] _0,
+    #[doc = "No transmit buffer overflow has occurred since the last time the flag was cleared."]
+    _0,
     #[doc = "At least one transmit buffer overflow has occurred since the last time the flag was cleared."]
     _1,
 }

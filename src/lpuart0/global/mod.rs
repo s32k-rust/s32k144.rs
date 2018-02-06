@@ -45,8 +45,10 @@ impl super::GLOBAL {
 #[doc = "Possible values of the field `RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTR {
-    #[doc = "Module is not reset."] _0,
-    #[doc = "Module is reset."] _1,
+    #[doc = "Module is not reset."]
+    _0,
+    #[doc = "Module is reset."]
+    _1,
 }
 impl RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -89,8 +91,10 @@ impl RSTR {
 }
 #[doc = "Values that can be written to the field `RST`"]
 pub enum RSTW {
-    #[doc = "Module is not reset."] _0,
-    #[doc = "Module is reset."] _1,
+    #[doc = "Module is not reset."]
+    _0,
+    #[doc = "Module is reset."]
+    _1,
 }
 impl RSTW {
     #[allow(missing_docs)]

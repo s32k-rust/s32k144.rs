@@ -45,8 +45,10 @@ impl super::C1SC {
 #[doc = "Possible values of the field `DMA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAR {
-    #[doc = "Disable DMA transfers."] _0,
-    #[doc = "Enable DMA transfers."] _1,
+    #[doc = "Disable DMA transfers."]
+    _0,
+    #[doc = "Enable DMA transfers."]
+    _1,
 }
 impl DMAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl DMAR {
 #[doc = "Possible values of the field `ICRST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICRSTR {
-    #[doc = "FTM counter is not reset when the selected channel (n) input event is detected."] _0,
-    #[doc = "FTM counter is reset when the selected channel (n) input event is detected."] _1,
+    #[doc = "FTM counter is not reset when the selected channel (n) input event is detected."]
+    _0,
+    #[doc = "FTM counter is reset when the selected channel (n) input event is detected."]
+    _1,
 }
 impl ICRSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -219,8 +223,10 @@ impl MSBR {
 #[doc = "Possible values of the field `CHIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHIER {
-    #[doc = "Disable channel (n) interrupt. Use software polling."] _0,
-    #[doc = "Enable channel (n) interrupt."] _1,
+    #[doc = "Disable channel (n) interrupt. Use software polling."]
+    _0,
+    #[doc = "Enable channel (n) interrupt."]
+    _1,
 }
 impl CHIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -264,8 +270,10 @@ impl CHIER {
 #[doc = "Possible values of the field `CHF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHFR {
-    #[doc = "No channel (n) event has occurred."] _0,
-    #[doc = "A channel (n) event has occurred."] _1,
+    #[doc = "No channel (n) event has occurred."]
+    _0,
+    #[doc = "A channel (n) event has occurred."]
+    _1,
 }
 impl CHFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -309,7 +317,8 @@ impl CHFR {
 #[doc = "Possible values of the field `TRIGMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGMODER {
-    #[doc = "Channel outputs will generate the normal PWM outputs without generating a pulse."] _0,
+    #[doc = "Channel outputs will generate the normal PWM outputs without generating a pulse."]
+    _0,
     #[doc = "If a match in the channel occurs, a trigger generation on channel output will happen. The trigger pulse width has one FTM clock cycle."]
     _1,
 }
@@ -355,8 +364,10 @@ impl TRIGMODER {
 #[doc = "Possible values of the field `CHIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHISR {
-    #[doc = "The channel (n) input is zero."] _0,
-    #[doc = "The channel (n) input is one."] _1,
+    #[doc = "The channel (n) input is zero."]
+    _0,
+    #[doc = "The channel (n) input is one."]
+    _1,
 }
 impl CHISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -400,8 +411,10 @@ impl CHISR {
 #[doc = "Possible values of the field `CHOV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHOVR {
-    #[doc = "The channel (n) output is zero."] _0,
-    #[doc = "The channel (n) output is one."] _1,
+    #[doc = "The channel (n) output is zero."]
+    _0,
+    #[doc = "The channel (n) output is one."]
+    _1,
 }
 impl CHOVR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -444,8 +457,10 @@ impl CHOVR {
 }
 #[doc = "Values that can be written to the field `DMA`"]
 pub enum DMAW {
-    #[doc = "Disable DMA transfers."] _0,
-    #[doc = "Enable DMA transfers."] _1,
+    #[doc = "Disable DMA transfers."]
+    _0,
+    #[doc = "Enable DMA transfers."]
+    _1,
 }
 impl DMAW {
     #[allow(missing_docs)]
@@ -500,8 +515,10 @@ impl<'a> _DMAW<'a> {
 }
 #[doc = "Values that can be written to the field `ICRST`"]
 pub enum ICRSTW {
-    #[doc = "FTM counter is not reset when the selected channel (n) input event is detected."] _0,
-    #[doc = "FTM counter is reset when the selected channel (n) input event is detected."] _1,
+    #[doc = "FTM counter is not reset when the selected channel (n) input event is detected."]
+    _0,
+    #[doc = "FTM counter is reset when the selected channel (n) input event is detected."]
+    _1,
 }
 impl ICRSTW {
     #[allow(missing_docs)]
@@ -648,8 +665,10 @@ impl<'a> _MSBW<'a> {
 }
 #[doc = "Values that can be written to the field `CHIE`"]
 pub enum CHIEW {
-    #[doc = "Disable channel (n) interrupt. Use software polling."] _0,
-    #[doc = "Enable channel (n) interrupt."] _1,
+    #[doc = "Disable channel (n) interrupt. Use software polling."]
+    _0,
+    #[doc = "Enable channel (n) interrupt."]
+    _1,
 }
 impl CHIEW {
     #[allow(missing_docs)]
@@ -704,7 +723,8 @@ impl<'a> _CHIEW<'a> {
 }
 #[doc = "Values that can be written to the field `TRIGMODE`"]
 pub enum TRIGMODEW {
-    #[doc = "Channel outputs will generate the normal PWM outputs without generating a pulse."] _0,
+    #[doc = "Channel outputs will generate the normal PWM outputs without generating a pulse."]
+    _0,
     #[doc = "If a match in the channel occurs, a trigger generation on channel output will happen. The trigger pulse width has one FTM clock cycle."]
     _1,
 }

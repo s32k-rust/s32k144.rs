@@ -45,8 +45,10 @@ impl super::MSR {
 #[doc = "Possible values of the field `TIF0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIF0R {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TIF0R {
 #[doc = "Possible values of the field `TIF1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIF1R {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl TIF1R {
 #[doc = "Possible values of the field `TIF2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIF2R {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl TIF2R {
 #[doc = "Possible values of the field `TIF3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIF3R {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl TIF3R {
 }
 #[doc = "Values that can be written to the field `TIF0`"]
 pub enum TIF0W {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF0W {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _TIF0W<'a> {
 }
 #[doc = "Values that can be written to the field `TIF1`"]
 pub enum TIF1W {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF1W {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _TIF1W<'a> {
 }
 #[doc = "Values that can be written to the field `TIF2`"]
 pub enum TIF2W {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF2W {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _TIF2W<'a> {
 }
 #[doc = "Values that can be written to the field `TIF3`"]
 pub enum TIF3W {
-    #[doc = "Timer has not timed out"] _0,
-    #[doc = "Timeout has occurred"] _1,
+    #[doc = "Timer has not timed out"]
+    _0,
+    #[doc = "Timeout has occurred"]
+    _1,
 }
 impl TIF3W {
     #[allow(missing_docs)]

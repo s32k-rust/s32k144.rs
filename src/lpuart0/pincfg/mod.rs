@@ -45,9 +45,12 @@ impl super::PINCFG {
 #[doc = "Possible values of the field `TRGSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGSELR {
-    #[doc = "Input trigger is disabled."] _00,
-    #[doc = "Input trigger is used instead of RXD pin input."] _01,
-    #[doc = "Input trigger is used instead of CTS_B pin input."] _10,
+    #[doc = "Input trigger is disabled."]
+    _00,
+    #[doc = "Input trigger is used instead of RXD pin input."]
+    _01,
+    #[doc = "Input trigger is used instead of CTS_B pin input."]
+    _10,
     #[doc = "Input trigger is used to modulate the TXD pin output. The TXD pin output (after TXINV configuration) is ANDed with the input trigger."]
     _11,
 }
@@ -97,9 +100,12 @@ impl TRGSELR {
 }
 #[doc = "Values that can be written to the field `TRGSEL`"]
 pub enum TRGSELW {
-    #[doc = "Input trigger is disabled."] _00,
-    #[doc = "Input trigger is used instead of RXD pin input."] _01,
-    #[doc = "Input trigger is used instead of CTS_B pin input."] _10,
+    #[doc = "Input trigger is disabled."]
+    _00,
+    #[doc = "Input trigger is used instead of RXD pin input."]
+    _01,
+    #[doc = "Input trigger is used instead of CTS_B pin input."]
+    _10,
     #[doc = "Input trigger is used to modulate the TXD pin output. The TXD pin output (after TXINV configuration) is ANDed with the input trigger."]
     _11,
 }

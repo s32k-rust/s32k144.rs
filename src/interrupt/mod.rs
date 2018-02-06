@@ -1,17 +1,11 @@
 use bare_metal::Nr;
 #[cfg(all(target_arch = "arm", feature = "rt"))]
-global_asm!(
-    "\n                    .thumb_func\n                    DH_TRAMPOLINE:\n                        b DEFAULT_HANDLER\n                    "
-);
+global_asm!("\n                    .thumb_func\n                    DH_TRAMPOLINE:\n                        b DEFAULT_HANDLER\n                    ");
 #[doc = r" Hack to compile on x86"]
 #[cfg(all(target_arch = "x86_64", feature = "rt"))]
-global_asm!(
-    "\n                    DH_TRAMPOLINE:\n                        jmp DEFAULT_HANDLER\n                    "
-);
+global_asm!("\n                    DH_TRAMPOLINE:\n                        jmp DEFAULT_HANDLER\n                    ");
 #[cfg(feature = "rt")]
-global_asm!(
-    "\n.weak DMA0\nDMA0 = DH_TRAMPOLINE\n.weak DMA1\nDMA1 = DH_TRAMPOLINE\n.weak DMA2\nDMA2 = DH_TRAMPOLINE\n.weak DMA3\nDMA3 = DH_TRAMPOLINE\n.weak DMA4\nDMA4 = DH_TRAMPOLINE\n.weak DMA5\nDMA5 = DH_TRAMPOLINE\n.weak DMA6\nDMA6 = DH_TRAMPOLINE\n.weak DMA7\nDMA7 = DH_TRAMPOLINE\n.weak DMA8\nDMA8 = DH_TRAMPOLINE\n.weak DMA9\nDMA9 = DH_TRAMPOLINE\n.weak DMA10\nDMA10 = DH_TRAMPOLINE\n.weak DMA11\nDMA11 = DH_TRAMPOLINE\n.weak DMA12\nDMA12 = DH_TRAMPOLINE\n.weak DMA13\nDMA13 = DH_TRAMPOLINE\n.weak DMA14\nDMA14 = DH_TRAMPOLINE\n.weak DMA15\nDMA15 = DH_TRAMPOLINE\n.weak DMA_ERROR\nDMA_ERROR = DH_TRAMPOLINE\n.weak MCM\nMCM = DH_TRAMPOLINE\n.weak FTFC\nFTFC = DH_TRAMPOLINE\n.weak READ_COLLISION\nREAD_COLLISION = DH_TRAMPOLINE\n.weak LVD_LVW\nLVD_LVW = DH_TRAMPOLINE\n.weak FTFC_FAULT\nFTFC_FAULT = DH_TRAMPOLINE\n.weak WDOG_EWM\nWDOG_EWM = DH_TRAMPOLINE\n.weak RCM\nRCM = DH_TRAMPOLINE\n.weak LPI2C0_MASTER\nLPI2C0_MASTER = DH_TRAMPOLINE\n.weak LPI2C0_SLAVE\nLPI2C0_SLAVE = DH_TRAMPOLINE\n.weak LPSPI0\nLPSPI0 = DH_TRAMPOLINE\n.weak LPSPI1\nLPSPI1 = DH_TRAMPOLINE\n.weak LPSPI2\nLPSPI2 = DH_TRAMPOLINE\n.weak LPUART0_RXTX\nLPUART0_RXTX = DH_TRAMPOLINE\n.weak LPUART1_RXTX\nLPUART1_RXTX = DH_TRAMPOLINE\n.weak LPUART2_RXTX\nLPUART2_RXTX = DH_TRAMPOLINE\n.weak ADC0\nADC0 = DH_TRAMPOLINE\n.weak ADC1\nADC1 = DH_TRAMPOLINE\n.weak CMP0\nCMP0 = DH_TRAMPOLINE\n.weak ERM_SINGLE_FAULT\nERM_SINGLE_FAULT = DH_TRAMPOLINE\n.weak ERM_DOUBLE_FAULT\nERM_DOUBLE_FAULT = DH_TRAMPOLINE\n.weak RTC\nRTC = DH_TRAMPOLINE\n.weak RTC_SECONDS\nRTC_SECONDS = DH_TRAMPOLINE\n.weak LPIT0_CH0\nLPIT0_CH0 = DH_TRAMPOLINE\n.weak LPIT0_CH1\nLPIT0_CH1 = DH_TRAMPOLINE\n.weak LPIT0_CH2\nLPIT0_CH2 = DH_TRAMPOLINE\n.weak LPIT0_CH3\nLPIT0_CH3 = DH_TRAMPOLINE\n.weak PDB0\nPDB0 = DH_TRAMPOLINE\n.weak SCG\nSCG = DH_TRAMPOLINE\n.weak LPTMR0\nLPTMR0 = DH_TRAMPOLINE\n.weak PORTA\nPORTA = DH_TRAMPOLINE\n.weak PORTB\nPORTB = DH_TRAMPOLINE\n.weak PORTC\nPORTC = DH_TRAMPOLINE\n.weak PORTD\nPORTD = DH_TRAMPOLINE\n.weak PORTE\nPORTE = DH_TRAMPOLINE\n.weak PDB1\nPDB1 = DH_TRAMPOLINE\n.weak FLEXIO\nFLEXIO = DH_TRAMPOLINE\n.weak CAN0_ORED\nCAN0_ORED = DH_TRAMPOLINE\n.weak CAN0_ERROR\nCAN0_ERROR = DH_TRAMPOLINE\n.weak CAN0_WAKE_UP\nCAN0_WAKE_UP = DH_TRAMPOLINE\n.weak CAN0_ORED_0_15_MB\nCAN0_ORED_0_15_MB = DH_TRAMPOLINE\n.weak CAN0_ORED_16_31_MB\nCAN0_ORED_16_31_MB = DH_TRAMPOLINE\n.weak CAN1_ORED\nCAN1_ORED = DH_TRAMPOLINE\n.weak CAN1_ERROR\nCAN1_ERROR = DH_TRAMPOLINE\n.weak CAN1_ORED_0_15_MB\nCAN1_ORED_0_15_MB = DH_TRAMPOLINE\n.weak CAN2_ORED\nCAN2_ORED = DH_TRAMPOLINE\n.weak CAN2_ERROR\nCAN2_ERROR = DH_TRAMPOLINE\n.weak CAN2_ORED_0_15_MB\nCAN2_ORED_0_15_MB = DH_TRAMPOLINE\n.weak FTM0_CH0_CH1\nFTM0_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM0_CH2_CH3\nFTM0_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM0_CH4_CH5\nFTM0_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM0_CH6_CH7\nFTM0_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM0_FAULT\nFTM0_FAULT = DH_TRAMPOLINE\n.weak FTM0_OVF_RELOAD\nFTM0_OVF_RELOAD = DH_TRAMPOLINE\n.weak FTM1_CH0_CH1\nFTM1_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM1_CH2_CH3\nFTM1_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM1_CH4_CH5\nFTM1_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM1_CH6_CH7\nFTM1_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM1_FAULT\nFTM1_FAULT = DH_TRAMPOLINE\n.weak FTM1_OVF_RELOAD\nFTM1_OVF_RELOAD = DH_TRAMPOLINE\n.weak FTM2_CH0_CH1\nFTM2_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM2_CH2_CH3\nFTM2_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM2_CH4_CH5\nFTM2_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM2_CH6_CH7\nFTM2_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM2_FAULT\nFTM2_FAULT = DH_TRAMPOLINE\n.weak FTM2_OVF_RELOAD\nFTM2_OVF_RELOAD = DH_TRAMPOLINE\n.weak FTM3_CH0_CH1\nFTM3_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM3_CH2_CH3\nFTM3_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM3_CH4_CH5\nFTM3_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM3_CH6_CH7\nFTM3_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM3_FAULT\nFTM3_FAULT = DH_TRAMPOLINE\n.weak FTM3_OVF_RELOAD\nFTM3_OVF_RELOAD = DH_TRAMPOLINE"
-);
+global_asm ! ( "\n.weak DMA0\nDMA0 = DH_TRAMPOLINE\n.weak DMA1\nDMA1 = DH_TRAMPOLINE\n.weak DMA2\nDMA2 = DH_TRAMPOLINE\n.weak DMA3\nDMA3 = DH_TRAMPOLINE\n.weak DMA4\nDMA4 = DH_TRAMPOLINE\n.weak DMA5\nDMA5 = DH_TRAMPOLINE\n.weak DMA6\nDMA6 = DH_TRAMPOLINE\n.weak DMA7\nDMA7 = DH_TRAMPOLINE\n.weak DMA8\nDMA8 = DH_TRAMPOLINE\n.weak DMA9\nDMA9 = DH_TRAMPOLINE\n.weak DMA10\nDMA10 = DH_TRAMPOLINE\n.weak DMA11\nDMA11 = DH_TRAMPOLINE\n.weak DMA12\nDMA12 = DH_TRAMPOLINE\n.weak DMA13\nDMA13 = DH_TRAMPOLINE\n.weak DMA14\nDMA14 = DH_TRAMPOLINE\n.weak DMA15\nDMA15 = DH_TRAMPOLINE\n.weak DMA_ERROR\nDMA_ERROR = DH_TRAMPOLINE\n.weak MCM\nMCM = DH_TRAMPOLINE\n.weak FTFC\nFTFC = DH_TRAMPOLINE\n.weak READ_COLLISION\nREAD_COLLISION = DH_TRAMPOLINE\n.weak LVD_LVW\nLVD_LVW = DH_TRAMPOLINE\n.weak FTFC_FAULT\nFTFC_FAULT = DH_TRAMPOLINE\n.weak WDOG_EWM\nWDOG_EWM = DH_TRAMPOLINE\n.weak RCM\nRCM = DH_TRAMPOLINE\n.weak LPI2C0_MASTER\nLPI2C0_MASTER = DH_TRAMPOLINE\n.weak LPI2C0_SLAVE\nLPI2C0_SLAVE = DH_TRAMPOLINE\n.weak LPSPI0\nLPSPI0 = DH_TRAMPOLINE\n.weak LPSPI1\nLPSPI1 = DH_TRAMPOLINE\n.weak LPSPI2\nLPSPI2 = DH_TRAMPOLINE\n.weak LPUART0_RXTX\nLPUART0_RXTX = DH_TRAMPOLINE\n.weak LPUART1_RXTX\nLPUART1_RXTX = DH_TRAMPOLINE\n.weak LPUART2_RXTX\nLPUART2_RXTX = DH_TRAMPOLINE\n.weak ADC0\nADC0 = DH_TRAMPOLINE\n.weak ADC1\nADC1 = DH_TRAMPOLINE\n.weak CMP0\nCMP0 = DH_TRAMPOLINE\n.weak ERM_SINGLE_FAULT\nERM_SINGLE_FAULT = DH_TRAMPOLINE\n.weak ERM_DOUBLE_FAULT\nERM_DOUBLE_FAULT = DH_TRAMPOLINE\n.weak RTC\nRTC = DH_TRAMPOLINE\n.weak RTC_SECONDS\nRTC_SECONDS = DH_TRAMPOLINE\n.weak LPIT0_CH0\nLPIT0_CH0 = DH_TRAMPOLINE\n.weak LPIT0_CH1\nLPIT0_CH1 = DH_TRAMPOLINE\n.weak LPIT0_CH2\nLPIT0_CH2 = DH_TRAMPOLINE\n.weak LPIT0_CH3\nLPIT0_CH3 = DH_TRAMPOLINE\n.weak PDB0\nPDB0 = DH_TRAMPOLINE\n.weak SCG\nSCG = DH_TRAMPOLINE\n.weak LPTMR0\nLPTMR0 = DH_TRAMPOLINE\n.weak PORTA\nPORTA = DH_TRAMPOLINE\n.weak PORTB\nPORTB = DH_TRAMPOLINE\n.weak PORTC\nPORTC = DH_TRAMPOLINE\n.weak PORTD\nPORTD = DH_TRAMPOLINE\n.weak PORTE\nPORTE = DH_TRAMPOLINE\n.weak PDB1\nPDB1 = DH_TRAMPOLINE\n.weak FLEXIO\nFLEXIO = DH_TRAMPOLINE\n.weak CAN0_ORED\nCAN0_ORED = DH_TRAMPOLINE\n.weak CAN0_ERROR\nCAN0_ERROR = DH_TRAMPOLINE\n.weak CAN0_WAKE_UP\nCAN0_WAKE_UP = DH_TRAMPOLINE\n.weak CAN0_ORED_0_15_MB\nCAN0_ORED_0_15_MB = DH_TRAMPOLINE\n.weak CAN0_ORED_16_31_MB\nCAN0_ORED_16_31_MB = DH_TRAMPOLINE\n.weak CAN1_ORED\nCAN1_ORED = DH_TRAMPOLINE\n.weak CAN1_ERROR\nCAN1_ERROR = DH_TRAMPOLINE\n.weak CAN1_ORED_0_15_MB\nCAN1_ORED_0_15_MB = DH_TRAMPOLINE\n.weak CAN2_ORED\nCAN2_ORED = DH_TRAMPOLINE\n.weak CAN2_ERROR\nCAN2_ERROR = DH_TRAMPOLINE\n.weak CAN2_ORED_0_15_MB\nCAN2_ORED_0_15_MB = DH_TRAMPOLINE\n.weak FTM0_CH0_CH1\nFTM0_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM0_CH2_CH3\nFTM0_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM0_CH4_CH5\nFTM0_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM0_CH6_CH7\nFTM0_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM0_FAULT\nFTM0_FAULT = DH_TRAMPOLINE\n.weak FTM0_OVF_RELOAD\nFTM0_OVF_RELOAD = DH_TRAMPOLINE\n.weak FTM1_CH0_CH1\nFTM1_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM1_CH2_CH3\nFTM1_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM1_CH4_CH5\nFTM1_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM1_CH6_CH7\nFTM1_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM1_FAULT\nFTM1_FAULT = DH_TRAMPOLINE\n.weak FTM1_OVF_RELOAD\nFTM1_OVF_RELOAD = DH_TRAMPOLINE\n.weak FTM2_CH0_CH1\nFTM2_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM2_CH2_CH3\nFTM2_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM2_CH4_CH5\nFTM2_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM2_CH6_CH7\nFTM2_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM2_FAULT\nFTM2_FAULT = DH_TRAMPOLINE\n.weak FTM2_OVF_RELOAD\nFTM2_OVF_RELOAD = DH_TRAMPOLINE\n.weak FTM3_CH0_CH1\nFTM3_CH0_CH1 = DH_TRAMPOLINE\n.weak FTM3_CH2_CH3\nFTM3_CH2_CH3 = DH_TRAMPOLINE\n.weak FTM3_CH4_CH5\nFTM3_CH4_CH5 = DH_TRAMPOLINE\n.weak FTM3_CH6_CH7\nFTM3_CH6_CH7 = DH_TRAMPOLINE\n.weak FTM3_FAULT\nFTM3_FAULT = DH_TRAMPOLINE\n.weak FTM3_OVF_RELOAD\nFTM3_OVF_RELOAD = DH_TRAMPOLINE" ) ;
 #[cfg(feature = "rt")]
 extern "C" {
     fn DMA0();
@@ -236,94 +230,182 @@ pub static INTERRUPTS: [Option<unsafe extern "C" fn()>; 123] = [
 ];
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
-    #[doc = "0 - DMA0"] DMA0,
-    #[doc = "1 - DMA1"] DMA1,
-    #[doc = "2 - DMA2"] DMA2,
-    #[doc = "3 - DMA3"] DMA3,
-    #[doc = "4 - DMA4"] DMA4,
-    #[doc = "5 - DMA5"] DMA5,
-    #[doc = "6 - DMA6"] DMA6,
-    #[doc = "7 - DMA7"] DMA7,
-    #[doc = "8 - DMA8"] DMA8,
-    #[doc = "9 - DMA9"] DMA9,
-    #[doc = "10 - DMA10"] DMA10,
-    #[doc = "11 - DMA11"] DMA11,
-    #[doc = "12 - DMA12"] DMA12,
-    #[doc = "13 - DMA13"] DMA13,
-    #[doc = "14 - DMA14"] DMA14,
-    #[doc = "15 - DMA15"] DMA15,
-    #[doc = "16 - DMA_Error"] DMA_ERROR,
-    #[doc = "17 - MCM"] MCM,
-    #[doc = "18 - FTFC"] FTFC,
-    #[doc = "19 - Read_Collision"] READ_COLLISION,
-    #[doc = "20 - LVD_LVW"] LVD_LVW,
-    #[doc = "21 - FTFC_Fault"] FTFC_FAULT,
-    #[doc = "22 - WDOG_EWM"] WDOG_EWM,
-    #[doc = "23 - RCM"] RCM,
-    #[doc = "24 - LPI2C0_Master"] LPI2C0_MASTER,
-    #[doc = "25 - LPI2C0_Slave"] LPI2C0_SLAVE,
-    #[doc = "26 - LPSPI0"] LPSPI0,
-    #[doc = "27 - LPSPI1"] LPSPI1,
-    #[doc = "28 - LPSPI2"] LPSPI2,
-    #[doc = "31 - LPUART0_RxTx"] LPUART0_RXTX,
-    #[doc = "33 - LPUART1_RxTx"] LPUART1_RXTX,
-    #[doc = "35 - LPUART2_RxTx"] LPUART2_RXTX,
-    #[doc = "39 - ADC0"] ADC0,
-    #[doc = "40 - ADC1"] ADC1,
-    #[doc = "41 - CMP0"] CMP0,
-    #[doc = "44 - ERM_single_fault"] ERM_SINGLE_FAULT,
-    #[doc = "45 - ERM_double_fault"] ERM_DOUBLE_FAULT,
-    #[doc = "46 - RTC"] RTC,
-    #[doc = "47 - RTC_Seconds"] RTC_SECONDS,
-    #[doc = "48 - LPIT0_Ch0"] LPIT0_CH0,
-    #[doc = "49 - LPIT0_Ch1"] LPIT0_CH1,
-    #[doc = "50 - LPIT0_Ch2"] LPIT0_CH2,
-    #[doc = "51 - LPIT0_Ch3"] LPIT0_CH3,
-    #[doc = "52 - PDB0"] PDB0,
-    #[doc = "57 - SCG"] SCG,
-    #[doc = "58 - LPTMR0"] LPTMR0,
-    #[doc = "59 - PORTA"] PORTA,
-    #[doc = "60 - PORTB"] PORTB,
-    #[doc = "61 - PORTC"] PORTC,
-    #[doc = "62 - PORTD"] PORTD,
-    #[doc = "63 - PORTE"] PORTE,
-    #[doc = "68 - PDB1"] PDB1,
-    #[doc = "69 - FLEXIO"] FLEXIO,
-    #[doc = "78 - CAN0_ORed"] CAN0_ORED,
-    #[doc = "79 - CAN0_Error"] CAN0_ERROR,
-    #[doc = "80 - CAN0_Wake_Up"] CAN0_WAKE_UP,
-    #[doc = "81 - CAN0_ORed_0_15_MB"] CAN0_ORED_0_15_MB,
-    #[doc = "82 - CAN0_ORed_16_31_MB"] CAN0_ORED_16_31_MB,
-    #[doc = "85 - CAN1_ORed"] CAN1_ORED,
-    #[doc = "86 - CAN1_Error"] CAN1_ERROR,
-    #[doc = "88 - CAN1_ORed_0_15_MB"] CAN1_ORED_0_15_MB,
-    #[doc = "92 - CAN2_ORed"] CAN2_ORED,
-    #[doc = "93 - CAN2_Error"] CAN2_ERROR,
-    #[doc = "95 - CAN2_ORed_0_15_MB"] CAN2_ORED_0_15_MB,
-    #[doc = "99 - FTM0_Ch0_Ch1"] FTM0_CH0_CH1,
-    #[doc = "100 - FTM0_Ch2_Ch3"] FTM0_CH2_CH3,
-    #[doc = "101 - FTM0_Ch4_Ch5"] FTM0_CH4_CH5,
-    #[doc = "102 - FTM0_Ch6_Ch7"] FTM0_CH6_CH7,
-    #[doc = "103 - FTM0_Fault"] FTM0_FAULT,
-    #[doc = "104 - FTM0_Ovf_Reload"] FTM0_OVF_RELOAD,
-    #[doc = "105 - FTM1_Ch0_Ch1"] FTM1_CH0_CH1,
-    #[doc = "106 - FTM1_Ch2_Ch3"] FTM1_CH2_CH3,
-    #[doc = "107 - FTM1_Ch4_Ch5"] FTM1_CH4_CH5,
-    #[doc = "108 - FTM1_Ch6_Ch7"] FTM1_CH6_CH7,
-    #[doc = "109 - FTM1_Fault"] FTM1_FAULT,
-    #[doc = "110 - FTM1_Ovf_Reload"] FTM1_OVF_RELOAD,
-    #[doc = "111 - FTM2_Ch0_Ch1"] FTM2_CH0_CH1,
-    #[doc = "112 - FTM2_Ch2_Ch3"] FTM2_CH2_CH3,
-    #[doc = "113 - FTM2_Ch4_Ch5"] FTM2_CH4_CH5,
-    #[doc = "114 - FTM2_Ch6_Ch7"] FTM2_CH6_CH7,
-    #[doc = "115 - FTM2_Fault"] FTM2_FAULT,
-    #[doc = "116 - FTM2_Ovf_Reload"] FTM2_OVF_RELOAD,
-    #[doc = "117 - FTM3_Ch0_Ch1"] FTM3_CH0_CH1,
-    #[doc = "118 - FTM3_Ch2_Ch3"] FTM3_CH2_CH3,
-    #[doc = "119 - FTM3_Ch4_Ch5"] FTM3_CH4_CH5,
-    #[doc = "120 - FTM3_Ch6_Ch7"] FTM3_CH6_CH7,
-    #[doc = "121 - FTM3_Fault"] FTM3_FAULT,
-    #[doc = "122 - FTM3_Ovf_Reload"] FTM3_OVF_RELOAD,
+    #[doc = "0 - DMA0"]
+    DMA0,
+    #[doc = "1 - DMA1"]
+    DMA1,
+    #[doc = "2 - DMA2"]
+    DMA2,
+    #[doc = "3 - DMA3"]
+    DMA3,
+    #[doc = "4 - DMA4"]
+    DMA4,
+    #[doc = "5 - DMA5"]
+    DMA5,
+    #[doc = "6 - DMA6"]
+    DMA6,
+    #[doc = "7 - DMA7"]
+    DMA7,
+    #[doc = "8 - DMA8"]
+    DMA8,
+    #[doc = "9 - DMA9"]
+    DMA9,
+    #[doc = "10 - DMA10"]
+    DMA10,
+    #[doc = "11 - DMA11"]
+    DMA11,
+    #[doc = "12 - DMA12"]
+    DMA12,
+    #[doc = "13 - DMA13"]
+    DMA13,
+    #[doc = "14 - DMA14"]
+    DMA14,
+    #[doc = "15 - DMA15"]
+    DMA15,
+    #[doc = "16 - DMA_Error"]
+    DMA_ERROR,
+    #[doc = "17 - MCM"]
+    MCM,
+    #[doc = "18 - FTFC"]
+    FTFC,
+    #[doc = "19 - Read_Collision"]
+    READ_COLLISION,
+    #[doc = "20 - LVD_LVW"]
+    LVD_LVW,
+    #[doc = "21 - FTFC_Fault"]
+    FTFC_FAULT,
+    #[doc = "22 - WDOG_EWM"]
+    WDOG_EWM,
+    #[doc = "23 - RCM"]
+    RCM,
+    #[doc = "24 - LPI2C0_Master"]
+    LPI2C0_MASTER,
+    #[doc = "25 - LPI2C0_Slave"]
+    LPI2C0_SLAVE,
+    #[doc = "26 - LPSPI0"]
+    LPSPI0,
+    #[doc = "27 - LPSPI1"]
+    LPSPI1,
+    #[doc = "28 - LPSPI2"]
+    LPSPI2,
+    #[doc = "31 - LPUART0_RxTx"]
+    LPUART0_RXTX,
+    #[doc = "33 - LPUART1_RxTx"]
+    LPUART1_RXTX,
+    #[doc = "35 - LPUART2_RxTx"]
+    LPUART2_RXTX,
+    #[doc = "39 - ADC0"]
+    ADC0,
+    #[doc = "40 - ADC1"]
+    ADC1,
+    #[doc = "41 - CMP0"]
+    CMP0,
+    #[doc = "44 - ERM_single_fault"]
+    ERM_SINGLE_FAULT,
+    #[doc = "45 - ERM_double_fault"]
+    ERM_DOUBLE_FAULT,
+    #[doc = "46 - RTC"]
+    RTC,
+    #[doc = "47 - RTC_Seconds"]
+    RTC_SECONDS,
+    #[doc = "48 - LPIT0_Ch0"]
+    LPIT0_CH0,
+    #[doc = "49 - LPIT0_Ch1"]
+    LPIT0_CH1,
+    #[doc = "50 - LPIT0_Ch2"]
+    LPIT0_CH2,
+    #[doc = "51 - LPIT0_Ch3"]
+    LPIT0_CH3,
+    #[doc = "52 - PDB0"]
+    PDB0,
+    #[doc = "57 - SCG"]
+    SCG,
+    #[doc = "58 - LPTMR0"]
+    LPTMR0,
+    #[doc = "59 - PORTA"]
+    PORTA,
+    #[doc = "60 - PORTB"]
+    PORTB,
+    #[doc = "61 - PORTC"]
+    PORTC,
+    #[doc = "62 - PORTD"]
+    PORTD,
+    #[doc = "63 - PORTE"]
+    PORTE,
+    #[doc = "68 - PDB1"]
+    PDB1,
+    #[doc = "69 - FLEXIO"]
+    FLEXIO,
+    #[doc = "78 - CAN0_ORed"]
+    CAN0_ORED,
+    #[doc = "79 - CAN0_Error"]
+    CAN0_ERROR,
+    #[doc = "80 - CAN0_Wake_Up"]
+    CAN0_WAKE_UP,
+    #[doc = "81 - CAN0_ORed_0_15_MB"]
+    CAN0_ORED_0_15_MB,
+    #[doc = "82 - CAN0_ORed_16_31_MB"]
+    CAN0_ORED_16_31_MB,
+    #[doc = "85 - CAN1_ORed"]
+    CAN1_ORED,
+    #[doc = "86 - CAN1_Error"]
+    CAN1_ERROR,
+    #[doc = "88 - CAN1_ORed_0_15_MB"]
+    CAN1_ORED_0_15_MB,
+    #[doc = "92 - CAN2_ORed"]
+    CAN2_ORED,
+    #[doc = "93 - CAN2_Error"]
+    CAN2_ERROR,
+    #[doc = "95 - CAN2_ORed_0_15_MB"]
+    CAN2_ORED_0_15_MB,
+    #[doc = "99 - FTM0_Ch0_Ch1"]
+    FTM0_CH0_CH1,
+    #[doc = "100 - FTM0_Ch2_Ch3"]
+    FTM0_CH2_CH3,
+    #[doc = "101 - FTM0_Ch4_Ch5"]
+    FTM0_CH4_CH5,
+    #[doc = "102 - FTM0_Ch6_Ch7"]
+    FTM0_CH6_CH7,
+    #[doc = "103 - FTM0_Fault"]
+    FTM0_FAULT,
+    #[doc = "104 - FTM0_Ovf_Reload"]
+    FTM0_OVF_RELOAD,
+    #[doc = "105 - FTM1_Ch0_Ch1"]
+    FTM1_CH0_CH1,
+    #[doc = "106 - FTM1_Ch2_Ch3"]
+    FTM1_CH2_CH3,
+    #[doc = "107 - FTM1_Ch4_Ch5"]
+    FTM1_CH4_CH5,
+    #[doc = "108 - FTM1_Ch6_Ch7"]
+    FTM1_CH6_CH7,
+    #[doc = "109 - FTM1_Fault"]
+    FTM1_FAULT,
+    #[doc = "110 - FTM1_Ovf_Reload"]
+    FTM1_OVF_RELOAD,
+    #[doc = "111 - FTM2_Ch0_Ch1"]
+    FTM2_CH0_CH1,
+    #[doc = "112 - FTM2_Ch2_Ch3"]
+    FTM2_CH2_CH3,
+    #[doc = "113 - FTM2_Ch4_Ch5"]
+    FTM2_CH4_CH5,
+    #[doc = "114 - FTM2_Ch6_Ch7"]
+    FTM2_CH6_CH7,
+    #[doc = "115 - FTM2_Fault"]
+    FTM2_FAULT,
+    #[doc = "116 - FTM2_Ovf_Reload"]
+    FTM2_OVF_RELOAD,
+    #[doc = "117 - FTM3_Ch0_Ch1"]
+    FTM3_CH0_CH1,
+    #[doc = "118 - FTM3_Ch2_Ch3"]
+    FTM3_CH2_CH3,
+    #[doc = "119 - FTM3_Ch4_Ch5"]
+    FTM3_CH4_CH5,
+    #[doc = "120 - FTM3_Ch6_Ch7"]
+    FTM3_CH6_CH7,
+    #[doc = "121 - FTM3_Fault"]
+    FTM3_FAULT,
+    #[doc = "122 - FTM3_Ovf_Reload"]
+    FTM3_OVF_RELOAD,
 }
 unsafe impl Nr for Interrupt {
     #[inline]
@@ -422,4 +504,4 @@ unsafe impl Nr for Interrupt {
 }
 #[cfg(feature = "rt")]
 #[macro_export]
-macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
+macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ty = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }

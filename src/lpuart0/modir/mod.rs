@@ -45,7 +45,8 @@ impl super::MODIR {
 #[doc = "Possible values of the field `TXCTSE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXCTSER {
-    #[doc = "CTS has no effect on the transmitter."] _0,
+    #[doc = "CTS has no effect on the transmitter."]
+    _0,
     #[doc = "Enables clear-to-send operation. The transmitter checks the state of CTS each time it is ready to send a character. If CTS is asserted, the character is sent. If CTS is deasserted, the signal TXD remains in the mark state and transmission is delayed until CTS is asserted. Changes in CTS as a character is being sent do not affect its transmission."]
     _1,
 }
@@ -91,7 +92,8 @@ impl TXCTSER {
 #[doc = "Possible values of the field `TXRTSE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXRTSER {
-    #[doc = "The transmitter has no effect on RTS."] _0,
+    #[doc = "The transmitter has no effect on RTS."]
+    _0,
     #[doc = "When a character is placed into an empty transmitter data buffer , RTS asserts one bit time before the start bit is transmitted. RTS deasserts one bit time after all characters in the transmitter data buffer and shift register are completely sent, including the last stop bit."]
     _1,
 }
@@ -137,8 +139,10 @@ impl TXRTSER {
 #[doc = "Possible values of the field `TXRTSPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXRTSPOLR {
-    #[doc = "Transmitter RTS is active low."] _0,
-    #[doc = "Transmitter RTS is active high."] _1,
+    #[doc = "Transmitter RTS is active low."]
+    _0,
+    #[doc = "Transmitter RTS is active high."]
+    _1,
 }
 impl TXRTSPOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -182,8 +186,10 @@ impl TXRTSPOLR {
 #[doc = "Possible values of the field `RXRTSE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXRTSER {
-    #[doc = "The receiver has no effect on RTS."] _0,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "The receiver has no effect on RTS."]
+    _0,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl RXRTSER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -222,8 +228,10 @@ impl RXRTSER {
 #[doc = "Possible values of the field `TXCTSC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXCTSCR {
-    #[doc = "CTS input is sampled at the start of each character."] _0,
-    #[doc = "CTS input is sampled when the transmitter is idle."] _1,
+    #[doc = "CTS input is sampled at the start of each character."]
+    _0,
+    #[doc = "CTS input is sampled when the transmitter is idle."]
+    _1,
 }
 impl TXCTSCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -267,8 +275,10 @@ impl TXCTSCR {
 #[doc = "Possible values of the field `TXCTSSRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXCTSSRCR {
-    #[doc = "CTS input is the CTS_B pin."] _0,
-    #[doc = "CTS input is the inverted Receiver Match result."] _1,
+    #[doc = "CTS input is the CTS_B pin."]
+    _0,
+    #[doc = "CTS input is the inverted Receiver Match result."]
+    _1,
 }
 impl TXCTSSRCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -323,10 +333,14 @@ impl RTSWATERR {
 #[doc = "Possible values of the field `TNP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TNPR {
-    #[doc = "1/OSR."] _00,
-    #[doc = "2/OSR."] _01,
-    #[doc = "3/OSR."] _10,
-    #[doc = "4/OSR."] _11,
+    #[doc = "1/OSR."]
+    _00,
+    #[doc = "2/OSR."]
+    _01,
+    #[doc = "3/OSR."]
+    _10,
+    #[doc = "4/OSR."]
+    _11,
 }
 impl TNPR {
     #[doc = r" Value of the field as raw bits"]
@@ -375,8 +389,10 @@ impl TNPR {
 #[doc = "Possible values of the field `IREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IRENR {
-    #[doc = "IR disabled."] _0,
-    #[doc = "IR enabled."] _1,
+    #[doc = "IR disabled."]
+    _0,
+    #[doc = "IR enabled."]
+    _1,
 }
 impl IRENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,7 +435,8 @@ impl IRENR {
 }
 #[doc = "Values that can be written to the field `TXCTSE`"]
 pub enum TXCTSEW {
-    #[doc = "CTS has no effect on the transmitter."] _0,
+    #[doc = "CTS has no effect on the transmitter."]
+    _0,
     #[doc = "Enables clear-to-send operation. The transmitter checks the state of CTS each time it is ready to send a character. If CTS is asserted, the character is sent. If CTS is deasserted, the signal TXD remains in the mark state and transmission is delayed until CTS is asserted. Changes in CTS as a character is being sent do not affect its transmission."]
     _1,
 }
@@ -476,7 +493,8 @@ impl<'a> _TXCTSEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXRTSE`"]
 pub enum TXRTSEW {
-    #[doc = "The transmitter has no effect on RTS."] _0,
+    #[doc = "The transmitter has no effect on RTS."]
+    _0,
     #[doc = "When a character is placed into an empty transmitter data buffer , RTS asserts one bit time before the start bit is transmitted. RTS deasserts one bit time after all characters in the transmitter data buffer and shift register are completely sent, including the last stop bit."]
     _1,
 }
@@ -533,8 +551,10 @@ impl<'a> _TXRTSEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXRTSPOL`"]
 pub enum TXRTSPOLW {
-    #[doc = "Transmitter RTS is active low."] _0,
-    #[doc = "Transmitter RTS is active high."] _1,
+    #[doc = "Transmitter RTS is active low."]
+    _0,
+    #[doc = "Transmitter RTS is active high."]
+    _1,
 }
 impl TXRTSPOLW {
     #[allow(missing_docs)]
@@ -589,7 +609,8 @@ impl<'a> _TXRTSPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `RXRTSE`"]
 pub enum RXRTSEW {
-    #[doc = "The receiver has no effect on RTS."] _0,
+    #[doc = "The receiver has no effect on RTS."]
+    _0,
 }
 impl RXRTSEW {
     #[allow(missing_docs)]
@@ -638,8 +659,10 @@ impl<'a> _RXRTSEW<'a> {
 }
 #[doc = "Values that can be written to the field `TXCTSC`"]
 pub enum TXCTSCW {
-    #[doc = "CTS input is sampled at the start of each character."] _0,
-    #[doc = "CTS input is sampled when the transmitter is idle."] _1,
+    #[doc = "CTS input is sampled at the start of each character."]
+    _0,
+    #[doc = "CTS input is sampled when the transmitter is idle."]
+    _1,
 }
 impl TXCTSCW {
     #[allow(missing_docs)]
@@ -694,8 +717,10 @@ impl<'a> _TXCTSCW<'a> {
 }
 #[doc = "Values that can be written to the field `TXCTSSRC`"]
 pub enum TXCTSSRCW {
-    #[doc = "CTS input is the CTS_B pin."] _0,
-    #[doc = "CTS input is the inverted Receiver Match result."] _1,
+    #[doc = "CTS input is the CTS_B pin."]
+    _0,
+    #[doc = "CTS input is the inverted Receiver Match result."]
+    _1,
 }
 impl TXCTSSRCW {
     #[allow(missing_docs)]
@@ -765,10 +790,14 @@ impl<'a> _RTSWATERW<'a> {
 }
 #[doc = "Values that can be written to the field `TNP`"]
 pub enum TNPW {
-    #[doc = "1/OSR."] _00,
-    #[doc = "2/OSR."] _01,
-    #[doc = "3/OSR."] _10,
-    #[doc = "4/OSR."] _11,
+    #[doc = "1/OSR."]
+    _00,
+    #[doc = "2/OSR."]
+    _01,
+    #[doc = "3/OSR."]
+    _10,
+    #[doc = "4/OSR."]
+    _11,
 }
 impl TNPW {
     #[allow(missing_docs)]
@@ -827,8 +856,10 @@ impl<'a> _TNPW<'a> {
 }
 #[doc = "Values that can be written to the field `IREN`"]
 pub enum IRENW {
-    #[doc = "IR disabled."] _0,
-    #[doc = "IR enabled."] _1,
+    #[doc = "IR disabled."]
+    _0,
+    #[doc = "IR enabled."]
+    _1,
 }
 impl IRENW {
     #[allow(missing_docs)]

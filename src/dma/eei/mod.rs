@@ -45,7 +45,8 @@ impl super::EEI {
 #[doc = "Possible values of the field `EEI0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI0R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -91,7 +92,8 @@ impl EEI0R {
 #[doc = "Possible values of the field `EEI1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI1R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -137,7 +139,8 @@ impl EEI1R {
 #[doc = "Possible values of the field `EEI2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI2R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -183,7 +186,8 @@ impl EEI2R {
 #[doc = "Possible values of the field `EEI3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI3R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -229,7 +233,8 @@ impl EEI3R {
 #[doc = "Possible values of the field `EEI4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI4R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -275,7 +280,8 @@ impl EEI4R {
 #[doc = "Possible values of the field `EEI5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI5R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -321,7 +327,8 @@ impl EEI5R {
 #[doc = "Possible values of the field `EEI6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI6R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -367,7 +374,8 @@ impl EEI6R {
 #[doc = "Possible values of the field `EEI7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI7R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -413,7 +421,8 @@ impl EEI7R {
 #[doc = "Possible values of the field `EEI8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI8R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -459,7 +468,8 @@ impl EEI8R {
 #[doc = "Possible values of the field `EEI9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI9R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -505,7 +515,8 @@ impl EEI9R {
 #[doc = "Possible values of the field `EEI10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI10R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -551,7 +562,8 @@ impl EEI10R {
 #[doc = "Possible values of the field `EEI11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI11R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -597,7 +609,8 @@ impl EEI11R {
 #[doc = "Possible values of the field `EEI12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI12R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -643,7 +656,8 @@ impl EEI12R {
 #[doc = "Possible values of the field `EEI13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI13R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -689,7 +703,8 @@ impl EEI13R {
 #[doc = "Possible values of the field `EEI14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI14R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -735,7 +750,8 @@ impl EEI14R {
 #[doc = "Possible values of the field `EEI15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEI15R {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -780,7 +796,8 @@ impl EEI15R {
 }
 #[doc = "Values that can be written to the field `EEI0`"]
 pub enum EEI0W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -837,7 +854,8 @@ impl<'a> _EEI0W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI1`"]
 pub enum EEI1W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -894,7 +912,8 @@ impl<'a> _EEI1W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI2`"]
 pub enum EEI2W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -951,7 +970,8 @@ impl<'a> _EEI2W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI3`"]
 pub enum EEI3W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1008,7 +1028,8 @@ impl<'a> _EEI3W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI4`"]
 pub enum EEI4W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1065,7 +1086,8 @@ impl<'a> _EEI4W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI5`"]
 pub enum EEI5W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1122,7 +1144,8 @@ impl<'a> _EEI5W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI6`"]
 pub enum EEI6W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1179,7 +1202,8 @@ impl<'a> _EEI6W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI7`"]
 pub enum EEI7W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1236,7 +1260,8 @@ impl<'a> _EEI7W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI8`"]
 pub enum EEI8W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1293,7 +1318,8 @@ impl<'a> _EEI8W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI9`"]
 pub enum EEI9W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1350,7 +1376,8 @@ impl<'a> _EEI9W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI10`"]
 pub enum EEI10W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1407,7 +1434,8 @@ impl<'a> _EEI10W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI11`"]
 pub enum EEI11W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1464,7 +1492,8 @@ impl<'a> _EEI11W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI12`"]
 pub enum EEI12W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1521,7 +1550,8 @@ impl<'a> _EEI12W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI13`"]
 pub enum EEI13W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1578,7 +1608,8 @@ impl<'a> _EEI13W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI14`"]
 pub enum EEI14W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }
@@ -1635,7 +1666,8 @@ impl<'a> _EEI14W<'a> {
 }
 #[doc = "Values that can be written to the field `EEI15`"]
 pub enum EEI15W {
-    #[doc = "The error signal for corresponding channel does not generate an error interrupt"] _0,
+    #[doc = "The error signal for corresponding channel does not generate an error interrupt"]
+    _0,
     #[doc = "The assertion of the error signal for corresponding channel generates an error interrupt request"]
     _1,
 }

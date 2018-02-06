@@ -56,8 +56,10 @@ impl NBYTESR {
 #[doc = "Possible values of the field `DMLOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMLOER {
-    #[doc = "The minor loop offset is not applied to the DADDR"] _0,
-    #[doc = "The minor loop offset is applied to the DADDR"] _1,
+    #[doc = "The minor loop offset is not applied to the DADDR"]
+    _0,
+    #[doc = "The minor loop offset is applied to the DADDR"]
+    _1,
 }
 impl DMLOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,8 +103,10 @@ impl DMLOER {
 #[doc = "Possible values of the field `SMLOE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMLOER {
-    #[doc = "The minor loop offset is not applied to the SADDR"] _0,
-    #[doc = "The minor loop offset is applied to the SADDR"] _1,
+    #[doc = "The minor loop offset is not applied to the SADDR"]
+    _0,
+    #[doc = "The minor loop offset is applied to the SADDR"]
+    _1,
 }
 impl SMLOER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -160,8 +164,10 @@ impl<'a> _NBYTESW<'a> {
 }
 #[doc = "Values that can be written to the field `DMLOE`"]
 pub enum DMLOEW {
-    #[doc = "The minor loop offset is not applied to the DADDR"] _0,
-    #[doc = "The minor loop offset is applied to the DADDR"] _1,
+    #[doc = "The minor loop offset is not applied to the DADDR"]
+    _0,
+    #[doc = "The minor loop offset is applied to the DADDR"]
+    _1,
 }
 impl DMLOEW {
     #[allow(missing_docs)]
@@ -216,8 +222,10 @@ impl<'a> _DMLOEW<'a> {
 }
 #[doc = "Values that can be written to the field `SMLOE`"]
 pub enum SMLOEW {
-    #[doc = "The minor loop offset is not applied to the SADDR"] _0,
-    #[doc = "The minor loop offset is applied to the SADDR"] _1,
+    #[doc = "The minor loop offset is not applied to the SADDR"]
+    _0,
+    #[doc = "The minor loop offset is applied to the SADDR"]
+    _1,
 }
 impl SMLOEW {
     #[allow(missing_docs)]

@@ -45,10 +45,12 @@ impl super::ISFR {
 #[doc = "Possible values of the field `ISF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISFR {
-    #[doc = "Configured interrupt is not detected."] _0,
+    #[doc = "Configured interrupt is not detected."]
+    _0,
     #[doc = "Configured interrupt is detected. If the pin is configured to generate a DMA request, then the corresponding flag will be cleared automatically at the completion of the requested DMA transfer. Otherwise, the flag remains set until a logic 1 is written to the flag. If the pin is configured for a level sensitive interrupt and the pin remains asserted, then the flag is set again immediately after it is cleared."]
     _1,
-    #[doc = r" Reserved"] _Reserved(u32),
+    #[doc = r" Reserved"]
+    _Reserved(u32),
 }
 impl ISFR {
     #[doc = r" Value of the field as raw bits"]
@@ -83,7 +85,8 @@ impl ISFR {
 }
 #[doc = "Values that can be written to the field `ISF`"]
 pub enum ISFW {
-    #[doc = "Configured interrupt is not detected."] _0,
+    #[doc = "Configured interrupt is not detected."]
+    _0,
     #[doc = "Configured interrupt is detected. If the pin is configured to generate a DMA request, then the corresponding flag will be cleared automatically at the completion of the requested DMA transfer. Otherwise, the flag remains set until a logic 1 is written to the flag. If the pin is configured for a level sensitive interrupt and the pin remains asserted, then the flag is set again immediately after it is cleared."]
     _1,
 }

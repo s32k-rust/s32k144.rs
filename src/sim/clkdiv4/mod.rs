@@ -77,8 +77,10 @@ impl TRACEDIVR {
 #[doc = "Possible values of the field `TRACEDIVEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRACEDIVENR {
-    #[doc = "Debug trace divider disabled"] _0,
-    #[doc = "Debug trace divider enabled"] _1,
+    #[doc = "Debug trace divider disabled"]
+    _0,
+    #[doc = "Debug trace divider enabled"]
+    _1,
 }
 impl TRACEDIVENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -159,8 +161,10 @@ impl<'a> _TRACEDIVW<'a> {
 }
 #[doc = "Values that can be written to the field `TRACEDIVEN`"]
 pub enum TRACEDIVENW {
-    #[doc = "Debug trace divider disabled"] _0,
-    #[doc = "Debug trace divider enabled"] _1,
+    #[doc = "Debug trace divider disabled"]
+    _0,
+    #[doc = "Debug trace divider enabled"]
+    _1,
 }
 impl TRACEDIVENW {
     #[allow(missing_docs)]

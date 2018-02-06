@@ -45,14 +45,22 @@ impl super::PCC_LPTMR0 {
 #[doc = "Possible values of the field `PCD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCDR {
-    #[doc = "Divide by 1."] _000,
-    #[doc = "Divide by 2."] _001,
-    #[doc = "Divide by 3."] _010,
-    #[doc = "Divide by 4."] _011,
-    #[doc = "Divide by 5."] _100,
-    #[doc = "Divide by 6."] _101,
-    #[doc = "Divide by 7."] _110,
-    #[doc = "Divide by 8."] _111,
+    #[doc = "Divide by 1."]
+    _000,
+    #[doc = "Divide by 2."]
+    _001,
+    #[doc = "Divide by 3."]
+    _010,
+    #[doc = "Divide by 4."]
+    _011,
+    #[doc = "Divide by 5."]
+    _100,
+    #[doc = "Divide by 6."]
+    _101,
+    #[doc = "Divide by 7."]
+    _110,
+    #[doc = "Divide by 8."]
+    _111,
 }
 impl PCDR {
     #[doc = r" Value of the field as raw bits"]
@@ -129,8 +137,10 @@ impl PCDR {
 #[doc = "Possible values of the field `FRAC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRACR {
-    #[doc = "Fractional value is 0."] _0,
-    #[doc = "Fractional value is 1."] _1,
+    #[doc = "Fractional value is 0."]
+    _0,
+    #[doc = "Fractional value is 1."]
+    _1,
 }
 impl FRACR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -174,14 +184,22 @@ impl FRACR {
 #[doc = "Possible values of the field `PCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCSR {
-    #[doc = "Clock is off."] _000,
-    #[doc = "Clock option 1"] _001,
-    #[doc = "Clock option 2"] _010,
-    #[doc = "Clock option 3"] _011,
-    #[doc = "Clock option 4"] _100,
-    #[doc = "Clock option 5"] _101,
-    #[doc = "Clock option 6"] _110,
-    #[doc = "Clock option 7"] _111,
+    #[doc = "Clock is off."]
+    _000,
+    #[doc = "Clock option 1"]
+    _001,
+    #[doc = "Clock option 2"]
+    _010,
+    #[doc = "Clock option 3"]
+    _011,
+    #[doc = "Clock option 4"]
+    _100,
+    #[doc = "Clock option 5"]
+    _101,
+    #[doc = "Clock option 6"]
+    _110,
+    #[doc = "Clock option 7"]
+    _111,
 }
 impl PCSR {
     #[doc = r" Value of the field as raw bits"]
@@ -258,8 +276,10 @@ impl PCSR {
 #[doc = "Possible values of the field `CGC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled. The current clock selection and divider options are locked."] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled. The current clock selection and divider options are locked."]
+    _1,
 }
 impl CGCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -303,8 +323,10 @@ impl CGCR {
 #[doc = "Possible values of the field `PR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRR {
-    #[doc = "Peripheral is not present."] _0,
-    #[doc = "Peripheral is present."] _1,
+    #[doc = "Peripheral is not present."]
+    _0,
+    #[doc = "Peripheral is present."]
+    _1,
 }
 impl PRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -347,14 +369,22 @@ impl PRR {
 }
 #[doc = "Values that can be written to the field `PCD`"]
 pub enum PCDW {
-    #[doc = "Divide by 1."] _000,
-    #[doc = "Divide by 2."] _001,
-    #[doc = "Divide by 3."] _010,
-    #[doc = "Divide by 4."] _011,
-    #[doc = "Divide by 5."] _100,
-    #[doc = "Divide by 6."] _101,
-    #[doc = "Divide by 7."] _110,
-    #[doc = "Divide by 8."] _111,
+    #[doc = "Divide by 1."]
+    _000,
+    #[doc = "Divide by 2."]
+    _001,
+    #[doc = "Divide by 3."]
+    _010,
+    #[doc = "Divide by 4."]
+    _011,
+    #[doc = "Divide by 5."]
+    _100,
+    #[doc = "Divide by 6."]
+    _101,
+    #[doc = "Divide by 7."]
+    _110,
+    #[doc = "Divide by 8."]
+    _111,
 }
 impl PCDW {
     #[allow(missing_docs)]
@@ -437,8 +467,10 @@ impl<'a> _PCDW<'a> {
 }
 #[doc = "Values that can be written to the field `FRAC`"]
 pub enum FRACW {
-    #[doc = "Fractional value is 0."] _0,
-    #[doc = "Fractional value is 1."] _1,
+    #[doc = "Fractional value is 0."]
+    _0,
+    #[doc = "Fractional value is 1."]
+    _1,
 }
 impl FRACW {
     #[allow(missing_docs)]
@@ -493,14 +525,22 @@ impl<'a> _FRACW<'a> {
 }
 #[doc = "Values that can be written to the field `PCS`"]
 pub enum PCSW {
-    #[doc = "Clock is off."] _000,
-    #[doc = "Clock option 1"] _001,
-    #[doc = "Clock option 2"] _010,
-    #[doc = "Clock option 3"] _011,
-    #[doc = "Clock option 4"] _100,
-    #[doc = "Clock option 5"] _101,
-    #[doc = "Clock option 6"] _110,
-    #[doc = "Clock option 7"] _111,
+    #[doc = "Clock is off."]
+    _000,
+    #[doc = "Clock option 1"]
+    _001,
+    #[doc = "Clock option 2"]
+    _010,
+    #[doc = "Clock option 3"]
+    _011,
+    #[doc = "Clock option 4"]
+    _100,
+    #[doc = "Clock option 5"]
+    _101,
+    #[doc = "Clock option 6"]
+    _110,
+    #[doc = "Clock option 7"]
+    _111,
 }
 impl PCSW {
     #[allow(missing_docs)]
@@ -583,8 +623,10 @@ impl<'a> _PCSW<'a> {
 }
 #[doc = "Values that can be written to the field `CGC`"]
 pub enum CGCW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled. The current clock selection and divider options are locked."] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled. The current clock selection and divider options are locked."]
+    _1,
 }
 impl CGCW {
     #[allow(missing_docs)]

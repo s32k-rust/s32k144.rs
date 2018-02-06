@@ -78,9 +78,12 @@ impl PER {
 #[doc = "Possible values of the field `PEELOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEELOCR {
-    #[doc = "Non-correctable ECC event from SRAM_L"] _00,
-    #[doc = "Non-correctable ECC event from SRAM_U"] _01,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Non-correctable ECC event from SRAM_L"]
+    _00,
+    #[doc = "Non-correctable ECC event from SRAM_U"]
+    _01,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PEELOCR {
     #[doc = r" Value of the field as raw bits"]

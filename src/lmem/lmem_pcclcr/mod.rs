@@ -45,8 +45,10 @@ impl super::LMEM_PCCLCR {
 #[doc = "Possible values of the field `LGO`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LGOR {
-    #[doc = "Write: no effect. Read: no line command active."] _0,
-    #[doc = "Write: initiate line command indicated by bits 27-24. Read: line command active."] _1,
+    #[doc = "Write: no effect. Read: no line command active."]
+    _0,
+    #[doc = "Write: initiate line command indicated by bits 27-24. Read: line command active."]
+    _1,
 }
 impl LGOR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,8 +103,10 @@ impl CACHEADDRR {
 #[doc = "Possible values of the field `WSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WSELR {
-    #[doc = "Way 0"] _0,
-    #[doc = "Way 1"] _1,
+    #[doc = "Way 0"]
+    _0,
+    #[doc = "Way 1"]
+    _1,
 }
 impl WSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -146,8 +150,10 @@ impl WSELR {
 #[doc = "Possible values of the field `TDSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDSELR {
-    #[doc = "Data"] _0,
-    #[doc = "Tag"] _1,
+    #[doc = "Data"]
+    _0,
+    #[doc = "Tag"]
+    _1,
 }
 impl TDSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -254,10 +260,14 @@ impl LCWAYR {
 #[doc = "Possible values of the field `LCMD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCMDR {
-    #[doc = "Search and read or write"] _00,
-    #[doc = "Invalidate"] _01,
-    #[doc = "Push"] _10,
-    #[doc = "Clear"] _11,
+    #[doc = "Search and read or write"]
+    _00,
+    #[doc = "Invalidate"]
+    _01,
+    #[doc = "Push"]
+    _10,
+    #[doc = "Clear"]
+    _11,
 }
 impl LCMDR {
     #[doc = r" Value of the field as raw bits"]
@@ -306,8 +316,10 @@ impl LCMDR {
 #[doc = "Possible values of the field `LADSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LADSELR {
-    #[doc = "Cache address"] _0,
-    #[doc = "Physical address"] _1,
+    #[doc = "Cache address"]
+    _0,
+    #[doc = "Physical address"]
+    _1,
 }
 impl LADSELR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -351,8 +363,10 @@ impl LADSELR {
 #[doc = "Possible values of the field `LACC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LACCR {
-    #[doc = "Read"] _0,
-    #[doc = "Write"] _1,
+    #[doc = "Read"]
+    _0,
+    #[doc = "Write"]
+    _1,
 }
 impl LACCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -395,8 +409,10 @@ impl LACCR {
 }
 #[doc = "Values that can be written to the field `LGO`"]
 pub enum LGOW {
-    #[doc = "Write: no effect. Read: no line command active."] _0,
-    #[doc = "Write: initiate line command indicated by bits 27-24. Read: line command active."] _1,
+    #[doc = "Write: no effect. Read: no line command active."]
+    _0,
+    #[doc = "Write: initiate line command indicated by bits 27-24. Read: line command active."]
+    _1,
 }
 impl LGOW {
     #[allow(missing_docs)]
@@ -466,8 +482,10 @@ impl<'a> _CACHEADDRW<'a> {
 }
 #[doc = "Values that can be written to the field `WSEL`"]
 pub enum WSELW {
-    #[doc = "Way 0"] _0,
-    #[doc = "Way 1"] _1,
+    #[doc = "Way 0"]
+    _0,
+    #[doc = "Way 1"]
+    _1,
 }
 impl WSELW {
     #[allow(missing_docs)]
@@ -522,8 +540,10 @@ impl<'a> _WSELW<'a> {
 }
 #[doc = "Values that can be written to the field `TDSEL`"]
 pub enum TDSELW {
-    #[doc = "Data"] _0,
-    #[doc = "Tag"] _1,
+    #[doc = "Data"]
+    _0,
+    #[doc = "Tag"]
+    _1,
 }
 impl TDSELW {
     #[allow(missing_docs)]
@@ -647,10 +667,14 @@ impl<'a> _LCWAYW<'a> {
 }
 #[doc = "Values that can be written to the field `LCMD`"]
 pub enum LCMDW {
-    #[doc = "Search and read or write"] _00,
-    #[doc = "Invalidate"] _01,
-    #[doc = "Push"] _10,
-    #[doc = "Clear"] _11,
+    #[doc = "Search and read or write"]
+    _00,
+    #[doc = "Invalidate"]
+    _01,
+    #[doc = "Push"]
+    _10,
+    #[doc = "Clear"]
+    _11,
 }
 impl LCMDW {
     #[allow(missing_docs)]
@@ -709,8 +733,10 @@ impl<'a> _LCMDW<'a> {
 }
 #[doc = "Values that can be written to the field `LADSEL`"]
 pub enum LADSELW {
-    #[doc = "Cache address"] _0,
-    #[doc = "Physical address"] _1,
+    #[doc = "Cache address"]
+    _0,
+    #[doc = "Physical address"]
+    _1,
 }
 impl LADSELW {
     #[allow(missing_docs)]
@@ -765,8 +791,10 @@ impl<'a> _LADSELW<'a> {
 }
 #[doc = "Values that can be written to the field `LACC`"]
 pub enum LACCW {
-    #[doc = "Read"] _0,
-    #[doc = "Write"] _1,
+    #[doc = "Read"]
+    _0,
+    #[doc = "Write"]
+    _1,
 }
 impl LACCW {
     #[allow(missing_docs)]

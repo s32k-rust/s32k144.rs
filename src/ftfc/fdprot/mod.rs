@@ -45,9 +45,12 @@ impl super::FDPROT {
 #[doc = "Possible values of the field `DPROT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPROTR {
-    #[doc = "Data Flash region is protected"] _00000000,
-    #[doc = "Data Flash region is not protected"] _00000001,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Data Flash region is protected"]
+    _00000000,
+    #[doc = "Data Flash region is not protected"]
+    _00000001,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl DPROTR {
     #[doc = r" Value of the field as raw bits"]
@@ -82,8 +85,10 @@ impl DPROTR {
 }
 #[doc = "Values that can be written to the field `DPROT`"]
 pub enum DPROTW {
-    #[doc = "Data Flash region is protected"] _00000000,
-    #[doc = "Data Flash region is not protected"] _00000001,
+    #[doc = "Data Flash region is protected"]
+    _00000000,
+    #[doc = "Data Flash region is not protected"]
+    _00000001,
 }
 impl DPROTW {
     #[allow(missing_docs)]

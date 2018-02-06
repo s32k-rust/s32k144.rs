@@ -59,11 +59,16 @@ impl<'a> _DATAW<'a> {
 }
 #[doc = "Values that can be written to the field `CMD`"]
 pub enum CMDW {
-    #[doc = "Transmit DATA[7:0]."] _000,
-    #[doc = "Receive (DATA[7:0] + 1) bytes."] _001,
-    #[doc = "Generate STOP condition."] _010,
-    #[doc = "Receive and discard (DATA[7:0] + 1) bytes."] _011,
-    #[doc = "Generate (repeated) START and transmit address in DATA[7:0]."] _100,
+    #[doc = "Transmit DATA[7:0]."]
+    _000,
+    #[doc = "Receive (DATA[7:0] + 1) bytes."]
+    _001,
+    #[doc = "Generate STOP condition."]
+    _010,
+    #[doc = "Receive and discard (DATA[7:0] + 1) bytes."]
+    _011,
+    #[doc = "Generate (repeated) START and transmit address in DATA[7:0]."]
+    _100,
     #[doc = "Generate (repeated) START and transmit address in DATA[7:0]. This transfer expects a NACK to be returned."]
     _101,
     #[doc = "Generate (repeated) START and transmit address in DATA[7:0] using high speed mode."]

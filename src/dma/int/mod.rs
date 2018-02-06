@@ -45,8 +45,10 @@ impl super::INT {
 #[doc = "Possible values of the field `INT0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT0R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl INT0R {
 #[doc = "Possible values of the field `INT1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT1R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl INT1R {
 #[doc = "Possible values of the field `INT2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT2R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl INT2R {
 #[doc = "Possible values of the field `INT3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT3R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl INT3R {
 #[doc = "Possible values of the field `INT4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT4R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl INT4R {
 #[doc = "Possible values of the field `INT5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT5R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl INT5R {
 #[doc = "Possible values of the field `INT6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT6R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl INT6R {
 #[doc = "Possible values of the field `INT7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT7R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -405,8 +421,10 @@ impl INT7R {
 #[doc = "Possible values of the field `INT8`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT8R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT8R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -450,8 +468,10 @@ impl INT8R {
 #[doc = "Possible values of the field `INT9`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT9R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT9R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -495,8 +515,10 @@ impl INT9R {
 #[doc = "Possible values of the field `INT10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT10R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT10R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -540,8 +562,10 @@ impl INT10R {
 #[doc = "Possible values of the field `INT11`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT11R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT11R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -585,8 +609,10 @@ impl INT11R {
 #[doc = "Possible values of the field `INT12`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT12R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT12R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -630,8 +656,10 @@ impl INT12R {
 #[doc = "Possible values of the field `INT13`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT13R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT13R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -675,8 +703,10 @@ impl INT13R {
 #[doc = "Possible values of the field `INT14`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT14R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT14R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -720,8 +750,10 @@ impl INT14R {
 #[doc = "Possible values of the field `INT15`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT15R {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT15R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -764,8 +796,10 @@ impl INT15R {
 }
 #[doc = "Values that can be written to the field `INT0`"]
 pub enum INT0W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT0W {
     #[allow(missing_docs)]
@@ -820,8 +854,10 @@ impl<'a> _INT0W<'a> {
 }
 #[doc = "Values that can be written to the field `INT1`"]
 pub enum INT1W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT1W {
     #[allow(missing_docs)]
@@ -876,8 +912,10 @@ impl<'a> _INT1W<'a> {
 }
 #[doc = "Values that can be written to the field `INT2`"]
 pub enum INT2W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT2W {
     #[allow(missing_docs)]
@@ -932,8 +970,10 @@ impl<'a> _INT2W<'a> {
 }
 #[doc = "Values that can be written to the field `INT3`"]
 pub enum INT3W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT3W {
     #[allow(missing_docs)]
@@ -988,8 +1028,10 @@ impl<'a> _INT3W<'a> {
 }
 #[doc = "Values that can be written to the field `INT4`"]
 pub enum INT4W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT4W {
     #[allow(missing_docs)]
@@ -1044,8 +1086,10 @@ impl<'a> _INT4W<'a> {
 }
 #[doc = "Values that can be written to the field `INT5`"]
 pub enum INT5W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT5W {
     #[allow(missing_docs)]
@@ -1100,8 +1144,10 @@ impl<'a> _INT5W<'a> {
 }
 #[doc = "Values that can be written to the field `INT6`"]
 pub enum INT6W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT6W {
     #[allow(missing_docs)]
@@ -1156,8 +1202,10 @@ impl<'a> _INT6W<'a> {
 }
 #[doc = "Values that can be written to the field `INT7`"]
 pub enum INT7W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT7W {
     #[allow(missing_docs)]
@@ -1212,8 +1260,10 @@ impl<'a> _INT7W<'a> {
 }
 #[doc = "Values that can be written to the field `INT8`"]
 pub enum INT8W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT8W {
     #[allow(missing_docs)]
@@ -1268,8 +1318,10 @@ impl<'a> _INT8W<'a> {
 }
 #[doc = "Values that can be written to the field `INT9`"]
 pub enum INT9W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT9W {
     #[allow(missing_docs)]
@@ -1324,8 +1376,10 @@ impl<'a> _INT9W<'a> {
 }
 #[doc = "Values that can be written to the field `INT10`"]
 pub enum INT10W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT10W {
     #[allow(missing_docs)]
@@ -1380,8 +1434,10 @@ impl<'a> _INT10W<'a> {
 }
 #[doc = "Values that can be written to the field `INT11`"]
 pub enum INT11W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT11W {
     #[allow(missing_docs)]
@@ -1436,8 +1492,10 @@ impl<'a> _INT11W<'a> {
 }
 #[doc = "Values that can be written to the field `INT12`"]
 pub enum INT12W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT12W {
     #[allow(missing_docs)]
@@ -1492,8 +1550,10 @@ impl<'a> _INT12W<'a> {
 }
 #[doc = "Values that can be written to the field `INT13`"]
 pub enum INT13W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT13W {
     #[allow(missing_docs)]
@@ -1548,8 +1608,10 @@ impl<'a> _INT13W<'a> {
 }
 #[doc = "Values that can be written to the field `INT14`"]
 pub enum INT14W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT14W {
     #[allow(missing_docs)]
@@ -1604,8 +1666,10 @@ impl<'a> _INT14W<'a> {
 }
 #[doc = "Values that can be written to the field `INT15`"]
 pub enum INT15W {
-    #[doc = "The interrupt request for corresponding channel is cleared"] _0,
-    #[doc = "The interrupt request for corresponding channel is active"] _1,
+    #[doc = "The interrupt request for corresponding channel is cleared"]
+    _0,
+    #[doc = "The interrupt request for corresponding channel is active"]
+    _1,
 }
 impl INT15W {
     #[allow(missing_docs)]

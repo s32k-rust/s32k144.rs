@@ -45,8 +45,10 @@ impl super::FMS {
 #[doc = "Possible values of the field `FAULTF0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTF0R {
-    #[doc = "No fault condition was detected at the fault input."] _0,
-    #[doc = "A fault condition was detected at the fault input."] _1,
+    #[doc = "No fault condition was detected at the fault input."]
+    _0,
+    #[doc = "A fault condition was detected at the fault input."]
+    _1,
 }
 impl FAULTF0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl FAULTF0R {
 #[doc = "Possible values of the field `FAULTF1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTF1R {
-    #[doc = "No fault condition was detected at the fault input."] _0,
-    #[doc = "A fault condition was detected at the fault input."] _1,
+    #[doc = "No fault condition was detected at the fault input."]
+    _0,
+    #[doc = "A fault condition was detected at the fault input."]
+    _1,
 }
 impl FAULTF1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl FAULTF1R {
 #[doc = "Possible values of the field `FAULTF2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTF2R {
-    #[doc = "No fault condition was detected at the fault input."] _0,
-    #[doc = "A fault condition was detected at the fault input."] _1,
+    #[doc = "No fault condition was detected at the fault input."]
+    _0,
+    #[doc = "A fault condition was detected at the fault input."]
+    _1,
 }
 impl FAULTF2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl FAULTF2R {
 #[doc = "Possible values of the field `FAULTF3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTF3R {
-    #[doc = "No fault condition was detected at the fault input."] _0,
-    #[doc = "A fault condition was detected at the fault input."] _1,
+    #[doc = "No fault condition was detected at the fault input."]
+    _0,
+    #[doc = "A fault condition was detected at the fault input."]
+    _1,
 }
 impl FAULTF3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl FAULTF3R {
 #[doc = "Possible values of the field `FAULTIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTINR {
-    #[doc = "The logic OR of the enabled fault inputs is 0."] _0,
-    #[doc = "The logic OR of the enabled fault inputs is 1."] _1,
+    #[doc = "The logic OR of the enabled fault inputs is 0."]
+    _0,
+    #[doc = "The logic OR of the enabled fault inputs is 1."]
+    _1,
 }
 impl FAULTINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl FAULTINR {
 #[doc = "Possible values of the field `WPEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPENR {
-    #[doc = "Write protection is disabled. Write protected bits can be written."] _0,
-    #[doc = "Write protection is enabled. Write protected bits cannot be written."] _1,
+    #[doc = "Write protection is disabled. Write protected bits can be written."]
+    _0,
+    #[doc = "Write protection is enabled. Write protected bits cannot be written."]
+    _1,
 }
 impl WPENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl WPENR {
 #[doc = "Possible values of the field `FAULTF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTFR {
-    #[doc = "No fault condition was detected."] _0,
-    #[doc = "A fault condition was detected."] _1,
+    #[doc = "No fault condition was detected."]
+    _0,
+    #[doc = "A fault condition was detected."]
+    _1,
 }
 impl FAULTFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -359,8 +373,10 @@ impl FAULTFR {
 }
 #[doc = "Values that can be written to the field `WPEN`"]
 pub enum WPENW {
-    #[doc = "Write protection is disabled. Write protected bits can be written."] _0,
-    #[doc = "Write protection is enabled. Write protected bits cannot be written."] _1,
+    #[doc = "Write protection is disabled. Write protected bits can be written."]
+    _0,
+    #[doc = "Write protection is enabled. Write protected bits cannot be written."]
+    _1,
 }
 impl WPENW {
     #[allow(missing_docs)]

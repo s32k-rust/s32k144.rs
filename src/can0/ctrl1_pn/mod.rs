@@ -45,10 +45,14 @@ impl super::CTRL1_PN {
 #[doc = "Possible values of the field `FCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCSR {
-    #[doc = "Message ID filtering only"] _00,
-    #[doc = "Message ID filtering and payload filtering"] _01,
-    #[doc = "Message ID filtering occurring a specified number of times."] _10,
-    #[doc = "Message ID filtering and payload filtering a specified number of times"] _11,
+    #[doc = "Message ID filtering only"]
+    _00,
+    #[doc = "Message ID filtering and payload filtering"]
+    _01,
+    #[doc = "Message ID filtering occurring a specified number of times."]
+    _10,
+    #[doc = "Message ID filtering and payload filtering a specified number of times"]
+    _11,
 }
 impl FCSR {
     #[doc = r" Value of the field as raw bits"]
@@ -97,9 +101,12 @@ impl FCSR {
 #[doc = "Possible values of the field `IDFS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDFSR {
-    #[doc = "Match upon a ID contents against an exact target value"] _00,
-    #[doc = "Match upon a ID value greater than or equal to a specified target value"] _01,
-    #[doc = "Match upon a ID value smaller than or equal to a specified target value"] _10,
+    #[doc = "Match upon a ID contents against an exact target value"]
+    _00,
+    #[doc = "Match upon a ID value greater than or equal to a specified target value"]
+    _01,
+    #[doc = "Match upon a ID value smaller than or equal to a specified target value"]
+    _10,
     #[doc = "Match upon a ID value inside a range, greater than or equal to a specified lower limit and smaller than or equal a specified upper limit"]
     _11,
 }
@@ -150,9 +157,12 @@ impl IDFSR {
 #[doc = "Possible values of the field `PLFS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLFSR {
-    #[doc = "Match upon a payload contents against an exact target value"] _00,
-    #[doc = "Match upon a payload value greater than or equal to a specified target value"] _01,
-    #[doc = "Match upon a payload value smaller than or equal to a specified target value"] _10,
+    #[doc = "Match upon a payload contents against an exact target value"]
+    _00,
+    #[doc = "Match upon a payload value greater than or equal to a specified target value"]
+    _01,
+    #[doc = "Match upon a payload value smaller than or equal to a specified target value"]
+    _10,
     #[doc = "Match upon a payload value inside a range, greater than or equal to a specified lower limit and smaller than or equal a specified upper limit"]
     _11,
 }
@@ -209,7 +219,8 @@ pub enum NMATCHR {
     _00000010,
     #[doc = "Received message must match the predefined filtering criteria for ID and/or PL 255 times before generating a wake up event."]
     _11111111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl NMATCHR {
     #[doc = r" Value of the field as raw bits"]
@@ -252,8 +263,10 @@ impl NMATCHR {
 #[doc = "Possible values of the field `WUMF_MSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUMF_MSKR {
-    #[doc = "Wake up match event is disabled"] _0,
-    #[doc = "Wake up match event is enabled"] _1,
+    #[doc = "Wake up match event is disabled"]
+    _0,
+    #[doc = "Wake up match event is enabled"]
+    _1,
 }
 impl WUMF_MSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -297,8 +310,10 @@ impl WUMF_MSKR {
 #[doc = "Possible values of the field `WTOF_MSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WTOF_MSKR {
-    #[doc = "Timeout wake up event is disabled"] _0,
-    #[doc = "Timeout wake up event is enabled"] _1,
+    #[doc = "Timeout wake up event is disabled"]
+    _0,
+    #[doc = "Timeout wake up event is enabled"]
+    _1,
 }
 impl WTOF_MSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -341,10 +356,14 @@ impl WTOF_MSKR {
 }
 #[doc = "Values that can be written to the field `FCS`"]
 pub enum FCSW {
-    #[doc = "Message ID filtering only"] _00,
-    #[doc = "Message ID filtering and payload filtering"] _01,
-    #[doc = "Message ID filtering occurring a specified number of times."] _10,
-    #[doc = "Message ID filtering and payload filtering a specified number of times"] _11,
+    #[doc = "Message ID filtering only"]
+    _00,
+    #[doc = "Message ID filtering and payload filtering"]
+    _01,
+    #[doc = "Message ID filtering occurring a specified number of times."]
+    _10,
+    #[doc = "Message ID filtering and payload filtering a specified number of times"]
+    _11,
 }
 impl FCSW {
     #[allow(missing_docs)]
@@ -403,9 +422,12 @@ impl<'a> _FCSW<'a> {
 }
 #[doc = "Values that can be written to the field `IDFS`"]
 pub enum IDFSW {
-    #[doc = "Match upon a ID contents against an exact target value"] _00,
-    #[doc = "Match upon a ID value greater than or equal to a specified target value"] _01,
-    #[doc = "Match upon a ID value smaller than or equal to a specified target value"] _10,
+    #[doc = "Match upon a ID contents against an exact target value"]
+    _00,
+    #[doc = "Match upon a ID value greater than or equal to a specified target value"]
+    _01,
+    #[doc = "Match upon a ID value smaller than or equal to a specified target value"]
+    _10,
     #[doc = "Match upon a ID value inside a range, greater than or equal to a specified lower limit and smaller than or equal a specified upper limit"]
     _11,
 }
@@ -466,9 +488,12 @@ impl<'a> _IDFSW<'a> {
 }
 #[doc = "Values that can be written to the field `PLFS`"]
 pub enum PLFSW {
-    #[doc = "Match upon a payload contents against an exact target value"] _00,
-    #[doc = "Match upon a payload value greater than or equal to a specified target value"] _01,
-    #[doc = "Match upon a payload value smaller than or equal to a specified target value"] _10,
+    #[doc = "Match upon a payload contents against an exact target value"]
+    _00,
+    #[doc = "Match upon a payload value greater than or equal to a specified target value"]
+    _01,
+    #[doc = "Match upon a payload value smaller than or equal to a specified target value"]
+    _10,
     #[doc = "Match upon a payload value inside a range, greater than or equal to a specified lower limit and smaller than or equal a specified upper limit"]
     _11,
 }
@@ -585,8 +610,10 @@ impl<'a> _NMATCHW<'a> {
 }
 #[doc = "Values that can be written to the field `WUMF_MSK`"]
 pub enum WUMF_MSKW {
-    #[doc = "Wake up match event is disabled"] _0,
-    #[doc = "Wake up match event is enabled"] _1,
+    #[doc = "Wake up match event is disabled"]
+    _0,
+    #[doc = "Wake up match event is enabled"]
+    _1,
 }
 impl WUMF_MSKW {
     #[allow(missing_docs)]
@@ -641,8 +668,10 @@ impl<'a> _WUMF_MSKW<'a> {
 }
 #[doc = "Values that can be written to the field `WTOF_MSK`"]
 pub enum WTOF_MSKW {
-    #[doc = "Timeout wake up event is disabled"] _0,
-    #[doc = "Timeout wake up event is enabled"] _1,
+    #[doc = "Timeout wake up event is disabled"]
+    _0,
+    #[doc = "Timeout wake up event is enabled"]
+    _1,
 }
 impl WTOF_MSKW {
     #[allow(missing_docs)]

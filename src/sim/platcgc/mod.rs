@@ -45,8 +45,10 @@ impl super::PLATCGC {
 #[doc = "Possible values of the field `CGCMSCM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCMSCMR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCMSCMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CGCMSCMR {
 #[doc = "Possible values of the field `CGCMPU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCMPUR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCMPUR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl CGCMPUR {
 #[doc = "Possible values of the field `CGCDMA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCDMAR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCDMAR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl CGCDMAR {
 #[doc = "Possible values of the field `CGCERM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCERMR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCERMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl CGCERMR {
 #[doc = "Possible values of the field `CGCEIM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGCEIMR {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCEIMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -269,8 +279,10 @@ impl CGCEIMR {
 }
 #[doc = "Values that can be written to the field `CGCMSCM`"]
 pub enum CGCMSCMW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCMSCMW {
     #[allow(missing_docs)]
@@ -325,8 +337,10 @@ impl<'a> _CGCMSCMW<'a> {
 }
 #[doc = "Values that can be written to the field `CGCMPU`"]
 pub enum CGCMPUW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCMPUW {
     #[allow(missing_docs)]
@@ -381,8 +395,10 @@ impl<'a> _CGCMPUW<'a> {
 }
 #[doc = "Values that can be written to the field `CGCDMA`"]
 pub enum CGCDMAW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCDMAW {
     #[allow(missing_docs)]
@@ -437,8 +453,10 @@ impl<'a> _CGCDMAW<'a> {
 }
 #[doc = "Values that can be written to the field `CGCERM`"]
 pub enum CGCERMW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCERMW {
     #[allow(missing_docs)]
@@ -493,8 +511,10 @@ impl<'a> _CGCERMW<'a> {
 }
 #[doc = "Values that can be written to the field `CGCEIM`"]
 pub enum CGCEIMW {
-    #[doc = "Clock disabled"] _0,
-    #[doc = "Clock enabled"] _1,
+    #[doc = "Clock disabled"]
+    _0,
+    #[doc = "Clock enabled"]
+    _1,
 }
 impl CGCEIMW {
     #[allow(missing_docs)]

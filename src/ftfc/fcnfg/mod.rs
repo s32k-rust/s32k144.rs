@@ -87,8 +87,10 @@ impl RAMRDYR {
 #[doc = "Possible values of the field `ERSSUSP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERSSUSPR {
-    #[doc = "No suspend requested"] _0,
-    #[doc = "Suspend the current Erase Flash Sector command execution"] _1,
+    #[doc = "No suspend requested"]
+    _0,
+    #[doc = "Suspend the current Erase Flash Sector command execution"]
+    _1,
 }
 impl ERSSUSPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -132,8 +134,10 @@ impl ERSSUSPR {
 #[doc = "Possible values of the field `ERSAREQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERSAREQR {
-    #[doc = "No request or request complete"] _0,
-    #[doc = r" Reserved"] _Reserved(bool),
+    #[doc = "No request or request complete"]
+    _0,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl ERSAREQR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -172,7 +176,8 @@ impl ERSAREQR {
 #[doc = "Possible values of the field `RDCOLLIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDCOLLIER {
-    #[doc = "Read collision error interrupt disabled"] _0,
+    #[doc = "Read collision error interrupt disabled"]
+    _0,
     #[doc = "Read collision error interrupt enabled. An interrupt request is generated whenever an FTFC read collision error is detected (see the description of FSTAT[RDCOLERR])."]
     _1,
 }
@@ -218,7 +223,8 @@ impl RDCOLLIER {
 #[doc = "Possible values of the field `CCIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCIER {
-    #[doc = "Command complete interrupt disabled"] _0,
+    #[doc = "Command complete interrupt disabled"]
+    _0,
     #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT[CCIF] flag is set."]
     _1,
 }
@@ -263,8 +269,10 @@ impl CCIER {
 }
 #[doc = "Values that can be written to the field `ERSSUSP`"]
 pub enum ERSSUSPW {
-    #[doc = "No suspend requested"] _0,
-    #[doc = "Suspend the current Erase Flash Sector command execution"] _1,
+    #[doc = "No suspend requested"]
+    _0,
+    #[doc = "Suspend the current Erase Flash Sector command execution"]
+    _1,
 }
 impl ERSSUSPW {
     #[allow(missing_docs)]
@@ -319,7 +327,8 @@ impl<'a> _ERSSUSPW<'a> {
 }
 #[doc = "Values that can be written to the field `RDCOLLIE`"]
 pub enum RDCOLLIEW {
-    #[doc = "Read collision error interrupt disabled"] _0,
+    #[doc = "Read collision error interrupt disabled"]
+    _0,
     #[doc = "Read collision error interrupt enabled. An interrupt request is generated whenever an FTFC read collision error is detected (see the description of FSTAT[RDCOLERR])."]
     _1,
 }
@@ -376,7 +385,8 @@ impl<'a> _RDCOLLIEW<'a> {
 }
 #[doc = "Values that can be written to the field `CCIE`"]
 pub enum CCIEW {
-    #[doc = "Command complete interrupt disabled"] _0,
+    #[doc = "Command complete interrupt disabled"]
+    _0,
     #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT[CCIF] flag is set."]
     _1,
 }

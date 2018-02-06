@@ -56,8 +56,10 @@ impl PROPSEGR {
 #[doc = "Possible values of the field `LOM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOMR {
-    #[doc = "Listen-Only mode is deactivated."] _0,
-    #[doc = "FlexCAN module operates in Listen-Only mode."] _1,
+    #[doc = "Listen-Only mode is deactivated."]
+    _0,
+    #[doc = "FlexCAN module operates in Listen-Only mode."]
+    _1,
 }
 impl LOMR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -101,8 +103,10 @@ impl LOMR {
 #[doc = "Possible values of the field `LBUF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBUFR {
-    #[doc = "Buffer with highest priority is transmitted first."] _0,
-    #[doc = "Lowest number buffer is transmitted first."] _1,
+    #[doc = "Buffer with highest priority is transmitted first."]
+    _0,
+    #[doc = "Lowest number buffer is transmitted first."]
+    _1,
 }
 impl LBUFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -146,8 +150,10 @@ impl LBUFR {
 #[doc = "Possible values of the field `TSYN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSYNR {
-    #[doc = "Timer Sync feature disabled"] _0,
-    #[doc = "Timer Sync feature enabled"] _1,
+    #[doc = "Timer Sync feature disabled"]
+    _0,
+    #[doc = "Timer Sync feature enabled"]
+    _1,
 }
 impl TSYNR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -191,8 +197,10 @@ impl TSYNR {
 #[doc = "Possible values of the field `BOFFREC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFFRECR {
-    #[doc = "Automatic recovering from Bus Off state enabled."] _0,
-    #[doc = "Automatic recovering from Bus Off state disabled."] _1,
+    #[doc = "Automatic recovering from Bus Off state enabled."]
+    _0,
+    #[doc = "Automatic recovering from Bus Off state disabled."]
+    _1,
 }
 impl BOFFRECR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -236,7 +244,8 @@ impl BOFFRECR {
 #[doc = "Possible values of the field `SMP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMPR {
-    #[doc = "Just one sample is used to determine the bit value."] _0,
+    #[doc = "Just one sample is used to determine the bit value."]
+    _0,
     #[doc = "Three samples are used to determine the value of the received bit: the regular one (sample point) and 2 preceding samples; a majority rule is used."]
     _1,
 }
@@ -282,8 +291,10 @@ impl SMPR {
 #[doc = "Possible values of the field `RWRNMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RWRNMSKR {
-    #[doc = "Rx Warning Interrupt disabled."] _0,
-    #[doc = "Rx Warning Interrupt enabled."] _1,
+    #[doc = "Rx Warning Interrupt disabled."]
+    _0,
+    #[doc = "Rx Warning Interrupt enabled."]
+    _1,
 }
 impl RWRNMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -327,8 +338,10 @@ impl RWRNMSKR {
 #[doc = "Possible values of the field `TWRNMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TWRNMSKR {
-    #[doc = "Tx Warning Interrupt disabled."] _0,
-    #[doc = "Tx Warning Interrupt enabled."] _1,
+    #[doc = "Tx Warning Interrupt disabled."]
+    _0,
+    #[doc = "Tx Warning Interrupt enabled."]
+    _1,
 }
 impl TWRNMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -372,8 +385,10 @@ impl TWRNMSKR {
 #[doc = "Possible values of the field `LPB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPBR {
-    #[doc = "Loop Back disabled."] _0,
-    #[doc = "Loop Back enabled."] _1,
+    #[doc = "Loop Back disabled."]
+    _0,
+    #[doc = "Loop Back enabled."]
+    _1,
 }
 impl LPBR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -419,7 +434,8 @@ impl LPBR {
 pub enum CLKSRCR {
     #[doc = "The CAN engine clock source is the oscillator clock. Under this condition, the oscillator clock frequency must be lower than the bus clock."]
     _0,
-    #[doc = "The CAN engine clock source is the peripheral clock."] _1,
+    #[doc = "The CAN engine clock source is the peripheral clock."]
+    _1,
 }
 impl CLKSRCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -463,8 +479,10 @@ impl CLKSRCR {
 #[doc = "Possible values of the field `ERRMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRMSKR {
-    #[doc = "Error interrupt disabled."] _0,
-    #[doc = "Error interrupt enabled."] _1,
+    #[doc = "Error interrupt disabled."]
+    _0,
+    #[doc = "Error interrupt enabled."]
+    _1,
 }
 impl ERRMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -508,8 +526,10 @@ impl ERRMSKR {
 #[doc = "Possible values of the field `BOFFMSK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFFMSKR {
-    #[doc = "Bus Off interrupt disabled."] _0,
-    #[doc = "Bus Off interrupt enabled."] _1,
+    #[doc = "Bus Off interrupt disabled."]
+    _0,
+    #[doc = "Bus Off interrupt enabled."]
+    _1,
 }
 impl BOFFMSKR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -611,8 +631,10 @@ impl<'a> _PROPSEGW<'a> {
 }
 #[doc = "Values that can be written to the field `LOM`"]
 pub enum LOMW {
-    #[doc = "Listen-Only mode is deactivated."] _0,
-    #[doc = "FlexCAN module operates in Listen-Only mode."] _1,
+    #[doc = "Listen-Only mode is deactivated."]
+    _0,
+    #[doc = "FlexCAN module operates in Listen-Only mode."]
+    _1,
 }
 impl LOMW {
     #[allow(missing_docs)]
@@ -667,8 +689,10 @@ impl<'a> _LOMW<'a> {
 }
 #[doc = "Values that can be written to the field `LBUF`"]
 pub enum LBUFW {
-    #[doc = "Buffer with highest priority is transmitted first."] _0,
-    #[doc = "Lowest number buffer is transmitted first."] _1,
+    #[doc = "Buffer with highest priority is transmitted first."]
+    _0,
+    #[doc = "Lowest number buffer is transmitted first."]
+    _1,
 }
 impl LBUFW {
     #[allow(missing_docs)]
@@ -723,8 +747,10 @@ impl<'a> _LBUFW<'a> {
 }
 #[doc = "Values that can be written to the field `TSYN`"]
 pub enum TSYNW {
-    #[doc = "Timer Sync feature disabled"] _0,
-    #[doc = "Timer Sync feature enabled"] _1,
+    #[doc = "Timer Sync feature disabled"]
+    _0,
+    #[doc = "Timer Sync feature enabled"]
+    _1,
 }
 impl TSYNW {
     #[allow(missing_docs)]
@@ -779,8 +805,10 @@ impl<'a> _TSYNW<'a> {
 }
 #[doc = "Values that can be written to the field `BOFFREC`"]
 pub enum BOFFRECW {
-    #[doc = "Automatic recovering from Bus Off state enabled."] _0,
-    #[doc = "Automatic recovering from Bus Off state disabled."] _1,
+    #[doc = "Automatic recovering from Bus Off state enabled."]
+    _0,
+    #[doc = "Automatic recovering from Bus Off state disabled."]
+    _1,
 }
 impl BOFFRECW {
     #[allow(missing_docs)]
@@ -835,7 +863,8 @@ impl<'a> _BOFFRECW<'a> {
 }
 #[doc = "Values that can be written to the field `SMP`"]
 pub enum SMPW {
-    #[doc = "Just one sample is used to determine the bit value."] _0,
+    #[doc = "Just one sample is used to determine the bit value."]
+    _0,
     #[doc = "Three samples are used to determine the value of the received bit: the regular one (sample point) and 2 preceding samples; a majority rule is used."]
     _1,
 }
@@ -892,8 +921,10 @@ impl<'a> _SMPW<'a> {
 }
 #[doc = "Values that can be written to the field `RWRNMSK`"]
 pub enum RWRNMSKW {
-    #[doc = "Rx Warning Interrupt disabled."] _0,
-    #[doc = "Rx Warning Interrupt enabled."] _1,
+    #[doc = "Rx Warning Interrupt disabled."]
+    _0,
+    #[doc = "Rx Warning Interrupt enabled."]
+    _1,
 }
 impl RWRNMSKW {
     #[allow(missing_docs)]
@@ -948,8 +979,10 @@ impl<'a> _RWRNMSKW<'a> {
 }
 #[doc = "Values that can be written to the field `TWRNMSK`"]
 pub enum TWRNMSKW {
-    #[doc = "Tx Warning Interrupt disabled."] _0,
-    #[doc = "Tx Warning Interrupt enabled."] _1,
+    #[doc = "Tx Warning Interrupt disabled."]
+    _0,
+    #[doc = "Tx Warning Interrupt enabled."]
+    _1,
 }
 impl TWRNMSKW {
     #[allow(missing_docs)]
@@ -1004,8 +1037,10 @@ impl<'a> _TWRNMSKW<'a> {
 }
 #[doc = "Values that can be written to the field `LPB`"]
 pub enum LPBW {
-    #[doc = "Loop Back disabled."] _0,
-    #[doc = "Loop Back enabled."] _1,
+    #[doc = "Loop Back disabled."]
+    _0,
+    #[doc = "Loop Back enabled."]
+    _1,
 }
 impl LPBW {
     #[allow(missing_docs)]
@@ -1062,7 +1097,8 @@ impl<'a> _LPBW<'a> {
 pub enum CLKSRCW {
     #[doc = "The CAN engine clock source is the oscillator clock. Under this condition, the oscillator clock frequency must be lower than the bus clock."]
     _0,
-    #[doc = "The CAN engine clock source is the peripheral clock."] _1,
+    #[doc = "The CAN engine clock source is the peripheral clock."]
+    _1,
 }
 impl CLKSRCW {
     #[allow(missing_docs)]
@@ -1117,8 +1153,10 @@ impl<'a> _CLKSRCW<'a> {
 }
 #[doc = "Values that can be written to the field `ERRMSK`"]
 pub enum ERRMSKW {
-    #[doc = "Error interrupt disabled."] _0,
-    #[doc = "Error interrupt enabled."] _1,
+    #[doc = "Error interrupt disabled."]
+    _0,
+    #[doc = "Error interrupt enabled."]
+    _1,
 }
 impl ERRMSKW {
     #[allow(missing_docs)]
@@ -1173,8 +1211,10 @@ impl<'a> _ERRMSKW<'a> {
 }
 #[doc = "Values that can be written to the field `BOFFMSK`"]
 pub enum BOFFMSKW {
-    #[doc = "Bus Off interrupt disabled."] _0,
-    #[doc = "Bus Off interrupt enabled."] _1,
+    #[doc = "Bus Off interrupt disabled."]
+    _0,
+    #[doc = "Bus Off interrupt enabled."]
+    _1,
 }
 impl BOFFMSKW {
     #[allow(missing_docs)]

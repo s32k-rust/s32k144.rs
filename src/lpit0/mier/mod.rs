@@ -45,8 +45,10 @@ impl super::MIER {
 #[doc = "Possible values of the field `TIE0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIE0R {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl TIE0R {
 #[doc = "Possible values of the field `TIE1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIE1R {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl TIE1R {
 #[doc = "Possible values of the field `TIE2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIE2R {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl TIE2R {
 #[doc = "Possible values of the field `TIE3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIE3R {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl TIE3R {
 }
 #[doc = "Values that can be written to the field `TIE0`"]
 pub enum TIE0W {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE0W {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _TIE0W<'a> {
 }
 #[doc = "Values that can be written to the field `TIE1`"]
 pub enum TIE1W {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE1W {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _TIE1W<'a> {
 }
 #[doc = "Values that can be written to the field `TIE2`"]
 pub enum TIE2W {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE2W {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _TIE2W<'a> {
 }
 #[doc = "Values that can be written to the field `TIE3`"]
 pub enum TIE3W {
-    #[doc = "Interrupt generation is disabled"] _0,
-    #[doc = "Interrupt generation is enabled"] _1,
+    #[doc = "Interrupt generation is disabled"]
+    _0,
+    #[doc = "Interrupt generation is enabled"]
+    _1,
 }
 impl TIE3W {
     #[allow(missing_docs)]

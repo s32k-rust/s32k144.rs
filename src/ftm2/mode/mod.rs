@@ -45,8 +45,10 @@ impl super::MODE {
 #[doc = "Possible values of the field `FTMEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FTMENR {
-    #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."] _0,
-    #[doc = "Free running counter and synchronization are different from TPM behavior."] _1,
+    #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."]
+    _0,
+    #[doc = "Free running counter and synchronization are different from TPM behavior."]
+    _1,
 }
 impl FTMENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl FTMENR {
 #[doc = "Possible values of the field `WPDIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPDISR {
-    #[doc = "Write protection is enabled."] _0,
-    #[doc = "Write protection is disabled."] _1,
+    #[doc = "Write protection is enabled."]
+    _0,
+    #[doc = "Write protection is disabled."]
+    _1,
 }
 impl WPDISR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -182,8 +186,10 @@ impl PWMSYNCR {
 #[doc = "Possible values of the field `CAPTEST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAPTESTR {
-    #[doc = "Capture test mode is disabled."] _0,
-    #[doc = "Capture test mode is enabled."] _1,
+    #[doc = "Capture test mode is disabled."]
+    _0,
+    #[doc = "Capture test mode is enabled."]
+    _1,
 }
 impl CAPTESTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -227,7 +233,8 @@ impl CAPTESTR {
 #[doc = "Possible values of the field `FAULTM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTMR {
-    #[doc = "Fault control is disabled for all channels."] _00,
+    #[doc = "Fault control is disabled for all channels."]
+    _00,
     #[doc = "Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
     _01,
     #[doc = "Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
@@ -282,8 +289,10 @@ impl FAULTMR {
 #[doc = "Possible values of the field `FAULTIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FAULTIER {
-    #[doc = "Fault control interrupt is disabled."] _0,
-    #[doc = "Fault control interrupt is enabled."] _1,
+    #[doc = "Fault control interrupt is disabled."]
+    _0,
+    #[doc = "Fault control interrupt is enabled."]
+    _1,
 }
 impl FAULTIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -326,8 +335,10 @@ impl FAULTIER {
 }
 #[doc = "Values that can be written to the field `FTMEN`"]
 pub enum FTMENW {
-    #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."] _0,
-    #[doc = "Free running counter and synchronization are different from TPM behavior."] _1,
+    #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."]
+    _0,
+    #[doc = "Free running counter and synchronization are different from TPM behavior."]
+    _1,
 }
 impl FTMENW {
     #[allow(missing_docs)]
@@ -405,8 +416,10 @@ impl<'a> _INITW<'a> {
 }
 #[doc = "Values that can be written to the field `WPDIS`"]
 pub enum WPDISW {
-    #[doc = "Write protection is enabled."] _0,
-    #[doc = "Write protection is disabled."] _1,
+    #[doc = "Write protection is enabled."]
+    _0,
+    #[doc = "Write protection is disabled."]
+    _1,
 }
 impl WPDISW {
     #[allow(missing_docs)]
@@ -519,8 +532,10 @@ impl<'a> _PWMSYNCW<'a> {
 }
 #[doc = "Values that can be written to the field `CAPTEST`"]
 pub enum CAPTESTW {
-    #[doc = "Capture test mode is disabled."] _0,
-    #[doc = "Capture test mode is enabled."] _1,
+    #[doc = "Capture test mode is disabled."]
+    _0,
+    #[doc = "Capture test mode is enabled."]
+    _1,
 }
 impl CAPTESTW {
     #[allow(missing_docs)]
@@ -575,7 +590,8 @@ impl<'a> _CAPTESTW<'a> {
 }
 #[doc = "Values that can be written to the field `FAULTM`"]
 pub enum FAULTMW {
-    #[doc = "Fault control is disabled for all channels."] _00,
+    #[doc = "Fault control is disabled for all channels."]
+    _00,
     #[doc = "Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
     _01,
     #[doc = "Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
@@ -640,8 +656,10 @@ impl<'a> _FAULTMW<'a> {
 }
 #[doc = "Values that can be written to the field `FAULTIE`"]
 pub enum FAULTIEW {
-    #[doc = "Fault control interrupt is disabled."] _0,
-    #[doc = "Fault control interrupt is enabled."] _1,
+    #[doc = "Fault control interrupt is disabled."]
+    _0,
+    #[doc = "Fault control interrupt is enabled."]
+    _1,
 }
 impl FAULTIEW {
     #[allow(missing_docs)]

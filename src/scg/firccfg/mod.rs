@@ -45,10 +45,14 @@ impl super::FIRCCFG {
 #[doc = "Possible values of the field `RANGE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RANGER {
-    #[doc = "Fast IRC is trimmed to 48 MHz"] _00,
-    #[doc = "Fast IRC is trimmed to 52 MHz"] _01,
-    #[doc = "Fast IRC is trimmed to 56 MHz"] _10,
-    #[doc = "Fast IRC is trimmed to 60 MHz"] _11,
+    #[doc = "Fast IRC is trimmed to 48 MHz"]
+    _00,
+    #[doc = "Fast IRC is trimmed to 52 MHz"]
+    _01,
+    #[doc = "Fast IRC is trimmed to 56 MHz"]
+    _10,
+    #[doc = "Fast IRC is trimmed to 60 MHz"]
+    _11,
 }
 impl RANGER {
     #[doc = r" Value of the field as raw bits"]
@@ -96,10 +100,14 @@ impl RANGER {
 }
 #[doc = "Values that can be written to the field `RANGE`"]
 pub enum RANGEW {
-    #[doc = "Fast IRC is trimmed to 48 MHz"] _00,
-    #[doc = "Fast IRC is trimmed to 52 MHz"] _01,
-    #[doc = "Fast IRC is trimmed to 56 MHz"] _10,
-    #[doc = "Fast IRC is trimmed to 60 MHz"] _11,
+    #[doc = "Fast IRC is trimmed to 48 MHz"]
+    _00,
+    #[doc = "Fast IRC is trimmed to 52 MHz"]
+    _01,
+    #[doc = "Fast IRC is trimmed to 56 MHz"]
+    _10,
+    #[doc = "Fast IRC is trimmed to 60 MHz"]
+    _11,
 }
 impl RANGEW {
     #[allow(missing_docs)]

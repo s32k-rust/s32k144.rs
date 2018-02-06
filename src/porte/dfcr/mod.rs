@@ -45,8 +45,10 @@ impl super::DFCR {
 #[doc = "Possible values of the field `CS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSR {
-    #[doc = "Digital filters are clocked by the bus clock."] _0,
-    #[doc = "Digital filters are clocked by the LPO clock."] _1,
+    #[doc = "Digital filters are clocked by the bus clock."]
+    _0,
+    #[doc = "Digital filters are clocked by the LPO clock."]
+    _1,
 }
 impl CSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -89,8 +91,10 @@ impl CSR {
 }
 #[doc = "Values that can be written to the field `CS`"]
 pub enum CSW {
-    #[doc = "Digital filters are clocked by the bus clock."] _0,
-    #[doc = "Digital filters are clocked by the LPO clock."] _1,
+    #[doc = "Digital filters are clocked by the bus clock."]
+    _0,
+    #[doc = "Digital filters are clocked by the LPO clock."]
+    _1,
 }
 impl CSW {
     #[allow(missing_docs)]

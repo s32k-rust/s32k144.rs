@@ -45,14 +45,22 @@ impl super::SPLLDIV {
 #[doc = "Possible values of the field `SPLLDIV1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLDIV1R {
-    #[doc = "Clock disabled"] _000,
-    #[doc = "Divide by 1"] _001,
-    #[doc = "Divide by 2"] _010,
-    #[doc = "Divide by 4"] _011,
-    #[doc = "Divide by 8"] _100,
-    #[doc = "Divide by 16"] _101,
-    #[doc = "Divide by 32"] _110,
-    #[doc = "Divide by 64"] _111,
+    #[doc = "Clock disabled"]
+    _000,
+    #[doc = "Divide by 1"]
+    _001,
+    #[doc = "Divide by 2"]
+    _010,
+    #[doc = "Divide by 4"]
+    _011,
+    #[doc = "Divide by 8"]
+    _100,
+    #[doc = "Divide by 16"]
+    _101,
+    #[doc = "Divide by 32"]
+    _110,
+    #[doc = "Divide by 64"]
+    _111,
 }
 impl SPLLDIV1R {
     #[doc = r" Value of the field as raw bits"]
@@ -129,14 +137,22 @@ impl SPLLDIV1R {
 #[doc = "Possible values of the field `SPLLDIV2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPLLDIV2R {
-    #[doc = "Clock disabled"] _000,
-    #[doc = "Divide by 1"] _001,
-    #[doc = "Divide by 2"] _010,
-    #[doc = "Divide by 4"] _011,
-    #[doc = "Divide by 8"] _100,
-    #[doc = "Divide by 16"] _101,
-    #[doc = "Divide by 32"] _110,
-    #[doc = "Divide by 64"] _111,
+    #[doc = "Clock disabled"]
+    _000,
+    #[doc = "Divide by 1"]
+    _001,
+    #[doc = "Divide by 2"]
+    _010,
+    #[doc = "Divide by 4"]
+    _011,
+    #[doc = "Divide by 8"]
+    _100,
+    #[doc = "Divide by 16"]
+    _101,
+    #[doc = "Divide by 32"]
+    _110,
+    #[doc = "Divide by 64"]
+    _111,
 }
 impl SPLLDIV2R {
     #[doc = r" Value of the field as raw bits"]
@@ -212,14 +228,22 @@ impl SPLLDIV2R {
 }
 #[doc = "Values that can be written to the field `SPLLDIV1`"]
 pub enum SPLLDIV1W {
-    #[doc = "Clock disabled"] _000,
-    #[doc = "Divide by 1"] _001,
-    #[doc = "Divide by 2"] _010,
-    #[doc = "Divide by 4"] _011,
-    #[doc = "Divide by 8"] _100,
-    #[doc = "Divide by 16"] _101,
-    #[doc = "Divide by 32"] _110,
-    #[doc = "Divide by 64"] _111,
+    #[doc = "Clock disabled"]
+    _000,
+    #[doc = "Divide by 1"]
+    _001,
+    #[doc = "Divide by 2"]
+    _010,
+    #[doc = "Divide by 4"]
+    _011,
+    #[doc = "Divide by 8"]
+    _100,
+    #[doc = "Divide by 16"]
+    _101,
+    #[doc = "Divide by 32"]
+    _110,
+    #[doc = "Divide by 64"]
+    _111,
 }
 impl SPLLDIV1W {
     #[allow(missing_docs)]
@@ -302,14 +326,22 @@ impl<'a> _SPLLDIV1W<'a> {
 }
 #[doc = "Values that can be written to the field `SPLLDIV2`"]
 pub enum SPLLDIV2W {
-    #[doc = "Clock disabled"] _000,
-    #[doc = "Divide by 1"] _001,
-    #[doc = "Divide by 2"] _010,
-    #[doc = "Divide by 4"] _011,
-    #[doc = "Divide by 8"] _100,
-    #[doc = "Divide by 16"] _101,
-    #[doc = "Divide by 32"] _110,
-    #[doc = "Divide by 64"] _111,
+    #[doc = "Clock disabled"]
+    _000,
+    #[doc = "Divide by 1"]
+    _001,
+    #[doc = "Divide by 2"]
+    _010,
+    #[doc = "Divide by 4"]
+    _011,
+    #[doc = "Divide by 8"]
+    _100,
+    #[doc = "Divide by 16"]
+    _101,
+    #[doc = "Divide by 32"]
+    _110,
+    #[doc = "Divide by 64"]
+    _111,
 }
 impl SPLLDIV2W {
     #[allow(missing_docs)]

@@ -45,8 +45,10 @@ impl super::OUTINIT {
 #[doc = "Possible values of the field `CH0OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH0OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl CH0OIR {
 #[doc = "Possible values of the field `CH1OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH1OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl CH1OIR {
 #[doc = "Possible values of the field `CH2OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH2OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl CH2OIR {
 #[doc = "Possible values of the field `CH3OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH3OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -225,8 +233,10 @@ impl CH3OIR {
 #[doc = "Possible values of the field `CH4OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH4OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -270,8 +280,10 @@ impl CH4OIR {
 #[doc = "Possible values of the field `CH5OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH5OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -315,8 +327,10 @@ impl CH5OIR {
 #[doc = "Possible values of the field `CH6OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH6OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -360,8 +374,10 @@ impl CH6OIR {
 #[doc = "Possible values of the field `CH7OI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7OIR {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH7OIR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -404,8 +420,10 @@ impl CH7OIR {
 }
 #[doc = "Values that can be written to the field `CH0OI`"]
 pub enum CH0OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH0OIW {
     #[allow(missing_docs)]
@@ -460,8 +478,10 @@ impl<'a> _CH0OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH1OI`"]
 pub enum CH1OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH1OIW {
     #[allow(missing_docs)]
@@ -516,8 +536,10 @@ impl<'a> _CH1OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH2OI`"]
 pub enum CH2OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH2OIW {
     #[allow(missing_docs)]
@@ -572,8 +594,10 @@ impl<'a> _CH2OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH3OI`"]
 pub enum CH3OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH3OIW {
     #[allow(missing_docs)]
@@ -628,8 +652,10 @@ impl<'a> _CH3OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH4OI`"]
 pub enum CH4OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH4OIW {
     #[allow(missing_docs)]
@@ -684,8 +710,10 @@ impl<'a> _CH4OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH5OI`"]
 pub enum CH5OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH5OIW {
     #[allow(missing_docs)]
@@ -740,8 +768,10 @@ impl<'a> _CH5OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH6OI`"]
 pub enum CH6OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH6OIW {
     #[allow(missing_docs)]
@@ -796,8 +826,10 @@ impl<'a> _CH6OIW<'a> {
 }
 #[doc = "Values that can be written to the field `CH7OI`"]
 pub enum CH7OIW {
-    #[doc = "The initialization value is 0."] _0,
-    #[doc = "The initialization value is 1."] _1,
+    #[doc = "The initialization value is 0."]
+    _0,
+    #[doc = "The initialization value is 1."]
+    _1,
 }
 impl CH7OIW {
     #[allow(missing_docs)]

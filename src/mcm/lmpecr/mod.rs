@@ -45,8 +45,10 @@ impl super::LMPECR {
 #[doc = "Possible values of the field `ERNCR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERNCRR {
-    #[doc = "Reporting disabled"] _0,
-    #[doc = "Reporting enabled"] _1,
+    #[doc = "Reporting disabled"]
+    _0,
+    #[doc = "Reporting enabled"]
+    _1,
 }
 impl ERNCRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl ERNCRR {
 #[doc = "Possible values of the field `ER1BR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ER1BRR {
-    #[doc = "Reporting disabled"] _0,
-    #[doc = "Reporting enabled"] _1,
+    #[doc = "Reporting disabled"]
+    _0,
+    #[doc = "Reporting enabled"]
+    _1,
 }
 impl ER1BRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl ER1BRR {
 #[doc = "Possible values of the field `ECPR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECPRR {
-    #[doc = "Reporting disabled"] _0,
-    #[doc = "Reporting enabled"] _1,
+    #[doc = "Reporting disabled"]
+    _0,
+    #[doc = "Reporting enabled"]
+    _1,
 }
 impl ECPRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -179,8 +185,10 @@ impl ECPRR {
 }
 #[doc = "Values that can be written to the field `ERNCR`"]
 pub enum ERNCRW {
-    #[doc = "Reporting disabled"] _0,
-    #[doc = "Reporting enabled"] _1,
+    #[doc = "Reporting disabled"]
+    _0,
+    #[doc = "Reporting enabled"]
+    _1,
 }
 impl ERNCRW {
     #[allow(missing_docs)]
@@ -235,8 +243,10 @@ impl<'a> _ERNCRW<'a> {
 }
 #[doc = "Values that can be written to the field `ER1BR`"]
 pub enum ER1BRW {
-    #[doc = "Reporting disabled"] _0,
-    #[doc = "Reporting enabled"] _1,
+    #[doc = "Reporting disabled"]
+    _0,
+    #[doc = "Reporting enabled"]
+    _1,
 }
 impl ER1BRW {
     #[allow(missing_docs)]
@@ -291,8 +301,10 @@ impl<'a> _ER1BRW<'a> {
 }
 #[doc = "Values that can be written to the field `ECPR`"]
 pub enum ECPRW {
-    #[doc = "Reporting disabled"] _0,
-    #[doc = "Reporting enabled"] _1,
+    #[doc = "Reporting disabled"]
+    _0,
+    #[doc = "Reporting enabled"]
+    _1,
 }
 impl ECPRW {
     #[allow(missing_docs)]

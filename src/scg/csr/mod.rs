@@ -14,15 +14,24 @@ impl super::CSR {
 #[doc = "Possible values of the field `DIVSLOW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIVSLOWR {
-    #[doc = "Divide-by-1"] _0000,
-    #[doc = "Divide-by-2"] _0001,
-    #[doc = "Divide-by-3"] _0010,
-    #[doc = "Divide-by-4"] _0011,
-    #[doc = "Divide-by-5"] _0100,
-    #[doc = "Divide-by-6"] _0101,
-    #[doc = "Divide-by-7"] _0110,
-    #[doc = "Divide-by-8"] _0111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "Divide-by-1"]
+    _0000,
+    #[doc = "Divide-by-2"]
+    _0001,
+    #[doc = "Divide-by-3"]
+    _0010,
+    #[doc = "Divide-by-4"]
+    _0011,
+    #[doc = "Divide-by-5"]
+    _0100,
+    #[doc = "Divide-by-6"]
+    _0101,
+    #[doc = "Divide-by-7"]
+    _0110,
+    #[doc = "Divide-by-8"]
+    _0111,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl DIVSLOWR {
     #[doc = r" Value of the field as raw bits"]
@@ -100,22 +109,38 @@ impl DIVSLOWR {
 #[doc = "Possible values of the field `DIVBUS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIVBUSR {
-    #[doc = "Divide-by-1"] _0000,
-    #[doc = "Divide-by-2"] _0001,
-    #[doc = "Divide-by-3"] _0010,
-    #[doc = "Divide-by-4"] _0011,
-    #[doc = "Divide-by-5"] _0100,
-    #[doc = "Divide-by-6"] _0101,
-    #[doc = "Divide-by-7"] _0110,
-    #[doc = "Divide-by-8"] _0111,
-    #[doc = "Divide-by-9"] _1000,
-    #[doc = "Divide-by-10"] _1001,
-    #[doc = "Divide-by-11"] _1010,
-    #[doc = "Divide-by-12"] _1011,
-    #[doc = "Divide-by-13"] _1100,
-    #[doc = "Divide-by-14"] _1101,
-    #[doc = "Divide-by-15"] _1110,
-    #[doc = "Divide-by-16"] _1111,
+    #[doc = "Divide-by-1"]
+    _0000,
+    #[doc = "Divide-by-2"]
+    _0001,
+    #[doc = "Divide-by-3"]
+    _0010,
+    #[doc = "Divide-by-4"]
+    _0011,
+    #[doc = "Divide-by-5"]
+    _0100,
+    #[doc = "Divide-by-6"]
+    _0101,
+    #[doc = "Divide-by-7"]
+    _0110,
+    #[doc = "Divide-by-8"]
+    _0111,
+    #[doc = "Divide-by-9"]
+    _1000,
+    #[doc = "Divide-by-10"]
+    _1001,
+    #[doc = "Divide-by-11"]
+    _1010,
+    #[doc = "Divide-by-12"]
+    _1011,
+    #[doc = "Divide-by-13"]
+    _1100,
+    #[doc = "Divide-by-14"]
+    _1101,
+    #[doc = "Divide-by-15"]
+    _1110,
+    #[doc = "Divide-by-16"]
+    _1111,
 }
 impl DIVBUSR {
     #[doc = r" Value of the field as raw bits"]
@@ -248,22 +273,38 @@ impl DIVBUSR {
 #[doc = "Possible values of the field `DIVCORE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIVCORER {
-    #[doc = "Divide-by-1"] _0000,
-    #[doc = "Divide-by-2"] _0001,
-    #[doc = "Divide-by-3"] _0010,
-    #[doc = "Divide-by-4"] _0011,
-    #[doc = "Divide-by-5"] _0100,
-    #[doc = "Divide-by-6"] _0101,
-    #[doc = "Divide-by-7"] _0110,
-    #[doc = "Divide-by-8"] _0111,
-    #[doc = "Divide-by-9"] _1000,
-    #[doc = "Divide-by-10"] _1001,
-    #[doc = "Divide-by-11"] _1010,
-    #[doc = "Divide-by-12"] _1011,
-    #[doc = "Divide-by-13"] _1100,
-    #[doc = "Divide-by-14"] _1101,
-    #[doc = "Divide-by-15"] _1110,
-    #[doc = "Divide-by-16"] _1111,
+    #[doc = "Divide-by-1"]
+    _0000,
+    #[doc = "Divide-by-2"]
+    _0001,
+    #[doc = "Divide-by-3"]
+    _0010,
+    #[doc = "Divide-by-4"]
+    _0011,
+    #[doc = "Divide-by-5"]
+    _0100,
+    #[doc = "Divide-by-6"]
+    _0101,
+    #[doc = "Divide-by-7"]
+    _0110,
+    #[doc = "Divide-by-8"]
+    _0111,
+    #[doc = "Divide-by-9"]
+    _1000,
+    #[doc = "Divide-by-10"]
+    _1001,
+    #[doc = "Divide-by-11"]
+    _1010,
+    #[doc = "Divide-by-12"]
+    _1011,
+    #[doc = "Divide-by-13"]
+    _1100,
+    #[doc = "Divide-by-14"]
+    _1101,
+    #[doc = "Divide-by-15"]
+    _1110,
+    #[doc = "Divide-by-16"]
+    _1111,
 }
 impl DIVCORER {
     #[doc = r" Value of the field as raw bits"]
@@ -396,11 +437,16 @@ impl DIVCORER {
 #[doc = "Possible values of the field `SCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCSR {
-    #[doc = "System OSC (SOSC_CLK)"] _0001,
-    #[doc = "Slow IRC (SIRC_CLK)"] _0010,
-    #[doc = "Fast IRC (FIRC_CLK)"] _0011,
-    #[doc = "System PLL (SPLL_CLK)"] _0110,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "System OSC (SOSC_CLK)"]
+    _0001,
+    #[doc = "Slow IRC (SIRC_CLK)"]
+    _0010,
+    #[doc = "Fast IRC (FIRC_CLK)"]
+    _0011,
+    #[doc = "System PLL (SPLL_CLK)"]
+    _0110,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SCSR {
     #[doc = r" Value of the field as raw bits"]

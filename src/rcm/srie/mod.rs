@@ -45,10 +45,14 @@ impl super::SRIE {
 #[doc = "Possible values of the field `DELAY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DELAYR {
-    #[doc = "10 LPO cycles"] _00,
-    #[doc = "34 LPO cycles"] _01,
-    #[doc = "130 LPO cycles"] _10,
-    #[doc = "514 LPO cycles"] _11,
+    #[doc = "10 LPO cycles"]
+    _00,
+    #[doc = "34 LPO cycles"]
+    _01,
+    #[doc = "130 LPO cycles"]
+    _10,
+    #[doc = "514 LPO cycles"]
+    _11,
 }
 impl DELAYR {
     #[doc = r" Value of the field as raw bits"]
@@ -97,8 +101,10 @@ impl DELAYR {
 #[doc = "Possible values of the field `LOC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl LOCR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -142,8 +148,10 @@ impl LOCR {
 #[doc = "Possible values of the field `LOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOLR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl LOLR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -187,8 +195,10 @@ impl LOLR {
 #[doc = "Possible values of the field `WDOG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDOGR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl WDOGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -232,8 +242,10 @@ impl WDOGR {
 #[doc = "Possible values of the field `PIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINR {
-    #[doc = "Reset not caused by external reset pin"] _0,
-    #[doc = "Reset caused by external reset pin"] _1,
+    #[doc = "Reset not caused by external reset pin"]
+    _0,
+    #[doc = "Reset caused by external reset pin"]
+    _1,
 }
 impl PINR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -277,7 +289,8 @@ impl PINR {
 #[doc = "Possible values of the field `GIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GIER {
-    #[doc = "All interrupt sources disabled."] _0,
+    #[doc = "All interrupt sources disabled."]
+    _0,
     #[doc = "All interrupt sources enabled. Note that the individual interrupt-enable bits still need to be set to generate interrupts."]
     _1,
 }
@@ -323,8 +336,10 @@ impl GIER {
 #[doc = "Possible values of the field `JTAG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum JTAGR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl JTAGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -368,8 +383,10 @@ impl JTAGR {
 #[doc = "Possible values of the field `LOCKUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKUPR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl LOCKUPR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -413,8 +430,10 @@ impl LOCKUPR {
 #[doc = "Possible values of the field `SW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl SWR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -458,8 +477,10 @@ impl SWR {
 #[doc = "Possible values of the field `MDM_AP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MDM_APR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl MDM_APR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -503,8 +524,10 @@ impl MDM_APR {
 #[doc = "Possible values of the field `SACKERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SACKERRR {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl SACKERRR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -547,10 +570,14 @@ impl SACKERRR {
 }
 #[doc = "Values that can be written to the field `DELAY`"]
 pub enum DELAYW {
-    #[doc = "10 LPO cycles"] _00,
-    #[doc = "34 LPO cycles"] _01,
-    #[doc = "130 LPO cycles"] _10,
-    #[doc = "514 LPO cycles"] _11,
+    #[doc = "10 LPO cycles"]
+    _00,
+    #[doc = "34 LPO cycles"]
+    _01,
+    #[doc = "130 LPO cycles"]
+    _10,
+    #[doc = "514 LPO cycles"]
+    _11,
 }
 impl DELAYW {
     #[allow(missing_docs)]
@@ -609,8 +636,10 @@ impl<'a> _DELAYW<'a> {
 }
 #[doc = "Values that can be written to the field `LOC`"]
 pub enum LOCW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl LOCW {
     #[allow(missing_docs)]
@@ -665,8 +694,10 @@ impl<'a> _LOCW<'a> {
 }
 #[doc = "Values that can be written to the field `LOL`"]
 pub enum LOLW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl LOLW {
     #[allow(missing_docs)]
@@ -721,8 +752,10 @@ impl<'a> _LOLW<'a> {
 }
 #[doc = "Values that can be written to the field `WDOG`"]
 pub enum WDOGW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl WDOGW {
     #[allow(missing_docs)]
@@ -777,8 +810,10 @@ impl<'a> _WDOGW<'a> {
 }
 #[doc = "Values that can be written to the field `PIN`"]
 pub enum PINW {
-    #[doc = "Reset not caused by external reset pin"] _0,
-    #[doc = "Reset caused by external reset pin"] _1,
+    #[doc = "Reset not caused by external reset pin"]
+    _0,
+    #[doc = "Reset caused by external reset pin"]
+    _1,
 }
 impl PINW {
     #[allow(missing_docs)]
@@ -833,7 +868,8 @@ impl<'a> _PINW<'a> {
 }
 #[doc = "Values that can be written to the field `GIE`"]
 pub enum GIEW {
-    #[doc = "All interrupt sources disabled."] _0,
+    #[doc = "All interrupt sources disabled."]
+    _0,
     #[doc = "All interrupt sources enabled. Note that the individual interrupt-enable bits still need to be set to generate interrupts."]
     _1,
 }
@@ -890,8 +926,10 @@ impl<'a> _GIEW<'a> {
 }
 #[doc = "Values that can be written to the field `JTAG`"]
 pub enum JTAGW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl JTAGW {
     #[allow(missing_docs)]
@@ -946,8 +984,10 @@ impl<'a> _JTAGW<'a> {
 }
 #[doc = "Values that can be written to the field `LOCKUP`"]
 pub enum LOCKUPW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl LOCKUPW {
     #[allow(missing_docs)]
@@ -1002,8 +1042,10 @@ impl<'a> _LOCKUPW<'a> {
 }
 #[doc = "Values that can be written to the field `SW`"]
 pub enum SWW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl SWW {
     #[allow(missing_docs)]
@@ -1058,8 +1100,10 @@ impl<'a> _SWW<'a> {
 }
 #[doc = "Values that can be written to the field `MDM_AP`"]
 pub enum MDM_APW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl MDM_APW {
     #[allow(missing_docs)]
@@ -1114,8 +1158,10 @@ impl<'a> _MDM_APW<'a> {
 }
 #[doc = "Values that can be written to the field `SACKERR`"]
 pub enum SACKERRW {
-    #[doc = "Interrupt disabled."] _0,
-    #[doc = "Interrupt enabled."] _1,
+    #[doc = "Interrupt disabled."]
+    _0,
+    #[doc = "Interrupt enabled."]
+    _1,
 }
 impl SACKERRW {
     #[allow(missing_docs)]

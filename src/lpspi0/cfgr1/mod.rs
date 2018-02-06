@@ -45,8 +45,10 @@ impl super::CFGR1 {
 #[doc = "Possible values of the field `MASTER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MASTERR {
-    #[doc = "Slave mode."] _0,
-    #[doc = "Master mode."] _1,
+    #[doc = "Slave mode."]
+    _0,
+    #[doc = "Master mode."]
+    _1,
 }
 impl MASTERR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl MASTERR {
 #[doc = "Possible values of the field `SAMPLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAMPLER {
-    #[doc = "Input data sampled on SCK edge."] _0,
-    #[doc = "Input data sampled on delayed SCK edge."] _1,
+    #[doc = "Input data sampled on SCK edge."]
+    _0,
+    #[doc = "Input data sampled on delayed SCK edge."]
+    _1,
 }
 impl SAMPLER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl SAMPLER {
 #[doc = "Possible values of the field `AUTOPCS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOPCSR {
-    #[doc = "Automatic PCS generation disabled."] _0,
-    #[doc = "Automatic PCS generation enabled."] _1,
+    #[doc = "Automatic PCS generation disabled."]
+    _0,
+    #[doc = "Automatic PCS generation enabled."]
+    _1,
 }
 impl AUTOPCSR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,7 +186,8 @@ impl AUTOPCSR {
 #[doc = "Possible values of the field `NOSTALL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NOSTALLR {
-    #[doc = "Transfers will stall when transmit FIFO is empty or receive FIFO is full."] _0,
+    #[doc = "Transfers will stall when transmit FIFO is empty or receive FIFO is full."]
+    _0,
     #[doc = "Transfers will not stall, allowing transmit FIFO underrun or receive FIFO overrun to occur."]
     _1,
 }
@@ -226,9 +233,12 @@ impl NOSTALLR {
 #[doc = "Possible values of the field `PCSPOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCSPOLR {
-    #[doc = "The PCSx is active low."] _0000,
-    #[doc = "The PCSx is active high."] _0001,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = "The PCSx is active low."]
+    _0000,
+    #[doc = "The PCSx is active high."]
+    _0001,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PCSPOLR {
     #[doc = r" Value of the field as raw bits"]
@@ -264,7 +274,8 @@ impl PCSPOLR {
 #[doc = "Possible values of the field `MATCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MATCFGR {
-    #[doc = "Match is disabled."] _000,
+    #[doc = "Match is disabled."]
+    _000,
     #[doc = "010b - Match is enabled, if 1st data word equals MATCH0 OR MATCH1, i.e., (1st data word = MATCH0 + MATCH1)"]
     _010,
     #[doc = "011b - Match is enabled, if any data word equals MATCH0 OR MATCH1, i.e., (any data word = MATCH0 + MATCH1)"]
@@ -277,7 +288,8 @@ pub enum MATCFGR {
     _110,
     #[doc = "111b - Match is enabled, if (any data word AND MATCH1) equals (MATCH0 AND MATCH1), i.e., [(any data word * MATCH1) = (MATCH0 * MATCH1)]"]
     _111,
-    #[doc = r" Reserved"] _Reserved(u8),
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl MATCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -348,10 +360,14 @@ impl MATCFGR {
 #[doc = "Possible values of the field `PINCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINCFGR {
-    #[doc = "SIN is used for input data and SOUT for output data."] _00,
-    #[doc = "SIN is used for both input and output data."] _01,
-    #[doc = "SOUT is used for both input and output data."] _10,
-    #[doc = "SOUT is used for input data and SIN for output data."] _11,
+    #[doc = "SIN is used for input data and SOUT for output data."]
+    _00,
+    #[doc = "SIN is used for both input and output data."]
+    _01,
+    #[doc = "SOUT is used for both input and output data."]
+    _10,
+    #[doc = "SOUT is used for input data and SIN for output data."]
+    _11,
 }
 impl PINCFGR {
     #[doc = r" Value of the field as raw bits"]
@@ -400,8 +416,10 @@ impl PINCFGR {
 #[doc = "Possible values of the field `OUTCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUTCFGR {
-    #[doc = "Output data retains last value when chip select is negated."] _0,
-    #[doc = "Output data is tristated when chip select is negated."] _1,
+    #[doc = "Output data retains last value when chip select is negated."]
+    _0,
+    #[doc = "Output data is tristated when chip select is negated."]
+    _1,
 }
 impl OUTCFGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -445,8 +463,10 @@ impl OUTCFGR {
 #[doc = "Possible values of the field `PCSCFG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCSCFGR {
-    #[doc = "PCS[3:2] are enabled."] _0,
-    #[doc = "PCS[3:2] are disabled."] _1,
+    #[doc = "PCS[3:2] are enabled."]
+    _0,
+    #[doc = "PCS[3:2] are disabled."]
+    _1,
 }
 impl PCSCFGR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -489,8 +509,10 @@ impl PCSCFGR {
 }
 #[doc = "Values that can be written to the field `MASTER`"]
 pub enum MASTERW {
-    #[doc = "Slave mode."] _0,
-    #[doc = "Master mode."] _1,
+    #[doc = "Slave mode."]
+    _0,
+    #[doc = "Master mode."]
+    _1,
 }
 impl MASTERW {
     #[allow(missing_docs)]
@@ -545,8 +567,10 @@ impl<'a> _MASTERW<'a> {
 }
 #[doc = "Values that can be written to the field `SAMPLE`"]
 pub enum SAMPLEW {
-    #[doc = "Input data sampled on SCK edge."] _0,
-    #[doc = "Input data sampled on delayed SCK edge."] _1,
+    #[doc = "Input data sampled on SCK edge."]
+    _0,
+    #[doc = "Input data sampled on delayed SCK edge."]
+    _1,
 }
 impl SAMPLEW {
     #[allow(missing_docs)]
@@ -601,8 +625,10 @@ impl<'a> _SAMPLEW<'a> {
 }
 #[doc = "Values that can be written to the field `AUTOPCS`"]
 pub enum AUTOPCSW {
-    #[doc = "Automatic PCS generation disabled."] _0,
-    #[doc = "Automatic PCS generation enabled."] _1,
+    #[doc = "Automatic PCS generation disabled."]
+    _0,
+    #[doc = "Automatic PCS generation enabled."]
+    _1,
 }
 impl AUTOPCSW {
     #[allow(missing_docs)]
@@ -657,7 +683,8 @@ impl<'a> _AUTOPCSW<'a> {
 }
 #[doc = "Values that can be written to the field `NOSTALL`"]
 pub enum NOSTALLW {
-    #[doc = "Transfers will stall when transmit FIFO is empty or receive FIFO is full."] _0,
+    #[doc = "Transfers will stall when transmit FIFO is empty or receive FIFO is full."]
+    _0,
     #[doc = "Transfers will not stall, allowing transmit FIFO underrun or receive FIFO overrun to occur."]
     _1,
 }
@@ -714,8 +741,10 @@ impl<'a> _NOSTALLW<'a> {
 }
 #[doc = "Values that can be written to the field `PCSPOL`"]
 pub enum PCSPOLW {
-    #[doc = "The PCSx is active low."] _0000,
-    #[doc = "The PCSx is active high."] _0001,
+    #[doc = "The PCSx is active low."]
+    _0000,
+    #[doc = "The PCSx is active high."]
+    _0001,
 }
 impl PCSPOLW {
     #[allow(missing_docs)]
@@ -760,7 +789,8 @@ impl<'a> _PCSPOLW<'a> {
 }
 #[doc = "Values that can be written to the field `MATCFG`"]
 pub enum MATCFGW {
-    #[doc = "Match is disabled."] _000,
+    #[doc = "Match is disabled."]
+    _000,
     #[doc = "010b - Match is enabled, if 1st data word equals MATCH0 OR MATCH1, i.e., (1st data word = MATCH0 + MATCH1)"]
     _010,
     #[doc = "011b - Match is enabled, if any data word equals MATCH0 OR MATCH1, i.e., (any data word = MATCH0 + MATCH1)"]
@@ -847,10 +877,14 @@ impl<'a> _MATCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `PINCFG`"]
 pub enum PINCFGW {
-    #[doc = "SIN is used for input data and SOUT for output data."] _00,
-    #[doc = "SIN is used for both input and output data."] _01,
-    #[doc = "SOUT is used for both input and output data."] _10,
-    #[doc = "SOUT is used for input data and SIN for output data."] _11,
+    #[doc = "SIN is used for input data and SOUT for output data."]
+    _00,
+    #[doc = "SIN is used for both input and output data."]
+    _01,
+    #[doc = "SOUT is used for both input and output data."]
+    _10,
+    #[doc = "SOUT is used for input data and SIN for output data."]
+    _11,
 }
 impl PINCFGW {
     #[allow(missing_docs)]
@@ -909,8 +943,10 @@ impl<'a> _PINCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `OUTCFG`"]
 pub enum OUTCFGW {
-    #[doc = "Output data retains last value when chip select is negated."] _0,
-    #[doc = "Output data is tristated when chip select is negated."] _1,
+    #[doc = "Output data retains last value when chip select is negated."]
+    _0,
+    #[doc = "Output data is tristated when chip select is negated."]
+    _1,
 }
 impl OUTCFGW {
     #[allow(missing_docs)]
@@ -965,8 +1001,10 @@ impl<'a> _OUTCFGW<'a> {
 }
 #[doc = "Values that can be written to the field `PCSCFG`"]
 pub enum PCSCFGW {
-    #[doc = "PCS[3:2] are enabled."] _0,
-    #[doc = "PCS[3:2] are disabled."] _1,
+    #[doc = "PCS[3:2] are enabled."]
+    _0,
+    #[doc = "PCS[3:2] are disabled."]
+    _1,
 }
 impl PCSCFGW {
     #[allow(missing_docs)]

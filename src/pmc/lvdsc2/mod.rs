@@ -45,8 +45,10 @@ impl super::LVDSC2 {
 #[doc = "Possible values of the field `LVWIE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LVWIER {
-    #[doc = "Hardware interrupt disabled (use polling)"] _0,
-    #[doc = "Request a hardware interrupt when LVWF=1"] _1,
+    #[doc = "Hardware interrupt disabled (use polling)"]
+    _0,
+    #[doc = "Request a hardware interrupt when LVWF=1"]
+    _1,
 }
 impl LVWIER {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl LVWIER {
 #[doc = "Possible values of the field `LVWF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LVWFR {
-    #[doc = "Low-voltage warning event not detected"] _0,
-    #[doc = "Low-voltage warning event detected"] _1,
+    #[doc = "Low-voltage warning event not detected"]
+    _0,
+    #[doc = "Low-voltage warning event detected"]
+    _1,
 }
 impl LVWFR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -134,8 +138,10 @@ impl LVWFR {
 }
 #[doc = "Values that can be written to the field `LVWIE`"]
 pub enum LVWIEW {
-    #[doc = "Hardware interrupt disabled (use polling)"] _0,
-    #[doc = "Request a hardware interrupt when LVWF=1"] _1,
+    #[doc = "Hardware interrupt disabled (use polling)"]
+    _0,
+    #[doc = "Request a hardware interrupt when LVWF=1"]
+    _1,
 }
 impl LVWIEW {
     #[allow(missing_docs)]

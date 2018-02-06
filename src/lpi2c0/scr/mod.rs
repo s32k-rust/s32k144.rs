@@ -45,8 +45,10 @@ impl super::SCR {
 #[doc = "Possible values of the field `SEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SENR {
-    #[doc = "Slave mode is disabled."] _0,
-    #[doc = "Slave mode is enabled."] _1,
+    #[doc = "Slave mode is disabled."]
+    _0,
+    #[doc = "Slave mode is enabled."]
+    _1,
 }
 impl SENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -90,8 +92,10 @@ impl SENR {
 #[doc = "Possible values of the field `RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTR {
-    #[doc = "Slave logic is not reset."] _0,
-    #[doc = "Slave logic is reset."] _1,
+    #[doc = "Slave logic is not reset."]
+    _0,
+    #[doc = "Slave logic is reset."]
+    _1,
 }
 impl RSTR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -135,8 +139,10 @@ impl RSTR {
 #[doc = "Possible values of the field `FILTEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FILTENR {
-    #[doc = "Disable digital filter and output delay counter for slave mode."] _0,
-    #[doc = "Enable digital filter and output delay counter for slave mode."] _1,
+    #[doc = "Disable digital filter and output delay counter for slave mode."]
+    _0,
+    #[doc = "Enable digital filter and output delay counter for slave mode."]
+    _1,
 }
 impl FILTENR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -180,8 +186,10 @@ impl FILTENR {
 #[doc = "Possible values of the field `FILTDZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FILTDZR {
-    #[doc = "Filter remains enabled in Doze mode."] _0,
-    #[doc = "Filter is disabled in Doze mode."] _1,
+    #[doc = "Filter remains enabled in Doze mode."]
+    _0,
+    #[doc = "Filter is disabled in Doze mode."]
+    _1,
 }
 impl FILTDZR {
     #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -224,8 +232,10 @@ impl FILTDZR {
 }
 #[doc = "Values that can be written to the field `SEN`"]
 pub enum SENW {
-    #[doc = "Slave mode is disabled."] _0,
-    #[doc = "Slave mode is enabled."] _1,
+    #[doc = "Slave mode is disabled."]
+    _0,
+    #[doc = "Slave mode is enabled."]
+    _1,
 }
 impl SENW {
     #[allow(missing_docs)]
@@ -280,8 +290,10 @@ impl<'a> _SENW<'a> {
 }
 #[doc = "Values that can be written to the field `RST`"]
 pub enum RSTW {
-    #[doc = "Slave logic is not reset."] _0,
-    #[doc = "Slave logic is reset."] _1,
+    #[doc = "Slave logic is not reset."]
+    _0,
+    #[doc = "Slave logic is reset."]
+    _1,
 }
 impl RSTW {
     #[allow(missing_docs)]
@@ -336,8 +348,10 @@ impl<'a> _RSTW<'a> {
 }
 #[doc = "Values that can be written to the field `FILTEN`"]
 pub enum FILTENW {
-    #[doc = "Disable digital filter and output delay counter for slave mode."] _0,
-    #[doc = "Enable digital filter and output delay counter for slave mode."] _1,
+    #[doc = "Disable digital filter and output delay counter for slave mode."]
+    _0,
+    #[doc = "Enable digital filter and output delay counter for slave mode."]
+    _1,
 }
 impl FILTENW {
     #[allow(missing_docs)]
@@ -392,8 +406,10 @@ impl<'a> _FILTENW<'a> {
 }
 #[doc = "Values that can be written to the field `FILTDZ`"]
 pub enum FILTDZW {
-    #[doc = "Filter remains enabled in Doze mode."] _0,
-    #[doc = "Filter is disabled in Doze mode."] _1,
+    #[doc = "Filter remains enabled in Doze mode."]
+    _0,
+    #[doc = "Filter is disabled in Doze mode."]
+    _1,
 }
 impl FILTDZW {
     #[allow(missing_docs)]
