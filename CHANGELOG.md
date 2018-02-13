@@ -8,4 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 ### Changed
 ### Removed
+## [0.8.0] - 2018-02-13
+### Removed
  - PCC dummy register was removed. These register should not be used as there are no hardware corresponding to them.
