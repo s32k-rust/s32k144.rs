@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 ### Changed
 ### Removed
+ - Debug assertion in Peripherals::steal() is removed so peripherals can be stolen in panic_fmt.
 ## [0.8.0] - 2018-02-13
 ### Removed
  - PCC dummy register was removed. These register should not be used as there are no hardware corresponding to them.
