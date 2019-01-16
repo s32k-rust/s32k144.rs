@@ -27,19 +27,19 @@ pub struct SERV {
 pub mod serv;
 #[doc = "Compare Low Register"]
 pub struct CMPL {
-    register: ::vcell::VolatileCell<u8>,
+    _register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Compare Low Register"]
 pub mod cmpl;
 #[doc = "Compare High Register"]
 pub struct CMPH {
-    register: ::vcell::VolatileCell<u8>,
+    _register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Compare High Register"]
 pub mod cmph;
 #[doc = "Clock Prescaler Register"]
 pub struct CLKPRESCALER {
-    register: ::vcell::VolatileCell<u8>,
+    _register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Clock Prescaler Register"]
 pub mod clkprescaler;
