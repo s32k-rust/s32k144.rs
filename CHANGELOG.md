@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 ### Changed
 ### Removed
+## [0.10.0] - 2019-01-17
+### Changed
+ - Regenerated crate with svd2rust v0.14.0.
+ - Bumped dependencies.
 ## [0.9.0] - 2018-02-14
 ### Removed
  - Debug assertion in Peripherals::steal() is removed so peripherals can be stolen in panic_fmt.
