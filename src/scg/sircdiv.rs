@@ -1,470 +1,326 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SIRCDIV {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SIRCDIV"]
+pub type R = crate::R<u32, super::SIRCDIV>;
+#[doc = "Writer for register SIRCDIV"]
+pub type W = crate::W<u32, super::SIRCDIV>;
+#[doc = "Register SIRCDIV `reset()`'s with value 0"]
+impl crate::ResetValue for super::SIRCDIV {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SIRCDIV1`"]
+#[doc = "Slow IRC Clock Divide 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCDIV1R {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+#[repr(u8)]
+pub enum SIRCDIV1_A {
+    #[doc = "0: Output disabled"]
+    _000 = 0,
+    #[doc = "1: Divide by 1"]
+    _001 = 1,
+    #[doc = "2: Divide by 2"]
+    _010 = 2,
+    #[doc = "3: Divide by 4"]
+    _011 = 3,
+    #[doc = "4: Divide by 8"]
+    _100 = 4,
+    #[doc = "5: Divide by 16"]
+    _101 = 5,
+    #[doc = "6: Divide by 32"]
+    _110 = 6,
+    #[doc = "7: Divide by 64"]
+    _111 = 7,
 }
-impl SIRCDIV1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SIRCDIV1R::_000 => 0,
-            SIRCDIV1R::_001 => 1,
-            SIRCDIV1R::_010 => 2,
-            SIRCDIV1R::_011 => 3,
-            SIRCDIV1R::_100 => 4,
-            SIRCDIV1R::_101 => 5,
-            SIRCDIV1R::_110 => 6,
-            SIRCDIV1R::_111 => 7,
-        }
+impl From<SIRCDIV1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SIRCDIV1_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SIRCDIV1R {
-        match value {
-            0 => SIRCDIV1R::_000,
-            1 => SIRCDIV1R::_001,
-            2 => SIRCDIV1R::_010,
-            3 => SIRCDIV1R::_011,
-            4 => SIRCDIV1R::_100,
-            5 => SIRCDIV1R::_101,
-            6 => SIRCDIV1R::_110,
-            7 => SIRCDIV1R::_111,
+}
+#[doc = "Reader of field `SIRCDIV1`"]
+pub type SIRCDIV1_R = crate::R<u8, SIRCDIV1_A>;
+impl SIRCDIV1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCDIV1_A {
+        match self.bits {
+            0 => SIRCDIV1_A::_000,
+            1 => SIRCDIV1_A::_001,
+            2 => SIRCDIV1_A::_010,
+            3 => SIRCDIV1_A::_011,
+            4 => SIRCDIV1_A::_100,
+            5 => SIRCDIV1_A::_101,
+            6 => SIRCDIV1_A::_110,
+            7 => SIRCDIV1_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == SIRCDIV1R::_000
+        *self == SIRCDIV1_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == SIRCDIV1R::_001
+        *self == SIRCDIV1_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == SIRCDIV1R::_010
+        *self == SIRCDIV1_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == SIRCDIV1R::_011
+        *self == SIRCDIV1_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == SIRCDIV1R::_100
+        *self == SIRCDIV1_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == SIRCDIV1R::_101
+        *self == SIRCDIV1_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == SIRCDIV1R::_110
+        *self == SIRCDIV1_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == SIRCDIV1R::_111
+        *self == SIRCDIV1_A::_111
     }
 }
-#[doc = "Possible values of the field `SIRCDIV2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCDIV2R {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
-}
-impl SIRCDIV2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SIRCDIV2R::_000 => 0,
-            SIRCDIV2R::_001 => 1,
-            SIRCDIV2R::_010 => 2,
-            SIRCDIV2R::_011 => 3,
-            SIRCDIV2R::_100 => 4,
-            SIRCDIV2R::_101 => 5,
-            SIRCDIV2R::_110 => 6,
-            SIRCDIV2R::_111 => 7,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SIRCDIV2R {
-        match value {
-            0 => SIRCDIV2R::_000,
-            1 => SIRCDIV2R::_001,
-            2 => SIRCDIV2R::_010,
-            3 => SIRCDIV2R::_011,
-            4 => SIRCDIV2R::_100,
-            5 => SIRCDIV2R::_101,
-            6 => SIRCDIV2R::_110,
-            7 => SIRCDIV2R::_111,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
-    pub fn is_000(&self) -> bool {
-        *self == SIRCDIV2R::_000
-    }
-    #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
-    pub fn is_001(&self) -> bool {
-        *self == SIRCDIV2R::_001
-    }
-    #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
-    pub fn is_010(&self) -> bool {
-        *self == SIRCDIV2R::_010
-    }
-    #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
-    pub fn is_011(&self) -> bool {
-        *self == SIRCDIV2R::_011
-    }
-    #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
-    pub fn is_100(&self) -> bool {
-        *self == SIRCDIV2R::_100
-    }
-    #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
-    pub fn is_101(&self) -> bool {
-        *self == SIRCDIV2R::_101
-    }
-    #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
-    pub fn is_110(&self) -> bool {
-        *self == SIRCDIV2R::_110
-    }
-    #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
-    pub fn is_111(&self) -> bool {
-        *self == SIRCDIV2R::_111
-    }
-}
-#[doc = "Values that can be written to the field `SIRCDIV1`"]
-pub enum SIRCDIV1W {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
-}
-impl SIRCDIV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SIRCDIV1W::_000 => 0,
-            SIRCDIV1W::_001 => 1,
-            SIRCDIV1W::_010 => 2,
-            SIRCDIV1W::_011 => 3,
-            SIRCDIV1W::_100 => 4,
-            SIRCDIV1W::_101 => 5,
-            SIRCDIV1W::_110 => 6,
-            SIRCDIV1W::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIRCDIV1W<'a> {
+#[doc = "Write proxy for field `SIRCDIV1`"]
+pub struct SIRCDIV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SIRCDIV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIRCDIV1W) -> &'a mut W {
+impl<'a> SIRCDIV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIRCDIV1_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Output disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_000)
+        self.variant(SIRCDIV1_A::_000)
     }
     #[doc = "Divide by 1"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_001)
+        self.variant(SIRCDIV1_A::_001)
     }
     #[doc = "Divide by 2"]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_010)
+        self.variant(SIRCDIV1_A::_010)
     }
     #[doc = "Divide by 4"]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_011)
+        self.variant(SIRCDIV1_A::_011)
     }
     #[doc = "Divide by 8"]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_100)
+        self.variant(SIRCDIV1_A::_100)
     }
     #[doc = "Divide by 16"]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_101)
+        self.variant(SIRCDIV1_A::_101)
     }
     #[doc = "Divide by 32"]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_110)
+        self.variant(SIRCDIV1_A::_110)
     }
     #[doc = "Divide by 64"]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(SIRCDIV1W::_111)
+        self.variant(SIRCDIV1_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SIRCDIV2`"]
-pub enum SIRCDIV2W {
-    #[doc = "Output disabled"]
-    _000,
-    #[doc = "Divide by 1"]
-    _001,
-    #[doc = "Divide by 2"]
-    _010,
-    #[doc = "Divide by 4"]
-    _011,
-    #[doc = "Divide by 8"]
-    _100,
-    #[doc = "Divide by 16"]
-    _101,
-    #[doc = "Divide by 32"]
-    _110,
-    #[doc = "Divide by 64"]
-    _111,
+#[doc = "Slow IRC Clock Divide 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum SIRCDIV2_A {
+    #[doc = "0: Output disabled"]
+    _000 = 0,
+    #[doc = "1: Divide by 1"]
+    _001 = 1,
+    #[doc = "2: Divide by 2"]
+    _010 = 2,
+    #[doc = "3: Divide by 4"]
+    _011 = 3,
+    #[doc = "4: Divide by 8"]
+    _100 = 4,
+    #[doc = "5: Divide by 16"]
+    _101 = 5,
+    #[doc = "6: Divide by 32"]
+    _110 = 6,
+    #[doc = "7: Divide by 64"]
+    _111 = 7,
 }
-impl SIRCDIV2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SIRCDIV2W::_000 => 0,
-            SIRCDIV2W::_001 => 1,
-            SIRCDIV2W::_010 => 2,
-            SIRCDIV2W::_011 => 3,
-            SIRCDIV2W::_100 => 4,
-            SIRCDIV2W::_101 => 5,
-            SIRCDIV2W::_110 => 6,
-            SIRCDIV2W::_111 => 7,
-        }
+impl From<SIRCDIV2_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SIRCDIV2_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _SIRCDIV2W<'a> {
+#[doc = "Reader of field `SIRCDIV2`"]
+pub type SIRCDIV2_R = crate::R<u8, SIRCDIV2_A>;
+impl SIRCDIV2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCDIV2_A {
+        match self.bits {
+            0 => SIRCDIV2_A::_000,
+            1 => SIRCDIV2_A::_001,
+            2 => SIRCDIV2_A::_010,
+            3 => SIRCDIV2_A::_011,
+            4 => SIRCDIV2_A::_100,
+            5 => SIRCDIV2_A::_101,
+            6 => SIRCDIV2_A::_110,
+            7 => SIRCDIV2_A::_111,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_000`"]
+    #[inline(always)]
+    pub fn is_000(&self) -> bool {
+        *self == SIRCDIV2_A::_000
+    }
+    #[doc = "Checks if the value of the field is `_001`"]
+    #[inline(always)]
+    pub fn is_001(&self) -> bool {
+        *self == SIRCDIV2_A::_001
+    }
+    #[doc = "Checks if the value of the field is `_010`"]
+    #[inline(always)]
+    pub fn is_010(&self) -> bool {
+        *self == SIRCDIV2_A::_010
+    }
+    #[doc = "Checks if the value of the field is `_011`"]
+    #[inline(always)]
+    pub fn is_011(&self) -> bool {
+        *self == SIRCDIV2_A::_011
+    }
+    #[doc = "Checks if the value of the field is `_100`"]
+    #[inline(always)]
+    pub fn is_100(&self) -> bool {
+        *self == SIRCDIV2_A::_100
+    }
+    #[doc = "Checks if the value of the field is `_101`"]
+    #[inline(always)]
+    pub fn is_101(&self) -> bool {
+        *self == SIRCDIV2_A::_101
+    }
+    #[doc = "Checks if the value of the field is `_110`"]
+    #[inline(always)]
+    pub fn is_110(&self) -> bool {
+        *self == SIRCDIV2_A::_110
+    }
+    #[doc = "Checks if the value of the field is `_111`"]
+    #[inline(always)]
+    pub fn is_111(&self) -> bool {
+        *self == SIRCDIV2_A::_111
+    }
+}
+#[doc = "Write proxy for field `SIRCDIV2`"]
+pub struct SIRCDIV2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SIRCDIV2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIRCDIV2W) -> &'a mut W {
+impl<'a> SIRCDIV2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIRCDIV2_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Output disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_000)
+        self.variant(SIRCDIV2_A::_000)
     }
     #[doc = "Divide by 1"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_001)
+        self.variant(SIRCDIV2_A::_001)
     }
     #[doc = "Divide by 2"]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_010)
+        self.variant(SIRCDIV2_A::_010)
     }
     #[doc = "Divide by 4"]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_011)
+        self.variant(SIRCDIV2_A::_011)
     }
     #[doc = "Divide by 8"]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_100)
+        self.variant(SIRCDIV2_A::_100)
     }
     #[doc = "Divide by 16"]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_101)
+        self.variant(SIRCDIV2_A::_101)
     }
     #[doc = "Divide by 32"]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_110)
+        self.variant(SIRCDIV2_A::_110)
     }
     #[doc = "Divide by 64"]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(SIRCDIV2W::_111)
+        self.variant(SIRCDIV2_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Slow IRC Clock Divide 1"]
-    #[inline]
-    pub fn sircdiv1(&self) -> SIRCDIV1R {
-        SIRCDIV1R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sircdiv1(&self) -> SIRCDIV1_R {
+        SIRCDIV1_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Slow IRC Clock Divide 2"]
-    #[inline]
-    pub fn sircdiv2(&self) -> SIRCDIV2R {
-        SIRCDIV2R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sircdiv2(&self) -> SIRCDIV2_R {
+        SIRCDIV2_R::new(((self.bits >> 8) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Slow IRC Clock Divide 1"]
-    #[inline]
-    pub fn sircdiv1(&mut self) -> _SIRCDIV1W {
-        _SIRCDIV1W { w: self }
+    #[inline(always)]
+    pub fn sircdiv1(&mut self) -> SIRCDIV1_W {
+        SIRCDIV1_W { w: self }
     }
     #[doc = "Bits 8:10 - Slow IRC Clock Divide 2"]
-    #[inline]
-    pub fn sircdiv2(&mut self) -> _SIRCDIV2W {
-        _SIRCDIV2W { w: self }
+    #[inline(always)]
+    pub fn sircdiv2(&mut self) -> SIRCDIV2_W {
+        SIRCDIV2_W { w: self }
     }
 }

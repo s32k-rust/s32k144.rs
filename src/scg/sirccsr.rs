@@ -1,650 +1,438 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SIRCCSR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SIRCCSR"]
+pub type R = crate::R<u32, super::SIRCCSR>;
+#[doc = "Writer for register SIRCCSR"]
+pub type W = crate::W<u32, super::SIRCCSR>;
+#[doc = "Register SIRCCSR `reset()`'s with value 0x0100_0005"]
+impl crate::ResetValue for super::SIRCCSR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0100_0005
     }
 }
-#[doc = "Possible values of the field `SIRCEN`"]
+#[doc = "Slow IRC Enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCENR {
-    #[doc = "Slow IRC is disabled"]
-    _0,
-    #[doc = "Slow IRC is enabled"]
-    _1,
+pub enum SIRCEN_A {
+    #[doc = "0: Slow IRC is disabled"]
+    _0 = 0,
+    #[doc = "1: Slow IRC is enabled"]
+    _1 = 1,
 }
-impl SIRCENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SIRCEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SIRCEN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SIRCENR::_0 => false,
-            SIRCENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SIRCENR {
-        match value {
-            false => SIRCENR::_0,
-            true => SIRCENR::_1,
+}
+#[doc = "Reader of field `SIRCEN`"]
+pub type SIRCEN_R = crate::R<bool, SIRCEN_A>;
+impl SIRCEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCEN_A {
+        match self.bits {
+            false => SIRCEN_A::_0,
+            true => SIRCEN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SIRCENR::_0
+        *self == SIRCEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SIRCENR::_1
+        *self == SIRCEN_A::_1
     }
 }
-#[doc = "Possible values of the field `SIRCSTEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCSTENR {
-    #[doc = "Slow IRC is disabled in supported Stop modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in supported Stop modes"]
-    _1,
-}
-impl SIRCSTENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SIRCSTENR::_0 => false,
-            SIRCSTENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SIRCSTENR {
-        match value {
-            false => SIRCSTENR::_0,
-            true => SIRCSTENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SIRCSTENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SIRCSTENR::_1
-    }
-}
-#[doc = "Possible values of the field `SIRCLPEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCLPENR {
-    #[doc = "Slow IRC is disabled in VLP modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in VLP modes"]
-    _1,
-}
-impl SIRCLPENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SIRCLPENR::_0 => false,
-            SIRCLPENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SIRCLPENR {
-        match value {
-            false => SIRCLPENR::_0,
-            true => SIRCLPENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SIRCLPENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SIRCLPENR::_1
-    }
-}
-#[doc = "Possible values of the field `LK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LKR {
-    #[doc = "Control Status Register can be written."]
-    _0,
-    #[doc = "Control Status Register cannot be written."]
-    _1,
-}
-impl LKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LKR::_0 => false,
-            LKR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LKR {
-        match value {
-            false => LKR::_0,
-            true => LKR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == LKR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == LKR::_1
-    }
-}
-#[doc = "Possible values of the field `SIRCVLD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCVLDR {
-    #[doc = "Slow IRC is not enabled or clock is not valid"]
-    _0,
-    #[doc = "Slow IRC is enabled and output clock is valid"]
-    _1,
-}
-impl SIRCVLDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SIRCVLDR::_0 => false,
-            SIRCVLDR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SIRCVLDR {
-        match value {
-            false => SIRCVLDR::_0,
-            true => SIRCVLDR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SIRCVLDR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SIRCVLDR::_1
-    }
-}
-#[doc = "Possible values of the field `SIRCSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIRCSELR {
-    #[doc = "Slow IRC is not the system clock source"]
-    _0,
-    #[doc = "Slow IRC is the system clock source"]
-    _1,
-}
-impl SIRCSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SIRCSELR::_0 => false,
-            SIRCSELR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SIRCSELR {
-        match value {
-            false => SIRCSELR::_0,
-            true => SIRCSELR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SIRCSELR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SIRCSELR::_1
-    }
-}
-#[doc = "Values that can be written to the field `SIRCEN`"]
-pub enum SIRCENW {
-    #[doc = "Slow IRC is disabled"]
-    _0,
-    #[doc = "Slow IRC is enabled"]
-    _1,
-}
-impl SIRCENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SIRCENW::_0 => false,
-            SIRCENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIRCENW<'a> {
+#[doc = "Write proxy for field `SIRCEN`"]
+pub struct SIRCEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SIRCENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIRCENW) -> &'a mut W {
+impl<'a> SIRCEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIRCEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Slow IRC is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SIRCENW::_0)
+        self.variant(SIRCEN_A::_0)
     }
     #[doc = "Slow IRC is enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SIRCENW::_1)
+        self.variant(SIRCEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SIRCSTEN`"]
-pub enum SIRCSTENW {
+#[doc = "Slow IRC Stop Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SIRCSTEN_A {
+    #[doc = "0: Slow IRC is disabled in supported Stop modes"]
+    _0 = 0,
+    #[doc = "1: Slow IRC is enabled in supported Stop modes"]
+    _1 = 1,
+}
+impl From<SIRCSTEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SIRCSTEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SIRCSTEN`"]
+pub type SIRCSTEN_R = crate::R<bool, SIRCSTEN_A>;
+impl SIRCSTEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCSTEN_A {
+        match self.bits {
+            false => SIRCSTEN_A::_0,
+            true => SIRCSTEN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SIRCSTEN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SIRCSTEN_A::_1
+    }
+}
+#[doc = "Write proxy for field `SIRCSTEN`"]
+pub struct SIRCSTEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SIRCSTEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIRCSTEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Slow IRC is disabled in supported Stop modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in supported Stop modes"]
-    _1,
-}
-impl SIRCSTENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SIRCSTENW::_0 => false,
-            SIRCSTENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIRCSTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SIRCSTENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIRCSTENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Slow IRC is disabled in supported Stop modes"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SIRCSTENW::_0)
+        self.variant(SIRCSTEN_A::_0)
     }
     #[doc = "Slow IRC is enabled in supported Stop modes"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SIRCSTENW::_1)
+        self.variant(SIRCSTEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SIRCLPEN`"]
-pub enum SIRCLPENW {
-    #[doc = "Slow IRC is disabled in VLP modes"]
-    _0,
-    #[doc = "Slow IRC is enabled in VLP modes"]
-    _1,
+#[doc = "Slow IRC Low Power Enable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SIRCLPEN_A {
+    #[doc = "0: Slow IRC is disabled in VLP modes"]
+    _0 = 0,
+    #[doc = "1: Slow IRC is enabled in VLP modes"]
+    _1 = 1,
 }
-impl SIRCLPENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SIRCLPENW::_0 => false,
-            SIRCLPENW::_1 => true,
-        }
+impl From<SIRCLPEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SIRCLPEN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SIRCLPENW<'a> {
+#[doc = "Reader of field `SIRCLPEN`"]
+pub type SIRCLPEN_R = crate::R<bool, SIRCLPEN_A>;
+impl SIRCLPEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCLPEN_A {
+        match self.bits {
+            false => SIRCLPEN_A::_0,
+            true => SIRCLPEN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SIRCLPEN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SIRCLPEN_A::_1
+    }
+}
+#[doc = "Write proxy for field `SIRCLPEN`"]
+pub struct SIRCLPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SIRCLPENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIRCLPENW) -> &'a mut W {
+impl<'a> SIRCLPEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIRCLPEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Slow IRC is disabled in VLP modes"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SIRCLPENW::_0)
+        self.variant(SIRCLPEN_A::_0)
     }
     #[doc = "Slow IRC is enabled in VLP modes"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SIRCLPENW::_1)
+        self.variant(SIRCLPEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LK`"]
-pub enum LKW {
-    #[doc = "Control Status Register can be written."]
-    _0,
-    #[doc = "Control Status Register cannot be written."]
-    _1,
+#[doc = "Lock Register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LK_A {
+    #[doc = "0: Control Status Register can be written."]
+    _0 = 0,
+    #[doc = "1: Control Status Register cannot be written."]
+    _1 = 1,
 }
-impl LKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LKW::_0 => false,
-            LKW::_1 => true,
-        }
+impl From<LK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LK_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _LKW<'a> {
+#[doc = "Reader of field `LK`"]
+pub type LK_R = crate::R<bool, LK_A>;
+impl LK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LK_A {
+        match self.bits {
+            false => LK_A::_0,
+            true => LK_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == LK_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == LK_A::_1
+    }
+}
+#[doc = "Write proxy for field `LK`"]
+pub struct LK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LKW) -> &'a mut W {
+impl<'a> LK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Control Status Register can be written."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LKW::_0)
+        self.variant(LK_A::_0)
     }
     #[doc = "Control Status Register cannot be written."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LKW::_1)
+        self.variant(LK_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
+    }
+}
+#[doc = "Slow IRC Valid\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SIRCVLD_A {
+    #[doc = "0: Slow IRC is not enabled or clock is not valid"]
+    _0 = 0,
+    #[doc = "1: Slow IRC is enabled and output clock is valid"]
+    _1 = 1,
+}
+impl From<SIRCVLD_A> for bool {
+    #[inline(always)]
+    fn from(variant: SIRCVLD_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SIRCVLD`"]
+pub type SIRCVLD_R = crate::R<bool, SIRCVLD_A>;
+impl SIRCVLD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCVLD_A {
+        match self.bits {
+            false => SIRCVLD_A::_0,
+            true => SIRCVLD_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SIRCVLD_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SIRCVLD_A::_1
+    }
+}
+#[doc = "Slow IRC Selected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SIRCSEL_A {
+    #[doc = "0: Slow IRC is not the system clock source"]
+    _0 = 0,
+    #[doc = "1: Slow IRC is the system clock source"]
+    _1 = 1,
+}
+impl From<SIRCSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SIRCSEL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SIRCSEL`"]
+pub type SIRCSEL_R = crate::R<bool, SIRCSEL_A>;
+impl SIRCSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIRCSEL_A {
+        match self.bits {
+            false => SIRCSEL_A::_0,
+            true => SIRCSEL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SIRCSEL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SIRCSEL_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Slow IRC Enable"]
-    #[inline]
-    pub fn sircen(&self) -> SIRCENR {
-        SIRCENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sircen(&self) -> SIRCEN_R {
+        SIRCEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Slow IRC Stop Enable"]
-    #[inline]
-    pub fn sircsten(&self) -> SIRCSTENR {
-        SIRCSTENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sircsten(&self) -> SIRCSTEN_R {
+        SIRCSTEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Slow IRC Low Power Enable"]
-    #[inline]
-    pub fn sirclpen(&self) -> SIRCLPENR {
-        SIRCLPENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sirclpen(&self) -> SIRCLPEN_R {
+        SIRCLPEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Lock Register"]
-    #[inline]
-    pub fn lk(&self) -> LKR {
-        LKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lk(&self) -> LK_R {
+        LK_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Slow IRC Valid"]
-    #[inline]
-    pub fn sircvld(&self) -> SIRCVLDR {
-        SIRCVLDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sircvld(&self) -> SIRCVLD_R {
+        SIRCVLD_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Slow IRC Selected"]
-    #[inline]
-    pub fn sircsel(&self) -> SIRCSELR {
-        SIRCSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sircsel(&self) -> SIRCSEL_R {
+        SIRCSEL_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 16777221 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Slow IRC Enable"]
-    #[inline]
-    pub fn sircen(&mut self) -> _SIRCENW {
-        _SIRCENW { w: self }
+    #[inline(always)]
+    pub fn sircen(&mut self) -> SIRCEN_W {
+        SIRCEN_W { w: self }
     }
     #[doc = "Bit 1 - Slow IRC Stop Enable"]
-    #[inline]
-    pub fn sircsten(&mut self) -> _SIRCSTENW {
-        _SIRCSTENW { w: self }
+    #[inline(always)]
+    pub fn sircsten(&mut self) -> SIRCSTEN_W {
+        SIRCSTEN_W { w: self }
     }
     #[doc = "Bit 2 - Slow IRC Low Power Enable"]
-    #[inline]
-    pub fn sirclpen(&mut self) -> _SIRCLPENW {
-        _SIRCLPENW { w: self }
+    #[inline(always)]
+    pub fn sirclpen(&mut self) -> SIRCLPEN_W {
+        SIRCLPEN_W { w: self }
     }
     #[doc = "Bit 23 - Lock Register"]
-    #[inline]
-    pub fn lk(&mut self) -> _LKW {
-        _LKW { w: self }
+    #[inline(always)]
+    pub fn lk(&mut self) -> LK_W {
+        LK_W { w: self }
     }
 }

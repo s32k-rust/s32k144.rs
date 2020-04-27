@@ -1,538 +1,356 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FLTPOL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FLTPOL"]
+pub type R = crate::R<u32, super::FLTPOL>;
+#[doc = "Writer for register FLTPOL"]
+pub type W = crate::W<u32, super::FLTPOL>;
+#[doc = "Register FLTPOL `reset()`'s with value 0"]
+impl crate::ResetValue for super::FLTPOL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `FLT0POL`"]
+#[doc = "Fault Input 0 Polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLT0POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
+pub enum FLT0POL_A {
+    #[doc = "0: The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0 = 0,
+    #[doc = "1: The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1 = 1,
 }
-impl FLT0POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<FLT0POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: FLT0POL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FLT0POLR::_0 => false,
-            FLT0POLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FLT0POLR {
-        match value {
-            false => FLT0POLR::_0,
-            true => FLT0POLR::_1,
+}
+#[doc = "Reader of field `FLT0POL`"]
+pub type FLT0POL_R = crate::R<bool, FLT0POL_A>;
+impl FLT0POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FLT0POL_A {
+        match self.bits {
+            false => FLT0POL_A::_0,
+            true => FLT0POL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FLT0POLR::_0
+        *self == FLT0POL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FLT0POLR::_1
+        *self == FLT0POL_A::_1
     }
 }
-#[doc = "Possible values of the field `FLT1POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLT1POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
-}
-impl FLT1POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FLT1POLR::_0 => false,
-            FLT1POLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FLT1POLR {
-        match value {
-            false => FLT1POLR::_0,
-            true => FLT1POLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == FLT1POLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == FLT1POLR::_1
-    }
-}
-#[doc = "Possible values of the field `FLT2POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLT2POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
-}
-impl FLT2POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FLT2POLR::_0 => false,
-            FLT2POLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FLT2POLR {
-        match value {
-            false => FLT2POLR::_0,
-            true => FLT2POLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == FLT2POLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == FLT2POLR::_1
-    }
-}
-#[doc = "Possible values of the field `FLT3POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLT3POLR {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
-}
-impl FLT3POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FLT3POLR::_0 => false,
-            FLT3POLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FLT3POLR {
-        match value {
-            false => FLT3POLR::_0,
-            true => FLT3POLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == FLT3POLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == FLT3POLR::_1
-    }
-}
-#[doc = "Values that can be written to the field `FLT0POL`"]
-pub enum FLT0POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
-}
-impl FLT0POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLT0POLW::_0 => false,
-            FLT0POLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FLT0POLW<'a> {
+#[doc = "Write proxy for field `FLT0POL`"]
+pub struct FLT0POL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLT0POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLT0POLW) -> &'a mut W {
+impl<'a> FLT0POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLT0POL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FLT0POLW::_0)
+        self.variant(FLT0POL_A::_0)
     }
     #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FLT0POLW::_1)
+        self.variant(FLT0POL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FLT1POL`"]
-pub enum FLT1POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
+#[doc = "Fault Input 1 Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FLT1POL_A {
+    #[doc = "0: The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0 = 0,
+    #[doc = "1: The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1 = 1,
 }
-impl FLT1POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLT1POLW::_0 => false,
-            FLT1POLW::_1 => true,
-        }
+impl From<FLT1POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: FLT1POL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _FLT1POLW<'a> {
+#[doc = "Reader of field `FLT1POL`"]
+pub type FLT1POL_R = crate::R<bool, FLT1POL_A>;
+impl FLT1POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FLT1POL_A {
+        match self.bits {
+            false => FLT1POL_A::_0,
+            true => FLT1POL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FLT1POL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FLT1POL_A::_1
+    }
+}
+#[doc = "Write proxy for field `FLT1POL`"]
+pub struct FLT1POL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLT1POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLT1POLW) -> &'a mut W {
+impl<'a> FLT1POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLT1POL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FLT1POLW::_0)
+        self.variant(FLT1POL_A::_0)
     }
     #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FLT1POLW::_1)
+        self.variant(FLT1POL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FLT2POL`"]
-pub enum FLT2POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
+#[doc = "Fault Input 2 Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FLT2POL_A {
+    #[doc = "0: The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0 = 0,
+    #[doc = "1: The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1 = 1,
 }
-impl FLT2POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLT2POLW::_0 => false,
-            FLT2POLW::_1 => true,
-        }
+impl From<FLT2POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: FLT2POL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _FLT2POLW<'a> {
+#[doc = "Reader of field `FLT2POL`"]
+pub type FLT2POL_R = crate::R<bool, FLT2POL_A>;
+impl FLT2POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FLT2POL_A {
+        match self.bits {
+            false => FLT2POL_A::_0,
+            true => FLT2POL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FLT2POL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FLT2POL_A::_1
+    }
+}
+#[doc = "Write proxy for field `FLT2POL`"]
+pub struct FLT2POL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLT2POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLT2POLW) -> &'a mut W {
+impl<'a> FLT2POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLT2POL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FLT2POLW::_0)
+        self.variant(FLT2POL_A::_0)
     }
     #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FLT2POLW::_1)
+        self.variant(FLT2POL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FLT3POL`"]
-pub enum FLT3POLW {
-    #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    _0,
-    #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    _1,
+#[doc = "Fault Input 3 Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FLT3POL_A {
+    #[doc = "0: The fault input polarity is active high. A 1 at the fault input indicates a fault."]
+    _0 = 0,
+    #[doc = "1: The fault input polarity is active low. A 0 at the fault input indicates a fault."]
+    _1 = 1,
 }
-impl FLT3POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLT3POLW::_0 => false,
-            FLT3POLW::_1 => true,
-        }
+impl From<FLT3POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: FLT3POL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _FLT3POLW<'a> {
+#[doc = "Reader of field `FLT3POL`"]
+pub type FLT3POL_R = crate::R<bool, FLT3POL_A>;
+impl FLT3POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FLT3POL_A {
+        match self.bits {
+            false => FLT3POL_A::_0,
+            true => FLT3POL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FLT3POL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FLT3POL_A::_1
+    }
+}
+#[doc = "Write proxy for field `FLT3POL`"]
+pub struct FLT3POL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLT3POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLT3POLW) -> &'a mut W {
+impl<'a> FLT3POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLT3POL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The fault input polarity is active high. A 1 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FLT3POLW::_0)
+        self.variant(FLT3POL_A::_0)
     }
     #[doc = "The fault input polarity is active low. A 0 at the fault input indicates a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FLT3POLW::_1)
+        self.variant(FLT3POL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Fault Input 0 Polarity"]
-    #[inline]
-    pub fn flt0pol(&self) -> FLT0POLR {
-        FLT0POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn flt0pol(&self) -> FLT0POL_R {
+        FLT0POL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Fault Input 1 Polarity"]
-    #[inline]
-    pub fn flt1pol(&self) -> FLT1POLR {
-        FLT1POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn flt1pol(&self) -> FLT1POL_R {
+        FLT1POL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Fault Input 2 Polarity"]
-    #[inline]
-    pub fn flt2pol(&self) -> FLT2POLR {
-        FLT2POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn flt2pol(&self) -> FLT2POL_R {
+        FLT2POL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Fault Input 3 Polarity"]
-    #[inline]
-    pub fn flt3pol(&self) -> FLT3POLR {
-        FLT3POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn flt3pol(&self) -> FLT3POL_R {
+        FLT3POL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Fault Input 0 Polarity"]
-    #[inline]
-    pub fn flt0pol(&mut self) -> _FLT0POLW {
-        _FLT0POLW { w: self }
+    #[inline(always)]
+    pub fn flt0pol(&mut self) -> FLT0POL_W {
+        FLT0POL_W { w: self }
     }
     #[doc = "Bit 1 - Fault Input 1 Polarity"]
-    #[inline]
-    pub fn flt1pol(&mut self) -> _FLT1POLW {
-        _FLT1POLW { w: self }
+    #[inline(always)]
+    pub fn flt1pol(&mut self) -> FLT1POL_W {
+        FLT1POL_W { w: self }
     }
     #[doc = "Bit 2 - Fault Input 2 Polarity"]
-    #[inline]
-    pub fn flt2pol(&mut self) -> _FLT2POLW {
-        _FLT2POLW { w: self }
+    #[inline(always)]
+    pub fn flt2pol(&mut self) -> FLT2POL_W {
+        FLT2POL_W { w: self }
     }
     #[doc = "Bit 3 - Fault Input 3 Polarity"]
-    #[inline]
-    pub fn flt3pol(&mut self) -> _FLT3POLW {
-        _FLT3POLW { w: self }
+    #[inline(always)]
+    pub fn flt3pol(&mut self) -> FLT3POL_W {
+        FLT3POL_W { w: self }
     }
 }

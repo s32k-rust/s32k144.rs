@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FILTER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FILTER"]
+pub type R = crate::R<u32, super::FILTER>;
+#[doc = "Writer for register FILTER"]
+pub type W = crate::W<u32, super::FILTER>;
+#[doc = "Register FILTER `reset()`'s with value 0"]
+impl crate::ResetValue for super::FILTER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CH0FVALR {
-    bits: u8,
-}
-impl CH0FVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH1FVALR {
-    bits: u8,
-}
-impl CH1FVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH2FVALR {
-    bits: u8,
-}
-impl CH2FVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH3FVALR {
-    bits: u8,
-}
-impl CH3FVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH0FVALW<'a> {
+#[doc = "Reader of field `CH0FVAL`"]
+pub type CH0FVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CH0FVAL`"]
+pub struct CH0FVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH0FVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH0FVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH1FVALW<'a> {
+#[doc = "Reader of field `CH1FVAL`"]
+pub type CH1FVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CH1FVAL`"]
+pub struct CH1FVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH1FVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH1FVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH2FVALW<'a> {
+#[doc = "Reader of field `CH2FVAL`"]
+pub type CH2FVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CH2FVAL`"]
+pub struct CH2FVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH2FVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH2FVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH3FVALW<'a> {
+#[doc = "Reader of field `CH3FVAL`"]
+pub type CH3FVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CH3FVAL`"]
+pub struct CH3FVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH3FVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH3FVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Channel 0 Input Filter"]
-    #[inline]
-    pub fn ch0fval(&self) -> CH0FVALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CH0FVALR { bits }
+    #[inline(always)]
+    pub fn ch0fval(&self) -> CH0FVAL_R {
+        CH0FVAL_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Channel 1 Input Filter"]
-    #[inline]
-    pub fn ch1fval(&self) -> CH1FVALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CH1FVALR { bits }
+    #[inline(always)]
+    pub fn ch1fval(&self) -> CH1FVAL_R {
+        CH1FVAL_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Channel 2 Input Filter"]
-    #[inline]
-    pub fn ch2fval(&self) -> CH2FVALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CH2FVALR { bits }
+    #[inline(always)]
+    pub fn ch2fval(&self) -> CH2FVAL_R {
+        CH2FVAL_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Channel 3 Input Filter"]
-    #[inline]
-    pub fn ch3fval(&self) -> CH3FVALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CH3FVALR { bits }
+    #[inline(always)]
+    pub fn ch3fval(&self) -> CH3FVAL_R {
+        CH3FVAL_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Channel 0 Input Filter"]
-    #[inline]
-    pub fn ch0fval(&mut self) -> _CH0FVALW {
-        _CH0FVALW { w: self }
+    #[inline(always)]
+    pub fn ch0fval(&mut self) -> CH0FVAL_W {
+        CH0FVAL_W { w: self }
     }
     #[doc = "Bits 4:7 - Channel 1 Input Filter"]
-    #[inline]
-    pub fn ch1fval(&mut self) -> _CH1FVALW {
-        _CH1FVALW { w: self }
+    #[inline(always)]
+    pub fn ch1fval(&mut self) -> CH1FVAL_W {
+        CH1FVAL_W { w: self }
     }
     #[doc = "Bits 8:11 - Channel 2 Input Filter"]
-    #[inline]
-    pub fn ch2fval(&mut self) -> _CH2FVALW {
-        _CH2FVALW { w: self }
+    #[inline(always)]
+    pub fn ch2fval(&mut self) -> CH2FVAL_W {
+        CH2FVAL_W { w: self }
     }
     #[doc = "Bits 12:15 - Channel 3 Input Filter"]
-    #[inline]
-    pub fn ch3fval(&mut self) -> _CH3FVALW {
-        _CH3FVALW { w: self }
+    #[inline(always)]
+    pub fn ch3fval(&mut self) -> CH3FVAL_W {
+        CH3FVAL_W { w: self }
     }
 }

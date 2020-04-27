@@ -1,1018 +1,732 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FTMOPT0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FTMOPT0"]
+pub type R = crate::R<u32, super::FTMOPT0>;
+#[doc = "Writer for register FTMOPT0"]
+pub type W = crate::W<u32, super::FTMOPT0>;
+#[doc = "Register FTMOPT0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::FTMOPT0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `FTM0FLTxSEL`"]
+#[doc = "FTM0 Fault X Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM0FLTXSELR {
-    #[doc = "FTM0_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM0 out"]
-    _001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum FTM0FLTXSEL_A {
+    #[doc = "0: FTM0_FLTx pin"]
+    _000 = 0,
+    #[doc = "1: TRGMUX_FTM0 out"]
+    _001 = 1,
 }
-impl FTM0FLTXSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM0FLTXSELR::_000 => 0,
-            FTM0FLTXSELR::_001 => 1,
-            FTM0FLTXSELR::_Reserved(bits) => bits,
-        }
+impl From<FTM0FLTXSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM0FLTXSEL_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM0FLTXSELR {
-        match value {
-            0 => FTM0FLTXSELR::_000,
-            1 => FTM0FLTXSELR::_001,
-            i => FTM0FLTXSELR::_Reserved(i),
+}
+#[doc = "Reader of field `FTM0FLTxSEL`"]
+pub type FTM0FLTXSEL_R = crate::R<u8, FTM0FLTXSEL_A>;
+impl FTM0FLTXSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM0FLTXSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM0FLTXSEL_A::_000),
+            1 => Val(FTM0FLTXSEL_A::_001),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == FTM0FLTXSELR::_000
+        *self == FTM0FLTXSEL_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == FTM0FLTXSELR::_001
+        *self == FTM0FLTXSEL_A::_001
     }
 }
-#[doc = "Possible values of the field `FTM1FLTxSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM1FLTXSELR {
-    #[doc = "FTM1_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM1 out"]
-    _001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl FTM1FLTXSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM1FLTXSELR::_000 => 0,
-            FTM1FLTXSELR::_001 => 1,
-            FTM1FLTXSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM1FLTXSELR {
-        match value {
-            0 => FTM1FLTXSELR::_000,
-            1 => FTM1FLTXSELR::_001,
-            i => FTM1FLTXSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
-    pub fn is_000(&self) -> bool {
-        *self == FTM1FLTXSELR::_000
-    }
-    #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
-    pub fn is_001(&self) -> bool {
-        *self == FTM1FLTXSELR::_001
-    }
-}
-#[doc = "Possible values of the field `FTM2FLTxSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM2FLTXSELR {
-    #[doc = "FTM2_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM2 out"]
-    _001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl FTM2FLTXSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM2FLTXSELR::_000 => 0,
-            FTM2FLTXSELR::_001 => 1,
-            FTM2FLTXSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM2FLTXSELR {
-        match value {
-            0 => FTM2FLTXSELR::_000,
-            1 => FTM2FLTXSELR::_001,
-            i => FTM2FLTXSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
-    pub fn is_000(&self) -> bool {
-        *self == FTM2FLTXSELR::_000
-    }
-    #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
-    pub fn is_001(&self) -> bool {
-        *self == FTM2FLTXSELR::_001
-    }
-}
-#[doc = "Possible values of the field `FTM3FLTxSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM3FLTXSELR {
-    #[doc = "FTM3_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM3 out"]
-    _001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl FTM3FLTXSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM3FLTXSELR::_000 => 0,
-            FTM3FLTXSELR::_001 => 1,
-            FTM3FLTXSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM3FLTXSELR {
-        match value {
-            0 => FTM3FLTXSELR::_000,
-            1 => FTM3FLTXSELR::_001,
-            i => FTM3FLTXSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
-    pub fn is_000(&self) -> bool {
-        *self == FTM3FLTXSELR::_000
-    }
-    #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
-    pub fn is_001(&self) -> bool {
-        *self == FTM3FLTXSELR::_001
-    }
-}
-#[doc = "Possible values of the field `FTM0CLKSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM0CLKSELR {
-    #[doc = "FTM0 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM0 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM0 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
-}
-impl FTM0CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM0CLKSELR::_00 => 0,
-            FTM0CLKSELR::_01 => 1,
-            FTM0CLKSELR::_10 => 2,
-            FTM0CLKSELR::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM0CLKSELR {
-        match value {
-            0 => FTM0CLKSELR::_00,
-            1 => FTM0CLKSELR::_01,
-            2 => FTM0CLKSELR::_10,
-            3 => FTM0CLKSELR::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == FTM0CLKSELR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == FTM0CLKSELR::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == FTM0CLKSELR::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == FTM0CLKSELR::_11
-    }
-}
-#[doc = "Possible values of the field `FTM1CLKSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM1CLKSELR {
-    #[doc = "FTM1 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM1 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM1 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
-}
-impl FTM1CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM1CLKSELR::_00 => 0,
-            FTM1CLKSELR::_01 => 1,
-            FTM1CLKSELR::_10 => 2,
-            FTM1CLKSELR::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM1CLKSELR {
-        match value {
-            0 => FTM1CLKSELR::_00,
-            1 => FTM1CLKSELR::_01,
-            2 => FTM1CLKSELR::_10,
-            3 => FTM1CLKSELR::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == FTM1CLKSELR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == FTM1CLKSELR::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == FTM1CLKSELR::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == FTM1CLKSELR::_11
-    }
-}
-#[doc = "Possible values of the field `FTM2CLKSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM2CLKSELR {
-    #[doc = "FTM2 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM2 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM2 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
-}
-impl FTM2CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM2CLKSELR::_00 => 0,
-            FTM2CLKSELR::_01 => 1,
-            FTM2CLKSELR::_10 => 2,
-            FTM2CLKSELR::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM2CLKSELR {
-        match value {
-            0 => FTM2CLKSELR::_00,
-            1 => FTM2CLKSELR::_01,
-            2 => FTM2CLKSELR::_10,
-            3 => FTM2CLKSELR::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == FTM2CLKSELR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == FTM2CLKSELR::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == FTM2CLKSELR::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == FTM2CLKSELR::_11
-    }
-}
-#[doc = "Possible values of the field `FTM3CLKSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM3CLKSELR {
-    #[doc = "FTM3 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM3 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM3 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
-}
-impl FTM3CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM3CLKSELR::_00 => 0,
-            FTM3CLKSELR::_01 => 1,
-            FTM3CLKSELR::_10 => 2,
-            FTM3CLKSELR::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM3CLKSELR {
-        match value {
-            0 => FTM3CLKSELR::_00,
-            1 => FTM3CLKSELR::_01,
-            2 => FTM3CLKSELR::_10,
-            3 => FTM3CLKSELR::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == FTM3CLKSELR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == FTM3CLKSELR::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == FTM3CLKSELR::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == FTM3CLKSELR::_11
-    }
-}
-#[doc = "Values that can be written to the field `FTM0FLTxSEL`"]
-pub enum FTM0FLTXSELW {
-    #[doc = "FTM0_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM0 out"]
-    _001,
-}
-impl FTM0FLTXSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM0FLTXSELW::_000 => 0,
-            FTM0FLTXSELW::_001 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM0FLTXSELW<'a> {
+#[doc = "Write proxy for field `FTM0FLTxSEL`"]
+pub struct FTM0FLTXSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM0FLTXSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM0FLTXSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> FTM0FLTXSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM0FLTXSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "FTM0_FLTx pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(FTM0FLTXSELW::_000)
+        self.variant(FTM0FLTXSEL_A::_000)
     }
     #[doc = "TRGMUX_FTM0 out"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(FTM0FLTXSELW::_001)
+        self.variant(FTM0FLTXSEL_A::_001)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM1FLTxSEL`"]
-pub enum FTM1FLTXSELW {
+#[doc = "FTM1 Fault X Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM1FLTXSEL_A {
+    #[doc = "0: FTM1_FLTx pin"]
+    _000 = 0,
+    #[doc = "1: TRGMUX_FTM1 out"]
+    _001 = 1,
+}
+impl From<FTM1FLTXSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM1FLTXSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM1FLTxSEL`"]
+pub type FTM1FLTXSEL_R = crate::R<u8, FTM1FLTXSEL_A>;
+impl FTM1FLTXSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM1FLTXSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM1FLTXSEL_A::_000),
+            1 => Val(FTM1FLTXSEL_A::_001),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_000`"]
+    #[inline(always)]
+    pub fn is_000(&self) -> bool {
+        *self == FTM1FLTXSEL_A::_000
+    }
+    #[doc = "Checks if the value of the field is `_001`"]
+    #[inline(always)]
+    pub fn is_001(&self) -> bool {
+        *self == FTM1FLTXSEL_A::_001
+    }
+}
+#[doc = "Write proxy for field `FTM1FLTxSEL`"]
+pub struct FTM1FLTXSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM1FLTXSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM1FLTXSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "FTM1_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM1 out"]
-    _001,
-}
-impl FTM1FLTXSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM1FLTXSELW::_000 => 0,
-            FTM1FLTXSELW::_001 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM1FLTXSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM1FLTXSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM1FLTXSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "FTM1_FLTx pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(FTM1FLTXSELW::_000)
+        self.variant(FTM1FLTXSEL_A::_000)
     }
     #[doc = "TRGMUX_FTM1 out"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(FTM1FLTXSELW::_001)
+        self.variant(FTM1FLTXSEL_A::_001)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM2FLTxSEL`"]
-pub enum FTM2FLTXSELW {
+#[doc = "FTM2 Fault X Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM2FLTXSEL_A {
+    #[doc = "0: FTM2_FLTx pin"]
+    _000 = 0,
+    #[doc = "1: TRGMUX_FTM2 out"]
+    _001 = 1,
+}
+impl From<FTM2FLTXSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM2FLTXSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM2FLTxSEL`"]
+pub type FTM2FLTXSEL_R = crate::R<u8, FTM2FLTXSEL_A>;
+impl FTM2FLTXSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM2FLTXSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM2FLTXSEL_A::_000),
+            1 => Val(FTM2FLTXSEL_A::_001),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_000`"]
+    #[inline(always)]
+    pub fn is_000(&self) -> bool {
+        *self == FTM2FLTXSEL_A::_000
+    }
+    #[doc = "Checks if the value of the field is `_001`"]
+    #[inline(always)]
+    pub fn is_001(&self) -> bool {
+        *self == FTM2FLTXSEL_A::_001
+    }
+}
+#[doc = "Write proxy for field `FTM2FLTxSEL`"]
+pub struct FTM2FLTXSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM2FLTXSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM2FLTXSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "FTM2_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM2 out"]
-    _001,
-}
-impl FTM2FLTXSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM2FLTXSELW::_000 => 0,
-            FTM2FLTXSELW::_001 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM2FLTXSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM2FLTXSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM2FLTXSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "FTM2_FLTx pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(FTM2FLTXSELW::_000)
+        self.variant(FTM2FLTXSEL_A::_000)
     }
     #[doc = "TRGMUX_FTM2 out"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(FTM2FLTXSELW::_001)
+        self.variant(FTM2FLTXSEL_A::_001)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM3FLTxSEL`"]
-pub enum FTM3FLTXSELW {
-    #[doc = "FTM3_FLTx pin"]
-    _000,
-    #[doc = "TRGMUX_FTM3 out"]
-    _001,
+#[doc = "FTM3 Fault X Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM3FLTXSEL_A {
+    #[doc = "0: FTM3_FLTx pin"]
+    _000 = 0,
+    #[doc = "1: TRGMUX_FTM3 out"]
+    _001 = 1,
 }
-impl FTM3FLTXSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM3FLTXSELW::_000 => 0,
-            FTM3FLTXSELW::_001 => 1,
+impl From<FTM3FLTXSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM3FLTXSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM3FLTxSEL`"]
+pub type FTM3FLTXSEL_R = crate::R<u8, FTM3FLTXSEL_A>;
+impl FTM3FLTXSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM3FLTXSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM3FLTXSEL_A::_000),
+            1 => Val(FTM3FLTXSEL_A::_001),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_000`"]
+    #[inline(always)]
+    pub fn is_000(&self) -> bool {
+        *self == FTM3FLTXSEL_A::_000
+    }
+    #[doc = "Checks if the value of the field is `_001`"]
+    #[inline(always)]
+    pub fn is_001(&self) -> bool {
+        *self == FTM3FLTXSEL_A::_001
+    }
 }
-#[doc = r" Proxy"]
-pub struct _FTM3FLTXSELW<'a> {
+#[doc = "Write proxy for field `FTM3FLTxSEL`"]
+pub struct FTM3FLTXSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM3FLTXSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM3FLTXSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> FTM3FLTXSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM3FLTXSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "FTM3_FLTx pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(FTM3FLTXSELW::_000)
+        self.variant(FTM3FLTXSEL_A::_000)
     }
     #[doc = "TRGMUX_FTM3 out"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(FTM3FLTXSELW::_001)
+        self.variant(FTM3FLTXSEL_A::_001)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM0CLKSEL`"]
-pub enum FTM0CLKSELW {
-    #[doc = "FTM0 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM0 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM0 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
+#[doc = "FTM0 External Clock Pin Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM0CLKSEL_A {
+    #[doc = "0: FTM0 external clock driven by TCLK0 pin."]
+    _00 = 0,
+    #[doc = "1: FTM0 external clock driven by TCLK1 pin."]
+    _01 = 1,
+    #[doc = "2: FTM0 external clock driven by TCLK2 pin."]
+    _10 = 2,
+    #[doc = "3: No clock input"]
+    _11 = 3,
 }
-impl FTM0CLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM0CLKSELW::_00 => 0,
-            FTM0CLKSELW::_01 => 1,
-            FTM0CLKSELW::_10 => 2,
-            FTM0CLKSELW::_11 => 3,
-        }
+impl From<FTM0CLKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM0CLKSEL_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _FTM0CLKSELW<'a> {
+#[doc = "Reader of field `FTM0CLKSEL`"]
+pub type FTM0CLKSEL_R = crate::R<u8, FTM0CLKSEL_A>;
+impl FTM0CLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTM0CLKSEL_A {
+        match self.bits {
+            0 => FTM0CLKSEL_A::_00,
+            1 => FTM0CLKSEL_A::_01,
+            2 => FTM0CLKSEL_A::_10,
+            3 => FTM0CLKSEL_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == FTM0CLKSEL_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == FTM0CLKSEL_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == FTM0CLKSEL_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == FTM0CLKSEL_A::_11
+    }
+}
+#[doc = "Write proxy for field `FTM0CLKSEL`"]
+pub struct FTM0CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM0CLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM0CLKSELW) -> &'a mut W {
+impl<'a> FTM0CLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM0CLKSEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "FTM0 external clock driven by TCLK0 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(FTM0CLKSELW::_00)
+        self.variant(FTM0CLKSEL_A::_00)
     }
     #[doc = "FTM0 external clock driven by TCLK1 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(FTM0CLKSELW::_01)
+        self.variant(FTM0CLKSEL_A::_01)
     }
     #[doc = "FTM0 external clock driven by TCLK2 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(FTM0CLKSELW::_10)
+        self.variant(FTM0CLKSEL_A::_10)
     }
     #[doc = "No clock input"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(FTM0CLKSELW::_11)
+        self.variant(FTM0CLKSEL_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM1CLKSEL`"]
-pub enum FTM1CLKSELW {
+#[doc = "FTM1 External Clock Pin Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM1CLKSEL_A {
+    #[doc = "0: FTM1 external clock driven by TCLK0 pin."]
+    _00 = 0,
+    #[doc = "1: FTM1 external clock driven by TCLK1 pin."]
+    _01 = 1,
+    #[doc = "2: FTM1 external clock driven by TCLK2 pin."]
+    _10 = 2,
+    #[doc = "3: No clock input"]
+    _11 = 3,
+}
+impl From<FTM1CLKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM1CLKSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM1CLKSEL`"]
+pub type FTM1CLKSEL_R = crate::R<u8, FTM1CLKSEL_A>;
+impl FTM1CLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTM1CLKSEL_A {
+        match self.bits {
+            0 => FTM1CLKSEL_A::_00,
+            1 => FTM1CLKSEL_A::_01,
+            2 => FTM1CLKSEL_A::_10,
+            3 => FTM1CLKSEL_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == FTM1CLKSEL_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == FTM1CLKSEL_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == FTM1CLKSEL_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == FTM1CLKSEL_A::_11
+    }
+}
+#[doc = "Write proxy for field `FTM1CLKSEL`"]
+pub struct FTM1CLKSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM1CLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM1CLKSEL_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
     #[doc = "FTM1 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM1 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM1 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
-}
-impl FTM1CLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM1CLKSELW::_00 => 0,
-            FTM1CLKSELW::_01 => 1,
-            FTM1CLKSELW::_10 => 2,
-            FTM1CLKSELW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM1CLKSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM1CLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM1CLKSELW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "FTM1 external clock driven by TCLK0 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(FTM1CLKSELW::_00)
+        self.variant(FTM1CLKSEL_A::_00)
     }
     #[doc = "FTM1 external clock driven by TCLK1 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(FTM1CLKSELW::_01)
+        self.variant(FTM1CLKSEL_A::_01)
     }
     #[doc = "FTM1 external clock driven by TCLK2 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(FTM1CLKSELW::_10)
+        self.variant(FTM1CLKSEL_A::_10)
     }
     #[doc = "No clock input"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(FTM1CLKSELW::_11)
+        self.variant(FTM1CLKSEL_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM2CLKSEL`"]
-pub enum FTM2CLKSELW {
-    #[doc = "FTM2 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM2 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM2 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
+#[doc = "FTM2 External Clock Pin Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM2CLKSEL_A {
+    #[doc = "0: FTM2 external clock driven by TCLK0 pin."]
+    _00 = 0,
+    #[doc = "1: FTM2 external clock driven by TCLK1 pin."]
+    _01 = 1,
+    #[doc = "2: FTM2 external clock driven by TCLK2 pin."]
+    _10 = 2,
+    #[doc = "3: No clock input"]
+    _11 = 3,
 }
-impl FTM2CLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM2CLKSELW::_00 => 0,
-            FTM2CLKSELW::_01 => 1,
-            FTM2CLKSELW::_10 => 2,
-            FTM2CLKSELW::_11 => 3,
-        }
+impl From<FTM2CLKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM2CLKSEL_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _FTM2CLKSELW<'a> {
+#[doc = "Reader of field `FTM2CLKSEL`"]
+pub type FTM2CLKSEL_R = crate::R<u8, FTM2CLKSEL_A>;
+impl FTM2CLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTM2CLKSEL_A {
+        match self.bits {
+            0 => FTM2CLKSEL_A::_00,
+            1 => FTM2CLKSEL_A::_01,
+            2 => FTM2CLKSEL_A::_10,
+            3 => FTM2CLKSEL_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == FTM2CLKSEL_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == FTM2CLKSEL_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == FTM2CLKSEL_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == FTM2CLKSEL_A::_11
+    }
+}
+#[doc = "Write proxy for field `FTM2CLKSEL`"]
+pub struct FTM2CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM2CLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM2CLKSELW) -> &'a mut W {
+impl<'a> FTM2CLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM2CLKSEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "FTM2 external clock driven by TCLK0 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(FTM2CLKSELW::_00)
+        self.variant(FTM2CLKSEL_A::_00)
     }
     #[doc = "FTM2 external clock driven by TCLK1 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(FTM2CLKSELW::_01)
+        self.variant(FTM2CLKSEL_A::_01)
     }
     #[doc = "FTM2 external clock driven by TCLK2 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(FTM2CLKSELW::_10)
+        self.variant(FTM2CLKSEL_A::_10)
     }
     #[doc = "No clock input"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(FTM2CLKSELW::_11)
+        self.variant(FTM2CLKSEL_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM3CLKSEL`"]
-pub enum FTM3CLKSELW {
-    #[doc = "FTM3 external clock driven by TCLK0 pin."]
-    _00,
-    #[doc = "FTM3 external clock driven by TCLK1 pin."]
-    _01,
-    #[doc = "FTM3 external clock driven by TCLK2 pin."]
-    _10,
-    #[doc = "No clock input"]
-    _11,
+#[doc = "FTM3 External Clock Pin Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM3CLKSEL_A {
+    #[doc = "0: FTM3 external clock driven by TCLK0 pin."]
+    _00 = 0,
+    #[doc = "1: FTM3 external clock driven by TCLK1 pin."]
+    _01 = 1,
+    #[doc = "2: FTM3 external clock driven by TCLK2 pin."]
+    _10 = 2,
+    #[doc = "3: No clock input"]
+    _11 = 3,
 }
-impl FTM3CLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM3CLKSELW::_00 => 0,
-            FTM3CLKSELW::_01 => 1,
-            FTM3CLKSELW::_10 => 2,
-            FTM3CLKSELW::_11 => 3,
-        }
+impl From<FTM3CLKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM3CLKSEL_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _FTM3CLKSELW<'a> {
+#[doc = "Reader of field `FTM3CLKSEL`"]
+pub type FTM3CLKSEL_R = crate::R<u8, FTM3CLKSEL_A>;
+impl FTM3CLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTM3CLKSEL_A {
+        match self.bits {
+            0 => FTM3CLKSEL_A::_00,
+            1 => FTM3CLKSEL_A::_01,
+            2 => FTM3CLKSEL_A::_10,
+            3 => FTM3CLKSEL_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == FTM3CLKSEL_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == FTM3CLKSEL_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == FTM3CLKSEL_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == FTM3CLKSEL_A::_11
+    }
+}
+#[doc = "Write proxy for field `FTM3CLKSEL`"]
+pub struct FTM3CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM3CLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM3CLKSELW) -> &'a mut W {
+impl<'a> FTM3CLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM3CLKSEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "FTM3 external clock driven by TCLK0 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(FTM3CLKSELW::_00)
+        self.variant(FTM3CLKSEL_A::_00)
     }
     #[doc = "FTM3 external clock driven by TCLK1 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(FTM3CLKSELW::_01)
+        self.variant(FTM3CLKSEL_A::_01)
     }
     #[doc = "FTM3 external clock driven by TCLK2 pin."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(FTM3CLKSELW::_10)
+        self.variant(FTM3CLKSEL_A::_10)
     }
     #[doc = "No clock input"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(FTM3CLKSELW::_11)
+        self.variant(FTM3CLKSEL_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - FTM0 Fault X Select"]
-    #[inline]
-    pub fn ftm0fltx_sel(&self) -> FTM0FLTXSELR {
-        FTM0FLTXSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm0fltx_sel(&self) -> FTM0FLTXSEL_R {
+        FTM0FLTXSEL_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:6 - FTM1 Fault X Select"]
-    #[inline]
-    pub fn ftm1fltx_sel(&self) -> FTM1FLTXSELR {
-        FTM1FLTXSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm1fltx_sel(&self) -> FTM1FLTXSEL_R {
+        FTM1FLTXSEL_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - FTM2 Fault X Select"]
-    #[inline]
-    pub fn ftm2fltx_sel(&self) -> FTM2FLTXSELR {
-        FTM2FLTXSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm2fltx_sel(&self) -> FTM2FLTXSEL_R {
+        FTM2FLTXSEL_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:14 - FTM3 Fault X Select"]
-    #[inline]
-    pub fn ftm3fltx_sel(&self) -> FTM3FLTXSELR {
-        FTM3FLTXSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm3fltx_sel(&self) -> FTM3FLTXSEL_R {
+        FTM3FLTXSEL_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 24:25 - FTM0 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm0clksel(&self) -> FTM0CLKSELR {
-        FTM0CLKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm0clksel(&self) -> FTM0CLKSEL_R {
+        FTM0CLKSEL_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 26:27 - FTM1 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm1clksel(&self) -> FTM1CLKSELR {
-        FTM1CLKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm1clksel(&self) -> FTM1CLKSEL_R {
+        FTM1CLKSEL_R::new(((self.bits >> 26) & 0x03) as u8)
     }
     #[doc = "Bits 28:29 - FTM2 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm2clksel(&self) -> FTM2CLKSELR {
-        FTM2CLKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm2clksel(&self) -> FTM2CLKSEL_R {
+        FTM2CLKSEL_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bits 30:31 - FTM3 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm3clksel(&self) -> FTM3CLKSELR {
-        FTM3CLKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm3clksel(&self) -> FTM3CLKSEL_R {
+        FTM3CLKSEL_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - FTM0 Fault X Select"]
-    #[inline]
-    pub fn ftm0fltx_sel(&mut self) -> _FTM0FLTXSELW {
-        _FTM0FLTXSELW { w: self }
+    #[inline(always)]
+    pub fn ftm0fltx_sel(&mut self) -> FTM0FLTXSEL_W {
+        FTM0FLTXSEL_W { w: self }
     }
     #[doc = "Bits 4:6 - FTM1 Fault X Select"]
-    #[inline]
-    pub fn ftm1fltx_sel(&mut self) -> _FTM1FLTXSELW {
-        _FTM1FLTXSELW { w: self }
+    #[inline(always)]
+    pub fn ftm1fltx_sel(&mut self) -> FTM1FLTXSEL_W {
+        FTM1FLTXSEL_W { w: self }
     }
     #[doc = "Bits 8:10 - FTM2 Fault X Select"]
-    #[inline]
-    pub fn ftm2fltx_sel(&mut self) -> _FTM2FLTXSELW {
-        _FTM2FLTXSELW { w: self }
+    #[inline(always)]
+    pub fn ftm2fltx_sel(&mut self) -> FTM2FLTXSEL_W {
+        FTM2FLTXSEL_W { w: self }
     }
     #[doc = "Bits 12:14 - FTM3 Fault X Select"]
-    #[inline]
-    pub fn ftm3fltx_sel(&mut self) -> _FTM3FLTXSELW {
-        _FTM3FLTXSELW { w: self }
+    #[inline(always)]
+    pub fn ftm3fltx_sel(&mut self) -> FTM3FLTXSEL_W {
+        FTM3FLTXSEL_W { w: self }
     }
     #[doc = "Bits 24:25 - FTM0 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm0clksel(&mut self) -> _FTM0CLKSELW {
-        _FTM0CLKSELW { w: self }
+    #[inline(always)]
+    pub fn ftm0clksel(&mut self) -> FTM0CLKSEL_W {
+        FTM0CLKSEL_W { w: self }
     }
     #[doc = "Bits 26:27 - FTM1 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm1clksel(&mut self) -> _FTM1CLKSELW {
-        _FTM1CLKSELW { w: self }
+    #[inline(always)]
+    pub fn ftm1clksel(&mut self) -> FTM1CLKSEL_W {
+        FTM1CLKSEL_W { w: self }
     }
     #[doc = "Bits 28:29 - FTM2 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm2clksel(&mut self) -> _FTM2CLKSELW {
-        _FTM2CLKSELW { w: self }
+    #[inline(always)]
+    pub fn ftm2clksel(&mut self) -> FTM2CLKSEL_W {
+        FTM2CLKSEL_W { w: self }
     }
     #[doc = "Bits 30:31 - FTM3 External Clock Pin Select"]
-    #[inline]
-    pub fn ftm3clksel(&mut self) -> _FTM3CLKSELW {
-        _FTM3CLKSELW { w: self }
+    #[inline(always)]
+    pub fn ftm3clksel(&mut self) -> FTM3CLKSEL_W {
+        FTM3CLKSEL_W { w: self }
     }
 }

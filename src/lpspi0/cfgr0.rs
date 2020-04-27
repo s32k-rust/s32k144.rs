@@ -1,657 +1,441 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFGR0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFGR0"]
+pub type R = crate::R<u32, super::CFGR0>;
+#[doc = "Writer for register CFGR0"]
+pub type W = crate::W<u32, super::CFGR0>;
+#[doc = "Register CFGR0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CFGR0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `HREN`"]
+#[doc = "Host Request Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HRENR {
-    #[doc = "Host request is disabled."]
-    _0,
-    #[doc = "Host request is enabled."]
-    _1,
+pub enum HREN_A {
+    #[doc = "0: Host request is disabled."]
+    _0 = 0,
+    #[doc = "1: Host request is enabled."]
+    _1 = 1,
 }
-impl HRENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<HREN_A> for bool {
+    #[inline(always)]
+    fn from(variant: HREN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HRENR::_0 => false,
-            HRENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HRENR {
-        match value {
-            false => HRENR::_0,
-            true => HRENR::_1,
+}
+#[doc = "Reader of field `HREN`"]
+pub type HREN_R = crate::R<bool, HREN_A>;
+impl HREN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HREN_A {
+        match self.bits {
+            false => HREN_A::_0,
+            true => HREN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == HRENR::_0
+        *self == HREN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == HRENR::_1
+        *self == HREN_A::_1
     }
 }
-#[doc = "Possible values of the field `HRPOL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HRPOLR {
-    #[doc = "Active low."]
-    _0,
-    #[doc = "Active high."]
-    _1,
-}
-impl HRPOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HRPOLR::_0 => false,
-            HRPOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HRPOLR {
-        match value {
-            false => HRPOLR::_0,
-            true => HRPOLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == HRPOLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == HRPOLR::_1
-    }
-}
-#[doc = "Possible values of the field `HRSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HRSELR {
-    #[doc = "Host request input is pin LPSPI_HREQ."]
-    _0,
-    #[doc = "Host request input is input trigger."]
-    _1,
-}
-impl HRSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HRSELR::_0 => false,
-            HRSELR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HRSELR {
-        match value {
-            false => HRSELR::_0,
-            true => HRSELR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == HRSELR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == HRSELR::_1
-    }
-}
-#[doc = "Possible values of the field `CIRFIFO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CIRFIFOR {
-    #[doc = "Circular FIFO is disabled."]
-    _0,
-    #[doc = "Circular FIFO is enabled."]
-    _1,
-}
-impl CIRFIFOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CIRFIFOR::_0 => false,
-            CIRFIFOR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CIRFIFOR {
-        match value {
-            false => CIRFIFOR::_0,
-            true => CIRFIFOR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CIRFIFOR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CIRFIFOR::_1
-    }
-}
-#[doc = "Possible values of the field `RDMO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDMOR {
-    #[doc = "Received data is stored in the receive FIFO as normal."]
-    _0,
-    #[doc = "Received data is discarded unless the DMF is set."]
-    _1,
-}
-impl RDMOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDMOR::_0 => false,
-            RDMOR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDMOR {
-        match value {
-            false => RDMOR::_0,
-            true => RDMOR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == RDMOR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == RDMOR::_1
-    }
-}
-#[doc = "Values that can be written to the field `HREN`"]
-pub enum HRENW {
-    #[doc = "Host request is disabled."]
-    _0,
-    #[doc = "Host request is enabled."]
-    _1,
-}
-impl HRENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HRENW::_0 => false,
-            HRENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HRENW<'a> {
+#[doc = "Write proxy for field `HREN`"]
+pub struct HREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HRENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HRENW) -> &'a mut W {
+impl<'a> HREN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HREN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Host request is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(HRENW::_0)
+        self.variant(HREN_A::_0)
     }
     #[doc = "Host request is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(HRENW::_1)
+        self.variant(HREN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HRPOL`"]
-pub enum HRPOLW {
+#[doc = "Host Request Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HRPOL_A {
+    #[doc = "0: Active low."]
+    _0 = 0,
+    #[doc = "1: Active high."]
+    _1 = 1,
+}
+impl From<HRPOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: HRPOL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `HRPOL`"]
+pub type HRPOL_R = crate::R<bool, HRPOL_A>;
+impl HRPOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HRPOL_A {
+        match self.bits {
+            false => HRPOL_A::_0,
+            true => HRPOL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == HRPOL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == HRPOL_A::_1
+    }
+}
+#[doc = "Write proxy for field `HRPOL`"]
+pub struct HRPOL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HRPOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HRPOL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Active low."]
-    _0,
-    #[doc = "Active high."]
-    _1,
-}
-impl HRPOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HRPOLW::_0 => false,
-            HRPOLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HRPOLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HRPOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HRPOLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Active low."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(HRPOLW::_0)
+        self.variant(HRPOL_A::_0)
     }
     #[doc = "Active high."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(HRPOLW::_1)
+        self.variant(HRPOL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HRSEL`"]
-pub enum HRSELW {
-    #[doc = "Host request input is pin LPSPI_HREQ."]
-    _0,
-    #[doc = "Host request input is input trigger."]
-    _1,
+#[doc = "Host Request Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HRSEL_A {
+    #[doc = "0: Host request input is pin LPSPI_HREQ."]
+    _0 = 0,
+    #[doc = "1: Host request input is input trigger."]
+    _1 = 1,
 }
-impl HRSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HRSELW::_0 => false,
-            HRSELW::_1 => true,
-        }
+impl From<HRSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: HRSEL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _HRSELW<'a> {
+#[doc = "Reader of field `HRSEL`"]
+pub type HRSEL_R = crate::R<bool, HRSEL_A>;
+impl HRSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HRSEL_A {
+        match self.bits {
+            false => HRSEL_A::_0,
+            true => HRSEL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == HRSEL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == HRSEL_A::_1
+    }
+}
+#[doc = "Write proxy for field `HRSEL`"]
+pub struct HRSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HRSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HRSELW) -> &'a mut W {
+impl<'a> HRSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HRSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Host request input is pin LPSPI_HREQ."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(HRSELW::_0)
+        self.variant(HRSEL_A::_0)
     }
     #[doc = "Host request input is input trigger."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(HRSELW::_1)
+        self.variant(HRSEL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CIRFIFO`"]
-pub enum CIRFIFOW {
-    #[doc = "Circular FIFO is disabled."]
-    _0,
-    #[doc = "Circular FIFO is enabled."]
-    _1,
+#[doc = "Circular FIFO Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CIRFIFO_A {
+    #[doc = "0: Circular FIFO is disabled."]
+    _0 = 0,
+    #[doc = "1: Circular FIFO is enabled."]
+    _1 = 1,
 }
-impl CIRFIFOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CIRFIFOW::_0 => false,
-            CIRFIFOW::_1 => true,
-        }
+impl From<CIRFIFO_A> for bool {
+    #[inline(always)]
+    fn from(variant: CIRFIFO_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CIRFIFOW<'a> {
+#[doc = "Reader of field `CIRFIFO`"]
+pub type CIRFIFO_R = crate::R<bool, CIRFIFO_A>;
+impl CIRFIFO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CIRFIFO_A {
+        match self.bits {
+            false => CIRFIFO_A::_0,
+            true => CIRFIFO_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CIRFIFO_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CIRFIFO_A::_1
+    }
+}
+#[doc = "Write proxy for field `CIRFIFO`"]
+pub struct CIRFIFO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CIRFIFOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CIRFIFOW) -> &'a mut W {
+impl<'a> CIRFIFO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CIRFIFO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Circular FIFO is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CIRFIFOW::_0)
+        self.variant(CIRFIFO_A::_0)
     }
     #[doc = "Circular FIFO is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CIRFIFOW::_1)
+        self.variant(CIRFIFO_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RDMO`"]
-pub enum RDMOW {
-    #[doc = "Received data is stored in the receive FIFO as normal."]
-    _0,
-    #[doc = "Received data is discarded unless the DMF is set."]
-    _1,
+#[doc = "Receive Data Match Only\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RDMO_A {
+    #[doc = "0: Received data is stored in the receive FIFO as normal."]
+    _0 = 0,
+    #[doc = "1: Received data is discarded unless the DMF is set."]
+    _1 = 1,
 }
-impl RDMOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RDMOW::_0 => false,
-            RDMOW::_1 => true,
-        }
+impl From<RDMO_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDMO_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _RDMOW<'a> {
+#[doc = "Reader of field `RDMO`"]
+pub type RDMO_R = crate::R<bool, RDMO_A>;
+impl RDMO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDMO_A {
+        match self.bits {
+            false => RDMO_A::_0,
+            true => RDMO_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == RDMO_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == RDMO_A::_1
+    }
+}
+#[doc = "Write proxy for field `RDMO`"]
+pub struct RDMO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDMOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RDMOW) -> &'a mut W {
+impl<'a> RDMO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RDMO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Received data is stored in the receive FIFO as normal."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RDMOW::_0)
+        self.variant(RDMO_A::_0)
     }
     #[doc = "Received data is discarded unless the DMF is set."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RDMOW::_1)
+        self.variant(RDMO_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Host Request Enable"]
-    #[inline]
-    pub fn hren(&self) -> HRENR {
-        HRENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hren(&self) -> HREN_R {
+        HREN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Host Request Polarity"]
-    #[inline]
-    pub fn hrpol(&self) -> HRPOLR {
-        HRPOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hrpol(&self) -> HRPOL_R {
+        HRPOL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Host Request Select"]
-    #[inline]
-    pub fn hrsel(&self) -> HRSELR {
-        HRSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hrsel(&self) -> HRSEL_R {
+        HRSEL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Circular FIFO Enable"]
-    #[inline]
-    pub fn cirfifo(&self) -> CIRFIFOR {
-        CIRFIFOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cirfifo(&self) -> CIRFIFO_R {
+        CIRFIFO_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Receive Data Match Only"]
-    #[inline]
-    pub fn rdmo(&self) -> RDMOR {
-        RDMOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdmo(&self) -> RDMO_R {
+        RDMO_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Host Request Enable"]
-    #[inline]
-    pub fn hren(&mut self) -> _HRENW {
-        _HRENW { w: self }
+    #[inline(always)]
+    pub fn hren(&mut self) -> HREN_W {
+        HREN_W { w: self }
     }
     #[doc = "Bit 1 - Host Request Polarity"]
-    #[inline]
-    pub fn hrpol(&mut self) -> _HRPOLW {
-        _HRPOLW { w: self }
+    #[inline(always)]
+    pub fn hrpol(&mut self) -> HRPOL_W {
+        HRPOL_W { w: self }
     }
     #[doc = "Bit 2 - Host Request Select"]
-    #[inline]
-    pub fn hrsel(&mut self) -> _HRSELW {
-        _HRSELW { w: self }
+    #[inline(always)]
+    pub fn hrsel(&mut self) -> HRSEL_W {
+        HRSEL_W { w: self }
     }
     #[doc = "Bit 8 - Circular FIFO Enable"]
-    #[inline]
-    pub fn cirfifo(&mut self) -> _CIRFIFOW {
-        _CIRFIFOW { w: self }
+    #[inline(always)]
+    pub fn cirfifo(&mut self) -> CIRFIFO_W {
+        CIRFIFO_W { w: self }
     }
     #[doc = "Bit 9 - Receive Data Match Only"]
-    #[inline]
-    pub fn rdmo(&mut self) -> _RDMOW {
-        _RDMOW { w: self }
+    #[inline(always)]
+    pub fn rdmo(&mut self) -> RDMO_W {
+        RDMO_W { w: self }
     }
 }

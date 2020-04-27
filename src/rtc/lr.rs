@@ -1,538 +1,356 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LR"]
+pub type R = crate::R<u32, super::LR>;
+#[doc = "Writer for register LR"]
+pub type W = crate::W<u32, super::LR>;
+#[doc = "Register LR `reset()`'s with value 0xff"]
+impl crate::ResetValue for super::LR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xff
     }
 }
-#[doc = "Possible values of the field `TCL`"]
+#[doc = "Time Compensation Lock\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TCLR {
-    #[doc = "Time Compensation Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Time Compensation Register is not locked and writes complete as normal."]
-    _1,
+pub enum TCL_A {
+    #[doc = "0: Time Compensation Register is locked and writes are ignored."]
+    _0 = 0,
+    #[doc = "1: Time Compensation Register is not locked and writes complete as normal."]
+    _1 = 1,
 }
-impl TCLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TCL_A> for bool {
+    #[inline(always)]
+    fn from(variant: TCL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TCLR::_0 => false,
-            TCLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TCLR {
-        match value {
-            false => TCLR::_0,
-            true => TCLR::_1,
+}
+#[doc = "Reader of field `TCL`"]
+pub type TCL_R = crate::R<bool, TCL_A>;
+impl TCL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TCL_A {
+        match self.bits {
+            false => TCL_A::_0,
+            true => TCL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TCLR::_0
+        *self == TCL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TCLR::_1
+        *self == TCL_A::_1
     }
 }
-#[doc = "Possible values of the field `CRL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRLR {
-    #[doc = "Control Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Control Register is not locked and writes complete as normal."]
-    _1,
-}
-impl CRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CRLR::_0 => false,
-            CRLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CRLR {
-        match value {
-            false => CRLR::_0,
-            true => CRLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CRLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CRLR::_1
-    }
-}
-#[doc = "Possible values of the field `SRL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRLR {
-    #[doc = "Status Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Status Register is not locked and writes complete as normal."]
-    _1,
-}
-impl SRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRLR::_0 => false,
-            SRLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRLR {
-        match value {
-            false => SRLR::_0,
-            true => SRLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SRLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SRLR::_1
-    }
-}
-#[doc = "Possible values of the field `LRL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LRLR {
-    #[doc = "Lock Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Lock Register is not locked and writes complete as normal."]
-    _1,
-}
-impl LRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LRLR::_0 => false,
-            LRLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LRLR {
-        match value {
-            false => LRLR::_0,
-            true => LRLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == LRLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == LRLR::_1
-    }
-}
-#[doc = "Values that can be written to the field `TCL`"]
-pub enum TCLW {
-    #[doc = "Time Compensation Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Time Compensation Register is not locked and writes complete as normal."]
-    _1,
-}
-impl TCLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TCLW::_0 => false,
-            TCLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TCLW<'a> {
+#[doc = "Write proxy for field `TCL`"]
+pub struct TCL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TCLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TCLW) -> &'a mut W {
+impl<'a> TCL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TCL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Time Compensation Register is locked and writes are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TCLW::_0)
+        self.variant(TCL_A::_0)
     }
     #[doc = "Time Compensation Register is not locked and writes complete as normal."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TCLW::_1)
+        self.variant(TCL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CRL`"]
-pub enum CRLW {
+#[doc = "Control Register Lock\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CRL_A {
+    #[doc = "0: Control Register is locked and writes are ignored."]
+    _0 = 0,
+    #[doc = "1: Control Register is not locked and writes complete as normal."]
+    _1 = 1,
+}
+impl From<CRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CRL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `CRL`"]
+pub type CRL_R = crate::R<bool, CRL_A>;
+impl CRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRL_A {
+        match self.bits {
+            false => CRL_A::_0,
+            true => CRL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CRL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CRL_A::_1
+    }
+}
+#[doc = "Write proxy for field `CRL`"]
+pub struct CRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Control Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Control Register is not locked and writes complete as normal."]
-    _1,
-}
-impl CRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CRLW::_0 => false,
-            CRLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Control Register is locked and writes are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CRLW::_0)
+        self.variant(CRL_A::_0)
     }
     #[doc = "Control Register is not locked and writes complete as normal."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CRLW::_1)
+        self.variant(CRL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SRL`"]
-pub enum SRLW {
-    #[doc = "Status Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Status Register is not locked and writes complete as normal."]
-    _1,
+#[doc = "Status Register Lock\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRL_A {
+    #[doc = "0: Status Register is locked and writes are ignored."]
+    _0 = 0,
+    #[doc = "1: Status Register is not locked and writes complete as normal."]
+    _1 = 1,
 }
-impl SRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRLW::_0 => false,
-            SRLW::_1 => true,
-        }
+impl From<SRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SRLW<'a> {
+#[doc = "Reader of field `SRL`"]
+pub type SRL_R = crate::R<bool, SRL_A>;
+impl SRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRL_A {
+        match self.bits {
+            false => SRL_A::_0,
+            true => SRL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SRL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SRL_A::_1
+    }
+}
+#[doc = "Write proxy for field `SRL`"]
+pub struct SRL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRLW) -> &'a mut W {
+impl<'a> SRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Status Register is locked and writes are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SRLW::_0)
+        self.variant(SRL_A::_0)
     }
     #[doc = "Status Register is not locked and writes complete as normal."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SRLW::_1)
+        self.variant(SRL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LRL`"]
-pub enum LRLW {
-    #[doc = "Lock Register is locked and writes are ignored."]
-    _0,
-    #[doc = "Lock Register is not locked and writes complete as normal."]
-    _1,
+#[doc = "Lock Register Lock\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LRL_A {
+    #[doc = "0: Lock Register is locked and writes are ignored."]
+    _0 = 0,
+    #[doc = "1: Lock Register is not locked and writes complete as normal."]
+    _1 = 1,
 }
-impl LRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LRLW::_0 => false,
-            LRLW::_1 => true,
-        }
+impl From<LRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: LRL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _LRLW<'a> {
+#[doc = "Reader of field `LRL`"]
+pub type LRL_R = crate::R<bool, LRL_A>;
+impl LRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LRL_A {
+        match self.bits {
+            false => LRL_A::_0,
+            true => LRL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == LRL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == LRL_A::_1
+    }
+}
+#[doc = "Write proxy for field `LRL`"]
+pub struct LRL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LRLW) -> &'a mut W {
+impl<'a> LRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LRL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Lock Register is locked and writes are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LRLW::_0)
+        self.variant(LRL_A::_0)
     }
     #[doc = "Lock Register is not locked and writes complete as normal."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LRLW::_1)
+        self.variant(LRL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 3 - Time Compensation Lock"]
-    #[inline]
-    pub fn tcl(&self) -> TCLR {
-        TCLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tcl(&self) -> TCL_R {
+        TCL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Control Register Lock"]
-    #[inline]
-    pub fn crl(&self) -> CRLR {
-        CRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn crl(&self) -> CRL_R {
+        CRL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Status Register Lock"]
-    #[inline]
-    pub fn srl(&self) -> SRLR {
-        SRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn srl(&self) -> SRL_R {
+        SRL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Lock Register Lock"]
-    #[inline]
-    pub fn lrl(&self) -> LRLR {
-        LRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lrl(&self) -> LRL_R {
+        LRL_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 255 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 3 - Time Compensation Lock"]
-    #[inline]
-    pub fn tcl(&mut self) -> _TCLW {
-        _TCLW { w: self }
+    #[inline(always)]
+    pub fn tcl(&mut self) -> TCL_W {
+        TCL_W { w: self }
     }
     #[doc = "Bit 4 - Control Register Lock"]
-    #[inline]
-    pub fn crl(&mut self) -> _CRLW {
-        _CRLW { w: self }
+    #[inline(always)]
+    pub fn crl(&mut self) -> CRL_W {
+        CRL_W { w: self }
     }
     #[doc = "Bit 5 - Status Register Lock"]
-    #[inline]
-    pub fn srl(&mut self) -> _SRLW {
-        _SRLW { w: self }
+    #[inline(always)]
+    pub fn srl(&mut self) -> SRL_W {
+        SRL_W { w: self }
     }
     #[doc = "Bit 6 - Lock Register Lock"]
-    #[inline]
-    pub fn lrl(&mut self) -> _LRLW {
-        _LRLW { w: self }
+    #[inline(always)]
+    pub fn lrl(&mut self) -> LRL_W {
+        LRL_W { w: self }
     }
 }

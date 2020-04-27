@@ -1,495 +1,323 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SC3 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SC3"]
+pub type R = crate::R<u32, super::SC3>;
+#[doc = "Writer for register SC3"]
+pub type W = crate::W<u32, super::SC3>;
+#[doc = "Register SC3 `reset()`'s with value 0"]
+impl crate::ResetValue for super::SC3 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `AVGS`"]
+#[doc = "Hardware Average Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AVGSR {
-    #[doc = "4 samples averaged."]
-    _00,
-    #[doc = "8 samples averaged."]
-    _01,
-    #[doc = "16 samples averaged."]
-    _10,
-    #[doc = "32 samples averaged."]
-    _11,
+#[repr(u8)]
+pub enum AVGS_A {
+    #[doc = "0: 4 samples averaged."]
+    _00 = 0,
+    #[doc = "1: 8 samples averaged."]
+    _01 = 1,
+    #[doc = "2: 16 samples averaged."]
+    _10 = 2,
+    #[doc = "3: 32 samples averaged."]
+    _11 = 3,
 }
-impl AVGSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            AVGSR::_00 => 0,
-            AVGSR::_01 => 1,
-            AVGSR::_10 => 2,
-            AVGSR::_11 => 3,
-        }
+impl From<AVGS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: AVGS_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> AVGSR {
-        match value {
-            0 => AVGSR::_00,
-            1 => AVGSR::_01,
-            2 => AVGSR::_10,
-            3 => AVGSR::_11,
+}
+#[doc = "Reader of field `AVGS`"]
+pub type AVGS_R = crate::R<u8, AVGS_A>;
+impl AVGS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AVGS_A {
+        match self.bits {
+            0 => AVGS_A::_00,
+            1 => AVGS_A::_01,
+            2 => AVGS_A::_10,
+            3 => AVGS_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == AVGSR::_00
+        *self == AVGS_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == AVGSR::_01
+        *self == AVGS_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == AVGSR::_10
+        *self == AVGS_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == AVGSR::_11
+        *self == AVGS_A::_11
     }
 }
-#[doc = "Possible values of the field `AVGE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AVGER {
-    #[doc = "Hardware average function disabled."]
-    _0,
-    #[doc = "Hardware average function enabled."]
-    _1,
-}
-impl AVGER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AVGER::_0 => false,
-            AVGER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AVGER {
-        match value {
-            false => AVGER::_0,
-            true => AVGER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == AVGER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == AVGER::_1
-    }
-}
-#[doc = "Possible values of the field `ADCO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADCOR {
-    #[doc = "One conversion will be performed (or one set of conversions, if AVGE is set) after a conversion is initiated."]
-    _0,
-    #[doc = "Continuous conversions will be performed (or continuous sets of conversions, if AVGE is set) after a conversion is initiated."]
-    _1,
-}
-impl ADCOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADCOR::_0 => false,
-            ADCOR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADCOR {
-        match value {
-            false => ADCOR::_0,
-            true => ADCOR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == ADCOR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == ADCOR::_1
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CALR {
-    bits: bool,
-}
-impl CALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `AVGS`"]
-pub enum AVGSW {
-    #[doc = "4 samples averaged."]
-    _00,
-    #[doc = "8 samples averaged."]
-    _01,
-    #[doc = "16 samples averaged."]
-    _10,
-    #[doc = "32 samples averaged."]
-    _11,
-}
-impl AVGSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            AVGSW::_00 => 0,
-            AVGSW::_01 => 1,
-            AVGSW::_10 => 2,
-            AVGSW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AVGSW<'a> {
+#[doc = "Write proxy for field `AVGS`"]
+pub struct AVGS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AVGSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AVGSW) -> &'a mut W {
+impl<'a> AVGS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AVGS_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "4 samples averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(AVGSW::_00)
+        self.variant(AVGS_A::_00)
     }
     #[doc = "8 samples averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(AVGSW::_01)
+        self.variant(AVGS_A::_01)
     }
     #[doc = "16 samples averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(AVGSW::_10)
+        self.variant(AVGS_A::_10)
     }
     #[doc = "32 samples averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(AVGSW::_11)
+        self.variant(AVGS_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AVGE`"]
-pub enum AVGEW {
-    #[doc = "Hardware average function disabled."]
-    _0,
-    #[doc = "Hardware average function enabled."]
-    _1,
+#[doc = "Hardware Average Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AVGE_A {
+    #[doc = "0: Hardware average function disabled."]
+    _0 = 0,
+    #[doc = "1: Hardware average function enabled."]
+    _1 = 1,
 }
-impl AVGEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AVGEW::_0 => false,
-            AVGEW::_1 => true,
-        }
+impl From<AVGE_A> for bool {
+    #[inline(always)]
+    fn from(variant: AVGE_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _AVGEW<'a> {
+#[doc = "Reader of field `AVGE`"]
+pub type AVGE_R = crate::R<bool, AVGE_A>;
+impl AVGE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AVGE_A {
+        match self.bits {
+            false => AVGE_A::_0,
+            true => AVGE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == AVGE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == AVGE_A::_1
+    }
+}
+#[doc = "Write proxy for field `AVGE`"]
+pub struct AVGE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AVGEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AVGEW) -> &'a mut W {
+impl<'a> AVGE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AVGE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Hardware average function disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(AVGEW::_0)
+        self.variant(AVGE_A::_0)
     }
     #[doc = "Hardware average function enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(AVGEW::_1)
+        self.variant(AVGE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADCO`"]
-pub enum ADCOW {
-    #[doc = "One conversion will be performed (or one set of conversions, if AVGE is set) after a conversion is initiated."]
-    _0,
-    #[doc = "Continuous conversions will be performed (or continuous sets of conversions, if AVGE is set) after a conversion is initiated."]
-    _1,
+#[doc = "Continuous Conversion Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADCO_A {
+    #[doc = "0: One conversion will be performed (or one set of conversions, if AVGE is set) after a conversion is initiated."]
+    _0 = 0,
+    #[doc = "1: Continuous conversions will be performed (or continuous sets of conversions, if AVGE is set) after a conversion is initiated."]
+    _1 = 1,
 }
-impl ADCOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADCOW::_0 => false,
-            ADCOW::_1 => true,
-        }
+impl From<ADCO_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADCO_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADCOW<'a> {
+#[doc = "Reader of field `ADCO`"]
+pub type ADCO_R = crate::R<bool, ADCO_A>;
+impl ADCO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADCO_A {
+        match self.bits {
+            false => ADCO_A::_0,
+            true => ADCO_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == ADCO_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == ADCO_A::_1
+    }
+}
+#[doc = "Write proxy for field `ADCO`"]
+pub struct ADCO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADCOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADCOW) -> &'a mut W {
+impl<'a> ADCO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADCO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "One conversion will be performed (or one set of conversions, if AVGE is set) after a conversion is initiated."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ADCOW::_0)
+        self.variant(ADCO_A::_0)
     }
     #[doc = "Continuous conversions will be performed (or continuous sets of conversions, if AVGE is set) after a conversion is initiated."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ADCOW::_1)
+        self.variant(ADCO_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CALW<'a> {
+#[doc = "Reader of field `CAL`"]
+pub type CAL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CAL`"]
+pub struct CAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CALW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CAL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Hardware Average Select"]
-    #[inline]
-    pub fn avgs(&self) -> AVGSR {
-        AVGSR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn avgs(&self) -> AVGS_R {
+        AVGS_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - Hardware Average Enable"]
-    #[inline]
-    pub fn avge(&self) -> AVGER {
-        AVGER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn avge(&self) -> AVGE_R {
+        AVGE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Continuous Conversion Enable"]
-    #[inline]
-    pub fn adco(&self) -> ADCOR {
-        ADCOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn adco(&self) -> ADCO_R {
+        ADCO_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Calibration"]
-    #[inline]
-    pub fn cal(&self) -> CALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CALR { bits }
+    #[inline(always)]
+    pub fn cal(&self) -> CAL_R {
+        CAL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Hardware Average Select"]
-    #[inline]
-    pub fn avgs(&mut self) -> _AVGSW {
-        _AVGSW { w: self }
+    #[inline(always)]
+    pub fn avgs(&mut self) -> AVGS_W {
+        AVGS_W { w: self }
     }
     #[doc = "Bit 2 - Hardware Average Enable"]
-    #[inline]
-    pub fn avge(&mut self) -> _AVGEW {
-        _AVGEW { w: self }
+    #[inline(always)]
+    pub fn avge(&mut self) -> AVGE_W {
+        AVGE_W { w: self }
     }
     #[doc = "Bit 3 - Continuous Conversion Enable"]
-    #[inline]
-    pub fn adco(&mut self) -> _ADCOW {
-        _ADCOW { w: self }
+    #[inline(always)]
+    pub fn adco(&mut self) -> ADCO_W {
+        ADCO_W { w: self }
     }
     #[doc = "Bit 7 - Calibration"]
-    #[inline]
-    pub fn cal(&mut self) -> _CALW {
-        _CALW { w: self }
+    #[inline(always)]
+    pub fn cal(&mut self) -> CAL_W {
+        CAL_W { w: self }
     }
 }

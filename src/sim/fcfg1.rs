@@ -1,196 +1,122 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FCFG1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FCFG1"]
+pub type R = crate::R<u32, super::FCFG1>;
+#[doc = "Writer for register FCFG1"]
+pub type W = crate::W<u32, super::FCFG1>;
+#[doc = "Register FCFG1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::FCFG1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DEPARTR {
-    bits: u8,
-}
-impl DEPARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `EEERAMSIZE`"]
+#[doc = "Reader of field `DEPART`"]
+pub type DEPART_R = crate::R<u8, u8>;
+#[doc = "EEE SRAM SIZE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EEERAMSIZER {
-    #[doc = "4 KB"]
-    _0010,
-    #[doc = "2 KB"]
-    _0011,
-    #[doc = "1 KB"]
-    _0100,
-    #[doc = "512 Bytes"]
-    _0101,
-    #[doc = "256 Bytes"]
-    _0110,
-    #[doc = "128 Bytes"]
-    _0111,
-    #[doc = "64 Bytes"]
-    _1000,
-    #[doc = "32 Bytes"]
-    _1001,
-    #[doc = "0 Bytes"]
-    _1111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum EEERAMSIZE_A {
+    #[doc = "2: 4 KB"]
+    _0010 = 2,
+    #[doc = "3: 2 KB"]
+    _0011 = 3,
+    #[doc = "4: 1 KB"]
+    _0100 = 4,
+    #[doc = "5: 512 Bytes"]
+    _0101 = 5,
+    #[doc = "6: 256 Bytes"]
+    _0110 = 6,
+    #[doc = "7: 128 Bytes"]
+    _0111 = 7,
+    #[doc = "8: 64 Bytes"]
+    _1000 = 8,
+    #[doc = "9: 32 Bytes"]
+    _1001 = 9,
+    #[doc = "15: 0 Bytes"]
+    _1111 = 15,
 }
-impl EEERAMSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EEERAMSIZER::_0010 => 2,
-            EEERAMSIZER::_0011 => 3,
-            EEERAMSIZER::_0100 => 4,
-            EEERAMSIZER::_0101 => 5,
-            EEERAMSIZER::_0110 => 6,
-            EEERAMSIZER::_0111 => 7,
-            EEERAMSIZER::_1000 => 8,
-            EEERAMSIZER::_1001 => 9,
-            EEERAMSIZER::_1111 => 15,
-            EEERAMSIZER::_Reserved(bits) => bits,
-        }
+impl From<EEERAMSIZE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EEERAMSIZE_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EEERAMSIZER {
-        match value {
-            2 => EEERAMSIZER::_0010,
-            3 => EEERAMSIZER::_0011,
-            4 => EEERAMSIZER::_0100,
-            5 => EEERAMSIZER::_0101,
-            6 => EEERAMSIZER::_0110,
-            7 => EEERAMSIZER::_0111,
-            8 => EEERAMSIZER::_1000,
-            9 => EEERAMSIZER::_1001,
-            15 => EEERAMSIZER::_1111,
-            i => EEERAMSIZER::_Reserved(i),
+}
+#[doc = "Reader of field `EEERAMSIZE`"]
+pub type EEERAMSIZE_R = crate::R<u8, EEERAMSIZE_A>;
+impl EEERAMSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, EEERAMSIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(EEERAMSIZE_A::_0010),
+            3 => Val(EEERAMSIZE_A::_0011),
+            4 => Val(EEERAMSIZE_A::_0100),
+            5 => Val(EEERAMSIZE_A::_0101),
+            6 => Val(EEERAMSIZE_A::_0110),
+            7 => Val(EEERAMSIZE_A::_0111),
+            8 => Val(EEERAMSIZE_A::_1000),
+            9 => Val(EEERAMSIZE_A::_1001),
+            15 => Val(EEERAMSIZE_A::_1111),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0010(&self) -> bool {
-        *self == EEERAMSIZER::_0010
+        *self == EEERAMSIZE_A::_0010
     }
     #[doc = "Checks if the value of the field is `_0011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0011(&self) -> bool {
-        *self == EEERAMSIZER::_0011
+        *self == EEERAMSIZE_A::_0011
     }
     #[doc = "Checks if the value of the field is `_0100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0100(&self) -> bool {
-        *self == EEERAMSIZER::_0100
+        *self == EEERAMSIZE_A::_0100
     }
     #[doc = "Checks if the value of the field is `_0101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0101(&self) -> bool {
-        *self == EEERAMSIZER::_0101
+        *self == EEERAMSIZE_A::_0101
     }
     #[doc = "Checks if the value of the field is `_0110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0110(&self) -> bool {
-        *self == EEERAMSIZER::_0110
+        *self == EEERAMSIZE_A::_0110
     }
     #[doc = "Checks if the value of the field is `_0111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0111(&self) -> bool {
-        *self == EEERAMSIZER::_0111
+        *self == EEERAMSIZE_A::_0111
     }
     #[doc = "Checks if the value of the field is `_1000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1000(&self) -> bool {
-        *self == EEERAMSIZER::_1000
+        *self == EEERAMSIZE_A::_1000
     }
     #[doc = "Checks if the value of the field is `_1001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1001(&self) -> bool {
-        *self == EEERAMSIZER::_1001
+        *self == EEERAMSIZE_A::_1001
     }
     #[doc = "Checks if the value of the field is `_1111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1111(&self) -> bool {
-        *self == EEERAMSIZER::_1111
+        *self == EEERAMSIZE_A::_1111
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 12:15 - FlexNVM partition"]
-    #[inline]
-    pub fn depart(&self) -> DEPARTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DEPARTR { bits }
+    #[inline(always)]
+    pub fn depart(&self) -> DEPART_R {
+        DEPART_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - EEE SRAM SIZE"]
-    #[inline]
-    pub fn eeeramsize(&self) -> EEERAMSIZER {
-        EEERAMSIZER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn eeeramsize(&self) -> EEERAMSIZE_R {
+        EEERAMSIZE_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
-impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
-}
+impl W {}

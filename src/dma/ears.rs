@@ -1,1966 +1,1376 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EARS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EARS"]
+pub type R = crate::R<u32, super::EARS>;
+#[doc = "Writer for register EARS"]
+pub type W = crate::W<u32, super::EARS>;
+#[doc = "Register EARS `reset()`'s with value 0"]
+impl crate::ResetValue for super::EARS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `EDREQ_0`"]
+#[doc = "Enable asynchronous DMA request in stop mode for channel 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_0R {
-    #[doc = "Disable asynchronous DMA request for channel 0."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 0."]
-    _1,
+pub enum EDREQ_0_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 0."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 0."]
+    _1 = 1,
 }
-impl EDREQ_0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EDREQ_0_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_0_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_0R::_0 => false,
-            EDREQ_0R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_0R {
-        match value {
-            false => EDREQ_0R::_0,
-            true => EDREQ_0R::_1,
+}
+#[doc = "Reader of field `EDREQ_0`"]
+pub type EDREQ_0_R = crate::R<bool, EDREQ_0_A>;
+impl EDREQ_0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_0_A {
+        match self.bits {
+            false => EDREQ_0_A::_0,
+            true => EDREQ_0_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EDREQ_0R::_0
+        *self == EDREQ_0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EDREQ_0R::_1
+        *self == EDREQ_0_A::_1
     }
 }
-#[doc = "Possible values of the field `EDREQ_1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_1R {
-    #[doc = "Disable asynchronous DMA request for channel 1"]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 1."]
-    _1,
-}
-impl EDREQ_1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_1R::_0 => false,
-            EDREQ_1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_1R {
-        match value {
-            false => EDREQ_1R::_0,
-            true => EDREQ_1R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_1R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_1R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_2R {
-    #[doc = "Disable asynchronous DMA request for channel 2."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 2."]
-    _1,
-}
-impl EDREQ_2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_2R::_0 => false,
-            EDREQ_2R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_2R {
-        match value {
-            false => EDREQ_2R::_0,
-            true => EDREQ_2R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_2R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_2R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_3R {
-    #[doc = "Disable asynchronous DMA request for channel 3."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 3."]
-    _1,
-}
-impl EDREQ_3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_3R::_0 => false,
-            EDREQ_3R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_3R {
-        match value {
-            false => EDREQ_3R::_0,
-            true => EDREQ_3R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_3R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_3R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_4R {
-    #[doc = "Disable asynchronous DMA request for channel 4."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 4."]
-    _1,
-}
-impl EDREQ_4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_4R::_0 => false,
-            EDREQ_4R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_4R {
-        match value {
-            false => EDREQ_4R::_0,
-            true => EDREQ_4R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_4R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_4R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_5R {
-    #[doc = "Disable asynchronous DMA request for channel 5."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 5."]
-    _1,
-}
-impl EDREQ_5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_5R::_0 => false,
-            EDREQ_5R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_5R {
-        match value {
-            false => EDREQ_5R::_0,
-            true => EDREQ_5R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_5R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_5R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_6R {
-    #[doc = "Disable asynchronous DMA request for channel 6."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 6."]
-    _1,
-}
-impl EDREQ_6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_6R::_0 => false,
-            EDREQ_6R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_6R {
-        match value {
-            false => EDREQ_6R::_0,
-            true => EDREQ_6R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_6R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_6R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_7R {
-    #[doc = "Disable asynchronous DMA request for channel 7."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 7."]
-    _1,
-}
-impl EDREQ_7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_7R::_0 => false,
-            EDREQ_7R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_7R {
-        match value {
-            false => EDREQ_7R::_0,
-            true => EDREQ_7R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_7R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_7R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_8R {
-    #[doc = "Disable asynchronous DMA request for channel 8."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 8."]
-    _1,
-}
-impl EDREQ_8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_8R::_0 => false,
-            EDREQ_8R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_8R {
-        match value {
-            false => EDREQ_8R::_0,
-            true => EDREQ_8R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_8R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_8R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_9R {
-    #[doc = "Disable asynchronous DMA request for channel 9."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 9."]
-    _1,
-}
-impl EDREQ_9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_9R::_0 => false,
-            EDREQ_9R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_9R {
-        match value {
-            false => EDREQ_9R::_0,
-            true => EDREQ_9R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_9R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_9R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_10R {
-    #[doc = "Disable asynchronous DMA request for channel 10."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 10."]
-    _1,
-}
-impl EDREQ_10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_10R::_0 => false,
-            EDREQ_10R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_10R {
-        match value {
-            false => EDREQ_10R::_0,
-            true => EDREQ_10R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_10R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_10R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_11R {
-    #[doc = "Disable asynchronous DMA request for channel 11."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 11."]
-    _1,
-}
-impl EDREQ_11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_11R::_0 => false,
-            EDREQ_11R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_11R {
-        match value {
-            false => EDREQ_11R::_0,
-            true => EDREQ_11R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_11R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_11R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_12`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_12R {
-    #[doc = "Disable asynchronous DMA request for channel 12."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 12."]
-    _1,
-}
-impl EDREQ_12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_12R::_0 => false,
-            EDREQ_12R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_12R {
-        match value {
-            false => EDREQ_12R::_0,
-            true => EDREQ_12R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_12R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_12R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_13`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_13R {
-    #[doc = "Disable asynchronous DMA request for channel 13."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 13."]
-    _1,
-}
-impl EDREQ_13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_13R::_0 => false,
-            EDREQ_13R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_13R {
-        match value {
-            false => EDREQ_13R::_0,
-            true => EDREQ_13R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_13R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_13R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_14`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_14R {
-    #[doc = "Disable asynchronous DMA request for channel 14."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 14."]
-    _1,
-}
-impl EDREQ_14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_14R::_0 => false,
-            EDREQ_14R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_14R {
-        match value {
-            false => EDREQ_14R::_0,
-            true => EDREQ_14R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_14R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_14R::_1
-    }
-}
-#[doc = "Possible values of the field `EDREQ_15`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDREQ_15R {
-    #[doc = "Disable asynchronous DMA request for channel 15."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 15."]
-    _1,
-}
-impl EDREQ_15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDREQ_15R::_0 => false,
-            EDREQ_15R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDREQ_15R {
-        match value {
-            false => EDREQ_15R::_0,
-            true => EDREQ_15R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == EDREQ_15R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == EDREQ_15R::_1
-    }
-}
-#[doc = "Values that can be written to the field `EDREQ_0`"]
-pub enum EDREQ_0W {
-    #[doc = "Disable asynchronous DMA request for channel 0."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 0."]
-    _1,
-}
-impl EDREQ_0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_0W::_0 => false,
-            EDREQ_0W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_0W<'a> {
+#[doc = "Write proxy for field `EDREQ_0`"]
+pub struct EDREQ_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_0W) -> &'a mut W {
+impl<'a> EDREQ_0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_0W::_0)
+        self.variant(EDREQ_0_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_0W::_1)
+        self.variant(EDREQ_0_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_1`"]
-pub enum EDREQ_1W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 1.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_1_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 1"]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 1."]
+    _1 = 1,
+}
+impl From<EDREQ_1_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_1`"]
+pub type EDREQ_1_R = crate::R<bool, EDREQ_1_A>;
+impl EDREQ_1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_1_A {
+        match self.bits {
+            false => EDREQ_1_A::_0,
+            true => EDREQ_1_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_1_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_1_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_1`"]
+pub struct EDREQ_1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 1"]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 1."]
-    _1,
-}
-impl EDREQ_1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_1W::_0 => false,
-            EDREQ_1W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 1"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_1W::_0)
+        self.variant(EDREQ_1_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_1W::_1)
+        self.variant(EDREQ_1_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_2`"]
-pub enum EDREQ_2W {
-    #[doc = "Disable asynchronous DMA request for channel 2."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 2."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 2.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_2_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 2."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 2."]
+    _1 = 1,
 }
-impl EDREQ_2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_2W::_0 => false,
-            EDREQ_2W::_1 => true,
-        }
+impl From<EDREQ_2_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_2_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_2W<'a> {
+#[doc = "Reader of field `EDREQ_2`"]
+pub type EDREQ_2_R = crate::R<bool, EDREQ_2_A>;
+impl EDREQ_2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_2_A {
+        match self.bits {
+            false => EDREQ_2_A::_0,
+            true => EDREQ_2_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_2_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_2_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_2`"]
+pub struct EDREQ_2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_2W) -> &'a mut W {
+impl<'a> EDREQ_2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 2."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_2W::_0)
+        self.variant(EDREQ_2_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 2."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_2W::_1)
+        self.variant(EDREQ_2_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_3`"]
-pub enum EDREQ_3W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_3_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 3."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 3."]
+    _1 = 1,
+}
+impl From<EDREQ_3_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_3_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_3`"]
+pub type EDREQ_3_R = crate::R<bool, EDREQ_3_A>;
+impl EDREQ_3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_3_A {
+        match self.bits {
+            false => EDREQ_3_A::_0,
+            true => EDREQ_3_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_3_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_3_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_3`"]
+pub struct EDREQ_3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_3_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 3."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 3."]
-    _1,
-}
-impl EDREQ_3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_3W::_0 => false,
-            EDREQ_3W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 3."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_3W::_0)
+        self.variant(EDREQ_3_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 3."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_3W::_1)
+        self.variant(EDREQ_3_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_4`"]
-pub enum EDREQ_4W {
-    #[doc = "Disable asynchronous DMA request for channel 4."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 4."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_4_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 4."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 4."]
+    _1 = 1,
 }
-impl EDREQ_4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_4W::_0 => false,
-            EDREQ_4W::_1 => true,
-        }
+impl From<EDREQ_4_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_4_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_4W<'a> {
+#[doc = "Reader of field `EDREQ_4`"]
+pub type EDREQ_4_R = crate::R<bool, EDREQ_4_A>;
+impl EDREQ_4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_4_A {
+        match self.bits {
+            false => EDREQ_4_A::_0,
+            true => EDREQ_4_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_4_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_4_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_4`"]
+pub struct EDREQ_4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_4W) -> &'a mut W {
+impl<'a> EDREQ_4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 4."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_4W::_0)
+        self.variant(EDREQ_4_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 4."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_4W::_1)
+        self.variant(EDREQ_4_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_5`"]
-pub enum EDREQ_5W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_5_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 5."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 5."]
+    _1 = 1,
+}
+impl From<EDREQ_5_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_5_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_5`"]
+pub type EDREQ_5_R = crate::R<bool, EDREQ_5_A>;
+impl EDREQ_5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_5_A {
+        match self.bits {
+            false => EDREQ_5_A::_0,
+            true => EDREQ_5_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_5_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_5_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_5`"]
+pub struct EDREQ_5_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_5_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 5."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 5."]
-    _1,
-}
-impl EDREQ_5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_5W::_0 => false,
-            EDREQ_5W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_5W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 5."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_5W::_0)
+        self.variant(EDREQ_5_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 5."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_5W::_1)
+        self.variant(EDREQ_5_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_6`"]
-pub enum EDREQ_6W {
-    #[doc = "Disable asynchronous DMA request for channel 6."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 6."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_6_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 6."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 6."]
+    _1 = 1,
 }
-impl EDREQ_6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_6W::_0 => false,
-            EDREQ_6W::_1 => true,
-        }
+impl From<EDREQ_6_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_6_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_6W<'a> {
+#[doc = "Reader of field `EDREQ_6`"]
+pub type EDREQ_6_R = crate::R<bool, EDREQ_6_A>;
+impl EDREQ_6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_6_A {
+        match self.bits {
+            false => EDREQ_6_A::_0,
+            true => EDREQ_6_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_6_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_6_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_6`"]
+pub struct EDREQ_6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_6W) -> &'a mut W {
+impl<'a> EDREQ_6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 6."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_6W::_0)
+        self.variant(EDREQ_6_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 6."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_6W::_1)
+        self.variant(EDREQ_6_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_7`"]
-pub enum EDREQ_7W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_7_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 7."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 7."]
+    _1 = 1,
+}
+impl From<EDREQ_7_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_7_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_7`"]
+pub type EDREQ_7_R = crate::R<bool, EDREQ_7_A>;
+impl EDREQ_7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_7_A {
+        match self.bits {
+            false => EDREQ_7_A::_0,
+            true => EDREQ_7_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_7_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_7_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_7`"]
+pub struct EDREQ_7_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_7_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 7."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 7."]
-    _1,
-}
-impl EDREQ_7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_7W::_0 => false,
-            EDREQ_7W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_7W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 7."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_7W::_0)
+        self.variant(EDREQ_7_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 7."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_7W::_1)
+        self.variant(EDREQ_7_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_8`"]
-pub enum EDREQ_8W {
-    #[doc = "Disable asynchronous DMA request for channel 8."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 8."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 8\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_8_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 8."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 8."]
+    _1 = 1,
 }
-impl EDREQ_8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_8W::_0 => false,
-            EDREQ_8W::_1 => true,
-        }
+impl From<EDREQ_8_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_8_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_8W<'a> {
+#[doc = "Reader of field `EDREQ_8`"]
+pub type EDREQ_8_R = crate::R<bool, EDREQ_8_A>;
+impl EDREQ_8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_8_A {
+        match self.bits {
+            false => EDREQ_8_A::_0,
+            true => EDREQ_8_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_8_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_8_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_8`"]
+pub struct EDREQ_8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_8W) -> &'a mut W {
+impl<'a> EDREQ_8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_8_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 8."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_8W::_0)
+        self.variant(EDREQ_8_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 8."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_8W::_1)
+        self.variant(EDREQ_8_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_9`"]
-pub enum EDREQ_9W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 9\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_9_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 9."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 9."]
+    _1 = 1,
+}
+impl From<EDREQ_9_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_9_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_9`"]
+pub type EDREQ_9_R = crate::R<bool, EDREQ_9_A>;
+impl EDREQ_9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_9_A {
+        match self.bits {
+            false => EDREQ_9_A::_0,
+            true => EDREQ_9_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_9_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_9_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_9`"]
+pub struct EDREQ_9_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_9_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 9."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 9."]
-    _1,
-}
-impl EDREQ_9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_9W::_0 => false,
-            EDREQ_9W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_9W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_9W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 9."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_9W::_0)
+        self.variant(EDREQ_9_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 9."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_9W::_1)
+        self.variant(EDREQ_9_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_10`"]
-pub enum EDREQ_10W {
-    #[doc = "Disable asynchronous DMA request for channel 10."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 10."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 10\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_10_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 10."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 10."]
+    _1 = 1,
 }
-impl EDREQ_10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_10W::_0 => false,
-            EDREQ_10W::_1 => true,
-        }
+impl From<EDREQ_10_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_10_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_10W<'a> {
+#[doc = "Reader of field `EDREQ_10`"]
+pub type EDREQ_10_R = crate::R<bool, EDREQ_10_A>;
+impl EDREQ_10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_10_A {
+        match self.bits {
+            false => EDREQ_10_A::_0,
+            true => EDREQ_10_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_10_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_10_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_10`"]
+pub struct EDREQ_10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_10W) -> &'a mut W {
+impl<'a> EDREQ_10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 10."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_10W::_0)
+        self.variant(EDREQ_10_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 10."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_10W::_1)
+        self.variant(EDREQ_10_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_11`"]
-pub enum EDREQ_11W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 11\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_11_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 11."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 11."]
+    _1 = 1,
+}
+impl From<EDREQ_11_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_11_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_11`"]
+pub type EDREQ_11_R = crate::R<bool, EDREQ_11_A>;
+impl EDREQ_11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_11_A {
+        match self.bits {
+            false => EDREQ_11_A::_0,
+            true => EDREQ_11_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_11_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_11_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_11`"]
+pub struct EDREQ_11_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_11_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 11."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 11."]
-    _1,
-}
-impl EDREQ_11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_11W::_0 => false,
-            EDREQ_11W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_11W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_11W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 11."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_11W::_0)
+        self.variant(EDREQ_11_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 11."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_11W::_1)
+        self.variant(EDREQ_11_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_12`"]
-pub enum EDREQ_12W {
-    #[doc = "Disable asynchronous DMA request for channel 12."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 12."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 12\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_12_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 12."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 12."]
+    _1 = 1,
 }
-impl EDREQ_12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_12W::_0 => false,
-            EDREQ_12W::_1 => true,
-        }
+impl From<EDREQ_12_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_12_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_12W<'a> {
+#[doc = "Reader of field `EDREQ_12`"]
+pub type EDREQ_12_R = crate::R<bool, EDREQ_12_A>;
+impl EDREQ_12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_12_A {
+        match self.bits {
+            false => EDREQ_12_A::_0,
+            true => EDREQ_12_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_12_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_12_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_12`"]
+pub struct EDREQ_12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_12W) -> &'a mut W {
+impl<'a> EDREQ_12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_12_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 12."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_12W::_0)
+        self.variant(EDREQ_12_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 12."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_12W::_1)
+        self.variant(EDREQ_12_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_13`"]
-pub enum EDREQ_13W {
+#[doc = "Enable asynchronous DMA request in stop mode for channel 13\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_13_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 13."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 13."]
+    _1 = 1,
+}
+impl From<EDREQ_13_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_13_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `EDREQ_13`"]
+pub type EDREQ_13_R = crate::R<bool, EDREQ_13_A>;
+impl EDREQ_13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_13_A {
+        match self.bits {
+            false => EDREQ_13_A::_0,
+            true => EDREQ_13_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_13_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_13_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_13`"]
+pub struct EDREQ_13_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDREQ_13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_13_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable asynchronous DMA request for channel 13."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 13."]
-    _1,
-}
-impl EDREQ_13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_13W::_0 => false,
-            EDREQ_13W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDREQ_13W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDREQ_13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_13W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable asynchronous DMA request for channel 13."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_13W::_0)
+        self.variant(EDREQ_13_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 13."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_13W::_1)
+        self.variant(EDREQ_13_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_14`"]
-pub enum EDREQ_14W {
-    #[doc = "Disable asynchronous DMA request for channel 14."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 14."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 14\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_14_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 14."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 14."]
+    _1 = 1,
 }
-impl EDREQ_14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_14W::_0 => false,
-            EDREQ_14W::_1 => true,
-        }
+impl From<EDREQ_14_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_14_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_14W<'a> {
+#[doc = "Reader of field `EDREQ_14`"]
+pub type EDREQ_14_R = crate::R<bool, EDREQ_14_A>;
+impl EDREQ_14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_14_A {
+        match self.bits {
+            false => EDREQ_14_A::_0,
+            true => EDREQ_14_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_14_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_14_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_14`"]
+pub struct EDREQ_14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_14W) -> &'a mut W {
+impl<'a> EDREQ_14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_14_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 14."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_14W::_0)
+        self.variant(EDREQ_14_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 14."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_14W::_1)
+        self.variant(EDREQ_14_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDREQ_15`"]
-pub enum EDREQ_15W {
-    #[doc = "Disable asynchronous DMA request for channel 15."]
-    _0,
-    #[doc = "Enable asynchronous DMA request for channel 15."]
-    _1,
+#[doc = "Enable asynchronous DMA request in stop mode for channel 15\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDREQ_15_A {
+    #[doc = "0: Disable asynchronous DMA request for channel 15."]
+    _0 = 0,
+    #[doc = "1: Enable asynchronous DMA request for channel 15."]
+    _1 = 1,
 }
-impl EDREQ_15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDREQ_15W::_0 => false,
-            EDREQ_15W::_1 => true,
-        }
+impl From<EDREQ_15_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDREQ_15_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDREQ_15W<'a> {
+#[doc = "Reader of field `EDREQ_15`"]
+pub type EDREQ_15_R = crate::R<bool, EDREQ_15_A>;
+impl EDREQ_15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDREQ_15_A {
+        match self.bits {
+            false => EDREQ_15_A::_0,
+            true => EDREQ_15_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == EDREQ_15_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == EDREQ_15_A::_1
+    }
+}
+#[doc = "Write proxy for field `EDREQ_15`"]
+pub struct EDREQ_15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDREQ_15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDREQ_15W) -> &'a mut W {
+impl<'a> EDREQ_15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDREQ_15_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable asynchronous DMA request for channel 15."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EDREQ_15W::_0)
+        self.variant(EDREQ_15_A::_0)
     }
     #[doc = "Enable asynchronous DMA request for channel 15."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EDREQ_15W::_1)
+        self.variant(EDREQ_15_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable asynchronous DMA request in stop mode for channel 0."]
-    #[inline]
-    pub fn edreq_0(&self) -> EDREQ_0R {
-        EDREQ_0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_0(&self) -> EDREQ_0_R {
+        EDREQ_0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable asynchronous DMA request in stop mode for channel 1."]
-    #[inline]
-    pub fn edreq_1(&self) -> EDREQ_1R {
-        EDREQ_1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_1(&self) -> EDREQ_1_R {
+        EDREQ_1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable asynchronous DMA request in stop mode for channel 2."]
-    #[inline]
-    pub fn edreq_2(&self) -> EDREQ_2R {
-        EDREQ_2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_2(&self) -> EDREQ_2_R {
+        EDREQ_2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Enable asynchronous DMA request in stop mode for channel 3."]
-    #[inline]
-    pub fn edreq_3(&self) -> EDREQ_3R {
-        EDREQ_3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_3(&self) -> EDREQ_3_R {
+        EDREQ_3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable asynchronous DMA request in stop mode for channel 4"]
-    #[inline]
-    pub fn edreq_4(&self) -> EDREQ_4R {
-        EDREQ_4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_4(&self) -> EDREQ_4_R {
+        EDREQ_4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable asynchronous DMA request in stop mode for channel 5"]
-    #[inline]
-    pub fn edreq_5(&self) -> EDREQ_5R {
-        EDREQ_5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_5(&self) -> EDREQ_5_R {
+        EDREQ_5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable asynchronous DMA request in stop mode for channel 6"]
-    #[inline]
-    pub fn edreq_6(&self) -> EDREQ_6R {
-        EDREQ_6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_6(&self) -> EDREQ_6_R {
+        EDREQ_6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable asynchronous DMA request in stop mode for channel 7"]
-    #[inline]
-    pub fn edreq_7(&self) -> EDREQ_7R {
-        EDREQ_7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_7(&self) -> EDREQ_7_R {
+        EDREQ_7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Enable asynchronous DMA request in stop mode for channel 8"]
-    #[inline]
-    pub fn edreq_8(&self) -> EDREQ_8R {
-        EDREQ_8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_8(&self) -> EDREQ_8_R {
+        EDREQ_8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Enable asynchronous DMA request in stop mode for channel 9"]
-    #[inline]
-    pub fn edreq_9(&self) -> EDREQ_9R {
-        EDREQ_9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_9(&self) -> EDREQ_9_R {
+        EDREQ_9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Enable asynchronous DMA request in stop mode for channel 10"]
-    #[inline]
-    pub fn edreq_10(&self) -> EDREQ_10R {
-        EDREQ_10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_10(&self) -> EDREQ_10_R {
+        EDREQ_10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Enable asynchronous DMA request in stop mode for channel 11"]
-    #[inline]
-    pub fn edreq_11(&self) -> EDREQ_11R {
-        EDREQ_11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_11(&self) -> EDREQ_11_R {
+        EDREQ_11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Enable asynchronous DMA request in stop mode for channel 12"]
-    #[inline]
-    pub fn edreq_12(&self) -> EDREQ_12R {
-        EDREQ_12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_12(&self) -> EDREQ_12_R {
+        EDREQ_12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Enable asynchronous DMA request in stop mode for channel 13"]
-    #[inline]
-    pub fn edreq_13(&self) -> EDREQ_13R {
-        EDREQ_13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_13(&self) -> EDREQ_13_R {
+        EDREQ_13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Enable asynchronous DMA request in stop mode for channel 14"]
-    #[inline]
-    pub fn edreq_14(&self) -> EDREQ_14R {
-        EDREQ_14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_14(&self) -> EDREQ_14_R {
+        EDREQ_14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Enable asynchronous DMA request in stop mode for channel 15"]
-    #[inline]
-    pub fn edreq_15(&self) -> EDREQ_15R {
-        EDREQ_15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edreq_15(&self) -> EDREQ_15_R {
+        EDREQ_15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable asynchronous DMA request in stop mode for channel 0."]
-    #[inline]
-    pub fn edreq_0(&mut self) -> _EDREQ_0W {
-        _EDREQ_0W { w: self }
+    #[inline(always)]
+    pub fn edreq_0(&mut self) -> EDREQ_0_W {
+        EDREQ_0_W { w: self }
     }
     #[doc = "Bit 1 - Enable asynchronous DMA request in stop mode for channel 1."]
-    #[inline]
-    pub fn edreq_1(&mut self) -> _EDREQ_1W {
-        _EDREQ_1W { w: self }
+    #[inline(always)]
+    pub fn edreq_1(&mut self) -> EDREQ_1_W {
+        EDREQ_1_W { w: self }
     }
     #[doc = "Bit 2 - Enable asynchronous DMA request in stop mode for channel 2."]
-    #[inline]
-    pub fn edreq_2(&mut self) -> _EDREQ_2W {
-        _EDREQ_2W { w: self }
+    #[inline(always)]
+    pub fn edreq_2(&mut self) -> EDREQ_2_W {
+        EDREQ_2_W { w: self }
     }
     #[doc = "Bit 3 - Enable asynchronous DMA request in stop mode for channel 3."]
-    #[inline]
-    pub fn edreq_3(&mut self) -> _EDREQ_3W {
-        _EDREQ_3W { w: self }
+    #[inline(always)]
+    pub fn edreq_3(&mut self) -> EDREQ_3_W {
+        EDREQ_3_W { w: self }
     }
     #[doc = "Bit 4 - Enable asynchronous DMA request in stop mode for channel 4"]
-    #[inline]
-    pub fn edreq_4(&mut self) -> _EDREQ_4W {
-        _EDREQ_4W { w: self }
+    #[inline(always)]
+    pub fn edreq_4(&mut self) -> EDREQ_4_W {
+        EDREQ_4_W { w: self }
     }
     #[doc = "Bit 5 - Enable asynchronous DMA request in stop mode for channel 5"]
-    #[inline]
-    pub fn edreq_5(&mut self) -> _EDREQ_5W {
-        _EDREQ_5W { w: self }
+    #[inline(always)]
+    pub fn edreq_5(&mut self) -> EDREQ_5_W {
+        EDREQ_5_W { w: self }
     }
     #[doc = "Bit 6 - Enable asynchronous DMA request in stop mode for channel 6"]
-    #[inline]
-    pub fn edreq_6(&mut self) -> _EDREQ_6W {
-        _EDREQ_6W { w: self }
+    #[inline(always)]
+    pub fn edreq_6(&mut self) -> EDREQ_6_W {
+        EDREQ_6_W { w: self }
     }
     #[doc = "Bit 7 - Enable asynchronous DMA request in stop mode for channel 7"]
-    #[inline]
-    pub fn edreq_7(&mut self) -> _EDREQ_7W {
-        _EDREQ_7W { w: self }
+    #[inline(always)]
+    pub fn edreq_7(&mut self) -> EDREQ_7_W {
+        EDREQ_7_W { w: self }
     }
     #[doc = "Bit 8 - Enable asynchronous DMA request in stop mode for channel 8"]
-    #[inline]
-    pub fn edreq_8(&mut self) -> _EDREQ_8W {
-        _EDREQ_8W { w: self }
+    #[inline(always)]
+    pub fn edreq_8(&mut self) -> EDREQ_8_W {
+        EDREQ_8_W { w: self }
     }
     #[doc = "Bit 9 - Enable asynchronous DMA request in stop mode for channel 9"]
-    #[inline]
-    pub fn edreq_9(&mut self) -> _EDREQ_9W {
-        _EDREQ_9W { w: self }
+    #[inline(always)]
+    pub fn edreq_9(&mut self) -> EDREQ_9_W {
+        EDREQ_9_W { w: self }
     }
     #[doc = "Bit 10 - Enable asynchronous DMA request in stop mode for channel 10"]
-    #[inline]
-    pub fn edreq_10(&mut self) -> _EDREQ_10W {
-        _EDREQ_10W { w: self }
+    #[inline(always)]
+    pub fn edreq_10(&mut self) -> EDREQ_10_W {
+        EDREQ_10_W { w: self }
     }
     #[doc = "Bit 11 - Enable asynchronous DMA request in stop mode for channel 11"]
-    #[inline]
-    pub fn edreq_11(&mut self) -> _EDREQ_11W {
-        _EDREQ_11W { w: self }
+    #[inline(always)]
+    pub fn edreq_11(&mut self) -> EDREQ_11_W {
+        EDREQ_11_W { w: self }
     }
     #[doc = "Bit 12 - Enable asynchronous DMA request in stop mode for channel 12"]
-    #[inline]
-    pub fn edreq_12(&mut self) -> _EDREQ_12W {
-        _EDREQ_12W { w: self }
+    #[inline(always)]
+    pub fn edreq_12(&mut self) -> EDREQ_12_W {
+        EDREQ_12_W { w: self }
     }
     #[doc = "Bit 13 - Enable asynchronous DMA request in stop mode for channel 13"]
-    #[inline]
-    pub fn edreq_13(&mut self) -> _EDREQ_13W {
-        _EDREQ_13W { w: self }
+    #[inline(always)]
+    pub fn edreq_13(&mut self) -> EDREQ_13_W {
+        EDREQ_13_W { w: self }
     }
     #[doc = "Bit 14 - Enable asynchronous DMA request in stop mode for channel 14"]
-    #[inline]
-    pub fn edreq_14(&mut self) -> _EDREQ_14W {
-        _EDREQ_14W { w: self }
+    #[inline(always)]
+    pub fn edreq_14(&mut self) -> EDREQ_14_W {
+        EDREQ_14_W { w: self }
     }
     #[doc = "Bit 15 - Enable asynchronous DMA request in stop mode for channel 15"]
-    #[inline]
-    pub fn edreq_15(&mut self) -> _EDREQ_15W {
-        _EDREQ_15W { w: self }
+    #[inline(always)]
+    pub fn edreq_15(&mut self) -> EDREQ_15_W {
+        EDREQ_15_W { w: self }
     }
 }

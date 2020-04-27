@@ -1,264 +1,153 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PAIR3DEADTIME {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PAIR3DEADTIME"]
+pub type R = crate::R<u32, super::PAIR3DEADTIME>;
+#[doc = "Writer for register PAIR3DEADTIME"]
+pub type W = crate::W<u32, super::PAIR3DEADTIME>;
+#[doc = "Register PAIR3DEADTIME `reset()`'s with value 0"]
+impl crate::ResetValue for super::PAIR3DEADTIME {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DTVALR {
-    bits: u8,
+#[doc = "Reader of field `DTVAL`"]
+pub type DTVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DTVAL`"]
+pub struct DTVAL_W<'a> {
+    w: &'a mut W,
 }
-impl DTVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DTVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
-#[doc = "Possible values of the field `DTPS`"]
+#[doc = "Deadtime Prescaler Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DTPSR {
-    #[doc = "Divide the FTM input clock by 1."]
-    _0X,
-    #[doc = "Divide the FTM input clock by 4."]
-    _10,
-    #[doc = "Divide the FTM input clock by 16."]
-    _11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum DTPS_A {
+    #[doc = "0: Divide the FTM input clock by 1."]
+    _0X = 0,
+    #[doc = "2: Divide the FTM input clock by 4."]
+    _10 = 2,
+    #[doc = "3: Divide the FTM input clock by 16."]
+    _11 = 3,
 }
-impl DTPSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DTPSR::_0X => 0,
-            DTPSR::_10 => 2,
-            DTPSR::_11 => 3,
-            DTPSR::_Reserved(bits) => bits,
-        }
+impl From<DTPS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DTPS_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DTPSR {
-        match value {
-            0 => DTPSR::_0X,
-            2 => DTPSR::_10,
-            3 => DTPSR::_11,
-            i => DTPSR::_Reserved(i),
+}
+#[doc = "Reader of field `DTPS`"]
+pub type DTPS_R = crate::R<u8, DTPS_A>;
+impl DTPS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DTPS_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DTPS_A::_0X),
+            2 => Val(DTPS_A::_10),
+            3 => Val(DTPS_A::_11),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0x(&self) -> bool {
-        *self == DTPSR::_0X
+        *self == DTPS_A::_0X
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == DTPSR::_10
+        *self == DTPS_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == DTPSR::_11
+        *self == DTPS_A::_11
     }
 }
-#[doc = r" Value of the field"]
-pub struct DTVALEXR {
-    bits: u8,
-}
-impl DTVALEXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DTVALW<'a> {
+#[doc = "Write proxy for field `DTPS`"]
+pub struct DTPS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DTVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DTPS`"]
-pub enum DTPSW {
-    #[doc = "Divide the FTM input clock by 1."]
-    _0X,
-    #[doc = "Divide the FTM input clock by 4."]
-    _10,
-    #[doc = "Divide the FTM input clock by 16."]
-    _11,
-}
-impl DTPSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DTPSW::_0X => 0,
-            DTPSW::_10 => 2,
-            DTPSW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DTPSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DTPSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DTPSW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> DTPS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DTPS_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Divide the FTM input clock by 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _0x(self) -> &'a mut W {
-        self.variant(DTPSW::_0X)
+        self.variant(DTPS_A::_0X)
     }
     #[doc = "Divide the FTM input clock by 4."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(DTPSW::_10)
+        self.variant(DTPS_A::_10)
     }
     #[doc = "Divide the FTM input clock by 16."]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(DTPSW::_11)
+        self.variant(DTPS_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DTVALEXW<'a> {
+#[doc = "Reader of field `DTVALEX`"]
+pub type DTVALEX_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DTVALEX`"]
+pub struct DTVALEX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DTVALEXW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DTVALEX_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Deadtime Value"]
-    #[inline]
-    pub fn dtval(&self) -> DTVALR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DTVALR { bits }
+    #[inline(always)]
+    pub fn dtval(&self) -> DTVAL_R {
+        DTVAL_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 6:7 - Deadtime Prescaler Value"]
-    #[inline]
-    pub fn dtps(&self) -> DTPSR {
-        DTPSR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dtps(&self) -> DTPS_R {
+        DTPS_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 16:19 - Extended Deadtime Value"]
-    #[inline]
-    pub fn dtvalex(&self) -> DTVALEXR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DTVALEXR { bits }
+    #[inline(always)]
+    pub fn dtvalex(&self) -> DTVALEX_R {
+        DTVALEX_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Deadtime Value"]
-    #[inline]
-    pub fn dtval(&mut self) -> _DTVALW {
-        _DTVALW { w: self }
+    #[inline(always)]
+    pub fn dtval(&mut self) -> DTVAL_W {
+        DTVAL_W { w: self }
     }
     #[doc = "Bits 6:7 - Deadtime Prescaler Value"]
-    #[inline]
-    pub fn dtps(&mut self) -> _DTPSW {
-        _DTPSW { w: self }
+    #[inline(always)]
+    pub fn dtps(&mut self) -> DTPS_W {
+        DTPS_W { w: self }
     }
     #[doc = "Bits 16:19 - Extended Deadtime Value"]
-    #[inline]
-    pub fn dtvalex(&mut self) -> _DTVALEXW {
-        _DTVALEXW { w: self }
+    #[inline(always)]
+    pub fn dtvalex(&mut self) -> DTVALEX_W {
+        DTVALEX_W { w: self }
     }
 }

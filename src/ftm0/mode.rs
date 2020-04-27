@@ -1,821 +1,571 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MODE"]
+pub type R = crate::R<u32, super::MODE>;
+#[doc = "Writer for register MODE"]
+pub type W = crate::W<u32, super::MODE>;
+#[doc = "Register MODE `reset()`'s with value 0x04"]
+impl crate::ResetValue for super::MODE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x04
     }
 }
-#[doc = "Possible values of the field `FTMEN`"]
+#[doc = "FTM Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTMENR {
+pub enum FTMEN_A {
+    #[doc = "0: TPM compatibility. Free running counter and synchronization compatible with TPM."]
+    _0 = 0,
+    #[doc = "1: Free running counter and synchronization are different from TPM behavior."]
+    _1 = 1,
+}
+impl From<FTMEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: FTMEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `FTMEN`"]
+pub type FTMEN_R = crate::R<bool, FTMEN_A>;
+impl FTMEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTMEN_A {
+        match self.bits {
+            false => FTMEN_A::_0,
+            true => FTMEN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FTMEN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FTMEN_A::_1
+    }
+}
+#[doc = "Write proxy for field `FTMEN`"]
+pub struct FTMEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTMEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTMEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(FTMEN_A::_0)
+    }
     #[doc = "Free running counter and synchronization are different from TPM behavior."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(FTMEN_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
 }
-impl FTMENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Write proxy for field `INIT`"]
+pub struct INIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FTMENR::_0 => false,
-            FTMENR::_1 => true,
-        }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FTMENR {
-        match value {
-            false => FTMENR::_0,
-            true => FTMENR::_1,
+}
+#[doc = "Write Protection Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WPDIS_A {
+    #[doc = "0: Write protection is enabled."]
+    _0 = 0,
+    #[doc = "1: Write protection is disabled."]
+    _1 = 1,
+}
+impl From<WPDIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: WPDIS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `WPDIS`"]
+pub type WPDIS_R = crate::R<bool, WPDIS_A>;
+impl WPDIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WPDIS_A {
+        match self.bits {
+            false => WPDIS_A::_0,
+            true => WPDIS_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FTMENR::_0
+        *self == WPDIS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FTMENR::_1
+        *self == WPDIS_A::_1
     }
 }
-#[doc = "Possible values of the field `WPDIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WPDISR {
+#[doc = "Write proxy for field `WPDIS`"]
+pub struct WPDIS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WPDIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WPDIS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Write protection is enabled."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(WPDIS_A::_0)
+    }
     #[doc = "Write protection is disabled."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(WPDIS_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
 }
-impl WPDISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "PWM Synchronization Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PWMSYNC_A {
+    #[doc = "0: No restrictions. Software and hardware triggers can be used by MOD, CnV, OUTMASK, and FTM counter synchronization."]
+    _0 = 0,
+    #[doc = "1: Software trigger can only be used by MOD and CnV synchronization, and hardware triggers can only be used by OUTMASK and FTM counter synchronization."]
+    _1 = 1,
+}
+impl From<PWMSYNC_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWMSYNC_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WPDISR::_0 => false,
-            WPDISR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WPDISR {
-        match value {
-            false => WPDISR::_0,
-            true => WPDISR::_1,
+}
+#[doc = "Reader of field `PWMSYNC`"]
+pub type PWMSYNC_R = crate::R<bool, PWMSYNC_A>;
+impl PWMSYNC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWMSYNC_A {
+        match self.bits {
+            false => PWMSYNC_A::_0,
+            true => PWMSYNC_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == WPDISR::_0
+        *self == PWMSYNC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == WPDISR::_1
+        *self == PWMSYNC_A::_1
     }
 }
-#[doc = "Possible values of the field `PWMSYNC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PWMSYNCR {
+#[doc = "Write proxy for field `PWMSYNC`"]
+pub struct PWMSYNC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PWMSYNC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PWMSYNC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No restrictions. Software and hardware triggers can be used by MOD, CnV, OUTMASK, and FTM counter synchronization."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(PWMSYNC_A::_0)
+    }
     #[doc = "Software trigger can only be used by MOD and CnV synchronization, and hardware triggers can only be used by OUTMASK and FTM counter synchronization."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(PWMSYNC_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
 }
-impl PWMSYNCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Capture Test Mode Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CAPTEST_A {
+    #[doc = "0: Capture test mode is disabled."]
+    _0 = 0,
+    #[doc = "1: Capture test mode is enabled."]
+    _1 = 1,
+}
+impl From<CAPTEST_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAPTEST_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PWMSYNCR::_0 => false,
-            PWMSYNCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PWMSYNCR {
-        match value {
-            false => PWMSYNCR::_0,
-            true => PWMSYNCR::_1,
+}
+#[doc = "Reader of field `CAPTEST`"]
+pub type CAPTEST_R = crate::R<bool, CAPTEST_A>;
+impl CAPTEST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAPTEST_A {
+        match self.bits {
+            false => CAPTEST_A::_0,
+            true => CAPTEST_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PWMSYNCR::_0
+        *self == CAPTEST_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PWMSYNCR::_1
+        *self == CAPTEST_A::_1
     }
 }
-#[doc = "Possible values of the field `CAPTEST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAPTESTR {
+#[doc = "Write proxy for field `CAPTEST`"]
+pub struct CAPTEST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CAPTEST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAPTEST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Capture test mode is disabled."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(CAPTEST_A::_0)
+    }
     #[doc = "Capture test mode is enabled."]
-    _1,
-}
-impl CAPTESTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(CAPTEST_A::_1)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CAPTESTR::_0 => false,
-            CAPTESTR::_1 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CAPTESTR {
-        match value {
-            false => CAPTESTR::_0,
-            true => CAPTESTR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CAPTESTR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CAPTESTR::_1
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
-#[doc = "Possible values of the field `FAULTM`"]
+#[doc = "Fault Control Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FAULTMR {
-    #[doc = "Fault control is disabled for all channels."]
-    _00,
-    #[doc = "Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
-    _01,
-    #[doc = "Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
-    _10,
-    #[doc = "Fault control is enabled for all channels, and the selected mode is the automatic fault clearing."]
-    _11,
+#[repr(u8)]
+pub enum FAULTM_A {
+    #[doc = "0: Fault control is disabled for all channels."]
+    _00 = 0,
+    #[doc = "1: Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
+    _01 = 1,
+    #[doc = "2: Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
+    _10 = 2,
+    #[doc = "3: Fault control is enabled for all channels, and the selected mode is the automatic fault clearing."]
+    _11 = 3,
 }
-impl FAULTMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FAULTMR::_00 => 0,
-            FAULTMR::_01 => 1,
-            FAULTMR::_10 => 2,
-            FAULTMR::_11 => 3,
-        }
+impl From<FAULTM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FAULTM_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FAULTMR {
-        match value {
-            0 => FAULTMR::_00,
-            1 => FAULTMR::_01,
-            2 => FAULTMR::_10,
-            3 => FAULTMR::_11,
+}
+#[doc = "Reader of field `FAULTM`"]
+pub type FAULTM_R = crate::R<u8, FAULTM_A>;
+impl FAULTM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FAULTM_A {
+        match self.bits {
+            0 => FAULTM_A::_00,
+            1 => FAULTM_A::_01,
+            2 => FAULTM_A::_10,
+            3 => FAULTM_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == FAULTMR::_00
+        *self == FAULTM_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == FAULTMR::_01
+        *self == FAULTM_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == FAULTMR::_10
+        *self == FAULTM_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == FAULTMR::_11
+        *self == FAULTM_A::_11
     }
 }
-#[doc = "Possible values of the field `FAULTIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FAULTIER {
-    #[doc = "Fault control interrupt is disabled."]
-    _0,
-    #[doc = "Fault control interrupt is enabled."]
-    _1,
+#[doc = "Write proxy for field `FAULTM`"]
+pub struct FAULTM_W<'a> {
+    w: &'a mut W,
 }
-impl FAULTIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FAULTIER::_0 => false,
-            FAULTIER::_1 => true,
+impl<'a> FAULTM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FAULTM_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FAULTIER {
-        match value {
-            false => FAULTIER::_0,
-            true => FAULTIER::_1,
+    #[doc = "Fault control is disabled for all channels."]
+    #[inline(always)]
+    pub fn _00(self) -> &'a mut W {
+        self.variant(FAULTM_A::_00)
+    }
+    #[doc = "Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
+    #[inline(always)]
+    pub fn _01(self) -> &'a mut W {
+        self.variant(FAULTM_A::_01)
+    }
+    #[doc = "Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(FAULTM_A::_10)
+    }
+    #[doc = "Fault control is enabled for all channels, and the selected mode is the automatic fault clearing."]
+    #[inline(always)]
+    pub fn _11(self) -> &'a mut W {
+        self.variant(FAULTM_A::_11)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 5)) | (((value as u32) & 0x03) << 5);
+        self.w
+    }
+}
+#[doc = "Fault Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FAULTIE_A {
+    #[doc = "0: Fault control interrupt is disabled."]
+    _0 = 0,
+    #[doc = "1: Fault control interrupt is enabled."]
+    _1 = 1,
+}
+impl From<FAULTIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: FAULTIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `FAULTIE`"]
+pub type FAULTIE_R = crate::R<bool, FAULTIE_A>;
+impl FAULTIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FAULTIE_A {
+        match self.bits {
+            false => FAULTIE_A::_0,
+            true => FAULTIE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FAULTIER::_0
+        *self == FAULTIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FAULTIER::_1
+        *self == FAULTIE_A::_1
     }
 }
-#[doc = "Values that can be written to the field `FTMEN`"]
-pub enum FTMENW {
-    #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."]
-    _0,
-    #[doc = "Free running counter and synchronization are different from TPM behavior."]
-    _1,
-}
-impl FTMENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FTMENW::_0 => false,
-            FTMENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTMENW<'a> {
+#[doc = "Write proxy for field `FAULTIE`"]
+pub struct FAULTIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTMENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTMENW) -> &'a mut W {
+impl<'a> FAULTIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FAULTIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "TPM compatibility. Free running counter and synchronization compatible with TPM."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(FTMENW::_0)
-    }
-    #[doc = "Free running counter and synchronization are different from TPM behavior."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(FTMENW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INITW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WPDIS`"]
-pub enum WPDISW {
-    #[doc = "Write protection is enabled."]
-    _0,
-    #[doc = "Write protection is disabled."]
-    _1,
-}
-impl WPDISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WPDISW::_0 => false,
-            WPDISW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WPDISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WPDISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WPDISW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Write protection is enabled."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(WPDISW::_0)
-    }
-    #[doc = "Write protection is disabled."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(WPDISW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PWMSYNC`"]
-pub enum PWMSYNCW {
-    #[doc = "No restrictions. Software and hardware triggers can be used by MOD, CnV, OUTMASK, and FTM counter synchronization."]
-    _0,
-    #[doc = "Software trigger can only be used by MOD and CnV synchronization, and hardware triggers can only be used by OUTMASK and FTM counter synchronization."]
-    _1,
-}
-impl PWMSYNCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PWMSYNCW::_0 => false,
-            PWMSYNCW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PWMSYNCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PWMSYNCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PWMSYNCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No restrictions. Software and hardware triggers can be used by MOD, CnV, OUTMASK, and FTM counter synchronization."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(PWMSYNCW::_0)
-    }
-    #[doc = "Software trigger can only be used by MOD and CnV synchronization, and hardware triggers can only be used by OUTMASK and FTM counter synchronization."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(PWMSYNCW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAPTEST`"]
-pub enum CAPTESTW {
-    #[doc = "Capture test mode is disabled."]
-    _0,
-    #[doc = "Capture test mode is enabled."]
-    _1,
-}
-impl CAPTESTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CAPTESTW::_0 => false,
-            CAPTESTW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAPTESTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAPTESTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAPTESTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Capture test mode is disabled."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(CAPTESTW::_0)
-    }
-    #[doc = "Capture test mode is enabled."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(CAPTESTW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FAULTM`"]
-pub enum FAULTMW {
-    #[doc = "Fault control is disabled for all channels."]
-    _00,
-    #[doc = "Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
-    _01,
-    #[doc = "Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
-    _10,
-    #[doc = "Fault control is enabled for all channels, and the selected mode is the automatic fault clearing."]
-    _11,
-}
-impl FAULTMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FAULTMW::_00 => 0,
-            FAULTMW::_01 => 1,
-            FAULTMW::_10 => 2,
-            FAULTMW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FAULTMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FAULTMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FAULTMW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Fault control is disabled for all channels."]
-    #[inline]
-    pub fn _00(self) -> &'a mut W {
-        self.variant(FAULTMW::_00)
-    }
-    #[doc = "Fault control is enabled for even channels only (channels 0, 2, 4, and 6), and the selected mode is the manual fault clearing."]
-    #[inline]
-    pub fn _01(self) -> &'a mut W {
-        self.variant(FAULTMW::_01)
-    }
-    #[doc = "Fault control is enabled for all channels, and the selected mode is the manual fault clearing."]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(FAULTMW::_10)
-    }
-    #[doc = "Fault control is enabled for all channels, and the selected mode is the automatic fault clearing."]
-    #[inline]
-    pub fn _11(self) -> &'a mut W {
-        self.variant(FAULTMW::_11)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FAULTIE`"]
-pub enum FAULTIEW {
-    #[doc = "Fault control interrupt is disabled."]
-    _0,
-    #[doc = "Fault control interrupt is enabled."]
-    _1,
-}
-impl FAULTIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FAULTIEW::_0 => false,
-            FAULTIEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FAULTIEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FAULTIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FAULTIEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Fault control interrupt is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FAULTIEW::_0)
+        self.variant(FAULTIE_A::_0)
     }
     #[doc = "Fault control interrupt is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FAULTIEW::_1)
+        self.variant(FAULTIE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - FTM Enable"]
-    #[inline]
-    pub fn ftmen(&self) -> FTMENR {
-        FTMENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ftmen(&self) -> FTMEN_R {
+        FTMEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Write Protection Disable"]
-    #[inline]
-    pub fn wpdis(&self) -> WPDISR {
-        WPDISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wpdis(&self) -> WPDIS_R {
+        WPDIS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - PWM Synchronization Mode"]
-    #[inline]
-    pub fn pwmsync(&self) -> PWMSYNCR {
-        PWMSYNCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pwmsync(&self) -> PWMSYNC_R {
+        PWMSYNC_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Capture Test Mode Enable"]
-    #[inline]
-    pub fn captest(&self) -> CAPTESTR {
-        CAPTESTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn captest(&self) -> CAPTEST_R {
+        CAPTEST_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 5:6 - Fault Control Mode"]
-    #[inline]
-    pub fn faultm(&self) -> FAULTMR {
-        FAULTMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn faultm(&self) -> FAULTM_R {
+        FAULTM_R::new(((self.bits >> 5) & 0x03) as u8)
     }
     #[doc = "Bit 7 - Fault Interrupt Enable"]
-    #[inline]
-    pub fn faultie(&self) -> FAULTIER {
-        FAULTIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn faultie(&self) -> FAULTIE_R {
+        FAULTIE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 4 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - FTM Enable"]
-    #[inline]
-    pub fn ftmen(&mut self) -> _FTMENW {
-        _FTMENW { w: self }
+    #[inline(always)]
+    pub fn ftmen(&mut self) -> FTMEN_W {
+        FTMEN_W { w: self }
     }
     #[doc = "Bit 1 - Initialize The Channels Output"]
-    #[inline]
-    pub fn init(&mut self) -> _INITW {
-        _INITW { w: self }
+    #[inline(always)]
+    pub fn init(&mut self) -> INIT_W {
+        INIT_W { w: self }
     }
     #[doc = "Bit 2 - Write Protection Disable"]
-    #[inline]
-    pub fn wpdis(&mut self) -> _WPDISW {
-        _WPDISW { w: self }
+    #[inline(always)]
+    pub fn wpdis(&mut self) -> WPDIS_W {
+        WPDIS_W { w: self }
     }
     #[doc = "Bit 3 - PWM Synchronization Mode"]
-    #[inline]
-    pub fn pwmsync(&mut self) -> _PWMSYNCW {
-        _PWMSYNCW { w: self }
+    #[inline(always)]
+    pub fn pwmsync(&mut self) -> PWMSYNC_W {
+        PWMSYNC_W { w: self }
     }
     #[doc = "Bit 4 - Capture Test Mode Enable"]
-    #[inline]
-    pub fn captest(&mut self) -> _CAPTESTW {
-        _CAPTESTW { w: self }
+    #[inline(always)]
+    pub fn captest(&mut self) -> CAPTEST_W {
+        CAPTEST_W { w: self }
     }
     #[doc = "Bits 5:6 - Fault Control Mode"]
-    #[inline]
-    pub fn faultm(&mut self) -> _FAULTMW {
-        _FAULTMW { w: self }
+    #[inline(always)]
+    pub fn faultm(&mut self) -> FAULTM_W {
+        FAULTM_W { w: self }
     }
     #[doc = "Bit 7 - Fault Interrupt Enable"]
-    #[inline]
-    pub fn faultie(&mut self) -> _FAULTIEW {
-        _FAULTIEW { w: self }
+    #[inline(always)]
+    pub fn faultie(&mut self) -> FAULTIE_W {
+        FAULTIE_W { w: self }
     }
 }

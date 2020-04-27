@@ -1,634 +1,455 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SRS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `LVD`"]
+#[doc = "Reader of register SRS"]
+pub type R = crate::R<u32, super::SRS>;
+#[doc = "Low-Voltage Detect Reset or High-Voltage Detect Reset\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LVDR {
-    #[doc = "Reset not caused by LVD trip, HVD trip or POR"]
-    _0,
-    #[doc = "Reset caused by LVD trip, HVD trip or POR"]
-    _1,
+pub enum LVD_A {
+    #[doc = "0: Reset not caused by LVD trip, HVD trip or POR"]
+    _0 = 0,
+    #[doc = "1: Reset caused by LVD trip, HVD trip or POR"]
+    _1 = 1,
 }
-impl LVDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<LVD_A> for bool {
+    #[inline(always)]
+    fn from(variant: LVD_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LVDR::_0 => false,
-            LVDR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LVDR {
-        match value {
-            false => LVDR::_0,
-            true => LVDR::_1,
+}
+#[doc = "Reader of field `LVD`"]
+pub type LVD_R = crate::R<bool, LVD_A>;
+impl LVD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LVD_A {
+        match self.bits {
+            false => LVD_A::_0,
+            true => LVD_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LVDR::_0
+        *self == LVD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LVDR::_1
+        *self == LVD_A::_1
     }
 }
-#[doc = "Possible values of the field `LOC`"]
+#[doc = "Loss-of-Clock Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCR {
-    #[doc = "Reset not caused by a loss of external clock."]
-    _0,
-    #[doc = "Reset caused by a loss of external clock."]
-    _1,
+pub enum LOC_A {
+    #[doc = "0: Reset not caused by a loss of external clock."]
+    _0 = 0,
+    #[doc = "1: Reset caused by a loss of external clock."]
+    _1 = 1,
 }
-impl LOCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<LOC_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOC_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOCR::_0 => false,
-            LOCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOCR {
-        match value {
-            false => LOCR::_0,
-            true => LOCR::_1,
+}
+#[doc = "Reader of field `LOC`"]
+pub type LOC_R = crate::R<bool, LOC_A>;
+impl LOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOC_A {
+        match self.bits {
+            false => LOC_A::_0,
+            true => LOC_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LOCR::_0
+        *self == LOC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LOCR::_1
+        *self == LOC_A::_1
     }
 }
-#[doc = "Possible values of the field `LOL`"]
+#[doc = "Loss-of-Lock Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOLR {
-    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    _0,
-    #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    _1,
+pub enum LOL_A {
+    #[doc = "0: Reset not caused by a loss of lock in the PLL/FLL"]
+    _0 = 0,
+    #[doc = "1: Reset caused by a loss of lock in the PLL/FLL"]
+    _1 = 1,
 }
-impl LOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<LOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOLR::_0 => false,
-            LOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOLR {
-        match value {
-            false => LOLR::_0,
-            true => LOLR::_1,
+}
+#[doc = "Reader of field `LOL`"]
+pub type LOL_R = crate::R<bool, LOL_A>;
+impl LOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOL_A {
+        match self.bits {
+            false => LOL_A::_0,
+            true => LOL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LOLR::_0
+        *self == LOL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LOLR::_1
+        *self == LOL_A::_1
     }
 }
-#[doc = "Possible values of the field `WDOG`"]
+#[doc = "Watchdog\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WDOGR {
-    #[doc = "Reset not caused by watchdog timeout"]
-    _0,
-    #[doc = "Reset caused by watchdog timeout"]
-    _1,
+pub enum WDOG_A {
+    #[doc = "0: Reset not caused by watchdog timeout"]
+    _0 = 0,
+    #[doc = "1: Reset caused by watchdog timeout"]
+    _1 = 1,
 }
-impl WDOGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<WDOG_A> for bool {
+    #[inline(always)]
+    fn from(variant: WDOG_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WDOGR::_0 => false,
-            WDOGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WDOGR {
-        match value {
-            false => WDOGR::_0,
-            true => WDOGR::_1,
+}
+#[doc = "Reader of field `WDOG`"]
+pub type WDOG_R = crate::R<bool, WDOG_A>;
+impl WDOG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WDOG_A {
+        match self.bits {
+            false => WDOG_A::_0,
+            true => WDOG_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == WDOGR::_0
+        *self == WDOG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == WDOGR::_1
+        *self == WDOG_A::_1
     }
 }
-#[doc = "Possible values of the field `PIN`"]
+#[doc = "External Reset Pin\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PINR {
-    #[doc = "Reset not caused by external reset pin"]
-    _0,
-    #[doc = "Reset caused by external reset pin"]
-    _1,
+pub enum PIN_A {
+    #[doc = "0: Reset not caused by external reset pin"]
+    _0 = 0,
+    #[doc = "1: Reset caused by external reset pin"]
+    _1 = 1,
 }
-impl PINR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<PIN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PINR::_0 => false,
-            PINR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PINR {
-        match value {
-            false => PINR::_0,
-            true => PINR::_1,
+}
+#[doc = "Reader of field `PIN`"]
+pub type PIN_R = crate::R<bool, PIN_A>;
+impl PIN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN_A {
+        match self.bits {
+            false => PIN_A::_0,
+            true => PIN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PINR::_0
+        *self == PIN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PINR::_1
+        *self == PIN_A::_1
     }
 }
-#[doc = "Possible values of the field `POR`"]
+#[doc = "Power-On Reset\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PORR {
-    #[doc = "Reset not caused by POR"]
-    _0,
-    #[doc = "Reset caused by POR"]
-    _1,
+pub enum POR_A {
+    #[doc = "0: Reset not caused by POR"]
+    _0 = 0,
+    #[doc = "1: Reset caused by POR"]
+    _1 = 1,
 }
-impl PORR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<POR_A> for bool {
+    #[inline(always)]
+    fn from(variant: POR_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PORR::_0 => false,
-            PORR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PORR {
-        match value {
-            false => PORR::_0,
-            true => PORR::_1,
+}
+#[doc = "Reader of field `POR`"]
+pub type POR_R = crate::R<bool, POR_A>;
+impl POR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> POR_A {
+        match self.bits {
+            false => POR_A::_0,
+            true => POR_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PORR::_0
+        *self == POR_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PORR::_1
+        *self == POR_A::_1
     }
 }
-#[doc = "Possible values of the field `JTAG`"]
+#[doc = "JTAG generated reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum JTAGR {
-    #[doc = "Reset not caused by JTAG"]
-    _0,
-    #[doc = "Reset caused by JTAG"]
-    _1,
+pub enum JTAG_A {
+    #[doc = "0: Reset not caused by JTAG"]
+    _0 = 0,
+    #[doc = "1: Reset caused by JTAG"]
+    _1 = 1,
 }
-impl JTAGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<JTAG_A> for bool {
+    #[inline(always)]
+    fn from(variant: JTAG_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            JTAGR::_0 => false,
-            JTAGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> JTAGR {
-        match value {
-            false => JTAGR::_0,
-            true => JTAGR::_1,
+}
+#[doc = "Reader of field `JTAG`"]
+pub type JTAG_R = crate::R<bool, JTAG_A>;
+impl JTAG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> JTAG_A {
+        match self.bits {
+            false => JTAG_A::_0,
+            true => JTAG_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == JTAGR::_0
+        *self == JTAG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == JTAGR::_1
+        *self == JTAG_A::_1
     }
 }
-#[doc = "Possible values of the field `LOCKUP`"]
+#[doc = "Core Lockup\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKUPR {
-    #[doc = "Reset not caused by core LOCKUP event"]
-    _0,
-    #[doc = "Reset caused by core LOCKUP event"]
-    _1,
+pub enum LOCKUP_A {
+    #[doc = "0: Reset not caused by core LOCKUP event"]
+    _0 = 0,
+    #[doc = "1: Reset caused by core LOCKUP event"]
+    _1 = 1,
 }
-impl LOCKUPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<LOCKUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOCKUP_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOCKUPR::_0 => false,
-            LOCKUPR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOCKUPR {
-        match value {
-            false => LOCKUPR::_0,
-            true => LOCKUPR::_1,
+}
+#[doc = "Reader of field `LOCKUP`"]
+pub type LOCKUP_R = crate::R<bool, LOCKUP_A>;
+impl LOCKUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOCKUP_A {
+        match self.bits {
+            false => LOCKUP_A::_0,
+            true => LOCKUP_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LOCKUPR::_0
+        *self == LOCKUP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LOCKUPR::_1
+        *self == LOCKUP_A::_1
     }
 }
-#[doc = "Possible values of the field `SW`"]
+#[doc = "Software\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SWR {
-    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    _0,
-    #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    _1,
+pub enum SW_A {
+    #[doc = "0: Reset not caused by software setting of SYSRESETREQ bit"]
+    _0 = 0,
+    #[doc = "1: Reset caused by software setting of SYSRESETREQ bit"]
+    _1 = 1,
 }
-impl SWR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SW_A> for bool {
+    #[inline(always)]
+    fn from(variant: SW_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SWR::_0 => false,
-            SWR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SWR {
-        match value {
-            false => SWR::_0,
-            true => SWR::_1,
+}
+#[doc = "Reader of field `SW`"]
+pub type SW_R = crate::R<bool, SW_A>;
+impl SW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SW_A {
+        match self.bits {
+            false => SW_A::_0,
+            true => SW_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SWR::_0
+        *self == SW_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SWR::_1
+        *self == SW_A::_1
     }
 }
-#[doc = "Possible values of the field `MDM_AP`"]
+#[doc = "MDM-AP System Reset Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MDM_APR {
-    #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
-    _0,
-    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    _1,
+pub enum MDM_AP_A {
+    #[doc = "0: Reset was not caused by host debugger system setting of the System Reset Request bit"]
+    _0 = 0,
+    #[doc = "1: Reset was caused by host debugger system setting of the System Reset Request bit"]
+    _1 = 1,
 }
-impl MDM_APR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<MDM_AP_A> for bool {
+    #[inline(always)]
+    fn from(variant: MDM_AP_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MDM_APR::_0 => false,
-            MDM_APR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MDM_APR {
-        match value {
-            false => MDM_APR::_0,
-            true => MDM_APR::_1,
+}
+#[doc = "Reader of field `MDM_AP`"]
+pub type MDM_AP_R = crate::R<bool, MDM_AP_A>;
+impl MDM_AP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MDM_AP_A {
+        match self.bits {
+            false => MDM_AP_A::_0,
+            true => MDM_AP_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == MDM_APR::_0
+        *self == MDM_AP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == MDM_APR::_1
+        *self == MDM_AP_A::_1
     }
 }
-#[doc = "Possible values of the field `SACKERR`"]
+#[doc = "Stop Acknowledge Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SACKERRR {
-    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _0,
-    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _1,
+pub enum SACKERR_A {
+    #[doc = "0: Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
+    _0 = 0,
+    #[doc = "1: Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
+    _1 = 1,
 }
-impl SACKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SACKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: SACKERR_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SACKERRR::_0 => false,
-            SACKERRR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SACKERRR {
-        match value {
-            false => SACKERRR::_0,
-            true => SACKERRR::_1,
+}
+#[doc = "Reader of field `SACKERR`"]
+pub type SACKERR_R = crate::R<bool, SACKERR_A>;
+impl SACKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SACKERR_A {
+        match self.bits {
+            false => SACKERR_A::_0,
+            true => SACKERR_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SACKERRR::_0
+        *self == SACKERR_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SACKERRR::_1
+        *self == SACKERR_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 1 - Low-Voltage Detect Reset or High-Voltage Detect Reset"]
-    #[inline]
-    pub fn lvd(&self) -> LVDR {
-        LVDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lvd(&self) -> LVD_R {
+        LVD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Loss-of-Clock Reset"]
-    #[inline]
-    pub fn loc(&self) -> LOCR {
-        LOCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn loc(&self) -> LOC_R {
+        LOC_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Loss-of-Lock Reset"]
-    #[inline]
-    pub fn lol(&self) -> LOLR {
-        LOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lol(&self) -> LOL_R {
+        LOL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Watchdog"]
-    #[inline]
-    pub fn wdog(&self) -> WDOGR {
-        WDOGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wdog(&self) -> WDOG_R {
+        WDOG_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - External Reset Pin"]
-    #[inline]
-    pub fn pin(&self) -> PINR {
-        PINR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin(&self) -> PIN_R {
+        PIN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Power-On Reset"]
-    #[inline]
-    pub fn por(&self) -> PORR {
-        PORR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn por(&self) -> POR_R {
+        POR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - JTAG generated reset"]
-    #[inline]
-    pub fn jtag(&self) -> JTAGR {
-        JTAGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn jtag(&self) -> JTAG_R {
+        JTAG_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Core Lockup"]
-    #[inline]
-    pub fn lockup(&self) -> LOCKUPR {
-        LOCKUPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lockup(&self) -> LOCKUP_R {
+        LOCKUP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Software"]
-    #[inline]
-    pub fn sw(&self) -> SWR {
-        SWR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sw(&self) -> SW_R {
+        SW_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - MDM-AP System Reset Request"]
-    #[inline]
-    pub fn mdm_ap(&self) -> MDM_APR {
-        MDM_APR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mdm_ap(&self) -> MDM_AP_R {
+        MDM_AP_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Stop Acknowledge Error"]
-    #[inline]
-    pub fn sackerr(&self) -> SACKERRR {
-        SACKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sackerr(&self) -> SACKERR_R {
+        SACKERR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
 }

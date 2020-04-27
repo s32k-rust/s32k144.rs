@@ -1,349 +1,224 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SR"]
+pub type R = crate::R<u32, super::SR>;
+#[doc = "Writer for register SR"]
+pub type W = crate::W<u32, super::SR>;
+#[doc = "Register SR `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::SR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = "Possible values of the field `TIF`"]
+#[doc = "Time Invalid Flag\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIFR {
-    #[doc = "Time is valid."]
-    _0,
-    #[doc = "Time is invalid and time counter is read as zero."]
-    _1,
+pub enum TIF_A {
+    #[doc = "0: Time is valid."]
+    _0 = 0,
+    #[doc = "1: Time is invalid and time counter is read as zero."]
+    _1 = 1,
 }
-impl TIFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TIF_A> for bool {
+    #[inline(always)]
+    fn from(variant: TIF_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TIFR::_0 => false,
-            TIFR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TIFR {
-        match value {
-            false => TIFR::_0,
-            true => TIFR::_1,
+}
+#[doc = "Reader of field `TIF`"]
+pub type TIF_R = crate::R<bool, TIF_A>;
+impl TIF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIF_A {
+        match self.bits {
+            false => TIF_A::_0,
+            true => TIF_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TIFR::_0
+        *self == TIF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TIFR::_1
+        *self == TIF_A::_1
     }
 }
-#[doc = "Possible values of the field `TOF`"]
+#[doc = "Time Overflow Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TOFR {
-    #[doc = "Time overflow has not occurred."]
-    _0,
-    #[doc = "Time overflow has occurred and time counter is read as zero."]
-    _1,
+pub enum TOF_A {
+    #[doc = "0: Time overflow has not occurred."]
+    _0 = 0,
+    #[doc = "1: Time overflow has occurred and time counter is read as zero."]
+    _1 = 1,
 }
-impl TOFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TOF_A> for bool {
+    #[inline(always)]
+    fn from(variant: TOF_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TOFR::_0 => false,
-            TOFR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TOFR {
-        match value {
-            false => TOFR::_0,
-            true => TOFR::_1,
+}
+#[doc = "Reader of field `TOF`"]
+pub type TOF_R = crate::R<bool, TOF_A>;
+impl TOF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TOF_A {
+        match self.bits {
+            false => TOF_A::_0,
+            true => TOF_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TOFR::_0
+        *self == TOF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TOFR::_1
+        *self == TOF_A::_1
     }
 }
-#[doc = "Possible values of the field `TAF`"]
+#[doc = "Time Alarm Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TAFR {
-    #[doc = "Time alarm has not occurred."]
-    _0,
-    #[doc = "Time alarm has occurred."]
-    _1,
+pub enum TAF_A {
+    #[doc = "0: Time alarm has not occurred."]
+    _0 = 0,
+    #[doc = "1: Time alarm has occurred."]
+    _1 = 1,
 }
-impl TAFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TAF_A> for bool {
+    #[inline(always)]
+    fn from(variant: TAF_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TAFR::_0 => false,
-            TAFR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TAFR {
-        match value {
-            false => TAFR::_0,
-            true => TAFR::_1,
+}
+#[doc = "Reader of field `TAF`"]
+pub type TAF_R = crate::R<bool, TAF_A>;
+impl TAF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TAF_A {
+        match self.bits {
+            false => TAF_A::_0,
+            true => TAF_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TAFR::_0
+        *self == TAF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TAFR::_1
+        *self == TAF_A::_1
     }
 }
-#[doc = "Possible values of the field `TCE`"]
+#[doc = "Time Counter Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TCER {
-    #[doc = "Time counter is disabled."]
-    _0,
-    #[doc = "Time counter is enabled."]
-    _1,
+pub enum TCE_A {
+    #[doc = "0: Time counter is disabled."]
+    _0 = 0,
+    #[doc = "1: Time counter is enabled."]
+    _1 = 1,
 }
-impl TCER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TCE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TCE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TCER::_0 => false,
-            TCER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TCER {
-        match value {
-            false => TCER::_0,
-            true => TCER::_1,
+}
+#[doc = "Reader of field `TCE`"]
+pub type TCE_R = crate::R<bool, TCE_A>;
+impl TCE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TCE_A {
+        match self.bits {
+            false => TCE_A::_0,
+            true => TCE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TCER::_0
+        *self == TCE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TCER::_1
+        *self == TCE_A::_1
     }
 }
-#[doc = "Values that can be written to the field `TCE`"]
-pub enum TCEW {
-    #[doc = "Time counter is disabled."]
-    _0,
-    #[doc = "Time counter is enabled."]
-    _1,
-}
-impl TCEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TCEW::_0 => false,
-            TCEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TCEW<'a> {
+#[doc = "Write proxy for field `TCE`"]
+pub struct TCE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TCEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TCEW) -> &'a mut W {
+impl<'a> TCE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TCE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Time counter is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TCEW::_0)
+        self.variant(TCE_A::_0)
     }
     #[doc = "Time counter is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TCEW::_1)
+        self.variant(TCE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Time Invalid Flag"]
-    #[inline]
-    pub fn tif(&self) -> TIFR {
-        TIFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tif(&self) -> TIF_R {
+        TIF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Time Overflow Flag"]
-    #[inline]
-    pub fn tof(&self) -> TOFR {
-        TOFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tof(&self) -> TOF_R {
+        TOF_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Time Alarm Flag"]
-    #[inline]
-    pub fn taf(&self) -> TAFR {
-        TAFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn taf(&self) -> TAF_R {
+        TAF_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Time Counter Enable"]
-    #[inline]
-    pub fn tce(&self) -> TCER {
-        TCER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tce(&self) -> TCE_R {
+        TCE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 4 - Time Counter Enable"]
-    #[inline]
-    pub fn tce(&mut self) -> _TCEW {
-        _TCEW { w: self }
+    #[inline(always)]
+    pub fn tce(&mut self) -> TCE_W {
+        TCE_W { w: self }
     }
 }

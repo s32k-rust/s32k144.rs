@@ -1,645 +1,451 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ES {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `DBE`"]
+#[doc = "Reader of register ES"]
+pub type R = crate::R<u32, super::ES>;
+#[doc = "Destination Bus Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DBER {
-    #[doc = "No destination bus error"]
-    _0,
-    #[doc = "The last recorded error was a bus error on a destination write"]
-    _1,
+pub enum DBE_A {
+    #[doc = "0: No destination bus error"]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a bus error on a destination write"]
+    _1 = 1,
 }
-impl DBER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<DBE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DBE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DBER::_0 => false,
-            DBER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DBER {
-        match value {
-            false => DBER::_0,
-            true => DBER::_1,
+}
+#[doc = "Reader of field `DBE`"]
+pub type DBE_R = crate::R<bool, DBE_A>;
+impl DBE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DBE_A {
+        match self.bits {
+            false => DBE_A::_0,
+            true => DBE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DBER::_0
+        *self == DBE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DBER::_1
+        *self == DBE_A::_1
     }
 }
-#[doc = "Possible values of the field `SBE`"]
+#[doc = "Source Bus Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SBER {
-    #[doc = "No source bus error"]
-    _0,
-    #[doc = "The last recorded error was a bus error on a source read"]
-    _1,
+pub enum SBE_A {
+    #[doc = "0: No source bus error"]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a bus error on a source read"]
+    _1 = 1,
 }
-impl SBER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SBE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SBE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SBER::_0 => false,
-            SBER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SBER {
-        match value {
-            false => SBER::_0,
-            true => SBER::_1,
+}
+#[doc = "Reader of field `SBE`"]
+pub type SBE_R = crate::R<bool, SBE_A>;
+impl SBE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SBE_A {
+        match self.bits {
+            false => SBE_A::_0,
+            true => SBE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SBER::_0
+        *self == SBE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SBER::_1
+        *self == SBE_A::_1
     }
 }
-#[doc = "Possible values of the field `SGE`"]
+#[doc = "Scatter/Gather Configuration Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SGER {
-    #[doc = "No scatter/gather configuration error"]
-    _0,
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_DLASTSGA field. This field is checked at the beginning of a scatter/gather operation after major loop completion if TCDn_CSR\\[ESG\\] is enabled. TCDn_DLASTSGA is not on a 32 byte boundary."]
-    _1,
+pub enum SGE_A {
+    #[doc = "0: No scatter/gather configuration error"]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_DLASTSGA field. This field is checked at the beginning of a scatter/gather operation after major loop completion if TCDn_CSR\\[ESG\\]
+is enabled. TCDn_DLASTSGA is not on a 32 byte boundary."]
+    _1 = 1,
 }
-impl SGER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SGE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SGE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SGER::_0 => false,
-            SGER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SGER {
-        match value {
-            false => SGER::_0,
-            true => SGER::_1,
+}
+#[doc = "Reader of field `SGE`"]
+pub type SGE_R = crate::R<bool, SGE_A>;
+impl SGE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SGE_A {
+        match self.bits {
+            false => SGE_A::_0,
+            true => SGE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SGER::_0
+        *self == SGE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SGER::_1
+        *self == SGE_A::_1
     }
 }
-#[doc = "Possible values of the field `NCE`"]
+#[doc = "NBYTES/CITER Configuration Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NCER {
-    #[doc = "No NBYTES/CITER configuration error"]
-    _0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
+pub enum NCE_A {
+    #[doc = "0: No NBYTES/CITER configuration error"]
+    _0 = 0,
 }
-impl NCER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<NCE_A> for bool {
+    #[inline(always)]
+    fn from(variant: NCE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NCER::_0 => false,
-            NCER::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NCER {
-        match value {
-            false => NCER::_0,
-            i => NCER::_Reserved(i),
+}
+#[doc = "Reader of field `NCE`"]
+pub type NCE_R = crate::R<bool, NCE_A>;
+impl NCE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<bool, NCE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            false => Val(NCE_A::_0),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == NCER::_0
+        *self == NCE_A::_0
     }
 }
-#[doc = "Possible values of the field `DOE`"]
+#[doc = "Destination Offset Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOER {
-    #[doc = "No destination offset configuration error"]
-    _0,
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_DOFF field. TCDn_DOFF is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
-    _1,
+pub enum DOE_A {
+    #[doc = "0: No destination offset configuration error"]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_DOFF field. TCDn_DOFF is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
+    _1 = 1,
 }
-impl DOER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<DOE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DOE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DOER::_0 => false,
-            DOER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DOER {
-        match value {
-            false => DOER::_0,
-            true => DOER::_1,
+}
+#[doc = "Reader of field `DOE`"]
+pub type DOE_R = crate::R<bool, DOE_A>;
+impl DOE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DOE_A {
+        match self.bits {
+            false => DOE_A::_0,
+            true => DOE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DOER::_0
+        *self == DOE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DOER::_1
+        *self == DOE_A::_1
     }
 }
-#[doc = "Possible values of the field `DAE`"]
+#[doc = "Destination Address Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DAER {
-    #[doc = "No destination address configuration error"]
-    _0,
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_DADDR field. TCDn_DADDR is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
-    _1,
+pub enum DAE_A {
+    #[doc = "0: No destination address configuration error"]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_DADDR field. TCDn_DADDR is inconsistent with TCDn_ATTR\\[DSIZE\\]."]
+    _1 = 1,
 }
-impl DAER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<DAE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DAE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DAER::_0 => false,
-            DAER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DAER {
-        match value {
-            false => DAER::_0,
-            true => DAER::_1,
+}
+#[doc = "Reader of field `DAE`"]
+pub type DAE_R = crate::R<bool, DAE_A>;
+impl DAE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DAE_A {
+        match self.bits {
+            false => DAE_A::_0,
+            true => DAE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DAER::_0
+        *self == DAE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DAER::_1
+        *self == DAE_A::_1
     }
 }
-#[doc = "Possible values of the field `SOE`"]
+#[doc = "Source Offset Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOER {
-    #[doc = "No source offset configuration error"]
-    _0,
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_SOFF field. TCDn_SOFF is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
-    _1,
+pub enum SOE_A {
+    #[doc = "0: No source offset configuration error"]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_SOFF field. TCDn_SOFF is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
+    _1 = 1,
 }
-impl SOER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SOE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SOER::_0 => false,
-            SOER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SOER {
-        match value {
-            false => SOER::_0,
-            true => SOER::_1,
+}
+#[doc = "Reader of field `SOE`"]
+pub type SOE_R = crate::R<bool, SOE_A>;
+impl SOE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOE_A {
+        match self.bits {
+            false => SOE_A::_0,
+            true => SOE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SOER::_0
+        *self == SOE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SOER::_1
+        *self == SOE_A::_1
     }
 }
-#[doc = "Possible values of the field `SAE`"]
+#[doc = "Source Address Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SAER {
-    #[doc = "No source address configuration error."]
-    _0,
-    #[doc = "The last recorded error was a configuration error detected in the TCDn_SADDR field. TCDn_SADDR is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
-    _1,
+pub enum SAE_A {
+    #[doc = "0: No source address configuration error."]
+    _0 = 0,
+    #[doc = "1: The last recorded error was a configuration error detected in the TCDn_SADDR field. TCDn_SADDR is inconsistent with TCDn_ATTR\\[SSIZE\\]."]
+    _1 = 1,
 }
-impl SAER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SAE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SAE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SAER::_0 => false,
-            SAER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SAER {
-        match value {
-            false => SAER::_0,
-            true => SAER::_1,
+}
+#[doc = "Reader of field `SAE`"]
+pub type SAE_R = crate::R<bool, SAE_A>;
+impl SAE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SAE_A {
+        match self.bits {
+            false => SAE_A::_0,
+            true => SAE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SAER::_0
+        *self == SAE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SAER::_1
+        *self == SAE_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct ERRCHNR {
-    bits: u8,
-}
-impl ERRCHNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `CPE`"]
+#[doc = "Reader of field `ERRCHN`"]
+pub type ERRCHN_R = crate::R<u8, u8>;
+#[doc = "Channel Priority Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPER {
-    #[doc = "No channel priority error"]
-    _0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
+pub enum CPE_A {
+    #[doc = "0: No channel priority error"]
+    _0 = 0,
 }
-impl CPER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CPE_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPER::_0 => false,
-            CPER::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPER {
-        match value {
-            false => CPER::_0,
-            i => CPER::_Reserved(i),
+}
+#[doc = "Reader of field `CPE`"]
+pub type CPE_R = crate::R<bool, CPE_A>;
+impl CPE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<bool, CPE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            false => Val(CPE_A::_0),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CPER::_0
+        *self == CPE_A::_0
     }
 }
-#[doc = "Possible values of the field `ECX`"]
+#[doc = "Transfer Canceled\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECXR {
-    #[doc = "No canceled transfers"]
-    _0,
-    #[doc = "The last recorded entry was a canceled transfer by the error cancel transfer input"]
-    _1,
+pub enum ECX_A {
+    #[doc = "0: No canceled transfers"]
+    _0 = 0,
+    #[doc = "1: The last recorded entry was a canceled transfer by the error cancel transfer input"]
+    _1 = 1,
 }
-impl ECXR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ECX_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECX_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECXR::_0 => false,
-            ECXR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECXR {
-        match value {
-            false => ECXR::_0,
-            true => ECXR::_1,
+}
+#[doc = "Reader of field `ECX`"]
+pub type ECX_R = crate::R<bool, ECX_A>;
+impl ECX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECX_A {
+        match self.bits {
+            false => ECX_A::_0,
+            true => ECX_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ECXR::_0
+        *self == ECX_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ECXR::_1
+        *self == ECX_A::_1
     }
 }
-#[doc = "Possible values of the field `VLD`"]
+#[doc = "VLD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VLDR {
-    #[doc = "No ERR bits are set."]
-    _0,
-    #[doc = "At least one ERR bit is set indicating a valid error exists that has not been cleared."]
-    _1,
+pub enum VLD_A {
+    #[doc = "0: No ERR bits are set."]
+    _0 = 0,
+    #[doc = "1: At least one ERR bit is set indicating a valid error exists that has not been cleared."]
+    _1 = 1,
 }
-impl VLDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<VLD_A> for bool {
+    #[inline(always)]
+    fn from(variant: VLD_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VLDR::_0 => false,
-            VLDR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VLDR {
-        match value {
-            false => VLDR::_0,
-            true => VLDR::_1,
+}
+#[doc = "Reader of field `VLD`"]
+pub type VLD_R = crate::R<bool, VLD_A>;
+impl VLD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VLD_A {
+        match self.bits {
+            false => VLD_A::_0,
+            true => VLD_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == VLDR::_0
+        *self == VLD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == VLDR::_1
+        *self == VLD_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Destination Bus Error"]
-    #[inline]
-    pub fn dbe(&self) -> DBER {
-        DBER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dbe(&self) -> DBE_R {
+        DBE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Source Bus Error"]
-    #[inline]
-    pub fn sbe(&self) -> SBER {
-        SBER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sbe(&self) -> SBE_R {
+        SBE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Scatter/Gather Configuration Error"]
-    #[inline]
-    pub fn sge(&self) -> SGER {
-        SGER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sge(&self) -> SGE_R {
+        SGE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - NBYTES/CITER Configuration Error"]
-    #[inline]
-    pub fn nce(&self) -> NCER {
-        NCER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn nce(&self) -> NCE_R {
+        NCE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Destination Offset Error"]
-    #[inline]
-    pub fn doe(&self) -> DOER {
-        DOER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn doe(&self) -> DOE_R {
+        DOE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Destination Address Error"]
-    #[inline]
-    pub fn dae(&self) -> DAER {
-        DAER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dae(&self) -> DAE_R {
+        DAE_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Source Offset Error"]
-    #[inline]
-    pub fn soe(&self) -> SOER {
-        SOER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn soe(&self) -> SOE_R {
+        SOE_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Source Address Error"]
-    #[inline]
-    pub fn sae(&self) -> SAER {
-        SAER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sae(&self) -> SAE_R {
+        SAE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:11 - Error Channel Number or Canceled Channel Number"]
-    #[inline]
-    pub fn errchn(&self) -> ERRCHNR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ERRCHNR { bits }
+    #[inline(always)]
+    pub fn errchn(&self) -> ERRCHN_R {
+        ERRCHN_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bit 14 - Channel Priority Error"]
-    #[inline]
-    pub fn cpe(&self) -> CPER {
-        CPER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpe(&self) -> CPE_R {
+        CPE_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Transfer Canceled"]
-    #[inline]
-    pub fn ecx(&self) -> ECXR {
-        ECXR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ecx(&self) -> ECX_R {
+        ECX_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 31 - VLD"]
-    #[inline]
-    pub fn vld(&self) -> VLDR {
-        VLDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vld(&self) -> VLD_R {
+        VLD_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

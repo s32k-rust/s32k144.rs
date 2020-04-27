@@ -1,95 +1,52 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SASR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RADDRR {
-    bits: u16,
-}
-impl RADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `ANV`"]
+#[doc = "Reader of register SASR"]
+pub type R = crate::R<u32, super::SASR>;
+#[doc = "Reader of field `RADDR`"]
+pub type RADDR_R = crate::R<u16, u16>;
+#[doc = "Address Not Valid\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ANVR {
-    #[doc = "RADDR is valid."]
-    _0,
-    #[doc = "RADDR is not valid."]
-    _1,
+pub enum ANV_A {
+    #[doc = "0: RADDR is valid."]
+    _0 = 0,
+    #[doc = "1: RADDR is not valid."]
+    _1 = 1,
 }
-impl ANVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ANV_A> for bool {
+    #[inline(always)]
+    fn from(variant: ANV_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ANVR::_0 => false,
-            ANVR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ANVR {
-        match value {
-            false => ANVR::_0,
-            true => ANVR::_1,
+}
+#[doc = "Reader of field `ANV`"]
+pub type ANV_R = crate::R<bool, ANV_A>;
+impl ANV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ANV_A {
+        match self.bits {
+            false => ANV_A::_0,
+            true => ANV_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ANVR::_0
+        *self == ANV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ANVR::_1
+        *self == ANV_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:10 - Received Address"]
-    #[inline]
-    pub fn raddr(&self) -> RADDRR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        RADDRR { bits }
+    #[inline(always)]
+    pub fn raddr(&self) -> RADDR_R {
+        RADDR_R::new((self.bits & 0x07ff) as u16)
     }
     #[doc = "Bit 14 - Address Not Valid"]
-    #[inline]
-    pub fn anv(&self) -> ANVR {
-        ANVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn anv(&self) -> ANV_R {
+        ANV_R::new(((self.bits >> 14) & 0x01) != 0)
     }
 }

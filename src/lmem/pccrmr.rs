@@ -1,2238 +1,1664 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCCRMR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCCRMR"]
+pub type R = crate::R<u32, super::PCCRMR>;
+#[doc = "Writer for register PCCRMR"]
+pub type W = crate::W<u32, super::PCCRMR>;
+#[doc = "Register PCCRMR `reset()`'s with value 0xaa0f_a000"]
+impl crate::ResetValue for super::PCCRMR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xaa0f_a000
     }
 }
-#[doc = "Possible values of the field `R15`"]
+#[doc = "Region 15 mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R15R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[repr(u8)]
+pub enum R15_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R15R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R15R::_00 => 0,
-            R15R::_01 => 1,
-            R15R::_10 => 2,
-            R15R::_11 => 3,
-        }
+impl From<R15_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R15_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R15R {
-        match value {
-            0 => R15R::_00,
-            1 => R15R::_01,
-            2 => R15R::_10,
-            3 => R15R::_11,
+}
+#[doc = "Reader of field `R15`"]
+pub type R15_R = crate::R<u8, R15_A>;
+impl R15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R15_A {
+        match self.bits {
+            0 => R15_A::_00,
+            1 => R15_A::_01,
+            2 => R15_A::_10,
+            3 => R15_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == R15R::_00
+        *self == R15_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == R15R::_01
+        *self == R15_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == R15R::_10
+        *self == R15_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == R15R::_11
+        *self == R15_A::_11
     }
 }
-#[doc = "Possible values of the field `R14`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R14R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R14R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R14R::_00 => 0,
-            R14R::_01 => 1,
-            R14R::_10 => 2,
-            R14R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R14R {
-        match value {
-            0 => R14R::_00,
-            1 => R14R::_01,
-            2 => R14R::_10,
-            3 => R14R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R14R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R14R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R14R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R14R::_11
-    }
-}
-#[doc = "Possible values of the field `R13`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R13R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R13R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R13R::_00 => 0,
-            R13R::_01 => 1,
-            R13R::_10 => 2,
-            R13R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R13R {
-        match value {
-            0 => R13R::_00,
-            1 => R13R::_01,
-            2 => R13R::_10,
-            3 => R13R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R13R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R13R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R13R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R13R::_11
-    }
-}
-#[doc = "Possible values of the field `R12`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R12R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R12R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R12R::_00 => 0,
-            R12R::_01 => 1,
-            R12R::_10 => 2,
-            R12R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R12R {
-        match value {
-            0 => R12R::_00,
-            1 => R12R::_01,
-            2 => R12R::_10,
-            3 => R12R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R12R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R12R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R12R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R12R::_11
-    }
-}
-#[doc = "Possible values of the field `R11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R11R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R11R::_00 => 0,
-            R11R::_01 => 1,
-            R11R::_10 => 2,
-            R11R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R11R {
-        match value {
-            0 => R11R::_00,
-            1 => R11R::_01,
-            2 => R11R::_10,
-            3 => R11R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R11R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R11R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R11R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R11R::_11
-    }
-}
-#[doc = "Possible values of the field `R10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R10R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R10R::_00 => 0,
-            R10R::_01 => 1,
-            R10R::_10 => 2,
-            R10R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R10R {
-        match value {
-            0 => R10R::_00,
-            1 => R10R::_01,
-            2 => R10R::_10,
-            3 => R10R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R10R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R10R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R10R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R10R::_11
-    }
-}
-#[doc = "Possible values of the field `R9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R9R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R9R::_00 => 0,
-            R9R::_01 => 1,
-            R9R::_10 => 2,
-            R9R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R9R {
-        match value {
-            0 => R9R::_00,
-            1 => R9R::_01,
-            2 => R9R::_10,
-            3 => R9R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R9R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R9R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R9R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R9R::_11
-    }
-}
-#[doc = "Possible values of the field `R8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R8R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R8R::_00 => 0,
-            R8R::_01 => 1,
-            R8R::_10 => 2,
-            R8R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R8R {
-        match value {
-            0 => R8R::_00,
-            1 => R8R::_01,
-            2 => R8R::_10,
-            3 => R8R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R8R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R8R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R8R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R8R::_11
-    }
-}
-#[doc = "Possible values of the field `R7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R7R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R7R::_00 => 0,
-            R7R::_01 => 1,
-            R7R::_10 => 2,
-            R7R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R7R {
-        match value {
-            0 => R7R::_00,
-            1 => R7R::_01,
-            2 => R7R::_10,
-            3 => R7R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R7R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R7R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R7R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R7R::_11
-    }
-}
-#[doc = "Possible values of the field `R6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R6R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R6R::_00 => 0,
-            R6R::_01 => 1,
-            R6R::_10 => 2,
-            R6R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R6R {
-        match value {
-            0 => R6R::_00,
-            1 => R6R::_01,
-            2 => R6R::_10,
-            3 => R6R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R6R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R6R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R6R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R6R::_11
-    }
-}
-#[doc = "Possible values of the field `R5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R5R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R5R::_00 => 0,
-            R5R::_01 => 1,
-            R5R::_10 => 2,
-            R5R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R5R {
-        match value {
-            0 => R5R::_00,
-            1 => R5R::_01,
-            2 => R5R::_10,
-            3 => R5R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R5R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R5R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R5R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R5R::_11
-    }
-}
-#[doc = "Possible values of the field `R4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R4R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R4R::_00 => 0,
-            R4R::_01 => 1,
-            R4R::_10 => 2,
-            R4R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R4R {
-        match value {
-            0 => R4R::_00,
-            1 => R4R::_01,
-            2 => R4R::_10,
-            3 => R4R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R4R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R4R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R4R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R4R::_11
-    }
-}
-#[doc = "Possible values of the field `R3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R3R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R3R::_00 => 0,
-            R3R::_01 => 1,
-            R3R::_10 => 2,
-            R3R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R3R {
-        match value {
-            0 => R3R::_00,
-            1 => R3R::_01,
-            2 => R3R::_10,
-            3 => R3R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R3R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R3R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R3R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R3R::_11
-    }
-}
-#[doc = "Possible values of the field `R2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R2R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R2R::_00 => 0,
-            R2R::_01 => 1,
-            R2R::_10 => 2,
-            R2R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R2R {
-        match value {
-            0 => R2R::_00,
-            1 => R2R::_01,
-            2 => R2R::_10,
-            3 => R2R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R2R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R2R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R2R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R2R::_11
-    }
-}
-#[doc = "Possible values of the field `R1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R1R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R1R::_00 => 0,
-            R1R::_01 => 1,
-            R1R::_10 => 2,
-            R1R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R1R {
-        match value {
-            0 => R1R::_00,
-            1 => R1R::_01,
-            2 => R1R::_10,
-            3 => R1R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R1R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R1R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R1R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R1R::_11
-    }
-}
-#[doc = "Possible values of the field `R0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R0R {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R0R::_00 => 0,
-            R0R::_01 => 1,
-            R0R::_10 => 2,
-            R0R::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R0R {
-        match value {
-            0 => R0R::_00,
-            1 => R0R::_01,
-            2 => R0R::_10,
-            3 => R0R::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == R0R::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == R0R::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == R0R::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == R0R::_11
-    }
-}
-#[doc = "Values that can be written to the field `R15`"]
-pub enum R15W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
-}
-impl R15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R15W::_00 => 0,
-            R15W::_01 => 1,
-            R15W::_10 => 2,
-            R15W::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _R15W<'a> {
+#[doc = "Write proxy for field `R15`"]
+pub struct R15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R15W) -> &'a mut W {
+impl<'a> R15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R15_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R15W::_00)
+        self.variant(R15_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R15W::_01)
+        self.variant(R15_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R15W::_10)
+        self.variant(R15_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R15W::_11)
+        self.variant(R15_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R14`"]
-pub enum R14W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 14 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R14_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R14W::_00 => 0,
-            R14W::_01 => 1,
-            R14W::_10 => 2,
-            R14W::_11 => 3,
-        }
+impl From<R14_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R14_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R14W<'a> {
+#[doc = "Reader of field `R14`"]
+pub type R14_R = crate::R<u8, R14_A>;
+impl R14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R14_A {
+        match self.bits {
+            0 => R14_A::_00,
+            1 => R14_A::_01,
+            2 => R14_A::_10,
+            3 => R14_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R14_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R14_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R14_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R14_A::_11
+    }
+}
+#[doc = "Write proxy for field `R14`"]
+pub struct R14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R14W) -> &'a mut W {
+impl<'a> R14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R14_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R14W::_00)
+        self.variant(R14_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R14W::_01)
+        self.variant(R14_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R14W::_10)
+        self.variant(R14_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R14W::_11)
+        self.variant(R14_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R13`"]
-pub enum R13W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 13 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R13_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R13W::_00 => 0,
-            R13W::_01 => 1,
-            R13W::_10 => 2,
-            R13W::_11 => 3,
-        }
+impl From<R13_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R13_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R13W<'a> {
+#[doc = "Reader of field `R13`"]
+pub type R13_R = crate::R<u8, R13_A>;
+impl R13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R13_A {
+        match self.bits {
+            0 => R13_A::_00,
+            1 => R13_A::_01,
+            2 => R13_A::_10,
+            3 => R13_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R13_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R13_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R13_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R13_A::_11
+    }
+}
+#[doc = "Write proxy for field `R13`"]
+pub struct R13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R13W) -> &'a mut W {
+impl<'a> R13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R13_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R13W::_00)
+        self.variant(R13_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R13W::_01)
+        self.variant(R13_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R13W::_10)
+        self.variant(R13_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R13W::_11)
+        self.variant(R13_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R12`"]
-pub enum R12W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 12 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R12_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R12W::_00 => 0,
-            R12W::_01 => 1,
-            R12W::_10 => 2,
-            R12W::_11 => 3,
-        }
+impl From<R12_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R12_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R12W<'a> {
+#[doc = "Reader of field `R12`"]
+pub type R12_R = crate::R<u8, R12_A>;
+impl R12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R12_A {
+        match self.bits {
+            0 => R12_A::_00,
+            1 => R12_A::_01,
+            2 => R12_A::_10,
+            3 => R12_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R12_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R12_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R12_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R12_A::_11
+    }
+}
+#[doc = "Write proxy for field `R12`"]
+pub struct R12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R12W) -> &'a mut W {
+impl<'a> R12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R12_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R12W::_00)
+        self.variant(R12_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R12W::_01)
+        self.variant(R12_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R12W::_10)
+        self.variant(R12_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R12W::_11)
+        self.variant(R12_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R11`"]
-pub enum R11W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 11 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R11_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R11W::_00 => 0,
-            R11W::_01 => 1,
-            R11W::_10 => 2,
-            R11W::_11 => 3,
-        }
+impl From<R11_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R11_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R11W<'a> {
+#[doc = "Reader of field `R11`"]
+pub type R11_R = crate::R<u8, R11_A>;
+impl R11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R11_A {
+        match self.bits {
+            0 => R11_A::_00,
+            1 => R11_A::_01,
+            2 => R11_A::_10,
+            3 => R11_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R11_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R11_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R11_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R11_A::_11
+    }
+}
+#[doc = "Write proxy for field `R11`"]
+pub struct R11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R11W) -> &'a mut W {
+impl<'a> R11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R11_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R11W::_00)
+        self.variant(R11_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R11W::_01)
+        self.variant(R11_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R11W::_10)
+        self.variant(R11_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R11W::_11)
+        self.variant(R11_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R10`"]
-pub enum R10W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 10 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R10_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R10W::_00 => 0,
-            R10W::_01 => 1,
-            R10W::_10 => 2,
-            R10W::_11 => 3,
-        }
+impl From<R10_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R10_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R10W<'a> {
+#[doc = "Reader of field `R10`"]
+pub type R10_R = crate::R<u8, R10_A>;
+impl R10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R10_A {
+        match self.bits {
+            0 => R10_A::_00,
+            1 => R10_A::_01,
+            2 => R10_A::_10,
+            3 => R10_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R10_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R10_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R10_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R10_A::_11
+    }
+}
+#[doc = "Write proxy for field `R10`"]
+pub struct R10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R10W) -> &'a mut W {
+impl<'a> R10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R10_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R10W::_00)
+        self.variant(R10_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R10W::_01)
+        self.variant(R10_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R10W::_10)
+        self.variant(R10_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R10W::_11)
+        self.variant(R10_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R9`"]
-pub enum R9W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 9 mode\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R9_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R9W::_00 => 0,
-            R9W::_01 => 1,
-            R9W::_10 => 2,
-            R9W::_11 => 3,
-        }
+impl From<R9_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R9_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R9W<'a> {
+#[doc = "Reader of field `R9`"]
+pub type R9_R = crate::R<u8, R9_A>;
+impl R9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R9_A {
+        match self.bits {
+            0 => R9_A::_00,
+            1 => R9_A::_01,
+            2 => R9_A::_10,
+            3 => R9_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R9_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R9_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R9_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R9_A::_11
+    }
+}
+#[doc = "Write proxy for field `R9`"]
+pub struct R9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R9W) -> &'a mut W {
+impl<'a> R9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R9_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R9W::_00)
+        self.variant(R9_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R9W::_01)
+        self.variant(R9_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R9W::_10)
+        self.variant(R9_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R9W::_11)
+        self.variant(R9_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R8`"]
-pub enum R8W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 8 mode\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R8_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R8W::_00 => 0,
-            R8W::_01 => 1,
-            R8W::_10 => 2,
-            R8W::_11 => 3,
-        }
+impl From<R8_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R8_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R8W<'a> {
+#[doc = "Reader of field `R8`"]
+pub type R8_R = crate::R<u8, R8_A>;
+impl R8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R8_A {
+        match self.bits {
+            0 => R8_A::_00,
+            1 => R8_A::_01,
+            2 => R8_A::_10,
+            3 => R8_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R8_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R8_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R8_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R8_A::_11
+    }
+}
+#[doc = "Write proxy for field `R8`"]
+pub struct R8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R8W) -> &'a mut W {
+impl<'a> R8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R8_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R8W::_00)
+        self.variant(R8_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R8W::_01)
+        self.variant(R8_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R8W::_10)
+        self.variant(R8_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R8W::_11)
+        self.variant(R8_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R7`"]
-pub enum R7W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 7 mode\n\nValue on reset: 3"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R7_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R7W::_00 => 0,
-            R7W::_01 => 1,
-            R7W::_10 => 2,
-            R7W::_11 => 3,
-        }
+impl From<R7_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R7_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R7W<'a> {
+#[doc = "Reader of field `R7`"]
+pub type R7_R = crate::R<u8, R7_A>;
+impl R7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R7_A {
+        match self.bits {
+            0 => R7_A::_00,
+            1 => R7_A::_01,
+            2 => R7_A::_10,
+            3 => R7_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R7_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R7_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R7_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R7_A::_11
+    }
+}
+#[doc = "Write proxy for field `R7`"]
+pub struct R7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R7W) -> &'a mut W {
+impl<'a> R7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R7_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R7W::_00)
+        self.variant(R7_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R7W::_01)
+        self.variant(R7_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R7W::_10)
+        self.variant(R7_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R7W::_11)
+        self.variant(R7_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R6`"]
-pub enum R6W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 6 mode\n\nValue on reset: 3"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R6_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R6W::_00 => 0,
-            R6W::_01 => 1,
-            R6W::_10 => 2,
-            R6W::_11 => 3,
-        }
+impl From<R6_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R6_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R6W<'a> {
+#[doc = "Reader of field `R6`"]
+pub type R6_R = crate::R<u8, R6_A>;
+impl R6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R6_A {
+        match self.bits {
+            0 => R6_A::_00,
+            1 => R6_A::_01,
+            2 => R6_A::_10,
+            3 => R6_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R6_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R6_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R6_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R6_A::_11
+    }
+}
+#[doc = "Write proxy for field `R6`"]
+pub struct R6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R6W) -> &'a mut W {
+impl<'a> R6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R6_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R6W::_00)
+        self.variant(R6_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R6W::_01)
+        self.variant(R6_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R6W::_10)
+        self.variant(R6_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R6W::_11)
+        self.variant(R6_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R5`"]
-pub enum R5W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 5 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R5_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R5W::_00 => 0,
-            R5W::_01 => 1,
-            R5W::_10 => 2,
-            R5W::_11 => 3,
-        }
+impl From<R5_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R5_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R5W<'a> {
+#[doc = "Reader of field `R5`"]
+pub type R5_R = crate::R<u8, R5_A>;
+impl R5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R5_A {
+        match self.bits {
+            0 => R5_A::_00,
+            1 => R5_A::_01,
+            2 => R5_A::_10,
+            3 => R5_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R5_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R5_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R5_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R5_A::_11
+    }
+}
+#[doc = "Write proxy for field `R5`"]
+pub struct R5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R5W) -> &'a mut W {
+impl<'a> R5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R5_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R5W::_00)
+        self.variant(R5_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R5W::_01)
+        self.variant(R5_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R5W::_10)
+        self.variant(R5_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R5W::_11)
+        self.variant(R5_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R4`"]
-pub enum R4W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 4 mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R4_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R4W::_00 => 0,
-            R4W::_01 => 1,
-            R4W::_10 => 2,
-            R4W::_11 => 3,
-        }
+impl From<R4_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R4_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R4W<'a> {
+#[doc = "Reader of field `R4`"]
+pub type R4_R = crate::R<u8, R4_A>;
+impl R4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R4_A {
+        match self.bits {
+            0 => R4_A::_00,
+            1 => R4_A::_01,
+            2 => R4_A::_10,
+            3 => R4_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R4_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R4_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R4_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R4_A::_11
+    }
+}
+#[doc = "Write proxy for field `R4`"]
+pub struct R4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R4W) -> &'a mut W {
+impl<'a> R4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R4_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R4W::_00)
+        self.variant(R4_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R4W::_01)
+        self.variant(R4_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R4W::_10)
+        self.variant(R4_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R4W::_11)
+        self.variant(R4_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R3`"]
-pub enum R3W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 3 mode\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R3_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R3W::_00 => 0,
-            R3W::_01 => 1,
-            R3W::_10 => 2,
-            R3W::_11 => 3,
-        }
+impl From<R3_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R3_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R3W<'a> {
+#[doc = "Reader of field `R3`"]
+pub type R3_R = crate::R<u8, R3_A>;
+impl R3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R3_A {
+        match self.bits {
+            0 => R3_A::_00,
+            1 => R3_A::_01,
+            2 => R3_A::_10,
+            3 => R3_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R3_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R3_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R3_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R3_A::_11
+    }
+}
+#[doc = "Write proxy for field `R3`"]
+pub struct R3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R3W) -> &'a mut W {
+impl<'a> R3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R3_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R3W::_00)
+        self.variant(R3_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R3W::_01)
+        self.variant(R3_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R3W::_10)
+        self.variant(R3_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R3W::_11)
+        self.variant(R3_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R2`"]
-pub enum R2W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 2 mode\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R2_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R2W::_00 => 0,
-            R2W::_01 => 1,
-            R2W::_10 => 2,
-            R2W::_11 => 3,
-        }
+impl From<R2_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R2_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R2W<'a> {
+#[doc = "Reader of field `R2`"]
+pub type R2_R = crate::R<u8, R2_A>;
+impl R2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R2_A {
+        match self.bits {
+            0 => R2_A::_00,
+            1 => R2_A::_01,
+            2 => R2_A::_10,
+            3 => R2_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R2_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R2_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R2_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R2_A::_11
+    }
+}
+#[doc = "Write proxy for field `R2`"]
+pub struct R2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R2W) -> &'a mut W {
+impl<'a> R2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R2_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R2W::_00)
+        self.variant(R2_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R2W::_01)
+        self.variant(R2_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R2W::_10)
+        self.variant(R2_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R2W::_11)
+        self.variant(R2_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R1`"]
-pub enum R1W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 1 mode\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R1_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R1W::_00 => 0,
-            R1W::_01 => 1,
-            R1W::_10 => 2,
-            R1W::_11 => 3,
-        }
+impl From<R1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R1_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R1W<'a> {
+#[doc = "Reader of field `R1`"]
+pub type R1_R = crate::R<u8, R1_A>;
+impl R1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R1_A {
+        match self.bits {
+            0 => R1_A::_00,
+            1 => R1_A::_01,
+            2 => R1_A::_10,
+            3 => R1_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R1_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R1_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R1_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R1_A::_11
+    }
+}
+#[doc = "Write proxy for field `R1`"]
+pub struct R1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R1W) -> &'a mut W {
+impl<'a> R1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R1_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R1W::_00)
+        self.variant(R1_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R1W::_01)
+        self.variant(R1_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R1W::_10)
+        self.variant(R1_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R1W::_11)
+        self.variant(R1_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `R0`"]
-pub enum R0W {
-    #[doc = "Non-cacheable"]
-    _00,
-    #[doc = "Non-cacheable"]
-    _01,
-    #[doc = "Write-through"]
-    _10,
-    #[doc = "Write-back"]
-    _11,
+#[doc = "Region 0 mode\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum R0_A {
+    #[doc = "0: Non-cacheable"]
+    _00 = 0,
+    #[doc = "1: Non-cacheable"]
+    _01 = 1,
+    #[doc = "2: Write-through"]
+    _10 = 2,
+    #[doc = "3: Write-back"]
+    _11 = 3,
 }
-impl R0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            R0W::_00 => 0,
-            R0W::_01 => 1,
-            R0W::_10 => 2,
-            R0W::_11 => 3,
-        }
+impl From<R0_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R0_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _R0W<'a> {
+#[doc = "Reader of field `R0`"]
+pub type R0_R = crate::R<u8, R0_A>;
+impl R0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> R0_A {
+        match self.bits {
+            0 => R0_A::_00,
+            1 => R0_A::_01,
+            2 => R0_A::_10,
+            3 => R0_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == R0_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == R0_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == R0_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == R0_A::_11
+    }
+}
+#[doc = "Write proxy for field `R0`"]
+pub struct R0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _R0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: R0W) -> &'a mut W {
+impl<'a> R0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: R0_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(R0W::_00)
+        self.variant(R0_A::_00)
     }
     #[doc = "Non-cacheable"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(R0W::_01)
+        self.variant(R0_A::_01)
     }
     #[doc = "Write-through"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(R0W::_10)
+        self.variant(R0_A::_10)
     }
     #[doc = "Write-back"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(R0W::_11)
+        self.variant(R0_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Region 15 mode"]
-    #[inline]
-    pub fn r15(&self) -> R15R {
-        R15R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r15(&self) -> R15_R {
+        R15_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Region 14 mode"]
-    #[inline]
-    pub fn r14(&self) -> R14R {
-        R14R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r14(&self) -> R14_R {
+        R14_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Region 13 mode"]
-    #[inline]
-    pub fn r13(&self) -> R13R {
-        R13R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r13(&self) -> R13_R {
+        R13_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - Region 12 mode"]
-    #[inline]
-    pub fn r12(&self) -> R12R {
-        R12R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r12(&self) -> R12_R {
+        R12_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Region 11 mode"]
-    #[inline]
-    pub fn r11(&self) -> R11R {
-        R11R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r11(&self) -> R11_R {
+        R11_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:11 - Region 10 mode"]
-    #[inline]
-    pub fn r10(&self) -> R10R {
-        R10R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r10(&self) -> R10_R {
+        R10_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - Region 9 mode"]
-    #[inline]
-    pub fn r9(&self) -> R9R {
-        R9R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r9(&self) -> R9_R {
+        R9_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 14:15 - Region 8 mode"]
-    #[inline]
-    pub fn r8(&self) -> R8R {
-        R8R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r8(&self) -> R8_R {
+        R8_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:17 - Region 7 mode"]
-    #[inline]
-    pub fn r7(&self) -> R7R {
-        R7R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r7(&self) -> R7_R {
+        R7_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:19 - Region 6 mode"]
-    #[inline]
-    pub fn r6(&self) -> R6R {
-        R6R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r6(&self) -> R6_R {
+        R6_R::new(((self.bits >> 18) & 0x03) as u8)
     }
     #[doc = "Bits 20:21 - Region 5 mode"]
-    #[inline]
-    pub fn r5(&self) -> R5R {
-        R5R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r5(&self) -> R5_R {
+        R5_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bits 22:23 - Region 4 mode"]
-    #[inline]
-    pub fn r4(&self) -> R4R {
-        R4R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r4(&self) -> R4_R {
+        R4_R::new(((self.bits >> 22) & 0x03) as u8)
     }
     #[doc = "Bits 24:25 - Region 3 mode"]
-    #[inline]
-    pub fn r3(&self) -> R3R {
-        R3R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r3(&self) -> R3_R {
+        R3_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 26:27 - Region 2 mode"]
-    #[inline]
-    pub fn r2(&self) -> R2R {
-        R2R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r2(&self) -> R2_R {
+        R2_R::new(((self.bits >> 26) & 0x03) as u8)
     }
     #[doc = "Bits 28:29 - Region 1 mode"]
-    #[inline]
-    pub fn r1(&self) -> R1R {
-        R1R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r1(&self) -> R1_R {
+        R1_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bits 30:31 - Region 0 mode"]
-    #[inline]
-    pub fn r0(&self) -> R0R {
-        R0R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn r0(&self) -> R0_R {
+        R0_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2853150720 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Region 15 mode"]
-    #[inline]
-    pub fn r15(&mut self) -> _R15W {
-        _R15W { w: self }
+    #[inline(always)]
+    pub fn r15(&mut self) -> R15_W {
+        R15_W { w: self }
     }
     #[doc = "Bits 2:3 - Region 14 mode"]
-    #[inline]
-    pub fn r14(&mut self) -> _R14W {
-        _R14W { w: self }
+    #[inline(always)]
+    pub fn r14(&mut self) -> R14_W {
+        R14_W { w: self }
     }
     #[doc = "Bits 4:5 - Region 13 mode"]
-    #[inline]
-    pub fn r13(&mut self) -> _R13W {
-        _R13W { w: self }
+    #[inline(always)]
+    pub fn r13(&mut self) -> R13_W {
+        R13_W { w: self }
     }
     #[doc = "Bits 6:7 - Region 12 mode"]
-    #[inline]
-    pub fn r12(&mut self) -> _R12W {
-        _R12W { w: self }
+    #[inline(always)]
+    pub fn r12(&mut self) -> R12_W {
+        R12_W { w: self }
     }
     #[doc = "Bits 8:9 - Region 11 mode"]
-    #[inline]
-    pub fn r11(&mut self) -> _R11W {
-        _R11W { w: self }
+    #[inline(always)]
+    pub fn r11(&mut self) -> R11_W {
+        R11_W { w: self }
     }
     #[doc = "Bits 10:11 - Region 10 mode"]
-    #[inline]
-    pub fn r10(&mut self) -> _R10W {
-        _R10W { w: self }
+    #[inline(always)]
+    pub fn r10(&mut self) -> R10_W {
+        R10_W { w: self }
     }
     #[doc = "Bits 12:13 - Region 9 mode"]
-    #[inline]
-    pub fn r9(&mut self) -> _R9W {
-        _R9W { w: self }
+    #[inline(always)]
+    pub fn r9(&mut self) -> R9_W {
+        R9_W { w: self }
     }
     #[doc = "Bits 14:15 - Region 8 mode"]
-    #[inline]
-    pub fn r8(&mut self) -> _R8W {
-        _R8W { w: self }
+    #[inline(always)]
+    pub fn r8(&mut self) -> R8_W {
+        R8_W { w: self }
     }
     #[doc = "Bits 16:17 - Region 7 mode"]
-    #[inline]
-    pub fn r7(&mut self) -> _R7W {
-        _R7W { w: self }
+    #[inline(always)]
+    pub fn r7(&mut self) -> R7_W {
+        R7_W { w: self }
     }
     #[doc = "Bits 18:19 - Region 6 mode"]
-    #[inline]
-    pub fn r6(&mut self) -> _R6W {
-        _R6W { w: self }
+    #[inline(always)]
+    pub fn r6(&mut self) -> R6_W {
+        R6_W { w: self }
     }
     #[doc = "Bits 20:21 - Region 5 mode"]
-    #[inline]
-    pub fn r5(&mut self) -> _R5W {
-        _R5W { w: self }
+    #[inline(always)]
+    pub fn r5(&mut self) -> R5_W {
+        R5_W { w: self }
     }
     #[doc = "Bits 22:23 - Region 4 mode"]
-    #[inline]
-    pub fn r4(&mut self) -> _R4W {
-        _R4W { w: self }
+    #[inline(always)]
+    pub fn r4(&mut self) -> R4_W {
+        R4_W { w: self }
     }
     #[doc = "Bits 24:25 - Region 3 mode"]
-    #[inline]
-    pub fn r3(&mut self) -> _R3W {
-        _R3W { w: self }
+    #[inline(always)]
+    pub fn r3(&mut self) -> R3_W {
+        R3_W { w: self }
     }
     #[doc = "Bits 26:27 - Region 2 mode"]
-    #[inline]
-    pub fn r2(&mut self) -> _R2W {
-        _R2W { w: self }
+    #[inline(always)]
+    pub fn r2(&mut self) -> R2_W {
+        R2_W { w: self }
     }
     #[doc = "Bits 28:29 - Region 1 mode"]
-    #[inline]
-    pub fn r1(&mut self) -> _R1W {
-        _R1W { w: self }
+    #[inline(always)]
+    pub fn r1(&mut self) -> R1_W {
+        R1_W { w: self }
     }
     #[doc = "Bits 30:31 - Region 0 mode"]
-    #[inline]
-    pub fn r0(&mut self) -> _R0W {
-        _R0W { w: self }
+    #[inline(always)]
+    pub fn r0(&mut self) -> R0_W {
+        R0_W { w: self }
     }
 }

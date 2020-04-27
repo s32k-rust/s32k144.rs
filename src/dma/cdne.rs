@@ -1,175 +1,147 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::CDNE {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CDNE"]
+pub type W = crate::W<u8, super::CDNE>;
+#[doc = "Register CDNE `reset()`'s with value 0"]
+impl crate::ResetValue for super::CDNE {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CDNEW<'a> {
+#[doc = "Write proxy for field `CDNE`"]
+pub struct CDNE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CDNEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CDNE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u8) & 0x0f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CADN`"]
-pub enum CADNW {
-    #[doc = "Clears only the TCDn_CSR\\[DONE\\] bit specified in the CDNE field"]
-    _0,
-    #[doc = "Clears all bits in TCDn_CSR\\[DONE\\]"]
-    _1,
+#[doc = "Clears All DONE Bits\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CADN_AW {
+    #[doc = "0: Clears only the TCDn_CSR\\[DONE\\]
+bit specified in the CDNE field"]
+    _0 = 0,
+    #[doc = "1: Clears all bits in TCDn_CSR\\[DONE\\]"]
+    _1 = 1,
 }
-impl CADNW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CADNW::_0 => false,
-            CADNW::_1 => true,
-        }
+impl From<CADN_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CADN_AW) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CADNW<'a> {
+#[doc = "Write proxy for field `CADN`"]
+pub struct CADN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CADNW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CADNW) -> &'a mut W {
+impl<'a> CADN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CADN_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
-    #[doc = "Clears only the TCDn_CSR\\[DONE\\] bit specified in the CDNE field"]
-    #[inline]
+    #[doc = "Clears only the TCDn_CSR\\[DONE\\]
+bit specified in the CDNE field"]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CADNW::_0)
+        self.variant(CADN_AW::_0)
     }
     #[doc = "Clears all bits in TCDn_CSR\\[DONE\\]"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CADNW::_1)
+        self.variant(CADN_AW::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u8) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `NOP`"]
-pub enum NOPW {
-    #[doc = "Normal operation"]
-    _0,
-    #[doc = "No operation, ignore the other bits in this register"]
-    _1,
+#[doc = "No Op enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NOP_AW {
+    #[doc = "0: Normal operation"]
+    _0 = 0,
+    #[doc = "1: No operation, ignore the other bits in this register"]
+    _1 = 1,
 }
-impl NOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NOPW::_0 => false,
-            NOPW::_1 => true,
-        }
+impl From<NOP_AW> for bool {
+    #[inline(always)]
+    fn from(variant: NOP_AW) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOPW<'a> {
+#[doc = "Write proxy for field `NOP`"]
+pub struct NOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NOPW) -> &'a mut W {
+impl<'a> NOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NOP_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Normal operation"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(NOPW::_0)
+        self.variant(NOP_AW::_0)
     }
     #[doc = "No operation, ignore the other bits in this register"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(NOPW::_1)
+        self.variant(NOP_AW::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u8) & 0x01) << 7);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Clear DONE Bit"]
-    #[inline]
-    pub fn cdne(&mut self) -> _CDNEW {
-        _CDNEW { w: self }
+    #[inline(always)]
+    pub fn cdne(&mut self) -> CDNE_W {
+        CDNE_W { w: self }
     }
     #[doc = "Bit 6 - Clears All DONE Bits"]
-    #[inline]
-    pub fn cadn(&mut self) -> _CADNW {
-        _CADNW { w: self }
+    #[inline(always)]
+    pub fn cadn(&mut self) -> CADN_W {
+        CADN_W { w: self }
     }
     #[doc = "Bit 7 - No Op enable"]
-    #[inline]
-    pub fn nop(&mut self) -> _NOPW {
-        _NOPW { w: self }
+    #[inline(always)]
+    pub fn nop(&mut self) -> NOP_W {
+        NOP_W { w: self }
     }
 }
