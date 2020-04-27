@@ -1,482 +1,338 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFG1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFG1"]
+pub type R = crate::R<u32, super::CFG1>;
+#[doc = "Writer for register CFG1"]
+pub type W = crate::W<u32, super::CFG1>;
+#[doc = "Register CFG1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CFG1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ADICLK`"]
+#[doc = "Input Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADICLKR {
-    #[doc = "Alternate clock 1 (ADC_ALTCLK1)"]
-    _00,
-    #[doc = "Alternate clock 2 (ADC_ALTCLK2)"]
-    _01,
-    #[doc = "Alternate clock 3 (ADC_ALTCLK3)"]
-    _10,
-    #[doc = "Alternate clock 4 (ADC_ALTCLK4)"]
-    _11,
+#[repr(u8)]
+pub enum ADICLK_A {
+    #[doc = "0: Alternate clock 1 (ADC_ALTCLK1)"]
+    _00 = 0,
+    #[doc = "1: Alternate clock 2 (ADC_ALTCLK2)"]
+    _01 = 1,
+    #[doc = "2: Alternate clock 3 (ADC_ALTCLK3)"]
+    _10 = 2,
+    #[doc = "3: Alternate clock 4 (ADC_ALTCLK4)"]
+    _11 = 3,
 }
-impl ADICLKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADICLKR::_00 => 0,
-            ADICLKR::_01 => 1,
-            ADICLKR::_10 => 2,
-            ADICLKR::_11 => 3,
-        }
+impl From<ADICLK_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADICLK_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADICLKR {
-        match value {
-            0 => ADICLKR::_00,
-            1 => ADICLKR::_01,
-            2 => ADICLKR::_10,
-            3 => ADICLKR::_11,
+}
+#[doc = "Reader of field `ADICLK`"]
+pub type ADICLK_R = crate::R<u8, ADICLK_A>;
+impl ADICLK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADICLK_A {
+        match self.bits {
+            0 => ADICLK_A::_00,
+            1 => ADICLK_A::_01,
+            2 => ADICLK_A::_10,
+            3 => ADICLK_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == ADICLKR::_00
+        *self == ADICLK_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == ADICLKR::_01
+        *self == ADICLK_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == ADICLKR::_10
+        *self == ADICLK_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == ADICLKR::_11
+        *self == ADICLK_A::_11
     }
 }
-#[doc = "Possible values of the field `MODE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
-    #[doc = "8-bit conversion."]
-    _00,
-    #[doc = "12-bit conversion."]
-    _01,
-    #[doc = "10-bit conversion."]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MODER::_00 => 0,
-            MODER::_01 => 1,
-            MODER::_10 => 2,
-            MODER::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::_00,
-            1 => MODER::_01,
-            2 => MODER::_10,
-            i => MODER::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == MODER::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == MODER::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == MODER::_10
-    }
-}
-#[doc = "Possible values of the field `ADIV`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADIVR {
-    #[doc = "The divide ratio is 1 and the clock rate is input clock."]
-    _00,
-    #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."]
-    _01,
-    #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."]
-    _10,
-    #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."]
-    _11,
-}
-impl ADIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADIVR::_00 => 0,
-            ADIVR::_01 => 1,
-            ADIVR::_10 => 2,
-            ADIVR::_11 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADIVR {
-        match value {
-            0 => ADIVR::_00,
-            1 => ADIVR::_01,
-            2 => ADIVR::_10,
-            3 => ADIVR::_11,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == ADIVR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == ADIVR::_01
-    }
-    #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
-    pub fn is_10(&self) -> bool {
-        *self == ADIVR::_10
-    }
-    #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
-    pub fn is_11(&self) -> bool {
-        *self == ADIVR::_11
-    }
-}
-#[doc = "Values that can be written to the field `ADICLK`"]
-pub enum ADICLKW {
-    #[doc = "Alternate clock 1 (ADC_ALTCLK1)"]
-    _00,
-    #[doc = "Alternate clock 2 (ADC_ALTCLK2)"]
-    _01,
-    #[doc = "Alternate clock 3 (ADC_ALTCLK3)"]
-    _10,
-    #[doc = "Alternate clock 4 (ADC_ALTCLK4)"]
-    _11,
-}
-impl ADICLKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADICLKW::_00 => 0,
-            ADICLKW::_01 => 1,
-            ADICLKW::_10 => 2,
-            ADICLKW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADICLKW<'a> {
+#[doc = "Write proxy for field `ADICLK`"]
+pub struct ADICLK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADICLKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADICLKW) -> &'a mut W {
+impl<'a> ADICLK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADICLK_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Alternate clock 1 (ADC_ALTCLK1)"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(ADICLKW::_00)
+        self.variant(ADICLK_A::_00)
     }
     #[doc = "Alternate clock 2 (ADC_ALTCLK2)"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(ADICLKW::_01)
+        self.variant(ADICLK_A::_01)
     }
     #[doc = "Alternate clock 3 (ADC_ALTCLK3)"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(ADICLKW::_10)
+        self.variant(ADICLK_A::_10)
     }
     #[doc = "Alternate clock 4 (ADC_ALTCLK4)"]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(ADICLKW::_11)
+        self.variant(ADICLK_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "8-bit conversion."]
-    _00,
-    #[doc = "12-bit conversion."]
-    _01,
-    #[doc = "10-bit conversion."]
-    _10,
+#[doc = "Conversion mode selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum MODE_A {
+    #[doc = "0: 8-bit conversion."]
+    _00 = 0,
+    #[doc = "1: 12-bit conversion."]
+    _01 = 1,
+    #[doc = "2: 10-bit conversion."]
+    _10 = 2,
 }
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODEW::_00 => 0,
-            MODEW::_01 => 1,
-            MODEW::_10 => 2,
+impl From<MODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MODE_A::_00),
+            1 => Val(MODE_A::_01),
+            2 => Val(MODE_A::_10),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == MODE_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == MODE_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == MODE_A::_10
+    }
 }
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "8-bit conversion."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(MODEW::_00)
+        self.variant(MODE_A::_00)
     }
     #[doc = "12-bit conversion."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(MODEW::_01)
+        self.variant(MODE_A::_01)
     }
     #[doc = "10-bit conversion."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(MODEW::_10)
+        self.variant(MODE_A::_10)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADIV`"]
-pub enum ADIVW {
-    #[doc = "The divide ratio is 1 and the clock rate is input clock."]
-    _00,
-    #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."]
-    _01,
-    #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."]
-    _10,
-    #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."]
-    _11,
+#[doc = "Clock Divide Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum ADIV_A {
+    #[doc = "0: The divide ratio is 1 and the clock rate is input clock."]
+    _00 = 0,
+    #[doc = "1: The divide ratio is 2 and the clock rate is (input clock)/2."]
+    _01 = 1,
+    #[doc = "2: The divide ratio is 4 and the clock rate is (input clock)/4."]
+    _10 = 2,
+    #[doc = "3: The divide ratio is 8 and the clock rate is (input clock)/8."]
+    _11 = 3,
 }
-impl ADIVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADIVW::_00 => 0,
-            ADIVW::_01 => 1,
-            ADIVW::_10 => 2,
-            ADIVW::_11 => 3,
-        }
+impl From<ADIV_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADIV_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADIVW<'a> {
+#[doc = "Reader of field `ADIV`"]
+pub type ADIV_R = crate::R<u8, ADIV_A>;
+impl ADIV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADIV_A {
+        match self.bits {
+            0 => ADIV_A::_00,
+            1 => ADIV_A::_01,
+            2 => ADIV_A::_10,
+            3 => ADIV_A::_11,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == ADIV_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == ADIV_A::_01
+    }
+    #[doc = "Checks if the value of the field is `_10`"]
+    #[inline(always)]
+    pub fn is_10(&self) -> bool {
+        *self == ADIV_A::_10
+    }
+    #[doc = "Checks if the value of the field is `_11`"]
+    #[inline(always)]
+    pub fn is_11(&self) -> bool {
+        *self == ADIV_A::_11
+    }
+}
+#[doc = "Write proxy for field `ADIV`"]
+pub struct ADIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADIVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADIVW) -> &'a mut W {
+impl<'a> ADIV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADIV_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The divide ratio is 1 and the clock rate is input clock."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(ADIVW::_00)
+        self.variant(ADIV_A::_00)
     }
     #[doc = "The divide ratio is 2 and the clock rate is (input clock)/2."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(ADIVW::_01)
+        self.variant(ADIV_A::_01)
     }
     #[doc = "The divide ratio is 4 and the clock rate is (input clock)/4."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(ADIVW::_10)
+        self.variant(ADIV_A::_10)
     }
     #[doc = "The divide ratio is 8 and the clock rate is (input clock)/8."]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(ADIVW::_11)
+        self.variant(ADIV_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 5)) | (((value as u32) & 0x03) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLRLTRGW<'a> {
+#[doc = "Write proxy for field `CLRLTRG`"]
+pub struct CLRLTRG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLRLTRGW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CLRLTRG_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Input Clock Select"]
-    #[inline]
-    pub fn adiclk(&self) -> ADICLKR {
-        ADICLKR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adiclk(&self) -> ADICLK_R {
+        ADICLK_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Conversion mode selection"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 5:6 - Clock Divide Select"]
-    #[inline]
-    pub fn adiv(&self) -> ADIVR {
-        ADIVR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adiv(&self) -> ADIV_R {
+        ADIV_R::new(((self.bits >> 5) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Input Clock Select"]
-    #[inline]
-    pub fn adiclk(&mut self) -> _ADICLKW {
-        _ADICLKW { w: self }
+    #[inline(always)]
+    pub fn adiclk(&mut self) -> ADICLK_W {
+        ADICLK_W { w: self }
     }
     #[doc = "Bits 2:3 - Conversion mode selection"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bits 5:6 - Clock Divide Select"]
-    #[inline]
-    pub fn adiv(&mut self) -> _ADIVW {
-        _ADIVW { w: self }
+    #[inline(always)]
+    pub fn adiv(&mut self) -> ADIV_W {
+        ADIV_W { w: self }
     }
     #[doc = "Bit 8 - Clear Latch Trigger in Trigger Handler Block"]
-    #[inline]
-    pub fn clrltrg(&mut self) -> _CLRLTRGW {
-        _CLRLTRGW { w: self }
+    #[inline(always)]
+    pub fn clrltrg(&mut self) -> CLRLTRG_W {
+        CLRLTRG_W { w: self }
     }
 }

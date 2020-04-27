@@ -1,263 +1,149 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u16,
-}
-impl super::TCD5_CITER_ELINKYES {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TCD5_CITER_ELINKYES"]
+pub type R = crate::R<u16, super::TCD5_CITER_ELINKYES>;
+#[doc = "Writer for register TCD5_CITER_ELINKYES"]
+pub type W = crate::W<u16, super::TCD5_CITER_ELINKYES>;
+#[doc = "Register TCD5_CITER_ELINKYES `reset()`'s with value 0"]
+impl crate::ResetValue for super::TCD5_CITER_ELINKYES {
+    type Type = u16;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CITER_LER {
-    bits: u16,
+#[doc = "Reader of field `CITER_LE`"]
+pub type CITER_LE_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CITER_LE`"]
+pub struct CITER_LE_W<'a> {
+    w: &'a mut W,
 }
-impl CITER_LER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> CITER_LE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01ff) | ((value as u16) & 0x01ff);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct LINKCHR {
-    bits: u8,
+#[doc = "Reader of field `LINKCH`"]
+pub type LINKCH_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LINKCH`"]
+pub struct LINKCH_W<'a> {
+    w: &'a mut W,
 }
-impl LINKCHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> LINKCH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 9)) | (((value as u16) & 0x0f) << 9);
+        self.w
     }
 }
-#[doc = "Possible values of the field `ELINK`"]
+#[doc = "Enable channel-to-channel linking on minor-loop complete\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELINKR {
-    #[doc = "The channel-to-channel linking is disabled"]
-    _0,
-    #[doc = "The channel-to-channel linking is enabled"]
-    _1,
+pub enum ELINK_A {
+    #[doc = "0: The channel-to-channel linking is disabled"]
+    _0 = 0,
+    #[doc = "1: The channel-to-channel linking is enabled"]
+    _1 = 1,
 }
-impl ELINKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ELINK_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELINK_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELINKR::_0 => false,
-            ELINKR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELINKR {
-        match value {
-            false => ELINKR::_0,
-            true => ELINKR::_1,
+}
+#[doc = "Reader of field `ELINK`"]
+pub type ELINK_R = crate::R<bool, ELINK_A>;
+impl ELINK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELINK_A {
+        match self.bits {
+            false => ELINK_A::_0,
+            true => ELINK_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ELINKR::_0
+        *self == ELINK_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ELINKR::_1
+        *self == ELINK_A::_1
     }
 }
-#[doc = r" Proxy"]
-pub struct _CITER_LEW<'a> {
+#[doc = "Write proxy for field `ELINK`"]
+pub struct ELINK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CITER_LEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LINKCHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LINKCHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ELINK`"]
-pub enum ELINKW {
-    #[doc = "The channel-to-channel linking is disabled"]
-    _0,
-    #[doc = "The channel-to-channel linking is enabled"]
-    _1,
-}
-impl ELINKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ELINKW::_0 => false,
-            ELINKW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ELINKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ELINKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ELINKW) -> &'a mut W {
+impl<'a> ELINK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ELINK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The channel-to-channel linking is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ELINKW::_0)
+        self.variant(ELINK_A::_0)
     }
     #[doc = "The channel-to-channel linking is enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ELINKW::_1)
+        self.variant(ELINK_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:8 - Current Major Iteration Count"]
-    #[inline]
-    pub fn citer_le(&self) -> CITER_LER {
-        let bits = {
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        };
-        CITER_LER { bits }
+    #[inline(always)]
+    pub fn citer_le(&self) -> CITER_LE_R {
+        CITER_LE_R::new((self.bits & 0x01ff) as u16)
     }
     #[doc = "Bits 9:12 - Minor Loop Link Channel Number"]
-    #[inline]
-    pub fn linkch(&self) -> LINKCHR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u16) as u8
-        };
-        LINKCHR { bits }
+    #[inline(always)]
+    pub fn linkch(&self) -> LINKCH_R {
+        LINKCH_R::new(((self.bits >> 9) & 0x0f) as u8)
     }
     #[doc = "Bit 15 - Enable channel-to-channel linking on minor-loop complete"]
-    #[inline]
-    pub fn elink(&self) -> ELINKR {
-        ELINKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn elink(&self) -> ELINK_R {
+        ELINK_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:8 - Current Major Iteration Count"]
-    #[inline]
-    pub fn citer_le(&mut self) -> _CITER_LEW {
-        _CITER_LEW { w: self }
+    #[inline(always)]
+    pub fn citer_le(&mut self) -> CITER_LE_W {
+        CITER_LE_W { w: self }
     }
     #[doc = "Bits 9:12 - Minor Loop Link Channel Number"]
-    #[inline]
-    pub fn linkch(&mut self) -> _LINKCHW {
-        _LINKCHW { w: self }
+    #[inline(always)]
+    pub fn linkch(&mut self) -> LINKCH_W {
+        LINKCH_W { w: self }
     }
     #[doc = "Bit 15 - Enable channel-to-channel linking on minor-loop complete"]
-    #[inline]
-    pub fn elink(&mut self) -> _ELINKW {
-        _ELINKW { w: self }
+    #[inline(always)]
+    pub fn elink(&mut self) -> ELINK_W {
+        ELINK_W { w: self }
     }
 }

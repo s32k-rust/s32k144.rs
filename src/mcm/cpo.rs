@@ -1,356 +1,227 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CPO {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CPO"]
+pub type R = crate::R<u32, super::CPO>;
+#[doc = "Writer for register CPO"]
+pub type W = crate::W<u32, super::CPO>;
+#[doc = "Register CPO `reset()`'s with value 0"]
+impl crate::ResetValue for super::CPO {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CPOREQ`"]
+#[doc = "Compute Operation Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPOREQR {
-    #[doc = "Request is cleared."]
-    _0,
-    #[doc = "Request Compute Operation."]
-    _1,
+pub enum CPOREQ_A {
+    #[doc = "0: Request is cleared."]
+    _0 = 0,
+    #[doc = "1: Request Compute Operation."]
+    _1 = 1,
 }
-impl CPOREQR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CPOREQ_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPOREQ_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPOREQR::_0 => false,
-            CPOREQR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPOREQR {
-        match value {
-            false => CPOREQR::_0,
-            true => CPOREQR::_1,
+}
+#[doc = "Reader of field `CPOREQ`"]
+pub type CPOREQ_R = crate::R<bool, CPOREQ_A>;
+impl CPOREQ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPOREQ_A {
+        match self.bits {
+            false => CPOREQ_A::_0,
+            true => CPOREQ_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CPOREQR::_0
+        *self == CPOREQ_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CPOREQR::_1
+        *self == CPOREQ_A::_1
     }
 }
-#[doc = "Possible values of the field `CPOACK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPOACKR {
-    #[doc = "Compute operation entry has not completed or compute operation exit has completed."]
-    _0,
-    #[doc = "Compute operation entry has completed or compute operation exit has not completed."]
-    _1,
-}
-impl CPOACKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPOACKR::_0 => false,
-            CPOACKR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPOACKR {
-        match value {
-            false => CPOACKR::_0,
-            true => CPOACKR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CPOACKR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CPOACKR::_1
-    }
-}
-#[doc = "Possible values of the field `CPOWOI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPOWOIR {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."]
-    _1,
-}
-impl CPOWOIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPOWOIR::_0 => false,
-            CPOWOIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPOWOIR {
-        match value {
-            false => CPOWOIR::_0,
-            true => CPOWOIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CPOWOIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CPOWOIR::_1
-    }
-}
-#[doc = "Values that can be written to the field `CPOREQ`"]
-pub enum CPOREQW {
-    #[doc = "Request is cleared."]
-    _0,
-    #[doc = "Request Compute Operation."]
-    _1,
-}
-impl CPOREQW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CPOREQW::_0 => false,
-            CPOREQW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CPOREQW<'a> {
+#[doc = "Write proxy for field `CPOREQ`"]
+pub struct CPOREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CPOREQW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CPOREQW) -> &'a mut W {
+impl<'a> CPOREQ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CPOREQ_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Request is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CPOREQW::_0)
+        self.variant(CPOREQ_A::_0)
     }
     #[doc = "Request Compute Operation."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CPOREQW::_1)
+        self.variant(CPOREQ_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CPOWOI`"]
-pub enum CPOWOIW {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."]
-    _1,
+#[doc = "Compute Operation Acknowledge\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CPOACK_A {
+    #[doc = "0: Compute operation entry has not completed or compute operation exit has completed."]
+    _0 = 0,
+    #[doc = "1: Compute operation entry has completed or compute operation exit has not completed."]
+    _1 = 1,
 }
-impl CPOWOIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CPOWOIW::_0 => false,
-            CPOWOIW::_1 => true,
-        }
+impl From<CPOACK_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPOACK_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CPOWOIW<'a> {
+#[doc = "Reader of field `CPOACK`"]
+pub type CPOACK_R = crate::R<bool, CPOACK_A>;
+impl CPOACK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPOACK_A {
+        match self.bits {
+            false => CPOACK_A::_0,
+            true => CPOACK_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CPOACK_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CPOACK_A::_1
+    }
+}
+#[doc = "Compute Operation Wakeup On Interrupt\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CPOWOI_A {
+    #[doc = "0: No effect."]
+    _0 = 0,
+    #[doc = "1: When set, the CPOREQ is cleared on any interrupt or exception vector fetch."]
+    _1 = 1,
+}
+impl From<CPOWOI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPOWOI_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `CPOWOI`"]
+pub type CPOWOI_R = crate::R<bool, CPOWOI_A>;
+impl CPOWOI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPOWOI_A {
+        match self.bits {
+            false => CPOWOI_A::_0,
+            true => CPOWOI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CPOWOI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CPOWOI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CPOWOI`"]
+pub struct CPOWOI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CPOWOIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CPOWOIW) -> &'a mut W {
+impl<'a> CPOWOI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CPOWOI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CPOWOIW::_0)
+        self.variant(CPOWOI_A::_0)
     }
     #[doc = "When set, the CPOREQ is cleared on any interrupt or exception vector fetch."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CPOWOIW::_1)
+        self.variant(CPOWOI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Compute Operation Request"]
-    #[inline]
-    pub fn cporeq(&self) -> CPOREQR {
-        CPOREQR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cporeq(&self) -> CPOREQ_R {
+        CPOREQ_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Compute Operation Acknowledge"]
-    #[inline]
-    pub fn cpoack(&self) -> CPOACKR {
-        CPOACKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpoack(&self) -> CPOACK_R {
+        CPOACK_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Compute Operation Wakeup On Interrupt"]
-    #[inline]
-    pub fn cpowoi(&self) -> CPOWOIR {
-        CPOWOIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpowoi(&self) -> CPOWOI_R {
+        CPOWOI_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Compute Operation Request"]
-    #[inline]
-    pub fn cporeq(&mut self) -> _CPOREQW {
-        _CPOREQW { w: self }
+    #[inline(always)]
+    pub fn cporeq(&mut self) -> CPOREQ_W {
+        CPOREQ_W { w: self }
     }
     #[doc = "Bit 2 - Compute Operation Wakeup On Interrupt"]
-    #[inline]
-    pub fn cpowoi(&mut self) -> _CPOWOIW {
-        _CPOWOIW { w: self }
+    #[inline(always)]
+    pub fn cpowoi(&mut self) -> CPOWOI_W {
+        CPOWOI_W { w: self }
     }
 }

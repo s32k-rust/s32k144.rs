@@ -1,222 +1,125 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LMEM_PCCSAR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LMEM_PCCSAR"]
+pub type R = crate::R<u32, super::LMEM_PCCSAR>;
+#[doc = "Writer for register LMEM_PCCSAR"]
+pub type W = crate::W<u32, super::LMEM_PCCSAR>;
+#[doc = "Register LMEM_PCCSAR `reset()`'s with value 0"]
+impl crate::ResetValue for super::LMEM_PCCSAR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `LGO`"]
+#[doc = "Initiate Cache Line Command\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LGOR {
-    #[doc = "Write: no effect. Read: no line command active."]
-    _0,
-    #[doc = "Write: initiate line command indicated by bits CLCR\\[27:24\\]. Read: line command active."]
-    _1,
+pub enum LGO_A {
+    #[doc = "0: Write: no effect. Read: no line command active."]
+    _0 = 0,
+    #[doc = "1: Write: initiate line command indicated by bits CLCR\\[27:24\\]. Read: line command active."]
+    _1 = 1,
 }
-impl LGOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<LGO_A> for bool {
+    #[inline(always)]
+    fn from(variant: LGO_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LGOR::_0 => false,
-            LGOR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LGOR {
-        match value {
-            false => LGOR::_0,
-            true => LGOR::_1,
+}
+#[doc = "Reader of field `LGO`"]
+pub type LGO_R = crate::R<bool, LGO_A>;
+impl LGO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LGO_A {
+        match self.bits {
+            false => LGO_A::_0,
+            true => LGO_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LGOR::_0
+        *self == LGO_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LGOR::_1
+        *self == LGO_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct PHYADDRR {
-    bits: u32,
-}
-impl PHYADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `LGO`"]
-pub enum LGOW {
-    #[doc = "Write: no effect. Read: no line command active."]
-    _0,
-    #[doc = "Write: initiate line command indicated by bits CLCR\\[27:24\\]. Read: line command active."]
-    _1,
-}
-impl LGOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LGOW::_0 => false,
-            LGOW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LGOW<'a> {
+#[doc = "Write proxy for field `LGO`"]
+pub struct LGO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LGOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LGOW) -> &'a mut W {
+impl<'a> LGO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LGO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Write: no effect. Read: no line command active."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LGOW::_0)
+        self.variant(LGO_A::_0)
     }
     #[doc = "Write: initiate line command indicated by bits CLCR\\[27:24\\]. Read: line command active."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LGOW::_1)
+        self.variant(LGO_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHYADDRW<'a> {
+#[doc = "Reader of field `PHYADDR`"]
+pub type PHYADDR_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `PHYADDR`"]
+pub struct PHYADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHYADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHYADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 1073741823;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3fff_ffff << 2)) | (((value as u32) & 0x3fff_ffff) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Initiate Cache Line Command"]
-    #[inline]
-    pub fn lgo(&self) -> LGOR {
-        LGOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lgo(&self) -> LGO_R {
+        LGO_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 2:31 - Physical Address"]
-    #[inline]
-    pub fn phyaddr(&self) -> PHYADDRR {
-        let bits = {
-            const MASK: u32 = 1073741823;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        PHYADDRR { bits }
+    #[inline(always)]
+    pub fn phyaddr(&self) -> PHYADDR_R {
+        PHYADDR_R::new(((self.bits >> 2) & 0x3fff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Initiate Cache Line Command"]
-    #[inline]
-    pub fn lgo(&mut self) -> _LGOW {
-        _LGOW { w: self }
+    #[inline(always)]
+    pub fn lgo(&mut self) -> LGO_W {
+        LGO_W { w: self }
     }
     #[doc = "Bits 2:31 - Physical Address"]
-    #[inline]
-    pub fn phyaddr(&mut self) -> _PHYADDRW {
-        _PHYADDRW { w: self }
+    #[inline(always)]
+    pub fn phyaddr(&mut self) -> PHYADDR_W {
+        PHYADDR_W { w: self }
     }
 }

@@ -1,948 +1,674 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ADCOPT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ADCOPT"]
+pub type R = crate::R<u32, super::ADCOPT>;
+#[doc = "Writer for register ADCOPT"]
+pub type W = crate::W<u32, super::ADCOPT>;
+#[doc = "Register ADCOPT `reset()`'s with value 0"]
+impl crate::ResetValue for super::ADCOPT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ADC0TRGSEL`"]
+#[doc = "ADC0 trigger source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC0TRGSELR {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
+pub enum ADC0TRGSEL_A {
+    #[doc = "0: PDB output"]
+    _0 = 0,
+    #[doc = "1: TRGMUX output"]
+    _1 = 1,
 }
-impl ADC0TRGSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ADC0TRGSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC0TRGSEL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADC0TRGSELR::_0 => false,
-            ADC0TRGSELR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADC0TRGSELR {
-        match value {
-            false => ADC0TRGSELR::_0,
-            true => ADC0TRGSELR::_1,
+}
+#[doc = "Reader of field `ADC0TRGSEL`"]
+pub type ADC0TRGSEL_R = crate::R<bool, ADC0TRGSEL_A>;
+impl ADC0TRGSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC0TRGSEL_A {
+        match self.bits {
+            false => ADC0TRGSEL_A::_0,
+            true => ADC0TRGSEL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ADC0TRGSELR::_0
+        *self == ADC0TRGSEL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ADC0TRGSELR::_1
+        *self == ADC0TRGSEL_A::_1
     }
 }
-#[doc = "Possible values of the field `ADC0SWPRETRG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC0SWPRETRGR {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
+#[doc = "Write proxy for field `ADC0TRGSEL`"]
+pub struct ADC0TRGSEL_W<'a> {
+    w: &'a mut W,
 }
-impl ADC0SWPRETRGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADC0SWPRETRGR::_000 => 0,
-            ADC0SWPRETRGR::_001 => 1,
-            ADC0SWPRETRGR::_010 => 2,
-            ADC0SWPRETRGR::_011 => 3,
-            ADC0SWPRETRGR::_100 => 4,
-            ADC0SWPRETRGR::_101 => 5,
-            ADC0SWPRETRGR::_110 => 6,
-            ADC0SWPRETRGR::_111 => 7,
+impl<'a> ADC0TRGSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC0TRGSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADC0SWPRETRGR {
-        match value {
-            0 => ADC0SWPRETRGR::_000,
-            1 => ADC0SWPRETRGR::_001,
-            2 => ADC0SWPRETRGR::_010,
-            3 => ADC0SWPRETRGR::_011,
-            4 => ADC0SWPRETRGR::_100,
-            5 => ADC0SWPRETRGR::_101,
-            6 => ADC0SWPRETRGR::_110,
-            7 => ADC0SWPRETRGR::_111,
+    #[doc = "PDB output"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(ADC0TRGSEL_A::_0)
+    }
+    #[doc = "TRGMUX output"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(ADC0TRGSEL_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "ADC0 software pretrigger sources\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum ADC0SWPRETRG_A {
+    #[doc = "0: Software pretrigger disabled"]
+    _000 = 0,
+    #[doc = "1: Reserved (do not use)"]
+    _001 = 1,
+    #[doc = "2: Reserved (do not use)"]
+    _010 = 2,
+    #[doc = "3: Reserved (do not use)"]
+    _011 = 3,
+    #[doc = "4: Software pretrigger 0"]
+    _100 = 4,
+    #[doc = "5: Software pretrigger 1"]
+    _101 = 5,
+    #[doc = "6: Software pretrigger 2"]
+    _110 = 6,
+    #[doc = "7: Software pretrigger 3"]
+    _111 = 7,
+}
+impl From<ADC0SWPRETRG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADC0SWPRETRG_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `ADC0SWPRETRG`"]
+pub type ADC0SWPRETRG_R = crate::R<u8, ADC0SWPRETRG_A>;
+impl ADC0SWPRETRG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC0SWPRETRG_A {
+        match self.bits {
+            0 => ADC0SWPRETRG_A::_000,
+            1 => ADC0SWPRETRG_A::_001,
+            2 => ADC0SWPRETRG_A::_010,
+            3 => ADC0SWPRETRG_A::_011,
+            4 => ADC0SWPRETRG_A::_100,
+            5 => ADC0SWPRETRG_A::_101,
+            6 => ADC0SWPRETRG_A::_110,
+            7 => ADC0SWPRETRG_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == ADC0SWPRETRGR::_000
+        *self == ADC0SWPRETRG_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == ADC0SWPRETRGR::_001
+        *self == ADC0SWPRETRG_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == ADC0SWPRETRGR::_010
+        *self == ADC0SWPRETRG_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == ADC0SWPRETRGR::_011
+        *self == ADC0SWPRETRG_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == ADC0SWPRETRGR::_100
+        *self == ADC0SWPRETRG_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == ADC0SWPRETRGR::_101
+        *self == ADC0SWPRETRG_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == ADC0SWPRETRGR::_110
+        *self == ADC0SWPRETRG_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == ADC0SWPRETRGR::_111
+        *self == ADC0SWPRETRG_A::_111
     }
 }
-#[doc = "Possible values of the field `ADC0PRETRGSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC0PRETRGSELR {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `ADC0SWPRETRG`"]
+pub struct ADC0SWPRETRG_W<'a> {
+    w: &'a mut W,
 }
-impl ADC0PRETRGSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADC0PRETRGSELR::_00 => 0,
-            ADC0PRETRGSELR::_01 => 1,
-            ADC0PRETRGSELR::_10 => 2,
-            ADC0PRETRGSELR::_Reserved(bits) => bits,
+impl<'a> ADC0SWPRETRG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC0SWPRETRG_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADC0PRETRGSELR {
-        match value {
-            0 => ADC0PRETRGSELR::_00,
-            1 => ADC0PRETRGSELR::_01,
-            2 => ADC0PRETRGSELR::_10,
-            i => ADC0PRETRGSELR::_Reserved(i),
+    #[doc = "Software pretrigger disabled"]
+    #[inline(always)]
+    pub fn _000(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_000)
+    }
+    #[doc = "Reserved (do not use)"]
+    #[inline(always)]
+    pub fn _001(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_001)
+    }
+    #[doc = "Reserved (do not use)"]
+    #[inline(always)]
+    pub fn _010(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_010)
+    }
+    #[doc = "Reserved (do not use)"]
+    #[inline(always)]
+    pub fn _011(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_011)
+    }
+    #[doc = "Software pretrigger 0"]
+    #[inline(always)]
+    pub fn _100(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_100)
+    }
+    #[doc = "Software pretrigger 1"]
+    #[inline(always)]
+    pub fn _101(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_101)
+    }
+    #[doc = "Software pretrigger 2"]
+    #[inline(always)]
+    pub fn _110(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_110)
+    }
+    #[doc = "Software pretrigger 3"]
+    #[inline(always)]
+    pub fn _111(self) -> &'a mut W {
+        self.variant(ADC0SWPRETRG_A::_111)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u32) & 0x07) << 1);
+        self.w
+    }
+}
+#[doc = "ADC0 pretrigger source select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum ADC0PRETRGSEL_A {
+    #[doc = "0: PDB pretrigger (default)"]
+    _00 = 0,
+    #[doc = "1: TRGMUX pretrigger"]
+    _01 = 1,
+    #[doc = "2: Software pretrigger"]
+    _10 = 2,
+}
+impl From<ADC0PRETRGSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADC0PRETRGSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `ADC0PRETRGSEL`"]
+pub type ADC0PRETRGSEL_R = crate::R<u8, ADC0PRETRGSEL_A>;
+impl ADC0PRETRGSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ADC0PRETRGSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ADC0PRETRGSEL_A::_00),
+            1 => Val(ADC0PRETRGSEL_A::_01),
+            2 => Val(ADC0PRETRGSEL_A::_10),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == ADC0PRETRGSELR::_00
+        *self == ADC0PRETRGSEL_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == ADC0PRETRGSELR::_01
+        *self == ADC0PRETRGSEL_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == ADC0PRETRGSELR::_10
+        *self == ADC0PRETRGSEL_A::_10
     }
 }
-#[doc = "Possible values of the field `ADC1TRGSEL`"]
+#[doc = "Write proxy for field `ADC0PRETRGSEL`"]
+pub struct ADC0PRETRGSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ADC0PRETRGSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC0PRETRGSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "PDB pretrigger (default)"]
+    #[inline(always)]
+    pub fn _00(self) -> &'a mut W {
+        self.variant(ADC0PRETRGSEL_A::_00)
+    }
+    #[doc = "TRGMUX pretrigger"]
+    #[inline(always)]
+    pub fn _01(self) -> &'a mut W {
+        self.variant(ADC0PRETRGSEL_A::_01)
+    }
+    #[doc = "Software pretrigger"]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(ADC0PRETRGSEL_A::_10)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
+    }
+}
+#[doc = "ADC1 trigger source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC1TRGSELR {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
+pub enum ADC1TRGSEL_A {
+    #[doc = "0: PDB output"]
+    _0 = 0,
+    #[doc = "1: TRGMUX output"]
+    _1 = 1,
 }
-impl ADC1TRGSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ADC1TRGSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC1TRGSEL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADC1TRGSELR::_0 => false,
-            ADC1TRGSELR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADC1TRGSELR {
-        match value {
-            false => ADC1TRGSELR::_0,
-            true => ADC1TRGSELR::_1,
+}
+#[doc = "Reader of field `ADC1TRGSEL`"]
+pub type ADC1TRGSEL_R = crate::R<bool, ADC1TRGSEL_A>;
+impl ADC1TRGSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC1TRGSEL_A {
+        match self.bits {
+            false => ADC1TRGSEL_A::_0,
+            true => ADC1TRGSEL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ADC1TRGSELR::_0
+        *self == ADC1TRGSEL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ADC1TRGSELR::_1
+        *self == ADC1TRGSEL_A::_1
     }
 }
-#[doc = "Possible values of the field `ADC1SWPRETRG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC1SWPRETRGR {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
+#[doc = "Write proxy for field `ADC1TRGSEL`"]
+pub struct ADC1TRGSEL_W<'a> {
+    w: &'a mut W,
 }
-impl ADC1SWPRETRGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADC1SWPRETRGR::_000 => 0,
-            ADC1SWPRETRGR::_001 => 1,
-            ADC1SWPRETRGR::_010 => 2,
-            ADC1SWPRETRGR::_011 => 3,
-            ADC1SWPRETRGR::_100 => 4,
-            ADC1SWPRETRGR::_101 => 5,
-            ADC1SWPRETRGR::_110 => 6,
-            ADC1SWPRETRGR::_111 => 7,
+impl<'a> ADC1TRGSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC1TRGSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADC1SWPRETRGR {
-        match value {
-            0 => ADC1SWPRETRGR::_000,
-            1 => ADC1SWPRETRGR::_001,
-            2 => ADC1SWPRETRGR::_010,
-            3 => ADC1SWPRETRGR::_011,
-            4 => ADC1SWPRETRGR::_100,
-            5 => ADC1SWPRETRGR::_101,
-            6 => ADC1SWPRETRGR::_110,
-            7 => ADC1SWPRETRGR::_111,
+    #[doc = "PDB output"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(ADC1TRGSEL_A::_0)
+    }
+    #[doc = "TRGMUX output"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(ADC1TRGSEL_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
+#[doc = "ADC1 software pretrigger sources\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum ADC1SWPRETRG_A {
+    #[doc = "0: Software pretrigger disabled"]
+    _000 = 0,
+    #[doc = "1: Reserved (do not use)"]
+    _001 = 1,
+    #[doc = "2: Reserved (do not use)"]
+    _010 = 2,
+    #[doc = "3: Reserved (do not use)"]
+    _011 = 3,
+    #[doc = "4: Software pretrigger 0"]
+    _100 = 4,
+    #[doc = "5: Software pretrigger 1"]
+    _101 = 5,
+    #[doc = "6: Software pretrigger 2"]
+    _110 = 6,
+    #[doc = "7: Software pretrigger 3"]
+    _111 = 7,
+}
+impl From<ADC1SWPRETRG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADC1SWPRETRG_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `ADC1SWPRETRG`"]
+pub type ADC1SWPRETRG_R = crate::R<u8, ADC1SWPRETRG_A>;
+impl ADC1SWPRETRG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC1SWPRETRG_A {
+        match self.bits {
+            0 => ADC1SWPRETRG_A::_000,
+            1 => ADC1SWPRETRG_A::_001,
+            2 => ADC1SWPRETRG_A::_010,
+            3 => ADC1SWPRETRG_A::_011,
+            4 => ADC1SWPRETRG_A::_100,
+            5 => ADC1SWPRETRG_A::_101,
+            6 => ADC1SWPRETRG_A::_110,
+            7 => ADC1SWPRETRG_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == ADC1SWPRETRGR::_000
+        *self == ADC1SWPRETRG_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == ADC1SWPRETRGR::_001
+        *self == ADC1SWPRETRG_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == ADC1SWPRETRGR::_010
+        *self == ADC1SWPRETRG_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == ADC1SWPRETRGR::_011
+        *self == ADC1SWPRETRG_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == ADC1SWPRETRGR::_100
+        *self == ADC1SWPRETRG_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == ADC1SWPRETRGR::_101
+        *self == ADC1SWPRETRG_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == ADC1SWPRETRGR::_110
+        *self == ADC1SWPRETRG_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == ADC1SWPRETRGR::_111
+        *self == ADC1SWPRETRG_A::_111
     }
 }
-#[doc = "Possible values of the field `ADC1PRETRGSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC1PRETRGSELR {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `ADC1SWPRETRG`"]
+pub struct ADC1SWPRETRG_W<'a> {
+    w: &'a mut W,
 }
-impl ADC1PRETRGSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADC1PRETRGSELR::_00 => 0,
-            ADC1PRETRGSELR::_01 => 1,
-            ADC1PRETRGSELR::_10 => 2,
-            ADC1PRETRGSELR::_Reserved(bits) => bits,
+impl<'a> ADC1SWPRETRG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC1SWPRETRG_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADC1PRETRGSELR {
-        match value {
-            0 => ADC1PRETRGSELR::_00,
-            1 => ADC1PRETRGSELR::_01,
-            2 => ADC1PRETRGSELR::_10,
-            i => ADC1PRETRGSELR::_Reserved(i),
+    #[doc = "Software pretrigger disabled"]
+    #[inline(always)]
+    pub fn _000(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_000)
+    }
+    #[doc = "Reserved (do not use)"]
+    #[inline(always)]
+    pub fn _001(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_001)
+    }
+    #[doc = "Reserved (do not use)"]
+    #[inline(always)]
+    pub fn _010(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_010)
+    }
+    #[doc = "Reserved (do not use)"]
+    #[inline(always)]
+    pub fn _011(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_011)
+    }
+    #[doc = "Software pretrigger 0"]
+    #[inline(always)]
+    pub fn _100(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_100)
+    }
+    #[doc = "Software pretrigger 1"]
+    #[inline(always)]
+    pub fn _101(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_101)
+    }
+    #[doc = "Software pretrigger 2"]
+    #[inline(always)]
+    pub fn _110(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_110)
+    }
+    #[doc = "Software pretrigger 3"]
+    #[inline(always)]
+    pub fn _111(self) -> &'a mut W {
+        self.variant(ADC1SWPRETRG_A::_111)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 9)) | (((value as u32) & 0x07) << 9);
+        self.w
+    }
+}
+#[doc = "ADC1 pretrigger source select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum ADC1PRETRGSEL_A {
+    #[doc = "0: PDB pretrigger (default)"]
+    _00 = 0,
+    #[doc = "1: TRGMUX pretrigger"]
+    _01 = 1,
+    #[doc = "2: Software pretrigger"]
+    _10 = 2,
+}
+impl From<ADC1PRETRGSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADC1PRETRGSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `ADC1PRETRGSEL`"]
+pub type ADC1PRETRGSEL_R = crate::R<u8, ADC1PRETRGSEL_A>;
+impl ADC1PRETRGSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ADC1PRETRGSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ADC1PRETRGSEL_A::_00),
+            1 => Val(ADC1PRETRGSEL_A::_01),
+            2 => Val(ADC1PRETRGSEL_A::_10),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == ADC1PRETRGSELR::_00
+        *self == ADC1PRETRGSEL_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == ADC1PRETRGSELR::_01
+        *self == ADC1PRETRGSEL_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == ADC1PRETRGSELR::_10
+        *self == ADC1PRETRGSEL_A::_10
     }
 }
-#[doc = "Values that can be written to the field `ADC0TRGSEL`"]
-pub enum ADC0TRGSELW {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
-}
-impl ADC0TRGSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADC0TRGSELW::_0 => false,
-            ADC0TRGSELW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADC0TRGSELW<'a> {
+#[doc = "Write proxy for field `ADC1PRETRGSEL`"]
+pub struct ADC1PRETRGSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADC0TRGSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADC0TRGSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "PDB output"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(ADC0TRGSELW::_0)
-    }
-    #[doc = "TRGMUX output"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(ADC0TRGSELW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ADC0SWPRETRG`"]
-pub enum ADC0SWPRETRGW {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
-}
-impl ADC0SWPRETRGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADC0SWPRETRGW::_000 => 0,
-            ADC0SWPRETRGW::_001 => 1,
-            ADC0SWPRETRGW::_010 => 2,
-            ADC0SWPRETRGW::_011 => 3,
-            ADC0SWPRETRGW::_100 => 4,
-            ADC0SWPRETRGW::_101 => 5,
-            ADC0SWPRETRGW::_110 => 6,
-            ADC0SWPRETRGW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADC0SWPRETRGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADC0SWPRETRGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADC0SWPRETRGW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Software pretrigger disabled"]
-    #[inline]
-    pub fn _000(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_000)
-    }
-    #[doc = "Reserved (do not use)"]
-    #[inline]
-    pub fn _001(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_001)
-    }
-    #[doc = "Reserved (do not use)"]
-    #[inline]
-    pub fn _010(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_010)
-    }
-    #[doc = "Reserved (do not use)"]
-    #[inline]
-    pub fn _011(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_011)
-    }
-    #[doc = "Software pretrigger 0"]
-    #[inline]
-    pub fn _100(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_100)
-    }
-    #[doc = "Software pretrigger 1"]
-    #[inline]
-    pub fn _101(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_101)
-    }
-    #[doc = "Software pretrigger 2"]
-    #[inline]
-    pub fn _110(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_110)
-    }
-    #[doc = "Software pretrigger 3"]
-    #[inline]
-    pub fn _111(self) -> &'a mut W {
-        self.variant(ADC0SWPRETRGW::_111)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ADC0PRETRGSEL`"]
-pub enum ADC0PRETRGSELW {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
-}
-impl ADC0PRETRGSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADC0PRETRGSELW::_00 => 0,
-            ADC0PRETRGSELW::_01 => 1,
-            ADC0PRETRGSELW::_10 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADC0PRETRGSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADC0PRETRGSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADC0PRETRGSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> ADC1PRETRGSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC1PRETRGSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PDB pretrigger (default)"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(ADC0PRETRGSELW::_00)
+        self.variant(ADC1PRETRGSEL_A::_00)
     }
     #[doc = "TRGMUX pretrigger"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(ADC0PRETRGSELW::_01)
+        self.variant(ADC1PRETRGSEL_A::_01)
     }
     #[doc = "Software pretrigger"]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(ADC0PRETRGSELW::_10)
+        self.variant(ADC1PRETRGSEL_A::_10)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ADC1TRGSEL`"]
-pub enum ADC1TRGSELW {
-    #[doc = "PDB output"]
-    _0,
-    #[doc = "TRGMUX output"]
-    _1,
-}
-impl ADC1TRGSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADC1TRGSELW::_0 => false,
-            ADC1TRGSELW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADC1TRGSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADC1TRGSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADC1TRGSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "PDB output"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(ADC1TRGSELW::_0)
-    }
-    #[doc = "TRGMUX output"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(ADC1TRGSELW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ADC1SWPRETRG`"]
-pub enum ADC1SWPRETRGW {
-    #[doc = "Software pretrigger disabled"]
-    _000,
-    #[doc = "Reserved (do not use)"]
-    _001,
-    #[doc = "Reserved (do not use)"]
-    _010,
-    #[doc = "Reserved (do not use)"]
-    _011,
-    #[doc = "Software pretrigger 0"]
-    _100,
-    #[doc = "Software pretrigger 1"]
-    _101,
-    #[doc = "Software pretrigger 2"]
-    _110,
-    #[doc = "Software pretrigger 3"]
-    _111,
-}
-impl ADC1SWPRETRGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADC1SWPRETRGW::_000 => 0,
-            ADC1SWPRETRGW::_001 => 1,
-            ADC1SWPRETRGW::_010 => 2,
-            ADC1SWPRETRGW::_011 => 3,
-            ADC1SWPRETRGW::_100 => 4,
-            ADC1SWPRETRGW::_101 => 5,
-            ADC1SWPRETRGW::_110 => 6,
-            ADC1SWPRETRGW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADC1SWPRETRGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADC1SWPRETRGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADC1SWPRETRGW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Software pretrigger disabled"]
-    #[inline]
-    pub fn _000(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_000)
-    }
-    #[doc = "Reserved (do not use)"]
-    #[inline]
-    pub fn _001(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_001)
-    }
-    #[doc = "Reserved (do not use)"]
-    #[inline]
-    pub fn _010(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_010)
-    }
-    #[doc = "Reserved (do not use)"]
-    #[inline]
-    pub fn _011(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_011)
-    }
-    #[doc = "Software pretrigger 0"]
-    #[inline]
-    pub fn _100(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_100)
-    }
-    #[doc = "Software pretrigger 1"]
-    #[inline]
-    pub fn _101(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_101)
-    }
-    #[doc = "Software pretrigger 2"]
-    #[inline]
-    pub fn _110(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_110)
-    }
-    #[doc = "Software pretrigger 3"]
-    #[inline]
-    pub fn _111(self) -> &'a mut W {
-        self.variant(ADC1SWPRETRGW::_111)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ADC1PRETRGSEL`"]
-pub enum ADC1PRETRGSELW {
-    #[doc = "PDB pretrigger (default)"]
-    _00,
-    #[doc = "TRGMUX pretrigger"]
-    _01,
-    #[doc = "Software pretrigger"]
-    _10,
-}
-impl ADC1PRETRGSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADC1PRETRGSELW::_00 => 0,
-            ADC1PRETRGSELW::_01 => 1,
-            ADC1PRETRGSELW::_10 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADC1PRETRGSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ADC1PRETRGSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADC1PRETRGSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "PDB pretrigger (default)"]
-    #[inline]
-    pub fn _00(self) -> &'a mut W {
-        self.variant(ADC1PRETRGSELW::_00)
-    }
-    #[doc = "TRGMUX pretrigger"]
-    #[inline]
-    pub fn _01(self) -> &'a mut W {
-        self.variant(ADC1PRETRGSELW::_01)
-    }
-    #[doc = "Software pretrigger"]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(ADC1PRETRGSELW::_10)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - ADC0 trigger source select"]
-    #[inline]
-    pub fn adc0trgsel(&self) -> ADC0TRGSELR {
-        ADC0TRGSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn adc0trgsel(&self) -> ADC0TRGSEL_R {
+        ADC0TRGSEL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 1:3 - ADC0 software pretrigger sources"]
-    #[inline]
-    pub fn adc0swpretrg(&self) -> ADC0SWPRETRGR {
-        ADC0SWPRETRGR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adc0swpretrg(&self) -> ADC0SWPRETRG_R {
+        ADC0SWPRETRG_R::new(((self.bits >> 1) & 0x07) as u8)
     }
     #[doc = "Bits 4:5 - ADC0 pretrigger source select"]
-    #[inline]
-    pub fn adc0pretrgsel(&self) -> ADC0PRETRGSELR {
-        ADC0PRETRGSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adc0pretrgsel(&self) -> ADC0PRETRGSEL_R {
+        ADC0PRETRGSEL_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bit 8 - ADC1 trigger source select"]
-    #[inline]
-    pub fn adc1trgsel(&self) -> ADC1TRGSELR {
-        ADC1TRGSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn adc1trgsel(&self) -> ADC1TRGSEL_R {
+        ADC1TRGSEL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 9:11 - ADC1 software pretrigger sources"]
-    #[inline]
-    pub fn adc1swpretrg(&self) -> ADC1SWPRETRGR {
-        ADC1SWPRETRGR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adc1swpretrg(&self) -> ADC1SWPRETRG_R {
+        ADC1SWPRETRG_R::new(((self.bits >> 9) & 0x07) as u8)
     }
     #[doc = "Bits 12:13 - ADC1 pretrigger source select"]
-    #[inline]
-    pub fn adc1pretrgsel(&self) -> ADC1PRETRGSELR {
-        ADC1PRETRGSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adc1pretrgsel(&self) -> ADC1PRETRGSEL_R {
+        ADC1PRETRGSEL_R::new(((self.bits >> 12) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - ADC0 trigger source select"]
-    #[inline]
-    pub fn adc0trgsel(&mut self) -> _ADC0TRGSELW {
-        _ADC0TRGSELW { w: self }
+    #[inline(always)]
+    pub fn adc0trgsel(&mut self) -> ADC0TRGSEL_W {
+        ADC0TRGSEL_W { w: self }
     }
     #[doc = "Bits 1:3 - ADC0 software pretrigger sources"]
-    #[inline]
-    pub fn adc0swpretrg(&mut self) -> _ADC0SWPRETRGW {
-        _ADC0SWPRETRGW { w: self }
+    #[inline(always)]
+    pub fn adc0swpretrg(&mut self) -> ADC0SWPRETRG_W {
+        ADC0SWPRETRG_W { w: self }
     }
     #[doc = "Bits 4:5 - ADC0 pretrigger source select"]
-    #[inline]
-    pub fn adc0pretrgsel(&mut self) -> _ADC0PRETRGSELW {
-        _ADC0PRETRGSELW { w: self }
+    #[inline(always)]
+    pub fn adc0pretrgsel(&mut self) -> ADC0PRETRGSEL_W {
+        ADC0PRETRGSEL_W { w: self }
     }
     #[doc = "Bit 8 - ADC1 trigger source select"]
-    #[inline]
-    pub fn adc1trgsel(&mut self) -> _ADC1TRGSELW {
-        _ADC1TRGSELW { w: self }
+    #[inline(always)]
+    pub fn adc1trgsel(&mut self) -> ADC1TRGSEL_W {
+        ADC1TRGSEL_W { w: self }
     }
     #[doc = "Bits 9:11 - ADC1 software pretrigger sources"]
-    #[inline]
-    pub fn adc1swpretrg(&mut self) -> _ADC1SWPRETRGW {
-        _ADC1SWPRETRGW { w: self }
+    #[inline(always)]
+    pub fn adc1swpretrg(&mut self) -> ADC1SWPRETRG_W {
+        ADC1SWPRETRG_W { w: self }
     }
     #[doc = "Bits 12:13 - ADC1 pretrigger source select"]
-    #[inline]
-    pub fn adc1pretrgsel(&mut self) -> _ADC1PRETRGSELW {
-        _ADC1PRETRGSELW { w: self }
+    #[inline(always)]
+    pub fn adc1pretrgsel(&mut self) -> ADC1PRETRGSEL_W {
+        ADC1PRETRGSEL_W { w: self }
     }
 }

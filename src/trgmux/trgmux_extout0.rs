@@ -1,345 +1,197 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TRGMUX_EXTOUT0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TRGMUX_EXTOUT0"]
+pub type R = crate::R<u32, super::TRGMUX_EXTOUT0>;
+#[doc = "Writer for register TRGMUX_EXTOUT0"]
+pub type W = crate::W<u32, super::TRGMUX_EXTOUT0>;
+#[doc = "Register TRGMUX_EXTOUT0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::TRGMUX_EXTOUT0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEL0R {
-    bits: u8,
+#[doc = "Reader of field `SEL0`"]
+pub type SEL0_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SEL0`"]
+pub struct SEL0_W<'a> {
+    w: &'a mut W,
 }
-impl SEL0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SEL0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEL1R {
-    bits: u8,
+#[doc = "Reader of field `SEL1`"]
+pub type SEL1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SEL1`"]
+pub struct SEL1_W<'a> {
+    w: &'a mut W,
 }
-impl SEL1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SEL1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEL2R {
-    bits: u8,
+#[doc = "Reader of field `SEL2`"]
+pub type SEL2_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SEL2`"]
+pub struct SEL2_W<'a> {
+    w: &'a mut W,
 }
-impl SEL2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SEL2_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEL3R {
-    bits: u8,
+#[doc = "Reader of field `SEL3`"]
+pub type SEL3_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SEL3`"]
+pub struct SEL3_W<'a> {
+    w: &'a mut W,
 }
-impl SEL3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SEL3_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
+        self.w
     }
 }
-#[doc = "Possible values of the field `LK`"]
+#[doc = "TRGMUX register lock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LKR {
-    #[doc = "Register can be written."]
-    _0,
-    #[doc = "Register cannot be written until the next system Reset."]
-    _1,
+pub enum LK_A {
+    #[doc = "0: Register can be written."]
+    _0 = 0,
+    #[doc = "1: Register cannot be written until the next system Reset."]
+    _1 = 1,
 }
-impl LKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<LK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LK_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LKR::_0 => false,
-            LKR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LKR {
-        match value {
-            false => LKR::_0,
-            true => LKR::_1,
+}
+#[doc = "Reader of field `LK`"]
+pub type LK_R = crate::R<bool, LK_A>;
+impl LK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LK_A {
+        match self.bits {
+            false => LK_A::_0,
+            true => LK_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LKR::_0
+        *self == LK_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LKR::_1
+        *self == LK_A::_1
     }
 }
-#[doc = r" Proxy"]
-pub struct _SEL0W<'a> {
+#[doc = "Write proxy for field `LK`"]
+pub struct LK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SEL0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SEL1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SEL1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SEL2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SEL2W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SEL3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SEL3W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LK`"]
-pub enum LKW {
-    #[doc = "Register can be written."]
-    _0,
-    #[doc = "Register cannot be written until the next system Reset."]
-    _1,
-}
-impl LKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LKW::_0 => false,
-            LKW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LKW) -> &'a mut W {
+impl<'a> LK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Register can be written."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LKW::_0)
+        self.variant(LK_A::_0)
     }
     #[doc = "Register cannot be written until the next system Reset."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LKW::_1)
+        self.variant(LK_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Trigger MUX Input 0 Source Select"]
-    #[inline]
-    pub fn sel0(&self) -> SEL0R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEL0R { bits }
+    #[inline(always)]
+    pub fn sel0(&self) -> SEL0_R {
+        SEL0_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - Trigger MUX Input 1 Source Select"]
-    #[inline]
-    pub fn sel1(&self) -> SEL1R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEL1R { bits }
+    #[inline(always)]
+    pub fn sel1(&self) -> SEL1_R {
+        SEL1_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - Trigger MUX Input 2 Source Select"]
-    #[inline]
-    pub fn sel2(&self) -> SEL2R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEL2R { bits }
+    #[inline(always)]
+    pub fn sel2(&self) -> SEL2_R {
+        SEL2_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - Trigger MUX Input 3 Source Select"]
-    #[inline]
-    pub fn sel3(&self) -> SEL3R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEL3R { bits }
+    #[inline(always)]
+    pub fn sel3(&self) -> SEL3_R {
+        SEL3_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
     #[doc = "Bit 31 - TRGMUX register lock."]
-    #[inline]
-    pub fn lk(&self) -> LKR {
-        LKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lk(&self) -> LK_R {
+        LK_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Trigger MUX Input 0 Source Select"]
-    #[inline]
-    pub fn sel0(&mut self) -> _SEL0W {
-        _SEL0W { w: self }
+    #[inline(always)]
+    pub fn sel0(&mut self) -> SEL0_W {
+        SEL0_W { w: self }
     }
     #[doc = "Bits 8:13 - Trigger MUX Input 1 Source Select"]
-    #[inline]
-    pub fn sel1(&mut self) -> _SEL1W {
-        _SEL1W { w: self }
+    #[inline(always)]
+    pub fn sel1(&mut self) -> SEL1_W {
+        SEL1_W { w: self }
     }
     #[doc = "Bits 16:21 - Trigger MUX Input 2 Source Select"]
-    #[inline]
-    pub fn sel2(&mut self) -> _SEL2W {
-        _SEL2W { w: self }
+    #[inline(always)]
+    pub fn sel2(&mut self) -> SEL2_W {
+        SEL2_W { w: self }
     }
     #[doc = "Bits 24:29 - Trigger MUX Input 3 Source Select"]
-    #[inline]
-    pub fn sel3(&mut self) -> _SEL3W {
-        _SEL3W { w: self }
+    #[inline(always)]
+    pub fn sel3(&mut self) -> SEL3_W {
+        SEL3_W { w: self }
     }
     #[doc = "Bit 31 - TRGMUX register lock."]
-    #[inline]
-    pub fn lk(&mut self) -> _LKW {
-        _LKW { w: self }
+    #[inline(always)]
+    pub fn lk(&mut self) -> LK_W {
+        LK_W { w: self }
     }
 }

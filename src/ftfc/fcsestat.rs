@@ -1,266 +1,60 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::FCSESTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BSYR {
-    bits: bool,
-}
-impl BSYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SBR {
-    bits: bool,
-}
-impl SBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BINR {
-    bits: bool,
-}
-impl BINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BFNR {
-    bits: bool,
-}
-impl BFNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BOKR {
-    bits: bool,
-}
-impl BOKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RINR {
-    bits: bool,
-}
-impl RINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EDBR {
-    bits: bool,
-}
-impl EDBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDBR {
-    bits: bool,
-}
-impl IDBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register FCSESTAT"]
+pub type R = crate::R<u8, super::FCSESTAT>;
+#[doc = "Reader of field `BSY`"]
+pub type BSY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SB`"]
+pub type SB_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BIN`"]
+pub type BIN_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BFN`"]
+pub type BFN_R = crate::R<bool, bool>;
+#[doc = "Reader of field `BOK`"]
+pub type BOK_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RIN`"]
+pub type RIN_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EDB`"]
+pub type EDB_R = crate::R<bool, bool>;
+#[doc = "Reader of field `IDB`"]
+pub type IDB_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Busy"]
-    #[inline]
-    pub fn bsy(&self) -> BSYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        BSYR { bits }
+    #[inline(always)]
+    pub fn bsy(&self) -> BSY_R {
+        BSY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Secure Boot"]
-    #[inline]
-    pub fn sb(&self) -> SBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        SBR { bits }
+    #[inline(always)]
+    pub fn sb(&self) -> SB_R {
+        SB_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Secure Boot Initialization"]
-    #[inline]
-    pub fn bin(&self) -> BINR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        BINR { bits }
+    #[inline(always)]
+    pub fn bin(&self) -> BIN_R {
+        BIN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Secure Boot Finished"]
-    #[inline]
-    pub fn bfn(&self) -> BFNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        BFNR { bits }
+    #[inline(always)]
+    pub fn bfn(&self) -> BFN_R {
+        BFN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Secure Boot OK"]
-    #[inline]
-    pub fn bok(&self) -> BOKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        BOKR { bits }
+    #[inline(always)]
+    pub fn bok(&self) -> BOK_R {
+        BOK_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Random Number Generator Initialized"]
-    #[inline]
-    pub fn rin(&self) -> RINR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        RINR { bits }
+    #[inline(always)]
+    pub fn rin(&self) -> RIN_R {
+        RIN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - External Debug"]
-    #[inline]
-    pub fn edb(&self) -> EDBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        EDBR { bits }
+    #[inline(always)]
+    pub fn edb(&self) -> EDB_R {
+        EDB_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Internal Debug"]
-    #[inline]
-    pub fn idb(&self) -> IDBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        IDBR { bits }
+    #[inline(always)]
+    pub fn idb(&self) -> IDB_R {
+        IDB_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }

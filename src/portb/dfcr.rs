@@ -1,181 +1,101 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DFCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DFCR"]
+pub type R = crate::R<u32, super::DFCR>;
+#[doc = "Writer for register DFCR"]
+pub type W = crate::W<u32, super::DFCR>;
+#[doc = "Register DFCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::DFCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CS`"]
+#[doc = "Clock Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CSR {
-    #[doc = "Digital filters are clocked by the bus clock."]
-    _0,
-    #[doc = "Digital filters are clocked by the LPO clock."]
-    _1,
+pub enum CS_A {
+    #[doc = "0: Digital filters are clocked by the bus clock."]
+    _0 = 0,
+    #[doc = "1: Digital filters are clocked by the LPO clock."]
+    _1 = 1,
 }
-impl CSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CS_A> for bool {
+    #[inline(always)]
+    fn from(variant: CS_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CSR::_0 => false,
-            CSR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CSR {
-        match value {
-            false => CSR::_0,
-            true => CSR::_1,
+}
+#[doc = "Reader of field `CS`"]
+pub type CS_R = crate::R<bool, CS_A>;
+impl CS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CS_A {
+        match self.bits {
+            false => CS_A::_0,
+            true => CS_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CSR::_0
+        *self == CS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CSR::_1
+        *self == CS_A::_1
     }
 }
-#[doc = "Values that can be written to the field `CS`"]
-pub enum CSW {
-    #[doc = "Digital filters are clocked by the bus clock."]
-    _0,
-    #[doc = "Digital filters are clocked by the LPO clock."]
-    _1,
-}
-impl CSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CSW::_0 => false,
-            CSW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CSW<'a> {
+#[doc = "Write proxy for field `CS`"]
+pub struct CS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CSW) -> &'a mut W {
+impl<'a> CS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Digital filters are clocked by the bus clock."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CSW::_0)
+        self.variant(CS_A::_0)
     }
     #[doc = "Digital filters are clocked by the LPO clock."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CSW::_1)
+        self.variant(CS_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Clock Source"]
-    #[inline]
-    pub fn cs(&self) -> CSR {
-        CSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cs(&self) -> CS_R {
+        CS_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Clock Source"]
-    #[inline]
-    pub fn cs(&mut self) -> _CSW {
-        _CSW { w: self }
+    #[inline(always)]
+    pub fn cs(&mut self) -> CS_W {
+        CS_W { w: self }
     }
 }

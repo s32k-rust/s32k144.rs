@@ -1,765 +1,543 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SC1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SC1%s"]
+pub type R = crate::R<u32, super::SC1>;
+#[doc = "Writer for register SC1%s"]
+pub type W = crate::W<u32, super::SC1>;
+#[doc = "Register SC1%s `reset()`'s with value 0x1f"]
+impl crate::ResetValue for super::SC1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x1f
     }
 }
-#[doc = "Possible values of the field `ADCH`"]
+#[doc = "Input channel select\n\nValue on reset: 31"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADCHR {
-    #[doc = "Exernal channel 0 is selected as input."]
-    _00000,
-    #[doc = "Exernal channel 1 is selected as input."]
-    _00001,
-    #[doc = "Exernal channel 2 is selected as input."]
-    _00010,
-    #[doc = "Exernal channel 3 is selected as input."]
-    _00011,
-    #[doc = "Exernal channel 4 is selected as input."]
-    _00100,
-    #[doc = "Exernal channel 5 is selected as input."]
-    _00101,
-    #[doc = "Exernal channel 6 is selected as input."]
-    _00110,
-    #[doc = "Exernal channel 7 is selected as input."]
-    _00111,
-    #[doc = "Exernal channel 8 is selected as input."]
-    _01000,
-    #[doc = "Exernal channel 9 is selected as input."]
-    _01001,
-    #[doc = "Exernal channel 10 is selected as input."]
-    _01010,
-    #[doc = "Exernal channel 11 is selected as input."]
-    _01011,
-    #[doc = "Exernal channel 12 is selected as input."]
-    _01100,
-    #[doc = "Exernal channel 13 is selected as input."]
-    _01101,
-    #[doc = "Exernal channel 14 is selected as input."]
-    _01110,
-    #[doc = "Exernal channel 15 is selected as input."]
-    _01111,
-    #[doc = "Exernal channel 18 is selected as input."]
-    _10010,
-    #[doc = "Exernal channel 19 is selected as input."]
-    _10011,
-    #[doc = "Internal channel 0 is selected as input."]
-    _10101,
-    #[doc = "Internal channel 1 is selected as input."]
-    _10110,
-    #[doc = "Internal channel 2 is selected as input."]
-    _10111,
-    #[doc = "Temp Sensor"]
-    _11010,
-    #[doc = "Band Gap"]
-    _11011,
-    #[doc = "Internal channel 3 is selected as input."]
-    _11100,
-    #[doc = "VREFSH is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
-    _11101,
-    #[doc = "VREFSL is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
-    _11110,
-    #[doc = "Module is disabled"]
-    _11111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum ADCH_A {
+    #[doc = "0: Exernal channel 0 is selected as input."]
+    _00000 = 0,
+    #[doc = "1: Exernal channel 1 is selected as input."]
+    _00001 = 1,
+    #[doc = "2: Exernal channel 2 is selected as input."]
+    _00010 = 2,
+    #[doc = "3: Exernal channel 3 is selected as input."]
+    _00011 = 3,
+    #[doc = "4: Exernal channel 4 is selected as input."]
+    _00100 = 4,
+    #[doc = "5: Exernal channel 5 is selected as input."]
+    _00101 = 5,
+    #[doc = "6: Exernal channel 6 is selected as input."]
+    _00110 = 6,
+    #[doc = "7: Exernal channel 7 is selected as input."]
+    _00111 = 7,
+    #[doc = "8: Exernal channel 8 is selected as input."]
+    _01000 = 8,
+    #[doc = "9: Exernal channel 9 is selected as input."]
+    _01001 = 9,
+    #[doc = "10: Exernal channel 10 is selected as input."]
+    _01010 = 10,
+    #[doc = "11: Exernal channel 11 is selected as input."]
+    _01011 = 11,
+    #[doc = "12: Exernal channel 12 is selected as input."]
+    _01100 = 12,
+    #[doc = "13: Exernal channel 13 is selected as input."]
+    _01101 = 13,
+    #[doc = "14: Exernal channel 14 is selected as input."]
+    _01110 = 14,
+    #[doc = "15: Exernal channel 15 is selected as input."]
+    _01111 = 15,
+    #[doc = "18: Exernal channel 18 is selected as input."]
+    _10010 = 18,
+    #[doc = "19: Exernal channel 19 is selected as input."]
+    _10011 = 19,
+    #[doc = "21: Internal channel 0 is selected as input."]
+    _10101 = 21,
+    #[doc = "22: Internal channel 1 is selected as input."]
+    _10110 = 22,
+    #[doc = "23: Internal channel 2 is selected as input."]
+    _10111 = 23,
+    #[doc = "26: Temp Sensor"]
+    _11010 = 26,
+    #[doc = "27: Band Gap"]
+    _11011 = 27,
+    #[doc = "28: Internal channel 3 is selected as input."]
+    _11100 = 28,
+    #[doc = "29: VREFSH is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
+    _11101 = 29,
+    #[doc = "30: VREFSL is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
+    _11110 = 30,
+    #[doc = "31: Module is disabled"]
+    _11111 = 31,
 }
-impl ADCHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADCHR::_00000 => 0,
-            ADCHR::_00001 => 1,
-            ADCHR::_00010 => 2,
-            ADCHR::_00011 => 3,
-            ADCHR::_00100 => 4,
-            ADCHR::_00101 => 5,
-            ADCHR::_00110 => 6,
-            ADCHR::_00111 => 7,
-            ADCHR::_01000 => 8,
-            ADCHR::_01001 => 9,
-            ADCHR::_01010 => 10,
-            ADCHR::_01011 => 11,
-            ADCHR::_01100 => 12,
-            ADCHR::_01101 => 13,
-            ADCHR::_01110 => 14,
-            ADCHR::_01111 => 15,
-            ADCHR::_10010 => 18,
-            ADCHR::_10011 => 19,
-            ADCHR::_10101 => 21,
-            ADCHR::_10110 => 22,
-            ADCHR::_10111 => 23,
-            ADCHR::_11010 => 26,
-            ADCHR::_11011 => 27,
-            ADCHR::_11100 => 28,
-            ADCHR::_11101 => 29,
-            ADCHR::_11110 => 30,
-            ADCHR::_11111 => 31,
-            ADCHR::_Reserved(bits) => bits,
-        }
+impl From<ADCH_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADCH_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADCHR {
-        match value {
-            0 => ADCHR::_00000,
-            1 => ADCHR::_00001,
-            2 => ADCHR::_00010,
-            3 => ADCHR::_00011,
-            4 => ADCHR::_00100,
-            5 => ADCHR::_00101,
-            6 => ADCHR::_00110,
-            7 => ADCHR::_00111,
-            8 => ADCHR::_01000,
-            9 => ADCHR::_01001,
-            10 => ADCHR::_01010,
-            11 => ADCHR::_01011,
-            12 => ADCHR::_01100,
-            13 => ADCHR::_01101,
-            14 => ADCHR::_01110,
-            15 => ADCHR::_01111,
-            18 => ADCHR::_10010,
-            19 => ADCHR::_10011,
-            21 => ADCHR::_10101,
-            22 => ADCHR::_10110,
-            23 => ADCHR::_10111,
-            26 => ADCHR::_11010,
-            27 => ADCHR::_11011,
-            28 => ADCHR::_11100,
-            29 => ADCHR::_11101,
-            30 => ADCHR::_11110,
-            31 => ADCHR::_11111,
-            i => ADCHR::_Reserved(i),
+}
+#[doc = "Reader of field `ADCH`"]
+pub type ADCH_R = crate::R<u8, ADCH_A>;
+impl ADCH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ADCH_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ADCH_A::_00000),
+            1 => Val(ADCH_A::_00001),
+            2 => Val(ADCH_A::_00010),
+            3 => Val(ADCH_A::_00011),
+            4 => Val(ADCH_A::_00100),
+            5 => Val(ADCH_A::_00101),
+            6 => Val(ADCH_A::_00110),
+            7 => Val(ADCH_A::_00111),
+            8 => Val(ADCH_A::_01000),
+            9 => Val(ADCH_A::_01001),
+            10 => Val(ADCH_A::_01010),
+            11 => Val(ADCH_A::_01011),
+            12 => Val(ADCH_A::_01100),
+            13 => Val(ADCH_A::_01101),
+            14 => Val(ADCH_A::_01110),
+            15 => Val(ADCH_A::_01111),
+            18 => Val(ADCH_A::_10010),
+            19 => Val(ADCH_A::_10011),
+            21 => Val(ADCH_A::_10101),
+            22 => Val(ADCH_A::_10110),
+            23 => Val(ADCH_A::_10111),
+            26 => Val(ADCH_A::_11010),
+            27 => Val(ADCH_A::_11011),
+            28 => Val(ADCH_A::_11100),
+            29 => Val(ADCH_A::_11101),
+            30 => Val(ADCH_A::_11110),
+            31 => Val(ADCH_A::_11111),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00000(&self) -> bool {
-        *self == ADCHR::_00000
+        *self == ADCH_A::_00000
     }
     #[doc = "Checks if the value of the field is `_00001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00001(&self) -> bool {
-        *self == ADCHR::_00001
+        *self == ADCH_A::_00001
     }
     #[doc = "Checks if the value of the field is `_00010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00010(&self) -> bool {
-        *self == ADCHR::_00010
+        *self == ADCH_A::_00010
     }
     #[doc = "Checks if the value of the field is `_00011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00011(&self) -> bool {
-        *self == ADCHR::_00011
+        *self == ADCH_A::_00011
     }
     #[doc = "Checks if the value of the field is `_00100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00100(&self) -> bool {
-        *self == ADCHR::_00100
+        *self == ADCH_A::_00100
     }
     #[doc = "Checks if the value of the field is `_00101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00101(&self) -> bool {
-        *self == ADCHR::_00101
+        *self == ADCH_A::_00101
     }
     #[doc = "Checks if the value of the field is `_00110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00110(&self) -> bool {
-        *self == ADCHR::_00110
+        *self == ADCH_A::_00110
     }
     #[doc = "Checks if the value of the field is `_00111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00111(&self) -> bool {
-        *self == ADCHR::_00111
+        *self == ADCH_A::_00111
     }
     #[doc = "Checks if the value of the field is `_01000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01000(&self) -> bool {
-        *self == ADCHR::_01000
+        *self == ADCH_A::_01000
     }
     #[doc = "Checks if the value of the field is `_01001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01001(&self) -> bool {
-        *self == ADCHR::_01001
+        *self == ADCH_A::_01001
     }
     #[doc = "Checks if the value of the field is `_01010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01010(&self) -> bool {
-        *self == ADCHR::_01010
+        *self == ADCH_A::_01010
     }
     #[doc = "Checks if the value of the field is `_01011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01011(&self) -> bool {
-        *self == ADCHR::_01011
+        *self == ADCH_A::_01011
     }
     #[doc = "Checks if the value of the field is `_01100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01100(&self) -> bool {
-        *self == ADCHR::_01100
+        *self == ADCH_A::_01100
     }
     #[doc = "Checks if the value of the field is `_01101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01101(&self) -> bool {
-        *self == ADCHR::_01101
+        *self == ADCH_A::_01101
     }
     #[doc = "Checks if the value of the field is `_01110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01110(&self) -> bool {
-        *self == ADCHR::_01110
+        *self == ADCH_A::_01110
     }
     #[doc = "Checks if the value of the field is `_01111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01111(&self) -> bool {
-        *self == ADCHR::_01111
+        *self == ADCH_A::_01111
     }
     #[doc = "Checks if the value of the field is `_10010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10010(&self) -> bool {
-        *self == ADCHR::_10010
+        *self == ADCH_A::_10010
     }
     #[doc = "Checks if the value of the field is `_10011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10011(&self) -> bool {
-        *self == ADCHR::_10011
+        *self == ADCH_A::_10011
     }
     #[doc = "Checks if the value of the field is `_10101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10101(&self) -> bool {
-        *self == ADCHR::_10101
+        *self == ADCH_A::_10101
     }
     #[doc = "Checks if the value of the field is `_10110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10110(&self) -> bool {
-        *self == ADCHR::_10110
+        *self == ADCH_A::_10110
     }
     #[doc = "Checks if the value of the field is `_10111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10111(&self) -> bool {
-        *self == ADCHR::_10111
+        *self == ADCH_A::_10111
     }
     #[doc = "Checks if the value of the field is `_11010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11010(&self) -> bool {
-        *self == ADCHR::_11010
+        *self == ADCH_A::_11010
     }
     #[doc = "Checks if the value of the field is `_11011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11011(&self) -> bool {
-        *self == ADCHR::_11011
+        *self == ADCH_A::_11011
     }
     #[doc = "Checks if the value of the field is `_11100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11100(&self) -> bool {
-        *self == ADCHR::_11100
+        *self == ADCH_A::_11100
     }
     #[doc = "Checks if the value of the field is `_11101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11101(&self) -> bool {
-        *self == ADCHR::_11101
+        *self == ADCH_A::_11101
     }
     #[doc = "Checks if the value of the field is `_11110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11110(&self) -> bool {
-        *self == ADCHR::_11110
+        *self == ADCH_A::_11110
     }
     #[doc = "Checks if the value of the field is `_11111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11111(&self) -> bool {
-        *self == ADCHR::_11111
+        *self == ADCH_A::_11111
     }
 }
-#[doc = "Possible values of the field `AIEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AIENR {
-    #[doc = "Conversion complete interrupt is disabled."]
-    _0,
-    #[doc = "Conversion complete interrupt is enabled."]
-    _1,
-}
-impl AIENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AIENR::_0 => false,
-            AIENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AIENR {
-        match value {
-            false => AIENR::_0,
-            true => AIENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == AIENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == AIENR::_1
-    }
-}
-#[doc = "Possible values of the field `COCO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COCOR {
-    #[doc = "Conversion is not completed."]
-    _0,
-    #[doc = "Conversion is completed."]
-    _1,
-}
-impl COCOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COCOR::_0 => false,
-            COCOR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COCOR {
-        match value {
-            false => COCOR::_0,
-            true => COCOR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == COCOR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == COCOR::_1
-    }
-}
-#[doc = "Values that can be written to the field `ADCH`"]
-pub enum ADCHW {
-    #[doc = "Exernal channel 0 is selected as input."]
-    _00000,
-    #[doc = "Exernal channel 1 is selected as input."]
-    _00001,
-    #[doc = "Exernal channel 2 is selected as input."]
-    _00010,
-    #[doc = "Exernal channel 3 is selected as input."]
-    _00011,
-    #[doc = "Exernal channel 4 is selected as input."]
-    _00100,
-    #[doc = "Exernal channel 5 is selected as input."]
-    _00101,
-    #[doc = "Exernal channel 6 is selected as input."]
-    _00110,
-    #[doc = "Exernal channel 7 is selected as input."]
-    _00111,
-    #[doc = "Exernal channel 8 is selected as input."]
-    _01000,
-    #[doc = "Exernal channel 9 is selected as input."]
-    _01001,
-    #[doc = "Exernal channel 10 is selected as input."]
-    _01010,
-    #[doc = "Exernal channel 11 is selected as input."]
-    _01011,
-    #[doc = "Exernal channel 12 is selected as input."]
-    _01100,
-    #[doc = "Exernal channel 13 is selected as input."]
-    _01101,
-    #[doc = "Exernal channel 14 is selected as input."]
-    _01110,
-    #[doc = "Exernal channel 15 is selected as input."]
-    _01111,
-    #[doc = "Exernal channel 18 is selected as input."]
-    _10010,
-    #[doc = "Exernal channel 19 is selected as input."]
-    _10011,
-    #[doc = "Internal channel 0 is selected as input."]
-    _10101,
-    #[doc = "Internal channel 1 is selected as input."]
-    _10110,
-    #[doc = "Internal channel 2 is selected as input."]
-    _10111,
-    #[doc = "Temp Sensor"]
-    _11010,
-    #[doc = "Band Gap"]
-    _11011,
-    #[doc = "Internal channel 3 is selected as input."]
-    _11100,
-    #[doc = "VREFSH is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
-    _11101,
-    #[doc = "VREFSL is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
-    _11110,
-    #[doc = "Module is disabled"]
-    _11111,
-}
-impl ADCHW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADCHW::_00000 => 0,
-            ADCHW::_00001 => 1,
-            ADCHW::_00010 => 2,
-            ADCHW::_00011 => 3,
-            ADCHW::_00100 => 4,
-            ADCHW::_00101 => 5,
-            ADCHW::_00110 => 6,
-            ADCHW::_00111 => 7,
-            ADCHW::_01000 => 8,
-            ADCHW::_01001 => 9,
-            ADCHW::_01010 => 10,
-            ADCHW::_01011 => 11,
-            ADCHW::_01100 => 12,
-            ADCHW::_01101 => 13,
-            ADCHW::_01110 => 14,
-            ADCHW::_01111 => 15,
-            ADCHW::_10010 => 18,
-            ADCHW::_10011 => 19,
-            ADCHW::_10101 => 21,
-            ADCHW::_10110 => 22,
-            ADCHW::_10111 => 23,
-            ADCHW::_11010 => 26,
-            ADCHW::_11011 => 27,
-            ADCHW::_11100 => 28,
-            ADCHW::_11101 => 29,
-            ADCHW::_11110 => 30,
-            ADCHW::_11111 => 31,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADCHW<'a> {
+#[doc = "Write proxy for field `ADCH`"]
+pub struct ADCH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADCHW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADCHW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> ADCH_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADCH_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Exernal channel 0 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00000(self) -> &'a mut W {
-        self.variant(ADCHW::_00000)
+        self.variant(ADCH_A::_00000)
     }
     #[doc = "Exernal channel 1 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00001(self) -> &'a mut W {
-        self.variant(ADCHW::_00001)
+        self.variant(ADCH_A::_00001)
     }
     #[doc = "Exernal channel 2 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00010(self) -> &'a mut W {
-        self.variant(ADCHW::_00010)
+        self.variant(ADCH_A::_00010)
     }
     #[doc = "Exernal channel 3 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00011(self) -> &'a mut W {
-        self.variant(ADCHW::_00011)
+        self.variant(ADCH_A::_00011)
     }
     #[doc = "Exernal channel 4 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00100(self) -> &'a mut W {
-        self.variant(ADCHW::_00100)
+        self.variant(ADCH_A::_00100)
     }
     #[doc = "Exernal channel 5 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00101(self) -> &'a mut W {
-        self.variant(ADCHW::_00101)
+        self.variant(ADCH_A::_00101)
     }
     #[doc = "Exernal channel 6 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00110(self) -> &'a mut W {
-        self.variant(ADCHW::_00110)
+        self.variant(ADCH_A::_00110)
     }
     #[doc = "Exernal channel 7 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _00111(self) -> &'a mut W {
-        self.variant(ADCHW::_00111)
+        self.variant(ADCH_A::_00111)
     }
     #[doc = "Exernal channel 8 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01000(self) -> &'a mut W {
-        self.variant(ADCHW::_01000)
+        self.variant(ADCH_A::_01000)
     }
     #[doc = "Exernal channel 9 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01001(self) -> &'a mut W {
-        self.variant(ADCHW::_01001)
+        self.variant(ADCH_A::_01001)
     }
     #[doc = "Exernal channel 10 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01010(self) -> &'a mut W {
-        self.variant(ADCHW::_01010)
+        self.variant(ADCH_A::_01010)
     }
     #[doc = "Exernal channel 11 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01011(self) -> &'a mut W {
-        self.variant(ADCHW::_01011)
+        self.variant(ADCH_A::_01011)
     }
     #[doc = "Exernal channel 12 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01100(self) -> &'a mut W {
-        self.variant(ADCHW::_01100)
+        self.variant(ADCH_A::_01100)
     }
     #[doc = "Exernal channel 13 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01101(self) -> &'a mut W {
-        self.variant(ADCHW::_01101)
+        self.variant(ADCH_A::_01101)
     }
     #[doc = "Exernal channel 14 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01110(self) -> &'a mut W {
-        self.variant(ADCHW::_01110)
+        self.variant(ADCH_A::_01110)
     }
     #[doc = "Exernal channel 15 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _01111(self) -> &'a mut W {
-        self.variant(ADCHW::_01111)
+        self.variant(ADCH_A::_01111)
     }
     #[doc = "Exernal channel 18 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _10010(self) -> &'a mut W {
-        self.variant(ADCHW::_10010)
+        self.variant(ADCH_A::_10010)
     }
     #[doc = "Exernal channel 19 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _10011(self) -> &'a mut W {
-        self.variant(ADCHW::_10011)
+        self.variant(ADCH_A::_10011)
     }
     #[doc = "Internal channel 0 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _10101(self) -> &'a mut W {
-        self.variant(ADCHW::_10101)
+        self.variant(ADCH_A::_10101)
     }
     #[doc = "Internal channel 1 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _10110(self) -> &'a mut W {
-        self.variant(ADCHW::_10110)
+        self.variant(ADCH_A::_10110)
     }
     #[doc = "Internal channel 2 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _10111(self) -> &'a mut W {
-        self.variant(ADCHW::_10111)
+        self.variant(ADCH_A::_10111)
     }
     #[doc = "Temp Sensor"]
-    #[inline]
+    #[inline(always)]
     pub fn _11010(self) -> &'a mut W {
-        self.variant(ADCHW::_11010)
+        self.variant(ADCH_A::_11010)
     }
     #[doc = "Band Gap"]
-    #[inline]
+    #[inline(always)]
     pub fn _11011(self) -> &'a mut W {
-        self.variant(ADCHW::_11011)
+        self.variant(ADCH_A::_11011)
     }
     #[doc = "Internal channel 3 is selected as input."]
-    #[inline]
+    #[inline(always)]
     pub fn _11100(self) -> &'a mut W {
-        self.variant(ADCHW::_11100)
+        self.variant(ADCH_A::_11100)
     }
     #[doc = "VREFSH is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
-    #[inline]
+    #[inline(always)]
     pub fn _11101(self) -> &'a mut W {
-        self.variant(ADCHW::_11101)
+        self.variant(ADCH_A::_11101)
     }
     #[doc = "VREFSL is selected as input. Voltage reference selected is determined by SC2\\[REFSEL\\]."]
-    #[inline]
+    #[inline(always)]
     pub fn _11110(self) -> &'a mut W {
-        self.variant(ADCHW::_11110)
+        self.variant(ADCH_A::_11110)
     }
     #[doc = "Module is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _11111(self) -> &'a mut W {
-        self.variant(ADCHW::_11111)
+        self.variant(ADCH_A::_11111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AIEN`"]
-pub enum AIENW {
-    #[doc = "Conversion complete interrupt is disabled."]
-    _0,
-    #[doc = "Conversion complete interrupt is enabled."]
-    _1,
+#[doc = "Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AIEN_A {
+    #[doc = "0: Conversion complete interrupt is disabled."]
+    _0 = 0,
+    #[doc = "1: Conversion complete interrupt is enabled."]
+    _1 = 1,
 }
-impl AIENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AIENW::_0 => false,
-            AIENW::_1 => true,
-        }
+impl From<AIEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: AIEN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _AIENW<'a> {
+#[doc = "Reader of field `AIEN`"]
+pub type AIEN_R = crate::R<bool, AIEN_A>;
+impl AIEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AIEN_A {
+        match self.bits {
+            false => AIEN_A::_0,
+            true => AIEN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == AIEN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == AIEN_A::_1
+    }
+}
+#[doc = "Write proxy for field `AIEN`"]
+pub struct AIEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AIENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AIENW) -> &'a mut W {
+impl<'a> AIEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AIEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Conversion complete interrupt is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(AIENW::_0)
+        self.variant(AIEN_A::_0)
     }
     #[doc = "Conversion complete interrupt is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(AIENW::_1)
+        self.variant(AIEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
+#[doc = "Conversion Complete Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COCO_A {
+    #[doc = "0: Conversion is not completed."]
+    _0 = 0,
+    #[doc = "1: Conversion is completed."]
+    _1 = 1,
+}
+impl From<COCO_A> for bool {
+    #[inline(always)]
+    fn from(variant: COCO_A) -> Self {
+        variant as u8 != 0
     }
+}
+#[doc = "Reader of field `COCO`"]
+pub type COCO_R = crate::R<bool, COCO_A>;
+impl COCO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COCO_A {
+        match self.bits {
+            false => COCO_A::_0,
+            true => COCO_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == COCO_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == COCO_A::_1
+    }
+}
+impl R {
     #[doc = "Bits 0:4 - Input channel select"]
-    #[inline]
-    pub fn adch(&self) -> ADCHR {
-        ADCHR::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn adch(&self) -> ADCH_R {
+        ADCH_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 6 - Interrupt Enable"]
-    #[inline]
-    pub fn aien(&self) -> AIENR {
-        AIENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn aien(&self) -> AIEN_R {
+        AIEN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Conversion Complete Flag"]
-    #[inline]
-    pub fn coco(&self) -> COCOR {
-        COCOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn coco(&self) -> COCO_R {
+        COCO_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 31 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - Input channel select"]
-    #[inline]
-    pub fn adch(&mut self) -> _ADCHW {
-        _ADCHW { w: self }
+    #[inline(always)]
+    pub fn adch(&mut self) -> ADCH_W {
+        ADCH_W { w: self }
     }
     #[doc = "Bit 6 - Interrupt Enable"]
-    #[inline]
-    pub fn aien(&mut self) -> _AIENW {
-        _AIENW { w: self }
+    #[inline(always)]
+    pub fn aien(&mut self) -> AIEN_W {
+        AIEN_W { w: self }
     }
 }

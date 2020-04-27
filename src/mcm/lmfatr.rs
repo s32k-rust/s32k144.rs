@@ -1,190 +1,92 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::LMFATR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PEFPRTR {
-    bits: u8,
-}
-impl PEFPRTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `PEFSIZE`"]
+#[doc = "Reader of register LMFATR"]
+pub type R = crate::R<u32, super::LMFATR>;
+#[doc = "Reader of field `PEFPRT`"]
+pub type PEFPRT_R = crate::R<u8, u8>;
+#[doc = "Parity/ECC Fault Master Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PEFSIZER {
-    #[doc = "8-bit access"]
-    _000,
-    #[doc = "16-bit access"]
-    _001,
-    #[doc = "32-bit access"]
-    _010,
-    #[doc = "64-bit access"]
-    _011,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum PEFSIZE_A {
+    #[doc = "0: 8-bit access"]
+    _000 = 0,
+    #[doc = "1: 16-bit access"]
+    _001 = 1,
+    #[doc = "2: 32-bit access"]
+    _010 = 2,
+    #[doc = "3: 64-bit access"]
+    _011 = 3,
 }
-impl PEFSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PEFSIZER::_000 => 0,
-            PEFSIZER::_001 => 1,
-            PEFSIZER::_010 => 2,
-            PEFSIZER::_011 => 3,
-            PEFSIZER::_Reserved(bits) => bits,
-        }
+impl From<PEFSIZE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PEFSIZE_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PEFSIZER {
-        match value {
-            0 => PEFSIZER::_000,
-            1 => PEFSIZER::_001,
-            2 => PEFSIZER::_010,
-            3 => PEFSIZER::_011,
-            i => PEFSIZER::_Reserved(i),
+}
+#[doc = "Reader of field `PEFSIZE`"]
+pub type PEFSIZE_R = crate::R<u8, PEFSIZE_A>;
+impl PEFSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PEFSIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PEFSIZE_A::_000),
+            1 => Val(PEFSIZE_A::_001),
+            2 => Val(PEFSIZE_A::_010),
+            3 => Val(PEFSIZE_A::_011),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == PEFSIZER::_000
+        *self == PEFSIZE_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == PEFSIZER::_001
+        *self == PEFSIZE_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == PEFSIZER::_010
+        *self == PEFSIZE_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == PEFSIZER::_011
+        *self == PEFSIZE_A::_011
     }
 }
-#[doc = r" Value of the field"]
-pub struct PEFWR {
-    bits: bool,
-}
-impl PEFWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PEFMSTR {
-    bits: u8,
-}
-impl PEFMSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OVRR {
-    bits: bool,
-}
-impl OVRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `PEFW`"]
+pub type PEFW_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PEFMST`"]
+pub type PEFMST_R = crate::R<u8, u8>;
+#[doc = "Reader of field `OVR`"]
+pub type OVR_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Parity/ECC Fault Protection"]
-    #[inline]
-    pub fn pefprt(&self) -> PEFPRTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PEFPRTR { bits }
+    #[inline(always)]
+    pub fn pefprt(&self) -> PEFPRT_R {
+        PEFPRT_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:6 - Parity/ECC Fault Master Size"]
-    #[inline]
-    pub fn pefsize(&self) -> PEFSIZER {
-        PEFSIZER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pefsize(&self) -> PEFSIZE_R {
+        PEFSIZE_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bit 7 - Parity/ECC Fault Write"]
-    #[inline]
-    pub fn pefw(&self) -> PEFWR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PEFWR { bits }
+    #[inline(always)]
+    pub fn pefw(&self) -> PEFW_R {
+        PEFW_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:15 - Parity/ECC Fault Master Number"]
-    #[inline]
-    pub fn pefmst(&self) -> PEFMSTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PEFMSTR { bits }
+    #[inline(always)]
+    pub fn pefmst(&self) -> PEFMST_R {
+        PEFMST_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bit 31 - Overrun"]
-    #[inline]
-    pub fn ovr(&self) -> OVRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OVRR { bits }
+    #[inline(always)]
+    pub fn ovr(&self) -> OVR_R {
+        OVR_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

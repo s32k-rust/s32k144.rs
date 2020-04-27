@@ -1,1015 +1,722 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MCFGR1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MCFGR1"]
+pub type R = crate::R<u32, super::MCFGR1>;
+#[doc = "Writer for register MCFGR1"]
+pub type W = crate::W<u32, super::MCFGR1>;
+#[doc = "Register MCFGR1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::MCFGR1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `PRESCALE`"]
+#[doc = "Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRESCALER {
-    #[doc = "Divide by 1."]
-    _000,
-    #[doc = "Divide by 2."]
-    _001,
-    #[doc = "Divide by 4."]
-    _010,
-    #[doc = "Divide by 8."]
-    _011,
-    #[doc = "Divide by 16."]
-    _100,
-    #[doc = "Divide by 32."]
-    _101,
-    #[doc = "Divide by 64."]
-    _110,
-    #[doc = "Divide by 128."]
-    _111,
+#[repr(u8)]
+pub enum PRESCALE_A {
+    #[doc = "0: Divide by 1."]
+    _000 = 0,
+    #[doc = "1: Divide by 2."]
+    _001 = 1,
+    #[doc = "2: Divide by 4."]
+    _010 = 2,
+    #[doc = "3: Divide by 8."]
+    _011 = 3,
+    #[doc = "4: Divide by 16."]
+    _100 = 4,
+    #[doc = "5: Divide by 32."]
+    _101 = 5,
+    #[doc = "6: Divide by 64."]
+    _110 = 6,
+    #[doc = "7: Divide by 128."]
+    _111 = 7,
 }
-impl PRESCALER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PRESCALER::_000 => 0,
-            PRESCALER::_001 => 1,
-            PRESCALER::_010 => 2,
-            PRESCALER::_011 => 3,
-            PRESCALER::_100 => 4,
-            PRESCALER::_101 => 5,
-            PRESCALER::_110 => 6,
-            PRESCALER::_111 => 7,
-        }
+impl From<PRESCALE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PRESCALE_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PRESCALER {
-        match value {
-            0 => PRESCALER::_000,
-            1 => PRESCALER::_001,
-            2 => PRESCALER::_010,
-            3 => PRESCALER::_011,
-            4 => PRESCALER::_100,
-            5 => PRESCALER::_101,
-            6 => PRESCALER::_110,
-            7 => PRESCALER::_111,
+}
+#[doc = "Reader of field `PRESCALE`"]
+pub type PRESCALE_R = crate::R<u8, PRESCALE_A>;
+impl PRESCALE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRESCALE_A {
+        match self.bits {
+            0 => PRESCALE_A::_000,
+            1 => PRESCALE_A::_001,
+            2 => PRESCALE_A::_010,
+            3 => PRESCALE_A::_011,
+            4 => PRESCALE_A::_100,
+            5 => PRESCALE_A::_101,
+            6 => PRESCALE_A::_110,
+            7 => PRESCALE_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == PRESCALER::_000
+        *self == PRESCALE_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == PRESCALER::_001
+        *self == PRESCALE_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == PRESCALER::_010
+        *self == PRESCALE_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == PRESCALER::_011
+        *self == PRESCALE_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == PRESCALER::_100
+        *self == PRESCALE_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == PRESCALER::_101
+        *self == PRESCALE_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == PRESCALER::_110
+        *self == PRESCALE_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == PRESCALER::_111
+        *self == PRESCALE_A::_111
     }
 }
-#[doc = "Possible values of the field `AUTOSTOP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AUTOSTOPR {
-    #[doc = "No effect."]
-    _0,
-    #[doc = "STOP condition is automatically generated whenever the transmit FIFO is empty and LPI2C master is busy."]
-    _1,
-}
-impl AUTOSTOPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AUTOSTOPR::_0 => false,
-            AUTOSTOPR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AUTOSTOPR {
-        match value {
-            false => AUTOSTOPR::_0,
-            true => AUTOSTOPR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == AUTOSTOPR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == AUTOSTOPR::_1
-    }
-}
-#[doc = "Possible values of the field `IGNACK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IGNACKR {
-    #[doc = "LPI2C Master will receive ACK and NACK normally."]
-    _0,
-    #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."]
-    _1,
-}
-impl IGNACKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IGNACKR::_0 => false,
-            IGNACKR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IGNACKR {
-        match value {
-            false => IGNACKR::_0,
-            true => IGNACKR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == IGNACKR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == IGNACKR::_1
-    }
-}
-#[doc = "Possible values of the field `TIMECFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIMECFGR {
-    #[doc = "Pin Low Timeout Flag will set if SCL is low for longer than the configured timeout."]
-    _0,
-    #[doc = "Pin Low Timeout Flag will set if either SCL or SDA is low for longer than the configured timeout."]
-    _1,
-}
-impl TIMECFGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TIMECFGR::_0 => false,
-            TIMECFGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TIMECFGR {
-        match value {
-            false => TIMECFGR::_0,
-            true => TIMECFGR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == TIMECFGR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == TIMECFGR::_1
-    }
-}
-#[doc = "Possible values of the field `MATCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MATCFGR {
-    #[doc = "Match disabled."]
-    _000,
-    #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."]
-    _010,
-    #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."]
-    _011,
-    #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."]
-    _100,
-    #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."]
-    _101,
-    #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _110,
-    #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl MATCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MATCFGR::_000 => 0,
-            MATCFGR::_010 => 2,
-            MATCFGR::_011 => 3,
-            MATCFGR::_100 => 4,
-            MATCFGR::_101 => 5,
-            MATCFGR::_110 => 6,
-            MATCFGR::_111 => 7,
-            MATCFGR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MATCFGR {
-        match value {
-            0 => MATCFGR::_000,
-            2 => MATCFGR::_010,
-            3 => MATCFGR::_011,
-            4 => MATCFGR::_100,
-            5 => MATCFGR::_101,
-            6 => MATCFGR::_110,
-            7 => MATCFGR::_111,
-            i => MATCFGR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
-    pub fn is_000(&self) -> bool {
-        *self == MATCFGR::_000
-    }
-    #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
-    pub fn is_010(&self) -> bool {
-        *self == MATCFGR::_010
-    }
-    #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
-    pub fn is_011(&self) -> bool {
-        *self == MATCFGR::_011
-    }
-    #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
-    pub fn is_100(&self) -> bool {
-        *self == MATCFGR::_100
-    }
-    #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
-    pub fn is_101(&self) -> bool {
-        *self == MATCFGR::_101
-    }
-    #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
-    pub fn is_110(&self) -> bool {
-        *self == MATCFGR::_110
-    }
-    #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
-    pub fn is_111(&self) -> bool {
-        *self == MATCFGR::_111
-    }
-}
-#[doc = "Possible values of the field `PINCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PINCFGR {
-    #[doc = "LPI2C configured for 2-pin open drain mode."]
-    _000,
-    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."]
-    _001,
-    #[doc = "LPI2C configured for 2-pin push-pull mode."]
-    _010,
-    #[doc = "LPI2C configured for 4-pin push-pull mode."]
-    _011,
-    #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."]
-    _100,
-    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode) with separate LPI2C slave."]
-    _101,
-    #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."]
-    _110,
-    #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."]
-    _111,
-}
-impl PINCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PINCFGR::_000 => 0,
-            PINCFGR::_001 => 1,
-            PINCFGR::_010 => 2,
-            PINCFGR::_011 => 3,
-            PINCFGR::_100 => 4,
-            PINCFGR::_101 => 5,
-            PINCFGR::_110 => 6,
-            PINCFGR::_111 => 7,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PINCFGR {
-        match value {
-            0 => PINCFGR::_000,
-            1 => PINCFGR::_001,
-            2 => PINCFGR::_010,
-            3 => PINCFGR::_011,
-            4 => PINCFGR::_100,
-            5 => PINCFGR::_101,
-            6 => PINCFGR::_110,
-            7 => PINCFGR::_111,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
-    pub fn is_000(&self) -> bool {
-        *self == PINCFGR::_000
-    }
-    #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
-    pub fn is_001(&self) -> bool {
-        *self == PINCFGR::_001
-    }
-    #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
-    pub fn is_010(&self) -> bool {
-        *self == PINCFGR::_010
-    }
-    #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
-    pub fn is_011(&self) -> bool {
-        *self == PINCFGR::_011
-    }
-    #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
-    pub fn is_100(&self) -> bool {
-        *self == PINCFGR::_100
-    }
-    #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
-    pub fn is_101(&self) -> bool {
-        *self == PINCFGR::_101
-    }
-    #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
-    pub fn is_110(&self) -> bool {
-        *self == PINCFGR::_110
-    }
-    #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
-    pub fn is_111(&self) -> bool {
-        *self == PINCFGR::_111
-    }
-}
-#[doc = "Values that can be written to the field `PRESCALE`"]
-pub enum PRESCALEW {
-    #[doc = "Divide by 1."]
-    _000,
-    #[doc = "Divide by 2."]
-    _001,
-    #[doc = "Divide by 4."]
-    _010,
-    #[doc = "Divide by 8."]
-    _011,
-    #[doc = "Divide by 16."]
-    _100,
-    #[doc = "Divide by 32."]
-    _101,
-    #[doc = "Divide by 64."]
-    _110,
-    #[doc = "Divide by 128."]
-    _111,
-}
-impl PRESCALEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PRESCALEW::_000 => 0,
-            PRESCALEW::_001 => 1,
-            PRESCALEW::_010 => 2,
-            PRESCALEW::_011 => 3,
-            PRESCALEW::_100 => 4,
-            PRESCALEW::_101 => 5,
-            PRESCALEW::_110 => 6,
-            PRESCALEW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRESCALEW<'a> {
+#[doc = "Write proxy for field `PRESCALE`"]
+pub struct PRESCALE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRESCALEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRESCALEW) -> &'a mut W {
+impl<'a> PRESCALE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRESCALE_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Divide by 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(PRESCALEW::_000)
+        self.variant(PRESCALE_A::_000)
     }
     #[doc = "Divide by 2."]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(PRESCALEW::_001)
+        self.variant(PRESCALE_A::_001)
     }
     #[doc = "Divide by 4."]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(PRESCALEW::_010)
+        self.variant(PRESCALE_A::_010)
     }
     #[doc = "Divide by 8."]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(PRESCALEW::_011)
+        self.variant(PRESCALE_A::_011)
     }
     #[doc = "Divide by 16."]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(PRESCALEW::_100)
+        self.variant(PRESCALE_A::_100)
     }
     #[doc = "Divide by 32."]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(PRESCALEW::_101)
+        self.variant(PRESCALE_A::_101)
     }
     #[doc = "Divide by 64."]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(PRESCALEW::_110)
+        self.variant(PRESCALE_A::_110)
     }
     #[doc = "Divide by 128."]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(PRESCALEW::_111)
+        self.variant(PRESCALE_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AUTOSTOP`"]
-pub enum AUTOSTOPW {
+#[doc = "Automatic STOP Generation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AUTOSTOP_A {
+    #[doc = "0: No effect."]
+    _0 = 0,
+    #[doc = "1: STOP condition is automatically generated whenever the transmit FIFO is empty and LPI2C master is busy."]
+    _1 = 1,
+}
+impl From<AUTOSTOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: AUTOSTOP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `AUTOSTOP`"]
+pub type AUTOSTOP_R = crate::R<bool, AUTOSTOP_A>;
+impl AUTOSTOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AUTOSTOP_A {
+        match self.bits {
+            false => AUTOSTOP_A::_0,
+            true => AUTOSTOP_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == AUTOSTOP_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == AUTOSTOP_A::_1
+    }
+}
+#[doc = "Write proxy for field `AUTOSTOP`"]
+pub struct AUTOSTOP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AUTOSTOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AUTOSTOP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No effect."]
-    _0,
-    #[doc = "STOP condition is automatically generated whenever the transmit FIFO is empty and LPI2C master is busy."]
-    _1,
-}
-impl AUTOSTOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AUTOSTOPW::_0 => false,
-            AUTOSTOPW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AUTOSTOPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AUTOSTOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AUTOSTOPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No effect."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(AUTOSTOPW::_0)
+        self.variant(AUTOSTOP_A::_0)
     }
     #[doc = "STOP condition is automatically generated whenever the transmit FIFO is empty and LPI2C master is busy."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(AUTOSTOPW::_1)
+        self.variant(AUTOSTOP_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IGNACK`"]
-pub enum IGNACKW {
-    #[doc = "LPI2C Master will receive ACK and NACK normally."]
-    _0,
-    #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."]
-    _1,
+#[doc = "IGNACK\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IGNACK_A {
+    #[doc = "0: LPI2C Master will receive ACK and NACK normally."]
+    _0 = 0,
+    #[doc = "1: LPI2C Master will treat a received NACK as if it was an ACK."]
+    _1 = 1,
 }
-impl IGNACKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IGNACKW::_0 => false,
-            IGNACKW::_1 => true,
-        }
+impl From<IGNACK_A> for bool {
+    #[inline(always)]
+    fn from(variant: IGNACK_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _IGNACKW<'a> {
+#[doc = "Reader of field `IGNACK`"]
+pub type IGNACK_R = crate::R<bool, IGNACK_A>;
+impl IGNACK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IGNACK_A {
+        match self.bits {
+            false => IGNACK_A::_0,
+            true => IGNACK_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == IGNACK_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == IGNACK_A::_1
+    }
+}
+#[doc = "Write proxy for field `IGNACK`"]
+pub struct IGNACK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IGNACKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IGNACKW) -> &'a mut W {
+impl<'a> IGNACK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IGNACK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "LPI2C Master will receive ACK and NACK normally."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(IGNACKW::_0)
+        self.variant(IGNACK_A::_0)
     }
     #[doc = "LPI2C Master will treat a received NACK as if it was an ACK."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(IGNACKW::_1)
+        self.variant(IGNACK_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TIMECFG`"]
-pub enum TIMECFGW {
-    #[doc = "Pin Low Timeout Flag will set if SCL is low for longer than the configured timeout."]
-    _0,
-    #[doc = "Pin Low Timeout Flag will set if either SCL or SDA is low for longer than the configured timeout."]
-    _1,
+#[doc = "Timeout Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TIMECFG_A {
+    #[doc = "0: Pin Low Timeout Flag will set if SCL is low for longer than the configured timeout."]
+    _0 = 0,
+    #[doc = "1: Pin Low Timeout Flag will set if either SCL or SDA is low for longer than the configured timeout."]
+    _1 = 1,
 }
-impl TIMECFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TIMECFGW::_0 => false,
-            TIMECFGW::_1 => true,
-        }
+impl From<TIMECFG_A> for bool {
+    #[inline(always)]
+    fn from(variant: TIMECFG_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _TIMECFGW<'a> {
+#[doc = "Reader of field `TIMECFG`"]
+pub type TIMECFG_R = crate::R<bool, TIMECFG_A>;
+impl TIMECFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIMECFG_A {
+        match self.bits {
+            false => TIMECFG_A::_0,
+            true => TIMECFG_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TIMECFG_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TIMECFG_A::_1
+    }
+}
+#[doc = "Write proxy for field `TIMECFG`"]
+pub struct TIMECFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TIMECFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TIMECFGW) -> &'a mut W {
+impl<'a> TIMECFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TIMECFG_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Low Timeout Flag will set if SCL is low for longer than the configured timeout."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TIMECFGW::_0)
+        self.variant(TIMECFG_A::_0)
     }
     #[doc = "Pin Low Timeout Flag will set if either SCL or SDA is low for longer than the configured timeout."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TIMECFGW::_1)
+        self.variant(TIMECFG_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MATCFG`"]
-pub enum MATCFGW {
-    #[doc = "Match disabled."]
-    _000,
-    #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."]
-    _010,
-    #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."]
-    _011,
-    #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."]
-    _100,
-    #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."]
-    _101,
-    #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _110,
-    #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    _111,
+#[doc = "Match Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum MATCFG_A {
+    #[doc = "0: Match disabled."]
+    _000 = 0,
+    #[doc = "2: Match enabled (1st data word equals MATCH0 OR MATCH1)."]
+    _010 = 2,
+    #[doc = "3: Match enabled (any data word equals MATCH0 OR MATCH1)."]
+    _011 = 3,
+    #[doc = "4: Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."]
+    _100 = 4,
+    #[doc = "5: Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."]
+    _101 = 5,
+    #[doc = "6: Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."]
+    _110 = 6,
+    #[doc = "7: Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."]
+    _111 = 7,
 }
-impl MATCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MATCFGW::_000 => 0,
-            MATCFGW::_010 => 2,
-            MATCFGW::_011 => 3,
-            MATCFGW::_100 => 4,
-            MATCFGW::_101 => 5,
-            MATCFGW::_110 => 6,
-            MATCFGW::_111 => 7,
+impl From<MATCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MATCFG_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `MATCFG`"]
+pub type MATCFG_R = crate::R<u8, MATCFG_A>;
+impl MATCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MATCFG_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MATCFG_A::_000),
+            2 => Val(MATCFG_A::_010),
+            3 => Val(MATCFG_A::_011),
+            4 => Val(MATCFG_A::_100),
+            5 => Val(MATCFG_A::_101),
+            6 => Val(MATCFG_A::_110),
+            7 => Val(MATCFG_A::_111),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_000`"]
+    #[inline(always)]
+    pub fn is_000(&self) -> bool {
+        *self == MATCFG_A::_000
+    }
+    #[doc = "Checks if the value of the field is `_010`"]
+    #[inline(always)]
+    pub fn is_010(&self) -> bool {
+        *self == MATCFG_A::_010
+    }
+    #[doc = "Checks if the value of the field is `_011`"]
+    #[inline(always)]
+    pub fn is_011(&self) -> bool {
+        *self == MATCFG_A::_011
+    }
+    #[doc = "Checks if the value of the field is `_100`"]
+    #[inline(always)]
+    pub fn is_100(&self) -> bool {
+        *self == MATCFG_A::_100
+    }
+    #[doc = "Checks if the value of the field is `_101`"]
+    #[inline(always)]
+    pub fn is_101(&self) -> bool {
+        *self == MATCFG_A::_101
+    }
+    #[doc = "Checks if the value of the field is `_110`"]
+    #[inline(always)]
+    pub fn is_110(&self) -> bool {
+        *self == MATCFG_A::_110
+    }
+    #[doc = "Checks if the value of the field is `_111`"]
+    #[inline(always)]
+    pub fn is_111(&self) -> bool {
+        *self == MATCFG_A::_111
+    }
 }
-#[doc = r" Proxy"]
-pub struct _MATCFGW<'a> {
+#[doc = "Write proxy for field `MATCFG`"]
+pub struct MATCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MATCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MATCFGW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MATCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MATCFG_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Match disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(MATCFGW::_000)
+        self.variant(MATCFG_A::_000)
     }
     #[doc = "Match enabled (1st data word equals MATCH0 OR MATCH1)."]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(MATCFGW::_010)
+        self.variant(MATCFG_A::_010)
     }
     #[doc = "Match enabled (any data word equals MATCH0 OR MATCH1)."]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(MATCFGW::_011)
+        self.variant(MATCFG_A::_011)
     }
     #[doc = "Match enabled (1st data word equals MATCH0 AND 2nd data word equals MATCH1)."]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(MATCFGW::_100)
+        self.variant(MATCFG_A::_100)
     }
     #[doc = "Match enabled (any data word equals MATCH0 AND next data word equals MATCH1)."]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(MATCFGW::_101)
+        self.variant(MATCFG_A::_101)
     }
     #[doc = "Match enabled (1st data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(MATCFGW::_110)
+        self.variant(MATCFG_A::_110)
     }
     #[doc = "Match enabled (any data word AND MATCH1 equals MATCH0 AND MATCH1)."]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(MATCFGW::_111)
+        self.variant(MATCFG_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PINCFG`"]
-pub enum PINCFGW {
-    #[doc = "LPI2C configured for 2-pin open drain mode."]
-    _000,
-    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."]
-    _001,
-    #[doc = "LPI2C configured for 2-pin push-pull mode."]
-    _010,
-    #[doc = "LPI2C configured for 4-pin push-pull mode."]
-    _011,
-    #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."]
-    _100,
-    #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode) with separate LPI2C slave."]
-    _101,
-    #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."]
-    _110,
-    #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."]
-    _111,
+#[doc = "Pin Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PINCFG_A {
+    #[doc = "0: LPI2C configured for 2-pin open drain mode."]
+    _000 = 0,
+    #[doc = "1: LPI2C configured for 2-pin output only mode (ultra-fast mode)."]
+    _001 = 1,
+    #[doc = "2: LPI2C configured for 2-pin push-pull mode."]
+    _010 = 2,
+    #[doc = "3: LPI2C configured for 4-pin push-pull mode."]
+    _011 = 3,
+    #[doc = "4: LPI2C configured for 2-pin open drain mode with separate LPI2C slave."]
+    _100 = 4,
+    #[doc = "5: LPI2C configured for 2-pin output only mode (ultra-fast mode) with separate LPI2C slave."]
+    _101 = 5,
+    #[doc = "6: LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."]
+    _110 = 6,
+    #[doc = "7: LPI2C configured for 4-pin push-pull mode (inverted outputs)."]
+    _111 = 7,
 }
-impl PINCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PINCFGW::_000 => 0,
-            PINCFGW::_001 => 1,
-            PINCFGW::_010 => 2,
-            PINCFGW::_011 => 3,
-            PINCFGW::_100 => 4,
-            PINCFGW::_101 => 5,
-            PINCFGW::_110 => 6,
-            PINCFGW::_111 => 7,
-        }
+impl From<PINCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PINCFG_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _PINCFGW<'a> {
+#[doc = "Reader of field `PINCFG`"]
+pub type PINCFG_R = crate::R<u8, PINCFG_A>;
+impl PINCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PINCFG_A {
+        match self.bits {
+            0 => PINCFG_A::_000,
+            1 => PINCFG_A::_001,
+            2 => PINCFG_A::_010,
+            3 => PINCFG_A::_011,
+            4 => PINCFG_A::_100,
+            5 => PINCFG_A::_101,
+            6 => PINCFG_A::_110,
+            7 => PINCFG_A::_111,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_000`"]
+    #[inline(always)]
+    pub fn is_000(&self) -> bool {
+        *self == PINCFG_A::_000
+    }
+    #[doc = "Checks if the value of the field is `_001`"]
+    #[inline(always)]
+    pub fn is_001(&self) -> bool {
+        *self == PINCFG_A::_001
+    }
+    #[doc = "Checks if the value of the field is `_010`"]
+    #[inline(always)]
+    pub fn is_010(&self) -> bool {
+        *self == PINCFG_A::_010
+    }
+    #[doc = "Checks if the value of the field is `_011`"]
+    #[inline(always)]
+    pub fn is_011(&self) -> bool {
+        *self == PINCFG_A::_011
+    }
+    #[doc = "Checks if the value of the field is `_100`"]
+    #[inline(always)]
+    pub fn is_100(&self) -> bool {
+        *self == PINCFG_A::_100
+    }
+    #[doc = "Checks if the value of the field is `_101`"]
+    #[inline(always)]
+    pub fn is_101(&self) -> bool {
+        *self == PINCFG_A::_101
+    }
+    #[doc = "Checks if the value of the field is `_110`"]
+    #[inline(always)]
+    pub fn is_110(&self) -> bool {
+        *self == PINCFG_A::_110
+    }
+    #[doc = "Checks if the value of the field is `_111`"]
+    #[inline(always)]
+    pub fn is_111(&self) -> bool {
+        *self == PINCFG_A::_111
+    }
+}
+#[doc = "Write proxy for field `PINCFG`"]
+pub struct PINCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PINCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PINCFGW) -> &'a mut W {
+impl<'a> PINCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PINCFG_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LPI2C configured for 2-pin open drain mode."]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(PINCFGW::_000)
+        self.variant(PINCFG_A::_000)
     }
     #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode)."]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(PINCFGW::_001)
+        self.variant(PINCFG_A::_001)
     }
     #[doc = "LPI2C configured for 2-pin push-pull mode."]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(PINCFGW::_010)
+        self.variant(PINCFG_A::_010)
     }
     #[doc = "LPI2C configured for 4-pin push-pull mode."]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(PINCFGW::_011)
+        self.variant(PINCFG_A::_011)
     }
     #[doc = "LPI2C configured for 2-pin open drain mode with separate LPI2C slave."]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(PINCFGW::_100)
+        self.variant(PINCFG_A::_100)
     }
     #[doc = "LPI2C configured for 2-pin output only mode (ultra-fast mode) with separate LPI2C slave."]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(PINCFGW::_101)
+        self.variant(PINCFG_A::_101)
     }
     #[doc = "LPI2C configured for 2-pin push-pull mode with separate LPI2C slave."]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(PINCFGW::_110)
+        self.variant(PINCFG_A::_110)
     }
     #[doc = "LPI2C configured for 4-pin push-pull mode (inverted outputs)."]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(PINCFGW::_111)
+        self.variant(PINCFG_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Prescaler"]
-    #[inline]
-    pub fn prescale(&self) -> PRESCALER {
-        PRESCALER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn prescale(&self) -> PRESCALE_R {
+        PRESCALE_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 8 - Automatic STOP Generation"]
-    #[inline]
-    pub fn autostop(&self) -> AUTOSTOPR {
-        AUTOSTOPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn autostop(&self) -> AUTOSTOP_R {
+        AUTOSTOP_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - IGNACK"]
-    #[inline]
-    pub fn ignack(&self) -> IGNACKR {
-        IGNACKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ignack(&self) -> IGNACK_R {
+        IGNACK_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Timeout Configuration"]
-    #[inline]
-    pub fn timecfg(&self) -> TIMECFGR {
-        TIMECFGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn timecfg(&self) -> TIMECFG_R {
+        TIMECFG_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 16:18 - Match Configuration"]
-    #[inline]
-    pub fn matcfg(&self) -> MATCFGR {
-        MATCFGR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn matcfg(&self) -> MATCFG_R {
+        MATCFG_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bits 24:26 - Pin Configuration"]
-    #[inline]
-    pub fn pincfg(&self) -> PINCFGR {
-        PINCFGR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pincfg(&self) -> PINCFG_R {
+        PINCFG_R::new(((self.bits >> 24) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Prescaler"]
-    #[inline]
-    pub fn prescale(&mut self) -> _PRESCALEW {
-        _PRESCALEW { w: self }
+    #[inline(always)]
+    pub fn prescale(&mut self) -> PRESCALE_W {
+        PRESCALE_W { w: self }
     }
     #[doc = "Bit 8 - Automatic STOP Generation"]
-    #[inline]
-    pub fn autostop(&mut self) -> _AUTOSTOPW {
-        _AUTOSTOPW { w: self }
+    #[inline(always)]
+    pub fn autostop(&mut self) -> AUTOSTOP_W {
+        AUTOSTOP_W { w: self }
     }
     #[doc = "Bit 9 - IGNACK"]
-    #[inline]
-    pub fn ignack(&mut self) -> _IGNACKW {
-        _IGNACKW { w: self }
+    #[inline(always)]
+    pub fn ignack(&mut self) -> IGNACK_W {
+        IGNACK_W { w: self }
     }
     #[doc = "Bit 10 - Timeout Configuration"]
-    #[inline]
-    pub fn timecfg(&mut self) -> _TIMECFGW {
-        _TIMECFGW { w: self }
+    #[inline(always)]
+    pub fn timecfg(&mut self) -> TIMECFG_W {
+        TIMECFG_W { w: self }
     }
     #[doc = "Bits 16:18 - Match Configuration"]
-    #[inline]
-    pub fn matcfg(&mut self) -> _MATCFGW {
-        _MATCFGW { w: self }
+    #[inline(always)]
+    pub fn matcfg(&mut self) -> MATCFG_W {
+        MATCFG_W { w: self }
     }
     #[doc = "Bits 24:26 - Pin Configuration"]
-    #[inline]
-    pub fn pincfg(&mut self) -> _PINCFGW {
-        _PINCFGW { w: self }
+    #[inline(always)]
+    pub fn pincfg(&mut self) -> PINCFG_W {
+        PINCFG_W { w: self }
     }
 }

@@ -1,948 +1,626 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FTMOPT1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FTMOPT1"]
+pub type R = crate::R<u32, super::FTMOPT1>;
+#[doc = "Writer for register FTMOPT1"]
+pub type W = crate::W<u32, super::FTMOPT1>;
+#[doc = "Register FTMOPT1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::FTMOPT1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct FTM0SYNCBITR {
-    bits: bool,
+#[doc = "Reader of field `FTM0SYNCBIT`"]
+pub type FTM0SYNCBIT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FTM0SYNCBIT`"]
+pub struct FTM0SYNCBIT_W<'a> {
+    w: &'a mut W,
 }
-impl FTM0SYNCBITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> FTM0SYNCBIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FTM1SYNCBITR {
-    bits: bool,
-}
-impl FTM1SYNCBITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct FTM2SYNCBITR {
-    bits: bool,
+#[doc = "Reader of field `FTM1SYNCBIT`"]
+pub type FTM1SYNCBIT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FTM1SYNCBIT`"]
+pub struct FTM1SYNCBIT_W<'a> {
+    w: &'a mut W,
 }
-impl FTM2SYNCBITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> FTM1SYNCBIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FTM3SYNCBITR {
-    bits: bool,
-}
-impl FTM3SYNCBITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = "Possible values of the field `FTM1CH0SEL`"]
+#[doc = "Reader of field `FTM2SYNCBIT`"]
+pub type FTM2SYNCBIT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FTM2SYNCBIT`"]
+pub struct FTM2SYNCBIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM2SYNCBIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Reader of field `FTM3SYNCBIT`"]
+pub type FTM3SYNCBIT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FTM3SYNCBIT`"]
+pub struct FTM3SYNCBIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM3SYNCBIT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "FTM1 CH0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM1CH0SELR {
-    #[doc = "FTM1_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum FTM1CH0SEL_A {
+    #[doc = "0: FTM1_CH0 input"]
+    _00 = 0,
+    #[doc = "1: CMP0 output"]
+    _01 = 1,
 }
-impl FTM1CH0SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM1CH0SELR::_00 => 0,
-            FTM1CH0SELR::_01 => 1,
-            FTM1CH0SELR::_Reserved(bits) => bits,
-        }
+impl From<FTM1CH0SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM1CH0SEL_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM1CH0SELR {
-        match value {
-            0 => FTM1CH0SELR::_00,
-            1 => FTM1CH0SELR::_01,
-            i => FTM1CH0SELR::_Reserved(i),
+}
+#[doc = "Reader of field `FTM1CH0SEL`"]
+pub type FTM1CH0SEL_R = crate::R<u8, FTM1CH0SEL_A>;
+impl FTM1CH0SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM1CH0SEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM1CH0SEL_A::_00),
+            1 => Val(FTM1CH0SEL_A::_01),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == FTM1CH0SELR::_00
+        *self == FTM1CH0SEL_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == FTM1CH0SELR::_01
+        *self == FTM1CH0SEL_A::_01
     }
 }
-#[doc = "Possible values of the field `FTM2CH0SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM2CH0SELR {
-    #[doc = "FTM2_CH0 input"]
-    _00,
+#[doc = "Write proxy for field `FTM1CH0SEL`"]
+pub struct FTM1CH0SEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM1CH0SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM1CH0SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "FTM1_CH0 input"]
+    #[inline(always)]
+    pub fn _00(self) -> &'a mut W {
+        self.variant(FTM1CH0SEL_A::_00)
+    }
     #[doc = "CMP0 output"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl FTM2CH0SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM2CH0SELR::_00 => 0,
-            FTM2CH0SELR::_01 => 1,
-            FTM2CH0SELR::_Reserved(bits) => bits,
-        }
+    #[inline(always)]
+    pub fn _01(self) -> &'a mut W {
+        self.variant(FTM1CH0SEL_A::_01)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM2CH0SELR {
-        match value {
-            0 => FTM2CH0SELR::_00,
-            1 => FTM2CH0SELR::_01,
-            i => FTM2CH0SELR::_Reserved(i),
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
+    }
+}
+#[doc = "FTM2 CH0 Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM2CH0SEL_A {
+    #[doc = "0: FTM2_CH0 input"]
+    _00 = 0,
+    #[doc = "1: CMP0 output"]
+    _01 = 1,
+}
+impl From<FTM2CH0SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM2CH0SEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM2CH0SEL`"]
+pub type FTM2CH0SEL_R = crate::R<u8, FTM2CH0SEL_A>;
+impl FTM2CH0SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM2CH0SEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM2CH0SEL_A::_00),
+            1 => Val(FTM2CH0SEL_A::_01),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == FTM2CH0SELR::_00
+        *self == FTM2CH0SEL_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == FTM2CH0SELR::_01
+        *self == FTM2CH0SEL_A::_01
     }
 }
-#[doc = "Possible values of the field `FTM2CH1SEL`"]
+#[doc = "Write proxy for field `FTM2CH0SEL`"]
+pub struct FTM2CH0SEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FTM2CH0SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM2CH0SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "FTM2_CH0 input"]
+    #[inline(always)]
+    pub fn _00(self) -> &'a mut W {
+        self.variant(FTM2CH0SEL_A::_00)
+    }
+    #[doc = "CMP0 output"]
+    #[inline(always)]
+    pub fn _01(self) -> &'a mut W {
+        self.variant(FTM2CH0SEL_A::_01)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
+    }
+}
+#[doc = "FTM2 CH1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM2CH1SELR {
-    #[doc = "FTM2_CH1 input"]
-    _0,
-    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
-    _1,
+pub enum FTM2CH1SEL_A {
+    #[doc = "0: FTM2_CH1 input"]
+    _0 = 0,
+    #[doc = "1: exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
+    _1 = 1,
 }
-impl FTM2CH1SELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<FTM2CH1SEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: FTM2CH1SEL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FTM2CH1SELR::_0 => false,
-            FTM2CH1SELR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FTM2CH1SELR {
-        match value {
-            false => FTM2CH1SELR::_0,
-            true => FTM2CH1SELR::_1,
+}
+#[doc = "Reader of field `FTM2CH1SEL`"]
+pub type FTM2CH1SEL_R = crate::R<bool, FTM2CH1SEL_A>;
+impl FTM2CH1SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTM2CH1SEL_A {
+        match self.bits {
+            false => FTM2CH1SEL_A::_0,
+            true => FTM2CH1SEL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FTM2CH1SELR::_0
+        *self == FTM2CH1SEL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FTM2CH1SELR::_1
+        *self == FTM2CH1SEL_A::_1
     }
 }
-#[doc = "Possible values of the field `FTMGLDOK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTMGLDOKR {
-    #[doc = "FTM Global load mechanism disabled."]
-    _0,
-    #[doc = "FTM Global load mechanism enabled"]
-    _1,
+#[doc = "Write proxy for field `FTM2CH1SEL`"]
+pub struct FTM2CH1SEL_W<'a> {
+    w: &'a mut W,
 }
-impl FTMGLDOKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FTMGLDOKR::_0 => false,
-            FTMGLDOKR::_1 => true,
+impl<'a> FTM2CH1SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM2CH1SEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FTMGLDOKR {
-        match value {
-            false => FTMGLDOKR::_0,
-            true => FTMGLDOKR::_1,
+    #[doc = "FTM2_CH1 input"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(FTM2CH1SEL_A::_0)
+    }
+    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(FTM2CH1SEL_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
+#[doc = "FTM global load enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FTMGLDOK_A {
+    #[doc = "0: FTM Global load mechanism disabled."]
+    _0 = 0,
+    #[doc = "1: FTM Global load mechanism enabled"]
+    _1 = 1,
+}
+impl From<FTMGLDOK_A> for bool {
+    #[inline(always)]
+    fn from(variant: FTMGLDOK_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `FTMGLDOK`"]
+pub type FTMGLDOK_R = crate::R<bool, FTMGLDOK_A>;
+impl FTMGLDOK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FTMGLDOK_A {
+        match self.bits {
+            false => FTMGLDOK_A::_0,
+            true => FTMGLDOK_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FTMGLDOKR::_0
+        *self == FTMGLDOK_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FTMGLDOKR::_1
+        *self == FTMGLDOK_A::_1
     }
 }
-#[doc = "Possible values of the field `FTM0_OUTSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM0_OUTSELR {
-    #[doc = "No modulation with FTM1_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM1_CH1"]
-    _00000001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl FTM0_OUTSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM0_OUTSELR::_00000000 => 0,
-            FTM0_OUTSELR::_00000001 => 1,
-            FTM0_OUTSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM0_OUTSELR {
-        match value {
-            0 => FTM0_OUTSELR::_00000000,
-            1 => FTM0_OUTSELR::_00000001,
-            i => FTM0_OUTSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00000000`"]
-    #[inline]
-    pub fn is_00000000(&self) -> bool {
-        *self == FTM0_OUTSELR::_00000000
-    }
-    #[doc = "Checks if the value of the field is `_00000001`"]
-    #[inline]
-    pub fn is_00000001(&self) -> bool {
-        *self == FTM0_OUTSELR::_00000001
-    }
-}
-#[doc = "Possible values of the field `FTM3_OUTSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FTM3_OUTSELR {
-    #[doc = "No modulation with FTM2_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM2_CH1"]
-    _00000001,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl FTM3_OUTSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FTM3_OUTSELR::_00000000 => 0,
-            FTM3_OUTSELR::_00000001 => 1,
-            FTM3_OUTSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FTM3_OUTSELR {
-        match value {
-            0 => FTM3_OUTSELR::_00000000,
-            1 => FTM3_OUTSELR::_00000001,
-            i => FTM3_OUTSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00000000`"]
-    #[inline]
-    pub fn is_00000000(&self) -> bool {
-        *self == FTM3_OUTSELR::_00000000
-    }
-    #[doc = "Checks if the value of the field is `_00000001`"]
-    #[inline]
-    pub fn is_00000001(&self) -> bool {
-        *self == FTM3_OUTSELR::_00000001
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM0SYNCBITW<'a> {
+#[doc = "Write proxy for field `FTMGLDOK`"]
+pub struct FTMGLDOK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM0SYNCBITW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM1SYNCBITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM1SYNCBITW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM2SYNCBITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM2SYNCBITW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM3SYNCBITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM3SYNCBITW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FTM1CH0SEL`"]
-pub enum FTM1CH0SELW {
-    #[doc = "FTM1_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
-}
-impl FTM1CH0SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM1CH0SELW::_00 => 0,
-            FTM1CH0SELW::_01 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM1CH0SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM1CH0SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM1CH0SELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "FTM1_CH0 input"]
-    #[inline]
-    pub fn _00(self) -> &'a mut W {
-        self.variant(FTM1CH0SELW::_00)
-    }
-    #[doc = "CMP0 output"]
-    #[inline]
-    pub fn _01(self) -> &'a mut W {
-        self.variant(FTM1CH0SELW::_01)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FTM2CH0SEL`"]
-pub enum FTM2CH0SELW {
-    #[doc = "FTM2_CH0 input"]
-    _00,
-    #[doc = "CMP0 output"]
-    _01,
-}
-impl FTM2CH0SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM2CH0SELW::_00 => 0,
-            FTM2CH0SELW::_01 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM2CH0SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM2CH0SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM2CH0SELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "FTM2_CH0 input"]
-    #[inline]
-    pub fn _00(self) -> &'a mut W {
-        self.variant(FTM2CH0SELW::_00)
-    }
-    #[doc = "CMP0 output"]
-    #[inline]
-    pub fn _01(self) -> &'a mut W {
-        self.variant(FTM2CH0SELW::_01)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FTM2CH1SEL`"]
-pub enum FTM2CH1SELW {
-    #[doc = "FTM2_CH1 input"]
-    _0,
-    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
-    _1,
-}
-impl FTM2CH1SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FTM2CH1SELW::_0 => false,
-            FTM2CH1SELW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTM2CH1SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTM2CH1SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM2CH1SELW) -> &'a mut W {
+impl<'a> FTMGLDOK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTMGLDOK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "FTM2_CH1 input"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(FTM2CH1SELW::_0)
-    }
-    #[doc = "exclusive OR of FTM2_CH0,FTM2_CH1,and FTM1_CH1"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(FTM2CH1SELW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FTMGLDOK`"]
-pub enum FTMGLDOKW {
-    #[doc = "FTM Global load mechanism disabled."]
-    _0,
-    #[doc = "FTM Global load mechanism enabled"]
-    _1,
-}
-impl FTMGLDOKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FTMGLDOKW::_0 => false,
-            FTMGLDOKW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FTMGLDOKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FTMGLDOKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTMGLDOKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "FTM Global load mechanism disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FTMGLDOKW::_0)
+        self.variant(FTMGLDOK_A::_0)
     }
     #[doc = "FTM Global load mechanism enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FTMGLDOKW::_1)
+        self.variant(FTMGLDOK_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM0_OUTSEL`"]
-pub enum FTM0_OUTSELW {
-    #[doc = "No modulation with FTM1_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM1_CH1"]
-    _00000001,
+#[doc = "FTM0 channel modulation select with FTM1_CH1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM0_OUTSEL_A {
+    #[doc = "0: No modulation with FTM1_CH1"]
+    _00000000 = 0,
+    #[doc = "1: Modulation with FTM1_CH1"]
+    _00000001 = 1,
 }
-impl FTM0_OUTSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM0_OUTSELW::_00000000 => 0,
-            FTM0_OUTSELW::_00000001 => 1,
+impl From<FTM0_OUTSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM0_OUTSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM0_OUTSEL`"]
+pub type FTM0_OUTSEL_R = crate::R<u8, FTM0_OUTSEL_A>;
+impl FTM0_OUTSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM0_OUTSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM0_OUTSEL_A::_00000000),
+            1 => Val(FTM0_OUTSEL_A::_00000001),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_00000000`"]
+    #[inline(always)]
+    pub fn is_00000000(&self) -> bool {
+        *self == FTM0_OUTSEL_A::_00000000
+    }
+    #[doc = "Checks if the value of the field is `_00000001`"]
+    #[inline(always)]
+    pub fn is_00000001(&self) -> bool {
+        *self == FTM0_OUTSEL_A::_00000001
+    }
 }
-#[doc = r" Proxy"]
-pub struct _FTM0_OUTSELW<'a> {
+#[doc = "Write proxy for field `FTM0_OUTSEL`"]
+pub struct FTM0_OUTSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM0_OUTSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM0_OUTSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> FTM0_OUTSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM0_OUTSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No modulation with FTM1_CH1"]
-    #[inline]
+    #[inline(always)]
     pub fn _00000000(self) -> &'a mut W {
-        self.variant(FTM0_OUTSELW::_00000000)
+        self.variant(FTM0_OUTSEL_A::_00000000)
     }
     #[doc = "Modulation with FTM1_CH1"]
-    #[inline]
+    #[inline(always)]
     pub fn _00000001(self) -> &'a mut W {
-        self.variant(FTM0_OUTSELW::_00000001)
+        self.variant(FTM0_OUTSEL_A::_00000001)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FTM3_OUTSEL`"]
-pub enum FTM3_OUTSELW {
-    #[doc = "No modulation with FTM2_CH1"]
-    _00000000,
-    #[doc = "Modulation with FTM2_CH1"]
-    _00000001,
+#[doc = "FTM3 channel modulation select with FTM2_CH1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FTM3_OUTSEL_A {
+    #[doc = "0: No modulation with FTM2_CH1"]
+    _00000000 = 0,
+    #[doc = "1: Modulation with FTM2_CH1"]
+    _00000001 = 1,
 }
-impl FTM3_OUTSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FTM3_OUTSELW::_00000000 => 0,
-            FTM3_OUTSELW::_00000001 => 1,
+impl From<FTM3_OUTSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FTM3_OUTSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FTM3_OUTSEL`"]
+pub type FTM3_OUTSEL_R = crate::R<u8, FTM3_OUTSEL_A>;
+impl FTM3_OUTSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FTM3_OUTSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FTM3_OUTSEL_A::_00000000),
+            1 => Val(FTM3_OUTSEL_A::_00000001),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_00000000`"]
+    #[inline(always)]
+    pub fn is_00000000(&self) -> bool {
+        *self == FTM3_OUTSEL_A::_00000000
+    }
+    #[doc = "Checks if the value of the field is `_00000001`"]
+    #[inline(always)]
+    pub fn is_00000001(&self) -> bool {
+        *self == FTM3_OUTSEL_A::_00000001
+    }
 }
-#[doc = r" Proxy"]
-pub struct _FTM3_OUTSELW<'a> {
+#[doc = "Write proxy for field `FTM3_OUTSEL`"]
+pub struct FTM3_OUTSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FTM3_OUTSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FTM3_OUTSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> FTM3_OUTSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FTM3_OUTSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No modulation with FTM2_CH1"]
-    #[inline]
+    #[inline(always)]
     pub fn _00000000(self) -> &'a mut W {
-        self.variant(FTM3_OUTSELW::_00000000)
+        self.variant(FTM3_OUTSEL_A::_00000000)
     }
     #[doc = "Modulation with FTM2_CH1"]
-    #[inline]
+    #[inline(always)]
     pub fn _00000001(self) -> &'a mut W {
-        self.variant(FTM3_OUTSELW::_00000001)
+        self.variant(FTM3_OUTSEL_A::_00000001)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - FTM0 Sync Bit"]
-    #[inline]
-    pub fn ftm0syncbit(&self) -> FTM0SYNCBITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FTM0SYNCBITR { bits }
+    #[inline(always)]
+    pub fn ftm0syncbit(&self) -> FTM0SYNCBIT_R {
+        FTM0SYNCBIT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - FTM1 Sync Bit"]
-    #[inline]
-    pub fn ftm1syncbit(&self) -> FTM1SYNCBITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FTM1SYNCBITR { bits }
+    #[inline(always)]
+    pub fn ftm1syncbit(&self) -> FTM1SYNCBIT_R {
+        FTM1SYNCBIT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - FTM2 Sync Bit"]
-    #[inline]
-    pub fn ftm2syncbit(&self) -> FTM2SYNCBITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FTM2SYNCBITR { bits }
+    #[inline(always)]
+    pub fn ftm2syncbit(&self) -> FTM2SYNCBIT_R {
+        FTM2SYNCBIT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - FTM3 Sync Bit"]
-    #[inline]
-    pub fn ftm3syncbit(&self) -> FTM3SYNCBITR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FTM3SYNCBITR { bits }
+    #[inline(always)]
+    pub fn ftm3syncbit(&self) -> FTM3SYNCBIT_R {
+        FTM3SYNCBIT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - FTM1 CH0 Select"]
-    #[inline]
-    pub fn ftm1ch0sel(&self) -> FTM1CH0SELR {
-        FTM1CH0SELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm1ch0sel(&self) -> FTM1CH0SEL_R {
+        FTM1CH0SEL_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - FTM2 CH0 Select"]
-    #[inline]
-    pub fn ftm2ch0sel(&self) -> FTM2CH0SELR {
-        FTM2CH0SELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm2ch0sel(&self) -> FTM2CH0SEL_R {
+        FTM2CH0SEL_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bit 8 - FTM2 CH1 Select"]
-    #[inline]
-    pub fn ftm2ch1sel(&self) -> FTM2CH1SELR {
-        FTM2CH1SELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ftm2ch1sel(&self) -> FTM2CH1SEL_R {
+        FTM2CH1SEL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 15 - FTM global load enable"]
-    #[inline]
-    pub fn ftmgldok(&self) -> FTMGLDOKR {
-        FTMGLDOKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ftmgldok(&self) -> FTMGLDOK_R {
+        FTMGLDOK_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:23 - FTM0 channel modulation select with FTM1_CH1"]
-    #[inline]
-    pub fn ftm0_outsel(&self) -> FTM0_OUTSELR {
-        FTM0_OUTSELR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm0_outsel(&self) -> FTM0_OUTSEL_R {
+        FTM0_OUTSEL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - FTM3 channel modulation select with FTM2_CH1"]
-    #[inline]
-    pub fn ftm3_outsel(&self) -> FTM3_OUTSELR {
-        FTM3_OUTSELR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ftm3_outsel(&self) -> FTM3_OUTSEL_R {
+        FTM3_OUTSEL_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - FTM0 Sync Bit"]
-    #[inline]
-    pub fn ftm0syncbit(&mut self) -> _FTM0SYNCBITW {
-        _FTM0SYNCBITW { w: self }
+    #[inline(always)]
+    pub fn ftm0syncbit(&mut self) -> FTM0SYNCBIT_W {
+        FTM0SYNCBIT_W { w: self }
     }
     #[doc = "Bit 1 - FTM1 Sync Bit"]
-    #[inline]
-    pub fn ftm1syncbit(&mut self) -> _FTM1SYNCBITW {
-        _FTM1SYNCBITW { w: self }
+    #[inline(always)]
+    pub fn ftm1syncbit(&mut self) -> FTM1SYNCBIT_W {
+        FTM1SYNCBIT_W { w: self }
     }
     #[doc = "Bit 2 - FTM2 Sync Bit"]
-    #[inline]
-    pub fn ftm2syncbit(&mut self) -> _FTM2SYNCBITW {
-        _FTM2SYNCBITW { w: self }
+    #[inline(always)]
+    pub fn ftm2syncbit(&mut self) -> FTM2SYNCBIT_W {
+        FTM2SYNCBIT_W { w: self }
     }
     #[doc = "Bit 3 - FTM3 Sync Bit"]
-    #[inline]
-    pub fn ftm3syncbit(&mut self) -> _FTM3SYNCBITW {
-        _FTM3SYNCBITW { w: self }
+    #[inline(always)]
+    pub fn ftm3syncbit(&mut self) -> FTM3SYNCBIT_W {
+        FTM3SYNCBIT_W { w: self }
     }
     #[doc = "Bits 4:5 - FTM1 CH0 Select"]
-    #[inline]
-    pub fn ftm1ch0sel(&mut self) -> _FTM1CH0SELW {
-        _FTM1CH0SELW { w: self }
+    #[inline(always)]
+    pub fn ftm1ch0sel(&mut self) -> FTM1CH0SEL_W {
+        FTM1CH0SEL_W { w: self }
     }
     #[doc = "Bits 6:7 - FTM2 CH0 Select"]
-    #[inline]
-    pub fn ftm2ch0sel(&mut self) -> _FTM2CH0SELW {
-        _FTM2CH0SELW { w: self }
+    #[inline(always)]
+    pub fn ftm2ch0sel(&mut self) -> FTM2CH0SEL_W {
+        FTM2CH0SEL_W { w: self }
     }
     #[doc = "Bit 8 - FTM2 CH1 Select"]
-    #[inline]
-    pub fn ftm2ch1sel(&mut self) -> _FTM2CH1SELW {
-        _FTM2CH1SELW { w: self }
+    #[inline(always)]
+    pub fn ftm2ch1sel(&mut self) -> FTM2CH1SEL_W {
+        FTM2CH1SEL_W { w: self }
     }
     #[doc = "Bit 15 - FTM global load enable"]
-    #[inline]
-    pub fn ftmgldok(&mut self) -> _FTMGLDOKW {
-        _FTMGLDOKW { w: self }
+    #[inline(always)]
+    pub fn ftmgldok(&mut self) -> FTMGLDOK_W {
+        FTMGLDOK_W { w: self }
     }
     #[doc = "Bits 16:23 - FTM0 channel modulation select with FTM1_CH1"]
-    #[inline]
-    pub fn ftm0_outsel(&mut self) -> _FTM0_OUTSELW {
-        _FTM0_OUTSELW { w: self }
+    #[inline(always)]
+    pub fn ftm0_outsel(&mut self) -> FTM0_OUTSEL_W {
+        FTM0_OUTSEL_W { w: self }
     }
     #[doc = "Bits 24:31 - FTM3 channel modulation select with FTM2_CH1"]
-    #[inline]
-    pub fn ftm3_outsel(&mut self) -> _FTM3_OUTSELW {
-        _FTM3_OUTSELW { w: self }
+    #[inline(always)]
+    pub fn ftm3_outsel(&mut self) -> FTM3_OUTSEL_W {
+        FTM3_OUTSEL_W { w: self }
     }
 }

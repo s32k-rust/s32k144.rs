@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CVAL3 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TMR_CUR_VALR {
-    bits: u32,
-}
-impl TMR_CUR_VALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register CVAL3"]
+pub type R = crate::R<u32, super::CVAL3>;
+#[doc = "Reader of field `TMR_CUR_VAL`"]
+pub type TMR_CUR_VAL_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Current Timer Value"]
-    #[inline]
-    pub fn tmr_cur_val(&self) -> TMR_CUR_VALR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TMR_CUR_VALR { bits }
+    #[inline(always)]
+    pub fn tmr_cur_val(&self) -> TMR_CUR_VAL_R {
+        TMR_CUR_VAL_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

@@ -1,466 +1,332 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `CH0F`"]
+#[doc = "Reader of register STATUS"]
+pub type R = crate::R<u32, super::STATUS>;
+#[doc = "Channel 0 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH0FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH0F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH0FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH0F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH0F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH0FR::_0 => false,
-            CH0FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH0FR {
-        match value {
-            false => CH0FR::_0,
-            true => CH0FR::_1,
+}
+#[doc = "Reader of field `CH0F`"]
+pub type CH0F_R = crate::R<bool, CH0F_A>;
+impl CH0F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH0F_A {
+        match self.bits {
+            false => CH0F_A::_0,
+            true => CH0F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH0FR::_0
+        *self == CH0F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH0FR::_1
+        *self == CH0F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH1F`"]
+#[doc = "Channel 1 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH1FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH1F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH1FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH1F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH1F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH1FR::_0 => false,
-            CH1FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH1FR {
-        match value {
-            false => CH1FR::_0,
-            true => CH1FR::_1,
+}
+#[doc = "Reader of field `CH1F`"]
+pub type CH1F_R = crate::R<bool, CH1F_A>;
+impl CH1F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH1F_A {
+        match self.bits {
+            false => CH1F_A::_0,
+            true => CH1F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH1FR::_0
+        *self == CH1F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH1FR::_1
+        *self == CH1F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH2F`"]
+#[doc = "Channel 2 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH2FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH2F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH2FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH2F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH2F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH2FR::_0 => false,
-            CH2FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH2FR {
-        match value {
-            false => CH2FR::_0,
-            true => CH2FR::_1,
+}
+#[doc = "Reader of field `CH2F`"]
+pub type CH2F_R = crate::R<bool, CH2F_A>;
+impl CH2F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH2F_A {
+        match self.bits {
+            false => CH2F_A::_0,
+            true => CH2F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH2FR::_0
+        *self == CH2F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH2FR::_1
+        *self == CH2F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH3F`"]
+#[doc = "Channel 3 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH3FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH3F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH3FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH3F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH3F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH3FR::_0 => false,
-            CH3FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH3FR {
-        match value {
-            false => CH3FR::_0,
-            true => CH3FR::_1,
+}
+#[doc = "Reader of field `CH3F`"]
+pub type CH3F_R = crate::R<bool, CH3F_A>;
+impl CH3F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH3F_A {
+        match self.bits {
+            false => CH3F_A::_0,
+            true => CH3F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH3FR::_0
+        *self == CH3F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH3FR::_1
+        *self == CH3F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH4F`"]
+#[doc = "Channel 4 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH4FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH4F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH4FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH4F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH4F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH4FR::_0 => false,
-            CH4FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH4FR {
-        match value {
-            false => CH4FR::_0,
-            true => CH4FR::_1,
+}
+#[doc = "Reader of field `CH4F`"]
+pub type CH4F_R = crate::R<bool, CH4F_A>;
+impl CH4F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH4F_A {
+        match self.bits {
+            false => CH4F_A::_0,
+            true => CH4F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH4FR::_0
+        *self == CH4F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH4FR::_1
+        *self == CH4F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH5F`"]
+#[doc = "Channel 5 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH5FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH5F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH5FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH5F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH5F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH5FR::_0 => false,
-            CH5FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH5FR {
-        match value {
-            false => CH5FR::_0,
-            true => CH5FR::_1,
+}
+#[doc = "Reader of field `CH5F`"]
+pub type CH5F_R = crate::R<bool, CH5F_A>;
+impl CH5F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH5F_A {
+        match self.bits {
+            false => CH5F_A::_0,
+            true => CH5F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH5FR::_0
+        *self == CH5F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH5FR::_1
+        *self == CH5F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH6F`"]
+#[doc = "Channel 6 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH6FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH6F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH6FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH6F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH6F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH6FR::_0 => false,
-            CH6FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH6FR {
-        match value {
-            false => CH6FR::_0,
-            true => CH6FR::_1,
+}
+#[doc = "Reader of field `CH6F`"]
+pub type CH6F_R = crate::R<bool, CH6F_A>;
+impl CH6F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH6F_A {
+        match self.bits {
+            false => CH6F_A::_0,
+            true => CH6F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH6FR::_0
+        *self == CH6F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH6FR::_1
+        *self == CH6F_A::_1
     }
 }
-#[doc = "Possible values of the field `CH7F`"]
+#[doc = "Channel 7 Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH7FR {
-    #[doc = "No channel event has occurred."]
-    _0,
-    #[doc = "A channel event has occurred."]
-    _1,
+pub enum CH7F_A {
+    #[doc = "0: No channel event has occurred."]
+    _0 = 0,
+    #[doc = "1: A channel event has occurred."]
+    _1 = 1,
 }
-impl CH7FR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH7F_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH7F_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH7FR::_0 => false,
-            CH7FR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH7FR {
-        match value {
-            false => CH7FR::_0,
-            true => CH7FR::_1,
+}
+#[doc = "Reader of field `CH7F`"]
+pub type CH7F_R = crate::R<bool, CH7F_A>;
+impl CH7F_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH7F_A {
+        match self.bits {
+            false => CH7F_A::_0,
+            true => CH7F_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH7FR::_0
+        *self == CH7F_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH7FR::_1
+        *self == CH7F_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Channel 0 Flag"]
-    #[inline]
-    pub fn ch0f(&self) -> CH0FR {
-        CH0FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch0f(&self) -> CH0F_R {
+        CH0F_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Flag"]
-    #[inline]
-    pub fn ch1f(&self) -> CH1FR {
-        CH1FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch1f(&self) -> CH1F_R {
+        CH1F_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Channel 2 Flag"]
-    #[inline]
-    pub fn ch2f(&self) -> CH2FR {
-        CH2FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch2f(&self) -> CH2F_R {
+        CH2F_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Channel 3 Flag"]
-    #[inline]
-    pub fn ch3f(&self) -> CH3FR {
-        CH3FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch3f(&self) -> CH3F_R {
+        CH3F_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Channel 4 Flag"]
-    #[inline]
-    pub fn ch4f(&self) -> CH4FR {
-        CH4FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch4f(&self) -> CH4F_R {
+        CH4F_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Channel 5 Flag"]
-    #[inline]
-    pub fn ch5f(&self) -> CH5FR {
-        CH5FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch5f(&self) -> CH5F_R {
+        CH5F_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Channel 6 Flag"]
-    #[inline]
-    pub fn ch6f(&self) -> CH6FR {
-        CH6FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch6f(&self) -> CH6F_R {
+        CH6F_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Channel 7 Flag"]
-    #[inline]
-    pub fn ch7f(&self) -> CH7FR {
-        CH7FR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch7f(&self) -> CH7F_R {
+        CH7F_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }

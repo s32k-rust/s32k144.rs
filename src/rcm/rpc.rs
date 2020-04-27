@@ -1,342 +1,214 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RPC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RPC"]
+pub type R = crate::R<u32, super::RPC>;
+#[doc = "Writer for register RPC"]
+pub type W = crate::W<u32, super::RPC>;
+#[doc = "Register RPC `reset()`'s with value 0"]
+impl crate::ResetValue for super::RPC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `RSTFLTSRW`"]
+#[doc = "Reset Pin Filter Select in Run and Wait Modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RSTFLTSRWR {
-    #[doc = "All filtering disabled"]
-    _00,
-    #[doc = "Bus clock filter enabled for normal operation"]
-    _01,
-    #[doc = "LPO clock filter enabled for normal operation"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum RSTFLTSRW_A {
+    #[doc = "0: All filtering disabled"]
+    _00 = 0,
+    #[doc = "1: Bus clock filter enabled for normal operation"]
+    _01 = 1,
+    #[doc = "2: LPO clock filter enabled for normal operation"]
+    _10 = 2,
 }
-impl RSTFLTSRWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RSTFLTSRWR::_00 => 0,
-            RSTFLTSRWR::_01 => 1,
-            RSTFLTSRWR::_10 => 2,
-            RSTFLTSRWR::_Reserved(bits) => bits,
-        }
+impl From<RSTFLTSRW_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RSTFLTSRW_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RSTFLTSRWR {
-        match value {
-            0 => RSTFLTSRWR::_00,
-            1 => RSTFLTSRWR::_01,
-            2 => RSTFLTSRWR::_10,
-            i => RSTFLTSRWR::_Reserved(i),
+}
+#[doc = "Reader of field `RSTFLTSRW`"]
+pub type RSTFLTSRW_R = crate::R<u8, RSTFLTSRW_A>;
+impl RSTFLTSRW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, RSTFLTSRW_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(RSTFLTSRW_A::_00),
+            1 => Val(RSTFLTSRW_A::_01),
+            2 => Val(RSTFLTSRW_A::_10),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == RSTFLTSRWR::_00
+        *self == RSTFLTSRW_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == RSTFLTSRWR::_01
+        *self == RSTFLTSRW_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == RSTFLTSRWR::_10
+        *self == RSTFLTSRW_A::_10
     }
 }
-#[doc = "Possible values of the field `RSTFLTSS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RSTFLTSSR {
+#[doc = "Write proxy for field `RSTFLTSRW`"]
+pub struct RSTFLTSRW_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RSTFLTSRW_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RSTFLTSRW_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "All filtering disabled"]
-    _0,
-    #[doc = "LPO clock filter enabled"]
-    _1,
+    #[inline(always)]
+    pub fn _00(self) -> &'a mut W {
+        self.variant(RSTFLTSRW_A::_00)
+    }
+    #[doc = "Bus clock filter enabled for normal operation"]
+    #[inline(always)]
+    pub fn _01(self) -> &'a mut W {
+        self.variant(RSTFLTSRW_A::_01)
+    }
+    #[doc = "LPO clock filter enabled for normal operation"]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(RSTFLTSRW_A::_10)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
+    }
 }
-impl RSTFLTSSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Reset Pin Filter Select in Stop Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RSTFLTSS_A {
+    #[doc = "0: All filtering disabled"]
+    _0 = 0,
+    #[doc = "1: LPO clock filter enabled"]
+    _1 = 1,
+}
+impl From<RSTFLTSS_A> for bool {
+    #[inline(always)]
+    fn from(variant: RSTFLTSS_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RSTFLTSSR::_0 => false,
-            RSTFLTSSR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RSTFLTSSR {
-        match value {
-            false => RSTFLTSSR::_0,
-            true => RSTFLTSSR::_1,
+}
+#[doc = "Reader of field `RSTFLTSS`"]
+pub type RSTFLTSS_R = crate::R<bool, RSTFLTSS_A>;
+impl RSTFLTSS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RSTFLTSS_A {
+        match self.bits {
+            false => RSTFLTSS_A::_0,
+            true => RSTFLTSS_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == RSTFLTSSR::_0
+        *self == RSTFLTSS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == RSTFLTSSR::_1
+        *self == RSTFLTSS_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct RSTFLTSELR {
-    bits: u8,
-}
-impl RSTFLTSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `RSTFLTSRW`"]
-pub enum RSTFLTSRWW {
-    #[doc = "All filtering disabled"]
-    _00,
-    #[doc = "Bus clock filter enabled for normal operation"]
-    _01,
-    #[doc = "LPO clock filter enabled for normal operation"]
-    _10,
-}
-impl RSTFLTSRWW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RSTFLTSRWW::_00 => 0,
-            RSTFLTSRWW::_01 => 1,
-            RSTFLTSRWW::_10 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RSTFLTSRWW<'a> {
+#[doc = "Write proxy for field `RSTFLTSS`"]
+pub struct RSTFLTSS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RSTFLTSRWW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RSTFLTSRWW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "All filtering disabled"]
-    #[inline]
-    pub fn _00(self) -> &'a mut W {
-        self.variant(RSTFLTSRWW::_00)
-    }
-    #[doc = "Bus clock filter enabled for normal operation"]
-    #[inline]
-    pub fn _01(self) -> &'a mut W {
-        self.variant(RSTFLTSRWW::_01)
-    }
-    #[doc = "LPO clock filter enabled for normal operation"]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(RSTFLTSRWW::_10)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RSTFLTSS`"]
-pub enum RSTFLTSSW {
-    #[doc = "All filtering disabled"]
-    _0,
-    #[doc = "LPO clock filter enabled"]
-    _1,
-}
-impl RSTFLTSSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RSTFLTSSW::_0 => false,
-            RSTFLTSSW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RSTFLTSSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RSTFLTSSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RSTFLTSSW) -> &'a mut W {
+impl<'a> RSTFLTSS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RSTFLTSS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "All filtering disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RSTFLTSSW::_0)
+        self.variant(RSTFLTSS_A::_0)
     }
     #[doc = "LPO clock filter enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RSTFLTSSW::_1)
+        self.variant(RSTFLTSS_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RSTFLTSELW<'a> {
+#[doc = "Reader of field `RSTFLTSEL`"]
+pub type RSTFLTSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RSTFLTSEL`"]
+pub struct RSTFLTSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RSTFLTSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RSTFLTSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Reset Pin Filter Select in Run and Wait Modes"]
-    #[inline]
-    pub fn rstfltsrw(&self) -> RSTFLTSRWR {
-        RSTFLTSRWR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rstfltsrw(&self) -> RSTFLTSRW_R {
+        RSTFLTSRW_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - Reset Pin Filter Select in Stop Mode"]
-    #[inline]
-    pub fn rstfltss(&self) -> RSTFLTSSR {
-        RSTFLTSSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rstfltss(&self) -> RSTFLTSS_R {
+        RSTFLTSS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bits 8:12 - Reset Pin Filter Bus Clock Select"]
-    #[inline]
-    pub fn rstfltsel(&self) -> RSTFLTSELR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RSTFLTSELR { bits }
+    #[inline(always)]
+    pub fn rstfltsel(&self) -> RSTFLTSEL_R {
+        RSTFLTSEL_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Reset Pin Filter Select in Run and Wait Modes"]
-    #[inline]
-    pub fn rstfltsrw(&mut self) -> _RSTFLTSRWW {
-        _RSTFLTSRWW { w: self }
+    #[inline(always)]
+    pub fn rstfltsrw(&mut self) -> RSTFLTSRW_W {
+        RSTFLTSRW_W { w: self }
     }
     #[doc = "Bit 2 - Reset Pin Filter Select in Stop Mode"]
-    #[inline]
-    pub fn rstfltss(&mut self) -> _RSTFLTSSW {
-        _RSTFLTSSW { w: self }
+    #[inline(always)]
+    pub fn rstfltss(&mut self) -> RSTFLTSS_W {
+        RSTFLTSS_W { w: self }
     }
     #[doc = "Bits 8:12 - Reset Pin Filter Bus Clock Select"]
-    #[inline]
-    pub fn rstfltsel(&mut self) -> _RSTFLTSELW {
-        _RSTFLTSELW { w: self }
+    #[inline(always)]
+    pub fn rstfltsel(&mut self) -> RSTFLTSEL_W {
+        RSTFLTSEL_W { w: self }
     }
 }

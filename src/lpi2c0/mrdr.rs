@@ -1,95 +1,52 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MRDR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DATAR {
-    bits: u8,
-}
-impl DATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `RXEMPTY`"]
+#[doc = "Reader of register MRDR"]
+pub type R = crate::R<u32, super::MRDR>;
+#[doc = "Reader of field `DATA`"]
+pub type DATA_R = crate::R<u8, u8>;
+#[doc = "RX Empty\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXEMPTYR {
-    #[doc = "Receive FIFO is not empty."]
-    _0,
-    #[doc = "Receive FIFO is empty."]
-    _1,
+pub enum RXEMPTY_A {
+    #[doc = "0: Receive FIFO is not empty."]
+    _0 = 0,
+    #[doc = "1: Receive FIFO is empty."]
+    _1 = 1,
 }
-impl RXEMPTYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<RXEMPTY_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXEMPTY_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXEMPTYR::_0 => false,
-            RXEMPTYR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXEMPTYR {
-        match value {
-            false => RXEMPTYR::_0,
-            true => RXEMPTYR::_1,
+}
+#[doc = "Reader of field `RXEMPTY`"]
+pub type RXEMPTY_R = crate::R<bool, RXEMPTY_A>;
+impl RXEMPTY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXEMPTY_A {
+        match self.bits {
+            false => RXEMPTY_A::_0,
+            true => RXEMPTY_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == RXEMPTYR::_0
+        *self == RXEMPTY_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == RXEMPTYR::_1
+        *self == RXEMPTY_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Receive Data"]
-    #[inline]
-    pub fn data(&self) -> DATAR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATAR { bits }
+    #[inline(always)]
+    pub fn data(&self) -> DATA_R {
+        DATA_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 14 - RX Empty"]
-    #[inline]
-    pub fn rxempty(&self) -> RXEMPTYR {
-        RXEMPTYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxempty(&self) -> RXEMPTY_R {
+        RXEMPTY_R::new(((self.bits >> 14) & 0x01) != 0)
     }
 }

@@ -1,776 +1,526 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PACRA {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PACRA"]
+pub type R = crate::R<u32, super::PACRA>;
+#[doc = "Writer for register PACRA"]
+pub type W = crate::W<u32, super::PACRA>;
+#[doc = "Register PACRA `reset()`'s with value 0x5400_0000"]
+impl crate::ResetValue for super::PACRA {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x5400_0000
     }
 }
-#[doc = "Possible values of the field `TP1`"]
+#[doc = "Trusted Protect\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP1R {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
+pub enum TP1_A {
+    #[doc = "0: Accesses from an untrusted master are allowed."]
+    _0 = 0,
+    #[doc = "1: Accesses from an untrusted master are not allowed."]
+    _1 = 1,
 }
-impl TP1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TP1_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP1_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TP1R::_0 => false,
-            TP1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TP1R {
-        match value {
-            false => TP1R::_0,
-            true => TP1R::_1,
+}
+#[doc = "Reader of field `TP1`"]
+pub type TP1_R = crate::R<bool, TP1_A>;
+impl TP1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP1_A {
+        match self.bits {
+            false => TP1_A::_0,
+            true => TP1_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TP1R::_0
+        *self == TP1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TP1R::_1
+        *self == TP1_A::_1
     }
 }
-#[doc = "Possible values of the field `WP1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WP1R {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
-}
-impl WP1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WP1R::_0 => false,
-            WP1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WP1R {
-        match value {
-            false => WP1R::_0,
-            true => WP1R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == WP1R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == WP1R::_1
-    }
-}
-#[doc = "Possible values of the field `SP1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SP1R {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
-}
-impl SP1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SP1R::_0 => false,
-            SP1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SP1R {
-        match value {
-            false => SP1R::_0,
-            true => SP1R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SP1R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SP1R::_1
-    }
-}
-#[doc = "Possible values of the field `TP0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP0R {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
-}
-impl TP0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TP0R::_0 => false,
-            TP0R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TP0R {
-        match value {
-            false => TP0R::_0,
-            true => TP0R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == TP0R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == TP0R::_1
-    }
-}
-#[doc = "Possible values of the field `WP0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WP0R {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
-}
-impl WP0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WP0R::_0 => false,
-            WP0R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WP0R {
-        match value {
-            false => WP0R::_0,
-            true => WP0R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == WP0R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == WP0R::_1
-    }
-}
-#[doc = "Possible values of the field `SP0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SP0R {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
-}
-impl SP0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SP0R::_0 => false,
-            SP0R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SP0R {
-        match value {
-            false => SP0R::_0,
-            true => SP0R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SP0R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SP0R::_1
-    }
-}
-#[doc = "Values that can be written to the field `TP1`"]
-pub enum TP1W {
-    #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
-}
-impl TP1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TP1W::_0 => false,
-            TP1W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TP1W<'a> {
+#[doc = "Write proxy for field `TP1`"]
+pub struct TP1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TP1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TP1W) -> &'a mut W {
+impl<'a> TP1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TP1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Accesses from an untrusted master are allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TP1W::_0)
+        self.variant(TP1_A::_0)
     }
     #[doc = "Accesses from an untrusted master are not allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TP1W::_1)
+        self.variant(TP1_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WP1`"]
-pub enum WP1W {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+#[doc = "Write Protect\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WP1_A {
+    #[doc = "0: This peripheral allows write accesses."]
+    _0 = 0,
+    #[doc = "1: This peripheral is write protected."]
+    _1 = 1,
 }
-impl WP1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WP1W::_0 => false,
-            WP1W::_1 => true,
-        }
+impl From<WP1_A> for bool {
+    #[inline(always)]
+    fn from(variant: WP1_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _WP1W<'a> {
+#[doc = "Reader of field `WP1`"]
+pub type WP1_R = crate::R<bool, WP1_A>;
+impl WP1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WP1_A {
+        match self.bits {
+            false => WP1_A::_0,
+            true => WP1_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == WP1_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == WP1_A::_1
+    }
+}
+#[doc = "Write proxy for field `WP1`"]
+pub struct WP1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WP1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WP1W) -> &'a mut W {
+impl<'a> WP1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WP1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "This peripheral allows write accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(WP1W::_0)
+        self.variant(WP1_A::_0)
     }
     #[doc = "This peripheral is write protected."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(WP1W::_1)
+        self.variant(WP1_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SP1`"]
-pub enum SP1W {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+#[doc = "Supervisor Protect\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SP1_A {
+    #[doc = "0: This peripheral does not require supervisor privilege level for accesses."]
+    _0 = 0,
+    #[doc = "1: This peripheral requires supervisor privilege level for accesses."]
+    _1 = 1,
 }
-impl SP1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SP1W::_0 => false,
-            SP1W::_1 => true,
-        }
+impl From<SP1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SP1_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SP1W<'a> {
+#[doc = "Reader of field `SP1`"]
+pub type SP1_R = crate::R<bool, SP1_A>;
+impl SP1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SP1_A {
+        match self.bits {
+            false => SP1_A::_0,
+            true => SP1_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SP1_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SP1_A::_1
+    }
+}
+#[doc = "Write proxy for field `SP1`"]
+pub struct SP1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SP1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SP1W) -> &'a mut W {
+impl<'a> SP1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SP1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SP1W::_0)
+        self.variant(SP1_A::_0)
     }
     #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SP1W::_1)
+        self.variant(SP1_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TP0`"]
-pub enum TP0W {
+#[doc = "Trusted Protect\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP0_A {
+    #[doc = "0: Accesses from an untrusted master are allowed."]
+    _0 = 0,
+    #[doc = "1: Accesses from an untrusted master are not allowed."]
+    _1 = 1,
+}
+impl From<TP0_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `TP0`"]
+pub type TP0_R = crate::R<bool, TP0_A>;
+impl TP0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP0_A {
+        match self.bits {
+            false => TP0_A::_0,
+            true => TP0_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TP0_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TP0_A::_1
+    }
+}
+#[doc = "Write proxy for field `TP0`"]
+pub struct TP0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TP0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TP0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Accesses from an untrusted master are allowed."]
-    _0,
-    #[doc = "Accesses from an untrusted master are not allowed."]
-    _1,
-}
-impl TP0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TP0W::_0 => false,
-            TP0W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TP0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TP0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TP0W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Accesses from an untrusted master are allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TP0W::_0)
+        self.variant(TP0_A::_0)
     }
     #[doc = "Accesses from an untrusted master are not allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TP0W::_1)
+        self.variant(TP0_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WP0`"]
-pub enum WP0W {
-    #[doc = "This peripheral allows write accesses."]
-    _0,
-    #[doc = "This peripheral is write protected."]
-    _1,
+#[doc = "Write Protect\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WP0_A {
+    #[doc = "0: This peripheral allows write accesses."]
+    _0 = 0,
+    #[doc = "1: This peripheral is write protected."]
+    _1 = 1,
 }
-impl WP0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WP0W::_0 => false,
-            WP0W::_1 => true,
-        }
+impl From<WP0_A> for bool {
+    #[inline(always)]
+    fn from(variant: WP0_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _WP0W<'a> {
+#[doc = "Reader of field `WP0`"]
+pub type WP0_R = crate::R<bool, WP0_A>;
+impl WP0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WP0_A {
+        match self.bits {
+            false => WP0_A::_0,
+            true => WP0_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == WP0_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == WP0_A::_1
+    }
+}
+#[doc = "Write proxy for field `WP0`"]
+pub struct WP0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WP0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WP0W) -> &'a mut W {
+impl<'a> WP0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WP0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "This peripheral allows write accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(WP0W::_0)
+        self.variant(WP0_A::_0)
     }
     #[doc = "This peripheral is write protected."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(WP0W::_1)
+        self.variant(WP0_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SP0`"]
-pub enum SP0W {
-    #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    _0,
-    #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    _1,
+#[doc = "Supervisor Protect\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SP0_A {
+    #[doc = "0: This peripheral does not require supervisor privilege level for accesses."]
+    _0 = 0,
+    #[doc = "1: This peripheral requires supervisor privilege level for accesses."]
+    _1 = 1,
 }
-impl SP0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SP0W::_0 => false,
-            SP0W::_1 => true,
-        }
+impl From<SP0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SP0_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SP0W<'a> {
+#[doc = "Reader of field `SP0`"]
+pub type SP0_R = crate::R<bool, SP0_A>;
+impl SP0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SP0_A {
+        match self.bits {
+            false => SP0_A::_0,
+            true => SP0_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SP0_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SP0_A::_1
+    }
+}
+#[doc = "Write proxy for field `SP0`"]
+pub struct SP0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SP0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SP0W) -> &'a mut W {
+impl<'a> SP0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SP0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "This peripheral does not require supervisor privilege level for accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SP0W::_0)
+        self.variant(SP0_A::_0)
     }
     #[doc = "This peripheral requires supervisor privilege level for accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SP0W::_1)
+        self.variant(SP0_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 24 - Trusted Protect"]
-    #[inline]
-    pub fn tp1(&self) -> TP1R {
-        TP1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tp1(&self) -> TP1_R {
+        TP1_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Write Protect"]
-    #[inline]
-    pub fn wp1(&self) -> WP1R {
-        WP1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wp1(&self) -> WP1_R {
+        WP1_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Supervisor Protect"]
-    #[inline]
-    pub fn sp1(&self) -> SP1R {
-        SP1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sp1(&self) -> SP1_R {
+        SP1_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Trusted Protect"]
-    #[inline]
-    pub fn tp0(&self) -> TP0R {
-        TP0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tp0(&self) -> TP0_R {
+        TP0_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Write Protect"]
-    #[inline]
-    pub fn wp0(&self) -> WP0R {
-        WP0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wp0(&self) -> WP0_R {
+        WP0_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Supervisor Protect"]
-    #[inline]
-    pub fn sp0(&self) -> SP0R {
-        SP0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sp0(&self) -> SP0_R {
+        SP0_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1409286144 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 24 - Trusted Protect"]
-    #[inline]
-    pub fn tp1(&mut self) -> _TP1W {
-        _TP1W { w: self }
+    #[inline(always)]
+    pub fn tp1(&mut self) -> TP1_W {
+        TP1_W { w: self }
     }
     #[doc = "Bit 25 - Write Protect"]
-    #[inline]
-    pub fn wp1(&mut self) -> _WP1W {
-        _WP1W { w: self }
+    #[inline(always)]
+    pub fn wp1(&mut self) -> WP1_W {
+        WP1_W { w: self }
     }
     #[doc = "Bit 26 - Supervisor Protect"]
-    #[inline]
-    pub fn sp1(&mut self) -> _SP1W {
-        _SP1W { w: self }
+    #[inline(always)]
+    pub fn sp1(&mut self) -> SP1_W {
+        SP1_W { w: self }
     }
     #[doc = "Bit 28 - Trusted Protect"]
-    #[inline]
-    pub fn tp0(&mut self) -> _TP0W {
-        _TP0W { w: self }
+    #[inline(always)]
+    pub fn tp0(&mut self) -> TP0_W {
+        TP0_W { w: self }
     }
     #[doc = "Bit 29 - Write Protect"]
-    #[inline]
-    pub fn wp0(&mut self) -> _WP0W {
-        _WP0W { w: self }
+    #[inline(always)]
+    pub fn wp0(&mut self) -> WP0_W {
+        WP0_W { w: self }
     }
     #[doc = "Bit 30 - Supervisor Protect"]
-    #[inline]
-    pub fn sp0(&mut self) -> _SP0W {
-        _SP0W { w: self }
+    #[inline(always)]
+    pub fn sp0(&mut self) -> SP0_W {
+        SP0_W { w: self }
     }
 }
