@@ -1,7 +1,7 @@
 [package]
 authors = ["Kjetil Kjeka <kjetilkjeka@gmail.com>"]
 name = "wip-s32k144"
-version = "0.11.0"
+version = "0.11.1"
 
 description = "Peripheral access API for NXP S32K144 microcontrollers (generated using svd2rust). Test of update for kjetilkjeka's s32k144.rs PAC crate."
 repository = "https://github.com/jfhansen/s32k144.rs"
