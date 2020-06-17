@@ -1,10 +1,10 @@
 [package]
 authors = ["Kjetil Kjeka <kjetilkjeka@gmail.com>"]
-name = "wip-s32k144"
-version = "0.11.2"
+name = "s32k144"
+version = "0.11.0"
 
-description = "Peripheral access API for NXP S32K144 microcontrollers (generated using svd2rust). Test of update for kjetilkjeka's s32k144.rs PAC crate."
-repository = "https://github.com/jfhansen/s32k144.rs"
+description = "Peripheral access API for NXP S32K144 microcontrollers (generated using svd2rust)"
+repository = "https://github.com/kjetilkjeka/s32k144.rs"
 
 keywords = ["arm", "embedded", "svd2rust", "cortex-m4", "NXP"]
 categories = ["embedded", "hardware-support", "no-std"]
