@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MCCR0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MCCR0"]
+pub type R = crate::R<u32, super::MCCR0>;
+#[doc = "Writer for register MCCR0"]
+pub type W = crate::W<u32, super::MCCR0>;
+#[doc = "Register MCCR0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::MCCR0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CLKLOR {
-    bits: u8,
-}
-impl CLKLOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLKHIR {
-    bits: u8,
-}
-impl CLKHIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SETHOLDR {
-    bits: u8,
-}
-impl SETHOLDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DATAVDR {
-    bits: u8,
-}
-impl DATAVDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKLOW<'a> {
+#[doc = "Reader of field `CLKLO`"]
+pub type CLKLO_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CLKLO`"]
+pub struct CLKLO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLKLOW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CLKLO_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLKHIW<'a> {
+#[doc = "Reader of field `CLKHI`"]
+pub type CLKHI_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CLKHI`"]
+pub struct CLKHI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLKHIW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CLKHI_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SETHOLDW<'a> {
+#[doc = "Reader of field `SETHOLD`"]
+pub type SETHOLD_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SETHOLD`"]
+pub struct SETHOLD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SETHOLDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SETHOLD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATAVDW<'a> {
+#[doc = "Reader of field `DATAVD`"]
+pub type DATAVD_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DATAVD`"]
+pub struct DATAVD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATAVDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DATAVD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Clock Low Period"]
-    #[inline]
-    pub fn clklo(&self) -> CLKLOR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CLKLOR { bits }
+    #[inline(always)]
+    pub fn clklo(&self) -> CLKLO_R {
+        CLKLO_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - Clock High Period"]
-    #[inline]
-    pub fn clkhi(&self) -> CLKHIR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CLKHIR { bits }
+    #[inline(always)]
+    pub fn clkhi(&self) -> CLKHI_R {
+        CLKHI_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - Setup Hold Delay"]
-    #[inline]
-    pub fn sethold(&self) -> SETHOLDR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SETHOLDR { bits }
+    #[inline(always)]
+    pub fn sethold(&self) -> SETHOLD_R {
+        SETHOLD_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - Data Valid Delay"]
-    #[inline]
-    pub fn datavd(&self) -> DATAVDR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATAVDR { bits }
+    #[inline(always)]
+    pub fn datavd(&self) -> DATAVD_R {
+        DATAVD_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Clock Low Period"]
-    #[inline]
-    pub fn clklo(&mut self) -> _CLKLOW {
-        _CLKLOW { w: self }
+    #[inline(always)]
+    pub fn clklo(&mut self) -> CLKLO_W {
+        CLKLO_W { w: self }
     }
     #[doc = "Bits 8:13 - Clock High Period"]
-    #[inline]
-    pub fn clkhi(&mut self) -> _CLKHIW {
-        _CLKHIW { w: self }
+    #[inline(always)]
+    pub fn clkhi(&mut self) -> CLKHI_W {
+        CLKHI_W { w: self }
     }
     #[doc = "Bits 16:21 - Setup Hold Delay"]
-    #[inline]
-    pub fn sethold(&mut self) -> _SETHOLDW {
-        _SETHOLDW { w: self }
+    #[inline(always)]
+    pub fn sethold(&mut self) -> SETHOLD_W {
+        SETHOLD_W { w: self }
     }
     #[doc = "Bits 24:29 - Data Valid Delay"]
-    #[inline]
-    pub fn datavd(&mut self) -> _DATAVDW {
-        _DATAVDW { w: self }
+    #[inline(always)]
+    pub fn datavd(&mut self) -> DATAVD_W {
+        DATAVD_W { w: self }
     }
 }

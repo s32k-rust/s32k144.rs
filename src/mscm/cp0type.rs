@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CP0TYPE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RYPZR {
-    bits: u8,
-}
-impl RYPZR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PERSONALITYR {
-    bits: u32,
-}
-impl PERSONALITYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register CP0TYPE"]
+pub type R = crate::R<u32, super::CP0TYPE>;
+#[doc = "Reader of field `RYPZ`"]
+pub type RYPZ_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PERSONALITY`"]
+pub type PERSONALITY_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Processor 0 Revision"]
-    #[inline]
-    pub fn rypz(&self) -> RYPZR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RYPZR { bits }
+    #[inline(always)]
+    pub fn rypz(&self) -> RYPZ_R {
+        RYPZ_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:31 - Processor 0 Personality"]
-    #[inline]
-    pub fn personality(&self) -> PERSONALITYR {
-        let bits = {
-            const MASK: u32 = 16777215;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        PERSONALITYR { bits }
+    #[inline(always)]
+    pub fn personality(&self) -> PERSONALITY_R {
+        PERSONALITY_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
     }
 }

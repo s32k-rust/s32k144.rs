@@ -1,441 +1,297 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCC_FTM0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCC_FTM0"]
+pub type R = crate::R<u32, super::PCC_FTM0>;
+#[doc = "Writer for register PCC_FTM0"]
+pub type W = crate::W<u32, super::PCC_FTM0>;
+#[doc = "Register PCC_FTM0 `reset()`'s with value 0x8000_0000"]
+impl crate::ResetValue for super::PCC_FTM0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x8000_0000
     }
 }
-#[doc = "Possible values of the field `PCS`"]
+#[doc = "Peripheral Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PCSR {
-    #[doc = "Clock is off. An external clock can be enabled for this peripheral."]
-    _000,
-    #[doc = "Clock option 1"]
-    _001,
-    #[doc = "Clock option 2"]
-    _010,
-    #[doc = "Clock option 3"]
-    _011,
-    #[doc = "Clock option 4"]
-    _100,
-    #[doc = "Clock option 5"]
-    _101,
-    #[doc = "Clock option 6"]
-    _110,
-    #[doc = "Clock option 7"]
-    _111,
+#[repr(u8)]
+pub enum PCS_A {
+    #[doc = "0: Clock is off. An external clock can be enabled for this peripheral."]
+    _000 = 0,
+    #[doc = "1: Clock option 1"]
+    _001 = 1,
+    #[doc = "2: Clock option 2"]
+    _010 = 2,
+    #[doc = "3: Clock option 3"]
+    _011 = 3,
+    #[doc = "4: Clock option 4"]
+    _100 = 4,
+    #[doc = "5: Clock option 5"]
+    _101 = 5,
+    #[doc = "6: Clock option 6"]
+    _110 = 6,
+    #[doc = "7: Clock option 7"]
+    _111 = 7,
 }
-impl PCSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PCSR::_000 => 0,
-            PCSR::_001 => 1,
-            PCSR::_010 => 2,
-            PCSR::_011 => 3,
-            PCSR::_100 => 4,
-            PCSR::_101 => 5,
-            PCSR::_110 => 6,
-            PCSR::_111 => 7,
-        }
+impl From<PCS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PCS_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PCSR {
-        match value {
-            0 => PCSR::_000,
-            1 => PCSR::_001,
-            2 => PCSR::_010,
-            3 => PCSR::_011,
-            4 => PCSR::_100,
-            5 => PCSR::_101,
-            6 => PCSR::_110,
-            7 => PCSR::_111,
+}
+#[doc = "Reader of field `PCS`"]
+pub type PCS_R = crate::R<u8, PCS_A>;
+impl PCS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PCS_A {
+        match self.bits {
+            0 => PCS_A::_000,
+            1 => PCS_A::_001,
+            2 => PCS_A::_010,
+            3 => PCS_A::_011,
+            4 => PCS_A::_100,
+            5 => PCS_A::_101,
+            6 => PCS_A::_110,
+            7 => PCS_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == PCSR::_000
+        *self == PCS_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == PCSR::_001
+        *self == PCS_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == PCSR::_010
+        *self == PCS_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == PCSR::_011
+        *self == PCS_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == PCSR::_100
+        *self == PCS_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == PCSR::_101
+        *self == PCS_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == PCSR::_110
+        *self == PCS_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == PCSR::_111
+        *self == PCS_A::_111
     }
 }
-#[doc = "Possible values of the field `CGC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CGCR {
-    #[doc = "Clock disabled"]
-    _0,
-    #[doc = "Clock enabled. The current clock selection and divider options are locked."]
-    _1,
-}
-impl CGCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CGCR::_0 => false,
-            CGCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CGCR {
-        match value {
-            false => CGCR::_0,
-            true => CGCR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CGCR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CGCR::_1
-    }
-}
-#[doc = "Possible values of the field `PR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRR {
-    #[doc = "Peripheral is not present."]
-    _0,
-    #[doc = "Peripheral is present."]
-    _1,
-}
-impl PRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRR::_0 => false,
-            PRR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRR {
-        match value {
-            false => PRR::_0,
-            true => PRR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PRR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PRR::_1
-    }
-}
-#[doc = "Values that can be written to the field `PCS`"]
-pub enum PCSW {
-    #[doc = "Clock is off. An external clock can be enabled for this peripheral."]
-    _000,
-    #[doc = "Clock option 1"]
-    _001,
-    #[doc = "Clock option 2"]
-    _010,
-    #[doc = "Clock option 3"]
-    _011,
-    #[doc = "Clock option 4"]
-    _100,
-    #[doc = "Clock option 5"]
-    _101,
-    #[doc = "Clock option 6"]
-    _110,
-    #[doc = "Clock option 7"]
-    _111,
-}
-impl PCSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PCSW::_000 => 0,
-            PCSW::_001 => 1,
-            PCSW::_010 => 2,
-            PCSW::_011 => 3,
-            PCSW::_100 => 4,
-            PCSW::_101 => 5,
-            PCSW::_110 => 6,
-            PCSW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PCSW<'a> {
+#[doc = "Write proxy for field `PCS`"]
+pub struct PCS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PCSW) -> &'a mut W {
+impl<'a> PCS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PCS_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Clock is off. An external clock can be enabled for this peripheral."]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(PCSW::_000)
+        self.variant(PCS_A::_000)
     }
     #[doc = "Clock option 1"]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(PCSW::_001)
+        self.variant(PCS_A::_001)
     }
     #[doc = "Clock option 2"]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(PCSW::_010)
+        self.variant(PCS_A::_010)
     }
     #[doc = "Clock option 3"]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(PCSW::_011)
+        self.variant(PCS_A::_011)
     }
     #[doc = "Clock option 4"]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(PCSW::_100)
+        self.variant(PCS_A::_100)
     }
     #[doc = "Clock option 5"]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(PCSW::_101)
+        self.variant(PCS_A::_101)
     }
     #[doc = "Clock option 6"]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(PCSW::_110)
+        self.variant(PCS_A::_110)
     }
     #[doc = "Clock option 7"]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(PCSW::_111)
+        self.variant(PCS_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CGC`"]
-pub enum CGCW {
-    #[doc = "Clock disabled"]
-    _0,
-    #[doc = "Clock enabled. The current clock selection and divider options are locked."]
-    _1,
+#[doc = "Clock Gate Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CGC_A {
+    #[doc = "0: Clock disabled"]
+    _0 = 0,
+    #[doc = "1: Clock enabled. The current clock selection and divider options are locked."]
+    _1 = 1,
 }
-impl CGCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CGCW::_0 => false,
-            CGCW::_1 => true,
-        }
+impl From<CGC_A> for bool {
+    #[inline(always)]
+    fn from(variant: CGC_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CGCW<'a> {
+#[doc = "Reader of field `CGC`"]
+pub type CGC_R = crate::R<bool, CGC_A>;
+impl CGC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CGC_A {
+        match self.bits {
+            false => CGC_A::_0,
+            true => CGC_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CGC_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CGC_A::_1
+    }
+}
+#[doc = "Write proxy for field `CGC`"]
+pub struct CGC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CGCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CGCW) -> &'a mut W {
+impl<'a> CGC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CGC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Clock disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CGCW::_0)
+        self.variant(CGC_A::_0)
     }
     #[doc = "Clock enabled. The current clock selection and divider options are locked."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CGCW::_1)
+        self.variant(CGC_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
+#[doc = "Present\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PR_A {
+    #[doc = "0: Peripheral is not present."]
+    _0 = 0,
+    #[doc = "1: Peripheral is present."]
+    _1 = 1,
+}
+impl From<PR_A> for bool {
+    #[inline(always)]
+    fn from(variant: PR_A) -> Self {
+        variant as u8 != 0
     }
+}
+#[doc = "Reader of field `PR`"]
+pub type PR_R = crate::R<bool, PR_A>;
+impl PR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PR_A {
+        match self.bits {
+            false => PR_A::_0,
+            true => PR_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PR_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PR_A::_1
+    }
+}
+impl R {
     #[doc = "Bits 24:26 - Peripheral Clock Source Select"]
-    #[inline]
-    pub fn pcs(&self) -> PCSR {
-        PCSR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pcs(&self) -> PCS_R {
+        PCS_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bit 30 - Clock Gate Control"]
-    #[inline]
-    pub fn cgc(&self) -> CGCR {
-        CGCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cgc(&self) -> CGC_R {
+        CGC_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Present"]
-    #[inline]
-    pub fn pr(&self) -> PRR {
-        PRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pr(&self) -> PR_R {
+        PR_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2147483648 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 24:26 - Peripheral Clock Source Select"]
-    #[inline]
-    pub fn pcs(&mut self) -> _PCSW {
-        _PCSW { w: self }
+    #[inline(always)]
+    pub fn pcs(&mut self) -> PCS_W {
+        PCS_W { w: self }
     }
     #[doc = "Bit 30 - Clock Gate Control"]
-    #[inline]
-    pub fn cgc(&mut self) -> _CGCW {
-        _CGCW { w: self }
+    #[inline(always)]
+    pub fn cgc(&mut self) -> CGC_W {
+        CGC_W { w: self }
     }
 }

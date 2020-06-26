@@ -1,691 +1,477 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `TCRC`"]
+#[doc = "TCRC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TCRCR {
+pub enum TCRC_A {
+    #[doc = "0: 16-bit CRC protocol."]
+    _0 = 0,
+    #[doc = "1: 32-bit CRC protocol."]
+    _1 = 1,
+}
+impl From<TCRC_A> for bool {
+    #[inline(always)]
+    fn from(variant: TCRC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `TCRC`"]
+pub type TCRC_R = crate::R<bool, TCRC_A>;
+impl TCRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TCRC_A {
+        match self.bits {
+            false => TCRC_A::_0,
+            true => TCRC_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TCRC_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TCRC_A::_1
+    }
+}
+#[doc = "Write proxy for field `TCRC`"]
+pub struct TCRC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TCRC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TCRC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "16-bit CRC protocol."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(TCRC_A::_0)
+    }
     #[doc = "32-bit CRC protocol."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(TCRC_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w
+    }
 }
-impl TCRCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Write CRC Data Register As Seed\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WAS_A {
+    #[doc = "0: Writes to the CRC data register are data values."]
+    _0 = 0,
+    #[doc = "1: Writes to the CRC data register are seed values."]
+    _1 = 1,
+}
+impl From<WAS_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAS_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TCRCR::_0 => false,
-            TCRCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TCRCR {
-        match value {
-            false => TCRCR::_0,
-            true => TCRCR::_1,
+}
+#[doc = "Reader of field `WAS`"]
+pub type WAS_R = crate::R<bool, WAS_A>;
+impl WAS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAS_A {
+        match self.bits {
+            false => WAS_A::_0,
+            true => WAS_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TCRCR::_0
+        *self == WAS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TCRCR::_1
+        *self == WAS_A::_1
     }
 }
-#[doc = "Possible values of the field `WAS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WASR {
+#[doc = "Write proxy for field `WAS`"]
+pub struct WAS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WAS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Writes to the CRC data register are data values."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(WAS_A::_0)
+    }
     #[doc = "Writes to the CRC data register are seed values."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(WAS_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w
+    }
 }
-impl WASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Complement Read Of CRC Data Register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FXOR_A {
+    #[doc = "0: No XOR on reading."]
+    _0 = 0,
+    #[doc = "1: Invert or complement the read value of the CRC Data register."]
+    _1 = 1,
+}
+impl From<FXOR_A> for bool {
+    #[inline(always)]
+    fn from(variant: FXOR_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WASR::_0 => false,
-            WASR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WASR {
-        match value {
-            false => WASR::_0,
-            true => WASR::_1,
+}
+#[doc = "Reader of field `FXOR`"]
+pub type FXOR_R = crate::R<bool, FXOR_A>;
+impl FXOR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FXOR_A {
+        match self.bits {
+            false => FXOR_A::_0,
+            true => FXOR_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == WASR::_0
+        *self == FXOR_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == WASR::_1
+        *self == FXOR_A::_1
     }
 }
-#[doc = "Possible values of the field `FXOR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FXORR {
+#[doc = "Write proxy for field `FXOR`"]
+pub struct FXOR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FXOR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FXOR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No XOR on reading."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(FXOR_A::_0)
+    }
     #[doc = "Invert or complement the read value of the CRC Data register."]
-    _1,
-}
-impl FXORR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(FXOR_A::_1)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FXORR::_0 => false,
-            FXORR::_1 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FXORR {
-        match value {
-            false => FXORR::_0,
-            true => FXORR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == FXORR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == FXORR::_1
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w
     }
 }
-#[doc = "Possible values of the field `TOTR`"]
+#[doc = "Type Of Transpose For Read\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TOTRR {
-    #[doc = "No transposition."]
-    _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
-    _01,
-    #[doc = "Both bits in bytes and bytes are transposed."]
-    _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
-    _11,
+#[repr(u8)]
+pub enum TOTR_A {
+    #[doc = "0: No transposition."]
+    _00 = 0,
+    #[doc = "1: Bits in bytes are transposed; bytes are not transposed."]
+    _01 = 1,
+    #[doc = "2: Both bits in bytes and bytes are transposed."]
+    _10 = 2,
+    #[doc = "3: Only bytes are transposed; no bits in a byte are transposed."]
+    _11 = 3,
 }
-impl TOTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TOTRR::_00 => 0,
-            TOTRR::_01 => 1,
-            TOTRR::_10 => 2,
-            TOTRR::_11 => 3,
-        }
+impl From<TOTR_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TOTR_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TOTRR {
-        match value {
-            0 => TOTRR::_00,
-            1 => TOTRR::_01,
-            2 => TOTRR::_10,
-            3 => TOTRR::_11,
+}
+#[doc = "Reader of field `TOTR`"]
+pub type TOTR_R = crate::R<u8, TOTR_A>;
+impl TOTR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TOTR_A {
+        match self.bits {
+            0 => TOTR_A::_00,
+            1 => TOTR_A::_01,
+            2 => TOTR_A::_10,
+            3 => TOTR_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == TOTRR::_00
+        *self == TOTR_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == TOTRR::_01
+        *self == TOTR_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == TOTRR::_10
+        *self == TOTR_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == TOTRR::_11
+        *self == TOTR_A::_11
     }
 }
-#[doc = "Possible values of the field `TOT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TOTR {
-    #[doc = "No transposition."]
-    _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
-    _01,
-    #[doc = "Both bits in bytes and bytes are transposed."]
-    _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
-    _11,
+#[doc = "Write proxy for field `TOTR`"]
+pub struct TOTR_W<'a> {
+    w: &'a mut W,
 }
-impl TOTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TOTR::_00 => 0,
-            TOTR::_01 => 1,
-            TOTR::_10 => 2,
-            TOTR::_11 => 3,
+impl<'a> TOTR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TOTR_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TOTR {
-        match value {
-            0 => TOTR::_00,
-            1 => TOTR::_01,
-            2 => TOTR::_10,
-            3 => TOTR::_11,
+    #[doc = "No transposition."]
+    #[inline(always)]
+    pub fn _00(self) -> &'a mut W {
+        self.variant(TOTR_A::_00)
+    }
+    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
+    #[inline(always)]
+    pub fn _01(self) -> &'a mut W {
+        self.variant(TOTR_A::_01)
+    }
+    #[doc = "Both bits in bytes and bytes are transposed."]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(TOTR_A::_10)
+    }
+    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
+    #[inline(always)]
+    pub fn _11(self) -> &'a mut W {
+        self.variant(TOTR_A::_11)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
+        self.w
+    }
+}
+#[doc = "Type Of Transpose For Writes\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum TOT_A {
+    #[doc = "0: No transposition."]
+    _00 = 0,
+    #[doc = "1: Bits in bytes are transposed; bytes are not transposed."]
+    _01 = 1,
+    #[doc = "2: Both bits in bytes and bytes are transposed."]
+    _10 = 2,
+    #[doc = "3: Only bytes are transposed; no bits in a byte are transposed."]
+    _11 = 3,
+}
+impl From<TOT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TOT_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `TOT`"]
+pub type TOT_R = crate::R<u8, TOT_A>;
+impl TOT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TOT_A {
+        match self.bits {
+            0 => TOT_A::_00,
+            1 => TOT_A::_01,
+            2 => TOT_A::_10,
+            3 => TOT_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == TOTR::_00
+        *self == TOT_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == TOTR::_01
+        *self == TOT_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == TOTR::_10
+        *self == TOT_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == TOTR::_11
+        *self == TOT_A::_11
     }
 }
-#[doc = "Values that can be written to the field `TCRC`"]
-pub enum TCRCW {
-    #[doc = "16-bit CRC protocol."]
-    _0,
-    #[doc = "32-bit CRC protocol."]
-    _1,
-}
-impl TCRCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TCRCW::_0 => false,
-            TCRCW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TCRCW<'a> {
+#[doc = "Write proxy for field `TOT`"]
+pub struct TOT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TCRCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TCRCW) -> &'a mut W {
+impl<'a> TOT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TOT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "16-bit CRC protocol."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(TCRCW::_0)
-    }
-    #[doc = "32-bit CRC protocol."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(TCRCW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WAS`"]
-pub enum WASW {
-    #[doc = "Writes to the CRC data register are data values."]
-    _0,
-    #[doc = "Writes to the CRC data register are seed values."]
-    _1,
-}
-impl WASW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WASW::_0 => false,
-            WASW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WASW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WASW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WASW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Writes to the CRC data register are data values."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(WASW::_0)
-    }
-    #[doc = "Writes to the CRC data register are seed values."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(WASW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FXOR`"]
-pub enum FXORW {
-    #[doc = "No XOR on reading."]
-    _0,
-    #[doc = "Invert or complement the read value of the CRC Data register."]
-    _1,
-}
-impl FXORW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FXORW::_0 => false,
-            FXORW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FXORW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FXORW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FXORW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No XOR on reading."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(FXORW::_0)
-    }
-    #[doc = "Invert or complement the read value of the CRC Data register."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(FXORW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TOTR`"]
-pub enum TOTRW {
-    #[doc = "No transposition."]
-    _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
-    _01,
-    #[doc = "Both bits in bytes and bytes are transposed."]
-    _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
-    _11,
-}
-impl TOTRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TOTRW::_00 => 0,
-            TOTRW::_01 => 1,
-            TOTRW::_10 => 2,
-            TOTRW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TOTRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TOTRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TOTRW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No transposition."]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(TOTRW::_00)
+        self.variant(TOT_A::_00)
     }
     #[doc = "Bits in bytes are transposed; bytes are not transposed."]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(TOTRW::_01)
+        self.variant(TOT_A::_01)
     }
     #[doc = "Both bits in bytes and bytes are transposed."]
-    #[inline]
+    #[inline(always)]
     pub fn _10(self) -> &'a mut W {
-        self.variant(TOTRW::_10)
+        self.variant(TOT_A::_10)
     }
     #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
-    #[inline]
+    #[inline(always)]
     pub fn _11(self) -> &'a mut W {
-        self.variant(TOTRW::_11)
+        self.variant(TOT_A::_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TOT`"]
-pub enum TOTW {
-    #[doc = "No transposition."]
-    _00,
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
-    _01,
-    #[doc = "Both bits in bytes and bytes are transposed."]
-    _10,
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
-    _11,
-}
-impl TOTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TOTW::_00 => 0,
-            TOTW::_01 => 1,
-            TOTW::_10 => 2,
-            TOTW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TOTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TOTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TOTW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "No transposition."]
-    #[inline]
-    pub fn _00(self) -> &'a mut W {
-        self.variant(TOTW::_00)
-    }
-    #[doc = "Bits in bytes are transposed; bytes are not transposed."]
-    #[inline]
-    pub fn _01(self) -> &'a mut W {
-        self.variant(TOTW::_01)
-    }
-    #[doc = "Both bits in bytes and bytes are transposed."]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(TOTW::_10)
-    }
-    #[doc = "Only bytes are transposed; no bits in a byte are transposed."]
-    #[inline]
-    pub fn _11(self) -> &'a mut W {
-        self.variant(TOTW::_11)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 24 - TCRC"]
-    #[inline]
-    pub fn tcrc(&self) -> TCRCR {
-        TCRCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tcrc(&self) -> TCRC_R {
+        TCRC_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Write CRC Data Register As Seed"]
-    #[inline]
-    pub fn was(&self) -> WASR {
-        WASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn was(&self) -> WAS_R {
+        WAS_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Complement Read Of CRC Data Register"]
-    #[inline]
-    pub fn fxor(&self) -> FXORR {
-        FXORR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fxor(&self) -> FXOR_R {
+        FXOR_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bits 28:29 - Type Of Transpose For Read"]
-    #[inline]
-    pub fn totr(&self) -> TOTRR {
-        TOTRR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn totr(&self) -> TOTR_R {
+        TOTR_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bits 30:31 - Type Of Transpose For Writes"]
-    #[inline]
-    pub fn tot(&self) -> TOTR {
-        TOTR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tot(&self) -> TOT_R {
+        TOT_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 24 - TCRC"]
-    #[inline]
-    pub fn tcrc(&mut self) -> _TCRCW {
-        _TCRCW { w: self }
+    #[inline(always)]
+    pub fn tcrc(&mut self) -> TCRC_W {
+        TCRC_W { w: self }
     }
     #[doc = "Bit 25 - Write CRC Data Register As Seed"]
-    #[inline]
-    pub fn was(&mut self) -> _WASW {
-        _WASW { w: self }
+    #[inline(always)]
+    pub fn was(&mut self) -> WAS_W {
+        WAS_W { w: self }
     }
     #[doc = "Bit 26 - Complement Read Of CRC Data Register"]
-    #[inline]
-    pub fn fxor(&mut self) -> _FXORW {
-        _FXORW { w: self }
+    #[inline(always)]
+    pub fn fxor(&mut self) -> FXOR_W {
+        FXOR_W { w: self }
     }
     #[doc = "Bits 28:29 - Type Of Transpose For Read"]
-    #[inline]
-    pub fn totr(&mut self) -> _TOTRW {
-        _TOTRW { w: self }
+    #[inline(always)]
+    pub fn totr(&mut self) -> TOTR_W {
+        TOTR_W { w: self }
     }
     #[doc = "Bits 30:31 - Type Of Transpose For Writes"]
-    #[inline]
-    pub fn tot(&mut self) -> _TOTW {
-        _TOTW { w: self }
+    #[inline(always)]
+    pub fn tot(&mut self) -> TOT_W {
+        TOT_W { w: self }
     }
 }

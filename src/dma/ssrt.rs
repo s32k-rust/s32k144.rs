@@ -1,175 +1,147 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::SSRT {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register SSRT"]
+pub type W = crate::W<u8, super::SSRT>;
+#[doc = "Register SSRT `reset()`'s with value 0"]
+impl crate::ResetValue for super::SSRT {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SSRTW<'a> {
+#[doc = "Write proxy for field `SSRT`"]
+pub struct SSRT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SSRTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SSRT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u8) & 0x0f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SAST`"]
-pub enum SASTW {
-    #[doc = "Set only the TCDn_CSR\\[START\\] bit specified in the SSRT field"]
-    _0,
-    #[doc = "Set all bits in TCDn_CSR\\[START\\]"]
-    _1,
+#[doc = "Set All START Bits (activates all channels)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SAST_AW {
+    #[doc = "0: Set only the TCDn_CSR\\[START\\]
+bit specified in the SSRT field"]
+    _0 = 0,
+    #[doc = "1: Set all bits in TCDn_CSR\\[START\\]"]
+    _1 = 1,
 }
-impl SASTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SASTW::_0 => false,
-            SASTW::_1 => true,
-        }
+impl From<SAST_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SAST_AW) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SASTW<'a> {
+#[doc = "Write proxy for field `SAST`"]
+pub struct SAST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SASTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SASTW) -> &'a mut W {
+impl<'a> SAST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SAST_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
-    #[doc = "Set only the TCDn_CSR\\[START\\] bit specified in the SSRT field"]
-    #[inline]
+    #[doc = "Set only the TCDn_CSR\\[START\\]
+bit specified in the SSRT field"]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SASTW::_0)
+        self.variant(SAST_AW::_0)
     }
     #[doc = "Set all bits in TCDn_CSR\\[START\\]"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SASTW::_1)
+        self.variant(SAST_AW::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u8) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `NOP`"]
-pub enum NOPW {
-    #[doc = "Normal operation"]
-    _0,
-    #[doc = "No operation, ignore the other bits in this register"]
-    _1,
+#[doc = "No Op enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NOP_AW {
+    #[doc = "0: Normal operation"]
+    _0 = 0,
+    #[doc = "1: No operation, ignore the other bits in this register"]
+    _1 = 1,
 }
-impl NOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NOPW::_0 => false,
-            NOPW::_1 => true,
-        }
+impl From<NOP_AW> for bool {
+    #[inline(always)]
+    fn from(variant: NOP_AW) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOPW<'a> {
+#[doc = "Write proxy for field `NOP`"]
+pub struct NOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NOPW) -> &'a mut W {
+impl<'a> NOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NOP_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Normal operation"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(NOPW::_0)
+        self.variant(NOP_AW::_0)
     }
     #[doc = "No operation, ignore the other bits in this register"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(NOPW::_1)
+        self.variant(NOP_AW::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u8) & 0x01) << 7);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Set START Bit"]
-    #[inline]
-    pub fn ssrt(&mut self) -> _SSRTW {
-        _SSRTW { w: self }
+    #[inline(always)]
+    pub fn ssrt(&mut self) -> SSRT_W {
+        SSRT_W { w: self }
     }
     #[doc = "Bit 6 - Set All START Bits (activates all channels)"]
-    #[inline]
-    pub fn sast(&mut self) -> _SASTW {
-        _SASTW { w: self }
+    #[inline(always)]
+    pub fn sast(&mut self) -> SAST_W {
+        SAST_W { w: self }
     }
     #[doc = "Bit 7 - No Op enable"]
-    #[inline]
-    pub fn nop(&mut self) -> _NOPW {
-        _NOPW { w: self }
+    #[inline(always)]
+    pub fn nop(&mut self) -> NOP_W {
+        NOP_W { w: self }
     }
 }

@@ -1,538 +1,356 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INVCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INVCTRL"]
+pub type R = crate::R<u32, super::INVCTRL>;
+#[doc = "Writer for register INVCTRL"]
+pub type W = crate::W<u32, super::INVCTRL>;
+#[doc = "Register INVCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::INVCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `INV0EN`"]
+#[doc = "Pair Channels 0 Inverting Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INV0ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+pub enum INV0EN_A {
+    #[doc = "0: Inverting is disabled."]
+    _0 = 0,
+    #[doc = "1: Inverting is enabled."]
+    _1 = 1,
 }
-impl INV0ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<INV0EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: INV0EN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INV0ENR::_0 => false,
-            INV0ENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INV0ENR {
-        match value {
-            false => INV0ENR::_0,
-            true => INV0ENR::_1,
+}
+#[doc = "Reader of field `INV0EN`"]
+pub type INV0EN_R = crate::R<bool, INV0EN_A>;
+impl INV0EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INV0EN_A {
+        match self.bits {
+            false => INV0EN_A::_0,
+            true => INV0EN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == INV0ENR::_0
+        *self == INV0EN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == INV0ENR::_1
+        *self == INV0EN_A::_1
     }
 }
-#[doc = "Possible values of the field `INV1EN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INV1ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
-}
-impl INV1ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INV1ENR::_0 => false,
-            INV1ENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INV1ENR {
-        match value {
-            false => INV1ENR::_0,
-            true => INV1ENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == INV1ENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == INV1ENR::_1
-    }
-}
-#[doc = "Possible values of the field `INV2EN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INV2ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
-}
-impl INV2ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INV2ENR::_0 => false,
-            INV2ENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INV2ENR {
-        match value {
-            false => INV2ENR::_0,
-            true => INV2ENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == INV2ENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == INV2ENR::_1
-    }
-}
-#[doc = "Possible values of the field `INV3EN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INV3ENR {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
-}
-impl INV3ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INV3ENR::_0 => false,
-            INV3ENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INV3ENR {
-        match value {
-            false => INV3ENR::_0,
-            true => INV3ENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == INV3ENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == INV3ENR::_1
-    }
-}
-#[doc = "Values that can be written to the field `INV0EN`"]
-pub enum INV0ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
-}
-impl INV0ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INV0ENW::_0 => false,
-            INV0ENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INV0ENW<'a> {
+#[doc = "Write proxy for field `INV0EN`"]
+pub struct INV0EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INV0ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INV0ENW) -> &'a mut W {
+impl<'a> INV0EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INV0EN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Inverting is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(INV0ENW::_0)
+        self.variant(INV0EN_A::_0)
     }
     #[doc = "Inverting is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INV0ENW::_1)
+        self.variant(INV0EN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INV1EN`"]
-pub enum INV1ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+#[doc = "Pair Channels 1 Inverting Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INV1EN_A {
+    #[doc = "0: Inverting is disabled."]
+    _0 = 0,
+    #[doc = "1: Inverting is enabled."]
+    _1 = 1,
 }
-impl INV1ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INV1ENW::_0 => false,
-            INV1ENW::_1 => true,
-        }
+impl From<INV1EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: INV1EN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _INV1ENW<'a> {
+#[doc = "Reader of field `INV1EN`"]
+pub type INV1EN_R = crate::R<bool, INV1EN_A>;
+impl INV1EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INV1EN_A {
+        match self.bits {
+            false => INV1EN_A::_0,
+            true => INV1EN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == INV1EN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == INV1EN_A::_1
+    }
+}
+#[doc = "Write proxy for field `INV1EN`"]
+pub struct INV1EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INV1ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INV1ENW) -> &'a mut W {
+impl<'a> INV1EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INV1EN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Inverting is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(INV1ENW::_0)
+        self.variant(INV1EN_A::_0)
     }
     #[doc = "Inverting is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INV1ENW::_1)
+        self.variant(INV1EN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INV2EN`"]
-pub enum INV2ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+#[doc = "Pair Channels 2 Inverting Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INV2EN_A {
+    #[doc = "0: Inverting is disabled."]
+    _0 = 0,
+    #[doc = "1: Inverting is enabled."]
+    _1 = 1,
 }
-impl INV2ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INV2ENW::_0 => false,
-            INV2ENW::_1 => true,
-        }
+impl From<INV2EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: INV2EN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _INV2ENW<'a> {
+#[doc = "Reader of field `INV2EN`"]
+pub type INV2EN_R = crate::R<bool, INV2EN_A>;
+impl INV2EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INV2EN_A {
+        match self.bits {
+            false => INV2EN_A::_0,
+            true => INV2EN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == INV2EN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == INV2EN_A::_1
+    }
+}
+#[doc = "Write proxy for field `INV2EN`"]
+pub struct INV2EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INV2ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INV2ENW) -> &'a mut W {
+impl<'a> INV2EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INV2EN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Inverting is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(INV2ENW::_0)
+        self.variant(INV2EN_A::_0)
     }
     #[doc = "Inverting is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INV2ENW::_1)
+        self.variant(INV2EN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INV3EN`"]
-pub enum INV3ENW {
-    #[doc = "Inverting is disabled."]
-    _0,
-    #[doc = "Inverting is enabled."]
-    _1,
+#[doc = "Pair Channels 3 Inverting Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INV3EN_A {
+    #[doc = "0: Inverting is disabled."]
+    _0 = 0,
+    #[doc = "1: Inverting is enabled."]
+    _1 = 1,
 }
-impl INV3ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INV3ENW::_0 => false,
-            INV3ENW::_1 => true,
-        }
+impl From<INV3EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: INV3EN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _INV3ENW<'a> {
+#[doc = "Reader of field `INV3EN`"]
+pub type INV3EN_R = crate::R<bool, INV3EN_A>;
+impl INV3EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INV3EN_A {
+        match self.bits {
+            false => INV3EN_A::_0,
+            true => INV3EN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == INV3EN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == INV3EN_A::_1
+    }
+}
+#[doc = "Write proxy for field `INV3EN`"]
+pub struct INV3EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INV3ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INV3ENW) -> &'a mut W {
+impl<'a> INV3EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INV3EN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Inverting is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(INV3ENW::_0)
+        self.variant(INV3EN_A::_0)
     }
     #[doc = "Inverting is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INV3ENW::_1)
+        self.variant(INV3EN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Pair Channels 0 Inverting Enable"]
-    #[inline]
-    pub fn inv0en(&self) -> INV0ENR {
-        INV0ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn inv0en(&self) -> INV0EN_R {
+        INV0EN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Pair Channels 1 Inverting Enable"]
-    #[inline]
-    pub fn inv1en(&self) -> INV1ENR {
-        INV1ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn inv1en(&self) -> INV1EN_R {
+        INV1EN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Pair Channels 2 Inverting Enable"]
-    #[inline]
-    pub fn inv2en(&self) -> INV2ENR {
-        INV2ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn inv2en(&self) -> INV2EN_R {
+        INV2EN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Pair Channels 3 Inverting Enable"]
-    #[inline]
-    pub fn inv3en(&self) -> INV3ENR {
-        INV3ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn inv3en(&self) -> INV3EN_R {
+        INV3EN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Pair Channels 0 Inverting Enable"]
-    #[inline]
-    pub fn inv0en(&mut self) -> _INV0ENW {
-        _INV0ENW { w: self }
+    #[inline(always)]
+    pub fn inv0en(&mut self) -> INV0EN_W {
+        INV0EN_W { w: self }
     }
     #[doc = "Bit 1 - Pair Channels 1 Inverting Enable"]
-    #[inline]
-    pub fn inv1en(&mut self) -> _INV1ENW {
-        _INV1ENW { w: self }
+    #[inline(always)]
+    pub fn inv1en(&mut self) -> INV1EN_W {
+        INV1EN_W { w: self }
     }
     #[doc = "Bit 2 - Pair Channels 2 Inverting Enable"]
-    #[inline]
-    pub fn inv2en(&mut self) -> _INV2ENW {
-        _INV2ENW { w: self }
+    #[inline(always)]
+    pub fn inv2en(&mut self) -> INV2EN_W {
+        INV2EN_W { w: self }
     }
     #[doc = "Bit 3 - Pair Channels 3 Inverting Enable"]
-    #[inline]
-    pub fn inv3en(&mut self) -> _INV3ENW {
-        _INV3ENW { w: self }
+    #[inline(always)]
+    pub fn inv3en(&mut self) -> INV3EN_W {
+        INV3EN_W { w: self }
     }
 }

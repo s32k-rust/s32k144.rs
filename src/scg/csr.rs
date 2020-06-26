@@ -1,536 +1,466 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CSR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `DIVSLOW`"]
+#[doc = "Reader of register CSR"]
+pub type R = crate::R<u32, super::CSR>;
+#[doc = "Slow Clock Divide Ratio\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIVSLOWR {
-    #[doc = "Divide-by-1"]
-    _0000,
-    #[doc = "Divide-by-2"]
-    _0001,
-    #[doc = "Divide-by-3"]
-    _0010,
-    #[doc = "Divide-by-4"]
-    _0011,
-    #[doc = "Divide-by-5"]
-    _0100,
-    #[doc = "Divide-by-6"]
-    _0101,
-    #[doc = "Divide-by-7"]
-    _0110,
-    #[doc = "Divide-by-8"]
-    _0111,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum DIVSLOW_A {
+    #[doc = "0: Divide-by-1"]
+    _0000 = 0,
+    #[doc = "1: Divide-by-2"]
+    _0001 = 1,
+    #[doc = "2: Divide-by-3"]
+    _0010 = 2,
+    #[doc = "3: Divide-by-4"]
+    _0011 = 3,
+    #[doc = "4: Divide-by-5"]
+    _0100 = 4,
+    #[doc = "5: Divide-by-6"]
+    _0101 = 5,
+    #[doc = "6: Divide-by-7"]
+    _0110 = 6,
+    #[doc = "7: Divide-by-8"]
+    _0111 = 7,
 }
-impl DIVSLOWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DIVSLOWR::_0000 => 0,
-            DIVSLOWR::_0001 => 1,
-            DIVSLOWR::_0010 => 2,
-            DIVSLOWR::_0011 => 3,
-            DIVSLOWR::_0100 => 4,
-            DIVSLOWR::_0101 => 5,
-            DIVSLOWR::_0110 => 6,
-            DIVSLOWR::_0111 => 7,
-            DIVSLOWR::_Reserved(bits) => bits,
-        }
+impl From<DIVSLOW_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DIVSLOW_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DIVSLOWR {
-        match value {
-            0 => DIVSLOWR::_0000,
-            1 => DIVSLOWR::_0001,
-            2 => DIVSLOWR::_0010,
-            3 => DIVSLOWR::_0011,
-            4 => DIVSLOWR::_0100,
-            5 => DIVSLOWR::_0101,
-            6 => DIVSLOWR::_0110,
-            7 => DIVSLOWR::_0111,
-            i => DIVSLOWR::_Reserved(i),
+}
+#[doc = "Reader of field `DIVSLOW`"]
+pub type DIVSLOW_R = crate::R<u8, DIVSLOW_A>;
+impl DIVSLOW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DIVSLOW_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DIVSLOW_A::_0000),
+            1 => Val(DIVSLOW_A::_0001),
+            2 => Val(DIVSLOW_A::_0010),
+            3 => Val(DIVSLOW_A::_0011),
+            4 => Val(DIVSLOW_A::_0100),
+            5 => Val(DIVSLOW_A::_0101),
+            6 => Val(DIVSLOW_A::_0110),
+            7 => Val(DIVSLOW_A::_0111),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0000(&self) -> bool {
-        *self == DIVSLOWR::_0000
+        *self == DIVSLOW_A::_0000
     }
     #[doc = "Checks if the value of the field is `_0001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0001(&self) -> bool {
-        *self == DIVSLOWR::_0001
+        *self == DIVSLOW_A::_0001
     }
     #[doc = "Checks if the value of the field is `_0010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0010(&self) -> bool {
-        *self == DIVSLOWR::_0010
+        *self == DIVSLOW_A::_0010
     }
     #[doc = "Checks if the value of the field is `_0011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0011(&self) -> bool {
-        *self == DIVSLOWR::_0011
+        *self == DIVSLOW_A::_0011
     }
     #[doc = "Checks if the value of the field is `_0100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0100(&self) -> bool {
-        *self == DIVSLOWR::_0100
+        *self == DIVSLOW_A::_0100
     }
     #[doc = "Checks if the value of the field is `_0101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0101(&self) -> bool {
-        *self == DIVSLOWR::_0101
+        *self == DIVSLOW_A::_0101
     }
     #[doc = "Checks if the value of the field is `_0110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0110(&self) -> bool {
-        *self == DIVSLOWR::_0110
+        *self == DIVSLOW_A::_0110
     }
     #[doc = "Checks if the value of the field is `_0111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0111(&self) -> bool {
-        *self == DIVSLOWR::_0111
+        *self == DIVSLOW_A::_0111
     }
 }
-#[doc = "Possible values of the field `DIVBUS`"]
+#[doc = "Bus Clock Divide Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIVBUSR {
-    #[doc = "Divide-by-1"]
-    _0000,
-    #[doc = "Divide-by-2"]
-    _0001,
-    #[doc = "Divide-by-3"]
-    _0010,
-    #[doc = "Divide-by-4"]
-    _0011,
-    #[doc = "Divide-by-5"]
-    _0100,
-    #[doc = "Divide-by-6"]
-    _0101,
-    #[doc = "Divide-by-7"]
-    _0110,
-    #[doc = "Divide-by-8"]
-    _0111,
-    #[doc = "Divide-by-9"]
-    _1000,
-    #[doc = "Divide-by-10"]
-    _1001,
-    #[doc = "Divide-by-11"]
-    _1010,
-    #[doc = "Divide-by-12"]
-    _1011,
-    #[doc = "Divide-by-13"]
-    _1100,
-    #[doc = "Divide-by-14"]
-    _1101,
-    #[doc = "Divide-by-15"]
-    _1110,
-    #[doc = "Divide-by-16"]
-    _1111,
+#[repr(u8)]
+pub enum DIVBUS_A {
+    #[doc = "0: Divide-by-1"]
+    _0000 = 0,
+    #[doc = "1: Divide-by-2"]
+    _0001 = 1,
+    #[doc = "2: Divide-by-3"]
+    _0010 = 2,
+    #[doc = "3: Divide-by-4"]
+    _0011 = 3,
+    #[doc = "4: Divide-by-5"]
+    _0100 = 4,
+    #[doc = "5: Divide-by-6"]
+    _0101 = 5,
+    #[doc = "6: Divide-by-7"]
+    _0110 = 6,
+    #[doc = "7: Divide-by-8"]
+    _0111 = 7,
+    #[doc = "8: Divide-by-9"]
+    _1000 = 8,
+    #[doc = "9: Divide-by-10"]
+    _1001 = 9,
+    #[doc = "10: Divide-by-11"]
+    _1010 = 10,
+    #[doc = "11: Divide-by-12"]
+    _1011 = 11,
+    #[doc = "12: Divide-by-13"]
+    _1100 = 12,
+    #[doc = "13: Divide-by-14"]
+    _1101 = 13,
+    #[doc = "14: Divide-by-15"]
+    _1110 = 14,
+    #[doc = "15: Divide-by-16"]
+    _1111 = 15,
 }
-impl DIVBUSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DIVBUSR::_0000 => 0,
-            DIVBUSR::_0001 => 1,
-            DIVBUSR::_0010 => 2,
-            DIVBUSR::_0011 => 3,
-            DIVBUSR::_0100 => 4,
-            DIVBUSR::_0101 => 5,
-            DIVBUSR::_0110 => 6,
-            DIVBUSR::_0111 => 7,
-            DIVBUSR::_1000 => 8,
-            DIVBUSR::_1001 => 9,
-            DIVBUSR::_1010 => 10,
-            DIVBUSR::_1011 => 11,
-            DIVBUSR::_1100 => 12,
-            DIVBUSR::_1101 => 13,
-            DIVBUSR::_1110 => 14,
-            DIVBUSR::_1111 => 15,
-        }
+impl From<DIVBUS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DIVBUS_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DIVBUSR {
-        match value {
-            0 => DIVBUSR::_0000,
-            1 => DIVBUSR::_0001,
-            2 => DIVBUSR::_0010,
-            3 => DIVBUSR::_0011,
-            4 => DIVBUSR::_0100,
-            5 => DIVBUSR::_0101,
-            6 => DIVBUSR::_0110,
-            7 => DIVBUSR::_0111,
-            8 => DIVBUSR::_1000,
-            9 => DIVBUSR::_1001,
-            10 => DIVBUSR::_1010,
-            11 => DIVBUSR::_1011,
-            12 => DIVBUSR::_1100,
-            13 => DIVBUSR::_1101,
-            14 => DIVBUSR::_1110,
-            15 => DIVBUSR::_1111,
+}
+#[doc = "Reader of field `DIVBUS`"]
+pub type DIVBUS_R = crate::R<u8, DIVBUS_A>;
+impl DIVBUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIVBUS_A {
+        match self.bits {
+            0 => DIVBUS_A::_0000,
+            1 => DIVBUS_A::_0001,
+            2 => DIVBUS_A::_0010,
+            3 => DIVBUS_A::_0011,
+            4 => DIVBUS_A::_0100,
+            5 => DIVBUS_A::_0101,
+            6 => DIVBUS_A::_0110,
+            7 => DIVBUS_A::_0111,
+            8 => DIVBUS_A::_1000,
+            9 => DIVBUS_A::_1001,
+            10 => DIVBUS_A::_1010,
+            11 => DIVBUS_A::_1011,
+            12 => DIVBUS_A::_1100,
+            13 => DIVBUS_A::_1101,
+            14 => DIVBUS_A::_1110,
+            15 => DIVBUS_A::_1111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_0000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0000(&self) -> bool {
-        *self == DIVBUSR::_0000
+        *self == DIVBUS_A::_0000
     }
     #[doc = "Checks if the value of the field is `_0001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0001(&self) -> bool {
-        *self == DIVBUSR::_0001
+        *self == DIVBUS_A::_0001
     }
     #[doc = "Checks if the value of the field is `_0010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0010(&self) -> bool {
-        *self == DIVBUSR::_0010
+        *self == DIVBUS_A::_0010
     }
     #[doc = "Checks if the value of the field is `_0011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0011(&self) -> bool {
-        *self == DIVBUSR::_0011
+        *self == DIVBUS_A::_0011
     }
     #[doc = "Checks if the value of the field is `_0100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0100(&self) -> bool {
-        *self == DIVBUSR::_0100
+        *self == DIVBUS_A::_0100
     }
     #[doc = "Checks if the value of the field is `_0101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0101(&self) -> bool {
-        *self == DIVBUSR::_0101
+        *self == DIVBUS_A::_0101
     }
     #[doc = "Checks if the value of the field is `_0110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0110(&self) -> bool {
-        *self == DIVBUSR::_0110
+        *self == DIVBUS_A::_0110
     }
     #[doc = "Checks if the value of the field is `_0111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0111(&self) -> bool {
-        *self == DIVBUSR::_0111
+        *self == DIVBUS_A::_0111
     }
     #[doc = "Checks if the value of the field is `_1000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1000(&self) -> bool {
-        *self == DIVBUSR::_1000
+        *self == DIVBUS_A::_1000
     }
     #[doc = "Checks if the value of the field is `_1001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1001(&self) -> bool {
-        *self == DIVBUSR::_1001
+        *self == DIVBUS_A::_1001
     }
     #[doc = "Checks if the value of the field is `_1010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1010(&self) -> bool {
-        *self == DIVBUSR::_1010
+        *self == DIVBUS_A::_1010
     }
     #[doc = "Checks if the value of the field is `_1011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1011(&self) -> bool {
-        *self == DIVBUSR::_1011
+        *self == DIVBUS_A::_1011
     }
     #[doc = "Checks if the value of the field is `_1100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1100(&self) -> bool {
-        *self == DIVBUSR::_1100
+        *self == DIVBUS_A::_1100
     }
     #[doc = "Checks if the value of the field is `_1101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1101(&self) -> bool {
-        *self == DIVBUSR::_1101
+        *self == DIVBUS_A::_1101
     }
     #[doc = "Checks if the value of the field is `_1110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1110(&self) -> bool {
-        *self == DIVBUSR::_1110
+        *self == DIVBUS_A::_1110
     }
     #[doc = "Checks if the value of the field is `_1111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1111(&self) -> bool {
-        *self == DIVBUSR::_1111
+        *self == DIVBUS_A::_1111
     }
 }
-#[doc = "Possible values of the field `DIVCORE`"]
+#[doc = "Core Clock Divide Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIVCORER {
-    #[doc = "Divide-by-1"]
-    _0000,
-    #[doc = "Divide-by-2"]
-    _0001,
-    #[doc = "Divide-by-3"]
-    _0010,
-    #[doc = "Divide-by-4"]
-    _0011,
-    #[doc = "Divide-by-5"]
-    _0100,
-    #[doc = "Divide-by-6"]
-    _0101,
-    #[doc = "Divide-by-7"]
-    _0110,
-    #[doc = "Divide-by-8"]
-    _0111,
-    #[doc = "Divide-by-9"]
-    _1000,
-    #[doc = "Divide-by-10"]
-    _1001,
-    #[doc = "Divide-by-11"]
-    _1010,
-    #[doc = "Divide-by-12"]
-    _1011,
-    #[doc = "Divide-by-13"]
-    _1100,
-    #[doc = "Divide-by-14"]
-    _1101,
-    #[doc = "Divide-by-15"]
-    _1110,
-    #[doc = "Divide-by-16"]
-    _1111,
+#[repr(u8)]
+pub enum DIVCORE_A {
+    #[doc = "0: Divide-by-1"]
+    _0000 = 0,
+    #[doc = "1: Divide-by-2"]
+    _0001 = 1,
+    #[doc = "2: Divide-by-3"]
+    _0010 = 2,
+    #[doc = "3: Divide-by-4"]
+    _0011 = 3,
+    #[doc = "4: Divide-by-5"]
+    _0100 = 4,
+    #[doc = "5: Divide-by-6"]
+    _0101 = 5,
+    #[doc = "6: Divide-by-7"]
+    _0110 = 6,
+    #[doc = "7: Divide-by-8"]
+    _0111 = 7,
+    #[doc = "8: Divide-by-9"]
+    _1000 = 8,
+    #[doc = "9: Divide-by-10"]
+    _1001 = 9,
+    #[doc = "10: Divide-by-11"]
+    _1010 = 10,
+    #[doc = "11: Divide-by-12"]
+    _1011 = 11,
+    #[doc = "12: Divide-by-13"]
+    _1100 = 12,
+    #[doc = "13: Divide-by-14"]
+    _1101 = 13,
+    #[doc = "14: Divide-by-15"]
+    _1110 = 14,
+    #[doc = "15: Divide-by-16"]
+    _1111 = 15,
 }
-impl DIVCORER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DIVCORER::_0000 => 0,
-            DIVCORER::_0001 => 1,
-            DIVCORER::_0010 => 2,
-            DIVCORER::_0011 => 3,
-            DIVCORER::_0100 => 4,
-            DIVCORER::_0101 => 5,
-            DIVCORER::_0110 => 6,
-            DIVCORER::_0111 => 7,
-            DIVCORER::_1000 => 8,
-            DIVCORER::_1001 => 9,
-            DIVCORER::_1010 => 10,
-            DIVCORER::_1011 => 11,
-            DIVCORER::_1100 => 12,
-            DIVCORER::_1101 => 13,
-            DIVCORER::_1110 => 14,
-            DIVCORER::_1111 => 15,
-        }
+impl From<DIVCORE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DIVCORE_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DIVCORER {
-        match value {
-            0 => DIVCORER::_0000,
-            1 => DIVCORER::_0001,
-            2 => DIVCORER::_0010,
-            3 => DIVCORER::_0011,
-            4 => DIVCORER::_0100,
-            5 => DIVCORER::_0101,
-            6 => DIVCORER::_0110,
-            7 => DIVCORER::_0111,
-            8 => DIVCORER::_1000,
-            9 => DIVCORER::_1001,
-            10 => DIVCORER::_1010,
-            11 => DIVCORER::_1011,
-            12 => DIVCORER::_1100,
-            13 => DIVCORER::_1101,
-            14 => DIVCORER::_1110,
-            15 => DIVCORER::_1111,
+}
+#[doc = "Reader of field `DIVCORE`"]
+pub type DIVCORE_R = crate::R<u8, DIVCORE_A>;
+impl DIVCORE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIVCORE_A {
+        match self.bits {
+            0 => DIVCORE_A::_0000,
+            1 => DIVCORE_A::_0001,
+            2 => DIVCORE_A::_0010,
+            3 => DIVCORE_A::_0011,
+            4 => DIVCORE_A::_0100,
+            5 => DIVCORE_A::_0101,
+            6 => DIVCORE_A::_0110,
+            7 => DIVCORE_A::_0111,
+            8 => DIVCORE_A::_1000,
+            9 => DIVCORE_A::_1001,
+            10 => DIVCORE_A::_1010,
+            11 => DIVCORE_A::_1011,
+            12 => DIVCORE_A::_1100,
+            13 => DIVCORE_A::_1101,
+            14 => DIVCORE_A::_1110,
+            15 => DIVCORE_A::_1111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_0000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0000(&self) -> bool {
-        *self == DIVCORER::_0000
+        *self == DIVCORE_A::_0000
     }
     #[doc = "Checks if the value of the field is `_0001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0001(&self) -> bool {
-        *self == DIVCORER::_0001
+        *self == DIVCORE_A::_0001
     }
     #[doc = "Checks if the value of the field is `_0010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0010(&self) -> bool {
-        *self == DIVCORER::_0010
+        *self == DIVCORE_A::_0010
     }
     #[doc = "Checks if the value of the field is `_0011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0011(&self) -> bool {
-        *self == DIVCORER::_0011
+        *self == DIVCORE_A::_0011
     }
     #[doc = "Checks if the value of the field is `_0100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0100(&self) -> bool {
-        *self == DIVCORER::_0100
+        *self == DIVCORE_A::_0100
     }
     #[doc = "Checks if the value of the field is `_0101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0101(&self) -> bool {
-        *self == DIVCORER::_0101
+        *self == DIVCORE_A::_0101
     }
     #[doc = "Checks if the value of the field is `_0110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0110(&self) -> bool {
-        *self == DIVCORER::_0110
+        *self == DIVCORE_A::_0110
     }
     #[doc = "Checks if the value of the field is `_0111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0111(&self) -> bool {
-        *self == DIVCORER::_0111
+        *self == DIVCORE_A::_0111
     }
     #[doc = "Checks if the value of the field is `_1000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1000(&self) -> bool {
-        *self == DIVCORER::_1000
+        *self == DIVCORE_A::_1000
     }
     #[doc = "Checks if the value of the field is `_1001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1001(&self) -> bool {
-        *self == DIVCORER::_1001
+        *self == DIVCORE_A::_1001
     }
     #[doc = "Checks if the value of the field is `_1010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1010(&self) -> bool {
-        *self == DIVCORER::_1010
+        *self == DIVCORE_A::_1010
     }
     #[doc = "Checks if the value of the field is `_1011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1011(&self) -> bool {
-        *self == DIVCORER::_1011
+        *self == DIVCORE_A::_1011
     }
     #[doc = "Checks if the value of the field is `_1100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1100(&self) -> bool {
-        *self == DIVCORER::_1100
+        *self == DIVCORE_A::_1100
     }
     #[doc = "Checks if the value of the field is `_1101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1101(&self) -> bool {
-        *self == DIVCORER::_1101
+        *self == DIVCORE_A::_1101
     }
     #[doc = "Checks if the value of the field is `_1110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1110(&self) -> bool {
-        *self == DIVCORER::_1110
+        *self == DIVCORE_A::_1110
     }
     #[doc = "Checks if the value of the field is `_1111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1111(&self) -> bool {
-        *self == DIVCORER::_1111
+        *self == DIVCORE_A::_1111
     }
 }
-#[doc = "Possible values of the field `SCS`"]
+#[doc = "System Clock Source\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SCSR {
-    #[doc = "System OSC (SOSC_CLK)"]
-    _0001,
-    #[doc = "Slow IRC (SIRC_CLK)"]
-    _0010,
-    #[doc = "Fast IRC (FIRC_CLK)"]
-    _0011,
-    #[doc = "System PLL (SPLL_CLK)"]
-    _0110,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum SCS_A {
+    #[doc = "1: System OSC (SOSC_CLK)"]
+    _0001 = 1,
+    #[doc = "2: Slow IRC (SIRC_CLK)"]
+    _0010 = 2,
+    #[doc = "3: Fast IRC (FIRC_CLK)"]
+    _0011 = 3,
+    #[doc = "6: System PLL (SPLL_CLK)"]
+    _0110 = 6,
 }
-impl SCSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SCSR::_0001 => 1,
-            SCSR::_0010 => 2,
-            SCSR::_0011 => 3,
-            SCSR::_0110 => 6,
-            SCSR::_Reserved(bits) => bits,
-        }
+impl From<SCS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SCS_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SCSR {
-        match value {
-            1 => SCSR::_0001,
-            2 => SCSR::_0010,
-            3 => SCSR::_0011,
-            6 => SCSR::_0110,
-            i => SCSR::_Reserved(i),
+}
+#[doc = "Reader of field `SCS`"]
+pub type SCS_R = crate::R<u8, SCS_A>;
+impl SCS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SCS_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(SCS_A::_0001),
+            2 => Val(SCS_A::_0010),
+            3 => Val(SCS_A::_0011),
+            6 => Val(SCS_A::_0110),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0001(&self) -> bool {
-        *self == SCSR::_0001
+        *self == SCS_A::_0001
     }
     #[doc = "Checks if the value of the field is `_0010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0010(&self) -> bool {
-        *self == SCSR::_0010
+        *self == SCS_A::_0010
     }
     #[doc = "Checks if the value of the field is `_0011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0011(&self) -> bool {
-        *self == SCSR::_0011
+        *self == SCS_A::_0011
     }
     #[doc = "Checks if the value of the field is `_0110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0110(&self) -> bool {
-        *self == SCSR::_0110
+        *self == SCS_A::_0110
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Slow Clock Divide Ratio"]
-    #[inline]
-    pub fn divslow(&self) -> DIVSLOWR {
-        DIVSLOWR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn divslow(&self) -> DIVSLOW_R {
+        DIVSLOW_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Bus Clock Divide Ratio"]
-    #[inline]
-    pub fn divbus(&self) -> DIVBUSR {
-        DIVBUSR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn divbus(&self) -> DIVBUS_R {
+        DIVBUS_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Core Clock Divide Ratio"]
-    #[inline]
-    pub fn divcore(&self) -> DIVCORER {
-        DIVCORER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn divcore(&self) -> DIVCORE_R {
+        DIVCORE_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - System Clock Source"]
-    #[inline]
-    pub fn scs(&self) -> SCSR {
-        SCSR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn scs(&self) -> SCS_R {
+        SCS_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }

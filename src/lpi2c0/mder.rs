@@ -1,300 +1,186 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MDER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MDER"]
+pub type R = crate::R<u32, super::MDER>;
+#[doc = "Writer for register MDER"]
+pub type W = crate::W<u32, super::MDER>;
+#[doc = "Register MDER `reset()`'s with value 0"]
+impl crate::ResetValue for super::MDER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `TDDE`"]
+#[doc = "Transmit Data DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TDDER {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled"]
-    _1,
+pub enum TDDE_A {
+    #[doc = "0: DMA request disabled."]
+    _0 = 0,
+    #[doc = "1: DMA request enabled"]
+    _1 = 1,
 }
-impl TDDER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<TDDE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TDDE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TDDER::_0 => false,
-            TDDER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TDDER {
-        match value {
-            false => TDDER::_0,
-            true => TDDER::_1,
+}
+#[doc = "Reader of field `TDDE`"]
+pub type TDDE_R = crate::R<bool, TDDE_A>;
+impl TDDE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TDDE_A {
+        match self.bits {
+            false => TDDE_A::_0,
+            true => TDDE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TDDER::_0
+        *self == TDDE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TDDER::_1
+        *self == TDDE_A::_1
     }
 }
-#[doc = "Possible values of the field `RDDE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDDER {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
-}
-impl RDDER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDDER::_0 => false,
-            RDDER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDDER {
-        match value {
-            false => RDDER::_0,
-            true => RDDER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == RDDER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == RDDER::_1
-    }
-}
-#[doc = "Values that can be written to the field `TDDE`"]
-pub enum TDDEW {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled"]
-    _1,
-}
-impl TDDEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TDDEW::_0 => false,
-            TDDEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TDDEW<'a> {
+#[doc = "Write proxy for field `TDDE`"]
+pub struct TDDE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TDDEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TDDEW) -> &'a mut W {
+impl<'a> TDDE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TDDE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "DMA request disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TDDEW::_0)
+        self.variant(TDDE_A::_0)
     }
     #[doc = "DMA request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TDDEW::_1)
+        self.variant(TDDE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RDDE`"]
-pub enum RDDEW {
-    #[doc = "DMA request disabled."]
-    _0,
-    #[doc = "DMA request enabled."]
-    _1,
+#[doc = "Receive Data DMA Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RDDE_A {
+    #[doc = "0: DMA request disabled."]
+    _0 = 0,
+    #[doc = "1: DMA request enabled."]
+    _1 = 1,
 }
-impl RDDEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RDDEW::_0 => false,
-            RDDEW::_1 => true,
-        }
+impl From<RDDE_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDDE_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _RDDEW<'a> {
+#[doc = "Reader of field `RDDE`"]
+pub type RDDE_R = crate::R<bool, RDDE_A>;
+impl RDDE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDDE_A {
+        match self.bits {
+            false => RDDE_A::_0,
+            true => RDDE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == RDDE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == RDDE_A::_1
+    }
+}
+#[doc = "Write proxy for field `RDDE`"]
+pub struct RDDE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDDEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RDDEW) -> &'a mut W {
+impl<'a> RDDE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RDDE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "DMA request disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RDDEW::_0)
+        self.variant(RDDE_A::_0)
     }
     #[doc = "DMA request enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RDDEW::_1)
+        self.variant(RDDE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Transmit Data DMA Enable"]
-    #[inline]
-    pub fn tdde(&self) -> TDDER {
-        TDDER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tdde(&self) -> TDDE_R {
+        TDDE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Receive Data DMA Enable"]
-    #[inline]
-    pub fn rdde(&self) -> RDDER {
-        RDDER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdde(&self) -> RDDE_R {
+        RDDE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Transmit Data DMA Enable"]
-    #[inline]
-    pub fn tdde(&mut self) -> _TDDEW {
-        _TDDEW { w: self }
+    #[inline(always)]
+    pub fn tdde(&mut self) -> TDDE_W {
+        TDDE_W { w: self }
     }
     #[doc = "Bit 1 - Receive Data DMA Enable"]
-    #[inline]
-    pub fn rdde(&mut self) -> _RDDEW {
-        _RDDEW { w: self }
+    #[inline(always)]
+    pub fn rdde(&mut self) -> RDDE_W {
+        RDDE_W { w: self }
     }
 }

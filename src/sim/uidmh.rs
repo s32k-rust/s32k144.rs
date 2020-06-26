@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::UIDMH {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UID95_64R {
-    bits: u32,
-}
-impl UID95_64R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register UIDMH"]
+pub type R = crate::R<u32, super::UIDMH>;
+#[doc = "Reader of field `UID95_64`"]
+pub type UID95_64_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Unique Identification"]
-    #[inline]
-    pub fn uid95_64(&self) -> UID95_64R {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        UID95_64R { bits }
+    #[inline(always)]
+    pub fn uid95_64(&self) -> UID95_64_R {
+        UID95_64_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

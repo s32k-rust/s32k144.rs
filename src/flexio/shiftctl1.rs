@@ -1,672 +1,452 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SHIFTCTL1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SHIFTCTL1"]
+pub type R = crate::R<u32, super::SHIFTCTL1>;
+#[doc = "Writer for register SHIFTCTL1"]
+pub type W = crate::W<u32, super::SHIFTCTL1>;
+#[doc = "Register SHIFTCTL1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::SHIFTCTL1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SMOD`"]
+#[doc = "Shifter Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SMODR {
-    #[doc = "Disabled."]
-    _0,
-    #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
-    _1,
-    #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
-    _10,
-    #[doc = "Match Store mode. Shifter data is compared to SHIFTBUF content on expiration of the Timer."]
-    _100,
-    #[doc = "Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
-    _101,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum SMOD_A {
+    #[doc = "0: Disabled."]
+    _0 = 0,
+    #[doc = "1: Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
+    _1 = 1,
+    #[doc = "2: Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
+    _10 = 2,
+    #[doc = "4: Match Store mode. Shifter data is compared to SHIFTBUF content on expiration of the Timer."]
+    _100 = 4,
+    #[doc = "5: Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
+    _101 = 5,
 }
-impl SMODR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SMODR::_0 => 0,
-            SMODR::_1 => 1,
-            SMODR::_10 => 2,
-            SMODR::_100 => 4,
-            SMODR::_101 => 5,
-            SMODR::_Reserved(bits) => bits,
-        }
+impl From<SMOD_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SMOD_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SMODR {
-        match value {
-            0 => SMODR::_0,
-            1 => SMODR::_1,
-            2 => SMODR::_10,
-            4 => SMODR::_100,
-            5 => SMODR::_101,
-            i => SMODR::_Reserved(i),
+}
+#[doc = "Reader of field `SMOD`"]
+pub type SMOD_R = crate::R<u8, SMOD_A>;
+impl SMOD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SMOD_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SMOD_A::_0),
+            1 => Val(SMOD_A::_1),
+            2 => Val(SMOD_A::_10),
+            4 => Val(SMOD_A::_100),
+            5 => Val(SMOD_A::_101),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SMODR::_0
+        *self == SMOD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SMODR::_1
+        *self == SMOD_A::_1
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == SMODR::_10
+        *self == SMOD_A::_10
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == SMODR::_100
+        *self == SMOD_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == SMODR::_101
+        *self == SMOD_A::_101
     }
 }
-#[doc = "Possible values of the field `PINPOL`"]
+#[doc = "Write proxy for field `SMOD`"]
+pub struct SMOD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SMOD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SMOD_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Disabled."]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(SMOD_A::_0)
+    }
+    #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(SMOD_A::_1)
+    }
+    #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(SMOD_A::_10)
+    }
+    #[doc = "Match Store mode. Shifter data is compared to SHIFTBUF content on expiration of the Timer."]
+    #[inline(always)]
+    pub fn _100(self) -> &'a mut W {
+        self.variant(SMOD_A::_100)
+    }
+    #[doc = "Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
+    #[inline(always)]
+    pub fn _101(self) -> &'a mut W {
+        self.variant(SMOD_A::_101)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
+    }
+}
+#[doc = "Shifter Pin Polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PINPOLR {
-    #[doc = "Pin is active high"]
-    _0,
-    #[doc = "Pin is active low"]
-    _1,
+pub enum PINPOL_A {
+    #[doc = "0: Pin is active high"]
+    _0 = 0,
+    #[doc = "1: Pin is active low"]
+    _1 = 1,
 }
-impl PINPOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<PINPOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PINPOL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PINPOLR::_0 => false,
-            PINPOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PINPOLR {
-        match value {
-            false => PINPOLR::_0,
-            true => PINPOLR::_1,
+}
+#[doc = "Reader of field `PINPOL`"]
+pub type PINPOL_R = crate::R<bool, PINPOL_A>;
+impl PINPOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PINPOL_A {
+        match self.bits {
+            false => PINPOL_A::_0,
+            true => PINPOL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PINPOLR::_0
+        *self == PINPOL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PINPOLR::_1
+        *self == PINPOL_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct PINSELR {
-    bits: u8,
+#[doc = "Write proxy for field `PINPOL`"]
+pub struct PINPOL_W<'a> {
+    w: &'a mut W,
 }
-impl PINSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `PINCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PINCFGR {
-    #[doc = "Shifter pin output disabled"]
-    _0,
-    #[doc = "Shifter pin open drain or bidirectional output enable"]
-    _1,
-    #[doc = "Shifter pin bidirectional output data"]
-    _10,
-    #[doc = "Shifter pin output"]
-    _11,
-}
-impl PINCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PINCFGR::_0 => 0,
-            PINCFGR::_1 => 1,
-            PINCFGR::_10 => 2,
-            PINCFGR::_11 => 3,
+impl<'a> PINPOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PINPOL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PINCFGR {
-        match value {
-            0 => PINCFGR::_0,
-            1 => PINCFGR::_1,
-            2 => PINCFGR::_10,
-            3 => PINCFGR::_11,
+    #[doc = "Pin is active high"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(PINPOL_A::_0)
+    }
+    #[doc = "Pin is active low"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(PINPOL_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
+    }
+}
+#[doc = "Reader of field `PINSEL`"]
+pub type PINSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PINSEL`"]
+pub struct PINSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PINSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w
+    }
+}
+#[doc = "Shifter Pin Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PINCFG_A {
+    #[doc = "0: Shifter pin output disabled"]
+    _0 = 0,
+    #[doc = "1: Shifter pin open drain or bidirectional output enable"]
+    _1 = 1,
+    #[doc = "2: Shifter pin bidirectional output data"]
+    _10 = 2,
+    #[doc = "3: Shifter pin output"]
+    _11 = 3,
+}
+impl From<PINCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PINCFG_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `PINCFG`"]
+pub type PINCFG_R = crate::R<u8, PINCFG_A>;
+impl PINCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PINCFG_A {
+        match self.bits {
+            0 => PINCFG_A::_0,
+            1 => PINCFG_A::_1,
+            2 => PINCFG_A::_10,
+            3 => PINCFG_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PINCFGR::_0
+        *self == PINCFG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PINCFGR::_1
+        *self == PINCFG_A::_1
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == PINCFGR::_10
+        *self == PINCFG_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == PINCFGR::_11
+        *self == PINCFG_A::_11
     }
 }
-#[doc = "Possible values of the field `TIMPOL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIMPOLR {
-    #[doc = "Shift on posedge of Shift clock"]
-    _0,
-    #[doc = "Shift on negedge of Shift clock"]
-    _1,
+#[doc = "Write proxy for field `PINCFG`"]
+pub struct PINCFG_W<'a> {
+    w: &'a mut W,
 }
-impl TIMPOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TIMPOLR::_0 => false,
-            TIMPOLR::_1 => true,
+impl<'a> PINCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PINCFG_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TIMPOLR {
-        match value {
-            false => TIMPOLR::_0,
-            true => TIMPOLR::_1,
+    #[doc = "Shifter pin output disabled"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(PINCFG_A::_0)
+    }
+    #[doc = "Shifter pin open drain or bidirectional output enable"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(PINCFG_A::_1)
+    }
+    #[doc = "Shifter pin bidirectional output data"]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(PINCFG_A::_10)
+    }
+    #[doc = "Shifter pin output"]
+    #[inline(always)]
+    pub fn _11(self) -> &'a mut W {
+        self.variant(PINCFG_A::_11)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w
+    }
+}
+#[doc = "Timer Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TIMPOL_A {
+    #[doc = "0: Shift on posedge of Shift clock"]
+    _0 = 0,
+    #[doc = "1: Shift on negedge of Shift clock"]
+    _1 = 1,
+}
+impl From<TIMPOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: TIMPOL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `TIMPOL`"]
+pub type TIMPOL_R = crate::R<bool, TIMPOL_A>;
+impl TIMPOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIMPOL_A {
+        match self.bits {
+            false => TIMPOL_A::_0,
+            true => TIMPOL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TIMPOLR::_0
+        *self == TIMPOL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TIMPOLR::_1
+        *self == TIMPOL_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct TIMSELR {
-    bits: u8,
-}
-impl TIMSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `SMOD`"]
-pub enum SMODW {
-    #[doc = "Disabled."]
-    _0,
-    #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
-    _1,
-    #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
-    _10,
-    #[doc = "Match Store mode. Shifter data is compared to SHIFTBUF content on expiration of the Timer."]
-    _100,
-    #[doc = "Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
-    _101,
-}
-impl SMODW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SMODW::_0 => 0,
-            SMODW::_1 => 1,
-            SMODW::_10 => 2,
-            SMODW::_100 => 4,
-            SMODW::_101 => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SMODW<'a> {
+#[doc = "Write proxy for field `TIMPOL`"]
+pub struct TIMPOL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SMODW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SMODW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Disabled."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(SMODW::_0)
-    }
-    #[doc = "Receive mode. Captures the current Shifter content into the SHIFTBUF on expiration of the Timer."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(SMODW::_1)
-    }
-    #[doc = "Transmit mode. Load SHIFTBUF contents into the Shifter on expiration of the Timer."]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(SMODW::_10)
-    }
-    #[doc = "Match Store mode. Shifter data is compared to SHIFTBUF content on expiration of the Timer."]
-    #[inline]
-    pub fn _100(self) -> &'a mut W {
-        self.variant(SMODW::_100)
-    }
-    #[doc = "Match Continuous mode. Shifter data is continuously compared to SHIFTBUF contents."]
-    #[inline]
-    pub fn _101(self) -> &'a mut W {
-        self.variant(SMODW::_101)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PINPOL`"]
-pub enum PINPOLW {
-    #[doc = "Pin is active high"]
-    _0,
-    #[doc = "Pin is active low"]
-    _1,
-}
-impl PINPOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PINPOLW::_0 => false,
-            PINPOLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PINPOLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PINPOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PINPOLW) -> &'a mut W {
+impl<'a> TIMPOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TIMPOL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Pin is active high"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(PINPOLW::_0)
-    }
-    #[doc = "Pin is active low"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(PINPOLW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PINSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PINSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PINCFG`"]
-pub enum PINCFGW {
-    #[doc = "Shifter pin output disabled"]
-    _0,
-    #[doc = "Shifter pin open drain or bidirectional output enable"]
-    _1,
-    #[doc = "Shifter pin bidirectional output data"]
-    _10,
-    #[doc = "Shifter pin output"]
-    _11,
-}
-impl PINCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PINCFGW::_0 => 0,
-            PINCFGW::_1 => 1,
-            PINCFGW::_10 => 2,
-            PINCFGW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PINCFGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PINCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PINCFGW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Shifter pin output disabled"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(PINCFGW::_0)
-    }
-    #[doc = "Shifter pin open drain or bidirectional output enable"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(PINCFGW::_1)
-    }
-    #[doc = "Shifter pin bidirectional output data"]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(PINCFGW::_10)
-    }
-    #[doc = "Shifter pin output"]
-    #[inline]
-    pub fn _11(self) -> &'a mut W {
-        self.variant(PINCFGW::_11)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TIMPOL`"]
-pub enum TIMPOLW {
-    #[doc = "Shift on posedge of Shift clock"]
-    _0,
-    #[doc = "Shift on negedge of Shift clock"]
-    _1,
-}
-impl TIMPOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TIMPOLW::_0 => false,
-            TIMPOLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TIMPOLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TIMPOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TIMPOLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Shift on posedge of Shift clock"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TIMPOLW::_0)
+        self.variant(TIMPOL_A::_0)
     }
     #[doc = "Shift on negedge of Shift clock"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TIMPOLW::_1)
+        self.variant(TIMPOL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TIMSELW<'a> {
+#[doc = "Reader of field `TIMSEL`"]
+pub type TIMSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TIMSEL`"]
+pub struct TIMSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TIMSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TIMSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Shifter Mode"]
-    #[inline]
-    pub fn smod(&self) -> SMODR {
-        SMODR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn smod(&self) -> SMOD_R {
+        SMOD_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 7 - Shifter Pin Polarity"]
-    #[inline]
-    pub fn pinpol(&self) -> PINPOLR {
-        PINPOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pinpol(&self) -> PINPOL_R {
+        PINPOL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:10 - Shifter Pin Select"]
-    #[inline]
-    pub fn pinsel(&self) -> PINSELR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PINSELR { bits }
+    #[inline(always)]
+    pub fn pinsel(&self) -> PINSEL_R {
+        PINSEL_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 16:17 - Shifter Pin Configuration"]
-    #[inline]
-    pub fn pincfg(&self) -> PINCFGR {
-        PINCFGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pincfg(&self) -> PINCFG_R {
+        PINCFG_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bit 23 - Timer Polarity"]
-    #[inline]
-    pub fn timpol(&self) -> TIMPOLR {
-        TIMPOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn timpol(&self) -> TIMPOL_R {
+        TIMPOL_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bits 24:25 - Timer Select"]
-    #[inline]
-    pub fn timsel(&self) -> TIMSELR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TIMSELR { bits }
+    #[inline(always)]
+    pub fn timsel(&self) -> TIMSEL_R {
+        TIMSEL_R::new(((self.bits >> 24) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Shifter Mode"]
-    #[inline]
-    pub fn smod(&mut self) -> _SMODW {
-        _SMODW { w: self }
+    #[inline(always)]
+    pub fn smod(&mut self) -> SMOD_W {
+        SMOD_W { w: self }
     }
     #[doc = "Bit 7 - Shifter Pin Polarity"]
-    #[inline]
-    pub fn pinpol(&mut self) -> _PINPOLW {
-        _PINPOLW { w: self }
+    #[inline(always)]
+    pub fn pinpol(&mut self) -> PINPOL_W {
+        PINPOL_W { w: self }
     }
     #[doc = "Bits 8:10 - Shifter Pin Select"]
-    #[inline]
-    pub fn pinsel(&mut self) -> _PINSELW {
-        _PINSELW { w: self }
+    #[inline(always)]
+    pub fn pinsel(&mut self) -> PINSEL_W {
+        PINSEL_W { w: self }
     }
     #[doc = "Bits 16:17 - Shifter Pin Configuration"]
-    #[inline]
-    pub fn pincfg(&mut self) -> _PINCFGW {
-        _PINCFGW { w: self }
+    #[inline(always)]
+    pub fn pincfg(&mut self) -> PINCFG_W {
+        PINCFG_W { w: self }
     }
     #[doc = "Bit 23 - Timer Polarity"]
-    #[inline]
-    pub fn timpol(&mut self) -> _TIMPOLW {
-        _TIMPOLW { w: self }
+    #[inline(always)]
+    pub fn timpol(&mut self) -> TIMPOL_W {
+        TIMPOL_W { w: self }
     }
     #[doc = "Bits 24:25 - Timer Select"]
-    #[inline]
-    pub fn timsel(&mut self) -> _TIMSELW {
-        _TIMSELW { w: self }
+    #[inline(always)]
+    pub fn timsel(&mut self) -> TIMSEL_W {
+        TIMSEL_W { w: self }
     }
 }

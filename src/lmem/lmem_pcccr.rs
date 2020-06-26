@@ -1,894 +1,594 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LMEM_PCCCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LMEM_PCCCR"]
+pub type R = crate::R<u32, super::LMEM_PCCCR>;
+#[doc = "Writer for register LMEM_PCCCR"]
+pub type W = crate::W<u32, super::LMEM_PCCCR>;
+#[doc = "Register LMEM_PCCCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::LMEM_PCCCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ENCACHE`"]
+#[doc = "Cache enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENCACHER {
-    #[doc = "Cache disabled"]
-    _0,
-    #[doc = "Cache enabled"]
-    _1,
+pub enum ENCACHE_A {
+    #[doc = "0: Cache disabled"]
+    _0 = 0,
+    #[doc = "1: Cache enabled"]
+    _1 = 1,
 }
-impl ENCACHER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ENCACHE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENCACHE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENCACHER::_0 => false,
-            ENCACHER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENCACHER {
-        match value {
-            false => ENCACHER::_0,
-            true => ENCACHER::_1,
+}
+#[doc = "Reader of field `ENCACHE`"]
+pub type ENCACHE_R = crate::R<bool, ENCACHE_A>;
+impl ENCACHE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENCACHE_A {
+        match self.bits {
+            false => ENCACHE_A::_0,
+            true => ENCACHE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ENCACHER::_0
+        *self == ENCACHE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ENCACHER::_1
+        *self == ENCACHE_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct PCCR2R {
-    bits: bool,
-}
-impl PCCR2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCCR3R {
-    bits: bool,
-}
-impl PCCR3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `INVW0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVW0R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, invalidate all lines in way 0."]
-    _1,
-}
-impl INVW0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVW0R::_0 => false,
-            INVW0R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVW0R {
-        match value {
-            false => INVW0R::_0,
-            true => INVW0R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == INVW0R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == INVW0R::_1
-    }
-}
-#[doc = "Possible values of the field `PUSHW0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PUSHW0R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 0"]
-    _1,
-}
-impl PUSHW0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PUSHW0R::_0 => false,
-            PUSHW0R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PUSHW0R {
-        match value {
-            false => PUSHW0R::_0,
-            true => PUSHW0R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PUSHW0R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PUSHW0R::_1
-    }
-}
-#[doc = "Possible values of the field `INVW1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVW1R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, invalidate all lines in way 1"]
-    _1,
-}
-impl INVW1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVW1R::_0 => false,
-            INVW1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVW1R {
-        match value {
-            false => INVW1R::_0,
-            true => INVW1R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == INVW1R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == INVW1R::_1
-    }
-}
-#[doc = "Possible values of the field `PUSHW1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PUSHW1R {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 1"]
-    _1,
-}
-impl PUSHW1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PUSHW1R::_0 => false,
-            PUSHW1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PUSHW1R {
-        match value {
-            false => PUSHW1R::_0,
-            true => PUSHW1R::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PUSHW1R::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PUSHW1R::_1
-    }
-}
-#[doc = "Possible values of the field `GO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GOR {
-    #[doc = "Write: no effect. Read: no cache command active."]
-    _0,
-    #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."]
-    _1,
-}
-impl GOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GOR::_0 => false,
-            GOR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GOR {
-        match value {
-            false => GOR::_0,
-            true => GOR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == GOR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == GOR::_1
-    }
-}
-#[doc = "Values that can be written to the field `ENCACHE`"]
-pub enum ENCACHEW {
-    #[doc = "Cache disabled"]
-    _0,
-    #[doc = "Cache enabled"]
-    _1,
-}
-impl ENCACHEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENCACHEW::_0 => false,
-            ENCACHEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENCACHEW<'a> {
+#[doc = "Write proxy for field `ENCACHE`"]
+pub struct ENCACHE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENCACHEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENCACHEW) -> &'a mut W {
+impl<'a> ENCACHE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENCACHE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Cache disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ENCACHEW::_0)
+        self.variant(ENCACHE_A::_0)
     }
     #[doc = "Cache enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ENCACHEW::_1)
+        self.variant(ENCACHE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCCR2W<'a> {
+#[doc = "Reader of field `PCCR2`"]
+pub type PCCR2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCCR2`"]
+pub struct PCCR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCCR2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCCR2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCCR3W<'a> {
+#[doc = "Reader of field `PCCR3`"]
+pub type PCCR3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PCCR3`"]
+pub struct PCCR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCCR3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PCCR3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INVW0`"]
-pub enum INVW0W {
+#[doc = "Invalidate Way 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INVW0_A {
+    #[doc = "0: No operation"]
+    _0 = 0,
+    #[doc = "1: When setting the GO bit, invalidate all lines in way 0."]
+    _1 = 1,
+}
+impl From<INVW0_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVW0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `INVW0`"]
+pub type INVW0_R = crate::R<bool, INVW0_A>;
+impl INVW0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVW0_A {
+        match self.bits {
+            false => INVW0_A::_0,
+            true => INVW0_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == INVW0_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == INVW0_A::_1
+    }
+}
+#[doc = "Write proxy for field `INVW0`"]
+pub struct INVW0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVW0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVW0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No operation"]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(INVW0_A::_0)
+    }
     #[doc = "When setting the GO bit, invalidate all lines in way 0."]
-    _1,
-}
-impl INVW0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVW0W::_0 => false,
-            INVW0W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVW0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INVW0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVW0W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No operation"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(INVW0W::_0)
-    }
-    #[doc = "When setting the GO bit, invalidate all lines in way 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INVW0W::_1)
+        self.variant(INVW0_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PUSHW0`"]
-pub enum PUSHW0W {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 0"]
-    _1,
+#[doc = "Push Way 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PUSHW0_A {
+    #[doc = "0: No operation"]
+    _0 = 0,
+    #[doc = "1: When setting the GO bit, push all modified lines in way 0"]
+    _1 = 1,
 }
-impl PUSHW0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PUSHW0W::_0 => false,
-            PUSHW0W::_1 => true,
-        }
+impl From<PUSHW0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PUSHW0_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _PUSHW0W<'a> {
+#[doc = "Reader of field `PUSHW0`"]
+pub type PUSHW0_R = crate::R<bool, PUSHW0_A>;
+impl PUSHW0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PUSHW0_A {
+        match self.bits {
+            false => PUSHW0_A::_0,
+            true => PUSHW0_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PUSHW0_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PUSHW0_A::_1
+    }
+}
+#[doc = "Write proxy for field `PUSHW0`"]
+pub struct PUSHW0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PUSHW0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PUSHW0W) -> &'a mut W {
+impl<'a> PUSHW0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PUSHW0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No operation"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PUSHW0W::_0)
+        self.variant(PUSHW0_A::_0)
     }
     #[doc = "When setting the GO bit, push all modified lines in way 0"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PUSHW0W::_1)
+        self.variant(PUSHW0_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INVW1`"]
-pub enum INVW1W {
+#[doc = "Invalidate Way 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INVW1_A {
+    #[doc = "0: No operation"]
+    _0 = 0,
+    #[doc = "1: When setting the GO bit, invalidate all lines in way 1"]
+    _1 = 1,
+}
+impl From<INVW1_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVW1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `INVW1`"]
+pub type INVW1_R = crate::R<bool, INVW1_A>;
+impl INVW1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVW1_A {
+        match self.bits {
+            false => INVW1_A::_0,
+            true => INVW1_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == INVW1_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == INVW1_A::_1
+    }
+}
+#[doc = "Write proxy for field `INVW1`"]
+pub struct INVW1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVW1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVW1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No operation"]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(INVW1_A::_0)
+    }
     #[doc = "When setting the GO bit, invalidate all lines in way 1"]
-    _1,
-}
-impl INVW1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVW1W::_0 => false,
-            INVW1W::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVW1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INVW1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVW1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No operation"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(INVW1W::_0)
-    }
-    #[doc = "When setting the GO bit, invalidate all lines in way 1"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INVW1W::_1)
+        self.variant(INVW1_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PUSHW1`"]
-pub enum PUSHW1W {
-    #[doc = "No operation"]
-    _0,
-    #[doc = "When setting the GO bit, push all modified lines in way 1"]
-    _1,
+#[doc = "Push Way 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PUSHW1_A {
+    #[doc = "0: No operation"]
+    _0 = 0,
+    #[doc = "1: When setting the GO bit, push all modified lines in way 1"]
+    _1 = 1,
 }
-impl PUSHW1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PUSHW1W::_0 => false,
-            PUSHW1W::_1 => true,
-        }
+impl From<PUSHW1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PUSHW1_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _PUSHW1W<'a> {
+#[doc = "Reader of field `PUSHW1`"]
+pub type PUSHW1_R = crate::R<bool, PUSHW1_A>;
+impl PUSHW1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PUSHW1_A {
+        match self.bits {
+            false => PUSHW1_A::_0,
+            true => PUSHW1_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PUSHW1_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PUSHW1_A::_1
+    }
+}
+#[doc = "Write proxy for field `PUSHW1`"]
+pub struct PUSHW1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PUSHW1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PUSHW1W) -> &'a mut W {
+impl<'a> PUSHW1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PUSHW1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No operation"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PUSHW1W::_0)
+        self.variant(PUSHW1_A::_0)
     }
     #[doc = "When setting the GO bit, push all modified lines in way 1"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PUSHW1W::_1)
+        self.variant(PUSHW1_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GO`"]
-pub enum GOW {
-    #[doc = "Write: no effect. Read: no cache command active."]
-    _0,
-    #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."]
-    _1,
+#[doc = "Initiate Cache Command\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GO_A {
+    #[doc = "0: Write: no effect. Read: no cache command active."]
+    _0 = 0,
+    #[doc = "1: Write: initiate command indicated by bits 27-24. Read: cache command active."]
+    _1 = 1,
 }
-impl GOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GOW::_0 => false,
-            GOW::_1 => true,
-        }
+impl From<GO_A> for bool {
+    #[inline(always)]
+    fn from(variant: GO_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _GOW<'a> {
+#[doc = "Reader of field `GO`"]
+pub type GO_R = crate::R<bool, GO_A>;
+impl GO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GO_A {
+        match self.bits {
+            false => GO_A::_0,
+            true => GO_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == GO_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == GO_A::_1
+    }
+}
+#[doc = "Write proxy for field `GO`"]
+pub struct GO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GOW) -> &'a mut W {
+impl<'a> GO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Write: no effect. Read: no cache command active."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(GOW::_0)
+        self.variant(GO_A::_0)
     }
     #[doc = "Write: initiate command indicated by bits 27-24. Read: cache command active."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(GOW::_1)
+        self.variant(GO_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Cache enable"]
-    #[inline]
-    pub fn encache(&self) -> ENCACHER {
-        ENCACHER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn encache(&self) -> ENCACHE_R {
+        ENCACHE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Forces all cacheable spaces to write through"]
-    #[inline]
-    pub fn pccr2(&self) -> PCCR2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCCR2R { bits }
+    #[inline(always)]
+    pub fn pccr2(&self) -> PCCR2_R {
+        PCCR2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Forces no allocation on cache misses (must also have PCCR2 asserted)"]
-    #[inline]
-    pub fn pccr3(&self) -> PCCR3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PCCR3R { bits }
+    #[inline(always)]
+    pub fn pccr3(&self) -> PCCR3_R {
+        PCCR3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Invalidate Way 0"]
-    #[inline]
-    pub fn invw0(&self) -> INVW0R {
-        INVW0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invw0(&self) -> INVW0_R {
+        INVW0_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Push Way 0"]
-    #[inline]
-    pub fn pushw0(&self) -> PUSHW0R {
-        PUSHW0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pushw0(&self) -> PUSHW0_R {
+        PUSHW0_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Invalidate Way 1"]
-    #[inline]
-    pub fn invw1(&self) -> INVW1R {
-        INVW1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invw1(&self) -> INVW1_R {
+        INVW1_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Push Way 1"]
-    #[inline]
-    pub fn pushw1(&self) -> PUSHW1R {
-        PUSHW1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pushw1(&self) -> PUSHW1_R {
+        PUSHW1_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Initiate Cache Command"]
-    #[inline]
-    pub fn go(&self) -> GOR {
-        GOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn go(&self) -> GO_R {
+        GO_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Cache enable"]
-    #[inline]
-    pub fn encache(&mut self) -> _ENCACHEW {
-        _ENCACHEW { w: self }
+    #[inline(always)]
+    pub fn encache(&mut self) -> ENCACHE_W {
+        ENCACHE_W { w: self }
     }
     #[doc = "Bit 2 - Forces all cacheable spaces to write through"]
-    #[inline]
-    pub fn pccr2(&mut self) -> _PCCR2W {
-        _PCCR2W { w: self }
+    #[inline(always)]
+    pub fn pccr2(&mut self) -> PCCR2_W {
+        PCCR2_W { w: self }
     }
     #[doc = "Bit 3 - Forces no allocation on cache misses (must also have PCCR2 asserted)"]
-    #[inline]
-    pub fn pccr3(&mut self) -> _PCCR3W {
-        _PCCR3W { w: self }
+    #[inline(always)]
+    pub fn pccr3(&mut self) -> PCCR3_W {
+        PCCR3_W { w: self }
     }
     #[doc = "Bit 24 - Invalidate Way 0"]
-    #[inline]
-    pub fn invw0(&mut self) -> _INVW0W {
-        _INVW0W { w: self }
+    #[inline(always)]
+    pub fn invw0(&mut self) -> INVW0_W {
+        INVW0_W { w: self }
     }
     #[doc = "Bit 25 - Push Way 0"]
-    #[inline]
-    pub fn pushw0(&mut self) -> _PUSHW0W {
-        _PUSHW0W { w: self }
+    #[inline(always)]
+    pub fn pushw0(&mut self) -> PUSHW0_W {
+        PUSHW0_W { w: self }
     }
     #[doc = "Bit 26 - Invalidate Way 1"]
-    #[inline]
-    pub fn invw1(&mut self) -> _INVW1W {
-        _INVW1W { w: self }
+    #[inline(always)]
+    pub fn invw1(&mut self) -> INVW1_W {
+        INVW1_W { w: self }
     }
     #[doc = "Bit 27 - Push Way 1"]
-    #[inline]
-    pub fn pushw1(&mut self) -> _PUSHW1W {
-        _PUSHW1W { w: self }
+    #[inline(always)]
+    pub fn pushw1(&mut self) -> PUSHW1_W {
+        PUSHW1_W { w: self }
     }
     #[doc = "Bit 31 - Initiate Cache Command"]
-    #[inline]
-    pub fn go(&mut self) -> _GOW {
-        _GOW { w: self }
+    #[inline(always)]
+    pub fn go(&mut self) -> GO_W {
+        GO_W { w: self }
     }
 }

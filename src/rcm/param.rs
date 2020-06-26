@@ -1,802 +1,606 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PARAM {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `EWAKEUP`"]
+#[doc = "Reader of register PARAM"]
+pub type R = crate::R<u32, super::PARAM>;
+#[doc = "Existence of SRS\\[WAKEUP\\]
+status indication feature\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWAKEUPR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum EWAKEUP_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl EWAKEUPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EWAKEUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: EWAKEUP_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EWAKEUPR::_0 => false,
-            EWAKEUPR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EWAKEUPR {
-        match value {
-            false => EWAKEUPR::_0,
-            true => EWAKEUPR::_1,
+}
+#[doc = "Reader of field `EWAKEUP`"]
+pub type EWAKEUP_R = crate::R<bool, EWAKEUP_A>;
+impl EWAKEUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EWAKEUP_A {
+        match self.bits {
+            false => EWAKEUP_A::_0,
+            true => EWAKEUP_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EWAKEUPR::_0
+        *self == EWAKEUP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EWAKEUPR::_1
+        *self == EWAKEUP_A::_1
     }
 }
-#[doc = "Possible values of the field `ELVD`"]
+#[doc = "Existence of SRS\\[LVD\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELVDR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ELVD_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ELVDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ELVD_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELVD_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELVDR::_0 => false,
-            ELVDR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELVDR {
-        match value {
-            false => ELVDR::_0,
-            true => ELVDR::_1,
+}
+#[doc = "Reader of field `ELVD`"]
+pub type ELVD_R = crate::R<bool, ELVD_A>;
+impl ELVD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELVD_A {
+        match self.bits {
+            false => ELVD_A::_0,
+            true => ELVD_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ELVDR::_0
+        *self == ELVD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ELVDR::_1
+        *self == ELVD_A::_1
     }
 }
-#[doc = "Possible values of the field `ELOC`"]
+#[doc = "Existence of SRS\\[LOC\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELOCR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ELOC_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ELOCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ELOC_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELOC_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELOCR::_0 => false,
-            ELOCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELOCR {
-        match value {
-            false => ELOCR::_0,
-            true => ELOCR::_1,
+}
+#[doc = "Reader of field `ELOC`"]
+pub type ELOC_R = crate::R<bool, ELOC_A>;
+impl ELOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELOC_A {
+        match self.bits {
+            false => ELOC_A::_0,
+            true => ELOC_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ELOCR::_0
+        *self == ELOC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ELOCR::_1
+        *self == ELOC_A::_1
     }
 }
-#[doc = "Possible values of the field `ELOL`"]
+#[doc = "Existence of SRS\\[LOL\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELOLR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ELOL_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ELOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ELOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELOL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELOLR::_0 => false,
-            ELOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELOLR {
-        match value {
-            false => ELOLR::_0,
-            true => ELOLR::_1,
+}
+#[doc = "Reader of field `ELOL`"]
+pub type ELOL_R = crate::R<bool, ELOL_A>;
+impl ELOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELOL_A {
+        match self.bits {
+            false => ELOL_A::_0,
+            true => ELOL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ELOLR::_0
+        *self == ELOL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ELOLR::_1
+        *self == ELOL_A::_1
     }
 }
-#[doc = "Possible values of the field `EWDOG`"]
+#[doc = "Existence of SRS\\[WDOG\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWDOGR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum EWDOG_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl EWDOGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EWDOG_A> for bool {
+    #[inline(always)]
+    fn from(variant: EWDOG_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EWDOGR::_0 => false,
-            EWDOGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EWDOGR {
-        match value {
-            false => EWDOGR::_0,
-            true => EWDOGR::_1,
+}
+#[doc = "Reader of field `EWDOG`"]
+pub type EWDOG_R = crate::R<bool, EWDOG_A>;
+impl EWDOG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EWDOG_A {
+        match self.bits {
+            false => EWDOG_A::_0,
+            true => EWDOG_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EWDOGR::_0
+        *self == EWDOG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EWDOGR::_1
+        *self == EWDOG_A::_1
     }
 }
-#[doc = "Possible values of the field `EPIN`"]
+#[doc = "Existence of SRS\\[PIN\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPINR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum EPIN_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl EPINR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EPIN_A> for bool {
+    #[inline(always)]
+    fn from(variant: EPIN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EPINR::_0 => false,
-            EPINR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EPINR {
-        match value {
-            false => EPINR::_0,
-            true => EPINR::_1,
+}
+#[doc = "Reader of field `EPIN`"]
+pub type EPIN_R = crate::R<bool, EPIN_A>;
+impl EPIN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EPIN_A {
+        match self.bits {
+            false => EPIN_A::_0,
+            true => EPIN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EPINR::_0
+        *self == EPIN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EPINR::_1
+        *self == EPIN_A::_1
     }
 }
-#[doc = "Possible values of the field `EPOR`"]
+#[doc = "Existence of SRS\\[POR\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPORR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum EPOR_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl EPORR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EPOR_A> for bool {
+    #[inline(always)]
+    fn from(variant: EPOR_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EPORR::_0 => false,
-            EPORR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EPORR {
-        match value {
-            false => EPORR::_0,
-            true => EPORR::_1,
+}
+#[doc = "Reader of field `EPOR`"]
+pub type EPOR_R = crate::R<bool, EPOR_A>;
+impl EPOR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EPOR_A {
+        match self.bits {
+            false => EPOR_A::_0,
+            true => EPOR_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EPORR::_0
+        *self == EPOR_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EPORR::_1
+        *self == EPOR_A::_1
     }
 }
-#[doc = "Possible values of the field `EJTAG`"]
+#[doc = "Existence of SRS\\[JTAG\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EJTAGR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum EJTAG_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl EJTAGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EJTAG_A> for bool {
+    #[inline(always)]
+    fn from(variant: EJTAG_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EJTAGR::_0 => false,
-            EJTAGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EJTAGR {
-        match value {
-            false => EJTAGR::_0,
-            true => EJTAGR::_1,
+}
+#[doc = "Reader of field `EJTAG`"]
+pub type EJTAG_R = crate::R<bool, EJTAG_A>;
+impl EJTAG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EJTAG_A {
+        match self.bits {
+            false => EJTAG_A::_0,
+            true => EJTAG_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EJTAGR::_0
+        *self == EJTAG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EJTAGR::_1
+        *self == EJTAG_A::_1
     }
 }
-#[doc = "Possible values of the field `ELOCKUP`"]
+#[doc = "Existence of SRS\\[LOCKUP\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELOCKUPR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ELOCKUP_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ELOCKUPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ELOCKUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELOCKUP_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELOCKUPR::_0 => false,
-            ELOCKUPR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELOCKUPR {
-        match value {
-            false => ELOCKUPR::_0,
-            true => ELOCKUPR::_1,
+}
+#[doc = "Reader of field `ELOCKUP`"]
+pub type ELOCKUP_R = crate::R<bool, ELOCKUP_A>;
+impl ELOCKUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELOCKUP_A {
+        match self.bits {
+            false => ELOCKUP_A::_0,
+            true => ELOCKUP_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ELOCKUPR::_0
+        *self == ELOCKUP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ELOCKUPR::_1
+        *self == ELOCKUP_A::_1
     }
 }
-#[doc = "Possible values of the field `ESW`"]
+#[doc = "Existence of SRS\\[SW\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ESWR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ESW_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ESWR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ESW_A> for bool {
+    #[inline(always)]
+    fn from(variant: ESW_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ESWR::_0 => false,
-            ESWR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ESWR {
-        match value {
-            false => ESWR::_0,
-            true => ESWR::_1,
+}
+#[doc = "Reader of field `ESW`"]
+pub type ESW_R = crate::R<bool, ESW_A>;
+impl ESW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ESW_A {
+        match self.bits {
+            false => ESW_A::_0,
+            true => ESW_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ESWR::_0
+        *self == ESW_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ESWR::_1
+        *self == ESW_A::_1
     }
 }
-#[doc = "Possible values of the field `EMDM_AP`"]
+#[doc = "Existence of SRS\\[MDM_AP\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMDM_APR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum EMDM_AP_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl EMDM_APR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<EMDM_AP_A> for bool {
+    #[inline(always)]
+    fn from(variant: EMDM_AP_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EMDM_APR::_0 => false,
-            EMDM_APR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EMDM_APR {
-        match value {
-            false => EMDM_APR::_0,
-            true => EMDM_APR::_1,
+}
+#[doc = "Reader of field `EMDM_AP`"]
+pub type EMDM_AP_R = crate::R<bool, EMDM_AP_A>;
+impl EMDM_AP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMDM_AP_A {
+        match self.bits {
+            false => EMDM_AP_A::_0,
+            true => EMDM_AP_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EMDM_APR::_0
+        *self == EMDM_AP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EMDM_APR::_1
+        *self == EMDM_AP_A::_1
     }
 }
-#[doc = "Possible values of the field `ESACKERR`"]
+#[doc = "Existence of SRS\\[SACKERR\\]
+status indication feature\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ESACKERRR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ESACKERR_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ESACKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ESACKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: ESACKERR_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ESACKERRR::_0 => false,
-            ESACKERRR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ESACKERRR {
-        match value {
-            false => ESACKERRR::_0,
-            true => ESACKERRR::_1,
+}
+#[doc = "Reader of field `ESACKERR`"]
+pub type ESACKERR_R = crate::R<bool, ESACKERR_A>;
+impl ESACKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ESACKERR_A {
+        match self.bits {
+            false => ESACKERR_A::_0,
+            true => ESACKERR_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ESACKERRR::_0
+        *self == ESACKERR_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ESACKERRR::_1
+        *self == ESACKERR_A::_1
     }
 }
-#[doc = "Possible values of the field `ETAMPER`"]
+#[doc = "Existence of SRS\\[TAMPER\\]
+status indication feature\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETAMPERR {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ETAMPER_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ETAMPERR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ETAMPER_A> for bool {
+    #[inline(always)]
+    fn from(variant: ETAMPER_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ETAMPERR::_0 => false,
-            ETAMPERR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ETAMPERR {
-        match value {
-            false => ETAMPERR::_0,
-            true => ETAMPERR::_1,
+}
+#[doc = "Reader of field `ETAMPER`"]
+pub type ETAMPER_R = crate::R<bool, ETAMPER_A>;
+impl ETAMPER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ETAMPER_A {
+        match self.bits {
+            false => ETAMPER_A::_0,
+            true => ETAMPER_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ETAMPERR::_0
+        *self == ETAMPER_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ETAMPERR::_1
+        *self == ETAMPER_A::_1
     }
 }
-#[doc = "Possible values of the field `ECORE1`"]
+#[doc = "Existence of SRS\\[CORE1\\]
+status indication feature\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECORE1R {
-    #[doc = "The feature is not available."]
-    _0,
-    #[doc = "The feature is available."]
-    _1,
+pub enum ECORE1_A {
+    #[doc = "0: The feature is not available."]
+    _0 = 0,
+    #[doc = "1: The feature is available."]
+    _1 = 1,
 }
-impl ECORE1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ECORE1_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECORE1_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECORE1R::_0 => false,
-            ECORE1R::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECORE1R {
-        match value {
-            false => ECORE1R::_0,
-            true => ECORE1R::_1,
+}
+#[doc = "Reader of field `ECORE1`"]
+pub type ECORE1_R = crate::R<bool, ECORE1_A>;
+impl ECORE1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECORE1_A {
+        match self.bits {
+            false => ECORE1_A::_0,
+            true => ECORE1_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ECORE1R::_0
+        *self == ECORE1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ECORE1R::_1
+        *self == ECORE1_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
+    #[doc = "Bit 0 - Existence of SRS\\[WAKEUP\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn ewakeup(&self) -> EWAKEUP_R {
+        EWAKEUP_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 0 - Existence of SRS\\[WAKEUP\\] status indication feature"]
-    #[inline]
-    pub fn ewakeup(&self) -> EWAKEUPR {
-        EWAKEUPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 1 - Existence of SRS\\[LVD\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn elvd(&self) -> ELVD_R {
+        ELVD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Existence of SRS\\[LVD\\] status indication feature"]
-    #[inline]
-    pub fn elvd(&self) -> ELVDR {
-        ELVDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 2 - Existence of SRS\\[LOC\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn eloc(&self) -> ELOC_R {
+        ELOC_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Existence of SRS\\[LOC\\] status indication feature"]
-    #[inline]
-    pub fn eloc(&self) -> ELOCR {
-        ELOCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 3 - Existence of SRS\\[LOL\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn elol(&self) -> ELOL_R {
+        ELOL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Existence of SRS\\[LOL\\] status indication feature"]
-    #[inline]
-    pub fn elol(&self) -> ELOLR {
-        ELOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 5 - Existence of SRS\\[WDOG\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn ewdog(&self) -> EWDOG_R {
+        EWDOG_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Existence of SRS\\[WDOG\\] status indication feature"]
-    #[inline]
-    pub fn ewdog(&self) -> EWDOGR {
-        EWDOGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 6 - Existence of SRS\\[PIN\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn epin(&self) -> EPIN_R {
+        EPIN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Existence of SRS\\[PIN\\] status indication feature"]
-    #[inline]
-    pub fn epin(&self) -> EPINR {
-        EPINR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 7 - Existence of SRS\\[POR\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn epor(&self) -> EPOR_R {
+        EPOR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Existence of SRS\\[POR\\] status indication feature"]
-    #[inline]
-    pub fn epor(&self) -> EPORR {
-        EPORR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 8 - Existence of SRS\\[JTAG\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn ejtag(&self) -> EJTAG_R {
+        EJTAG_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Existence of SRS\\[JTAG\\] status indication feature"]
-    #[inline]
-    pub fn ejtag(&self) -> EJTAGR {
-        EJTAGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 9 - Existence of SRS\\[LOCKUP\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn elockup(&self) -> ELOCKUP_R {
+        ELOCKUP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Existence of SRS\\[LOCKUP\\] status indication feature"]
-    #[inline]
-    pub fn elockup(&self) -> ELOCKUPR {
-        ELOCKUPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 10 - Existence of SRS\\[SW\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn esw(&self) -> ESW_R {
+        ESW_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Existence of SRS\\[SW\\] status indication feature"]
-    #[inline]
-    pub fn esw(&self) -> ESWR {
-        ESWR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 11 - Existence of SRS\\[MDM_AP\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn emdm_ap(&self) -> EMDM_AP_R {
+        EMDM_AP_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Existence of SRS\\[MDM_AP\\] status indication feature"]
-    #[inline]
-    pub fn emdm_ap(&self) -> EMDM_APR {
-        EMDM_APR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 13 - Existence of SRS\\[SACKERR\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn esackerr(&self) -> ESACKERR_R {
+        ESACKERR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Existence of SRS\\[SACKERR\\] status indication feature"]
-    #[inline]
-    pub fn esackerr(&self) -> ESACKERRR {
-        ESACKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 15 - Existence of SRS\\[TAMPER\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn etamper(&self) -> ETAMPER_R {
+        ETAMPER_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - Existence of SRS\\[TAMPER\\] status indication feature"]
-    #[inline]
-    pub fn etamper(&self) -> ETAMPERR {
-        ETAMPERR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
-    }
-    #[doc = "Bit 16 - Existence of SRS\\[CORE1\\] status indication feature"]
-    #[inline]
-    pub fn ecore1(&self) -> ECORE1R {
-        ECORE1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[doc = "Bit 16 - Existence of SRS\\[CORE1\\]
+status indication feature"]
+    #[inline(always)]
+    pub fn ecore1(&self) -> ECORE1_R {
+        ECORE1_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }

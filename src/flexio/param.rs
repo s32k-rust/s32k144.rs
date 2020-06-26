@@ -1,102 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PARAM {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SHIFTERR {
-    bits: u8,
-}
-impl SHIFTERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TIMERR {
-    bits: u8,
-}
-impl TIMERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PINR {
-    bits: u8,
-}
-impl PINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIGGERR {
-    bits: u8,
-}
-impl TRIGGERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register PARAM"]
+pub type R = crate::R<u32, super::PARAM>;
+#[doc = "Reader of field `SHIFTER`"]
+pub type SHIFTER_R = crate::R<u8, u8>;
+#[doc = "Reader of field `TIMER`"]
+pub type TIMER_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PIN`"]
+pub type PIN_R = crate::R<u8, u8>;
+#[doc = "Reader of field `TRIGGER`"]
+pub type TRIGGER_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Shifter Number"]
-    #[inline]
-    pub fn shifter(&self) -> SHIFTERR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SHIFTERR { bits }
+    #[inline(always)]
+    pub fn shifter(&self) -> SHIFTER_R {
+        SHIFTER_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Timer Number"]
-    #[inline]
-    pub fn timer(&self) -> TIMERR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TIMERR { bits }
+    #[inline(always)]
+    pub fn timer(&self) -> TIMER_R {
+        TIMER_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Pin Number"]
-    #[inline]
-    pub fn pin(&self) -> PINR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PINR { bits }
+    #[inline(always)]
+    pub fn pin(&self) -> PIN_R {
+        PIN_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Trigger Number"]
-    #[inline]
-    pub fn trigger(&self) -> TRIGGERR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIGGERR { bits }
+    #[inline(always)]
+    pub fn trigger(&self) -> TRIGGER_R {
+        TRIGGER_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
