@@ -1,1427 +1,944 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::C1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register C1"]
+pub type R = crate::R<u32, super::C1>;
+#[doc = "Writer for register C1"]
+pub type W = crate::W<u32, super::C1>;
+#[doc = "Register C1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::C1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct VOSELR {
-    bits: u8,
+#[doc = "Reader of field `VOSEL`"]
+pub type VOSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `VOSEL`"]
+pub struct VOSEL_W<'a> {
+    w: &'a mut W,
 }
-impl VOSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> VOSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
     }
 }
-#[doc = "Possible values of the field `MSEL`"]
+#[doc = "Minus Input MUX Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSELR {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
+#[repr(u8)]
+pub enum MSEL_A {
+    #[doc = "0: IN0"]
+    _000 = 0,
+    #[doc = "1: IN1"]
+    _001 = 1,
+    #[doc = "2: IN2"]
+    _010 = 2,
+    #[doc = "3: IN3"]
+    _011 = 3,
+    #[doc = "4: IN4"]
+    _100 = 4,
+    #[doc = "5: IN5"]
+    _101 = 5,
+    #[doc = "6: IN6"]
+    _110 = 6,
+    #[doc = "7: IN7"]
+    _111 = 7,
 }
-impl MSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MSELR::_000 => 0,
-            MSELR::_001 => 1,
-            MSELR::_010 => 2,
-            MSELR::_011 => 3,
-            MSELR::_100 => 4,
-            MSELR::_101 => 5,
-            MSELR::_110 => 6,
-            MSELR::_111 => 7,
-        }
+impl From<MSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MSEL_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MSELR {
-        match value {
-            0 => MSELR::_000,
-            1 => MSELR::_001,
-            2 => MSELR::_010,
-            3 => MSELR::_011,
-            4 => MSELR::_100,
-            5 => MSELR::_101,
-            6 => MSELR::_110,
-            7 => MSELR::_111,
+}
+#[doc = "Reader of field `MSEL`"]
+pub type MSEL_R = crate::R<u8, MSEL_A>;
+impl MSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSEL_A {
+        match self.bits {
+            0 => MSEL_A::_000,
+            1 => MSEL_A::_001,
+            2 => MSEL_A::_010,
+            3 => MSEL_A::_011,
+            4 => MSEL_A::_100,
+            5 => MSEL_A::_101,
+            6 => MSEL_A::_110,
+            7 => MSEL_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == MSELR::_000
+        *self == MSEL_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == MSELR::_001
+        *self == MSEL_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == MSELR::_010
+        *self == MSEL_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == MSELR::_011
+        *self == MSEL_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == MSELR::_100
+        *self == MSEL_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == MSELR::_101
+        *self == MSEL_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == MSELR::_110
+        *self == MSEL_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == MSELR::_111
+        *self == MSEL_A::_111
     }
 }
-#[doc = "Possible values of the field `PSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PSELR {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
+#[doc = "Write proxy for field `MSEL`"]
+pub struct MSEL_W<'a> {
+    w: &'a mut W,
 }
-impl PSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PSELR::_000 => 0,
-            PSELR::_001 => 1,
-            PSELR::_010 => 2,
-            PSELR::_011 => 3,
-            PSELR::_100 => 4,
-            PSELR::_101 => 5,
-            PSELR::_110 => 6,
-            PSELR::_111 => 7,
+impl<'a> MSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSEL_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PSELR {
-        match value {
-            0 => PSELR::_000,
-            1 => PSELR::_001,
-            2 => PSELR::_010,
-            3 => PSELR::_011,
-            4 => PSELR::_100,
-            5 => PSELR::_101,
-            6 => PSELR::_110,
-            7 => PSELR::_111,
+    #[doc = "IN0"]
+    #[inline(always)]
+    pub fn _000(self) -> &'a mut W {
+        self.variant(MSEL_A::_000)
+    }
+    #[doc = "IN1"]
+    #[inline(always)]
+    pub fn _001(self) -> &'a mut W {
+        self.variant(MSEL_A::_001)
+    }
+    #[doc = "IN2"]
+    #[inline(always)]
+    pub fn _010(self) -> &'a mut W {
+        self.variant(MSEL_A::_010)
+    }
+    #[doc = "IN3"]
+    #[inline(always)]
+    pub fn _011(self) -> &'a mut W {
+        self.variant(MSEL_A::_011)
+    }
+    #[doc = "IN4"]
+    #[inline(always)]
+    pub fn _100(self) -> &'a mut W {
+        self.variant(MSEL_A::_100)
+    }
+    #[doc = "IN5"]
+    #[inline(always)]
+    pub fn _101(self) -> &'a mut W {
+        self.variant(MSEL_A::_101)
+    }
+    #[doc = "IN6"]
+    #[inline(always)]
+    pub fn _110(self) -> &'a mut W {
+        self.variant(MSEL_A::_110)
+    }
+    #[doc = "IN7"]
+    #[inline(always)]
+    pub fn _111(self) -> &'a mut W {
+        self.variant(MSEL_A::_111)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w
+    }
+}
+#[doc = "Plus Input MUX Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PSEL_A {
+    #[doc = "0: IN0"]
+    _000 = 0,
+    #[doc = "1: IN1"]
+    _001 = 1,
+    #[doc = "2: IN2"]
+    _010 = 2,
+    #[doc = "3: IN3"]
+    _011 = 3,
+    #[doc = "4: IN4"]
+    _100 = 4,
+    #[doc = "5: IN5"]
+    _101 = 5,
+    #[doc = "6: IN6"]
+    _110 = 6,
+    #[doc = "7: IN7"]
+    _111 = 7,
+}
+impl From<PSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `PSEL`"]
+pub type PSEL_R = crate::R<u8, PSEL_A>;
+impl PSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PSEL_A {
+        match self.bits {
+            0 => PSEL_A::_000,
+            1 => PSEL_A::_001,
+            2 => PSEL_A::_010,
+            3 => PSEL_A::_011,
+            4 => PSEL_A::_100,
+            5 => PSEL_A::_101,
+            6 => PSEL_A::_110,
+            7 => PSEL_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == PSELR::_000
+        *self == PSEL_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == PSELR::_001
+        *self == PSEL_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == PSELR::_010
+        *self == PSEL_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == PSELR::_011
+        *self == PSEL_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == PSELR::_100
+        *self == PSEL_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == PSELR::_101
+        *self == PSEL_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == PSELR::_110
+        *self == PSEL_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == PSELR::_111
+        *self == PSEL_A::_111
     }
 }
-#[doc = "Possible values of the field `VRSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VRSELR {
-    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."]
-    _0,
-    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."]
-    _1,
+#[doc = "Write proxy for field `PSEL`"]
+pub struct PSEL_W<'a> {
+    w: &'a mut W,
 }
-impl VRSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VRSELR::_0 => false,
-            VRSELR::_1 => true,
+impl<'a> PSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PSEL_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VRSELR {
-        match value {
-            false => VRSELR::_0,
-            true => VRSELR::_1,
+    #[doc = "IN0"]
+    #[inline(always)]
+    pub fn _000(self) -> &'a mut W {
+        self.variant(PSEL_A::_000)
+    }
+    #[doc = "IN1"]
+    #[inline(always)]
+    pub fn _001(self) -> &'a mut W {
+        self.variant(PSEL_A::_001)
+    }
+    #[doc = "IN2"]
+    #[inline(always)]
+    pub fn _010(self) -> &'a mut W {
+        self.variant(PSEL_A::_010)
+    }
+    #[doc = "IN3"]
+    #[inline(always)]
+    pub fn _011(self) -> &'a mut W {
+        self.variant(PSEL_A::_011)
+    }
+    #[doc = "IN4"]
+    #[inline(always)]
+    pub fn _100(self) -> &'a mut W {
+        self.variant(PSEL_A::_100)
+    }
+    #[doc = "IN5"]
+    #[inline(always)]
+    pub fn _101(self) -> &'a mut W {
+        self.variant(PSEL_A::_101)
+    }
+    #[doc = "IN6"]
+    #[inline(always)]
+    pub fn _110(self) -> &'a mut W {
+        self.variant(PSEL_A::_110)
+    }
+    #[doc = "IN7"]
+    #[inline(always)]
+    pub fn _111(self) -> &'a mut W {
+        self.variant(PSEL_A::_111)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 11)) | (((value as u32) & 0x07) << 11);
+        self.w
+    }
+}
+#[doc = "Supply Voltage Reference Source Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VRSEL_A {
+    #[doc = "0: Vin1 is selected as resistor ladder network supply reference Vin."]
+    _0 = 0,
+    #[doc = "1: Vin2 is selected as resistor ladder network supply reference Vin."]
+    _1 = 1,
+}
+impl From<VRSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: VRSEL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `VRSEL`"]
+pub type VRSEL_R = crate::R<bool, VRSEL_A>;
+impl VRSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VRSEL_A {
+        match self.bits {
+            false => VRSEL_A::_0,
+            true => VRSEL_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == VRSELR::_0
+        *self == VRSEL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == VRSELR::_1
+        *self == VRSEL_A::_1
     }
 }
-#[doc = "Possible values of the field `DACEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DACENR {
-    #[doc = "DAC is disabled."]
-    _0,
-    #[doc = "DAC is enabled."]
-    _1,
+#[doc = "Write proxy for field `VRSEL`"]
+pub struct VRSEL_W<'a> {
+    w: &'a mut W,
 }
-impl DACENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DACENR::_0 => false,
-            DACENR::_1 => true,
+impl<'a> VRSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: VRSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DACENR {
-        match value {
-            false => DACENR::_0,
-            true => DACENR::_1,
+    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(VRSEL_A::_0)
+    }
+    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(VRSEL_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
+    }
+}
+#[doc = "DAC Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DACEN_A {
+    #[doc = "0: DAC is disabled."]
+    _0 = 0,
+    #[doc = "1: DAC is enabled."]
+    _1 = 1,
+}
+impl From<DACEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DACEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `DACEN`"]
+pub type DACEN_R = crate::R<bool, DACEN_A>;
+impl DACEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DACEN_A {
+        match self.bits {
+            false => DACEN_A::_0,
+            true => DACEN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DACENR::_0
+        *self == DACEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DACENR::_1
+        *self == DACEN_A::_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct CHN0R {
-    bits: bool,
-}
-impl CHN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN1R {
-    bits: bool,
-}
-impl CHN1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN2R {
-    bits: bool,
-}
-impl CHN2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN3R {
-    bits: bool,
-}
-impl CHN3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN4R {
-    bits: bool,
-}
-impl CHN4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN5R {
-    bits: bool,
-}
-impl CHN5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN6R {
-    bits: bool,
-}
-impl CHN6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHN7R {
-    bits: bool,
-}
-impl CHN7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `INNSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INNSELR {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl INNSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            INNSELR::_00 => 0,
-            INNSELR::_01 => 1,
-            INNSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> INNSELR {
-        match value {
-            0 => INNSELR::_00,
-            1 => INNSELR::_01,
-            i => INNSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == INNSELR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == INNSELR::_01
-    }
-}
-#[doc = "Possible values of the field `INPSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INPSELR {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl INPSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            INPSELR::_00 => 0,
-            INPSELR::_01 => 1,
-            INPSELR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> INPSELR {
-        match value {
-            0 => INPSELR::_00,
-            1 => INPSELR::_01,
-            i => INPSELR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
-    pub fn is_00(&self) -> bool {
-        *self == INPSELR::_00
-    }
-    #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
-    pub fn is_01(&self) -> bool {
-        *self == INPSELR::_01
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VOSELW<'a> {
+#[doc = "Write proxy for field `DACEN`"]
+pub struct DACEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _VOSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MSEL`"]
-pub enum MSELW {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
-}
-impl MSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MSELW::_000 => 0,
-            MSELW::_001 => 1,
-            MSELW::_010 => 2,
-            MSELW::_011 => 3,
-            MSELW::_100 => 4,
-            MSELW::_101 => 5,
-            MSELW::_110 => 6,
-            MSELW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSELW) -> &'a mut W {
+impl<'a> DACEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DACEN_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "IN0"]
-    #[inline]
-    pub fn _000(self) -> &'a mut W {
-        self.variant(MSELW::_000)
-    }
-    #[doc = "IN1"]
-    #[inline]
-    pub fn _001(self) -> &'a mut W {
-        self.variant(MSELW::_001)
-    }
-    #[doc = "IN2"]
-    #[inline]
-    pub fn _010(self) -> &'a mut W {
-        self.variant(MSELW::_010)
-    }
-    #[doc = "IN3"]
-    #[inline]
-    pub fn _011(self) -> &'a mut W {
-        self.variant(MSELW::_011)
-    }
-    #[doc = "IN4"]
-    #[inline]
-    pub fn _100(self) -> &'a mut W {
-        self.variant(MSELW::_100)
-    }
-    #[doc = "IN5"]
-    #[inline]
-    pub fn _101(self) -> &'a mut W {
-        self.variant(MSELW::_101)
-    }
-    #[doc = "IN6"]
-    #[inline]
-    pub fn _110(self) -> &'a mut W {
-        self.variant(MSELW::_110)
-    }
-    #[doc = "IN7"]
-    #[inline]
-    pub fn _111(self) -> &'a mut W {
-        self.variant(MSELW::_111)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PSEL`"]
-pub enum PSELW {
-    #[doc = "IN0"]
-    _000,
-    #[doc = "IN1"]
-    _001,
-    #[doc = "IN2"]
-    _010,
-    #[doc = "IN3"]
-    _011,
-    #[doc = "IN4"]
-    _100,
-    #[doc = "IN5"]
-    _101,
-    #[doc = "IN6"]
-    _110,
-    #[doc = "IN7"]
-    _111,
-}
-impl PSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PSELW::_000 => 0,
-            PSELW::_001 => 1,
-            PSELW::_010 => 2,
-            PSELW::_011 => 3,
-            PSELW::_100 => 4,
-            PSELW::_101 => 5,
-            PSELW::_110 => 6,
-            PSELW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PSELW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "IN0"]
-    #[inline]
-    pub fn _000(self) -> &'a mut W {
-        self.variant(PSELW::_000)
-    }
-    #[doc = "IN1"]
-    #[inline]
-    pub fn _001(self) -> &'a mut W {
-        self.variant(PSELW::_001)
-    }
-    #[doc = "IN2"]
-    #[inline]
-    pub fn _010(self) -> &'a mut W {
-        self.variant(PSELW::_010)
-    }
-    #[doc = "IN3"]
-    #[inline]
-    pub fn _011(self) -> &'a mut W {
-        self.variant(PSELW::_011)
-    }
-    #[doc = "IN4"]
-    #[inline]
-    pub fn _100(self) -> &'a mut W {
-        self.variant(PSELW::_100)
-    }
-    #[doc = "IN5"]
-    #[inline]
-    pub fn _101(self) -> &'a mut W {
-        self.variant(PSELW::_101)
-    }
-    #[doc = "IN6"]
-    #[inline]
-    pub fn _110(self) -> &'a mut W {
-        self.variant(PSELW::_110)
-    }
-    #[doc = "IN7"]
-    #[inline]
-    pub fn _111(self) -> &'a mut W {
-        self.variant(PSELW::_111)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `VRSEL`"]
-pub enum VRSELW {
-    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."]
-    _0,
-    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."]
-    _1,
-}
-impl VRSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            VRSELW::_0 => false,
-            VRSELW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VRSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VRSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: VRSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Vin1 is selected as resistor ladder network supply reference Vin."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(VRSELW::_0)
-    }
-    #[doc = "Vin2 is selected as resistor ladder network supply reference Vin."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(VRSELW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DACEN`"]
-pub enum DACENW {
-    #[doc = "DAC is disabled."]
-    _0,
-    #[doc = "DAC is enabled."]
-    _1,
-}
-impl DACENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DACENW::_0 => false,
-            DACENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DACENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DACENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DACENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "DAC is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(DACENW::_0)
+        self.variant(DACEN_A::_0)
     }
     #[doc = "DAC is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(DACENW::_1)
+        self.variant(DACEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN0W<'a> {
+#[doc = "Reader of field `CHN0`"]
+pub type CHN0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN0`"]
+pub struct CHN0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN1W<'a> {
+#[doc = "Reader of field `CHN1`"]
+pub type CHN1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN1`"]
+pub struct CHN1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN2W<'a> {
+#[doc = "Reader of field `CHN2`"]
+pub type CHN2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN2`"]
+pub struct CHN2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN3W<'a> {
+#[doc = "Reader of field `CHN3`"]
+pub type CHN3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN3`"]
+pub struct CHN3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN4W<'a> {
+#[doc = "Reader of field `CHN4`"]
+pub type CHN4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN4`"]
+pub struct CHN4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN5W<'a> {
+#[doc = "Reader of field `CHN5`"]
+pub type CHN5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN5`"]
+pub struct CHN5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN5W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN6W<'a> {
+#[doc = "Reader of field `CHN6`"]
+pub type CHN6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN6`"]
+pub struct CHN6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN6W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHN7W<'a> {
+#[doc = "Reader of field `CHN7`"]
+pub type CHN7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CHN7`"]
+pub struct CHN7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHN7W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHN7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INNSEL`"]
-pub enum INNSELW {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
+#[doc = "Selection of the input to the negative port of the comparator\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum INNSEL_A {
+    #[doc = "0: IN0, from the 8-bit DAC output"]
+    _00 = 0,
+    #[doc = "1: IN1, from the analog 8-1 mux"]
+    _01 = 1,
 }
-impl INNSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            INNSELW::_00 => 0,
-            INNSELW::_01 => 1,
+impl From<INNSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: INNSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `INNSEL`"]
+pub type INNSEL_R = crate::R<u8, INNSEL_A>;
+impl INNSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, INNSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(INNSEL_A::_00),
+            1 => Val(INNSEL_A::_01),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == INNSEL_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == INNSEL_A::_01
+    }
 }
-#[doc = r" Proxy"]
-pub struct _INNSELW<'a> {
+#[doc = "Write proxy for field `INNSEL`"]
+pub struct INNSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INNSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INNSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> INNSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INNSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "IN0, from the 8-bit DAC output"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(INNSELW::_00)
+        self.variant(INNSEL_A::_00)
     }
     #[doc = "IN1, from the analog 8-1 mux"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(INNSELW::_01)
+        self.variant(INNSEL_A::_01)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INPSEL`"]
-pub enum INPSELW {
-    #[doc = "IN0, from the 8-bit DAC output"]
-    _00,
-    #[doc = "IN1, from the analog 8-1 mux"]
-    _01,
+#[doc = "Selection of the input to the positive port of the comparator\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum INPSEL_A {
+    #[doc = "0: IN0, from the 8-bit DAC output"]
+    _00 = 0,
+    #[doc = "1: IN1, from the analog 8-1 mux"]
+    _01 = 1,
 }
-impl INPSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            INPSELW::_00 => 0,
-            INPSELW::_01 => 1,
+impl From<INPSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: INPSEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `INPSEL`"]
+pub type INPSEL_R = crate::R<u8, INPSEL_A>;
+impl INPSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, INPSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(INPSEL_A::_00),
+            1 => Val(INPSEL_A::_01),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_00`"]
+    #[inline(always)]
+    pub fn is_00(&self) -> bool {
+        *self == INPSEL_A::_00
+    }
+    #[doc = "Checks if the value of the field is `_01`"]
+    #[inline(always)]
+    pub fn is_01(&self) -> bool {
+        *self == INPSEL_A::_01
+    }
 }
-#[doc = r" Proxy"]
-pub struct _INPSELW<'a> {
+#[doc = "Write proxy for field `INPSEL`"]
+pub struct INPSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INPSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INPSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> INPSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INPSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "IN0, from the 8-bit DAC output"]
-    #[inline]
+    #[inline(always)]
     pub fn _00(self) -> &'a mut W {
-        self.variant(INPSELW::_00)
+        self.variant(INPSEL_A::_00)
     }
     #[doc = "IN1, from the analog 8-1 mux"]
-    #[inline]
+    #[inline(always)]
     pub fn _01(self) -> &'a mut W {
-        self.variant(INPSELW::_01)
+        self.variant(INPSEL_A::_01)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 27)) | (((value as u32) & 0x03) << 27);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - DAC Output Voltage Select"]
-    #[inline]
-    pub fn vosel(&self) -> VOSELR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        VOSELR { bits }
+    #[inline(always)]
+    pub fn vosel(&self) -> VOSEL_R {
+        VOSEL_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:10 - Minus Input MUX Control"]
-    #[inline]
-    pub fn msel(&self) -> MSELR {
-        MSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn msel(&self) -> MSEL_R {
+        MSEL_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 11:13 - Plus Input MUX Control"]
-    #[inline]
-    pub fn psel(&self) -> PSELR {
-        PSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn psel(&self) -> PSEL_R {
+        PSEL_R::new(((self.bits >> 11) & 0x07) as u8)
     }
     #[doc = "Bit 14 - Supply Voltage Reference Source Select"]
-    #[inline]
-    pub fn vrsel(&self) -> VRSELR {
-        VRSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vrsel(&self) -> VRSEL_R {
+        VRSEL_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - DAC Enable"]
-    #[inline]
-    pub fn dacen(&self) -> DACENR {
-        DACENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dacen(&self) -> DACEN_R {
+        DACEN_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Channel 0 input enable"]
-    #[inline]
-    pub fn chn0(&self) -> CHN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN0R { bits }
+    #[inline(always)]
+    pub fn chn0(&self) -> CHN0_R {
+        CHN0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Channel 1 input enable"]
-    #[inline]
-    pub fn chn1(&self) -> CHN1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN1R { bits }
+    #[inline(always)]
+    pub fn chn1(&self) -> CHN1_R {
+        CHN1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Channel 2 input enable"]
-    #[inline]
-    pub fn chn2(&self) -> CHN2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN2R { bits }
+    #[inline(always)]
+    pub fn chn2(&self) -> CHN2_R {
+        CHN2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Channel 3 input enable"]
-    #[inline]
-    pub fn chn3(&self) -> CHN3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN3R { bits }
+    #[inline(always)]
+    pub fn chn3(&self) -> CHN3_R {
+        CHN3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Channel 4 input enable"]
-    #[inline]
-    pub fn chn4(&self) -> CHN4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN4R { bits }
+    #[inline(always)]
+    pub fn chn4(&self) -> CHN4_R {
+        CHN4_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - Channel 5 input enable"]
-    #[inline]
-    pub fn chn5(&self) -> CHN5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN5R { bits }
+    #[inline(always)]
+    pub fn chn5(&self) -> CHN5_R {
+        CHN5_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - Channel 6 input enable"]
-    #[inline]
-    pub fn chn6(&self) -> CHN6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN6R { bits }
+    #[inline(always)]
+    pub fn chn6(&self) -> CHN6_R {
+        CHN6_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Channel 7 input enable"]
-    #[inline]
-    pub fn chn7(&self) -> CHN7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CHN7R { bits }
+    #[inline(always)]
+    pub fn chn7(&self) -> CHN7_R {
+        CHN7_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bits 24:25 - Selection of the input to the negative port of the comparator"]
-    #[inline]
-    pub fn innsel(&self) -> INNSELR {
-        INNSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn innsel(&self) -> INNSEL_R {
+        INNSEL_R::new(((self.bits >> 24) & 0x03) as u8)
     }
     #[doc = "Bits 27:28 - Selection of the input to the positive port of the comparator"]
-    #[inline]
-    pub fn inpsel(&self) -> INPSELR {
-        INPSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn inpsel(&self) -> INPSEL_R {
+        INPSEL_R::new(((self.bits >> 27) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - DAC Output Voltage Select"]
-    #[inline]
-    pub fn vosel(&mut self) -> _VOSELW {
-        _VOSELW { w: self }
+    #[inline(always)]
+    pub fn vosel(&mut self) -> VOSEL_W {
+        VOSEL_W { w: self }
     }
     #[doc = "Bits 8:10 - Minus Input MUX Control"]
-    #[inline]
-    pub fn msel(&mut self) -> _MSELW {
-        _MSELW { w: self }
+    #[inline(always)]
+    pub fn msel(&mut self) -> MSEL_W {
+        MSEL_W { w: self }
     }
     #[doc = "Bits 11:13 - Plus Input MUX Control"]
-    #[inline]
-    pub fn psel(&mut self) -> _PSELW {
-        _PSELW { w: self }
+    #[inline(always)]
+    pub fn psel(&mut self) -> PSEL_W {
+        PSEL_W { w: self }
     }
     #[doc = "Bit 14 - Supply Voltage Reference Source Select"]
-    #[inline]
-    pub fn vrsel(&mut self) -> _VRSELW {
-        _VRSELW { w: self }
+    #[inline(always)]
+    pub fn vrsel(&mut self) -> VRSEL_W {
+        VRSEL_W { w: self }
     }
     #[doc = "Bit 15 - DAC Enable"]
-    #[inline]
-    pub fn dacen(&mut self) -> _DACENW {
-        _DACENW { w: self }
+    #[inline(always)]
+    pub fn dacen(&mut self) -> DACEN_W {
+        DACEN_W { w: self }
     }
     #[doc = "Bit 16 - Channel 0 input enable"]
-    #[inline]
-    pub fn chn0(&mut self) -> _CHN0W {
-        _CHN0W { w: self }
+    #[inline(always)]
+    pub fn chn0(&mut self) -> CHN0_W {
+        CHN0_W { w: self }
     }
     #[doc = "Bit 17 - Channel 1 input enable"]
-    #[inline]
-    pub fn chn1(&mut self) -> _CHN1W {
-        _CHN1W { w: self }
+    #[inline(always)]
+    pub fn chn1(&mut self) -> CHN1_W {
+        CHN1_W { w: self }
     }
     #[doc = "Bit 18 - Channel 2 input enable"]
-    #[inline]
-    pub fn chn2(&mut self) -> _CHN2W {
-        _CHN2W { w: self }
+    #[inline(always)]
+    pub fn chn2(&mut self) -> CHN2_W {
+        CHN2_W { w: self }
     }
     #[doc = "Bit 19 - Channel 3 input enable"]
-    #[inline]
-    pub fn chn3(&mut self) -> _CHN3W {
-        _CHN3W { w: self }
+    #[inline(always)]
+    pub fn chn3(&mut self) -> CHN3_W {
+        CHN3_W { w: self }
     }
     #[doc = "Bit 20 - Channel 4 input enable"]
-    #[inline]
-    pub fn chn4(&mut self) -> _CHN4W {
-        _CHN4W { w: self }
+    #[inline(always)]
+    pub fn chn4(&mut self) -> CHN4_W {
+        CHN4_W { w: self }
     }
     #[doc = "Bit 21 - Channel 5 input enable"]
-    #[inline]
-    pub fn chn5(&mut self) -> _CHN5W {
-        _CHN5W { w: self }
+    #[inline(always)]
+    pub fn chn5(&mut self) -> CHN5_W {
+        CHN5_W { w: self }
     }
     #[doc = "Bit 22 - Channel 6 input enable"]
-    #[inline]
-    pub fn chn6(&mut self) -> _CHN6W {
-        _CHN6W { w: self }
+    #[inline(always)]
+    pub fn chn6(&mut self) -> CHN6_W {
+        CHN6_W { w: self }
     }
     #[doc = "Bit 23 - Channel 7 input enable"]
-    #[inline]
-    pub fn chn7(&mut self) -> _CHN7W {
-        _CHN7W { w: self }
+    #[inline(always)]
+    pub fn chn7(&mut self) -> CHN7_W {
+        CHN7_W { w: self }
     }
     #[doc = "Bits 24:25 - Selection of the input to the negative port of the comparator"]
-    #[inline]
-    pub fn innsel(&mut self) -> _INNSELW {
-        _INNSELW { w: self }
+    #[inline(always)]
+    pub fn innsel(&mut self) -> INNSEL_W {
+        INNSEL_W { w: self }
     }
     #[doc = "Bits 27:28 - Selection of the input to the positive port of the comparator"]
-    #[inline]
-    pub fn inpsel(&mut self) -> _INPSELW {
-        _INPSELW { w: self }
+    #[inline(always)]
+    pub fn inpsel(&mut self) -> INPSEL_W {
+        INPSEL_W { w: self }
     }
 }

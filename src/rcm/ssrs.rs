@@ -1,1371 +1,951 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SSRS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SSRS"]
+pub type R = crate::R<u32, super::SSRS>;
+#[doc = "Writer for register SSRS"]
+pub type W = crate::W<u32, super::SSRS>;
+#[doc = "Register SSRS `reset()`'s with value 0x82"]
+impl crate::ResetValue for super::SSRS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x82
     }
 }
-#[doc = "Possible values of the field `SLVD`"]
+#[doc = "Sticky Low-Voltage Detect Reset\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLVDR {
-    #[doc = "Reset not caused by LVD trip or POR"]
-    _0,
-    #[doc = "Reset caused by LVD trip or POR"]
-    _1,
+pub enum SLVD_A {
+    #[doc = "0: Reset not caused by LVD trip or POR"]
+    _0 = 0,
+    #[doc = "1: Reset caused by LVD trip or POR"]
+    _1 = 1,
 }
-impl SLVDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SLVD_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLVD_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLVDR::_0 => false,
-            SLVDR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLVDR {
-        match value {
-            false => SLVDR::_0,
-            true => SLVDR::_1,
+}
+#[doc = "Reader of field `SLVD`"]
+pub type SLVD_R = crate::R<bool, SLVD_A>;
+impl SLVD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLVD_A {
+        match self.bits {
+            false => SLVD_A::_0,
+            true => SLVD_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SLVDR::_0
+        *self == SLVD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SLVDR::_1
+        *self == SLVD_A::_1
     }
 }
-#[doc = "Possible values of the field `SLOC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLOCR {
-    #[doc = "Reset not caused by a loss of external clock."]
-    _0,
-    #[doc = "Reset caused by a loss of external clock."]
-    _1,
-}
-impl SLOCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLOCR::_0 => false,
-            SLOCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLOCR {
-        match value {
-            false => SLOCR::_0,
-            true => SLOCR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SLOCR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SLOCR::_1
-    }
-}
-#[doc = "Possible values of the field `SLOL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLOLR {
-    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    _0,
-    #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    _1,
-}
-impl SLOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLOLR::_0 => false,
-            SLOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLOLR {
-        match value {
-            false => SLOLR::_0,
-            true => SLOLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SLOLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SLOLR::_1
-    }
-}
-#[doc = "Possible values of the field `SWDOG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SWDOGR {
-    #[doc = "Reset not caused by watchdog timeout"]
-    _0,
-    #[doc = "Reset caused by watchdog timeout"]
-    _1,
-}
-impl SWDOGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SWDOGR::_0 => false,
-            SWDOGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SWDOGR {
-        match value {
-            false => SWDOGR::_0,
-            true => SWDOGR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SWDOGR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SWDOGR::_1
-    }
-}
-#[doc = "Possible values of the field `SPIN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SPINR {
-    #[doc = "Reset not caused by external reset pin"]
-    _0,
-    #[doc = "Reset caused by external reset pin"]
-    _1,
-}
-impl SPINR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SPINR::_0 => false,
-            SPINR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SPINR {
-        match value {
-            false => SPINR::_0,
-            true => SPINR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SPINR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SPINR::_1
-    }
-}
-#[doc = "Possible values of the field `SPOR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SPORR {
-    #[doc = "Reset not caused by POR"]
-    _0,
-    #[doc = "Reset caused by POR"]
-    _1,
-}
-impl SPORR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SPORR::_0 => false,
-            SPORR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SPORR {
-        match value {
-            false => SPORR::_0,
-            true => SPORR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SPORR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SPORR::_1
-    }
-}
-#[doc = "Possible values of the field `SJTAG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SJTAGR {
-    #[doc = "Reset not caused by JTAG"]
-    _0,
-    #[doc = "Reset caused by JTAG"]
-    _1,
-}
-impl SJTAGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SJTAGR::_0 => false,
-            SJTAGR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SJTAGR {
-        match value {
-            false => SJTAGR::_0,
-            true => SJTAGR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SJTAGR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SJTAGR::_1
-    }
-}
-#[doc = "Possible values of the field `SLOCKUP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLOCKUPR {
-    #[doc = "Reset not caused by core LOCKUP event"]
-    _0,
-    #[doc = "Reset caused by core LOCKUP event"]
-    _1,
-}
-impl SLOCKUPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLOCKUPR::_0 => false,
-            SLOCKUPR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLOCKUPR {
-        match value {
-            false => SLOCKUPR::_0,
-            true => SLOCKUPR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SLOCKUPR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SLOCKUPR::_1
-    }
-}
-#[doc = "Possible values of the field `SSW`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSWR {
-    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    _0,
-    #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    _1,
-}
-impl SSWR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSWR::_0 => false,
-            SSWR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSWR {
-        match value {
-            false => SSWR::_0,
-            true => SSWR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SSWR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SSWR::_1
-    }
-}
-#[doc = "Possible values of the field `SMDM_AP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SMDM_APR {
-    #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
-    _0,
-    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    _1,
-}
-impl SMDM_APR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SMDM_APR::_0 => false,
-            SMDM_APR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SMDM_APR {
-        match value {
-            false => SMDM_APR::_0,
-            true => SMDM_APR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SMDM_APR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SMDM_APR::_1
-    }
-}
-#[doc = "Possible values of the field `SSACKERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSACKERRR {
-    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _0,
-    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _1,
-}
-impl SSACKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSACKERRR::_0 => false,
-            SSACKERRR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSACKERRR {
-        match value {
-            false => SSACKERRR::_0,
-            true => SSACKERRR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SSACKERRR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SSACKERRR::_1
-    }
-}
-#[doc = "Values that can be written to the field `SLVD`"]
-pub enum SLVDW {
-    #[doc = "Reset not caused by LVD trip or POR"]
-    _0,
-    #[doc = "Reset caused by LVD trip or POR"]
-    _1,
-}
-impl SLVDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLVDW::_0 => false,
-            SLVDW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SLVDW<'a> {
+#[doc = "Write proxy for field `SLVD`"]
+pub struct SLVD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SLVDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLVDW) -> &'a mut W {
+impl<'a> SLVD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLVD_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset not caused by LVD trip or POR"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SLVDW::_0)
+        self.variant(SLVD_A::_0)
     }
     #[doc = "Reset caused by LVD trip or POR"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SLVDW::_1)
+        self.variant(SLVD_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SLOC`"]
-pub enum SLOCW {
+#[doc = "Sticky Loss-of-Clock Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLOC_A {
+    #[doc = "0: Reset not caused by a loss of external clock."]
+    _0 = 0,
+    #[doc = "1: Reset caused by a loss of external clock."]
+    _1 = 1,
+}
+impl From<SLOC_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLOC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SLOC`"]
+pub type SLOC_R = crate::R<bool, SLOC_A>;
+impl SLOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLOC_A {
+        match self.bits {
+            false => SLOC_A::_0,
+            true => SLOC_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SLOC_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SLOC_A::_1
+    }
+}
+#[doc = "Write proxy for field `SLOC`"]
+pub struct SLOC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SLOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLOC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Reset not caused by a loss of external clock."]
-    _0,
-    #[doc = "Reset caused by a loss of external clock."]
-    _1,
-}
-impl SLOCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLOCW::_0 => false,
-            SLOCW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SLOCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SLOCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLOCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Reset not caused by a loss of external clock."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SLOCW::_0)
+        self.variant(SLOC_A::_0)
     }
     #[doc = "Reset caused by a loss of external clock."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SLOCW::_1)
+        self.variant(SLOC_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SLOL`"]
-pub enum SLOLW {
-    #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    _0,
-    #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    _1,
+#[doc = "Sticky Loss-of-Lock Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLOL_A {
+    #[doc = "0: Reset not caused by a loss of lock in the PLL/FLL"]
+    _0 = 0,
+    #[doc = "1: Reset caused by a loss of lock in the PLL/FLL"]
+    _1 = 1,
 }
-impl SLOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLOLW::_0 => false,
-            SLOLW::_1 => true,
-        }
+impl From<SLOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLOL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SLOLW<'a> {
+#[doc = "Reader of field `SLOL`"]
+pub type SLOL_R = crate::R<bool, SLOL_A>;
+impl SLOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLOL_A {
+        match self.bits {
+            false => SLOL_A::_0,
+            true => SLOL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SLOL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SLOL_A::_1
+    }
+}
+#[doc = "Write proxy for field `SLOL`"]
+pub struct SLOL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SLOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLOLW) -> &'a mut W {
+impl<'a> SLOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLOL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset not caused by a loss of lock in the PLL/FLL"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SLOLW::_0)
+        self.variant(SLOL_A::_0)
     }
     #[doc = "Reset caused by a loss of lock in the PLL/FLL"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SLOLW::_1)
+        self.variant(SLOL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SWDOG`"]
-pub enum SWDOGW {
+#[doc = "Sticky Watchdog\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SWDOG_A {
+    #[doc = "0: Reset not caused by watchdog timeout"]
+    _0 = 0,
+    #[doc = "1: Reset caused by watchdog timeout"]
+    _1 = 1,
+}
+impl From<SWDOG_A> for bool {
+    #[inline(always)]
+    fn from(variant: SWDOG_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SWDOG`"]
+pub type SWDOG_R = crate::R<bool, SWDOG_A>;
+impl SWDOG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SWDOG_A {
+        match self.bits {
+            false => SWDOG_A::_0,
+            true => SWDOG_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SWDOG_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SWDOG_A::_1
+    }
+}
+#[doc = "Write proxy for field `SWDOG`"]
+pub struct SWDOG_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SWDOG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SWDOG_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Reset not caused by watchdog timeout"]
-    _0,
-    #[doc = "Reset caused by watchdog timeout"]
-    _1,
-}
-impl SWDOGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SWDOGW::_0 => false,
-            SWDOGW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SWDOGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SWDOGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SWDOGW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Reset not caused by watchdog timeout"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SWDOGW::_0)
+        self.variant(SWDOG_A::_0)
     }
     #[doc = "Reset caused by watchdog timeout"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SWDOGW::_1)
+        self.variant(SWDOG_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SPIN`"]
-pub enum SPINW {
-    #[doc = "Reset not caused by external reset pin"]
-    _0,
-    #[doc = "Reset caused by external reset pin"]
-    _1,
+#[doc = "Sticky External Reset Pin\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SPIN_A {
+    #[doc = "0: Reset not caused by external reset pin"]
+    _0 = 0,
+    #[doc = "1: Reset caused by external reset pin"]
+    _1 = 1,
 }
-impl SPINW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SPINW::_0 => false,
-            SPINW::_1 => true,
-        }
+impl From<SPIN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SPIN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SPINW<'a> {
+#[doc = "Reader of field `SPIN`"]
+pub type SPIN_R = crate::R<bool, SPIN_A>;
+impl SPIN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SPIN_A {
+        match self.bits {
+            false => SPIN_A::_0,
+            true => SPIN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SPIN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SPIN_A::_1
+    }
+}
+#[doc = "Write proxy for field `SPIN`"]
+pub struct SPIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SPINW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SPINW) -> &'a mut W {
+impl<'a> SPIN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SPIN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset not caused by external reset pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SPINW::_0)
+        self.variant(SPIN_A::_0)
     }
     #[doc = "Reset caused by external reset pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SPINW::_1)
+        self.variant(SPIN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SPOR`"]
-pub enum SPORW {
+#[doc = "Sticky Power-On Reset\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SPOR_A {
+    #[doc = "0: Reset not caused by POR"]
+    _0 = 0,
+    #[doc = "1: Reset caused by POR"]
+    _1 = 1,
+}
+impl From<SPOR_A> for bool {
+    #[inline(always)]
+    fn from(variant: SPOR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SPOR`"]
+pub type SPOR_R = crate::R<bool, SPOR_A>;
+impl SPOR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SPOR_A {
+        match self.bits {
+            false => SPOR_A::_0,
+            true => SPOR_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SPOR_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SPOR_A::_1
+    }
+}
+#[doc = "Write proxy for field `SPOR`"]
+pub struct SPOR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SPOR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SPOR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Reset not caused by POR"]
-    _0,
-    #[doc = "Reset caused by POR"]
-    _1,
-}
-impl SPORW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SPORW::_0 => false,
-            SPORW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SPORW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SPORW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SPORW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Reset not caused by POR"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SPORW::_0)
+        self.variant(SPOR_A::_0)
     }
     #[doc = "Reset caused by POR"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SPORW::_1)
+        self.variant(SPOR_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SJTAG`"]
-pub enum SJTAGW {
-    #[doc = "Reset not caused by JTAG"]
-    _0,
-    #[doc = "Reset caused by JTAG"]
-    _1,
+#[doc = "Sticky JTAG generated reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SJTAG_A {
+    #[doc = "0: Reset not caused by JTAG"]
+    _0 = 0,
+    #[doc = "1: Reset caused by JTAG"]
+    _1 = 1,
 }
-impl SJTAGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SJTAGW::_0 => false,
-            SJTAGW::_1 => true,
-        }
+impl From<SJTAG_A> for bool {
+    #[inline(always)]
+    fn from(variant: SJTAG_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SJTAGW<'a> {
+#[doc = "Reader of field `SJTAG`"]
+pub type SJTAG_R = crate::R<bool, SJTAG_A>;
+impl SJTAG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SJTAG_A {
+        match self.bits {
+            false => SJTAG_A::_0,
+            true => SJTAG_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SJTAG_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SJTAG_A::_1
+    }
+}
+#[doc = "Write proxy for field `SJTAG`"]
+pub struct SJTAG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SJTAGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SJTAGW) -> &'a mut W {
+impl<'a> SJTAG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SJTAG_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset not caused by JTAG"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SJTAGW::_0)
+        self.variant(SJTAG_A::_0)
     }
     #[doc = "Reset caused by JTAG"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SJTAGW::_1)
+        self.variant(SJTAG_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SLOCKUP`"]
-pub enum SLOCKUPW {
+#[doc = "Sticky Core Lockup\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLOCKUP_A {
+    #[doc = "0: Reset not caused by core LOCKUP event"]
+    _0 = 0,
+    #[doc = "1: Reset caused by core LOCKUP event"]
+    _1 = 1,
+}
+impl From<SLOCKUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLOCKUP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SLOCKUP`"]
+pub type SLOCKUP_R = crate::R<bool, SLOCKUP_A>;
+impl SLOCKUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLOCKUP_A {
+        match self.bits {
+            false => SLOCKUP_A::_0,
+            true => SLOCKUP_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SLOCKUP_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SLOCKUP_A::_1
+    }
+}
+#[doc = "Write proxy for field `SLOCKUP`"]
+pub struct SLOCKUP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SLOCKUP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLOCKUP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Reset not caused by core LOCKUP event"]
-    _0,
-    #[doc = "Reset caused by core LOCKUP event"]
-    _1,
-}
-impl SLOCKUPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLOCKUPW::_0 => false,
-            SLOCKUPW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SLOCKUPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SLOCKUPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLOCKUPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Reset not caused by core LOCKUP event"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SLOCKUPW::_0)
+        self.variant(SLOCKUP_A::_0)
     }
     #[doc = "Reset caused by core LOCKUP event"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SLOCKUPW::_1)
+        self.variant(SLOCKUP_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SSW`"]
-pub enum SSWW {
-    #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    _0,
-    #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    _1,
+#[doc = "Sticky Software\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SSW_A {
+    #[doc = "0: Reset not caused by software setting of SYSRESETREQ bit"]
+    _0 = 0,
+    #[doc = "1: Reset caused by software setting of SYSRESETREQ bit"]
+    _1 = 1,
 }
-impl SSWW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SSWW::_0 => false,
-            SSWW::_1 => true,
-        }
+impl From<SSW_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSW_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SSWW<'a> {
+#[doc = "Reader of field `SSW`"]
+pub type SSW_R = crate::R<bool, SSW_A>;
+impl SSW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSW_A {
+        match self.bits {
+            false => SSW_A::_0,
+            true => SSW_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SSW_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SSW_A::_1
+    }
+}
+#[doc = "Write proxy for field `SSW`"]
+pub struct SSW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SSWW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSWW) -> &'a mut W {
+impl<'a> SSW_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSW_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset not caused by software setting of SYSRESETREQ bit"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SSWW::_0)
+        self.variant(SSW_A::_0)
     }
     #[doc = "Reset caused by software setting of SYSRESETREQ bit"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SSWW::_1)
+        self.variant(SSW_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SMDM_AP`"]
-pub enum SMDM_APW {
-    #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
-    _0,
-    #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    _1,
+#[doc = "Sticky MDM-AP System Reset Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SMDM_AP_A {
+    #[doc = "0: Reset was not caused by host debugger system setting of the System Reset Request bit"]
+    _0 = 0,
+    #[doc = "1: Reset was caused by host debugger system setting of the System Reset Request bit"]
+    _1 = 1,
 }
-impl SMDM_APW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SMDM_APW::_0 => false,
-            SMDM_APW::_1 => true,
-        }
+impl From<SMDM_AP_A> for bool {
+    #[inline(always)]
+    fn from(variant: SMDM_AP_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SMDM_APW<'a> {
+#[doc = "Reader of field `SMDM_AP`"]
+pub type SMDM_AP_R = crate::R<bool, SMDM_AP_A>;
+impl SMDM_AP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SMDM_AP_A {
+        match self.bits {
+            false => SMDM_AP_A::_0,
+            true => SMDM_AP_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SMDM_AP_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SMDM_AP_A::_1
+    }
+}
+#[doc = "Write proxy for field `SMDM_AP`"]
+pub struct SMDM_AP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SMDM_APW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SMDM_APW) -> &'a mut W {
+impl<'a> SMDM_AP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SMDM_AP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset was not caused by host debugger system setting of the System Reset Request bit"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SMDM_APW::_0)
+        self.variant(SMDM_AP_A::_0)
     }
     #[doc = "Reset was caused by host debugger system setting of the System Reset Request bit"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SMDM_APW::_1)
+        self.variant(SMDM_AP_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SSACKERR`"]
-pub enum SSACKERRW {
-    #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _0,
-    #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    _1,
+#[doc = "Sticky Stop Acknowledge Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SSACKERR_A {
+    #[doc = "0: Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
+    _0 = 0,
+    #[doc = "1: Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
+    _1 = 1,
 }
-impl SSACKERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SSACKERRW::_0 => false,
-            SSACKERRW::_1 => true,
-        }
+impl From<SSACKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSACKERR_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SSACKERRW<'a> {
+#[doc = "Reader of field `SSACKERR`"]
+pub type SSACKERR_R = crate::R<bool, SSACKERR_A>;
+impl SSACKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSACKERR_A {
+        match self.bits {
+            false => SSACKERR_A::_0,
+            true => SSACKERR_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SSACKERR_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SSACKERR_A::_1
+    }
+}
+#[doc = "Write proxy for field `SSACKERR`"]
+pub struct SSACKERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SSACKERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSACKERRW) -> &'a mut W {
+impl<'a> SSACKERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSACKERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset not caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SSACKERRW::_0)
+        self.variant(SSACKERR_A::_0)
     }
     #[doc = "Reset caused by peripheral failure to acknowledge attempt to enter stop mode"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SSACKERRW::_1)
+        self.variant(SSACKERR_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 1 - Sticky Low-Voltage Detect Reset"]
-    #[inline]
-    pub fn slvd(&self) -> SLVDR {
-        SLVDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn slvd(&self) -> SLVD_R {
+        SLVD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Sticky Loss-of-Clock Reset"]
-    #[inline]
-    pub fn sloc(&self) -> SLOCR {
-        SLOCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sloc(&self) -> SLOC_R {
+        SLOC_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Sticky Loss-of-Lock Reset"]
-    #[inline]
-    pub fn slol(&self) -> SLOLR {
-        SLOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn slol(&self) -> SLOL_R {
+        SLOL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Sticky Watchdog"]
-    #[inline]
-    pub fn swdog(&self) -> SWDOGR {
-        SWDOGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn swdog(&self) -> SWDOG_R {
+        SWDOG_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Sticky External Reset Pin"]
-    #[inline]
-    pub fn spin(&self) -> SPINR {
-        SPINR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn spin(&self) -> SPIN_R {
+        SPIN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Sticky Power-On Reset"]
-    #[inline]
-    pub fn spor(&self) -> SPORR {
-        SPORR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn spor(&self) -> SPOR_R {
+        SPOR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Sticky JTAG generated reset"]
-    #[inline]
-    pub fn sjtag(&self) -> SJTAGR {
-        SJTAGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sjtag(&self) -> SJTAG_R {
+        SJTAG_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Sticky Core Lockup"]
-    #[inline]
-    pub fn slockup(&self) -> SLOCKUPR {
-        SLOCKUPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn slockup(&self) -> SLOCKUP_R {
+        SLOCKUP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Sticky Software"]
-    #[inline]
-    pub fn ssw(&self) -> SSWR {
-        SSWR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssw(&self) -> SSW_R {
+        SSW_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Sticky MDM-AP System Reset Request"]
-    #[inline]
-    pub fn smdm_ap(&self) -> SMDM_APR {
-        SMDM_APR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn smdm_ap(&self) -> SMDM_AP_R {
+        SMDM_AP_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Sticky Stop Acknowledge Error"]
-    #[inline]
-    pub fn ssackerr(&self) -> SSACKERRR {
-        SSACKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssackerr(&self) -> SSACKERR_R {
+        SSACKERR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 130 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - Sticky Low-Voltage Detect Reset"]
-    #[inline]
-    pub fn slvd(&mut self) -> _SLVDW {
-        _SLVDW { w: self }
+    #[inline(always)]
+    pub fn slvd(&mut self) -> SLVD_W {
+        SLVD_W { w: self }
     }
     #[doc = "Bit 2 - Sticky Loss-of-Clock Reset"]
-    #[inline]
-    pub fn sloc(&mut self) -> _SLOCW {
-        _SLOCW { w: self }
+    #[inline(always)]
+    pub fn sloc(&mut self) -> SLOC_W {
+        SLOC_W { w: self }
     }
     #[doc = "Bit 3 - Sticky Loss-of-Lock Reset"]
-    #[inline]
-    pub fn slol(&mut self) -> _SLOLW {
-        _SLOLW { w: self }
+    #[inline(always)]
+    pub fn slol(&mut self) -> SLOL_W {
+        SLOL_W { w: self }
     }
     #[doc = "Bit 5 - Sticky Watchdog"]
-    #[inline]
-    pub fn swdog(&mut self) -> _SWDOGW {
-        _SWDOGW { w: self }
+    #[inline(always)]
+    pub fn swdog(&mut self) -> SWDOG_W {
+        SWDOG_W { w: self }
     }
     #[doc = "Bit 6 - Sticky External Reset Pin"]
-    #[inline]
-    pub fn spin(&mut self) -> _SPINW {
-        _SPINW { w: self }
+    #[inline(always)]
+    pub fn spin(&mut self) -> SPIN_W {
+        SPIN_W { w: self }
     }
     #[doc = "Bit 7 - Sticky Power-On Reset"]
-    #[inline]
-    pub fn spor(&mut self) -> _SPORW {
-        _SPORW { w: self }
+    #[inline(always)]
+    pub fn spor(&mut self) -> SPOR_W {
+        SPOR_W { w: self }
     }
     #[doc = "Bit 8 - Sticky JTAG generated reset"]
-    #[inline]
-    pub fn sjtag(&mut self) -> _SJTAGW {
-        _SJTAGW { w: self }
+    #[inline(always)]
+    pub fn sjtag(&mut self) -> SJTAG_W {
+        SJTAG_W { w: self }
     }
     #[doc = "Bit 9 - Sticky Core Lockup"]
-    #[inline]
-    pub fn slockup(&mut self) -> _SLOCKUPW {
-        _SLOCKUPW { w: self }
+    #[inline(always)]
+    pub fn slockup(&mut self) -> SLOCKUP_W {
+        SLOCKUP_W { w: self }
     }
     #[doc = "Bit 10 - Sticky Software"]
-    #[inline]
-    pub fn ssw(&mut self) -> _SSWW {
-        _SSWW { w: self }
+    #[inline(always)]
+    pub fn ssw(&mut self) -> SSW_W {
+        SSW_W { w: self }
     }
     #[doc = "Bit 11 - Sticky MDM-AP System Reset Request"]
-    #[inline]
-    pub fn smdm_ap(&mut self) -> _SMDM_APW {
-        _SMDM_APW { w: self }
+    #[inline(always)]
+    pub fn smdm_ap(&mut self) -> SMDM_AP_W {
+        SMDM_AP_W { w: self }
     }
     #[doc = "Bit 13 - Sticky Stop Acknowledge Error"]
-    #[inline]
-    pub fn ssackerr(&mut self) -> _SSACKERRW {
-        _SSACKERRW { w: self }
+    #[inline(always)]
+    pub fn ssackerr(&mut self) -> SSACKERR_W {
+        SSACKERR_W { w: self }
     }
 }

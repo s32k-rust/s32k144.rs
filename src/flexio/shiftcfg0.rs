@@ -1,453 +1,307 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SHIFTCFG0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SHIFTCFG0"]
+pub type R = crate::R<u32, super::SHIFTCFG0>;
+#[doc = "Writer for register SHIFTCFG0"]
+pub type W = crate::W<u32, super::SHIFTCFG0>;
+#[doc = "Register SHIFTCFG0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::SHIFTCFG0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SSTART`"]
+#[doc = "Shifter Start bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSTARTR {
-    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on enable"]
-    _0,
-    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on first shift"]
-    _1,
-    #[doc = "Transmitter outputs start bit value 0 before loading data on first shift, receiver/match store sets error flag if start bit is not 0"]
-    _10,
-    #[doc = "Transmitter outputs start bit value 1 before loading data on first shift, receiver/match store sets error flag if start bit is not 1"]
-    _11,
+#[repr(u8)]
+pub enum SSTART_A {
+    #[doc = "0: Start bit disabled for transmitter/receiver/match store, transmitter loads data on enable"]
+    _0 = 0,
+    #[doc = "1: Start bit disabled for transmitter/receiver/match store, transmitter loads data on first shift"]
+    _1 = 1,
+    #[doc = "2: Transmitter outputs start bit value 0 before loading data on first shift, receiver/match store sets error flag if start bit is not 0"]
+    _10 = 2,
+    #[doc = "3: Transmitter outputs start bit value 1 before loading data on first shift, receiver/match store sets error flag if start bit is not 1"]
+    _11 = 3,
 }
-impl SSTARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SSTARTR::_0 => 0,
-            SSTARTR::_1 => 1,
-            SSTARTR::_10 => 2,
-            SSTARTR::_11 => 3,
-        }
+impl From<SSTART_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SSTART_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SSTARTR {
-        match value {
-            0 => SSTARTR::_0,
-            1 => SSTARTR::_1,
-            2 => SSTARTR::_10,
-            3 => SSTARTR::_11,
+}
+#[doc = "Reader of field `SSTART`"]
+pub type SSTART_R = crate::R<u8, SSTART_A>;
+impl SSTART_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSTART_A {
+        match self.bits {
+            0 => SSTART_A::_0,
+            1 => SSTART_A::_1,
+            2 => SSTART_A::_10,
+            3 => SSTART_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SSTARTR::_0
+        *self == SSTART_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SSTARTR::_1
+        *self == SSTART_A::_1
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == SSTARTR::_10
+        *self == SSTART_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == SSTARTR::_11
+        *self == SSTART_A::_11
     }
 }
-#[doc = "Possible values of the field `SSTOP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSTOPR {
-    #[doc = "Stop bit disabled for transmitter/receiver/match store"]
-    _0,
-    #[doc = "Reserved for transmitter/receiver/match store"]
-    _1,
-    #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
-    _10,
-    #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
-    _11,
+#[doc = "Write proxy for field `SSTART`"]
+pub struct SSTART_W<'a> {
+    w: &'a mut W,
 }
-impl SSTOPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SSTOPR::_0 => 0,
-            SSTOPR::_1 => 1,
-            SSTOPR::_10 => 2,
-            SSTOPR::_11 => 3,
+impl<'a> SSTART_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSTART_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SSTOPR {
-        match value {
-            0 => SSTOPR::_0,
-            1 => SSTOPR::_1,
-            2 => SSTOPR::_10,
-            3 => SSTOPR::_11,
+    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on enable"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(SSTART_A::_0)
+    }
+    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on first shift"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(SSTART_A::_1)
+    }
+    #[doc = "Transmitter outputs start bit value 0 before loading data on first shift, receiver/match store sets error flag if start bit is not 0"]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(SSTART_A::_10)
+    }
+    #[doc = "Transmitter outputs start bit value 1 before loading data on first shift, receiver/match store sets error flag if start bit is not 1"]
+    #[inline(always)]
+    pub fn _11(self) -> &'a mut W {
+        self.variant(SSTART_A::_11)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
+    }
+}
+#[doc = "Shifter Stop bit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum SSTOP_A {
+    #[doc = "0: Stop bit disabled for transmitter/receiver/match store"]
+    _0 = 0,
+    #[doc = "1: Reserved for transmitter/receiver/match store"]
+    _1 = 1,
+    #[doc = "2: Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
+    _10 = 2,
+    #[doc = "3: Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
+    _11 = 3,
+}
+impl From<SSTOP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SSTOP_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `SSTOP`"]
+pub type SSTOP_R = crate::R<u8, SSTOP_A>;
+impl SSTOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSTOP_A {
+        match self.bits {
+            0 => SSTOP_A::_0,
+            1 => SSTOP_A::_1,
+            2 => SSTOP_A::_10,
+            3 => SSTOP_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SSTOPR::_0
+        *self == SSTOP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SSTOPR::_1
+        *self == SSTOP_A::_1
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == SSTOPR::_10
+        *self == SSTOP_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == SSTOPR::_11
+        *self == SSTOP_A::_11
     }
 }
-#[doc = "Possible values of the field `INSRC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INSRCR {
-    #[doc = "Pin"]
-    _0,
-    #[doc = "Shifter N+1 Output"]
-    _1,
+#[doc = "Write proxy for field `SSTOP`"]
+pub struct SSTOP_W<'a> {
+    w: &'a mut W,
 }
-impl INSRCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INSRCR::_0 => false,
-            INSRCR::_1 => true,
+impl<'a> SSTOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSTOP_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INSRCR {
-        match value {
-            false => INSRCR::_0,
-            true => INSRCR::_1,
+    #[doc = "Stop bit disabled for transmitter/receiver/match store"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(SSTOP_A::_0)
+    }
+    #[doc = "Reserved for transmitter/receiver/match store"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(SSTOP_A::_1)
+    }
+    #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(SSTOP_A::_10)
+    }
+    #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
+    #[inline(always)]
+    pub fn _11(self) -> &'a mut W {
+        self.variant(SSTOP_A::_11)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
+    }
+}
+#[doc = "Input Source\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INSRC_A {
+    #[doc = "0: Pin"]
+    _0 = 0,
+    #[doc = "1: Shifter N+1 Output"]
+    _1 = 1,
+}
+impl From<INSRC_A> for bool {
+    #[inline(always)]
+    fn from(variant: INSRC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `INSRC`"]
+pub type INSRC_R = crate::R<bool, INSRC_A>;
+impl INSRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INSRC_A {
+        match self.bits {
+            false => INSRC_A::_0,
+            true => INSRC_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == INSRCR::_0
+        *self == INSRC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == INSRCR::_1
+        *self == INSRC_A::_1
     }
 }
-#[doc = "Values that can be written to the field `SSTART`"]
-pub enum SSTARTW {
-    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on enable"]
-    _0,
-    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on first shift"]
-    _1,
-    #[doc = "Transmitter outputs start bit value 0 before loading data on first shift, receiver/match store sets error flag if start bit is not 0"]
-    _10,
-    #[doc = "Transmitter outputs start bit value 1 before loading data on first shift, receiver/match store sets error flag if start bit is not 1"]
-    _11,
-}
-impl SSTARTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SSTARTW::_0 => 0,
-            SSTARTW::_1 => 1,
-            SSTARTW::_10 => 2,
-            SSTARTW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SSTARTW<'a> {
+#[doc = "Write proxy for field `INSRC`"]
+pub struct INSRC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SSTARTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSTARTW) -> &'a mut W {
+impl<'a> INSRC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INSRC_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on enable"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(SSTARTW::_0)
-    }
-    #[doc = "Start bit disabled for transmitter/receiver/match store, transmitter loads data on first shift"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(SSTARTW::_1)
-    }
-    #[doc = "Transmitter outputs start bit value 0 before loading data on first shift, receiver/match store sets error flag if start bit is not 0"]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(SSTARTW::_10)
-    }
-    #[doc = "Transmitter outputs start bit value 1 before loading data on first shift, receiver/match store sets error flag if start bit is not 1"]
-    #[inline]
-    pub fn _11(self) -> &'a mut W {
-        self.variant(SSTARTW::_11)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SSTOP`"]
-pub enum SSTOPW {
-    #[doc = "Stop bit disabled for transmitter/receiver/match store"]
-    _0,
-    #[doc = "Reserved for transmitter/receiver/match store"]
-    _1,
-    #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
-    _10,
-    #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
-    _11,
-}
-impl SSTOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SSTOPW::_0 => 0,
-            SSTOPW::_1 => 1,
-            SSTOPW::_10 => 2,
-            SSTOPW::_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SSTOPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SSTOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSTOPW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Stop bit disabled for transmitter/receiver/match store"]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(SSTOPW::_0)
-    }
-    #[doc = "Reserved for transmitter/receiver/match store"]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(SSTOPW::_1)
-    }
-    #[doc = "Transmitter outputs stop bit value 0 on store, receiver/match store sets error flag if stop bit is not 0"]
-    #[inline]
-    pub fn _10(self) -> &'a mut W {
-        self.variant(SSTOPW::_10)
-    }
-    #[doc = "Transmitter outputs stop bit value 1 on store, receiver/match store sets error flag if stop bit is not 1"]
-    #[inline]
-    pub fn _11(self) -> &'a mut W {
-        self.variant(SSTOPW::_11)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `INSRC`"]
-pub enum INSRCW {
-    #[doc = "Pin"]
-    _0,
-    #[doc = "Shifter N+1 Output"]
-    _1,
-}
-impl INSRCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INSRCW::_0 => false,
-            INSRCW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INSRCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INSRCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INSRCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(INSRCW::_0)
+        self.variant(INSRC_A::_0)
     }
     #[doc = "Shifter N+1 Output"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(INSRCW::_1)
+        self.variant(INSRC_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Shifter Start bit"]
-    #[inline]
-    pub fn sstart(&self) -> SSTARTR {
-        SSTARTR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sstart(&self) -> SSTART_R {
+        SSTART_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Shifter Stop bit"]
-    #[inline]
-    pub fn sstop(&self) -> SSTOPR {
-        SSTOPR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sstop(&self) -> SSTOP_R {
+        SSTOP_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bit 8 - Input Source"]
-    #[inline]
-    pub fn insrc(&self) -> INSRCR {
-        INSRCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn insrc(&self) -> INSRC_R {
+        INSRC_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Shifter Start bit"]
-    #[inline]
-    pub fn sstart(&mut self) -> _SSTARTW {
-        _SSTARTW { w: self }
+    #[inline(always)]
+    pub fn sstart(&mut self) -> SSTART_W {
+        SSTART_W { w: self }
     }
     #[doc = "Bits 4:5 - Shifter Stop bit"]
-    #[inline]
-    pub fn sstop(&mut self) -> _SSTOPW {
-        _SSTOPW { w: self }
+    #[inline(always)]
+    pub fn sstop(&mut self) -> SSTOP_W {
+        SSTOP_W { w: self }
     }
     #[doc = "Bit 8 - Input Source"]
-    #[inline]
-    pub fn insrc(&mut self) -> _INSRCW {
-        _INSRCW { w: self }
+    #[inline(always)]
+    pub fn insrc(&mut self) -> INSRC_W {
+        INSRC_W { w: self }
     }
 }

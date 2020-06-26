@@ -1,532 +1,322 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::FCNFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FCNFG"]
+pub type R = crate::R<u8, super::FCNFG>;
+#[doc = "Writer for register FCNFG"]
+pub type W = crate::W<u8, super::FCNFG>;
+#[doc = "Register FCNFG `reset()`'s with value 0x02"]
+impl crate::ResetValue for super::FCNFG {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x02
     }
 }
-#[doc = r" Value of the field"]
-pub struct EEERDYR {
-    bits: bool,
-}
-impl EEERDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RAMRDYR {
-    bits: bool,
-}
-impl RAMRDYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `ERSSUSP`"]
+#[doc = "Reader of field `EEERDY`"]
+pub type EEERDY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RAMRDY`"]
+pub type RAMRDY_R = crate::R<bool, bool>;
+#[doc = "Erase Suspend\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERSSUSPR {
-    #[doc = "No suspend requested"]
-    _0,
-    #[doc = "Suspend the current Erase Flash Sector command execution"]
-    _1,
+pub enum ERSSUSP_A {
+    #[doc = "0: No suspend requested"]
+    _0 = 0,
+    #[doc = "1: Suspend the current Erase Flash Sector command execution"]
+    _1 = 1,
 }
-impl ERSSUSPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<ERSSUSP_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERSSUSP_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERSSUSPR::_0 => false,
-            ERSSUSPR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERSSUSPR {
-        match value {
-            false => ERSSUSPR::_0,
-            true => ERSSUSPR::_1,
+}
+#[doc = "Reader of field `ERSSUSP`"]
+pub type ERSSUSP_R = crate::R<bool, ERSSUSP_A>;
+impl ERSSUSP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERSSUSP_A {
+        match self.bits {
+            false => ERSSUSP_A::_0,
+            true => ERSSUSP_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ERSSUSPR::_0
+        *self == ERSSUSP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ERSSUSPR::_1
+        *self == ERSSUSP_A::_1
     }
 }
-#[doc = "Possible values of the field `ERSAREQ`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERSAREQR {
-    #[doc = "No request or request complete"]
-    _0,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
-}
-impl ERSAREQR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERSAREQR::_0 => false,
-            ERSAREQR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERSAREQR {
-        match value {
-            false => ERSAREQR::_0,
-            i => ERSAREQR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == ERSAREQR::_0
-    }
-}
-#[doc = "Possible values of the field `RDCOLLIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDCOLLIER {
-    #[doc = "Read collision error interrupt disabled"]
-    _0,
-    #[doc = "Read collision error interrupt enabled. An interrupt request is generated whenever an FTFC read collision error is detected (see the description of FSTAT\\[RDCOLERR\\])."]
-    _1,
-}
-impl RDCOLLIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDCOLLIER::_0 => false,
-            RDCOLLIER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDCOLLIER {
-        match value {
-            false => RDCOLLIER::_0,
-            true => RDCOLLIER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == RDCOLLIER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == RDCOLLIER::_1
-    }
-}
-#[doc = "Possible values of the field `CCIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCIER {
-    #[doc = "Command complete interrupt disabled"]
-    _0,
-    #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT\\[CCIF\\] flag is set."]
-    _1,
-}
-impl CCIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCIER::_0 => false,
-            CCIER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCIER {
-        match value {
-            false => CCIER::_0,
-            true => CCIER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CCIER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CCIER::_1
-    }
-}
-#[doc = "Values that can be written to the field `ERSSUSP`"]
-pub enum ERSSUSPW {
-    #[doc = "No suspend requested"]
-    _0,
-    #[doc = "Suspend the current Erase Flash Sector command execution"]
-    _1,
-}
-impl ERSSUSPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERSSUSPW::_0 => false,
-            ERSSUSPW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ERSSUSPW<'a> {
+#[doc = "Write proxy for field `ERSSUSP`"]
+pub struct ERSSUSP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERSSUSPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERSSUSPW) -> &'a mut W {
+impl<'a> ERSSUSP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERSSUSP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No suspend requested"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ERSSUSPW::_0)
+        self.variant(ERSSUSP_A::_0)
     }
     #[doc = "Suspend the current Erase Flash Sector command execution"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ERSSUSPW::_1)
+        self.variant(ERSSUSP_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u8) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RDCOLLIE`"]
-pub enum RDCOLLIEW {
-    #[doc = "Read collision error interrupt disabled"]
-    _0,
-    #[doc = "Read collision error interrupt enabled. An interrupt request is generated whenever an FTFC read collision error is detected (see the description of FSTAT\\[RDCOLERR\\])."]
-    _1,
+#[doc = "Erase All Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ERSAREQ_A {
+    #[doc = "0: No request or request complete"]
+    _0 = 0,
 }
-impl RDCOLLIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RDCOLLIEW::_0 => false,
-            RDCOLLIEW::_1 => true,
-        }
+impl From<ERSAREQ_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERSAREQ_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _RDCOLLIEW<'a> {
+#[doc = "Reader of field `ERSAREQ`"]
+pub type ERSAREQ_R = crate::R<bool, ERSAREQ_A>;
+impl ERSAREQ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<bool, ERSAREQ_A> {
+        use crate::Variant::*;
+        match self.bits {
+            false => Val(ERSAREQ_A::_0),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == ERSAREQ_A::_0
+    }
+}
+#[doc = "Read Collision Error Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RDCOLLIE_A {
+    #[doc = "0: Read collision error interrupt disabled"]
+    _0 = 0,
+    #[doc = "1: Read collision error interrupt enabled. An interrupt request is generated whenever an FTFC read collision error is detected (see the description of FSTAT\\[RDCOLERR\\])."]
+    _1 = 1,
+}
+impl From<RDCOLLIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDCOLLIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `RDCOLLIE`"]
+pub type RDCOLLIE_R = crate::R<bool, RDCOLLIE_A>;
+impl RDCOLLIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDCOLLIE_A {
+        match self.bits {
+            false => RDCOLLIE_A::_0,
+            true => RDCOLLIE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == RDCOLLIE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == RDCOLLIE_A::_1
+    }
+}
+#[doc = "Write proxy for field `RDCOLLIE`"]
+pub struct RDCOLLIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDCOLLIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RDCOLLIEW) -> &'a mut W {
+impl<'a> RDCOLLIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RDCOLLIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read collision error interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RDCOLLIEW::_0)
+        self.variant(RDCOLLIE_A::_0)
     }
     #[doc = "Read collision error interrupt enabled. An interrupt request is generated whenever an FTFC read collision error is detected (see the description of FSTAT\\[RDCOLERR\\])."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RDCOLLIEW::_1)
+        self.variant(RDCOLLIE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u8) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CCIE`"]
-pub enum CCIEW {
-    #[doc = "Command complete interrupt disabled"]
-    _0,
-    #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT\\[CCIF\\] flag is set."]
-    _1,
+#[doc = "Command Complete Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CCIE_A {
+    #[doc = "0: Command complete interrupt disabled"]
+    _0 = 0,
+    #[doc = "1: Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT\\[CCIF\\]
+flag is set."]
+    _1 = 1,
 }
-impl CCIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CCIEW::_0 => false,
-            CCIEW::_1 => true,
-        }
+impl From<CCIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCIE_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CCIEW<'a> {
+#[doc = "Reader of field `CCIE`"]
+pub type CCIE_R = crate::R<bool, CCIE_A>;
+impl CCIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCIE_A {
+        match self.bits {
+            false => CCIE_A::_0,
+            true => CCIE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CCIE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CCIE_A::_1
+    }
+}
+#[doc = "Write proxy for field `CCIE`"]
+pub struct CCIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CCIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CCIEW) -> &'a mut W {
+impl<'a> CCIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CCIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Command complete interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CCIEW::_0)
+        self.variant(CCIE_A::_0)
     }
-    #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT\\[CCIF\\] flag is set."]
-    #[inline]
+    #[doc = "Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT\\[CCIF\\]
+flag is set."]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CCIEW::_1)
+        self.variant(CCIE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u8) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - EEERDY"]
-    #[inline]
-    pub fn eeerdy(&self) -> EEERDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        EEERDYR { bits }
+    #[inline(always)]
+    pub fn eeerdy(&self) -> EEERDY_R {
+        EEERDY_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - RAM Ready"]
-    #[inline]
-    pub fn ramrdy(&self) -> RAMRDYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        RAMRDYR { bits }
+    #[inline(always)]
+    pub fn ramrdy(&self) -> RAMRDY_R {
+        RAMRDY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Erase Suspend"]
-    #[inline]
-    pub fn erssusp(&self) -> ERSSUSPR {
-        ERSSUSPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn erssusp(&self) -> ERSSUSP_R {
+        ERSSUSP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Erase All Request"]
-    #[inline]
-    pub fn ersareq(&self) -> ERSAREQR {
-        ERSAREQR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn ersareq(&self) -> ERSAREQ_R {
+        ERSAREQ_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Read Collision Error Interrupt Enable"]
-    #[inline]
-    pub fn rdcollie(&self) -> RDCOLLIER {
-        RDCOLLIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn rdcollie(&self) -> RDCOLLIE_R {
+        RDCOLLIE_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Command Complete Interrupt Enable"]
-    #[inline]
-    pub fn ccie(&self) -> CCIER {
-        CCIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn ccie(&self) -> CCIE_R {
+        CCIE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 4 - Erase Suspend"]
-    #[inline]
-    pub fn erssusp(&mut self) -> _ERSSUSPW {
-        _ERSSUSPW { w: self }
+    #[inline(always)]
+    pub fn erssusp(&mut self) -> ERSSUSP_W {
+        ERSSUSP_W { w: self }
     }
     #[doc = "Bit 6 - Read Collision Error Interrupt Enable"]
-    #[inline]
-    pub fn rdcollie(&mut self) -> _RDCOLLIEW {
-        _RDCOLLIEW { w: self }
+    #[inline(always)]
+    pub fn rdcollie(&mut self) -> RDCOLLIE_W {
+        RDCOLLIE_W { w: self }
     }
     #[doc = "Bit 7 - Command Complete Interrupt Enable"]
-    #[inline]
-    pub fn ccie(&mut self) -> _CCIEW {
-        _CCIEW { w: self }
+    #[inline(always)]
+    pub fn ccie(&mut self) -> CCIE_W {
+        CCIE_W { w: self }
     }
 }

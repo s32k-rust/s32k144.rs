@@ -1,130 +1,86 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RSR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SOF`"]
+#[doc = "Reader of register RSR"]
+pub type R = crate::R<u32, super::RSR>;
+#[doc = "Start Of Frame\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOFR {
-    #[doc = "Subsequent data word received after LPSPI_PCS assertion."]
-    _0,
-    #[doc = "First data word received after LPSPI_PCS assertion."]
-    _1,
+pub enum SOF_A {
+    #[doc = "0: Subsequent data word received after LPSPI_PCS assertion."]
+    _0 = 0,
+    #[doc = "1: First data word received after LPSPI_PCS assertion."]
+    _1 = 1,
 }
-impl SOFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<SOF_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOF_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SOFR::_0 => false,
-            SOFR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SOFR {
-        match value {
-            false => SOFR::_0,
-            true => SOFR::_1,
+}
+#[doc = "Reader of field `SOF`"]
+pub type SOF_R = crate::R<bool, SOF_A>;
+impl SOF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOF_A {
+        match self.bits {
+            false => SOF_A::_0,
+            true => SOF_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SOFR::_0
+        *self == SOF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SOFR::_1
+        *self == SOF_A::_1
     }
 }
-#[doc = "Possible values of the field `RXEMPTY`"]
+#[doc = "RX FIFO Empty\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXEMPTYR {
-    #[doc = "RX FIFO is not empty."]
-    _0,
-    #[doc = "RX FIFO is empty."]
-    _1,
+pub enum RXEMPTY_A {
+    #[doc = "0: RX FIFO is not empty."]
+    _0 = 0,
+    #[doc = "1: RX FIFO is empty."]
+    _1 = 1,
 }
-impl RXEMPTYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<RXEMPTY_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXEMPTY_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXEMPTYR::_0 => false,
-            RXEMPTYR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXEMPTYR {
-        match value {
-            false => RXEMPTYR::_0,
-            true => RXEMPTYR::_1,
+}
+#[doc = "Reader of field `RXEMPTY`"]
+pub type RXEMPTY_R = crate::R<bool, RXEMPTY_A>;
+impl RXEMPTY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXEMPTY_A {
+        match self.bits {
+            false => RXEMPTY_A::_0,
+            true => RXEMPTY_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == RXEMPTYR::_0
+        *self == RXEMPTY_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == RXEMPTYR::_1
+        *self == RXEMPTY_A::_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Start Of Frame"]
-    #[inline]
-    pub fn sof(&self) -> SOFR {
-        SOFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sof(&self) -> SOF_R {
+        SOF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - RX FIFO Empty"]
-    #[inline]
-    pub fn rxempty(&self) -> RXEMPTYR {
-        RXEMPTYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxempty(&self) -> RXEMPTY_R {
+        RXEMPTY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }

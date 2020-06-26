@@ -1,525 +1,379 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LMDR2 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LMDR2"]
+pub type R = crate::R<u32, super::LMDR2>;
+#[doc = "Writer for register LMDR2"]
+pub type W = crate::W<u32, super::LMDR2>;
+#[doc = "Register LMDR2 `reset()`'s with value 0x8424_40a0"]
+impl crate::ResetValue for super::LMDR2 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x8424_40a0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CF1R {
-    bits: u8,
-}
-impl CF1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `MT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MTR {
-    #[doc = "PC Cache"]
-    _010,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl MTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MTR::_010 => 2,
-            MTR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MTR {
-        match value {
-            2 => MTR::_010,
-            i => MTR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
-    pub fn is_010(&self) -> bool {
-        *self == MTR::_010
-    }
-}
-#[doc = "Possible values of the field `LOCK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKR {
-    #[doc = "Writes to the LMDRn\\[7:0\\] are allowed."]
-    _0,
-    #[doc = "Writes to the LMDRn\\[7:0\\] are ignored."]
-    _1,
-}
-impl LOCKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOCKR::_0 => false,
-            LOCKR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOCKR {
-        match value {
-            false => LOCKR::_0,
-            true => LOCKR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == LOCKR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == LOCKR::_1
-    }
-}
-#[doc = "Possible values of the field `DPW`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DPWR {
-    #[doc = "LMEMn 32-bits wide"]
-    _010,
-    #[doc = "LMEMn 64-bits wide"]
-    _011,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl DPWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DPWR::_010 => 2,
-            DPWR::_011 => 3,
-            DPWR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DPWR {
-        match value {
-            2 => DPWR::_010,
-            3 => DPWR::_011,
-            i => DPWR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
-    pub fn is_010(&self) -> bool {
-        *self == DPWR::_010
-    }
-    #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
-    pub fn is_011(&self) -> bool {
-        *self == DPWR::_011
-    }
-}
-#[doc = "Possible values of the field `WY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WYR {
-    #[doc = "No Cache"]
-    _0000,
-    #[doc = "2-Way Set Associative"]
-    _0010,
-    #[doc = "4-Way Set Associative"]
-    _0100,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl WYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            WYR::_0000 => 0,
-            WYR::_0010 => 2,
-            WYR::_0100 => 4,
-            WYR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WYR {
-        match value {
-            0 => WYR::_0000,
-            2 => WYR::_0010,
-            4 => WYR::_0100,
-            i => WYR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0000`"]
-    #[inline]
-    pub fn is_0000(&self) -> bool {
-        *self == WYR::_0000
-    }
-    #[doc = "Checks if the value of the field is `_0010`"]
-    #[inline]
-    pub fn is_0010(&self) -> bool {
-        *self == WYR::_0010
-    }
-    #[doc = "Checks if the value of the field is `_0100`"]
-    #[inline]
-    pub fn is_0100(&self) -> bool {
-        *self == WYR::_0100
-    }
-}
-#[doc = "Possible values of the field `LMSZ`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LMSZR {
-    #[doc = "4 KB LMEMn"]
-    _0100,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl LMSZR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LMSZR::_0100 => 4,
-            LMSZR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LMSZR {
-        match value {
-            4 => LMSZR::_0100,
-            i => LMSZR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0100`"]
-    #[inline]
-    pub fn is_0100(&self) -> bool {
-        *self == LMSZR::_0100
-    }
-}
-#[doc = "Possible values of the field `LMSZH`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LMSZHR {
-    #[doc = "LMEMn is a power-of-2 capacity."]
-    _0,
-    #[doc = "LMEMn is not a power-of-2, with a capacity is 0.75 * LMSZ."]
-    _1,
-}
-impl LMSZHR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LMSZHR::_0 => false,
-            LMSZHR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LMSZHR {
-        match value {
-            false => LMSZHR::_0,
-            true => LMSZHR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == LMSZHR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == LMSZHR::_1
-    }
-}
-#[doc = "Possible values of the field `V`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VR {
-    #[doc = "LMEMn is not present."]
-    _0,
-    #[doc = "LMEMn is present."]
-    _1,
-}
-impl VR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VR::_0 => false,
-            VR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VR {
-        match value {
-            false => VR::_0,
-            true => VR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == VR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == VR::_1
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CF1W<'a> {
+#[doc = "Reader of field `CF1`"]
+pub type CF1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CF1`"]
+pub struct CF1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CF1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CF1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LOCK`"]
-pub enum LOCKW {
-    #[doc = "Writes to the LMDRn\\[7:0\\] are allowed."]
-    _0,
-    #[doc = "Writes to the LMDRn\\[7:0\\] are ignored."]
-    _1,
+#[doc = "Memory Type\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum MT_A {
+    #[doc = "2: PC Cache"]
+    _010 = 2,
 }
-impl LOCKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LOCKW::_0 => false,
-            LOCKW::_1 => true,
-        }
+impl From<MT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MT_A) -> Self {
+        variant as _
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOCKW<'a> {
+#[doc = "Reader of field `MT`"]
+pub type MT_R = crate::R<u8, MT_A>;
+impl MT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(MT_A::_010),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_010`"]
+    #[inline(always)]
+    pub fn is_010(&self) -> bool {
+        *self == MT_A::_010
+    }
+}
+#[doc = "LOCK\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOCK_A {
+    #[doc = "0: Writes to the LMDRn\\[7:0\\]
+are allowed."]
+    _0 = 0,
+    #[doc = "1: Writes to the LMDRn\\[7:0\\]
+are ignored."]
+    _1 = 1,
+}
+impl From<LOCK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOCK_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `LOCK`"]
+pub type LOCK_R = crate::R<bool, LOCK_A>;
+impl LOCK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOCK_A {
+        match self.bits {
+            false => LOCK_A::_0,
+            true => LOCK_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == LOCK_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == LOCK_A::_1
+    }
+}
+#[doc = "Write proxy for field `LOCK`"]
+pub struct LOCK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCKW) -> &'a mut W {
+impl<'a> LOCK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
-    #[doc = "Writes to the LMDRn\\[7:0\\] are allowed."]
-    #[inline]
+    #[doc = "Writes to the LMDRn\\[7:0\\]
+are allowed."]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LOCKW::_0)
+        self.variant(LOCK_A::_0)
     }
-    #[doc = "Writes to the LMDRn\\[7:0\\] are ignored."]
-    #[inline]
+    #[doc = "Writes to the LMDRn\\[7:0\\]
+are ignored."]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LOCKW::_1)
+        self.variant(LOCK_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
+#[doc = "LMEM Data Path Width. This field defines the width of the local memory.\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum DPW_A {
+    #[doc = "2: LMEMn 32-bits wide"]
+    _010 = 2,
+    #[doc = "3: LMEMn 64-bits wide"]
+    _011 = 3,
+}
+impl From<DPW_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DPW_A) -> Self {
+        variant as _
     }
+}
+#[doc = "Reader of field `DPW`"]
+pub type DPW_R = crate::R<u8, DPW_A>;
+impl DPW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DPW_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(DPW_A::_010),
+            3 => Val(DPW_A::_011),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_010`"]
+    #[inline(always)]
+    pub fn is_010(&self) -> bool {
+        *self == DPW_A::_010
+    }
+    #[doc = "Checks if the value of the field is `_011`"]
+    #[inline(always)]
+    pub fn is_011(&self) -> bool {
+        *self == DPW_A::_011
+    }
+}
+#[doc = "Level 1 Cache Ways\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum WY_A {
+    #[doc = "0: No Cache"]
+    _0000 = 0,
+    #[doc = "2: 2-Way Set Associative"]
+    _0010 = 2,
+    #[doc = "4: 4-Way Set Associative"]
+    _0100 = 4,
+}
+impl From<WY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: WY_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `WY`"]
+pub type WY_R = crate::R<u8, WY_A>;
+impl WY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, WY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(WY_A::_0000),
+            2 => Val(WY_A::_0010),
+            4 => Val(WY_A::_0100),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0000`"]
+    #[inline(always)]
+    pub fn is_0000(&self) -> bool {
+        *self == WY_A::_0000
+    }
+    #[doc = "Checks if the value of the field is `_0010`"]
+    #[inline(always)]
+    pub fn is_0010(&self) -> bool {
+        *self == WY_A::_0010
+    }
+    #[doc = "Checks if the value of the field is `_0100`"]
+    #[inline(always)]
+    pub fn is_0100(&self) -> bool {
+        *self == WY_A::_0100
+    }
+}
+#[doc = "LMEM Size\n\nValue on reset: 4"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum LMSZ_A {
+    #[doc = "4: 4 KB LMEMn"]
+    _0100 = 4,
+}
+impl From<LMSZ_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LMSZ_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `LMSZ`"]
+pub type LMSZ_R = crate::R<u8, LMSZ_A>;
+impl LMSZ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LMSZ_A> {
+        use crate::Variant::*;
+        match self.bits {
+            4 => Val(LMSZ_A::_0100),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0100`"]
+    #[inline(always)]
+    pub fn is_0100(&self) -> bool {
+        *self == LMSZ_A::_0100
+    }
+}
+#[doc = "LMEM Size Hole\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LMSZH_A {
+    #[doc = "0: LMEMn is a power-of-2 capacity."]
+    _0 = 0,
+    #[doc = "1: LMEMn is not a power-of-2, with a capacity is 0.75 * LMSZ."]
+    _1 = 1,
+}
+impl From<LMSZH_A> for bool {
+    #[inline(always)]
+    fn from(variant: LMSZH_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `LMSZH`"]
+pub type LMSZH_R = crate::R<bool, LMSZH_A>;
+impl LMSZH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LMSZH_A {
+        match self.bits {
+            false => LMSZH_A::_0,
+            true => LMSZH_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == LMSZH_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == LMSZH_A::_1
+    }
+}
+#[doc = "Local Memory Valid\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum V_A {
+    #[doc = "0: LMEMn is not present."]
+    _0 = 0,
+    #[doc = "1: LMEMn is present."]
+    _1 = 1,
+}
+impl From<V_A> for bool {
+    #[inline(always)]
+    fn from(variant: V_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `V`"]
+pub type V_R = crate::R<bool, V_A>;
+impl V_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> V_A {
+        match self.bits {
+            false => V_A::_0,
+            true => V_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == V_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == V_A::_1
+    }
+}
+impl R {
     #[doc = "Bits 4:7 - Control Field 1"]
-    #[inline]
-    pub fn cf1(&self) -> CF1R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CF1R { bits }
+    #[inline(always)]
+    pub fn cf1(&self) -> CF1_R {
+        CF1_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 13:15 - Memory Type"]
-    #[inline]
-    pub fn mt(&self) -> MTR {
-        MTR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mt(&self) -> MT_R {
+        MT_R::new(((self.bits >> 13) & 0x07) as u8)
     }
     #[doc = "Bit 16 - LOCK"]
-    #[inline]
-    pub fn lock(&self) -> LOCKR {
-        LOCKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lock(&self) -> LOCK_R {
+        LOCK_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bits 17:19 - LMEM Data Path Width. This field defines the width of the local memory."]
-    #[inline]
-    pub fn dpw(&self) -> DPWR {
-        DPWR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dpw(&self) -> DPW_R {
+        DPW_R::new(((self.bits >> 17) & 0x07) as u8)
     }
     #[doc = "Bits 20:23 - Level 1 Cache Ways"]
-    #[inline]
-    pub fn wy(&self) -> WYR {
-        WYR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn wy(&self) -> WY_R {
+        WY_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - LMEM Size"]
-    #[inline]
-    pub fn lmsz(&self) -> LMSZR {
-        LMSZR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lmsz(&self) -> LMSZ_R {
+        LMSZ_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bit 28 - LMEM Size Hole"]
-    #[inline]
-    pub fn lmszh(&self) -> LMSZHR {
-        LMSZHR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lmszh(&self) -> LMSZH_R {
+        LMSZH_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Local Memory Valid"]
-    #[inline]
-    pub fn v(&self) -> VR {
-        VR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn v(&self) -> V_R {
+        V_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2216968352 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 4:7 - Control Field 1"]
-    #[inline]
-    pub fn cf1(&mut self) -> _CF1W {
-        _CF1W { w: self }
+    #[inline(always)]
+    pub fn cf1(&mut self) -> CF1_W {
+        CF1_W { w: self }
     }
     #[doc = "Bit 16 - LOCK"]
-    #[inline]
-    pub fn lock(&mut self) -> _LOCKW {
-        _LOCKW { w: self }
+    #[inline(always)]
+    pub fn lock(&mut self) -> LOCK_W {
+        LOCK_W { w: self }
     }
 }

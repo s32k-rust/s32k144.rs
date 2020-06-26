@@ -1,888 +1,608 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::QDCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register QDCTRL"]
+pub type R = crate::R<u32, super::QDCTRL>;
+#[doc = "Writer for register QDCTRL"]
+pub type W = crate::W<u32, super::QDCTRL>;
+#[doc = "Register QDCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::QDCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `QUADEN`"]
+#[doc = "Quadrature Decoder Mode Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum QUADENR {
-    #[doc = "Quadrature Decoder mode is disabled."]
-    _0,
-    #[doc = "Quadrature Decoder mode is enabled."]
-    _1,
+pub enum QUADEN_A {
+    #[doc = "0: Quadrature Decoder mode is disabled."]
+    _0 = 0,
+    #[doc = "1: Quadrature Decoder mode is enabled."]
+    _1 = 1,
 }
-impl QUADENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<QUADEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: QUADEN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            QUADENR::_0 => false,
-            QUADENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> QUADENR {
-        match value {
-            false => QUADENR::_0,
-            true => QUADENR::_1,
+}
+#[doc = "Reader of field `QUADEN`"]
+pub type QUADEN_R = crate::R<bool, QUADEN_A>;
+impl QUADEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> QUADEN_A {
+        match self.bits {
+            false => QUADEN_A::_0,
+            true => QUADEN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == QUADENR::_0
+        *self == QUADEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == QUADENR::_1
+        *self == QUADEN_A::_1
     }
 }
-#[doc = "Possible values of the field `TOFDIR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TOFDIRR {
-    #[doc = "TOF bit was set on the bottom of counting. There was an FTM counter decrement and FTM counter changes from its minimum value (CNTIN register) to its maximum value (MOD register)."]
-    _0,
-    #[doc = "TOF bit was set on the top of counting. There was an FTM counter increment and FTM counter changes from its maximum value (MOD register) to its minimum value (CNTIN register)."]
-    _1,
-}
-impl TOFDIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TOFDIRR::_0 => false,
-            TOFDIRR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TOFDIRR {
-        match value {
-            false => TOFDIRR::_0,
-            true => TOFDIRR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == TOFDIRR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == TOFDIRR::_1
-    }
-}
-#[doc = "Possible values of the field `QUADIR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum QUADIRR {
-    #[doc = "Counting direction is decreasing (FTM counter decrement)."]
-    _0,
-    #[doc = "Counting direction is increasing (FTM counter increment)."]
-    _1,
-}
-impl QUADIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            QUADIRR::_0 => false,
-            QUADIRR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> QUADIRR {
-        match value {
-            false => QUADIRR::_0,
-            true => QUADIRR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == QUADIRR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == QUADIRR::_1
-    }
-}
-#[doc = "Possible values of the field `QUADMODE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum QUADMODER {
-    #[doc = "Phase A and phase B encoding mode."]
-    _0,
-    #[doc = "Count and direction encoding mode."]
-    _1,
-}
-impl QUADMODER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            QUADMODER::_0 => false,
-            QUADMODER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> QUADMODER {
-        match value {
-            false => QUADMODER::_0,
-            true => QUADMODER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == QUADMODER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == QUADMODER::_1
-    }
-}
-#[doc = "Possible values of the field `PHBPOL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PHBPOLR {
-    #[doc = "Normal polarity. Phase B input signal is not inverted before identifying the rising and falling edges of this signal."]
-    _0,
-    #[doc = "Inverted polarity. Phase B input signal is inverted before identifying the rising and falling edges of this signal."]
-    _1,
-}
-impl PHBPOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PHBPOLR::_0 => false,
-            PHBPOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PHBPOLR {
-        match value {
-            false => PHBPOLR::_0,
-            true => PHBPOLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PHBPOLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PHBPOLR::_1
-    }
-}
-#[doc = "Possible values of the field `PHAPOL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PHAPOLR {
-    #[doc = "Normal polarity. Phase A input signal is not inverted before identifying the rising and falling edges of this signal."]
-    _0,
-    #[doc = "Inverted polarity. Phase A input signal is inverted before identifying the rising and falling edges of this signal."]
-    _1,
-}
-impl PHAPOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PHAPOLR::_0 => false,
-            PHAPOLR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PHAPOLR {
-        match value {
-            false => PHAPOLR::_0,
-            true => PHAPOLR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PHAPOLR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PHAPOLR::_1
-    }
-}
-#[doc = "Possible values of the field `PHBFLTREN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PHBFLTRENR {
-    #[doc = "Phase B input filter is disabled."]
-    _0,
-    #[doc = "Phase B input filter is enabled."]
-    _1,
-}
-impl PHBFLTRENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PHBFLTRENR::_0 => false,
-            PHBFLTRENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PHBFLTRENR {
-        match value {
-            false => PHBFLTRENR::_0,
-            true => PHBFLTRENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PHBFLTRENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PHBFLTRENR::_1
-    }
-}
-#[doc = "Possible values of the field `PHAFLTREN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PHAFLTRENR {
-    #[doc = "Phase A input filter is disabled."]
-    _0,
-    #[doc = "Phase A input filter is enabled."]
-    _1,
-}
-impl PHAFLTRENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PHAFLTRENR::_0 => false,
-            PHAFLTRENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PHAFLTRENR {
-        match value {
-            false => PHAFLTRENR::_0,
-            true => PHAFLTRENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == PHAFLTRENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == PHAFLTRENR::_1
-    }
-}
-#[doc = "Values that can be written to the field `QUADEN`"]
-pub enum QUADENW {
-    #[doc = "Quadrature Decoder mode is disabled."]
-    _0,
-    #[doc = "Quadrature Decoder mode is enabled."]
-    _1,
-}
-impl QUADENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            QUADENW::_0 => false,
-            QUADENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _QUADENW<'a> {
+#[doc = "Write proxy for field `QUADEN`"]
+pub struct QUADEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _QUADENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: QUADENW) -> &'a mut W {
+impl<'a> QUADEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: QUADEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Quadrature Decoder mode is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(QUADENW::_0)
+        self.variant(QUADEN_A::_0)
     }
     #[doc = "Quadrature Decoder mode is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(QUADENW::_1)
+        self.variant(QUADEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `QUADMODE`"]
-pub enum QUADMODEW {
+#[doc = "Timer Overflow Direction In Quadrature Decoder Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TOFDIR_A {
+    #[doc = "0: TOF bit was set on the bottom of counting. There was an FTM counter decrement and FTM counter changes from its minimum value (CNTIN register) to its maximum value (MOD register)."]
+    _0 = 0,
+    #[doc = "1: TOF bit was set on the top of counting. There was an FTM counter increment and FTM counter changes from its maximum value (MOD register) to its minimum value (CNTIN register)."]
+    _1 = 1,
+}
+impl From<TOFDIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: TOFDIR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `TOFDIR`"]
+pub type TOFDIR_R = crate::R<bool, TOFDIR_A>;
+impl TOFDIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TOFDIR_A {
+        match self.bits {
+            false => TOFDIR_A::_0,
+            true => TOFDIR_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TOFDIR_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TOFDIR_A::_1
+    }
+}
+#[doc = "FTM Counter Direction In Quadrature Decoder Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum QUADIR_A {
+    #[doc = "0: Counting direction is decreasing (FTM counter decrement)."]
+    _0 = 0,
+    #[doc = "1: Counting direction is increasing (FTM counter increment)."]
+    _1 = 1,
+}
+impl From<QUADIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: QUADIR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `QUADIR`"]
+pub type QUADIR_R = crate::R<bool, QUADIR_A>;
+impl QUADIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> QUADIR_A {
+        match self.bits {
+            false => QUADIR_A::_0,
+            true => QUADIR_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == QUADIR_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == QUADIR_A::_1
+    }
+}
+#[doc = "Quadrature Decoder Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum QUADMODE_A {
+    #[doc = "0: Phase A and phase B encoding mode."]
+    _0 = 0,
+    #[doc = "1: Count and direction encoding mode."]
+    _1 = 1,
+}
+impl From<QUADMODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: QUADMODE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `QUADMODE`"]
+pub type QUADMODE_R = crate::R<bool, QUADMODE_A>;
+impl QUADMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> QUADMODE_A {
+        match self.bits {
+            false => QUADMODE_A::_0,
+            true => QUADMODE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == QUADMODE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == QUADMODE_A::_1
+    }
+}
+#[doc = "Write proxy for field `QUADMODE`"]
+pub struct QUADMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> QUADMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: QUADMODE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Phase A and phase B encoding mode."]
-    _0,
-    #[doc = "Count and direction encoding mode."]
-    _1,
-}
-impl QUADMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            QUADMODEW::_0 => false,
-            QUADMODEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _QUADMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _QUADMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: QUADMODEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Phase A and phase B encoding mode."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(QUADMODEW::_0)
+        self.variant(QUADMODE_A::_0)
     }
     #[doc = "Count and direction encoding mode."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(QUADMODEW::_1)
+        self.variant(QUADMODE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PHBPOL`"]
-pub enum PHBPOLW {
-    #[doc = "Normal polarity. Phase B input signal is not inverted before identifying the rising and falling edges of this signal."]
-    _0,
-    #[doc = "Inverted polarity. Phase B input signal is inverted before identifying the rising and falling edges of this signal."]
-    _1,
+#[doc = "Phase B Input Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PHBPOL_A {
+    #[doc = "0: Normal polarity. Phase B input signal is not inverted before identifying the rising and falling edges of this signal."]
+    _0 = 0,
+    #[doc = "1: Inverted polarity. Phase B input signal is inverted before identifying the rising and falling edges of this signal."]
+    _1 = 1,
 }
-impl PHBPOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PHBPOLW::_0 => false,
-            PHBPOLW::_1 => true,
-        }
+impl From<PHBPOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PHBPOL_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHBPOLW<'a> {
+#[doc = "Reader of field `PHBPOL`"]
+pub type PHBPOL_R = crate::R<bool, PHBPOL_A>;
+impl PHBPOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PHBPOL_A {
+        match self.bits {
+            false => PHBPOL_A::_0,
+            true => PHBPOL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PHBPOL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PHBPOL_A::_1
+    }
+}
+#[doc = "Write proxy for field `PHBPOL`"]
+pub struct PHBPOL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHBPOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PHBPOLW) -> &'a mut W {
+impl<'a> PHBPOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PHBPOL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Normal polarity. Phase B input signal is not inverted before identifying the rising and falling edges of this signal."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PHBPOLW::_0)
+        self.variant(PHBPOL_A::_0)
     }
     #[doc = "Inverted polarity. Phase B input signal is inverted before identifying the rising and falling edges of this signal."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PHBPOLW::_1)
+        self.variant(PHBPOL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PHAPOL`"]
-pub enum PHAPOLW {
+#[doc = "Phase A Input Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PHAPOL_A {
+    #[doc = "0: Normal polarity. Phase A input signal is not inverted before identifying the rising and falling edges of this signal."]
+    _0 = 0,
+    #[doc = "1: Inverted polarity. Phase A input signal is inverted before identifying the rising and falling edges of this signal."]
+    _1 = 1,
+}
+impl From<PHAPOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PHAPOL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `PHAPOL`"]
+pub type PHAPOL_R = crate::R<bool, PHAPOL_A>;
+impl PHAPOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PHAPOL_A {
+        match self.bits {
+            false => PHAPOL_A::_0,
+            true => PHAPOL_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PHAPOL_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PHAPOL_A::_1
+    }
+}
+#[doc = "Write proxy for field `PHAPOL`"]
+pub struct PHAPOL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PHAPOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PHAPOL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Normal polarity. Phase A input signal is not inverted before identifying the rising and falling edges of this signal."]
-    _0,
-    #[doc = "Inverted polarity. Phase A input signal is inverted before identifying the rising and falling edges of this signal."]
-    _1,
-}
-impl PHAPOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PHAPOLW::_0 => false,
-            PHAPOLW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PHAPOLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PHAPOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PHAPOLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal polarity. Phase A input signal is not inverted before identifying the rising and falling edges of this signal."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PHAPOLW::_0)
+        self.variant(PHAPOL_A::_0)
     }
     #[doc = "Inverted polarity. Phase A input signal is inverted before identifying the rising and falling edges of this signal."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PHAPOLW::_1)
+        self.variant(PHAPOL_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PHBFLTREN`"]
-pub enum PHBFLTRENW {
-    #[doc = "Phase B input filter is disabled."]
-    _0,
-    #[doc = "Phase B input filter is enabled."]
-    _1,
+#[doc = "Phase B Input Filter Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PHBFLTREN_A {
+    #[doc = "0: Phase B input filter is disabled."]
+    _0 = 0,
+    #[doc = "1: Phase B input filter is enabled."]
+    _1 = 1,
 }
-impl PHBFLTRENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PHBFLTRENW::_0 => false,
-            PHBFLTRENW::_1 => true,
-        }
+impl From<PHBFLTREN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PHBFLTREN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHBFLTRENW<'a> {
+#[doc = "Reader of field `PHBFLTREN`"]
+pub type PHBFLTREN_R = crate::R<bool, PHBFLTREN_A>;
+impl PHBFLTREN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PHBFLTREN_A {
+        match self.bits {
+            false => PHBFLTREN_A::_0,
+            true => PHBFLTREN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PHBFLTREN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PHBFLTREN_A::_1
+    }
+}
+#[doc = "Write proxy for field `PHBFLTREN`"]
+pub struct PHBFLTREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHBFLTRENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PHBFLTRENW) -> &'a mut W {
+impl<'a> PHBFLTREN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PHBFLTREN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Phase B input filter is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PHBFLTRENW::_0)
+        self.variant(PHBFLTREN_A::_0)
     }
     #[doc = "Phase B input filter is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PHBFLTRENW::_1)
+        self.variant(PHBFLTREN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PHAFLTREN`"]
-pub enum PHAFLTRENW {
-    #[doc = "Phase A input filter is disabled."]
-    _0,
-    #[doc = "Phase A input filter is enabled."]
-    _1,
+#[doc = "Phase A Input Filter Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PHAFLTREN_A {
+    #[doc = "0: Phase A input filter is disabled."]
+    _0 = 0,
+    #[doc = "1: Phase A input filter is enabled."]
+    _1 = 1,
 }
-impl PHAFLTRENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PHAFLTRENW::_0 => false,
-            PHAFLTRENW::_1 => true,
-        }
+impl From<PHAFLTREN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PHAFLTREN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHAFLTRENW<'a> {
+#[doc = "Reader of field `PHAFLTREN`"]
+pub type PHAFLTREN_R = crate::R<bool, PHAFLTREN_A>;
+impl PHAFLTREN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PHAFLTREN_A {
+        match self.bits {
+            false => PHAFLTREN_A::_0,
+            true => PHAFLTREN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PHAFLTREN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PHAFLTREN_A::_1
+    }
+}
+#[doc = "Write proxy for field `PHAFLTREN`"]
+pub struct PHAFLTREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHAFLTRENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PHAFLTRENW) -> &'a mut W {
+impl<'a> PHAFLTREN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PHAFLTREN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Phase A input filter is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PHAFLTRENW::_0)
+        self.variant(PHAFLTREN_A::_0)
     }
     #[doc = "Phase A input filter is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PHAFLTRENW::_1)
+        self.variant(PHAFLTREN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Quadrature Decoder Mode Enable"]
-    #[inline]
-    pub fn quaden(&self) -> QUADENR {
-        QUADENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn quaden(&self) -> QUADEN_R {
+        QUADEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Timer Overflow Direction In Quadrature Decoder Mode"]
-    #[inline]
-    pub fn tofdir(&self) -> TOFDIRR {
-        TOFDIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tofdir(&self) -> TOFDIR_R {
+        TOFDIR_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - FTM Counter Direction In Quadrature Decoder Mode"]
-    #[inline]
-    pub fn quadir(&self) -> QUADIRR {
-        QUADIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn quadir(&self) -> QUADIR_R {
+        QUADIR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Quadrature Decoder Mode"]
-    #[inline]
-    pub fn quadmode(&self) -> QUADMODER {
-        QUADMODER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn quadmode(&self) -> QUADMODE_R {
+        QUADMODE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Phase B Input Polarity"]
-    #[inline]
-    pub fn phbpol(&self) -> PHBPOLR {
-        PHBPOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn phbpol(&self) -> PHBPOL_R {
+        PHBPOL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Phase A Input Polarity"]
-    #[inline]
-    pub fn phapol(&self) -> PHAPOLR {
-        PHAPOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn phapol(&self) -> PHAPOL_R {
+        PHAPOL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Phase B Input Filter Enable"]
-    #[inline]
-    pub fn phbfltren(&self) -> PHBFLTRENR {
-        PHBFLTRENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn phbfltren(&self) -> PHBFLTREN_R {
+        PHBFLTREN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Phase A Input Filter Enable"]
-    #[inline]
-    pub fn phafltren(&self) -> PHAFLTRENR {
-        PHAFLTRENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn phafltren(&self) -> PHAFLTREN_R {
+        PHAFLTREN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Quadrature Decoder Mode Enable"]
-    #[inline]
-    pub fn quaden(&mut self) -> _QUADENW {
-        _QUADENW { w: self }
+    #[inline(always)]
+    pub fn quaden(&mut self) -> QUADEN_W {
+        QUADEN_W { w: self }
     }
     #[doc = "Bit 3 - Quadrature Decoder Mode"]
-    #[inline]
-    pub fn quadmode(&mut self) -> _QUADMODEW {
-        _QUADMODEW { w: self }
+    #[inline(always)]
+    pub fn quadmode(&mut self) -> QUADMODE_W {
+        QUADMODE_W { w: self }
     }
     #[doc = "Bit 4 - Phase B Input Polarity"]
-    #[inline]
-    pub fn phbpol(&mut self) -> _PHBPOLW {
-        _PHBPOLW { w: self }
+    #[inline(always)]
+    pub fn phbpol(&mut self) -> PHBPOL_W {
+        PHBPOL_W { w: self }
     }
     #[doc = "Bit 5 - Phase A Input Polarity"]
-    #[inline]
-    pub fn phapol(&mut self) -> _PHAPOLW {
-        _PHAPOLW { w: self }
+    #[inline(always)]
+    pub fn phapol(&mut self) -> PHAPOL_W {
+        PHAPOL_W { w: self }
     }
     #[doc = "Bit 6 - Phase B Input Filter Enable"]
-    #[inline]
-    pub fn phbfltren(&mut self) -> _PHBFLTRENW {
-        _PHBFLTRENW { w: self }
+    #[inline(always)]
+    pub fn phbfltren(&mut self) -> PHBFLTREN_W {
+        PHBFLTREN_W { w: self }
     }
     #[doc = "Bit 7 - Phase A Input Filter Enable"]
-    #[inline]
-    pub fn phafltren(&mut self) -> _PHAFLTRENW {
-        _PHAFLTRENW { w: self }
+    #[inline(always)]
+    pub fn phafltren(&mut self) -> PHAFLTREN_W {
+        PHAFLTREN_W { w: self }
     }
 }

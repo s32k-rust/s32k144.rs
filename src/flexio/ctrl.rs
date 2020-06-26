@@ -1,657 +1,441 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `FLEXEN`"]
+#[doc = "FlexIO Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLEXENR {
-    #[doc = "FlexIO module is disabled."]
-    _0,
-    #[doc = "FlexIO module is enabled."]
-    _1,
+pub enum FLEXEN_A {
+    #[doc = "0: FlexIO module is disabled."]
+    _0 = 0,
+    #[doc = "1: FlexIO module is enabled."]
+    _1 = 1,
 }
-impl FLEXENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<FLEXEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: FLEXEN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FLEXENR::_0 => false,
-            FLEXENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FLEXENR {
-        match value {
-            false => FLEXENR::_0,
-            true => FLEXENR::_1,
+}
+#[doc = "Reader of field `FLEXEN`"]
+pub type FLEXEN_R = crate::R<bool, FLEXEN_A>;
+impl FLEXEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FLEXEN_A {
+        match self.bits {
+            false => FLEXEN_A::_0,
+            true => FLEXEN_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FLEXENR::_0
+        *self == FLEXEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FLEXENR::_1
+        *self == FLEXEN_A::_1
     }
 }
-#[doc = "Possible values of the field `SWRST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SWRSTR {
-    #[doc = "Software reset is disabled"]
-    _0,
-    #[doc = "Software reset is enabled, all FlexIO registers except the Control Register are reset."]
-    _1,
-}
-impl SWRSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SWRSTR::_0 => false,
-            SWRSTR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SWRSTR {
-        match value {
-            false => SWRSTR::_0,
-            true => SWRSTR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == SWRSTR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == SWRSTR::_1
-    }
-}
-#[doc = "Possible values of the field `FASTACC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FASTACCR {
-    #[doc = "Configures for normal register accesses to FlexIO"]
-    _0,
-    #[doc = "Configures for fast register accesses to FlexIO"]
-    _1,
-}
-impl FASTACCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FASTACCR::_0 => false,
-            FASTACCR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FASTACCR {
-        match value {
-            false => FASTACCR::_0,
-            true => FASTACCR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == FASTACCR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == FASTACCR::_1
-    }
-}
-#[doc = "Possible values of the field `DBGE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DBGER {
-    #[doc = "FlexIO is disabled in debug modes."]
-    _0,
-    #[doc = "FlexIO is enabled in debug modes"]
-    _1,
-}
-impl DBGER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DBGER::_0 => false,
-            DBGER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DBGER {
-        match value {
-            false => DBGER::_0,
-            true => DBGER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == DBGER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == DBGER::_1
-    }
-}
-#[doc = "Possible values of the field `DOZEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOZENR {
-    #[doc = "FlexIO enabled in Doze modes."]
-    _0,
-    #[doc = "FlexIO disabled in Doze modes."]
-    _1,
-}
-impl DOZENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DOZENR::_0 => false,
-            DOZENR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DOZENR {
-        match value {
-            false => DOZENR::_0,
-            true => DOZENR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == DOZENR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == DOZENR::_1
-    }
-}
-#[doc = "Values that can be written to the field `FLEXEN`"]
-pub enum FLEXENW {
-    #[doc = "FlexIO module is disabled."]
-    _0,
-    #[doc = "FlexIO module is enabled."]
-    _1,
-}
-impl FLEXENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLEXENW::_0 => false,
-            FLEXENW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FLEXENW<'a> {
+#[doc = "Write proxy for field `FLEXEN`"]
+pub struct FLEXEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLEXENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLEXENW) -> &'a mut W {
+impl<'a> FLEXEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLEXEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "FlexIO module is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FLEXENW::_0)
+        self.variant(FLEXEN_A::_0)
     }
     #[doc = "FlexIO module is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FLEXENW::_1)
+        self.variant(FLEXEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SWRST`"]
-pub enum SWRSTW {
+#[doc = "Software Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SWRST_A {
+    #[doc = "0: Software reset is disabled"]
+    _0 = 0,
+    #[doc = "1: Software reset is enabled, all FlexIO registers except the Control Register are reset."]
+    _1 = 1,
+}
+impl From<SWRST_A> for bool {
+    #[inline(always)]
+    fn from(variant: SWRST_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SWRST`"]
+pub type SWRST_R = crate::R<bool, SWRST_A>;
+impl SWRST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SWRST_A {
+        match self.bits {
+            false => SWRST_A::_0,
+            true => SWRST_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == SWRST_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == SWRST_A::_1
+    }
+}
+#[doc = "Write proxy for field `SWRST`"]
+pub struct SWRST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SWRST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SWRST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Software reset is disabled"]
-    _0,
-    #[doc = "Software reset is enabled, all FlexIO registers except the Control Register are reset."]
-    _1,
-}
-impl SWRSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SWRSTW::_0 => false,
-            SWRSTW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SWRSTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SWRSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SWRSTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Software reset is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SWRSTW::_0)
+        self.variant(SWRST_A::_0)
     }
     #[doc = "Software reset is enabled, all FlexIO registers except the Control Register are reset."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SWRSTW::_1)
+        self.variant(SWRST_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FASTACC`"]
-pub enum FASTACCW {
-    #[doc = "Configures for normal register accesses to FlexIO"]
-    _0,
-    #[doc = "Configures for fast register accesses to FlexIO"]
-    _1,
+#[doc = "Fast Access\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FASTACC_A {
+    #[doc = "0: Configures for normal register accesses to FlexIO"]
+    _0 = 0,
+    #[doc = "1: Configures for fast register accesses to FlexIO"]
+    _1 = 1,
 }
-impl FASTACCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FASTACCW::_0 => false,
-            FASTACCW::_1 => true,
-        }
+impl From<FASTACC_A> for bool {
+    #[inline(always)]
+    fn from(variant: FASTACC_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _FASTACCW<'a> {
+#[doc = "Reader of field `FASTACC`"]
+pub type FASTACC_R = crate::R<bool, FASTACC_A>;
+impl FASTACC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FASTACC_A {
+        match self.bits {
+            false => FASTACC_A::_0,
+            true => FASTACC_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FASTACC_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FASTACC_A::_1
+    }
+}
+#[doc = "Write proxy for field `FASTACC`"]
+pub struct FASTACC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FASTACCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FASTACCW) -> &'a mut W {
+impl<'a> FASTACC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FASTACC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Configures for normal register accesses to FlexIO"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FASTACCW::_0)
+        self.variant(FASTACC_A::_0)
     }
     #[doc = "Configures for fast register accesses to FlexIO"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FASTACCW::_1)
+        self.variant(FASTACC_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DBGE`"]
-pub enum DBGEW {
-    #[doc = "FlexIO is disabled in debug modes."]
-    _0,
-    #[doc = "FlexIO is enabled in debug modes"]
-    _1,
+#[doc = "Debug Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DBGE_A {
+    #[doc = "0: FlexIO is disabled in debug modes."]
+    _0 = 0,
+    #[doc = "1: FlexIO is enabled in debug modes"]
+    _1 = 1,
 }
-impl DBGEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DBGEW::_0 => false,
-            DBGEW::_1 => true,
-        }
+impl From<DBGE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DBGE_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _DBGEW<'a> {
+#[doc = "Reader of field `DBGE`"]
+pub type DBGE_R = crate::R<bool, DBGE_A>;
+impl DBGE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DBGE_A {
+        match self.bits {
+            false => DBGE_A::_0,
+            true => DBGE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == DBGE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == DBGE_A::_1
+    }
+}
+#[doc = "Write proxy for field `DBGE`"]
+pub struct DBGE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DBGEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DBGEW) -> &'a mut W {
+impl<'a> DBGE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DBGE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "FlexIO is disabled in debug modes."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(DBGEW::_0)
+        self.variant(DBGE_A::_0)
     }
     #[doc = "FlexIO is enabled in debug modes"]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(DBGEW::_1)
+        self.variant(DBGE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DOZEN`"]
-pub enum DOZENW {
-    #[doc = "FlexIO enabled in Doze modes."]
-    _0,
-    #[doc = "FlexIO disabled in Doze modes."]
-    _1,
+#[doc = "Doze Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DOZEN_A {
+    #[doc = "0: FlexIO enabled in Doze modes."]
+    _0 = 0,
+    #[doc = "1: FlexIO disabled in Doze modes."]
+    _1 = 1,
 }
-impl DOZENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DOZENW::_0 => false,
-            DOZENW::_1 => true,
-        }
+impl From<DOZEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DOZEN_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _DOZENW<'a> {
+#[doc = "Reader of field `DOZEN`"]
+pub type DOZEN_R = crate::R<bool, DOZEN_A>;
+impl DOZEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DOZEN_A {
+        match self.bits {
+            false => DOZEN_A::_0,
+            true => DOZEN_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == DOZEN_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == DOZEN_A::_1
+    }
+}
+#[doc = "Write proxy for field `DOZEN`"]
+pub struct DOZEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DOZENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DOZENW) -> &'a mut W {
+impl<'a> DOZEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DOZEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "FlexIO enabled in Doze modes."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(DOZENW::_0)
+        self.variant(DOZEN_A::_0)
     }
     #[doc = "FlexIO disabled in Doze modes."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(DOZENW::_1)
+        self.variant(DOZEN_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - FlexIO Enable"]
-    #[inline]
-    pub fn flexen(&self) -> FLEXENR {
-        FLEXENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn flexen(&self) -> FLEXEN_R {
+        FLEXEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Software Reset"]
-    #[inline]
-    pub fn swrst(&self) -> SWRSTR {
-        SWRSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn swrst(&self) -> SWRST_R {
+        SWRST_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Fast Access"]
-    #[inline]
-    pub fn fastacc(&self) -> FASTACCR {
-        FASTACCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fastacc(&self) -> FASTACC_R {
+        FASTACC_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Debug Enable"]
-    #[inline]
-    pub fn dbge(&self) -> DBGER {
-        DBGER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dbge(&self) -> DBGE_R {
+        DBGE_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Doze Enable"]
-    #[inline]
-    pub fn dozen(&self) -> DOZENR {
-        DOZENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dozen(&self) -> DOZEN_R {
+        DOZEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - FlexIO Enable"]
-    #[inline]
-    pub fn flexen(&mut self) -> _FLEXENW {
-        _FLEXENW { w: self }
+    #[inline(always)]
+    pub fn flexen(&mut self) -> FLEXEN_W {
+        FLEXEN_W { w: self }
     }
     #[doc = "Bit 1 - Software Reset"]
-    #[inline]
-    pub fn swrst(&mut self) -> _SWRSTW {
-        _SWRSTW { w: self }
+    #[inline(always)]
+    pub fn swrst(&mut self) -> SWRST_W {
+        SWRST_W { w: self }
     }
     #[doc = "Bit 2 - Fast Access"]
-    #[inline]
-    pub fn fastacc(&mut self) -> _FASTACCW {
-        _FASTACCW { w: self }
+    #[inline(always)]
+    pub fn fastacc(&mut self) -> FASTACC_W {
+        FASTACC_W { w: self }
     }
     #[doc = "Bit 30 - Debug Enable"]
-    #[inline]
-    pub fn dbge(&mut self) -> _DBGEW {
-        _DBGEW { w: self }
+    #[inline(always)]
+    pub fn dbge(&mut self) -> DBGE_W {
+        DBGE_W { w: self }
     }
     #[doc = "Bit 31 - Doze Enable"]
-    #[inline]
-    pub fn dozen(&mut self) -> _DOZENW {
-        _DOZENW { w: self }
+    #[inline(always)]
+    pub fn dozen(&mut self) -> DOZEN_W {
+        DOZEN_W { w: self }
     }
 }

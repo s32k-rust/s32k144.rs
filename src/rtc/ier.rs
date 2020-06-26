@@ -1,742 +1,511 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::IER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register IER"]
+pub type R = crate::R<u32, super::IER>;
+#[doc = "Writer for register IER"]
+pub type W = crate::W<u32, super::IER>;
+#[doc = "Register IER `reset()`'s with value 0x07"]
+impl crate::ResetValue for super::IER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x07
     }
 }
-#[doc = "Possible values of the field `TIIE`"]
+#[doc = "Time Invalid Interrupt Enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIIER {
+pub enum TIIE_A {
+    #[doc = "0: Time invalid flag does not generate an interrupt."]
+    _0 = 0,
+    #[doc = "1: Time invalid flag does generate an interrupt."]
+    _1 = 1,
+}
+impl From<TIIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TIIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `TIIE`"]
+pub type TIIE_R = crate::R<bool, TIIE_A>;
+impl TIIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIIE_A {
+        match self.bits {
+            false => TIIE_A::_0,
+            true => TIIE_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TIIE_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TIIE_A::_1
+    }
+}
+#[doc = "Write proxy for field `TIIE`"]
+pub struct TIIE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TIIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TIIE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Time invalid flag does not generate an interrupt."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(TIIE_A::_0)
+    }
     #[doc = "Time invalid flag does generate an interrupt."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(TIIE_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
 }
-impl TIIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Time Overflow Interrupt Enable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TOIE_A {
+    #[doc = "0: Time overflow flag does not generate an interrupt."]
+    _0 = 0,
+    #[doc = "1: Time overflow flag does generate an interrupt."]
+    _1 = 1,
+}
+impl From<TOIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TOIE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TIIER::_0 => false,
-            TIIER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TIIER {
-        match value {
-            false => TIIER::_0,
-            true => TIIER::_1,
+}
+#[doc = "Reader of field `TOIE`"]
+pub type TOIE_R = crate::R<bool, TOIE_A>;
+impl TOIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TOIE_A {
+        match self.bits {
+            false => TOIE_A::_0,
+            true => TOIE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TIIER::_0
+        *self == TOIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TIIER::_1
+        *self == TOIE_A::_1
     }
 }
-#[doc = "Possible values of the field `TOIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TOIER {
+#[doc = "Write proxy for field `TOIE`"]
+pub struct TOIE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TOIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TOIE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Time overflow flag does not generate an interrupt."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(TOIE_A::_0)
+    }
     #[doc = "Time overflow flag does generate an interrupt."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(TOIE_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
 }
-impl TOIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Time Alarm Interrupt Enable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TAIE_A {
+    #[doc = "0: Time alarm flag does not generate an interrupt."]
+    _0 = 0,
+    #[doc = "1: Time alarm flag does generate an interrupt."]
+    _1 = 1,
+}
+impl From<TAIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TAIE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TOIER::_0 => false,
-            TOIER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TOIER {
-        match value {
-            false => TOIER::_0,
-            true => TOIER::_1,
+}
+#[doc = "Reader of field `TAIE`"]
+pub type TAIE_R = crate::R<bool, TAIE_A>;
+impl TAIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TAIE_A {
+        match self.bits {
+            false => TAIE_A::_0,
+            true => TAIE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TOIER::_0
+        *self == TAIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TOIER::_1
+        *self == TAIE_A::_1
     }
 }
-#[doc = "Possible values of the field `TAIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TAIER {
+#[doc = "Write proxy for field `TAIE`"]
+pub struct TAIE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TAIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TAIE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Time alarm flag does not generate an interrupt."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(TAIE_A::_0)
+    }
     #[doc = "Time alarm flag does generate an interrupt."]
-    _1,
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(TAIE_A::_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
 }
-impl TAIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+#[doc = "Time Seconds Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TSIE_A {
+    #[doc = "0: Seconds interrupt is disabled."]
+    _0 = 0,
+    #[doc = "1: Seconds interrupt is enabled."]
+    _1 = 1,
+}
+impl From<TSIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TSIE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TAIER::_0 => false,
-            TAIER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TAIER {
-        match value {
-            false => TAIER::_0,
-            true => TAIER::_1,
+}
+#[doc = "Reader of field `TSIE`"]
+pub type TSIE_R = crate::R<bool, TSIE_A>;
+impl TSIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TSIE_A {
+        match self.bits {
+            false => TSIE_A::_0,
+            true => TSIE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TAIER::_0
+        *self == TSIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TAIER::_1
+        *self == TSIE_A::_1
     }
 }
-#[doc = "Possible values of the field `TSIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSIER {
+#[doc = "Write proxy for field `TSIE`"]
+pub struct TSIE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TSIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TSIE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Seconds interrupt is disabled."]
-    _0,
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(TSIE_A::_0)
+    }
     #[doc = "Seconds interrupt is enabled."]
-    _1,
-}
-impl TSIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(TSIE_A::_1)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TSIER::_0 => false,
-            TSIER::_1 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TSIER {
-        match value {
-            false => TSIER::_0,
-            true => TSIER::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == TSIER::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == TSIER::_1
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
-#[doc = "Possible values of the field `TSIC`"]
+#[doc = "Timer Seconds Interrupt Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSICR {
-    #[doc = "1 Hz."]
-    _000,
-    #[doc = "2 Hz."]
-    _001,
-    #[doc = "4 Hz."]
-    _010,
-    #[doc = "8 Hz."]
-    _011,
-    #[doc = "16 Hz."]
-    _100,
-    #[doc = "32 Hz."]
-    _101,
-    #[doc = "64 Hz."]
-    _110,
-    #[doc = "128 Hz."]
-    _111,
+#[repr(u8)]
+pub enum TSIC_A {
+    #[doc = "0: 1 Hz."]
+    _000 = 0,
+    #[doc = "1: 2 Hz."]
+    _001 = 1,
+    #[doc = "2: 4 Hz."]
+    _010 = 2,
+    #[doc = "3: 8 Hz."]
+    _011 = 3,
+    #[doc = "4: 16 Hz."]
+    _100 = 4,
+    #[doc = "5: 32 Hz."]
+    _101 = 5,
+    #[doc = "6: 64 Hz."]
+    _110 = 6,
+    #[doc = "7: 128 Hz."]
+    _111 = 7,
 }
-impl TSICR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TSICR::_000 => 0,
-            TSICR::_001 => 1,
-            TSICR::_010 => 2,
-            TSICR::_011 => 3,
-            TSICR::_100 => 4,
-            TSICR::_101 => 5,
-            TSICR::_110 => 6,
-            TSICR::_111 => 7,
-        }
+impl From<TSIC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TSIC_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TSICR {
-        match value {
-            0 => TSICR::_000,
-            1 => TSICR::_001,
-            2 => TSICR::_010,
-            3 => TSICR::_011,
-            4 => TSICR::_100,
-            5 => TSICR::_101,
-            6 => TSICR::_110,
-            7 => TSICR::_111,
+}
+#[doc = "Reader of field `TSIC`"]
+pub type TSIC_R = crate::R<u8, TSIC_A>;
+impl TSIC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TSIC_A {
+        match self.bits {
+            0 => TSIC_A::_000,
+            1 => TSIC_A::_001,
+            2 => TSIC_A::_010,
+            3 => TSIC_A::_011,
+            4 => TSIC_A::_100,
+            5 => TSIC_A::_101,
+            6 => TSIC_A::_110,
+            7 => TSIC_A::_111,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == TSICR::_000
+        *self == TSIC_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == TSICR::_001
+        *self == TSIC_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == TSICR::_010
+        *self == TSIC_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == TSICR::_011
+        *self == TSIC_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == TSICR::_100
+        *self == TSIC_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == TSICR::_101
+        *self == TSIC_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == TSICR::_110
+        *self == TSIC_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == TSICR::_111
+        *self == TSIC_A::_111
     }
 }
-#[doc = "Values that can be written to the field `TIIE`"]
-pub enum TIIEW {
-    #[doc = "Time invalid flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time invalid flag does generate an interrupt."]
-    _1,
-}
-impl TIIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TIIEW::_0 => false,
-            TIIEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TIIEW<'a> {
+#[doc = "Write proxy for field `TSIC`"]
+pub struct TSIC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TIIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TIIEW) -> &'a mut W {
+impl<'a> TSIC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TSIC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Time invalid flag does not generate an interrupt."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(TIIEW::_0)
-    }
-    #[doc = "Time invalid flag does generate an interrupt."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(TIIEW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TOIE`"]
-pub enum TOIEW {
-    #[doc = "Time overflow flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time overflow flag does generate an interrupt."]
-    _1,
-}
-impl TOIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TOIEW::_0 => false,
-            TOIEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TOIEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TOIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TOIEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Time overflow flag does not generate an interrupt."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(TOIEW::_0)
-    }
-    #[doc = "Time overflow flag does generate an interrupt."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(TOIEW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TAIE`"]
-pub enum TAIEW {
-    #[doc = "Time alarm flag does not generate an interrupt."]
-    _0,
-    #[doc = "Time alarm flag does generate an interrupt."]
-    _1,
-}
-impl TAIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TAIEW::_0 => false,
-            TAIEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TAIEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TAIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TAIEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Time alarm flag does not generate an interrupt."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(TAIEW::_0)
-    }
-    #[doc = "Time alarm flag does generate an interrupt."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(TAIEW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TSIE`"]
-pub enum TSIEW {
-    #[doc = "Seconds interrupt is disabled."]
-    _0,
-    #[doc = "Seconds interrupt is enabled."]
-    _1,
-}
-impl TSIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TSIEW::_0 => false,
-            TSIEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TSIEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TSIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TSIEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Seconds interrupt is disabled."]
-    #[inline]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(TSIEW::_0)
-    }
-    #[doc = "Seconds interrupt is enabled."]
-    #[inline]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(TSIEW::_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TSIC`"]
-pub enum TSICW {
-    #[doc = "1 Hz."]
-    _000,
-    #[doc = "2 Hz."]
-    _001,
-    #[doc = "4 Hz."]
-    _010,
-    #[doc = "8 Hz."]
-    _011,
-    #[doc = "16 Hz."]
-    _100,
-    #[doc = "32 Hz."]
-    _101,
-    #[doc = "64 Hz."]
-    _110,
-    #[doc = "128 Hz."]
-    _111,
-}
-impl TSICW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TSICW::_000 => 0,
-            TSICW::_001 => 1,
-            TSICW::_010 => 2,
-            TSICW::_011 => 3,
-            TSICW::_100 => 4,
-            TSICW::_101 => 5,
-            TSICW::_110 => 6,
-            TSICW::_111 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TSICW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TSICW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TSICW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "1 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _000(self) -> &'a mut W {
-        self.variant(TSICW::_000)
+        self.variant(TSIC_A::_000)
     }
     #[doc = "2 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _001(self) -> &'a mut W {
-        self.variant(TSICW::_001)
+        self.variant(TSIC_A::_001)
     }
     #[doc = "4 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _010(self) -> &'a mut W {
-        self.variant(TSICW::_010)
+        self.variant(TSIC_A::_010)
     }
     #[doc = "8 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _011(self) -> &'a mut W {
-        self.variant(TSICW::_011)
+        self.variant(TSIC_A::_011)
     }
     #[doc = "16 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _100(self) -> &'a mut W {
-        self.variant(TSICW::_100)
+        self.variant(TSIC_A::_100)
     }
     #[doc = "32 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _101(self) -> &'a mut W {
-        self.variant(TSICW::_101)
+        self.variant(TSIC_A::_101)
     }
     #[doc = "64 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _110(self) -> &'a mut W {
-        self.variant(TSICW::_110)
+        self.variant(TSIC_A::_110)
     }
     #[doc = "128 Hz."]
-    #[inline]
+    #[inline(always)]
     pub fn _111(self) -> &'a mut W {
-        self.variant(TSICW::_111)
+        self.variant(TSIC_A::_111)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Time Invalid Interrupt Enable"]
-    #[inline]
-    pub fn tiie(&self) -> TIIER {
-        TIIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tiie(&self) -> TIIE_R {
+        TIIE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Time Overflow Interrupt Enable"]
-    #[inline]
-    pub fn toie(&self) -> TOIER {
-        TOIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn toie(&self) -> TOIE_R {
+        TOIE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Time Alarm Interrupt Enable"]
-    #[inline]
-    pub fn taie(&self) -> TAIER {
-        TAIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn taie(&self) -> TAIE_R {
+        TAIE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Time Seconds Interrupt Enable"]
-    #[inline]
-    pub fn tsie(&self) -> TSIER {
-        TSIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tsie(&self) -> TSIE_R {
+        TSIE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 16:18 - Timer Seconds Interrupt Configuration"]
-    #[inline]
-    pub fn tsic(&self) -> TSICR {
-        TSICR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tsic(&self) -> TSIC_R {
+        TSIC_R::new(((self.bits >> 16) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 7 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Time Invalid Interrupt Enable"]
-    #[inline]
-    pub fn tiie(&mut self) -> _TIIEW {
-        _TIIEW { w: self }
+    #[inline(always)]
+    pub fn tiie(&mut self) -> TIIE_W {
+        TIIE_W { w: self }
     }
     #[doc = "Bit 1 - Time Overflow Interrupt Enable"]
-    #[inline]
-    pub fn toie(&mut self) -> _TOIEW {
-        _TOIEW { w: self }
+    #[inline(always)]
+    pub fn toie(&mut self) -> TOIE_W {
+        TOIE_W { w: self }
     }
     #[doc = "Bit 2 - Time Alarm Interrupt Enable"]
-    #[inline]
-    pub fn taie(&mut self) -> _TAIEW {
-        _TAIEW { w: self }
+    #[inline(always)]
+    pub fn taie(&mut self) -> TAIE_W {
+        TAIE_W { w: self }
     }
     #[doc = "Bit 4 - Time Seconds Interrupt Enable"]
-    #[inline]
-    pub fn tsie(&mut self) -> _TSIEW {
-        _TSIEW { w: self }
+    #[inline(always)]
+    pub fn tsie(&mut self) -> TSIE_W {
+        TSIE_W { w: self }
     }
     #[doc = "Bits 16:18 - Timer Seconds Interrupt Configuration"]
-    #[inline]
-    pub fn tsic(&mut self) -> _TSICW {
-        _TSICW { w: self }
+    #[inline(always)]
+    pub fn tsic(&mut self) -> TSIC_W {
+        TSIC_W { w: self }
     }
 }

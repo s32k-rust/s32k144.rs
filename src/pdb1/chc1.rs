@@ -1,371 +1,244 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CHC1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CH%sC1"]
+pub type R = crate::R<u32, super::CHC1>;
+#[doc = "Writer for register CH%sC1"]
+pub type W = crate::W<u32, super::CHC1>;
+#[doc = "Register CH%sC1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CHC1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `EN`"]
+#[doc = "PDB Channel Pre-Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENR {
-    #[doc = "PDB channel's corresponding pre-trigger disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger enabled."]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum EN_A {
+    #[doc = "0: PDB channel's corresponding pre-trigger disabled."]
+    _0 = 0,
+    #[doc = "1: PDB channel's corresponding pre-trigger enabled."]
+    _1 = 1,
 }
-impl ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ENR::_0 => 0,
-            ENR::_1 => 1,
-            ENR::_Reserved(bits) => bits,
-        }
+impl From<EN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EN_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ENR {
-        match value {
-            0 => ENR::_0,
-            1 => ENR::_1,
-            i => ENR::_Reserved(i),
+}
+#[doc = "Reader of field `EN`"]
+pub type EN_R = crate::R<u8, EN_A>;
+impl EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, EN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(EN_A::_0),
+            1 => Val(EN_A::_1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ENR::_0
+        *self == EN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ENR::_1
+        *self == EN_A::_1
     }
 }
-#[doc = "Possible values of the field `TOS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TOSR {
-    #[doc = "PDB channel's corresponding pre-trigger is in bypassed mode. The pre-trigger asserts one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SWTRIG is written with 1."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger asserts when the counter reaches the channel delay register and one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SETRIG is written with 1."]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl TOSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TOSR::_0 => 0,
-            TOSR::_1 => 1,
-            TOSR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TOSR {
-        match value {
-            0 => TOSR::_0,
-            1 => TOSR::_1,
-            i => TOSR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == TOSR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == TOSR::_1
-    }
-}
-#[doc = "Possible values of the field `BB`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BBR {
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."]
-    _1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl BBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BBR::_0 => 0,
-            BBR::_1 => 1,
-            BBR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BBR {
-        match value {
-            0 => BBR::_0,
-            1 => BBR::_1,
-            i => BBR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == BBR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == BBR::_1
-    }
-}
-#[doc = "Values that can be written to the field `EN`"]
-pub enum ENW {
-    #[doc = "PDB channel's corresponding pre-trigger disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger enabled."]
-    _1,
-}
-impl ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ENW::_0 => 0,
-            ENW::_1 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENW<'a> {
+#[doc = "Write proxy for field `EN`"]
+pub struct EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EN_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PDB channel's corresponding pre-trigger disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ENW::_0)
+        self.variant(EN_A::_0)
     }
     #[doc = "PDB channel's corresponding pre-trigger enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ENW::_1)
+        self.variant(EN_A::_1)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TOS`"]
-pub enum TOSW {
-    #[doc = "PDB channel's corresponding pre-trigger is in bypassed mode. The pre-trigger asserts one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SWTRIG is written with 1."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger asserts when the counter reaches the channel delay register and one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SETRIG is written with 1."]
-    _1,
+#[doc = "PDB Channel Pre-Trigger Output Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum TOS_A {
+    #[doc = "0: PDB channel's corresponding pre-trigger is in bypassed mode. The pre-trigger asserts one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SWTRIG is written with 1."]
+    _0 = 0,
+    #[doc = "1: PDB channel's corresponding pre-trigger asserts when the counter reaches the channel delay register and one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SETRIG is written with 1."]
+    _1 = 1,
 }
-impl TOSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TOSW::_0 => 0,
-            TOSW::_1 => 1,
+impl From<TOS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TOS_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `TOS`"]
+pub type TOS_R = crate::R<u8, TOS_A>;
+impl TOS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TOS_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TOS_A::_0),
+            1 => Val(TOS_A::_1),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TOS_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TOS_A::_1
+    }
 }
-#[doc = r" Proxy"]
-pub struct _TOSW<'a> {
+#[doc = "Write proxy for field `TOS`"]
+pub struct TOS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TOSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TOSW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> TOS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TOS_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PDB channel's corresponding pre-trigger is in bypassed mode. The pre-trigger asserts one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SWTRIG is written with 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TOSW::_0)
+        self.variant(TOS_A::_0)
     }
     #[doc = "PDB channel's corresponding pre-trigger asserts when the counter reaches the channel delay register and one peripheral clock cycle after a rising edge is detected on selected trigger input source or software trigger is selected and SETRIG is written with 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TOSW::_1)
+        self.variant(TOS_A::_1)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BB`"]
-pub enum BBW {
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."]
-    _0,
-    #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."]
-    _1,
+#[doc = "PDB Channel Pre-Trigger Back-to-Back Operation Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum BB_A {
+    #[doc = "0: PDB channel's corresponding pre-trigger back-to-back operation disabled."]
+    _0 = 0,
+    #[doc = "1: PDB channel's corresponding pre-trigger back-to-back operation enabled."]
+    _1 = 1,
 }
-impl BBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BBW::_0 => 0,
-            BBW::_1 => 1,
+impl From<BB_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BB_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `BB`"]
+pub type BB_R = crate::R<u8, BB_A>;
+impl BB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BB_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BB_A::_0),
+            1 => Val(BB_A::_1),
+            i => Res(i),
         }
     }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == BB_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == BB_A::_1
+    }
 }
-#[doc = r" Proxy"]
-pub struct _BBW<'a> {
+#[doc = "Write proxy for field `BB`"]
+pub struct BB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BBW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BB_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "PDB channel's corresponding pre-trigger back-to-back operation disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(BBW::_0)
+        self.variant(BB_A::_0)
     }
     #[doc = "PDB channel's corresponding pre-trigger back-to-back operation enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(BBW::_1)
+        self.variant(BB_A::_1)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - PDB Channel Pre-Trigger Enable"]
-    #[inline]
-    pub fn en(&self) -> ENR {
-        ENR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn en(&self) -> EN_R {
+        EN_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - PDB Channel Pre-Trigger Output Select"]
-    #[inline]
-    pub fn tos(&self) -> TOSR {
-        TOSR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tos(&self) -> TOS_R {
+        TOS_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - PDB Channel Pre-Trigger Back-to-Back Operation Enable"]
-    #[inline]
-    pub fn bb(&self) -> BBR {
-        BBR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bb(&self) -> BB_R {
+        BB_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - PDB Channel Pre-Trigger Enable"]
-    #[inline]
-    pub fn en(&mut self) -> _ENW {
-        _ENW { w: self }
+    #[inline(always)]
+    pub fn en(&mut self) -> EN_W {
+        EN_W { w: self }
     }
     #[doc = "Bits 8:15 - PDB Channel Pre-Trigger Output Select"]
-    #[inline]
-    pub fn tos(&mut self) -> _TOSW {
-        _TOSW { w: self }
+    #[inline(always)]
+    pub fn tos(&mut self) -> TOS_W {
+        TOS_W { w: self }
     }
     #[doc = "Bits 16:23 - PDB Channel Pre-Trigger Back-to-Back Operation Enable"]
-    #[inline]
-    pub fn bb(&mut self) -> _BBW {
-        _BBW { w: self }
+    #[inline(always)]
+    pub fn bb(&mut self) -> BB_W {
+        BB_W { w: self }
     }
 }

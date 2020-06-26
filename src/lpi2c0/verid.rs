@@ -1,110 +1,62 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::VERID {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `FEATURE`"]
+#[doc = "Reader of register VERID"]
+pub type R = crate::R<u32, super::VERID>;
+#[doc = "Feature Specification Number\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FEATURER {
-    #[doc = "Master only with standard feature set."]
-    _0000000000000010,
-    #[doc = "Master and slave with standard feature set."]
-    _0000000000000011,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
+#[repr(u16)]
+pub enum FEATURE_A {
+    #[doc = "2: Master only with standard feature set."]
+    _0000000000000010 = 2,
+    #[doc = "3: Master and slave with standard feature set."]
+    _0000000000000011 = 3,
 }
-impl FEATURER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            FEATURER::_0000000000000010 => 2,
-            FEATURER::_0000000000000011 => 3,
-            FEATURER::_Reserved(bits) => bits,
-        }
+impl From<FEATURE_A> for u16 {
+    #[inline(always)]
+    fn from(variant: FEATURE_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> FEATURER {
-        match value {
-            2 => FEATURER::_0000000000000010,
-            3 => FEATURER::_0000000000000011,
-            i => FEATURER::_Reserved(i),
+}
+#[doc = "Reader of field `FEATURE`"]
+pub type FEATURE_R = crate::R<u16, FEATURE_A>;
+impl FEATURE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, FEATURE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(FEATURE_A::_0000000000000010),
+            3 => Val(FEATURE_A::_0000000000000011),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_0000000000000010`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0000000000000010(&self) -> bool {
-        *self == FEATURER::_0000000000000010
+        *self == FEATURE_A::_0000000000000010
     }
     #[doc = "Checks if the value of the field is `_0000000000000011`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0000000000000011(&self) -> bool {
-        *self == FEATURER::_0000000000000011
+        *self == FEATURE_A::_0000000000000011
     }
 }
-#[doc = r" Value of the field"]
-pub struct MINORR {
-    bits: u8,
-}
-impl MINORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MAJORR {
-    bits: u8,
-}
-impl MAJORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `MINOR`"]
+pub type MINOR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MAJOR`"]
+pub type MAJOR_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Feature Specification Number"]
-    #[inline]
-    pub fn feature(&self) -> FEATURER {
-        FEATURER::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn feature(&self) -> FEATURE_R {
+        FEATURE_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:23 - Minor Version Number"]
-    #[inline]
-    pub fn minor(&self) -> MINORR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MINORR { bits }
+    #[inline(always)]
+    pub fn minor(&self) -> MINOR_R {
+        MINOR_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Major Version Number"]
-    #[inline]
-    pub fn major(&self) -> MAJORR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MAJORR { bits }
+    #[inline(always)]
+    pub fn major(&self) -> MAJOR_R {
+        MAJOR_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

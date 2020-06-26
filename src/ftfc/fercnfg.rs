@@ -1,300 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::FERCNFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FERCNFG"]
+pub type R = crate::R<u8, super::FERCNFG>;
+#[doc = "Writer for register FERCNFG"]
+pub type W = crate::W<u8, super::FERCNFG>;
+#[doc = "Register FERCNFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::FERCNFG {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `DFDIE`"]
+#[doc = "Double Bit Fault Detect Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DFDIER {
-    #[doc = "Double bit fault detect interrupt disabled"]
-    _0,
-    #[doc = "Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT\\[DFDIF\\] flag is set."]
-    _1,
+pub enum DFDIE_A {
+    #[doc = "0: Double bit fault detect interrupt disabled"]
+    _0 = 0,
+    #[doc = "1: Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT\\[DFDIF\\]
+flag is set."]
+    _1 = 1,
 }
-impl DFDIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<DFDIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DFDIE_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DFDIER::_0 => false,
-            DFDIER::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DFDIER {
-        match value {
-            false => DFDIER::_0,
-            true => DFDIER::_1,
+}
+#[doc = "Reader of field `DFDIE`"]
+pub type DFDIE_R = crate::R<bool, DFDIE_A>;
+impl DFDIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DFDIE_A {
+        match self.bits {
+            false => DFDIE_A::_0,
+            true => DFDIE_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DFDIER::_0
+        *self == DFDIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DFDIER::_1
+        *self == DFDIE_A::_1
     }
 }
-#[doc = "Possible values of the field `FDFD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FDFDR {
-    #[doc = "FERSTAT\\[DFDIF\\] sets only if a double bit fault is detected during read access from the platform flash controller"]
-    _0,
-    #[doc = "FERSTAT\\[DFDIF\\] sets during any valid flash read access from the platform flash controller. An interrupt request is generated if the DFDIE bit is set."]
-    _1,
-}
-impl FDFDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FDFDR::_0 => false,
-            FDFDR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FDFDR {
-        match value {
-            false => FDFDR::_0,
-            true => FDFDR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == FDFDR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == FDFDR::_1
-    }
-}
-#[doc = "Values that can be written to the field `DFDIE`"]
-pub enum DFDIEW {
-    #[doc = "Double bit fault detect interrupt disabled"]
-    _0,
-    #[doc = "Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT\\[DFDIF\\] flag is set."]
-    _1,
-}
-impl DFDIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DFDIEW::_0 => false,
-            DFDIEW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DFDIEW<'a> {
+#[doc = "Write proxy for field `DFDIE`"]
+pub struct DFDIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DFDIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DFDIEW) -> &'a mut W {
+impl<'a> DFDIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DFDIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Double bit fault detect interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(DFDIEW::_0)
+        self.variant(DFDIE_A::_0)
     }
-    #[doc = "Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT\\[DFDIF\\] flag is set."]
-    #[inline]
+    #[doc = "Double bit fault detect interrupt enabled. An interrupt request is generated whenever the FERSTAT\\[DFDIF\\]
+flag is set."]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(DFDIEW::_1)
+        self.variant(DFDIE_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FDFD`"]
-pub enum FDFDW {
-    #[doc = "FERSTAT\\[DFDIF\\] sets only if a double bit fault is detected during read access from the platform flash controller"]
-    _0,
-    #[doc = "FERSTAT\\[DFDIF\\] sets during any valid flash read access from the platform flash controller. An interrupt request is generated if the DFDIE bit is set."]
-    _1,
+#[doc = "Force Double Bit Fault Detect\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FDFD_A {
+    #[doc = "0: FERSTAT\\[DFDIF\\]
+sets only if a double bit fault is detected during read access from the platform flash controller"]
+    _0 = 0,
+    #[doc = "1: FERSTAT\\[DFDIF\\]
+sets during any valid flash read access from the platform flash controller. An interrupt request is generated if the DFDIE bit is set."]
+    _1 = 1,
 }
-impl FDFDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FDFDW::_0 => false,
-            FDFDW::_1 => true,
-        }
+impl From<FDFD_A> for bool {
+    #[inline(always)]
+    fn from(variant: FDFD_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _FDFDW<'a> {
+#[doc = "Reader of field `FDFD`"]
+pub type FDFD_R = crate::R<bool, FDFD_A>;
+impl FDFD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FDFD_A {
+        match self.bits {
+            false => FDFD_A::_0,
+            true => FDFD_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FDFD_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FDFD_A::_1
+    }
+}
+#[doc = "Write proxy for field `FDFD`"]
+pub struct FDFD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FDFDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FDFDW) -> &'a mut W {
+impl<'a> FDFD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FDFD_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
-    #[doc = "FERSTAT\\[DFDIF\\] sets only if a double bit fault is detected during read access from the platform flash controller"]
-    #[inline]
+    #[doc = "FERSTAT\\[DFDIF\\]
+sets only if a double bit fault is detected during read access from the platform flash controller"]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FDFDW::_0)
+        self.variant(FDFD_A::_0)
     }
-    #[doc = "FERSTAT\\[DFDIF\\] sets during any valid flash read access from the platform flash controller. An interrupt request is generated if the DFDIE bit is set."]
-    #[inline]
+    #[doc = "FERSTAT\\[DFDIF\\]
+sets during any valid flash read access from the platform flash controller. An interrupt request is generated if the DFDIE bit is set."]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FDFDW::_1)
+        self.variant(FDFD_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u8) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 1 - Double Bit Fault Detect Interrupt Enable"]
-    #[inline]
-    pub fn dfdie(&self) -> DFDIER {
-        DFDIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn dfdie(&self) -> DFDIE_R {
+        DFDIE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Force Double Bit Fault Detect"]
-    #[inline]
-    pub fn fdfd(&self) -> FDFDR {
-        FDFDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn fdfd(&self) -> FDFD_R {
+        FDFD_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - Double Bit Fault Detect Interrupt Enable"]
-    #[inline]
-    pub fn dfdie(&mut self) -> _DFDIEW {
-        _DFDIEW { w: self }
+    #[inline(always)]
+    pub fn dfdie(&mut self) -> DFDIE_W {
+        DFDIE_W { w: self }
     }
     #[doc = "Bit 5 - Force Double Bit Fault Detect"]
-    #[inline]
-    pub fn fdfd(&mut self) -> _FDFDW {
-        _FDFDW { w: self }
+    #[inline(always)]
+    pub fn fdfd(&mut self) -> FDFD_W {
+        FDFD_W { w: self }
     }
 }

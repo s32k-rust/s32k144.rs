@@ -1,233 +1,195 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::FSEC {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SEC`"]
+#[doc = "Reader of register FSEC"]
+pub type R = crate::R<u8, super::FSEC>;
+#[doc = "Flash Security\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SECR {
-    #[doc = "MCU security status is unsecure (The standard shipping condition of the FTFC is unsecure.)"]
-    _10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum SEC_A {
+    #[doc = "2: MCU security status is unsecure (The standard shipping condition of the FTFC is unsecure.)"]
+    _10 = 2,
 }
-impl SECR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SECR::_10 => 2,
-            SECR::_Reserved(bits) => bits,
-        }
+impl From<SEC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SEC_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SECR {
-        match value {
-            2 => SECR::_10,
-            i => SECR::_Reserved(i),
+}
+#[doc = "Reader of field `SEC`"]
+pub type SEC_R = crate::R<u8, SEC_A>;
+impl SEC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SEC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(SEC_A::_10),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == SECR::_10
+        *self == SEC_A::_10
     }
 }
-#[doc = "Possible values of the field `FSLACC`"]
+#[doc = "Factory Failure Analysis Access Code\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FSLACCR {
-    #[doc = "Factory access granted"]
-    _00,
-    #[doc = "Factory access granted"]
-    _11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum FSLACC_A {
+    #[doc = "0: Factory access granted"]
+    _00 = 0,
+    #[doc = "3: Factory access granted"]
+    _11 = 3,
 }
-impl FSLACCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FSLACCR::_00 => 0,
-            FSLACCR::_11 => 3,
-            FSLACCR::_Reserved(bits) => bits,
-        }
+impl From<FSLACC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FSLACC_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FSLACCR {
-        match value {
-            0 => FSLACCR::_00,
-            3 => FSLACCR::_11,
-            i => FSLACCR::_Reserved(i),
+}
+#[doc = "Reader of field `FSLACC`"]
+pub type FSLACC_R = crate::R<u8, FSLACC_A>;
+impl FSLACC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FSLACC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FSLACC_A::_00),
+            3 => Val(FSLACC_A::_11),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == FSLACCR::_00
+        *self == FSLACC_A::_00
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == FSLACCR::_11
+        *self == FSLACC_A::_11
     }
 }
-#[doc = "Possible values of the field `MEEN`"]
+#[doc = "Mass Erase Enable Bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MEENR {
-    #[doc = "Mass erase is enabled"]
-    _00,
-    #[doc = "Mass erase is enabled"]
-    _01,
-    #[doc = "Mass erase is enabled"]
-    _11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[repr(u8)]
+pub enum MEEN_A {
+    #[doc = "0: Mass erase is enabled"]
+    _00 = 0,
+    #[doc = "1: Mass erase is enabled"]
+    _01 = 1,
+    #[doc = "3: Mass erase is enabled"]
+    _11 = 3,
 }
-impl MEENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MEENR::_00 => 0,
-            MEENR::_01 => 1,
-            MEENR::_11 => 3,
-            MEENR::_Reserved(bits) => bits,
-        }
+impl From<MEEN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MEEN_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MEENR {
-        match value {
-            0 => MEENR::_00,
-            1 => MEENR::_01,
-            3 => MEENR::_11,
-            i => MEENR::_Reserved(i),
+}
+#[doc = "Reader of field `MEEN`"]
+pub type MEEN_R = crate::R<u8, MEEN_A>;
+impl MEEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MEEN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MEEN_A::_00),
+            1 => Val(MEEN_A::_01),
+            3 => Val(MEEN_A::_11),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == MEENR::_00
+        *self == MEEN_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == MEENR::_01
+        *self == MEEN_A::_01
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == MEENR::_11
+        *self == MEEN_A::_11
     }
 }
-#[doc = "Possible values of the field `KEYEN`"]
+#[doc = "Backdoor Key Security Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum KEYENR {
-    #[doc = "Backdoor key access disabled"]
-    _00,
-    #[doc = "Backdoor key access disabled (preferred KEYEN state to disable backdoor key access)"]
-    _01,
-    #[doc = "Backdoor key access enabled"]
-    _10,
-    #[doc = "Backdoor key access disabled"]
-    _11,
+#[repr(u8)]
+pub enum KEYEN_A {
+    #[doc = "0: Backdoor key access disabled"]
+    _00 = 0,
+    #[doc = "1: Backdoor key access disabled (preferred KEYEN state to disable backdoor key access)"]
+    _01 = 1,
+    #[doc = "2: Backdoor key access enabled"]
+    _10 = 2,
+    #[doc = "3: Backdoor key access disabled"]
+    _11 = 3,
 }
-impl KEYENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            KEYENR::_00 => 0,
-            KEYENR::_01 => 1,
-            KEYENR::_10 => 2,
-            KEYENR::_11 => 3,
-        }
+impl From<KEYEN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: KEYEN_A) -> Self {
+        variant as _
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> KEYENR {
-        match value {
-            0 => KEYENR::_00,
-            1 => KEYENR::_01,
-            2 => KEYENR::_10,
-            3 => KEYENR::_11,
+}
+#[doc = "Reader of field `KEYEN`"]
+pub type KEYEN_R = crate::R<u8, KEYEN_A>;
+impl KEYEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> KEYEN_A {
+        match self.bits {
+            0 => KEYEN_A::_00,
+            1 => KEYEN_A::_01,
+            2 => KEYEN_A::_10,
+            3 => KEYEN_A::_11,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == KEYENR::_00
+        *self == KEYEN_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == KEYENR::_01
+        *self == KEYEN_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == KEYENR::_10
+        *self == KEYEN_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == KEYENR::_11
+        *self == KEYEN_A::_11
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Flash Security"]
-    #[inline]
-    pub fn sec(&self) -> SECR {
-        SECR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn sec(&self) -> SEC_R {
+        SEC_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Factory Failure Analysis Access Code"]
-    #[inline]
-    pub fn fslacc(&self) -> FSLACCR {
-        FSLACCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn fslacc(&self) -> FSLACC_R {
+        FSLACC_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Mass Erase Enable Bits"]
-    #[inline]
-    pub fn meen(&self) -> MEENR {
-        MEENR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn meen(&self) -> MEEN_R {
+        MEEN_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - Backdoor Key Security Enable"]
-    #[inline]
-    pub fn keyen(&self) -> KEYENR {
-        KEYENR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn keyen(&self) -> KEYEN_R {
+        KEYEN_R::new(((self.bits >> 6) & 0x03) as u8)
     }
 }

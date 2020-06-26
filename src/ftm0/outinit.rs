@@ -1,1014 +1,696 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OUTINIT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OUTINIT"]
+pub type R = crate::R<u32, super::OUTINIT>;
+#[doc = "Writer for register OUTINIT"]
+pub type W = crate::W<u32, super::OUTINIT>;
+#[doc = "Register OUTINIT `reset()`'s with value 0"]
+impl crate::ResetValue for super::OUTINIT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CH0OI`"]
+#[doc = "Channel 0 Output Initialization Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH0OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+pub enum CH0OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH0OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+impl From<CH0OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH0OI_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH0OIR::_0 => false,
-            CH0OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH0OIR {
-        match value {
-            false => CH0OIR::_0,
-            true => CH0OIR::_1,
+}
+#[doc = "Reader of field `CH0OI`"]
+pub type CH0OI_R = crate::R<bool, CH0OI_A>;
+impl CH0OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH0OI_A {
+        match self.bits {
+            false => CH0OI_A::_0,
+            true => CH0OI_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH0OIR::_0
+        *self == CH0OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH0OIR::_1
+        *self == CH0OI_A::_1
     }
 }
-#[doc = "Possible values of the field `CH1OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH1OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH1OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH1OIR::_0 => false,
-            CH1OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH1OIR {
-        match value {
-            false => CH1OIR::_0,
-            true => CH1OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH1OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH1OIR::_1
-    }
-}
-#[doc = "Possible values of the field `CH2OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH2OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH2OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH2OIR::_0 => false,
-            CH2OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH2OIR {
-        match value {
-            false => CH2OIR::_0,
-            true => CH2OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH2OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH2OIR::_1
-    }
-}
-#[doc = "Possible values of the field `CH3OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH3OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH3OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH3OIR::_0 => false,
-            CH3OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH3OIR {
-        match value {
-            false => CH3OIR::_0,
-            true => CH3OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH3OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH3OIR::_1
-    }
-}
-#[doc = "Possible values of the field `CH4OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH4OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH4OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH4OIR::_0 => false,
-            CH4OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH4OIR {
-        match value {
-            false => CH4OIR::_0,
-            true => CH4OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH4OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH4OIR::_1
-    }
-}
-#[doc = "Possible values of the field `CH5OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH5OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH5OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH5OIR::_0 => false,
-            CH5OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH5OIR {
-        match value {
-            false => CH5OIR::_0,
-            true => CH5OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH5OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH5OIR::_1
-    }
-}
-#[doc = "Possible values of the field `CH6OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH6OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH6OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH6OIR::_0 => false,
-            CH6OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH6OIR {
-        match value {
-            false => CH6OIR::_0,
-            true => CH6OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH6OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH6OIR::_1
-    }
-}
-#[doc = "Possible values of the field `CH7OI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH7OIR {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH7OIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH7OIR::_0 => false,
-            CH7OIR::_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH7OIR {
-        match value {
-            false => CH7OIR::_0,
-            true => CH7OIR::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline]
-    pub fn is_0(&self) -> bool {
-        *self == CH7OIR::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline]
-    pub fn is_1(&self) -> bool {
-        *self == CH7OIR::_1
-    }
-}
-#[doc = "Values that can be written to the field `CH0OI`"]
-pub enum CH0OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
-}
-impl CH0OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH0OIW::_0 => false,
-            CH0OIW::_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CH0OIW<'a> {
+#[doc = "Write proxy for field `CH0OI`"]
+pub struct CH0OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH0OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH0OIW) -> &'a mut W {
+impl<'a> CH0OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH0OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH0OIW::_0)
+        self.variant(CH0OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH0OIW::_1)
+        self.variant(CH0OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH1OI`"]
-pub enum CH1OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 1 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH1OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH1OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH1OIW::_0 => false,
-            CH1OIW::_1 => true,
-        }
+impl From<CH1OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH1OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH1OIW<'a> {
+#[doc = "Reader of field `CH1OI`"]
+pub type CH1OI_R = crate::R<bool, CH1OI_A>;
+impl CH1OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH1OI_A {
+        match self.bits {
+            false => CH1OI_A::_0,
+            true => CH1OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH1OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH1OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH1OI`"]
+pub struct CH1OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH1OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH1OIW) -> &'a mut W {
+impl<'a> CH1OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH1OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH1OIW::_0)
+        self.variant(CH1OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH1OIW::_1)
+        self.variant(CH1OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH2OI`"]
-pub enum CH2OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 2 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH2OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH2OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH2OIW::_0 => false,
-            CH2OIW::_1 => true,
-        }
+impl From<CH2OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH2OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH2OIW<'a> {
+#[doc = "Reader of field `CH2OI`"]
+pub type CH2OI_R = crate::R<bool, CH2OI_A>;
+impl CH2OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH2OI_A {
+        match self.bits {
+            false => CH2OI_A::_0,
+            true => CH2OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH2OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH2OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH2OI`"]
+pub struct CH2OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH2OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH2OIW) -> &'a mut W {
+impl<'a> CH2OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH2OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH2OIW::_0)
+        self.variant(CH2OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH2OIW::_1)
+        self.variant(CH2OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH3OI`"]
-pub enum CH3OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 3 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH3OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH3OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH3OIW::_0 => false,
-            CH3OIW::_1 => true,
-        }
+impl From<CH3OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH3OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH3OIW<'a> {
+#[doc = "Reader of field `CH3OI`"]
+pub type CH3OI_R = crate::R<bool, CH3OI_A>;
+impl CH3OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH3OI_A {
+        match self.bits {
+            false => CH3OI_A::_0,
+            true => CH3OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH3OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH3OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH3OI`"]
+pub struct CH3OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH3OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH3OIW) -> &'a mut W {
+impl<'a> CH3OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH3OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH3OIW::_0)
+        self.variant(CH3OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH3OIW::_1)
+        self.variant(CH3OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH4OI`"]
-pub enum CH4OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 4 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH4OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH4OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH4OIW::_0 => false,
-            CH4OIW::_1 => true,
-        }
+impl From<CH4OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH4OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH4OIW<'a> {
+#[doc = "Reader of field `CH4OI`"]
+pub type CH4OI_R = crate::R<bool, CH4OI_A>;
+impl CH4OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH4OI_A {
+        match self.bits {
+            false => CH4OI_A::_0,
+            true => CH4OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH4OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH4OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH4OI`"]
+pub struct CH4OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH4OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH4OIW) -> &'a mut W {
+impl<'a> CH4OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH4OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH4OIW::_0)
+        self.variant(CH4OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH4OIW::_1)
+        self.variant(CH4OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH5OI`"]
-pub enum CH5OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 5 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH5OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH5OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH5OIW::_0 => false,
-            CH5OIW::_1 => true,
-        }
+impl From<CH5OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH5OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH5OIW<'a> {
+#[doc = "Reader of field `CH5OI`"]
+pub type CH5OI_R = crate::R<bool, CH5OI_A>;
+impl CH5OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH5OI_A {
+        match self.bits {
+            false => CH5OI_A::_0,
+            true => CH5OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH5OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH5OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH5OI`"]
+pub struct CH5OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH5OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH5OIW) -> &'a mut W {
+impl<'a> CH5OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH5OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH5OIW::_0)
+        self.variant(CH5OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH5OIW::_1)
+        self.variant(CH5OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH6OI`"]
-pub enum CH6OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 6 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH6OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH6OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH6OIW::_0 => false,
-            CH6OIW::_1 => true,
-        }
+impl From<CH6OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH6OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH6OIW<'a> {
+#[doc = "Reader of field `CH6OI`"]
+pub type CH6OI_R = crate::R<bool, CH6OI_A>;
+impl CH6OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH6OI_A {
+        match self.bits {
+            false => CH6OI_A::_0,
+            true => CH6OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH6OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH6OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH6OI`"]
+pub struct CH6OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH6OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH6OIW) -> &'a mut W {
+impl<'a> CH6OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH6OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH6OIW::_0)
+        self.variant(CH6OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH6OIW::_1)
+        self.variant(CH6OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH7OI`"]
-pub enum CH7OIW {
-    #[doc = "The initialization value is 0."]
-    _0,
-    #[doc = "The initialization value is 1."]
-    _1,
+#[doc = "Channel 7 Output Initialization Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH7OI_A {
+    #[doc = "0: The initialization value is 0."]
+    _0 = 0,
+    #[doc = "1: The initialization value is 1."]
+    _1 = 1,
 }
-impl CH7OIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH7OIW::_0 => false,
-            CH7OIW::_1 => true,
-        }
+impl From<CH7OI_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH7OI_A) -> Self {
+        variant as u8 != 0
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH7OIW<'a> {
+#[doc = "Reader of field `CH7OI`"]
+pub type CH7OI_R = crate::R<bool, CH7OI_A>;
+impl CH7OI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH7OI_A {
+        match self.bits {
+            false => CH7OI_A::_0,
+            true => CH7OI_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == CH7OI_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == CH7OI_A::_1
+    }
+}
+#[doc = "Write proxy for field `CH7OI`"]
+pub struct CH7OI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH7OIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH7OIW) -> &'a mut W {
+impl<'a> CH7OI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH7OI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The initialization value is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CH7OIW::_0)
+        self.variant(CH7OI_A::_0)
     }
     #[doc = "The initialization value is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CH7OIW::_1)
+        self.variant(CH7OI_A::_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Channel 0 Output Initialization Value"]
-    #[inline]
-    pub fn ch0oi(&self) -> CH0OIR {
-        CH0OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch0oi(&self) -> CH0OI_R {
+        CH0OI_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Output Initialization Value"]
-    #[inline]
-    pub fn ch1oi(&self) -> CH1OIR {
-        CH1OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch1oi(&self) -> CH1OI_R {
+        CH1OI_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Channel 2 Output Initialization Value"]
-    #[inline]
-    pub fn ch2oi(&self) -> CH2OIR {
-        CH2OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch2oi(&self) -> CH2OI_R {
+        CH2OI_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Channel 3 Output Initialization Value"]
-    #[inline]
-    pub fn ch3oi(&self) -> CH3OIR {
-        CH3OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch3oi(&self) -> CH3OI_R {
+        CH3OI_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Channel 4 Output Initialization Value"]
-    #[inline]
-    pub fn ch4oi(&self) -> CH4OIR {
-        CH4OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch4oi(&self) -> CH4OI_R {
+        CH4OI_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Channel 5 Output Initialization Value"]
-    #[inline]
-    pub fn ch5oi(&self) -> CH5OIR {
-        CH5OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch5oi(&self) -> CH5OI_R {
+        CH5OI_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Channel 6 Output Initialization Value"]
-    #[inline]
-    pub fn ch6oi(&self) -> CH6OIR {
-        CH6OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch6oi(&self) -> CH6OI_R {
+        CH6OI_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Channel 7 Output Initialization Value"]
-    #[inline]
-    pub fn ch7oi(&self) -> CH7OIR {
-        CH7OIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch7oi(&self) -> CH7OI_R {
+        CH7OI_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Channel 0 Output Initialization Value"]
-    #[inline]
-    pub fn ch0oi(&mut self) -> _CH0OIW {
-        _CH0OIW { w: self }
+    #[inline(always)]
+    pub fn ch0oi(&mut self) -> CH0OI_W {
+        CH0OI_W { w: self }
     }
     #[doc = "Bit 1 - Channel 1 Output Initialization Value"]
-    #[inline]
-    pub fn ch1oi(&mut self) -> _CH1OIW {
-        _CH1OIW { w: self }
+    #[inline(always)]
+    pub fn ch1oi(&mut self) -> CH1OI_W {
+        CH1OI_W { w: self }
     }
     #[doc = "Bit 2 - Channel 2 Output Initialization Value"]
-    #[inline]
-    pub fn ch2oi(&mut self) -> _CH2OIW {
-        _CH2OIW { w: self }
+    #[inline(always)]
+    pub fn ch2oi(&mut self) -> CH2OI_W {
+        CH2OI_W { w: self }
     }
     #[doc = "Bit 3 - Channel 3 Output Initialization Value"]
-    #[inline]
-    pub fn ch3oi(&mut self) -> _CH3OIW {
-        _CH3OIW { w: self }
+    #[inline(always)]
+    pub fn ch3oi(&mut self) -> CH3OI_W {
+        CH3OI_W { w: self }
     }
     #[doc = "Bit 4 - Channel 4 Output Initialization Value"]
-    #[inline]
-    pub fn ch4oi(&mut self) -> _CH4OIW {
-        _CH4OIW { w: self }
+    #[inline(always)]
+    pub fn ch4oi(&mut self) -> CH4OI_W {
+        CH4OI_W { w: self }
     }
     #[doc = "Bit 5 - Channel 5 Output Initialization Value"]
-    #[inline]
-    pub fn ch5oi(&mut self) -> _CH5OIW {
-        _CH5OIW { w: self }
+    #[inline(always)]
+    pub fn ch5oi(&mut self) -> CH5OI_W {
+        CH5OI_W { w: self }
     }
     #[doc = "Bit 6 - Channel 6 Output Initialization Value"]
-    #[inline]
-    pub fn ch6oi(&mut self) -> _CH6OIW {
-        _CH6OIW { w: self }
+    #[inline(always)]
+    pub fn ch6oi(&mut self) -> CH6OI_W {
+        CH6OI_W { w: self }
     }
     #[doc = "Bit 7 - Channel 7 Output Initialization Value"]
-    #[inline]
-    pub fn ch7oi(&mut self) -> _CH7OIW {
-        _CH7OIW { w: self }
+    #[inline(always)]
+    pub fn ch7oi(&mut self) -> CH7OI_W {
+        CH7OI_W { w: self }
     }
 }
